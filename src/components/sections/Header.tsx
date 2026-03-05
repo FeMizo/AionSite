@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { siteData } from "@/src/data/site";
+import { siteData, base } from "@/src/data/site";
 import { Container } from "@/src/components/ui/Container";
 import { Button } from "@/src/components/ui/Button";
 import { Menu, X } from "lucide-react";
@@ -21,22 +21,27 @@ export const Header = () => {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-slate-950/80 backdrop-blur-md py-4 shadow-xl" : "bg-transparent py-6"
+        isScrolled
+          ? "bg-slate-950/80 backdrop-blur-md py-4 shadow-xl"
+          : "bg-transparent py-6"
       }`}
     >
       <Container className="flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold text-white transition-transform group-hover:scale-110">
-            A
-          </div>
-          <span className="text-xl font-bold tracking-tight text-white">
-            {siteData.name}
-          </span>
+        <a
+          href="/"
+          className="group inline-flex items-center"
+          aria-label={`Ir a inicio - ${siteData.header.data.name}`}
+        >
+          <img
+            src={base.logoLight}
+            alt={siteData.header.data.name}
+            className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
+          />
         </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {siteData.navigation.map((item) => (
+          {siteData.header.data.navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
@@ -45,7 +50,12 @@ export const Header = () => {
               {item.name}
             </a>
           ))}
-          <Button size="sm" onClick={() => window.open(siteData.whatsappLink, "_blank")}>
+          <Button
+            size="sm"
+            onClick={() =>
+              window.open(siteData.header.data.whatsappLink, "_blank")
+            }
+          >
             Cotizar por WhatsApp
           </Button>
         </nav>
@@ -63,7 +73,7 @@ export const Header = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-slate-950 pt-24 px-6 md:hidden">
           <nav className="flex flex-col gap-6">
-            {siteData.navigation.map((item) => (
+            {siteData.header.data.navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -73,7 +83,12 @@ export const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Button className="mt-4" onClick={() => window.open(siteData.whatsappLink, "_blank")}>
+            <Button
+              className="mt-4"
+              onClick={() =>
+                window.open(siteData.header.data.whatsappLink, "_blank")
+              }
+            >
               Cotizar por WhatsApp
             </Button>
           </nav>

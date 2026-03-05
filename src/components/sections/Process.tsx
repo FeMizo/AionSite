@@ -8,7 +8,7 @@ export const Process = () => {
       <Container>
         <SectionHeading
           title="Nuestro proceso"
-          subtitle="Metodología ágil diseñada para garantizar el éxito de tu proyecto."
+          subtitle="MetodologÃ­a Ã¡gil diseÃ±ada para garantizar el Ã©xito de tu proyecto."
         />
 
         <div className="relative">
@@ -16,7 +16,7 @@ export const Process = () => {
           <div className="absolute left-8 top-0 h-full w-px bg-white/10 md:left-1/2" />
 
           <div className="space-y-12">
-            {siteData.process.map((item, index) => (
+            {siteData.process.data.map((item, index) => (
               <div
                 key={item.step}
                 className={`relative flex flex-col md:flex-row items-center gap-8 ${

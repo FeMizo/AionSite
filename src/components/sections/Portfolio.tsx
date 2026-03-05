@@ -9,11 +9,11 @@ export const Portfolio = () => {
       <Container>
         <SectionHeading
           title="Proyectos destacados"
-          subtitle="Una muestra de nuestro trabajo enfocado en diseño premium y resultados."
+          subtitle="Una muestra de nuestro trabajo enfocado en diseÃ±o premium y resultados."
         />
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {siteData.portfolio.map((item) => (
+          {siteData.portfolio.data.map((item) => (
             <div key={item.title} className="group relative overflow-hidden rounded-2xl bg-slate-900">
               <img
                 src={item.image}

@@ -17,19 +17,19 @@ export const Hero = () => {
         </div>
         
         <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-7xl leading-[1.1]">
-          {siteData.hero.title}
+          {siteData.hero.data.title}
         </h1>
         
         <p className="mx-auto mt-8 max-w-2xl text-lg text-slate-400 md:text-xl">
-          {siteData.hero.subtitle}
+          {siteData.hero.data.subtitle}
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button size="lg" onClick={() => window.open(siteData.whatsappLink, "_blank")}>
-            {siteData.hero.primaryCTA}
+          <Button size="lg" onClick={() => window.open(siteData.header.data.whatsappLink, "_blank")}>
+            {siteData.hero.data.primaryCTA}
           </Button>
           <Button variant="outline" size="lg" onClick={() => document.getElementById('portafolio')?.scrollIntoView({ behavior: 'smooth' })}>
-            {siteData.hero.secondaryCTA}
+            {siteData.hero.data.secondaryCTA}
           </Button>
         </div>
 
@@ -39,7 +39,7 @@ export const Hero = () => {
             Nuestro compromiso
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-slate-300 font-medium">
-            {siteData.hero.trustBar.map((item) => (
+            {siteData.hero.data.trustBar.map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                 {item}

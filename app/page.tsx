@@ -9,25 +9,26 @@ import { Testimonials } from "@/src/components/sections/Testimonials";
 import { FAQ } from "@/src/components/sections/FAQ";
 import { FinalCTA } from "@/src/components/sections/FinalCTA";
 import { Footer } from "@/src/components/sections/Footer";
-import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
+import { siteData } from "@/src/data/site";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <Hero />
-      <Services />
-      <Stats />
-      <Portfolio />
-      <Process />
-      <Pricing />
-      <Testimonials />
-      <FAQ />
-      <FinalCTA />
-      <Footer />
-      <WhatsAppFloatingButton />
-    </main>
+    <>
+      {siteData.header.show && <Header />}
+      <main className="min-h-screen">
+        {siteData.hero.show && <Hero />}
+        {siteData.services.show && <Services />}
+        {siteData.stats.show && <Stats />}
+        {siteData.portfolio.show && <Portfolio />}
+        {siteData.process.show && <Process />}
+        {siteData.pricing.show && <Pricing />}
+        {siteData.testimonials.show && <Testimonials />}
+        {siteData.faq.show && <FAQ />}
+        {siteData.finalCTA.show && <FinalCTA />}
+      </main>
+      {siteData.footer.show && <Footer />}
+    </>
   );
 }

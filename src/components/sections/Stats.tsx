@@ -6,7 +6,7 @@ export const Stats = () => {
     <section className="py-20 bg-blue-600">
       <Container>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-          {siteData.stats.map((stat) => (
+          {siteData.stats.data.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-4xl font-bold text-white md:text-6xl mb-2">
                 {stat.value}

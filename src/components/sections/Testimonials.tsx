@@ -14,7 +14,7 @@ export const Testimonials = () => {
         />
 
         <div className="grid gap-8 md:grid-cols-3">
-          {siteData.testimonials.map((t) => (
+          {siteData.testimonials.data.map((t) => (
             <Card key={t.name} className="relative">
               <Quote className="absolute top-6 right-6 text-blue-600/20" size={48} />
               <p className="mb-8 text-lg text-slate-300 italic leading-relaxed">

@@ -12,7 +12,7 @@ export const FAQ = () => {
         />
 
         <div className="mx-auto max-w-3xl space-y-6">
-          {siteData.faqs.map((faq) => (
+          {siteData.faq.data.map((faq) => (
             <div
               key={faq.question}
               className="rounded-2xl border border-white/5 bg-slate-900/50 p-6"

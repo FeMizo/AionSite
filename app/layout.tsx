@@ -6,11 +6,16 @@ import { siteData } from "@/src/data/site";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `${siteData.name} | ${siteData.tagline}`,
-  description: siteData.description,
+  title: `${siteData.header.data.name} | ${siteData.hero.data.title}`,
+  description: siteData.footer.data.description,
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
-    title: siteData.name,
-    description: siteData.description,
+    title: siteData.header.data.name,
+    description: siteData.footer.data.description,
     type: "website",
     locale: "es_MX",
   },
@@ -23,7 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${inter.className} bg-slate-950 text-slate-200 antialiased`}>
+      <body
+        className={`${inter.className} bg-slate-950 text-slate-200 antialiased`}
+      >
         {children}
       </body>
     </html>

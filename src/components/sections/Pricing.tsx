@@ -16,7 +16,7 @@ export const Pricing = () => {
         />
 
         <div className="grid gap-8 md:grid-cols-3">
-          {siteData.pricing.map((plan) => (
+          {siteData.pricing.data.map((plan) => (
             <div
               key={plan.name}
               className={`relative flex flex-col p-8 rounded-3xl border ${
@@ -45,7 +45,7 @@ export const Pricing = () => {
               <Button
                 variant={plan.recommended ? "primary" : "outline"}
                 className="w-full"
-                onClick={() => window.open(siteData.whatsappLink, "_blank")}
+                onClick={() => window.open(siteData.header.data.whatsappLink, "_blank")}
               >
                 Consultar
               </Button>

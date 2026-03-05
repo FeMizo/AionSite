@@ -17,11 +17,11 @@ export const Services = () => {
       <Container>
         <SectionHeading
           title="Servicios que impulsan tu negocio"
-          subtitle="Soluciones digitales diseñadas para convertir visitantes en clientes leales."
+          subtitle="Soluciones digitales diseÃ±adas para convertir visitantes en clientes leales."
         />
         
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {siteData.services.map((service) => {
+          {siteData.services.data.map((service) => {
             const Icon = iconMap[service.icon];
             return (
               <Card key={service.title} className="group">
