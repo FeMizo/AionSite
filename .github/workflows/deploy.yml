@@ -9,13 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
 
       - name: Build (Static Export)
@@ -28,8 +31,11 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
 
-          local-dir: out/
-          server-dir: public_html/
+          protocol: ftp
+          port: 21
+
+          local-dir: ./out/
+          server-dir: ./public_html/
 
           dangerous-clean-slate: true
 
