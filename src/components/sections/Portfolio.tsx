@@ -14,19 +14,24 @@ export const Portfolio = () => {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {siteData.portfolio.data.map((item) => (
-            <div key={item.title} className="group relative overflow-hidden rounded-2xl bg-slate-900">
+            <a
+              key={item.title}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block overflow-hidden rounded-2xl bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
               <img
                 src={item.image}
                 alt={item.title}
-                className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-100"
-                referrerPolicy="no-referrer"
+                className="h-72 w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
               <div className="absolute bottom-0 p-6">
                 <Badge className="mb-3">{item.category}</Badge>
                 <h3 className="text-xl font-bold text-white">{item.title}</h3>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </Container>

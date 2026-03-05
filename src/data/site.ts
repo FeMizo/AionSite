@@ -40,7 +40,7 @@ export const siteData: {
   >;
   stats: ToggleSection<{ value: string; label: string }[]>;
   portfolio: ToggleSection<
-    { title: string; category: string; image: string }[]
+    { title: string; category: string; image: string; url: string }[]
   >;
   process: ToggleSection<
     { step: string; title: string; description: string }[]
@@ -136,34 +136,22 @@ export const siteData: {
     show: true,
     data: [
       {
-        title: "EcoStore",
+        title: "Casa Brava",
         category: "Ecommerce",
-        image: "https://picsum.photos/seed/eco/600/400",
+        image: "/portfolio/brisa-carmen.png",
+        url: "https://restaurante.aionsite.com.mx/",
       },
       {
         title: "Nova SaaS",
         category: "Negocios",
-        image: "https://picsum.photos/seed/nova/600/400",
+        image: "/portfolio/sitiop-mx.svg",
+        url: "https://sitiop.mx",
       },
       {
         title: "Lumina Landing",
         category: "Landing",
-        image: "https://picsum.photos/seed/lumina/600/400",
-      },
-      {
-        title: "Apex Fitness",
-        category: "Negocios",
-        image: "https://picsum.photos/seed/apex/600/400",
-      },
-      {
-        title: "Zenith App",
-        category: "Landing",
-        image: "https://picsum.photos/seed/zenith/600/400",
-      },
-      {
-        title: "Vortex Shop",
-        category: "Ecommerce",
-        image: "https://picsum.photos/seed/vortex/600/400",
+        image: "/portfolio/sitiop-mx.svg",
+        url: "https://sitiop.mx",
       },
     ],
   },
