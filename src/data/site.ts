@@ -204,31 +204,41 @@ export const siteData: {
         name: "Esencial",
         price: "Desde $5,000",
         features: [
-          "Landing Page",
+          "Home Page",
           "Diseño Responsive",
+          "Formulario de Contacto",
           "SEO Básico",
-          "Soporte 1 mes",
         ],
         recommended: false,
       },
       {
         name: "Crecimiento",
-        price: "Desde $10,000",
+        price: "Desde $12,000",
         features: [
-          "Sitio Web Pro (5 secciones)",
-          "Blog / Noticias",
+          "home Page",
+          "5 secciones personalizadas",
           "SEO Avanzado",
           "Soporte 3 meses",
         ],
         recommended: true,
       },
       {
+        name: "Mantenimiento mensual",
+        price: "$15,000/mes",
+        features: [
+          "Actualizaciones mensuales",
+          "Optimización de velocidad",
+          "Soporte prioritario",
+        ],
+        recommended: false,
+      },
+      {
         name: "Ecommerce",
-        price: "Desde $15,000",
+        price: "Desde $20,000",
         features: [
           "Tienda Online",
-          "Pasarela de Pagos",
-          "Gestión de Stock",
+          "Integración con pasarelas de pago",
+          "Configuración de inventario",
           "Soporte 6 meses",
         ],
         recommended: false,
@@ -261,7 +271,7 @@ export const siteData: {
       {
         question: "¿Cuánto tiempo toma un proyecto?",
         answer:
-          "Depende de la complejidad, pero una landing suele tomar 1-2 semanas y un sitio web pro 3-4 semanas.",
+          "Depende de la complejidad, pero una landing suele tomar 2-3 días y un sitio web pro 1-3 semanas.",
       },
       {
         question: "¿Incluyen hosting y dominio?",

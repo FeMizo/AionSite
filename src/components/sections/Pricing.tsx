@@ -7,6 +7,19 @@ import { Button } from "@/src/components/ui/Button";
 import { Check } from "lucide-react";
 
 export const Pricing = () => {
+  const plans = siteData.pricing.data;
+  const plansCount = plans.length;
+  const gridColsClass =
+    plansCount <= 1
+      ? "grid-cols-1"
+      : plansCount === 2
+        ? "sm:grid-cols-2"
+        : plansCount === 3
+          ? "md:grid-cols-3"
+          : plansCount === 4
+            ? "sm:grid-cols-2 xl:grid-cols-4"
+            : "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5";
+
   return (
     <section id="paquetes" className="py-24 bg-slate-950">
       <Container>
@@ -15,14 +28,14 @@ export const Pricing = () => {
           subtitle="Inversiones inteligentes para negocios que buscan crecer."
         />
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {siteData.pricing.data.map((plan) => (
+        <div className={`grid gap-8 ${gridColsClass}`}>
+          {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex flex-col p-8 rounded-3xl border ${
+              className={`relative flex flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
                 plan.recommended
-                  ? "bg-slate-900 border-blue-600 shadow-2xl shadow-blue-600/10"
-                  : "bg-slate-900/50 border-white/5"
+                  ? "border-blue-600 bg-slate-900 shadow-2xl shadow-blue-600/10 hover:shadow-blue-500/25"
+                  : "border-white/5 bg-slate-900/50 hover:border-white/15 hover:shadow-slate-950/40"
               }`}
             >
               {plan.recommended && (
@@ -30,12 +43,17 @@ export const Pricing = () => {
                   Recomendado
                 </div>
               )}
-              <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-              <div className="text-3xl font-bold text-white mb-6">{plan.price}</div>
-              
-              <ul className="mb-8 space-y-4 flex-1">
+              <h3 className="text-lg font-bold text-white mb-2">{plan.name}</h3>
+              <div className="text-2xl font-bold text-white mb-6">
+                {plan.price}
+              </div>
+
+              <ul className="mb-8 space-y-3 flex-1">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-slate-400">
+                  <li
+                    key={feature}
+                    className="flex items-center gap-3 text-sm text-slate-400"
+                  >
                     <Check size={18} className="text-blue-500" />
                     {feature}
                   </li>
@@ -45,7 +63,9 @@ export const Pricing = () => {
               <Button
                 variant={plan.recommended ? "primary" : "outline"}
                 className="w-full"
-                onClick={() => window.open(siteData.header.data.whatsappLink, "_blank")}
+                onClick={() =>
+                  window.open(siteData.header.data.whatsappLink, "_blank")
+                }
               >
                 Consultar
               </Button>
