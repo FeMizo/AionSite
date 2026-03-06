@@ -1,33 +1,36 @@
-import { siteData, base } from "@/src/data/site";
+import type { CmsBase, FooterSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
-import { WhatsAppFloatingButton } from "./WhatsAppFloatingButton";
 
-export const Footer = () => {
+export function Footer({
+  base,
+  data,
+}: {
+  base: CmsBase;
+  data: FooterSectionData;
+}) {
   return (
     <footer className="border-t border-white/5 bg-slate-950 py-12">
       <Container>
         <div className="grid gap-12 md:grid-cols-4">
           <div className="col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-6">
+            <a href="/" className="mb-6 flex items-center gap-2">
               <img
                 src={base.logoLight}
-                alt={siteData.header.data.name}
+                alt={data.name}
                 className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
               />
             </a>
-            <p className="max-w-sm text-slate-400 leading-relaxed">
-              {siteData.footer.data.description}
-            </p>
+            <p className="max-w-sm leading-relaxed text-slate-400">{data.description}</p>
           </div>
 
           <div>
             <h4 className="mb-6 font-bold text-white">Enlaces</h4>
             <ul className="space-y-4">
-              {siteData.footer.data.navigation.map((item) => (
+              {data.navigation.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-slate-400 hover:text-white transition-colors"
+                    className="text-slate-400 transition-colors hover:text-white"
                   >
                     {item.name}
                   </a>
@@ -39,11 +42,12 @@ export const Footer = () => {
           <div>
             <h4 className="mb-6 font-bold text-white">Contacto</h4>
             <ul className="space-y-4">
-              <li className="text-slate-400">{siteData.footer.data.email}</li>
+              <li className="text-slate-400">{data.email}</li>
               <li>
                 <a
-                  href={siteData.footer.data.whatsappLink}
+                  href={data.whatsappLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-500 hover:underline"
                 >
                   WhatsApp Directo
@@ -54,15 +58,10 @@ export const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-white/5 pt-8 text-center text-sm text-slate-500">
-          <p>
-            © {new Date().getFullYear()} {siteData.footer.data.name}. Todos los
-            derechos reservados.
-          </p>
-          <p className="mt-2">Diseñado con pasión por AionSite.</p>
+          <p>© {new Date().getFullYear()} {data.name}. Todos los derechos reservados.</p>
+          <p className="mt-2">Disenado con pasion por AionSite.</p>
         </div>
       </Container>
-
-      {siteData.whatsappFloatingButton.show && <WhatsAppFloatingButton />}
     </footer>
   );
-};
+}

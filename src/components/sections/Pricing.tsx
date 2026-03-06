@@ -1,13 +1,19 @@
 "use client";
 
-import { siteData } from "@/src/data/site";
+import { Check } from "lucide-react";
+import type { HeaderSectionData, PricingSectionData } from "@/src/cms/types";
+import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
-import { Button } from "@/src/components/ui/Button";
-import { Check } from "lucide-react";
 
-export const Pricing = () => {
-  const plans = siteData.pricing.data;
+export function Pricing({
+  data,
+  headerData,
+}: {
+  data: PricingSectionData;
+  headerData: HeaderSectionData;
+}) {
+  const plans = data;
   const plansCount = plans.length;
   const gridColsClass =
     plansCount <= 1
@@ -21,7 +27,7 @@ export const Pricing = () => {
             : "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5";
 
   return (
-    <section id="paquetes" className="py-24 bg-slate-950">
+    <section id="paquetes" className="bg-slate-950 py-24">
       <Container>
         <SectionHeading
           title="Paquetes a tu medida"
@@ -38,17 +44,15 @@ export const Pricing = () => {
                   : "border-white/5 bg-slate-900/50 hover:border-white/15 hover:shadow-slate-950/40"
               }`}
             >
-              {plan.recommended && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-bold text-white uppercase tracking-widest">
+              {plan.recommended ? (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white">
                   Recomendado
                 </div>
-              )}
-              <h3 className="text-lg font-bold text-white mb-2">{plan.name}</h3>
-              <div className="text-2xl font-bold text-white mb-6">
-                {plan.price}
-              </div>
+              ) : null}
+              <h3 className="mb-2 text-lg font-bold text-white">{plan.name}</h3>
+              <div className="mb-6 text-2xl font-bold text-white">{plan.price}</div>
 
-              <ul className="mb-8 space-y-3 flex-1">
+              <ul className="mb-8 flex-1 space-y-3">
                 {plan.features.map((feature) => (
                   <li
                     key={feature}
@@ -63,9 +67,7 @@ export const Pricing = () => {
               <Button
                 variant={plan.recommended ? "primary" : "outline"}
                 className="w-full"
-                onClick={() =>
-                  window.open(siteData.header.data.whatsappLink, "_blank")
-                }
+                onClick={() => window.open(headerData.whatsappLink, "_blank")}
               >
                 Consultar
               </Button>
@@ -75,4 +77,4 @@ export const Pricing = () => {
       </Container>
     </section>
   );
-};
+}

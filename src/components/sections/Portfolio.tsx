@@ -1,19 +1,19 @@
-import { siteData } from "@/src/data/site";
+import type { PortfolioSectionData } from "@/src/cms/types";
+import { Badge } from "@/src/components/ui/Badge";
 import { Container } from "@/src/components/ui/Container";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
-import { Badge } from "@/src/components/ui/Badge";
 
-export const Portfolio = () => {
+export function Portfolio({ data }: { data: PortfolioSectionData }) {
   return (
-    <section id="portafolio" className="py-24 bg-slate-950">
+    <section id="portafolio" className="bg-slate-950 py-24">
       <Container>
         <SectionHeading
           title="Proyectos destacados"
-          subtitle="Una muestra de nuestro trabajo enfocado en diseÃ±o premium y resultados."
+          subtitle="Una muestra de nuestro trabajo enfocado en diseno premium y resultados."
         />
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {siteData.portfolio.data.map((item) => (
+          {data.map((item) => (
             <a
               key={item.title}
               href={item.url}
@@ -37,4 +37,4 @@ export const Portfolio = () => {
       </Container>
     </section>
   );
-};
+}

@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { siteData } from "@/src/data/site";
+import type { FAQSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
 
-export const FAQ = () => {
+export function FAQ({ data }: { data: FAQSectionData }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section
       id="faq"
-      className="py-24 bg-slate-950"
+      className="bg-slate-950 py-24"
       itemScope
       itemType="https://schema.org/FAQPage"
     >
@@ -22,7 +22,7 @@ export const FAQ = () => {
         />
 
         <div className="mx-auto max-w-3xl space-y-6">
-          {siteData.faq.data.map((faq, index) => {
+          {data.map((faq, index) => {
             const isOpen = openIndex === index;
             const answerId = `faq-answer-${index}`;
 
@@ -45,7 +45,9 @@ export const FAQ = () => {
                     <span>{faq.question}</span>
                     <span
                       aria-hidden="true"
-                      className={`text-blue-400 transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
+                      className={`text-blue-400 transition-transform duration-200 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
                     >
                       +
                     </span>
@@ -60,7 +62,7 @@ export const FAQ = () => {
                   aria-hidden={!isOpen}
                 >
                   <p
-                    className="overflow-hidden text-slate-400 leading-relaxed"
+                    className="overflow-hidden leading-relaxed text-slate-400"
                     itemScope
                     itemProp="acceptedAnswer"
                     itemType="https://schema.org/Answer"
@@ -75,4 +77,4 @@ export const FAQ = () => {
       </Container>
     </section>
   );
-};
+}

@@ -1,12 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { siteData, base } from "@/src/data/site";
-import { Container } from "@/src/components/ui/Container";
-import { Button } from "@/src/components/ui/Button";
 import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import type { CmsBase, HeaderSectionData } from "@/src/cms/types";
+import { Button } from "@/src/components/ui/Button";
+import { Container } from "@/src/components/ui/Container";
 
-export const Header = () => {
+export function Header({
+  base,
+  data,
+}: {
+  base: CmsBase;
+  data: HeaderSectionData;
+}) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,6 +20,7 @@ export const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -22,7 +29,7 @@ export const Header = () => {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-slate-950/80 backdrop-blur-md py-4 shadow-xl"
+          ? "bg-slate-950/80 py-4 shadow-xl backdrop-blur-md"
           : "bg-transparent py-6"
       }`}
     >
@@ -30,50 +37,42 @@ export const Header = () => {
         <a
           href="/"
           className="group inline-flex items-center"
-          aria-label={`Ir a inicio - ${siteData.header.data.name}`}
+          aria-label={`Ir a inicio - ${data.name}`}
         >
           <img
             src={base.logoLight}
-            alt={siteData.header.data.name}
+            alt={data.name}
             className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
           />
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {siteData.header.data.navigation.map((item) => (
+        <nav className="hidden items-center gap-8 md:flex">
+          {data.navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
             >
               {item.name}
             </a>
           ))}
-          <Button
-            size="sm"
-            onClick={() =>
-              window.open(siteData.header.data.whatsappLink, "_blank")
-            }
-          >
+          <Button size="sm" onClick={() => window.open(data.whatsappLink, "_blank")}>
             Cotizar por WhatsApp
           </Button>
         </nav>
 
-        {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="text-white md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
       </Container>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-slate-950 pt-24 px-6 md:hidden">
+      {isMobileMenuOpen ? (
+        <div className="fixed inset-0 z-40 bg-slate-950 px-6 pt-24 md:hidden">
           <nav className="flex flex-col gap-6">
-            {siteData.header.data.navigation.map((item) => (
+            {data.navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -83,17 +82,12 @@ export const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Button
-              className="mt-4"
-              onClick={() =>
-                window.open(siteData.header.data.whatsappLink, "_blank")
-              }
-            >
+            <Button className="mt-4" onClick={() => window.open(data.whatsappLink, "_blank")}>
               Cotizar por WhatsApp
             </Button>
           </nav>
         </div>
-      )}
+      ) : null}
     </header>
   );
-};
+}

@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { initialCmsContent } from "@/src/cms/site-content";
 import "./globals.css";
-import { siteData } from "@/src/data/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `${siteData.header.data.name} | ${siteData.hero.data.title}`,
-  description: siteData.footer.data.description,
+  title: `${initialCmsContent.sections.header.data.name} | ${initialCmsContent.sections.hero.data.title}`,
+  description: initialCmsContent.sections.footer.data.description,
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: siteData.header.data.name,
-    description: siteData.footer.data.description,
+    title: initialCmsContent.sections.header.data.name,
+    description: initialCmsContent.sections.footer.data.description,
     type: "website",
     locale: "es_MX",
   },
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="es" className="scroll-smooth">
       <body
