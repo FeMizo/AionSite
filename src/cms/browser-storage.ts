@@ -36,3 +36,52 @@ export function resetCmsContentInBrowser() {
     window.localStorage.removeItem(CMS_STORAGE_KEY);
   }
 }
+
+export async function loadCmsContentFromServer(): Promise<CmsContent | null> {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    const response = await fetch("/api/cms/content", {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const payload = await response.json();
+    return normalizeCmsContent(payload);
+  } catch {
+    return null;
+  }
+}
+
+export async function saveCmsContentToServer(
+  content: CmsContent,
+): Promise<CmsContent | null> {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    const response = await fetch("/api/cms/content", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(content),
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const payload = await response.json();
+    return normalizeCmsContent(payload);
+  } catch {
+    return null;
+  }
+}

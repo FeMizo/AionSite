@@ -119,7 +119,7 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
         itemFields: [
           { key: "title", label: "Titulo", type: "text" },
           { key: "category", label: "Categoria", type: "text" },
-          { key: "image", label: "Imagen", type: "text" },
+          { key: "image", label: "Imagen", type: "image" },
           { key: "url", label: "URL", type: "url" },
         ],
       },

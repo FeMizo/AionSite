@@ -1,9 +1,12 @@
 import { Eye, EyeOff, Layers3, ArrowUpDown } from "lucide-react";
 import { AdminShell } from "@/src/components/admin/AdminShell";
-import { initialCmsContent } from "@/src/cms/site-content";
+import { readCmsContentFromFile } from "@/src/cms/file-storage";
 
-export default function AdminOverviewPage() {
-  const sections = Object.values(initialCmsContent.sections);
+export const dynamic = "force-dynamic";
+
+export default async function AdminOverviewPage() {
+  const content = await readCmsContentFromFile();
+  const sections = Object.values(content.sections);
   const visibleCount = sections.filter((section) => section.enabled).length;
   const hiddenCount = sections.length - visibleCount;
 
@@ -11,7 +14,7 @@ export default function AdminOverviewPage() {
     <AdminShell
       pathname="/admin"
       title="Overview"
-      description="Resumen de la arquitectura CMS estatica. Los cambios del panel se guardan en este navegador para mantener compatibilidad con output export."
+      description="Resumen de la arquitectura CMS del proyecto. Los cambios del panel se guardan en un archivo JSON central para todo el sitio."
     >
       <div className="grid gap-4 md:grid-cols-3">
         {[
@@ -46,23 +49,23 @@ export default function AdminOverviewPage() {
             <div>
               <h3 className="text-lg font-semibold text-white">Flujo operativo</h3>
               <p className="mt-1 text-sm text-slate-400">
-                El dashboard ahora es 100% compatible con export estatico.
+                El dashboard ahora persiste contenido directamente en el CMS del proyecto.
               </p>
             </div>
           </div>
 
           <div className="mt-6 space-y-3 text-sm leading-6 text-slate-300">
             <p>1. La fuente base sigue en src/data/cms/site-content.json.</p>
-            <p>2. El panel guarda cambios en localStorage del navegador.</p>
-            <p>3. El sitio publico los aplica al hidratarse en cliente.</p>
-            <p>4. Cuando quieras persistencia real multiusuario, cambia esta capa por API o DB y quita output export.</p>
+            <p>2. El panel guarda cambios por API hacia ese archivo.</p>
+            <p>3. El sitio publico sincroniza el contenido mas reciente.</p>
+            <p>4. Si luego necesitas multiusuario, puedes mover esta capa a DB sin cambiar el esquema CMS.</p>
           </div>
         </section>
 
         <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur">
           <h3 className="text-lg font-semibold text-white">Limite actual</h3>
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            En modo export estatico no existe runtime servidor, asi que el panel no puede escribir archivos ni exponer API routes durante el deploy.
+            Esta persistencia requiere runtime de servidor Node.js para leer y escribir el archivo CMS.
           </p>
         </section>
       </div>

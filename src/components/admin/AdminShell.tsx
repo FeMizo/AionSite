@@ -21,7 +21,7 @@ export function AdminShell({
 }) {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),_transparent_42%),linear-gradient(180deg,_#020617_0%,_#0f172a_55%,_#020617_100%)] text-slate-100">
-      <div className="mx-auto flex min-h-screen max-w-7xl gap-6 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-screen max-w-[1560px] gap-6 px-4 py-4 sm:px-6 lg:px-8">
         <aside className="hidden w-72 shrink-0 rounded-[2rem] border border-white/8 bg-slate-950/60 p-6 backdrop-blur xl:block">
           <div className="mb-10">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-blue-300/80">
@@ -72,6 +72,8 @@ export function AdminShell({
 
               <Link
                 href="/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200 transition hover:border-blue-400/40 hover:bg-white/5 hover:text-white"
               >
                 Ver sitio publico

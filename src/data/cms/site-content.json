@@ -5,12 +5,30 @@
     "email": "contacto@aionsite.com.mx",
     "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
     "navigation": [
-      { "name": "Servicios", "href": "#servicios" },
-      { "name": "Portafolio", "href": "#portafolio" },
-      { "name": "Proceso", "href": "#proceso" },
-      { "name": "Paquetes", "href": "#paquetes" },
-      { "name": "FAQ", "href": "#faq" },
-      { "name": "Contacto", "href": "#contacto" }
+      {
+        "name": "Servicios",
+        "href": "#servicios"
+      },
+      {
+        "name": "Portafolio",
+        "href": "#portafolio"
+      },
+      {
+        "name": "Proceso",
+        "href": "#proceso"
+      },
+      {
+        "name": "Paquetes",
+        "href": "#paquetes"
+      },
+      {
+        "name": "FAQ",
+        "href": "#faq"
+      },
+      {
+        "name": "Contacto",
+        "href": "#contacto"
+      }
     ],
     "logoLight": "/logo-aionsite.png"
   },
@@ -22,12 +40,30 @@
       "data": {
         "name": "AionSite",
         "navigation": [
-          { "name": "Servicios", "href": "#servicios" },
-          { "name": "Portafolio", "href": "#portafolio" },
-          { "name": "Proceso", "href": "#proceso" },
-          { "name": "Paquetes", "href": "#paquetes" },
-          { "name": "FAQ", "href": "#faq" },
-          { "name": "Contacto", "href": "#contacto" }
+          {
+            "name": "Servicios",
+            "href": "#servicios"
+          },
+          {
+            "name": "Portafolio",
+            "href": "#portafolio"
+          },
+          {
+            "name": "Proceso",
+            "href": "#proceso"
+          },
+          {
+            "name": "Paquetes",
+            "href": "#paquetes"
+          },
+          {
+            "name": "FAQ",
+            "href": "#faq"
+          },
+          {
+            "name": "Contacto",
+            "href": "#contacto"
+          }
         ],
         "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }
@@ -41,7 +77,12 @@
         "subtitle": "Disenamos y desarrollamos experiencias digitales de alto impacto que posicionan tu marca y multiplican tus ventas.",
         "primaryCTA": "Cotizar por WhatsApp",
         "secondaryCTA": "Ver portafolio",
-        "trustBar": ["Velocidad", "SEO tecnico", "Diseno premium", "Soporte"]
+        "trustBar": [
+          "Velocidad",
+          "SEO tecnico",
+          "Diseno premium",
+          "Soporte"
+        ]
       }
     },
     "services": {
@@ -76,9 +117,18 @@
       "enabled": true,
       "order": 3,
       "data": [
-        { "value": "99%", "label": "Satisfaccion" },
-        { "value": "+30", "label": "Proyectos" },
-        { "value": "2x", "label": "Conversion" }
+        {
+          "value": "99%",
+          "label": "Satisfaccion"
+        },
+        {
+          "value": "+30",
+          "label": "Proyectos"
+        },
+        {
+          "value": "2x",
+          "label": "Conversion"
+        }
       ]
     },
     "portfolio": {
@@ -146,25 +196,45 @@
         {
           "name": "Esencial",
           "price": "Desde $5,000",
-          "features": ["Home Page", "Diseno Responsive", "Formulario de Contacto", "SEO Basico"],
+          "features": [
+            "Home con diseno basico",
+            "Diseno responsive",
+            "Formulario de contacto",
+            "SEO basico"
+          ],
           "recommended": false
         },
         {
           "name": "Crecimiento",
           "price": "Desde $12,000",
-          "features": ["Home Page", "5 secciones personalizadas", "SEO Avanzado", "Soporte 3 meses"],
+          "features": [
+            "Todo lo del plan Esencial",
+            "Home con diseno premium",
+            "5 secciones personalizadas",
+            "SEO avanzado",
+            "Soporte 3 meses"
+          ],
           "recommended": true
         },
         {
           "name": "Mantenimiento mensual",
           "price": "$15,000/mes",
-          "features": ["Actualizaciones mensuales", "Optimizacion de velocidad", "Soporte prioritario"],
+          "features": [
+            "Actualizaciones mensuales",
+            "Optimizacion de velocidad",
+            "Soporte prioritario"
+          ],
           "recommended": false
         },
         {
           "name": "Ecommerce",
           "price": "Desde $20,000",
-          "features": ["Tienda Online", "Integracion con pasarelas de pago", "Configuracion de inventario", "Soporte 6 meses"],
+          "features": [
+            "Tienda Online",
+            "Integracion con pasarelas de pago",
+            "Configuracion de inventario",
+            "Soporte 6 meses"
+          ],
           "recommended": false
         }
       ]
@@ -202,11 +272,11 @@
         },
         {
           "question": "Incluyen hosting y dominio?",
-          "answer": "Te asesoramos en la compra y configuracion, o podemos incluirlo en un paquete de mantenimiento."
+          "answer": "Si. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes."
         },
         {
           "question": "El sitio sera autogestionable?",
-          "answer": "Si, entregamos herramientas para que puedas actualizar textos e imagenes facilmente."
+          "answer": "Si. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imagenes facilmente."
         }
       ]
     },
@@ -231,12 +301,30 @@
         "description": "Agencia boutique de diseno y desarrollo web premium enfocada en conversion, velocidad y SEO tecnico.",
         "email": "contacto@aionsite.com.mx",
         "navigation": [
-          { "name": "Servicios", "href": "#servicios" },
-          { "name": "Portafolio", "href": "#portafolio" },
-          { "name": "Proceso", "href": "#proceso" },
-          { "name": "Paquetes", "href": "#paquetes" },
-          { "name": "FAQ", "href": "#faq" },
-          { "name": "Contacto", "href": "#contacto" }
+          {
+            "name": "Servicios",
+            "href": "#servicios"
+          },
+          {
+            "name": "Portafolio",
+            "href": "#portafolio"
+          },
+          {
+            "name": "Proceso",
+            "href": "#proceso"
+          },
+          {
+            "name": "Paquetes",
+            "href": "#paquetes"
+          },
+          {
+            "name": "FAQ",
+            "href": "#faq"
+          },
+          {
+            "name": "Contacto",
+            "href": "#contacto"
+          }
         ],
         "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }

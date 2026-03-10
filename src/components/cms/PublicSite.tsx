@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { loadCmsContentFromBrowser } from "@/src/cms/browser-storage";
+import {
+  loadCmsContentFromBrowser,
+  loadCmsContentFromServer,
+  saveCmsContentToBrowser,
+} from "@/src/cms/browser-storage";
 import {
   getRenderableSectionIds,
   initialCmsContent,
@@ -17,7 +21,28 @@ export function PublicSite({
   const [content, setContent] = useState(initialContent);
 
   useEffect(() => {
-    setContent(loadCmsContentFromBrowser());
+    let isCancelled = false;
+
+    const syncFromServer = async () => {
+      const serverContent = await loadCmsContentFromServer();
+      if (isCancelled) {
+        return;
+      }
+
+      if (serverContent) {
+        setContent(serverContent);
+        saveCmsContentToBrowser(serverContent);
+        return;
+      }
+
+      setContent(loadCmsContentFromBrowser());
+    };
+
+    void syncFromServer();
+
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   const headerSections = getRenderableSectionIds(content, "header");

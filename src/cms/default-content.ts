@@ -151,10 +151,10 @@ export const defaultCmsContent: CmsContent = {
           name: "Esencial",
           price: "Desde $5,000",
           features: [
-            "Home Page",
-            "Diseno Responsive",
-            "Formulario de Contacto",
-            "SEO Basico",
+            "Home con diseno basico",
+            "Diseno responsive",
+            "Formulario de contacto",
+            "SEO basico",
           ],
           recommended: false,
         },
@@ -162,9 +162,10 @@ export const defaultCmsContent: CmsContent = {
           name: "Crecimiento",
           price: "Desde $12,000",
           features: [
-            "Home Page",
+            "Todo lo del plan Esencial",
+            "Home con diseno premium",
             "5 secciones personalizadas",
-            "SEO Avanzado",
+            "SEO avanzado",
             "Soporte 3 meses",
           ],
           recommended: true,
@@ -227,12 +228,12 @@ export const defaultCmsContent: CmsContent = {
         {
           question: "Incluyen hosting y dominio?",
           answer:
-            "Te asesoramos en la compra y configuracion, o podemos incluirlo en un paquete de mantenimiento.",
+            "Si. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes.",
         },
         {
           question: "El sitio sera autogestionable?",
           answer:
-            "Si, entregamos herramientas para que puedas actualizar textos e imagenes facilmente.",
+            "Si. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imagenes facilmente.",
         },
       ],
     },

@@ -129,7 +129,8 @@ export type PrimitiveFieldType =
   | "textarea"
   | "url"
   | "number"
-  | "boolean";
+  | "boolean"
+  | "image";
 
 export type PrimitiveFieldDefinition = {
   key: string;
