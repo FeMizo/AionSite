@@ -76,7 +76,7 @@ export function AdminShell({
                 </p>
               </div>
 
-              <Link
+              <a
                 href="/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -84,7 +84,7 @@ export function AdminShell({
               >
                 Ver sitio público
                 <ExternalLink size={14} />
-              </Link>
+              </a>
             </div>
 
             <nav className="mt-5 flex flex-wrap gap-2 xl:hidden">

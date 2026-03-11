@@ -309,11 +309,23 @@ export function SectionsDashboard({
             const sectionIndex = index;
 
             return (
-              <button
+              <div
                 key={`${id}-${index}`}
-                type="button"
+                role="button"
+                tabIndex={0}
+                aria-pressed={isSelected}
                 onClick={() => setSelectedSectionId(id)}
-                className={`h-full w-full rounded-[1.75rem] border p-4 text-left transition ${
+                onKeyDown={(event) => {
+                  if (event.target !== event.currentTarget) {
+                    return;
+                  }
+
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setSelectedSectionId(id);
+                  }
+                }}
+                className={`h-full w-full rounded-[1.75rem] border p-4 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
                   isSelected
                     ? "border-blue-500/40 bg-blue-500/10 shadow-lg shadow-blue-500/10"
                     : "border-white/8 bg-white/3 hover:border-white/15 hover:bg-white/5"
@@ -377,7 +389,7 @@ export function SectionsDashboard({
                     </div>
                   </div>
                 </div>
-              </button>
+              </div>
             );
           })}
         </div>
