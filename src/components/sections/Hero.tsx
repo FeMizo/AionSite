@@ -18,7 +18,7 @@ export function Hero({
 
       <Container className="text-center">
         <div className="animate-fade-in mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-blue-400">
-          Diseno web de alto impacto
+          ✨ Diseño web de alto impacto
         </div>
 
         <h1 className="mx-auto max-w-4xl text-5xl leading-[1.1] font-bold tracking-tight text-white sm:text-7xl">
@@ -30,14 +30,19 @@ export function Hero({
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button size="lg" onClick={() => window.open(headerData.whatsappLink, "_blank")}>
+          <Button
+            size="lg"
+            onClick={() => window.open(headerData.whatsappLink, "_blank")}
+          >
             {data.primaryCTA}
           </Button>
           <Button
             variant="outline"
             size="lg"
             onClick={() =>
-              document.getElementById("portafolio")?.scrollIntoView({ behavior: "smooth" })
+              document
+                .getElementById("portafolio")
+                ?.scrollIntoView({ behavior: "smooth" })
             }
           >
             {data.secondaryCTA}
@@ -45,7 +50,7 @@ export function Hero({
         </div>
 
         <div className="mt-20 border-t border-white/5 pt-10">
-          <p className="mb-6 text-sm font-medium uppercase tracking-widest text-slate-500">
+          <p className="mb-6 text-xl font-medium uppercase tracking-widest text-slate-500">
             Nuestro compromiso
           </p>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 font-medium text-slate-300">

@@ -118,12 +118,12 @@
       "order": 3,
       "data": [
         {
-          "value": "99%",
-          "label": "Satisfaccion"
+          "value": "+35",
+          "label": "Proyectos"
         },
         {
-          "value": "+30",
-          "label": "Proyectos"
+          "value": "99%",
+          "label": "Satisfaccion"
         },
         {
           "value": "2x",
@@ -143,16 +143,16 @@
           "url": "https://restaurante.aionsite.com.mx/"
         },
         {
-          "title": "Nova SaaS",
-          "category": "Negocios",
-          "image": "/portfolio/sitiop-mx.svg",
-          "url": "https://sitiop.mx"
+          "title": "SA",
+          "category": "Trabajo",
+          "image": "/portfolio/sa.png",
+          "url": "https://searchatlas.com/"
         },
         {
-          "title": "Lumina Landing",
-          "category": "Landing",
-          "image": "/portfolio/sitiop-mx.svg",
-          "url": "https://sitiop.mx"
+          "title": "LG",
+          "category": "Trabajo",
+          "image": "/portfolio/lg.png",
+          "url": "https://www.linkgraph.com/"
         }
       ]
     },
