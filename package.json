@@ -1,7 +1,7 @@
 {
   "name": "aionsite",
   "private": true,
-  "version": "1.9.0",
+  "version": "1.9.1",
   "type": "module",
   "scripts": {
     "dev": "next dev --port=2666 --hostname=0.0.0.0",
