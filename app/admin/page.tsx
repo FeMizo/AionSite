@@ -1,4 +1,4 @@
-import { Eye, EyeOff, Layers3, ArrowUpDown } from "lucide-react";
+import { ArrowUpDown, Eye, EyeOff, Layers3 } from "lucide-react";
 import { AdminShell } from "@/src/components/admin/AdminShell";
 import { initialCmsContent } from "@/src/cms/site-content";
 
@@ -12,7 +12,7 @@ export default function AdminOverviewPage() {
     <AdminShell
       pathname="/admin"
       title="Resumen"
-      description="Resumen del CMS local. Los cambios del panel se guardan en este navegador y no se publican automáticamente."
+      description="Resumen del CMS local. En desarrollo, el panel intenta guardar en archivo y en navegador para mantener sincronía."
     >
       <div className="grid gap-4 md:grid-cols-3">
         {[
@@ -24,7 +24,7 @@ export default function AdminOverviewPage() {
           return (
             <article
               key={item.label}
-              className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur"
+              className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 shadow-[0_26px_52px_-36px_rgba(2,6,23,0.96)] backdrop-blur"
             >
               <div className="flex items-center justify-between">
                 <p className="text-sm text-slate-400">{item.label}</p>
@@ -39,7 +39,7 @@ export default function AdminOverviewPage() {
       </div>
 
       <div className="mt-6 grid gap-6 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-        <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur">
+        <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 shadow-[0_26px_52px_-36px_rgba(2,6,23,0.96)] backdrop-blur">
           <div className="flex items-center gap-3">
             <div className="rounded-2xl bg-blue-500/10 p-3 text-blue-200">
               <ArrowUpDown size={18} />
@@ -47,23 +47,23 @@ export default function AdminOverviewPage() {
             <div>
               <h3 className="text-lg font-semibold text-white">Flujo operativo</h3>
               <p className="mt-1 text-sm text-slate-400">
-                El panel funciona con almacenamiento local del navegador.
+                El panel prioriza persistencia local en archivo y usa fallback en navegador.
               </p>
             </div>
           </div>
 
           <div className="mt-6 space-y-3 text-sm leading-6 text-slate-300">
             <p>1. La fuente base sigue en src/data/cms/site-content.json.</p>
-            <p>2. El panel guarda cambios en localStorage.</p>
-            <p>3. El sitio público los refleja en el mismo navegador.</p>
+            <p>2. En desarrollo local, el panel guarda en el archivo JSON mediante API local.</p>
+            <p>3. Siempre se guarda también en localStorage como respaldo.</p>
             <p>4. En producción estática, cada usuario ve sus propios cambios locales.</p>
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur">
+        <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 shadow-[0_26px_52px_-36px_rgba(2,6,23,0.96)] backdrop-blur">
           <h3 className="text-lg font-semibold text-white">Límite actual</h3>
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            El guardado no modifica archivos del repositorio ni sincroniza entre dispositivos.
+            El guardado en archivo está pensado para entorno local; en despliegue estático el fallback sigue siendo localStorage.
           </p>
         </section>
       </div>

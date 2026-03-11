@@ -16,7 +16,13 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - name: Disable local CMS file API for static export
+        run: rm -rf app/api
+
+      - name: Build static export
+        run: npm run build
+        env:
+          NEXT_STATIC_EXPORT: "true"
 
       - name: Deploy via FTP (sync only)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

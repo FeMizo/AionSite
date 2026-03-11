@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 
+import { ArrowRight, MessageCircleMore, Sparkles } from "lucide-react";
 import type { HeaderSectionData, HeroSectionData } from "@/src/cms/types";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
@@ -17,7 +18,8 @@ export function Hero({
       <div className="absolute right-0 top-40 -z-10 h-[400px] w-[400px] rounded-full bg-violet-600/10 blur-[100px]" />
 
       <Container className="text-center">
-        <div className="animate-fade-in mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-blue-400">
+        <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)]">
+          <Sparkles size={14} />
           {data.badgeText}
         </div>
 
@@ -32,13 +34,16 @@ export function Hero({
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
+            className="gap-2"
             onClick={() => window.open(headerData.whatsappLink, "_blank")}
           >
+            <MessageCircleMore size={18} />
             {data.primaryCTA}
           </Button>
           <Button
             variant="outline"
             size="lg"
+            className="gap-2"
             onClick={() =>
               document
                 .getElementById("portafolio")
@@ -46,6 +51,7 @@ export function Hero({
             }
           >
             {data.secondaryCTA}
+            <ArrowRight size={16} />
           </Button>
         </div>
 

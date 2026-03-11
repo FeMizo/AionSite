@@ -28,7 +28,7 @@ export function AdminShell({
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),_transparent_42%),linear-gradient(180deg,_#020617_0%,_#0f172a_55%,_#020617_100%)] text-slate-100">
       <div className="mx-auto flex min-h-screen max-w-[1820px] gap-6 px-4 py-4 sm:px-6 lg:px-8">
-        <aside className="hidden w-72 shrink-0 rounded-[2rem] border border-white/8 bg-slate-950/60 p-6 backdrop-blur xl:block">
+        <aside className="hidden w-72 shrink-0 rounded-[2rem] border border-white/8 bg-slate-950/60 p-6 shadow-[0_30px_60px_-40px_rgba(2,6,23,0.95)] backdrop-blur xl:block">
           <div className="mb-10">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-blue-300/80">
               AionSite CMS
@@ -64,7 +64,7 @@ export function AdminShell({
         </aside>
 
         <div className="min-w-0 flex-1 xl:max-w-[1480px]">
-          <header className="rounded-[2rem] border border-white/8 bg-slate-950/45 px-6 py-5 backdrop-blur">
+          <header className="rounded-[2rem] border border-white/8 bg-slate-950/45 px-6 py-5 shadow-[0_28px_56px_-40px_rgba(2,6,23,0.95)] backdrop-blur">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-blue-300/80">

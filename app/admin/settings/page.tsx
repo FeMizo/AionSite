@@ -14,8 +14,9 @@ export default function AdminSettingsPage() {
           <p>2. Agrega el contenido inicial en `src/cms/default-content.ts`.</p>
           <p>3. Registra metadatos, ubicación y campos en `src/cms/registry.tsx`.</p>
           <p>4. Crea el componente visual en `src/components/sections` y conéctalo en el renderizador del registro.</p>
-          <p>5. El panel lo detectará automáticamente en la lista y el inicio lo respetará por `enabled` y `order`.</p>
-          <p>6. Con `output: "export"`, el panel guarda en localStorage y el despliegue en GitHub/producción se mantiene estático.</p>
+          <p>5. El panel lo detecta automáticamente en la lista y el sitio lo respeta por `enabled` y `sectionSequence`.</p>
+          <p>6. En local, el guardado intenta persistir en archivo JSON y también guarda respaldo en localStorage.</p>
+          <p>7. En deploy estático, el dashboard opera con fallback local por navegador.</p>
         </div>
       </section>
     </AdminShell>

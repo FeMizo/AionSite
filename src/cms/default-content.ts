@@ -236,19 +236,29 @@ export const defaultCmsContent: CmsContent = {
       order: 9,
       data: [
         {
-          question: "¿Cuánto tiempo toma un proyecto?",
+          question: "¿En cuánto tiempo pueden entregar mi sitio web?",
           answer:
-            "Depende de la complejidad, pero una página de conversión suele tomar 2-3 días y un sitio web profesional de 1 a 3 semanas.",
+            "Depende del alcance. Una página de conversión puede estar lista en 3 a 5 días hábiles, mientras que un sitio corporativo completo suele tomar de 2 a 4 semanas.",
         },
         {
-          question: "¿Incluyen hosting y dominio?",
+          question: "¿Cómo manejan pagos y anticipo?",
           answer:
-            "Sí. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes.",
+            "Trabajamos con anticipo para iniciar y pagos por etapas según avance. Así tienes visibilidad del progreso y control del presupuesto durante todo el proyecto.",
         },
         {
-          question: "¿El sitio será autogestionable?",
+          question: "¿Ustedes pueden gestionar dominio y hosting?",
           answer:
-            "Sí. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imágenes fácilmente.",
+            "Sí. Podemos encargarnos de la configuración completa de dominio, hosting y correo profesional, o trabajar con proveedores que tú ya utilices.",
+        },
+        {
+          question: "¿Podré editar textos e imágenes después de publicar?",
+          answer:
+            "Sí. Entregamos una estructura editable para que tu equipo pueda actualizar contenido sin depender de desarrollo para cambios básicos.",
+        },
+        {
+          question: "¿Incluyen soporte, mantenimiento y SEO después del lanzamiento?",
+          answer:
+            "Sí. Contamos con planes de mantenimiento mensual que incluyen soporte técnico, mejoras continuas, optimización de rendimiento y acompañamiento SEO.",
         },
       ],
     },

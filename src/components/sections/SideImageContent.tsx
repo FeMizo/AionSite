@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, MessageCircleMore } from "lucide-react";
 import type { SideImageContentSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 
@@ -12,16 +12,17 @@ export function SideImageContent({
   data: SideImageContentSectionData;
 }) {
   const openExternally = isExternalLink(data.buttonLink);
+  const isWhatsAppLink = /wa\.me|whatsapp/i.test(data.buttonLink);
   const imageOrderClass = data.reverse ? "lg:order-2" : "lg:order-1";
   const contentOrderClass = data.reverse ? "lg:order-1" : "lg:order-2";
 
   return (
     <section className="bg-slate-950 py-24">
       <Container>
-        <div className="rounded-[2.5rem] border border-white/8 bg-slate-900/60 p-6 backdrop-blur md:p-10 lg:p-12">
+        <div className="rounded-[2.5rem] border border-white/10 bg-slate-900/60 p-6 shadow-[0_28px_56px_-36px_rgba(2,6,23,0.95)] backdrop-blur md:p-10 lg:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div
-              className={`overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 ${imageOrderClass}`}
+              className={`overflow-hidden rounded-3xl border border-white/12 bg-slate-950/80 shadow-[0_22px_40px_-30px_rgba(2,6,23,0.92)] ${imageOrderClass}`}
             >
               {data.image ? (
                 <img
@@ -49,10 +50,14 @@ export function SideImageContent({
                   href={data.buttonLink}
                   target={openExternally ? "_blank" : undefined}
                   rel={openExternally ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/45"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_30px_-16px_rgba(37,99,235,0.76)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-[0_22px_36px_-18px_rgba(59,130,246,0.72)]"
                 >
                   {data.buttonText}
-                  {openExternally ? <ExternalLink size={14} /> : null}
+                  {isWhatsAppLink ? (
+                    <MessageCircleMore size={14} />
+                  ) : openExternally ? (
+                    <ExternalLink size={14} />
+                  ) : null}
                 </a>
               ) : null}
             </div>

@@ -12,11 +12,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", ...props }, ref) => {
     const variants = {
       primary:
-        "bg-blue-600 text-white shadow-lg shadow-blue-600/20 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/45",
+        "border border-blue-400/35 bg-blue-600 text-white shadow-[0_14px_30px_-16px_rgba(37,99,235,0.78)] hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-[0_22px_38px_-20px_rgba(59,130,246,0.76)]",
       secondary:
-        "bg-violet-600 text-white shadow-lg shadow-violet-600/20 hover:-translate-y-0.5 hover:bg-violet-500 hover:shadow-violet-500/45",
+        "border border-violet-400/35 bg-violet-600 text-white shadow-[0_14px_30px_-16px_rgba(124,58,237,0.72)] hover:-translate-y-0.5 hover:bg-violet-500 hover:shadow-[0_22px_38px_-20px_rgba(139,92,246,0.72)]",
       outline:
-        "border border-white/15 bg-transparent text-white hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10",
+        "border border-white/15 bg-slate-900/30 text-white shadow-[0_14px_24px_-18px_rgba(15,23,42,0.9)] hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10 hover:shadow-[0_20px_30px_-18px_rgba(37,99,235,0.35)]",
       ghost:
         "bg-transparent text-white hover:-translate-y-0.5 hover:bg-white/8",
     };

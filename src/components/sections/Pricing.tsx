@@ -1,6 +1,6 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, MessageCircleMore } from "lucide-react";
 import type { HeaderSectionData, PricingSectionData } from "@/src/cms/types";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
@@ -38,14 +38,14 @@ export function Pricing({
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+              className={`relative flex flex-col rounded-3xl border p-8 shadow-[0_26px_52px_-36px_rgba(2,6,23,0.95)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_58px_-34px_rgba(30,64,175,0.42)] ${
                 plan.recommended
-                  ? "border-blue-600 bg-slate-900 shadow-2xl shadow-blue-600/10 hover:shadow-blue-500/25"
-                  : "border-white/5 bg-slate-900/50 hover:border-white/15 hover:shadow-slate-950/40"
+                  ? "border-blue-500/60 bg-slate-900 shadow-[0_26px_54px_-34px_rgba(37,99,235,0.44)] hover:border-blue-400/70 hover:shadow-[0_34px_60px_-32px_rgba(59,130,246,0.52)]"
+                  : "border-white/10 bg-slate-900/50 hover:border-white/20"
               }`}
             >
               {plan.recommended ? (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full border border-blue-300/30 bg-blue-600 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white shadow-[0_16px_28px_-18px_rgba(59,130,246,0.85)]">
                   Recomendado
                 </div>
               ) : null}
@@ -66,9 +66,10 @@ export function Pricing({
 
               <Button
                 variant={plan.recommended ? "primary" : "outline"}
-                className="w-full"
+                className="w-full gap-2"
                 onClick={() => window.open(headerData.whatsappLink, "_blank")}
               >
+                <MessageCircleMore size={16} />
                 Consultar
               </Button>
             </div>

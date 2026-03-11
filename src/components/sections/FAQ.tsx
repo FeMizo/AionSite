@@ -29,7 +29,11 @@ export function FAQ({ data }: { data: FAQSectionData }) {
             return (
               <div
                 key={faq.question}
-                className="rounded-2xl border border-white/5 bg-slate-900/50 p-6"
+                className={`rounded-2xl border bg-slate-900/55 p-6 shadow-[0_22px_44px_-34px_rgba(2,6,23,0.95)] transition-all duration-300 ${
+                  isOpen
+                    ? "border-blue-400/35 shadow-[0_26px_48px_-30px_rgba(37,99,235,0.42)]"
+                    : "border-white/10 hover:border-white/20"
+                }`}
                 itemScope
                 itemProp="mainEntity"
                 itemType="https://schema.org/Question"
@@ -45,7 +49,7 @@ export function FAQ({ data }: { data: FAQSectionData }) {
                     <span>{faq.question}</span>
                     <span
                       aria-hidden="true"
-                      className={`text-blue-400 transition-transform duration-200 ${
+                      className={`rounded-full border border-blue-300/30 bg-blue-500/10 px-2 py-0.5 text-blue-300 transition-transform duration-200 ${
                         isOpen ? "rotate-45" : ""
                       }`}
                     >

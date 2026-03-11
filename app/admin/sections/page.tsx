@@ -7,7 +7,7 @@ export default function AdminSectionsPage() {
     <AdminShell
       pathname="/admin/sections"
       title="Secciones"
-      description="Gestiona qué secciones existen, cuáles se muestran y en qué orden salen. Los cambios se guardan localmente en este navegador."
+      description="Gestiona qué secciones existen, cuáles se muestran y en qué orden salen. En local, los cambios se persisten en archivo y navegador."
     >
       <SectionsDashboard initialContent={initialCmsContent} />
     </AdminShell>

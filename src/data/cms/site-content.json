@@ -113,6 +113,19 @@
         }
       ]
     },
+    "sideImageContent": {
+      "id": "sideImageContent",
+      "enabled": true,
+      "order": 3,
+      "data": {
+        "title": "Lleva tu presencia digital a un nuevo nivel",
+        "description": "Combinamos estrategia, diseño y desarrollo para que tu sitio no solo se vea bien, sino que también convierta visitas en oportunidades reales para tu negocio.",
+        "buttonText": "Solicitar propuesta",
+        "buttonLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+        "image": "/portfolio/lobbypm.png",
+        "reverse": false
+      }
+    },
     "stats": {
       "id": "stats",
       "enabled": true,
@@ -273,16 +286,24 @@
       "order": 9,
       "data": [
         {
-          "question": "¿Cuánto tiempo toma un proyecto?",
-          "answer": "Depende de la complejidad, pero una página de conversión suele tomar 2-3 días y un sitio web profesional de 1 a 3 semanas."
+          "question": "¿En cuánto tiempo pueden entregar mi sitio web?",
+          "answer": "Depende del alcance. Una página de conversión puede estar lista en 3 a 5 días hábiles, mientras que un sitio corporativo completo suele tomar de 2 a 4 semanas."
         },
         {
-          "question": "¿Incluyen hosting y dominio?",
-          "answer": "Sí. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes."
+          "question": "¿Cómo manejan pagos y anticipo?",
+          "answer": "Trabajamos con anticipo para iniciar y pagos por etapas según avance. Así tienes visibilidad del progreso y control del presupuesto durante todo el proyecto."
         },
         {
-          "question": "¿El sitio será autogestionable?",
-          "answer": "Sí. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imágenes fácilmente."
+          "question": "¿Ustedes pueden gestionar dominio y hosting?",
+          "answer": "Sí. Podemos encargarnos de la configuración completa de dominio, hosting y correo profesional, o trabajar con proveedores que tú ya utilices."
+        },
+        {
+          "question": "¿Podré editar textos e imágenes después de publicar?",
+          "answer": "Sí. Entregamos una estructura editable para que tu equipo pueda actualizar contenido sin depender de desarrollo para cambios básicos."
+        },
+        {
+          "question": "¿Incluyen soporte, mantenimiento y SEO después del lanzamiento?",
+          "answer": "Sí. Contamos con planes de mantenimiento mensual que incluyen soporte técnico, mejoras continuas, optimización de rendimiento y acompañamiento SEO."
         }
       ]
     },
@@ -343,26 +364,12 @@
         "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
         "tooltip": "¿En qué podemos ayudarte?"
       }
-    },
-    "sideImageContent": {
-      "id": "sideImageContent",
-      "enabled": true,
-      "order": 3,
-      "data": {
-        "title": "Lleva tu presencia digital a un nuevo nivel",
-        "description": "Combinamos estrategia, dise\u00f1o y desarrollo para que tu sitio no solo se vea bien, sino que tambi\u00e9n convierta visitas en oportunidades reales para tu negocio.",
-        "buttonText": "Solicitar propuesta",
-        "buttonLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
-        "image": "/portfolio/lg.png",
-        "reverse": false
-      }
     }
   },
   "sectionSequence": [
     "header",
     "hero",
     "services",
-    "sideImageContent",
     "stats",
     "portfolio",
     "process",
@@ -370,6 +377,7 @@
     "testimonials",
     "faq",
     "finalCTA",
+    "sideImageContent",
     "footer",
     "whatsappFloatingButton"
   ]

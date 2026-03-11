@@ -26,7 +26,7 @@ export function Services({ data }: { data: ServicesSectionData }) {
             const Icon = iconMap[service.icon] ?? Globe;
             return (
               <Card key={service.title} className="group">
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 text-blue-500 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-blue-400/25 bg-blue-600/10 text-blue-300 shadow-[0_10px_24px_-18px_rgba(59,130,246,0.85)] transition-colors group-hover:bg-blue-600 group-hover:text-white">
                   <Icon size={24} />
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-white">{service.title}</h3>

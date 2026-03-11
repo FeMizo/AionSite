@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import {
+  loadCmsContentFromFile,
   loadCmsContentFromBrowser,
+  saveCmsContentToBrowser,
 } from "@/src/cms/browser-storage";
 import {
   getRenderableSectionIds,
@@ -19,7 +21,22 @@ export function PublicSite({
   const [content, setContent] = useState(initialContent);
 
   useEffect(() => {
+    let isCancelled = false;
     setContent(loadCmsContentFromBrowser());
+
+    (async () => {
+      const fileContent = await loadCmsContentFromFile();
+      if (!fileContent || isCancelled) {
+        return;
+      }
+
+      saveCmsContentToBrowser(fileContent);
+      setContent(fileContent);
+    })();
+
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   const headerSections = getRenderableSectionIds(content, "header");

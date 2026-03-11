@@ -13,7 +13,9 @@ import {
 } from "lucide-react";
 import {
   loadCmsContentFromBrowser,
+  loadCmsContentFromFile,
   saveCmsContentToBrowser,
+  saveCmsContent,
 } from "@/src/cms/browser-storage";
 import { sectionRegistry } from "@/src/cms/registry";
 import type { CmsContent, SectionId } from "@/src/cms/types";
@@ -63,9 +65,26 @@ export function SectionsDashboard({
   }, [initialContent]);
 
   useEffect(() => {
+    let isCancelled = false;
     const browserContent = cloneContent(loadCmsContentFromBrowser());
     setContent(browserContent);
     setSavedSnapshot(getContentSnapshot(browserContent));
+
+    (async () => {
+      const fileContent = await loadCmsContentFromFile();
+      if (!fileContent || isCancelled) {
+        return;
+      }
+
+      const normalized = cloneContent(fileContent);
+      saveCmsContentToBrowser(normalized);
+      setContent(normalized);
+      setSavedSnapshot(getContentSnapshot(normalized));
+    })();
+
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   const orderedSections = useMemo(() => content.sectionSequence, [content]);
@@ -227,10 +246,14 @@ export function SectionsDashboard({
     setStatusMessage(null);
     startTransition(async () => {
       try {
-        const nextContent = saveCmsContentToBrowser(content);
-        setContent(nextContent);
-        setSavedSnapshot(getContentSnapshot(nextContent));
-        setStatusMessage("Cambios guardados en este navegador.");
+        const result = await saveCmsContent(content);
+        setContent(result.content);
+        setSavedSnapshot(getContentSnapshot(result.content));
+        setStatusMessage(
+          result.persistedToFile
+            ? "Cambios guardados en archivo local y navegador."
+            : "Cambios guardados en este navegador.",
+        );
       } catch {
         setStatusMessage("No se pudo guardar el contenido CMS.");
       }
@@ -239,8 +262,8 @@ export function SectionsDashboard({
 
   return (
     <div className="grid gap-6 xl:grid-cols-[490px_minmax(0,1fr)] xl:items-start">
-      <section className="rounded-4xl border border-white/8 bg-slate-950/55 p-5 backdrop-blur">
-        <div className="sticky top-4 z-20 -mx-2 rounded-2xl border border-white/10 bg-slate-950/90 px-3 py-3 shadow-xl shadow-slate-950/40 backdrop-blur">
+      <section className="rounded-4xl border border-white/8 bg-slate-950/55 p-5 shadow-[0_30px_60px_-42px_rgba(2,6,23,0.95)] backdrop-blur">
+        <div className="sticky top-4 z-20 -mx-2 rounded-2xl border border-white/10 bg-slate-950/90 px-3 py-3 shadow-[0_22px_42px_-28px_rgba(2,6,23,0.96)] backdrop-blur">
           <div className="flex items-center justify-between gap-4">
             <div>
               <h3 className="text-lg font-semibold text-white">
@@ -267,7 +290,7 @@ export function SectionsDashboard({
         </div>
 
         <div className="mt-5 flex items-center justify-between gap-4">
-          <div className="min-w-25">
+          <div className="min-w-0">
             <p className="text-xs uppercase tracking-[0.22em] text-slate-500">
               Orden y visibilidad
             </p>
@@ -327,8 +350,8 @@ export function SectionsDashboard({
                 }}
                 className={`h-full w-full rounded-[1.75rem] border p-4 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
                   isSelected
-                    ? "border-blue-500/40 bg-blue-500/10 shadow-lg shadow-blue-500/10"
-                    : "border-white/8 bg-white/3 hover:border-white/15 hover:bg-white/5"
+                    ? "border-blue-500/40 bg-blue-500/10 shadow-[0_20px_34px_-24px_rgba(37,99,235,0.58)]"
+                    : "border-white/8 bg-white/3 hover:border-white/15 hover:bg-white/5 hover:shadow-[0_20px_34px_-24px_rgba(15,23,42,0.9)]"
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -395,7 +418,7 @@ export function SectionsDashboard({
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur xl:sticky xl:top-4 xl:flex xl:max-h-[calc(100vh-2rem)] xl:min-h-0 xl:flex-col xl:self-start xl:overflow-hidden">
+      <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 shadow-[0_30px_60px_-42px_rgba(2,6,23,0.95)] backdrop-blur xl:sticky xl:top-4 xl:flex xl:max-h-[calc(100vh-2rem)] xl:min-h-0 xl:flex-col xl:self-start xl:overflow-hidden">
         <div className="flex flex-col gap-4 border-b border-white/8 pb-6 md:flex-row md:items-end md:justify-between">
           <div className="md:w-1/2">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-300/80">

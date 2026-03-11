@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu, MessageCircleMore, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { CmsBase, HeaderSectionData } from "@/src/cms/types";
 import { Button } from "@/src/components/ui/Button";
@@ -56,7 +56,12 @@ export function Header({
               {item.name}
             </a>
           ))}
-          <Button size="sm" onClick={() => window.open(data.whatsappLink, "_blank")}>
+          <Button
+            size="sm"
+            className="gap-2"
+            onClick={() => window.open(data.whatsappLink, "_blank")}
+          >
+            <MessageCircleMore size={16} />
             Cotizar por WhatsApp
           </Button>
         </nav>
@@ -82,7 +87,11 @@ export function Header({
                 {item.name}
               </a>
             ))}
-            <Button className="mt-4" onClick={() => window.open(data.whatsappLink, "_blank")}>
+            <Button
+              className="mt-4 gap-2"
+              onClick={() => window.open(data.whatsappLink, "_blank")}
+            >
+              <MessageCircleMore size={16} />
               Cotizar por WhatsApp
             </Button>
           </nav>
