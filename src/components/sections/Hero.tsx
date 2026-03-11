@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import type { HeaderSectionData, HeroSectionData } from "@/src/cms/types";
 import { Button } from "@/src/components/ui/Button";
@@ -18,7 +18,7 @@ export function Hero({
 
       <Container className="text-center">
         <div className="animate-fade-in mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-blue-400">
-          ✨ Diseño web de alto impacto
+          {data.badgeText}
         </div>
 
         <h1 className="mx-auto max-w-4xl text-5xl leading-[1.1] font-bold tracking-tight text-white sm:text-7xl">
@@ -66,3 +66,4 @@ export function Hero({
     </section>
   );
 }
+

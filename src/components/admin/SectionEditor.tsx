@@ -200,7 +200,7 @@ export function SectionEditor({
                       onClick={() =>
                         onChange(moveArrayItemAtPath(data, path, index, index - 1))
                       }
-                      className="rounded-full border border-white/10 p-2 text-slate-300 transition hover:border-white/20 hover:bg-white/5 disabled:opacity-30"
+                      className="rounded-full border border-white/10 p-2 text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white disabled:opacity-30"
                     >
                       <ArrowUp size={14} />
                     </button>
@@ -210,14 +210,14 @@ export function SectionEditor({
                       onClick={() =>
                         onChange(moveArrayItemAtPath(data, path, index, index + 1))
                       }
-                      className="rounded-full border border-white/10 p-2 text-slate-300 transition hover:border-white/20 hover:bg-white/5 disabled:opacity-30"
+                      className="rounded-full border border-white/10 p-2 text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white disabled:opacity-30"
                     >
                       <ArrowDown size={14} />
                     </button>
                     <button
                       type="button"
                       onClick={() => onChange(removeAtPath(data, [...path, String(index)]))}
-                      className="rounded-full border border-white/8 p-2 text-slate-400 transition hover:border-rose-400/40 hover:text-rose-200"
+                      className="rounded-full border border-white/8 p-2 text-slate-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-rose-400/45 hover:bg-rose-500/10 hover:text-rose-200"
                     >
                       <Trash2 size={16} />
                     </button>
@@ -263,7 +263,7 @@ export function SectionEditor({
 
             {items.length === 0 ? (
               <p className="rounded-2xl border border-dashed border-white/10 px-4 py-5 text-sm text-slate-500">
-                No hay elementos configurados todavia.
+                No hay elementos configurados todavía.
               </p>
             ) : null}
           </div>
@@ -310,7 +310,7 @@ export function SectionEditor({
               {imageSrc ? (
                 <img
                   src={imageSrc}
-                  alt={`Preview ${field.label}`}
+                  alt={`Vista previa ${field.label}`}
                   className="h-44 w-full object-cover"
                 />
               ) : (

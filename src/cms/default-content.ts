@@ -4,7 +4,7 @@ import type { CmsContent } from "@/src/cms/types";
 const base = {
   name: "AionSite",
   description:
-    "Agencia boutique de diseno y desarrollo web premium enfocada en conversion, velocidad y SEO tecnico.",
+    "Agencia boutique de diseño y desarrollo web premium enfocada en conversión, velocidad y SEO técnico.",
   email: "contacto@aionsite.com.mx",
   whatsappLink: getWhatsAppLink(),
   navigation: [
@@ -12,7 +12,7 @@ const base = {
     { name: "Portafolio", href: "#portafolio" },
     { name: "Proceso", href: "#proceso" },
     { name: "Paquetes", href: "#paquetes" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Preguntas frecuentes", href: "#faq" },
     { name: "Contacto", href: "#contacto" },
   ],
   logoLight: "/logo-aionsite.png",
@@ -36,12 +36,13 @@ export const defaultCmsContent: CmsContent = {
       enabled: true,
       order: 1,
       data: {
+        badgeText: "Diseño web de alto impacto",
         title: "Sitios web modernos que generan clientes.",
         subtitle:
-          "Disenamos y desarrollamos experiencias digitales de alto impacto que posicionan tu marca y multiplican tus ventas.",
+          "Diseñamos y desarrollamos experiencias digitales de alto impacto que posicionan tu marca y multiplican tus ventas.",
         primaryCTA: "Cotizar por WhatsApp",
         secondaryCTA: "Ver portafolio",
-        trustBar: ["Velocidad", "SEO tecnico", "Diseno premium", "Soporte"],
+        trustBar: ["Velocidad", "SEO técnico", "Diseño premium", "Soporte"],
       },
     },
     services: {
@@ -52,19 +53,19 @@ export const defaultCmsContent: CmsContent = {
         {
           title: "Sitio Web Profesional",
           description:
-            "Presencia digital solida con diseno a medida, optimizado para todos los dispositivos.",
+            "Presencia digital sólida con diseño a medida, optimizado para todos los dispositivos.",
           icon: "Globe",
         },
         {
-          title: "Landing Page de Conversion",
+          title: "Página de conversión",
           description:
-            "Paginas enfocadas en un solo objetivo: convertir visitantes en clientes potenciales.",
+            "Páginas enfocadas en un solo objetivo: convertir visitantes en clientes potenciales.",
           icon: "Target",
         },
         {
-          title: "Tienda Online",
+          title: "Tienda en línea",
           description:
-            "E-commerce escalable con pasarelas de pago seguras y gestion de inventario.",
+            "Comercio electrónico escalable con pasarelas de pago seguras y gestión de inventario.",
           icon: "ShoppingBag",
         },
         {
@@ -75,24 +76,38 @@ export const defaultCmsContent: CmsContent = {
         },
       ],
     },
+    sideImageContent: {
+      id: "sideImageContent",
+      enabled: true,
+      order: 3,
+      data: {
+        title: "Lleva tu presencia digital a un nuevo nivel",
+        description:
+          "Combinamos estrategia, diseño y desarrollo para que tu sitio no solo se vea bien, sino que también convierta visitas en oportunidades reales para tu negocio.",
+        buttonText: "Solicitar propuesta",
+        buttonLink: getWhatsAppLink(),
+        image: "/portfolio/lg.png",
+        reverse: false,
+      },
+    },
     stats: {
       id: "stats",
       enabled: true,
-      order: 3,
+      order: 4,
       data: [
-        { value: "99%", label: "Satisfaccion" },
+        { value: "99%", label: "Satisfacción" },
         { value: "+30", label: "Proyectos" },
-        { value: "2x", label: "Conversion" },
+        { value: "2x", label: "Conversión" },
       ],
     },
     portfolio: {
       id: "portfolio",
       enabled: true,
-      order: 4,
+      order: 5,
       data: [
         {
           title: "Casa Brava",
-          category: "Ecommerce",
+          category: "Comercio electrónico",
           image: "/portfolio/brisa-carmen.png",
           url: "https://restaurante.aionsite.com.mx/",
         },
@@ -103,8 +118,8 @@ export const defaultCmsContent: CmsContent = {
           url: "https://sitiop.mx",
         },
         {
-          title: "Lumina Landing",
-          category: "Landing",
+          title: "Lumina Conversión",
+          category: "Conversión",
           image: "/portfolio/sitiop-mx.svg",
           url: "https://sitiop.mx",
         },
@@ -113,11 +128,11 @@ export const defaultCmsContent: CmsContent = {
     process: {
       id: "process",
       enabled: true,
-      order: 5,
+      order: 6,
       data: [
         {
           step: "01",
-          title: "Diagnostico",
+          title: "Diagnóstico",
           description: "Entendemos tus objetivos y analizamos tu competencia.",
         },
         {
@@ -127,13 +142,13 @@ export const defaultCmsContent: CmsContent = {
         },
         {
           step: "03",
-          title: "Diseno",
+          title: "Diseño",
           description: "Creamos una interfaz premium alineada a tu marca.",
         },
         {
           step: "04",
           title: "Desarrollo",
-          description: "Construimos tu sitio con las mejores tecnologias.",
+          description: "Construimos tu sitio con las mejores tecnologías.",
         },
         {
           step: "05",
@@ -145,16 +160,16 @@ export const defaultCmsContent: CmsContent = {
     pricing: {
       id: "pricing",
       enabled: true,
-      order: 6,
+      order: 7,
       data: [
         {
           name: "Esencial",
           price: "Desde $5,000",
           features: [
-            "Home con diseno basico",
-            "Diseno responsive",
+            "Página de inicio con diseño básico",
+            "Diseño adaptable",
             "Formulario de contacto",
-            "SEO basico",
+            "SEO básico",
           ],
           recommended: false,
         },
@@ -163,7 +178,7 @@ export const defaultCmsContent: CmsContent = {
           price: "Desde $12,000",
           features: [
             "Todo lo del plan Esencial",
-            "Home con diseno premium",
+            "Página de inicio con diseño premium",
             "5 secciones personalizadas",
             "SEO avanzado",
             "Soporte 3 meses",
@@ -175,18 +190,18 @@ export const defaultCmsContent: CmsContent = {
           price: "$15,000/mes",
           features: [
             "Actualizaciones mensuales",
-            "Optimizacion de velocidad",
+            "Optimización de velocidad",
             "Soporte prioritario",
           ],
           recommended: false,
         },
         {
-          name: "Ecommerce",
+          name: "Comercio electrónico",
           price: "Desde $20,000",
           features: [
-            "Tienda Online",
-            "Integracion con pasarelas de pago",
-            "Configuracion de inventario",
+            "Tienda en línea",
+            "Integración con pasarelas de pago",
+            "Configuración de inventario",
             "Soporte 6 meses",
           ],
           recommended: false,
@@ -196,55 +211,55 @@ export const defaultCmsContent: CmsContent = {
     testimonials: {
       id: "testimonials",
       enabled: false,
-      order: 7,
+      order: 8,
       data: [
         {
           name: "Carlos R.",
           company: "TechFlow",
-          text: "AionSite transformo nuestra presencia online. Las ventas subieron un 40% en dos meses.",
+          text: "AionSite transformó nuestra presencia en línea. Las ventas subieron un 40% en dos meses.",
         },
         {
           name: "Ana M.",
           company: "Lumina",
-          text: "El diseno es impecable y la velocidad de carga es increible. Muy recomendados.",
+          text: "El diseño es impecable y la velocidad de carga es increíble. Muy recomendados.",
         },
         {
           name: "Jorge L.",
           company: "Vortex",
-          text: "Un equipo profesional que entiende el negocio, no solo el codigo.",
+          text: "Un equipo profesional que entiende el negocio, no solo el código.",
         },
       ],
     },
     faq: {
       id: "faq",
       enabled: true,
-      order: 8,
+      order: 9,
       data: [
         {
-          question: "Cuanto tiempo toma un proyecto?",
+          question: "¿Cuánto tiempo toma un proyecto?",
           answer:
-            "Depende de la complejidad, pero una landing suele tomar 2-3 dias y un sitio web pro 1-3 semanas.",
+            "Depende de la complejidad, pero una página de conversión suele tomar 2-3 días y un sitio web profesional de 1 a 3 semanas.",
         },
         {
-          question: "Incluyen hosting y dominio?",
+          question: "¿Incluyen hosting y dominio?",
           answer:
-            "Si. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes.",
+            "Sí. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes.",
         },
         {
-          question: "El sitio sera autogestionable?",
+          question: "¿El sitio será autogestionable?",
           answer:
-            "Si. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imagenes facilmente.",
+            "Sí. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imágenes fácilmente.",
         },
       ],
     },
     finalCTA: {
       id: "finalCTA",
       enabled: true,
-      order: 9,
+      order: 10,
       data: {
-        title: "Listo para llevar tu negocio al siguiente nivel?",
-        subtitle: "Hablemos de tu proyecto y creemos algo increible juntos.",
-        buttonText: "Iniciar conversacion por WhatsApp",
+        title: "¿Listo para llevar tu negocio al siguiente nivel?",
+        subtitle: "Hablemos de tu proyecto y creemos algo increíble juntos.",
+        buttonText: "Iniciar conversación por WhatsApp",
         responseText: "Respuesta en menos de 24 horas",
         whatsappLink: base.whatsappLink,
       },
@@ -252,7 +267,7 @@ export const defaultCmsContent: CmsContent = {
     footer: {
       id: "footer",
       enabled: true,
-      order: 10,
+      order: 11,
       data: {
         name: base.name,
         description: base.description,
@@ -264,11 +279,28 @@ export const defaultCmsContent: CmsContent = {
     whatsappFloatingButton: {
       id: "whatsappFloatingButton",
       enabled: true,
-      order: 11,
+      order: 12,
       data: {
         whatsappLink: base.whatsappLink,
-        tooltip: "En que podemos ayudarte?",
+        tooltip: "¿En qué podemos ayudarte?",
       },
     },
   },
+  sectionSequence: [
+    "header",
+    "hero",
+    "services",
+    "sideImageContent",
+    "stats",
+    "portfolio",
+    "process",
+    "pricing",
+    "testimonials",
+    "faq",
+    "finalCTA",
+    "footer",
+    "whatsappFloatingButton",
+  ],
 };
+
+

@@ -1,4 +1,4 @@
-import type { CmsBase, FooterSectionData } from "@/src/cms/types";
+﻿import type { CmsBase, FooterSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 
 export function Footer({
@@ -48,9 +48,9 @@ export function Footer({
                   href={data.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500 transition-colors hover:text-blue-300 hover:underline"
                 >
-                  WhatsApp Directo
+                  WhatsApp directo
                 </a>
               </li>
             </ul>
@@ -59,9 +59,10 @@ export function Footer({
 
         <div className="mt-12 border-t border-white/5 pt-8 text-center text-sm text-slate-500">
           <p>© {new Date().getFullYear()} {data.name}. Todos los derechos reservados.</p>
-          <p className="mt-2">Disenado con pasion por AionSite.</p>
+          <p className="mt-2">Diseñado con pasión por AionSite.</p>
         </div>
       </Container>
     </footer>
   );
 }
+

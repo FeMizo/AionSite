@@ -1,5 +1,5 @@
 export const whatsappConfig = {
-  phoneE164: "5219381238531", // Reemplazar con el número real de México
+  phoneE164: "5219381238531",
   defaultMessage:
     "Hola AionSite, me gustaría recibir una cotización para un proyecto web.",
 };

@@ -7,14 +7,13 @@ import {
   ArrowUp,
   GripVertical,
   LoaderCircle,
+  Plus,
   Save,
+  X,
 } from "lucide-react";
 import {
   loadCmsContentFromBrowser,
-  loadCmsContentFromServer,
-  resetCmsContentInBrowser,
   saveCmsContentToBrowser,
-  saveCmsContentToServer,
 } from "@/src/cms/browser-storage";
 import { sectionRegistry } from "@/src/cms/registry";
 import type { CmsContent, SectionId } from "@/src/cms/types";
@@ -32,7 +31,14 @@ function getContentSnapshot(content: CmsContent) {
 }
 
 const UNSAVED_CHANGES_MESSAGE =
-  "Hay cambios sin guardar. Si sales, se perderan.";
+  "Hay cambios sin guardar. Si sales, se perderán.";
+
+const placementLabels = {
+  header: "encabezado",
+  main: "principal",
+  footer: "pie de página",
+  floating: "flotante",
+} as const;
 
 export function SectionsDashboard({
   initialContent,
@@ -46,6 +52,7 @@ export function SectionsDashboard({
   const [savedSnapshot, setSavedSnapshot] = useState<string>(() =>
     getContentSnapshot(initialContent),
   );
+  const [newSectionType, setNewSectionType] = useState<SectionId>("hero");
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -56,47 +63,31 @@ export function SectionsDashboard({
   }, [initialContent]);
 
   useEffect(() => {
-    let isCancelled = false;
-
-    const syncFromServer = async () => {
-      const serverContent = await loadCmsContentFromServer();
-      if (isCancelled) {
-        return;
-      }
-
-      if (serverContent) {
-        const normalizedServerContent = cloneContent(serverContent);
-        setContent(normalizedServerContent);
-        setSavedSnapshot(getContentSnapshot(normalizedServerContent));
-        saveCmsContentToBrowser(normalizedServerContent);
-        return;
-      }
-
-      const browserContent = cloneContent(loadCmsContentFromBrowser());
-      setContent(browserContent);
-      setSavedSnapshot(getContentSnapshot(browserContent));
-    };
-
-    void syncFromServer();
-
-    return () => {
-      isCancelled = true;
-    };
+    const browserContent = cloneContent(loadCmsContentFromBrowser());
+    setContent(browserContent);
+    setSavedSnapshot(getContentSnapshot(browserContent));
   }, []);
 
-  const orderedSections = useMemo(
-    () =>
-      (Object.keys(content.sections) as SectionId[]).sort(
-        (left, right) =>
-          content.sections[left].order - content.sections[right].order,
-      ),
-    [content],
-  );
+  const orderedSections = useMemo(() => content.sectionSequence, [content]);
 
   const hasUnsavedChanges = useMemo(
     () => getContentSnapshot(content) !== savedSnapshot,
     [content, savedSnapshot],
   );
+
+  useEffect(() => {
+    if (!statusMessage) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setStatusMessage(null);
+    }, 5000);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [statusMessage]);
 
   useEffect(() => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
@@ -167,7 +158,7 @@ export function SectionsDashboard({
   }, [hasUnsavedChanges]);
 
   const selectedSection = content.sections[selectedSectionId];
-  const selectedSectionIndex = orderedSections.indexOf(selectedSectionId);
+  const selectedSectionPosition = orderedSections.indexOf(selectedSectionId);
 
   const updateSection = (
     id: SectionId,
@@ -191,71 +182,55 @@ export function SectionsDashboard({
     );
   };
 
-  const moveSectionToIndex = (id: SectionId, targetIndex: number) => {
+  const moveSectionToIndex = (currentIndex: number, targetIndex: number) => {
     setContent((current) => {
-      const currentOrder = (Object.keys(current.sections) as SectionId[]).sort(
-        (left, right) =>
-          current.sections[left].order - current.sections[right].order,
-      );
-      const currentIndex = currentOrder.indexOf(id);
       const boundedTarget = Math.max(
         0,
-        Math.min(targetIndex, currentOrder.length - 1),
+        Math.min(targetIndex, current.sectionSequence.length - 1),
       );
 
-      if (currentIndex < 0 || currentIndex === boundedTarget) {
+      if (
+        currentIndex < 0 ||
+        currentIndex >= current.sectionSequence.length ||
+        currentIndex === boundedTarget
+      ) {
         return current;
       }
 
-      const nextOrder = [...currentOrder];
+      const nextOrder = [...current.sectionSequence];
       const [movedSection] = nextOrder.splice(currentIndex, 1);
       nextOrder.splice(boundedTarget, 0, movedSection);
 
-      const nextSections = { ...current.sections } as CmsContent["sections"];
-      nextOrder.forEach((sectionId, order) => {
-        (nextSections as Record<SectionId, CmsContent["sections"][SectionId]>)[
-          sectionId
-        ] = {
-          ...(
-            nextSections as Record<SectionId, CmsContent["sections"][SectionId]>
-          )[sectionId],
-          order,
-        } as CmsContent["sections"][SectionId];
-      });
-
-      return { ...current, sections: nextSections };
+      return { ...current, sectionSequence: nextOrder };
     });
   };
 
-  const moveSection = (id: SectionId, direction: -1 | 1) => {
-    const currentIndex = orderedSections.indexOf(id);
+  const moveSection = (index: number, direction: -1 | 1) => {
+    const currentIndex = index;
     const targetIndex = currentIndex + direction;
     if (targetIndex < 0 || targetIndex >= orderedSections.length) {
       return;
     }
 
-    moveSectionToIndex(id, targetIndex);
+    moveSectionToIndex(currentIndex, targetIndex);
+  };
+
+  const addSection = () => {
+    setContent((current) => ({
+      ...current,
+      sectionSequence: [...current.sectionSequence, newSectionType],
+    }));
+    setStatusMessage("Se agregó una nueva sección a la lista.");
   };
 
   const saveChanges = () => {
     setStatusMessage(null);
     startTransition(async () => {
       try {
-        const serverContent = await saveCmsContentToServer(content);
-        const nextContent = saveCmsContentToBrowser(serverContent ?? content);
+        const nextContent = saveCmsContentToBrowser(content);
         setContent(nextContent);
         setSavedSnapshot(getContentSnapshot(nextContent));
-
-        if (serverContent) {
-          setStatusMessage(
-            "Cambios guardados de forma permanente y reflejados en el sitio publico.",
-          );
-          return;
-        }
-
-        setStatusMessage(
-          "No se alcanzo el servidor CMS. Se guardo solo en este navegador.",
-        );
+        setStatusMessage("Cambios guardados en este navegador.");
       } catch {
         setStatusMessage("No se pudo guardar el contenido CMS.");
       }
@@ -263,36 +238,79 @@ export function SectionsDashboard({
   };
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[420px_minmax(0,1fr)]">
-      <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-5 backdrop-blur">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <h3 className="text-lg font-semibold text-white">
-              Secciones registradas
-            </h3>
-            <p className="mt-1 text-sm text-slate-400">
-              El orden final y la visibilidad publica salen de esta lista.
+    <div className="grid gap-6 xl:grid-cols-[490px_minmax(0,1fr)] xl:items-start">
+      <section className="rounded-4xl border border-white/8 bg-slate-950/55 p-5 backdrop-blur">
+        <div className="sticky top-4 z-20 -mx-2 rounded-2xl border border-white/10 bg-slate-950/90 px-3 py-3 shadow-xl shadow-slate-950/40 backdrop-blur">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-semibold text-white">
+                Secciones registradas
+              </h3>
+              <p className="mt-1 text-sm text-slate-400">
+                El orden final y la visibilidad pública salen de esta lista.
+              </p>
+            </div>
+            <Button
+              size="sm"
+              onClick={saveChanges}
+              disabled={isPending}
+              className="gap-2"
+            >
+              {isPending ? (
+                <LoaderCircle className="animate-spin" size={16} />
+              ) : (
+                <Save size={16} />
+              )}
+              Guardar
+            </Button>
+          </div>
+        </div>
+
+        <div className="mt-5 flex items-center justify-between gap-4">
+          <div className="min-w-25">
+            <p className="text-xs uppercase tracking-[0.22em] text-slate-500">
+              Orden y visibilidad
             </p>
           </div>
-          <Button size="sm" onClick={saveChanges} disabled={isPending}>
-            {isPending ? (
-              <LoaderCircle className="animate-spin" size={16} />
-            ) : (
-              <Save size={16} />
-            )}
-          </Button>
+
+          <div className="flex items-center gap-2">
+            <select
+              value={newSectionType}
+              onChange={(event) =>
+                setNewSectionType(event.target.value as SectionId)
+              }
+              className="rounded-xl border border-white/12 bg-slate-950/80 px-3 py-2 text-xs text-slate-200 outline-none transition focus:border-blue-400/60"
+            >
+              {(Object.keys(sectionRegistry) as SectionId[])
+                .filter((id) => sectionRegistry[id].placement === "main")
+                .map((id) => (
+                  <option key={id} value={id}>
+                    {sectionRegistry[id].label}
+                  </option>
+                ))}
+            </select>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={addSection}
+              className="gap-2"
+            >
+              <Plus size={14} />
+              Agregar
+            </Button>
+          </div>
         </div>
 
         <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-1">
-          {orderedSections.map((id) => {
+          {orderedSections.map((id, index) => {
             const section = content.sections[id];
             const metadata = sectionRegistry[id];
             const isSelected = selectedSectionId === id;
-            const sectionIndex = orderedSections.indexOf(id);
+            const sectionIndex = index;
 
             return (
               <button
-                key={id}
+                key={`${id}-${index}`}
                 type="button"
                 onClick={() => setSelectedSectionId(id)}
                 className={`h-full w-full rounded-[1.75rem] border p-4 text-left transition ${
@@ -314,7 +332,8 @@ export function SectionsDashboard({
                         <StatusBadge enabled={section.enabled} />
                       </div>
                       <p className="mt-2 text-xs uppercase tracking-[0.24em] text-slate-500">
-                        {id} / {metadata.type} / {metadata.placement}
+                        Instancia {sectionIndex + 1} / {id} / {metadata.type} /{" "}
+                        {placementLabels[metadata.placement]}
                       </p>
                       <p className="mt-2 text-sm leading-6 text-slate-400">
                         {metadata.description}
@@ -338,9 +357,9 @@ export function SectionsDashboard({
                         disabled={sectionIndex === 0}
                         onClick={(event) => {
                           event.stopPropagation();
-                          moveSection(id, -1);
+                          moveSection(sectionIndex, -1);
                         }}
-                        className="rounded-full border border-white/10 p-2 text-slate-300 transition hover:border-white/20 hover:bg-white/5 disabled:opacity-30"
+                        className="rounded-full border border-white/10 p-2 text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white disabled:opacity-30"
                       >
                         <ArrowUp size={14} />
                       </button>
@@ -349,9 +368,9 @@ export function SectionsDashboard({
                         disabled={sectionIndex === orderedSections.length - 1}
                         onClick={(event) => {
                           event.stopPropagation();
-                          moveSection(id, 1);
+                          moveSection(sectionIndex, 1);
                         }}
-                        className="rounded-full border border-white/10 p-2 text-slate-300 transition hover:border-white/20 hover:bg-white/5 disabled:opacity-30"
+                        className="rounded-full border border-white/10 p-2 text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white disabled:opacity-30"
                       >
                         <ArrowDown size={14} />
                       </button>
@@ -362,45 +381,33 @@ export function SectionsDashboard({
             );
           })}
         </div>
-
-        <button
-          type="button"
-          onClick={() => {
-            resetCmsContentInBrowser();
-            setContent(cloneContent(initialContent));
-            setSavedSnapshot(getContentSnapshot(initialContent));
-            setStatusMessage("Se restauraron los valores base del proyecto.");
-          }}
-          className="mt-4 w-full rounded-2xl border border-white/10 px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
-        >
-          Restaurar base del proyecto
-        </button>
       </section>
 
-      <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur">
+      <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur xl:sticky xl:top-4 xl:flex xl:max-h-[calc(100vh-2rem)] xl:min-h-0 xl:flex-col xl:self-start xl:overflow-hidden">
         <div className="flex flex-col gap-4 border-b border-white/8 pb-6 md:flex-row md:items-end md:justify-between">
-          <div className="md:w-50">
+          <div className="md:w-1/2">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-300/80">
-              Editor de seccion
+              Editor de sección
             </p>
             <h3 className="mt-2 text-2xl font-semibold text-white">
               {sectionRegistry[selectedSectionId].label}
             </h3>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
               Ajusta contenido base, visibilidad y orden sin tocar el render
-              publico.
+              público.
             </p>
           </div>
 
-          <div className="flex items-center gap-3 md:w-50">
+          <div className="flex items-center justify-end gap-3 md:w-1/2">
             <StatusBadge enabled={selectedSection.enabled} />
             <span className="rounded-full border border-white/8 px-3 py-1 text-xs uppercase tracking-[0.22em] text-slate-400">
-              Orden {selectedSection.order + 1}
+              Posición{" "}
+              {selectedSectionPosition >= 0 ? selectedSectionPosition + 1 : "-"}
             </span>
           </div>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-6 xl:mt-0 xl:min-h-0 xl:overflow-y-auto xl:pt-6 xl:pr-2">
           <SectionEditor
             data={selectedSection.data}
             fields={sectionRegistry[selectedSectionId].fields}
@@ -417,9 +424,17 @@ export function SectionsDashboard({
       </section>
 
       {statusMessage ? (
-        <p className="fixed bottom-4 right-4 z-50 max-w-md rounded-2xl border border-blue-400/30 bg-blue-500/18 px-4 py-3 text-sm text-blue-100 shadow-xl shadow-blue-950/60 backdrop-blur">
-          {statusMessage}
-        </p>
+        <div className="fixed bottom-4 right-4 z-50 flex max-w-md items-start gap-3 rounded-2xl border border-blue-400/30 bg-blue-500/18 px-4 py-3 text-sm text-blue-100 shadow-xl shadow-blue-950/60 backdrop-blur">
+          <p className="flex-1">{statusMessage}</p>
+          <button
+            type="button"
+            onClick={() => setStatusMessage(null)}
+            className="rounded-full border border-white/20 p-1 text-blue-100 transition hover:bg-white/10"
+            aria-label="Cerrar mensaje"
+          >
+            <X size={14} />
+          </button>
+        </div>
       ) : null}
 
       {hasUnsavedChanges ? (

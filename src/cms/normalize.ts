@@ -43,8 +43,20 @@ export function normalizeCmsContent(content: unknown): CmsContent {
     } as CmsContent["sections"][SectionId];
   });
 
+  const fallbackSequence = (Object.keys(nextSections) as SectionId[]).sort(
+    (left, right) => nextSections[left].order - nextSections[right].order,
+  );
+
+  const sectionSequence = Array.isArray((merged as CmsContent).sectionSequence)
+    ? ((merged as CmsContent).sectionSequence.filter((id) =>
+        Object.prototype.hasOwnProperty.call(nextSections, id),
+      ) as SectionId[])
+    : fallbackSequence;
+
   return {
     base: deepMerge(defaultCmsContent.base, merged.base),
     sections: nextSections,
+    sectionSequence:
+      sectionSequence.length > 0 ? sectionSequence : fallbackSequence,
   };
 }

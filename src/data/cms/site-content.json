@@ -1,9 +1,9 @@
 {
   "base": {
     "name": "AionSite",
-    "description": "Agencia boutique de diseno y desarrollo web premium enfocada en conversion, velocidad y SEO tecnico.",
+    "description": "Agencia boutique de diseño y desarrollo web premium enfocada en conversión, velocidad y SEO técnico.",
     "email": "contacto@aionsite.com.mx",
-    "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+    "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
     "navigation": [
       {
         "name": "Servicios",
@@ -22,7 +22,7 @@
         "href": "#paquetes"
       },
       {
-        "name": "FAQ",
+        "name": "Preguntas frecuentes",
         "href": "#faq"
       },
       {
@@ -57,7 +57,7 @@
             "href": "#paquetes"
           },
           {
-            "name": "FAQ",
+            "name": "Preguntas frecuentes",
             "href": "#faq"
           },
           {
@@ -65,7 +65,7 @@
             "href": "#contacto"
           }
         ],
-        "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }
     },
     "hero": {
@@ -73,14 +73,15 @@
       "enabled": true,
       "order": 1,
       "data": {
+        "badgeText": "Diseño web de alto impacto",
         "title": "Sitios web modernos que generan clientes.",
-        "subtitle": "Disenamos y desarrollamos experiencias digitales de alto impacto que posicionan tu marca y multiplican tus ventas.",
+        "subtitle": "Diseñamos y desarrollamos experiencias digitales de alto impacto que posicionan tu marca y multiplican tus ventas.",
         "primaryCTA": "Cotizar por WhatsApp",
         "secondaryCTA": "Ver portafolio",
         "trustBar": [
           "Velocidad",
-          "SEO tecnico",
-          "Diseno premium",
+          "SEO técnico",
+          "Diseño premium",
           "Soporte"
         ]
       }
@@ -92,17 +93,17 @@
       "data": [
         {
           "title": "Sitio Web Profesional",
-          "description": "Presencia digital solida con diseno a medida, optimizado para todos los dispositivos.",
+          "description": "Presencia digital sólida con diseño a medida, optimizado para todos los dispositivos.",
           "icon": "Globe"
         },
         {
-          "title": "Landing Page de Conversion",
-          "description": "Paginas enfocadas en un solo objetivo: convertir visitantes en clientes potenciales.",
+          "title": "Página de conversión",
+          "description": "Páginas enfocadas en un solo objetivo: convertir visitantes en clientes potenciales.",
           "icon": "Target"
         },
         {
-          "title": "Tienda Online",
-          "description": "E-commerce escalable con pasarelas de pago seguras y gestion de inventario.",
+          "title": "Tienda en línea",
+          "description": "Comercio electrónico escalable con pasarelas de pago seguras y gestión de inventario.",
           "icon": "ShoppingBag"
         },
         {
@@ -115,30 +116,30 @@
     "stats": {
       "id": "stats",
       "enabled": true,
-      "order": 3,
+      "order": 4,
       "data": [
         {
           "value": "+35",
-          "label": "Proyectos"
+          "label": "Proyectos web entregados"
         },
         {
           "value": "99%",
-          "label": "Satisfaccion"
+          "label": "Clientes satisfechos"
         },
         {
           "value": "2x",
-          "label": "Conversion"
+          "label": "Incremento en conversiones"
         }
       ]
     },
     "portfolio": {
       "id": "portfolio",
       "enabled": true,
-      "order": 4,
+      "order": 5,
       "data": [
         {
           "title": "Casa Brava",
-          "category": "Ecommerce",
+          "category": "Comercio electrónico",
           "image": "/portfolio/brisa-carmen.png",
           "url": "https://restaurante.aionsite.com.mx/"
         },
@@ -159,11 +160,11 @@
     "process": {
       "id": "process",
       "enabled": true,
-      "order": 5,
+      "order": 6,
       "data": [
         {
           "step": "01",
-          "title": "Diagnostico",
+          "title": "Diagnóstico",
           "description": "Entendemos tus objetivos y analizamos tu competencia."
         },
         {
@@ -173,34 +174,39 @@
         },
         {
           "step": "03",
-          "title": "Diseno",
+          "title": "Diseño",
           "description": "Creamos una interfaz premium alineada a tu marca."
         },
         {
           "step": "04",
           "title": "Desarrollo",
-          "description": "Construimos tu sitio con las mejores tecnologias."
+          "description": "Construimos tu sitio con las mejores tecnologías."
         },
         {
           "step": "05",
           "title": "Lanzamiento",
           "description": "Optimizamos y ponemos tu sitio en marcha."
+        },
+        {
+          "step": "06",
+          "title": "Soporte",
+          "description": ""
         }
       ]
     },
     "pricing": {
       "id": "pricing",
       "enabled": true,
-      "order": 6,
+      "order": 7,
       "data": [
         {
           "name": "Esencial",
           "price": "Desde $5,000",
           "features": [
-            "Home con diseno basico",
-            "Diseno responsive",
+            "Página de inicio con diseño básico",
+            "Diseño adaptable",
             "Formulario de contacto",
-            "SEO basico"
+            "SEO básico"
           ],
           "recommended": false
         },
@@ -209,7 +215,7 @@
           "price": "Desde $12,000",
           "features": [
             "Todo lo del plan Esencial",
-            "Home con diseno premium",
+            "Página de inicio con diseño premium",
             "5 secciones personalizadas",
             "SEO avanzado",
             "Soporte 3 meses"
@@ -221,18 +227,18 @@
           "price": "$15,000/mes",
           "features": [
             "Actualizaciones mensuales",
-            "Optimizacion de velocidad",
+            "Optimización de velocidad",
             "Soporte prioritario"
           ],
           "recommended": false
         },
         {
-          "name": "Ecommerce",
+          "name": "Comercio electrónico",
           "price": "Desde $20,000",
           "features": [
-            "Tienda Online",
-            "Integracion con pasarelas de pago",
-            "Configuracion de inventario",
+            "Tienda en línea",
+            "Integración con pasarelas de pago",
+            "Configuración de inventario",
             "Soporte 6 meses"
           ],
           "recommended": false
@@ -242,63 +248,63 @@
     "testimonials": {
       "id": "testimonials",
       "enabled": false,
-      "order": 7,
+      "order": 8,
       "data": [
         {
           "name": "Carlos R.",
           "company": "TechFlow",
-          "text": "AionSite transformo nuestra presencia online. Las ventas subieron un 40% en dos meses."
+          "text": "AionSite transformó nuestra presencia en línea. Las ventas subieron un 40% en dos meses."
         },
         {
           "name": "Ana M.",
           "company": "Lumina",
-          "text": "El diseno es impecable y la velocidad de carga es increible. Muy recomendados."
+          "text": "El diseño es impecable y la velocidad de carga es increíble. Muy recomendados."
         },
         {
           "name": "Jorge L.",
           "company": "Vortex",
-          "text": "Un equipo profesional que entiende el negocio, no solo el codigo."
+          "text": "Un equipo profesional que entiende el negocio, no solo el código."
         }
       ]
     },
     "faq": {
       "id": "faq",
       "enabled": true,
-      "order": 8,
+      "order": 9,
       "data": [
         {
-          "question": "Cuanto tiempo toma un proyecto?",
-          "answer": "Depende de la complejidad, pero una landing suele tomar 2-3 dias y un sitio web pro 1-3 semanas."
+          "question": "¿Cuánto tiempo toma un proyecto?",
+          "answer": "Depende de la complejidad, pero una página de conversión suele tomar 2-3 días y un sitio web profesional de 1 a 3 semanas."
         },
         {
-          "question": "Incluyen hosting y dominio?",
-          "answer": "Si. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes."
+          "question": "¿Incluyen hosting y dominio?",
+          "answer": "Sí. Podemos gestionar hosting y dominio por ti, o trabajar con cuentas tuyas si ya las tienes."
         },
         {
-          "question": "El sitio sera autogestionable?",
-          "answer": "Si. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imagenes facilmente."
+          "question": "¿El sitio será autogestionable?",
+          "answer": "Sí. Desde el paquete Crecimiento incluimos acceso para que puedas actualizar textos e imágenes fácilmente."
         }
       ]
     },
     "finalCTA": {
       "id": "finalCTA",
       "enabled": true,
-      "order": 9,
+      "order": 10,
       "data": {
-        "title": "Listo para llevar tu negocio al siguiente nivel?",
-        "subtitle": "Hablemos de tu proyecto y creemos algo increible juntos.",
-        "buttonText": "Iniciar conversacion por WhatsApp",
+        "title": "¿Listo para llevar tu negocio al siguiente nivel?",
+        "subtitle": "Hablemos de tu proyecto y creemos algo increíble juntos.",
+        "buttonText": "Iniciar conversación por WhatsApp",
         "responseText": "Respuesta en menos de 24 horas",
-        "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }
     },
     "footer": {
       "id": "footer",
       "enabled": true,
-      "order": 10,
+      "order": 11,
       "data": {
         "name": "AionSite",
-        "description": "Agencia boutique de diseno y desarrollo web premium enfocada en conversion, velocidad y SEO tecnico.",
+        "description": "Agencia boutique de diseño y desarrollo web premium enfocada en conversión, velocidad y SEO técnico.",
         "email": "contacto@aionsite.com.mx",
         "navigation": [
           {
@@ -318,7 +324,7 @@
             "href": "#paquetes"
           },
           {
-            "name": "FAQ",
+            "name": "Preguntas frecuentes",
             "href": "#faq"
           },
           {
@@ -326,17 +332,45 @@
             "href": "#contacto"
           }
         ],
-        "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }
     },
     "whatsappFloatingButton": {
       "id": "whatsappFloatingButton",
       "enabled": true,
-      "order": 11,
+      "order": 12,
       "data": {
-        "whatsappLink": "https://wa.me/5218441183047?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
-        "tooltip": "En que podemos ayudarte?"
+        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+        "tooltip": "¿En qué podemos ayudarte?"
+      }
+    },
+    "sideImageContent": {
+      "id": "sideImageContent",
+      "enabled": true,
+      "order": 3,
+      "data": {
+        "title": "Lleva tu presencia digital a un nuevo nivel",
+        "description": "Combinamos estrategia, dise\u00f1o y desarrollo para que tu sitio no solo se vea bien, sino que tambi\u00e9n convierta visitas en oportunidades reales para tu negocio.",
+        "buttonText": "Solicitar propuesta",
+        "buttonLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+        "image": "/portfolio/lg.png",
+        "reverse": false
       }
     }
-  }
+  },
+  "sectionSequence": [
+    "header",
+    "hero",
+    "services",
+    "sideImageContent",
+    "stats",
+    "portfolio",
+    "process",
+    "pricing",
+    "testimonials",
+    "faq",
+    "finalCTA",
+    "footer",
+    "whatsappFloatingButton"
+  ]
 }

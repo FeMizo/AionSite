@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import {
   loadCmsContentFromBrowser,
-  loadCmsContentFromServer,
-  saveCmsContentToBrowser,
 } from "@/src/cms/browser-storage";
 import {
   getRenderableSectionIds,
@@ -21,28 +19,7 @@ export function PublicSite({
   const [content, setContent] = useState(initialContent);
 
   useEffect(() => {
-    let isCancelled = false;
-
-    const syncFromServer = async () => {
-      const serverContent = await loadCmsContentFromServer();
-      if (isCancelled) {
-        return;
-      }
-
-      if (serverContent) {
-        setContent(serverContent);
-        saveCmsContentToBrowser(serverContent);
-        return;
-      }
-
-      setContent(loadCmsContentFromBrowser());
-    };
-
-    void syncFromServer();
-
-    return () => {
-      isCancelled = true;
-    };
+    setContent(loadCmsContentFromBrowser());
   }, []);
 
   const headerSections = getRenderableSectionIds(content, "header");
@@ -52,19 +29,19 @@ export function PublicSite({
 
   return (
     <>
-      {headerSections.map((id) => (
-        <div key={id}>{renderCmsSection(id, content)}</div>
+      {headerSections.map((id, index) => (
+        <div key={`header-${id}-${index}`}>{renderCmsSection(id, content)}</div>
       ))}
       <main className="min-h-screen">
-        {mainSections.map((id) => (
-          <div key={id}>{renderCmsSection(id, content)}</div>
+        {mainSections.map((id, index) => (
+          <div key={`main-${id}-${index}`}>{renderCmsSection(id, content)}</div>
         ))}
       </main>
-      {footerSections.map((id) => (
-        <div key={id}>{renderCmsSection(id, content)}</div>
+      {footerSections.map((id, index) => (
+        <div key={`footer-${id}-${index}`}>{renderCmsSection(id, content)}</div>
       ))}
-      {floatingSections.map((id) => (
-        <div key={id}>{renderCmsSection(id, content)}</div>
+      {floatingSections.map((id, index) => (
+        <div key={`floating-${id}-${index}`}>{renderCmsSection(id, content)}</div>
       ))}
     </>
   );

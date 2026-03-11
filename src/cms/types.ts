@@ -21,6 +21,7 @@ export type HeaderSectionData = {
 };
 
 export type HeroSectionData = {
+  badgeText: string;
   title: string;
   subtitle: string;
   primaryCTA: string;
@@ -70,6 +71,15 @@ export type FAQSectionData = Array<{
   answer: string;
 }>;
 
+export type SideImageContentSectionData = {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+  image: string;
+  reverse: boolean;
+};
+
 export type FinalCTASectionData = {
   title: string;
   subtitle: string;
@@ -101,6 +111,7 @@ export type SectionDataMap = {
   pricing: PricingSectionData;
   testimonials: TestimonialsSectionData;
   faq: FAQSectionData;
+  sideImageContent: SideImageContentSectionData;
   finalCTA: FinalCTASectionData;
   footer: FooterSectionData;
   whatsappFloatingButton: WhatsAppFloatingButtonData;
@@ -122,6 +133,7 @@ export type CmsSections = {
 export type CmsContent = {
   base: CmsBase;
   sections: CmsSections;
+  sectionSequence: SectionId[];
 };
 
 export type PrimitiveFieldType =

@@ -8,6 +8,7 @@ import { Portfolio } from "@/src/components/sections/Portfolio";
 import { Pricing } from "@/src/components/sections/Pricing";
 import { Process } from "@/src/components/sections/Process";
 import { Services } from "@/src/components/sections/Services";
+import { SideImageContent } from "@/src/components/sections/SideImageContent";
 import { Stats } from "@/src/components/sections/Stats";
 import { Testimonials } from "@/src/components/sections/Testimonials";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
@@ -22,12 +23,12 @@ import type {
 const navigationFields: FieldDefinition[] = [
   {
     key: "navigation",
-    label: "Enlaces de navegacion",
+    label: "Enlaces de navegación",
     type: "array",
     itemLabel: "Enlace",
     itemFields: [
       { key: "name", label: "Texto", type: "text", placeholder: "Servicios" },
-      { key: "href", label: "Href", type: "text", placeholder: "#servicios" },
+      { key: "href", label: "Enlace", type: "text", placeholder: "#servicios" },
     ],
   },
 ];
@@ -35,30 +36,31 @@ const navigationFields: FieldDefinition[] = [
 export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
   header: {
     id: "header",
-    label: "Header",
-    description: "Barra superior con logo, navegacion y CTA principal.",
+    label: "Encabezado",
+    description: "Barra superior con logo, navegación y botón principal.",
     placement: "header",
-    type: "navigation",
+    type: "navegación",
     fields: [
       { key: "name", label: "Nombre de marca", type: "text" },
       ...navigationFields,
-      { key: "whatsappLink", label: "Link de WhatsApp", type: "url" },
+      { key: "whatsappLink", label: "Enlace de WhatsApp", type: "url" },
     ],
   },
   hero: {
     id: "hero",
-    label: "Hero",
-    description: "Bloque principal con propuesta de valor y CTAs.",
+    label: "Portada",
+    description: "Bloque principal con propuesta de valor y botones de acción.",
     placement: "main",
-    type: "hero",
+    type: "portada",
     fields: [
-      { key: "title", label: "Titulo", type: "textarea" },
-      { key: "subtitle", label: "Subtitulo", type: "textarea" },
-      { key: "primaryCTA", label: "CTA principal", type: "text" },
-      { key: "secondaryCTA", label: "CTA secundario", type: "text" },
+      { key: "badgeText", label: "Etiqueta superior", type: "text" },
+      { key: "title", label: "Título", type: "textarea" },
+      { key: "subtitle", label: "Subtítulo", type: "textarea" },
+      { key: "primaryCTA", label: "Botón principal", type: "text" },
+      { key: "secondaryCTA", label: "Botón secundario", type: "text" },
       {
         key: "trustBar",
-        label: "Trust bar",
+        label: "Franja de confianza",
         type: "array",
         itemLabel: "Punto",
         itemType: "text",
@@ -68,9 +70,9 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
   services: {
     id: "services",
     label: "Servicios",
-    description: "Tarjetas de servicio con icono, titulo y descripcion.",
+    description: "Tarjetas de servicio con ícono, título y descripción.",
     placement: "main",
-    type: "cards",
+    type: "tarjetas",
     fields: [
       {
         key: "root",
@@ -78,25 +80,25 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
         type: "array",
         itemLabel: "Servicio",
         itemFields: [
-          { key: "title", label: "Titulo", type: "text" },
-          { key: "description", label: "Descripcion", type: "textarea" },
-          { key: "icon", label: "Icono Lucide", type: "text", placeholder: "Globe" },
+          { key: "title", label: "Título", type: "text" },
+          { key: "description", label: "Descripción", type: "textarea" },
+          { key: "icon", label: "Ícono Lucide", type: "text", placeholder: "Globe" },
         ],
       },
     ],
   },
   stats: {
     id: "stats",
-    label: "Stats",
-    description: "Metricas destacadas de conversion y credibilidad.",
+    label: "Métricas",
+    description: "Métricas destacadas de conversión y credibilidad.",
     placement: "main",
-    type: "metrics",
+    type: "métricas",
     fields: [
       {
         key: "root",
-        label: "Metricas",
+        label: "Métricas",
         type: "array",
-        itemLabel: "Metrica",
+        itemLabel: "Métrica",
         itemFields: [
           { key: "value", label: "Valor", type: "text" },
           { key: "label", label: "Etiqueta", type: "text" },
@@ -107,9 +109,9 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
   portfolio: {
     id: "portfolio",
     label: "Portafolio",
-    description: "Casos destacados con imagen, categoria y URL.",
+    description: "Casos destacados con imagen, categoría y URL.",
     placement: "main",
-    type: "gallery",
+    type: "galería",
     fields: [
       {
         key: "root",
@@ -117,8 +119,8 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
         type: "array",
         itemLabel: "Proyecto",
         itemFields: [
-          { key: "title", label: "Titulo", type: "text" },
-          { key: "category", label: "Categoria", type: "text" },
+          { key: "title", label: "Título", type: "text" },
+          { key: "category", label: "Categoría", type: "text" },
           { key: "image", label: "Imagen", type: "image" },
           { key: "url", label: "URL", type: "url" },
         ],
@@ -128,9 +130,9 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
   process: {
     id: "process",
     label: "Proceso",
-    description: "Timeline del flujo de trabajo.",
+    description: "Línea de tiempo del flujo de trabajo.",
     placement: "main",
-    type: "timeline",
+    type: "proceso",
     fields: [
       {
         key: "root",
@@ -138,9 +140,9 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
         type: "array",
         itemLabel: "Paso",
         itemFields: [
-          { key: "step", label: "Numero", type: "text", placeholder: "01" },
-          { key: "title", label: "Titulo", type: "text" },
-          { key: "description", label: "Descripcion", type: "textarea" },
+          { key: "step", label: "Número", type: "text", placeholder: "01" },
+          { key: "title", label: "Título", type: "text" },
+          { key: "description", label: "Descripción", type: "textarea" },
         ],
       },
     ],
@@ -163,9 +165,9 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
           { key: "recommended", label: "Recomendado", type: "boolean" },
           {
             key: "features",
-            label: "Features",
+            label: "Características",
             type: "array",
-            itemLabel: "Feature",
+            itemLabel: "Característica",
             itemType: "text",
           },
         ],
@@ -194,14 +196,14 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
   },
   faq: {
     id: "faq",
-    label: "FAQ",
+    label: "Preguntas frecuentes",
     description: "Preguntas frecuentes con respuestas expandibles.",
     placement: "main",
-    type: "accordion",
+    type: "acordeón",
     fields: [
       {
         key: "root",
-        label: "FAQs",
+        label: "Preguntas",
         type: "array",
         itemLabel: "Pregunta",
         itemFields: [
@@ -211,43 +213,63 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
       },
     ],
   },
-  finalCTA: {
-    id: "finalCTA",
-    label: "CTA final",
-    description: "Llamado final a conversion.",
+  sideImageContent: {
+    id: "sideImageContent",
+    label: "Imagen lateral + contenido",
+    description:
+      "Bloque reusable con imagen y contenido. Permite invertir la disposicion.",
     placement: "main",
-    type: "cta",
+    type: "bloque lateral",
     fields: [
       { key: "title", label: "Titulo", type: "textarea" },
-      { key: "subtitle", label: "Subtitulo", type: "textarea" },
+      { key: "description", label: "Descripcion", type: "textarea" },
       { key: "buttonText", label: "Texto del boton", type: "text" },
+      { key: "buttonLink", label: "Enlace del boton", type: "url" },
+      { key: "image", label: "Imagen", type: "image" },
+      {
+        key: "reverse",
+        label: "Invertir disposicion (imagen a la derecha)",
+        type: "boolean",
+      },
+    ],
+  },
+  finalCTA: {
+    id: "finalCTA",
+    label: "Llamado final",
+    description: "Llamado final a conversión.",
+    placement: "main",
+    type: "llamado",
+    fields: [
+      { key: "title", label: "Título", type: "textarea" },
+      { key: "subtitle", label: "Subtítulo", type: "textarea" },
+      { key: "buttonText", label: "Texto del botón", type: "text" },
       { key: "responseText", label: "Texto auxiliar", type: "text" },
-      { key: "whatsappLink", label: "Link de WhatsApp", type: "url" },
+      { key: "whatsappLink", label: "Enlace de WhatsApp", type: "url" },
     ],
   },
   footer: {
     id: "footer",
-    label: "Footer",
-    description: "Pie de pagina con descripcion, contacto y enlaces.",
+    label: "Pie de página",
+    description: "Pie de página con descripción, contacto y enlaces.",
     placement: "footer",
-    type: "footer",
+    type: "pie de página",
     fields: [
       { key: "name", label: "Nombre de marca", type: "text" },
-      { key: "description", label: "Descripcion", type: "textarea" },
-      { key: "email", label: "Email", type: "text" },
+      { key: "description", label: "Descripción", type: "textarea" },
+      { key: "email", label: "Correo", type: "text" },
       ...navigationFields,
-      { key: "whatsappLink", label: "Link de WhatsApp", type: "url" },
+      { key: "whatsappLink", label: "Enlace de WhatsApp", type: "url" },
     ],
   },
   whatsappFloatingButton: {
     id: "whatsappFloatingButton",
-    label: "Boton flotante",
-    description: "Acceso rapido a WhatsApp desde cualquier scroll.",
+    label: "Botón flotante",
+    description: "Acceso rápido a WhatsApp desde cualquier desplazamiento.",
     placement: "floating",
-    type: "floating-action",
+    type: "acción flotante",
     fields: [
-      { key: "whatsappLink", label: "Link de WhatsApp", type: "url" },
-      { key: "tooltip", label: "Tooltip", type: "text" },
+      { key: "whatsappLink", label: "Enlace de WhatsApp", type: "url" },
+      { key: "tooltip", label: "Texto de apoyo", type: "text" },
     ],
   },
 };
@@ -276,6 +298,9 @@ const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> = 
     <Testimonials data={content.sections.testimonials.data} />
   ),
   faq: (content) => <FAQ data={content.sections.faq.data} />,
+  sideImageContent: (content) => (
+    <SideImageContent data={content.sections.sideImageContent.data} />
+  ),
   finalCTA: (content) => <FinalCTA data={content.sections.finalCTA.data} />,
   footer: (content) => (
     <Footer
@@ -294,9 +319,9 @@ export function getOrderedSectionIds(
   content: CmsContent,
   placement?: SectionPlacement,
 ) {
-  return (Object.keys(content.sections) as SectionId[])
-    .filter((id) => (placement ? sectionRegistry[id].placement === placement : true))
-    .sort((left, right) => content.sections[left].order - content.sections[right].order);
+  return content.sectionSequence.filter((id) =>
+    placement ? sectionRegistry[id].placement === placement : true,
+  );
 }
 
 export function getActiveSectionIds(

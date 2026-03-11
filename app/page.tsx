@@ -1,9 +1,6 @@
 import { PublicSite } from "@/src/components/cms/PublicSite";
-import { readCmsContentFromFile } from "@/src/cms/file-storage";
+import { initialCmsContent } from "@/src/cms/site-content";
 
-export const dynamic = "force-dynamic";
-
-export default async function Home() {
-  const content = await readCmsContentFromFile();
-  return <PublicSite initialContent={content} />;
+export default function Home() {
+  return <PublicSite initialContent={initialCmsContent} />;
 }

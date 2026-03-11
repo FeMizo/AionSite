@@ -8,7 +8,7 @@ export function Process({ data }: { data: ProcessSectionData }) {
       <Container>
         <SectionHeading
           title="Nuestro proceso"
-          subtitle="Metodologia agil disenada para garantizar el exito de tu proyecto."
+          subtitle="Metodología ágil diseñada para garantizar el éxito de tu proyecto."
         />
 
         <div className="relative">

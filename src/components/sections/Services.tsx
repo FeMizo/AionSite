@@ -18,7 +18,7 @@ export function Services({ data }: { data: ServicesSectionData }) {
       <Container>
         <SectionHeading
           title="Servicios que impulsan tu negocio"
-          subtitle="Soluciones digitales disenadas para convertir visitantes en clientes leales."
+          subtitle="Soluciones digitales diseñadas para convertir visitantes en clientes leales."
         />
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

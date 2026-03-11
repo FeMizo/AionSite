@@ -1,19 +1,15 @@
 import { AdminShell } from "@/src/components/admin/AdminShell";
 import { SectionsDashboard } from "@/src/components/admin/SectionsDashboard";
-import { readCmsContentFromFile } from "@/src/cms/file-storage";
+import { initialCmsContent } from "@/src/cms/site-content";
 
-export const dynamic = "force-dynamic";
-
-export default async function AdminSectionsPage() {
-  const content = await readCmsContentFromFile();
-
+export default function AdminSectionsPage() {
   return (
     <AdminShell
       pathname="/admin/sections"
       title="Secciones"
-      description="Gestiona que secciones existen, cuales se muestran, en que orden salen y que contenido base renderiza cada una. Los cambios se guardan en el CMS del proyecto y aplican al sitio general."
+      description="Gestiona qué secciones existen, cuáles se muestran y en qué orden salen. Los cambios se guardan localmente en este navegador."
     >
-      <SectionsDashboard initialContent={content} />
+      <SectionsDashboard initialContent={initialCmsContent} />
     </AdminShell>
   );
 }

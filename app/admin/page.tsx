@@ -1,11 +1,9 @@
 import { Eye, EyeOff, Layers3, ArrowUpDown } from "lucide-react";
 import { AdminShell } from "@/src/components/admin/AdminShell";
-import { readCmsContentFromFile } from "@/src/cms/file-storage";
+import { initialCmsContent } from "@/src/cms/site-content";
 
-export const dynamic = "force-dynamic";
-
-export default async function AdminOverviewPage() {
-  const content = await readCmsContentFromFile();
+export default function AdminOverviewPage() {
+  const content = initialCmsContent;
   const sections = Object.values(content.sections);
   const visibleCount = sections.filter((section) => section.enabled).length;
   const hiddenCount = sections.length - visibleCount;
@@ -13,8 +11,8 @@ export default async function AdminOverviewPage() {
   return (
     <AdminShell
       pathname="/admin"
-      title="Overview"
-      description="Resumen de la arquitectura CMS del proyecto. Los cambios del panel se guardan en un archivo JSON central para todo el sitio."
+      title="Resumen"
+      description="Resumen del CMS local. Los cambios del panel se guardan en este navegador y no se publican automáticamente."
     >
       <div className="grid gap-4 md:grid-cols-3">
         {[
@@ -49,23 +47,23 @@ export default async function AdminOverviewPage() {
             <div>
               <h3 className="text-lg font-semibold text-white">Flujo operativo</h3>
               <p className="mt-1 text-sm text-slate-400">
-                El dashboard ahora persiste contenido directamente en el CMS del proyecto.
+                El panel funciona con almacenamiento local del navegador.
               </p>
             </div>
           </div>
 
           <div className="mt-6 space-y-3 text-sm leading-6 text-slate-300">
             <p>1. La fuente base sigue en src/data/cms/site-content.json.</p>
-            <p>2. El panel guarda cambios por API hacia ese archivo.</p>
-            <p>3. El sitio publico sincroniza el contenido mas reciente.</p>
-            <p>4. Si luego necesitas multiusuario, puedes mover esta capa a DB sin cambiar el esquema CMS.</p>
+            <p>2. El panel guarda cambios en localStorage.</p>
+            <p>3. El sitio público los refleja en el mismo navegador.</p>
+            <p>4. En producción estática, cada usuario ve sus propios cambios locales.</p>
           </div>
         </section>
 
         <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 backdrop-blur">
-          <h3 className="text-lg font-semibold text-white">Limite actual</h3>
+          <h3 className="text-lg font-semibold text-white">Límite actual</h3>
           <p className="mt-3 text-sm leading-6 text-slate-400">
-            Esta persistencia requiere runtime de servidor Node.js para leer y escribir el archivo CMS.
+            El guardado no modifica archivos del repositorio ni sincroniza entre dispositivos.
           </p>
         </section>
       </div>
