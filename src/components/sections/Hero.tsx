@@ -14,8 +14,8 @@ export function Hero({
 }) {
   return (
     <section className="relative overflow-hidden pb-20 pt-32 md:pb-32 md:pt-48">
-      <div className="absolute left-1/2 top-0 -z-10 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-blue-600/20 blur-[120px]" />
-      <div className="absolute right-0 top-40 -z-10 h-[400px] w-[400px] rounded-full bg-violet-600/10 blur-[100px]" />
+      <div className="absolute left-1/2 top-0 -z-10 h-150 w-200 -translate-x-1/2 rounded-full bg-blue-600/20 blur-[120px]" />
+      <div className="absolute right-0 top-40 -z-10 h-100 w-100 rounded-full bg-violet-600/10 blur-[100px]" />
 
       <Container className="text-center">
         <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)]">

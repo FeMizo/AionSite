@@ -418,7 +418,7 @@ export function SectionsDashboard({
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-6 shadow-[0_30px_60px_-42px_rgba(2,6,23,0.95)] backdrop-blur xl:sticky xl:top-4 xl:flex xl:max-h-[calc(100vh-2rem)] xl:min-h-0 xl:flex-col xl:self-start xl:overflow-hidden">
+      <section className="rounded-4xl border border-white/8 bg-slate-950/55 p-6 shadow-[0_30px_60px_-42px_rgba(2,6,23,0.95)] backdrop-blur xl:sticky xl:top-4 xl:flex xl:max-h-[calc(100vh-2rem)] xl:min-h-0 xl:flex-col xl:self-start xl:overflow-hidden">
         <div className="flex flex-col gap-4 border-b border-white/8 pb-6 md:flex-row md:items-end md:justify-between">
           <div className="md:w-1/2">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-300/80">
