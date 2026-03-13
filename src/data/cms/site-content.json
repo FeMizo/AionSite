@@ -53,10 +53,6 @@
             "href": "#portafolio"
           },
           {
-            "name": "About Me",
-            "href": "/about"
-          },
-          {
             "name": "Proceso",
             "href": "#proceso"
           },
@@ -71,6 +67,10 @@
           {
             "name": "Contacto",
             "href": "#contacto"
+          },
+          {
+            "name": "Nosotros",
+            "href": "/about"
           }
         ],
         "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
