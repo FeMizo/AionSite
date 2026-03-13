@@ -10,6 +10,7 @@ const base = {
   navigation: [
     { name: "Servicios", href: "#servicios" },
     { name: "Portafolio", href: "#portafolio" },
+    { name: "About Me", href: "/about" },
     { name: "Proceso", href: "#proceso" },
     { name: "Paquetes", href: "#paquetes" },
     { name: "Preguntas frecuentes", href: "#faq" },

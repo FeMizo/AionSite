@@ -1,0 +1,204 @@
+{
+  "hero": {
+    "eyebrow": "About Me",
+    "title": "Jose Miss builds frontend and CMS experiences with a clear business focus.",
+    "summary": "Frontend & CMS Developer based in Mexico, open to USA and LATAM remote work. Specialized in Vue.js, Nuxt.js, WordPress, and Shopify with a strong focus on performance, technical SEO, and conversion-minded execution.",
+    "location": "Mexico",
+    "availability": "Open to USA & LATAM Remote",
+    "role": "Frontend & CMS Developer",
+    "highlights": [
+      {
+        "value": "Since 2018",
+        "label": "Hands-on web delivery"
+      },
+      {
+        "value": "Vue/Nuxt",
+        "label": "Custom frontend builds"
+      },
+      {
+        "value": "WordPress + Shopify",
+        "label": "CMS and eCommerce execution"
+      },
+      {
+        "value": "Performance + SEO",
+        "label": "Optimization as part of delivery"
+      }
+    ]
+  },
+  "intro": {
+    "title": "A practical builder with design sensitivity and product awareness.",
+    "paragraphs": [
+      "My work sits between frontend engineering, CMS implementation, and conversion-focused execution. I build the interface layer, adapt platforms to business needs, and keep performance and maintainability in view from the start.",
+      "A background in Graphic Design helps me collaborate closely with design teams and translate visual direction into production-ready UI. That balance is useful when projects need both polish and speed."
+    ],
+    "principles": [
+      {
+        "title": "Build for clarity",
+        "description": "Interfaces should feel clean, predictable, and easy to maintain, not just visually appealing."
+      },
+      {
+        "title": "Optimize what matters",
+        "description": "Performance, SEO structure, and conversion surfaces are part of the implementation, not post-launch extras."
+      },
+      {
+        "title": "Work well remotely",
+        "description": "I am used to collaborating with distributed teams across USA and LATAM using async-friendly workflows and clear handoffs."
+      }
+    ]
+  },
+  "valueBlocks": [
+    {
+      "eyebrow": "Frontend",
+      "title": "Vue.js and Nuxt.js interfaces",
+      "description": "Custom frontend work for marketing sites, product experiences, and content-heavy builds that need structure, responsiveness, and maintainable code."
+    },
+    {
+      "eyebrow": "CMS & eCommerce",
+      "title": "WordPress and Shopify delivery",
+      "description": "Theme customization, from-scratch builds, builder-based implementations, and third-party integrations aligned to content and commerce workflows."
+    },
+    {
+      "eyebrow": "Optimization",
+      "title": "Performance, SEO, and conversion support",
+      "description": "Core Web Vitals improvements, technical SEO foundations, analytics tooling, and UX adjustments that support acquisition and conversion goals."
+    }
+  ],
+  "experience": [
+    {
+      "period": "Nov 2022 - Present",
+      "title": "Web Developer",
+      "subtitle": "LinkGraph",
+      "description": "Working across Shopify and WordPress delivery for marketing-driven websites and eCommerce implementations.",
+      "points": [
+        "Customize Shopify stores with theme work and third-party app integrations.",
+        "Build and maintain WordPress sites using custom development and page builders.",
+        "Improve SEO structure, performance, and conversion-oriented user flows.",
+        "Collaborate with remote marketing and development teams."
+      ]
+    },
+    {
+      "period": "Aug 2020 - Sep 2022 | Jan 2024 - Present",
+      "title": "Freelance Web Developer",
+      "subtitle": "Honey Mustard",
+      "description": "Supporting product and marketing initiatives with a mix of custom frontend development and CMS delivery.",
+      "points": [
+        "Built custom frontend applications with Vue.js and Nuxt.js.",
+        "Developed WordPress and Shopify websites from scratch.",
+        "Improved UI/UX quality and overall website performance."
+      ]
+    },
+    {
+      "period": "Aug 2020 - Nov 2022",
+      "title": "Web Developer",
+      "subtitle": "DUDE Agency",
+      "description": "Delivered custom WordPress implementations for multiple client accounts with ongoing support responsibilities.",
+      "points": [
+        "Developed custom WordPress websites for different business contexts.",
+        "Handled theme customization and plugin integrations.",
+        "Maintained and improved live sites over time."
+      ]
+    },
+    {
+      "period": "Mar 2018 - Sep 2020",
+      "title": "Web Developer",
+      "subtitle": "CEGA Security, Maya Solar, and Kemix Quimica",
+      "description": "Early in-house work focused on WordPress development, maintenance, and the operational side of keeping business sites healthy.",
+      "points": [
+        "Delivered WordPress website development and maintenance.",
+        "Built the technical foundation for later CMS and frontend specialization."
+      ]
+    }
+  ],
+  "stack": [
+    {
+      "title": "Frontend",
+      "description": "Core technologies used to build responsive interfaces and custom UI implementations.",
+      "items": [
+        "Vue.js",
+        "Nuxt.js",
+        "JavaScript (ES6+)",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "jQuery"
+      ]
+    },
+    {
+      "title": "CMS & eCommerce",
+      "description": "Platforms where I usually translate business and content requirements into live sites.",
+      "items": [
+        "WordPress",
+        "Custom Themes",
+        "Builders",
+        "Shopify",
+        "App Integrations",
+        "Optimization"
+      ]
+    },
+    {
+      "title": "Performance & SEO",
+      "description": "Technical work that improves discoverability, speed, and operational visibility.",
+      "items": [
+        "Core Web Vitals",
+        "Technical SEO",
+        "GA4",
+        "GTM",
+        "Google Search Console"
+      ]
+    },
+    {
+      "title": "Collaboration & Delivery",
+      "description": "Tools that support shipping, coordination, hosting, and design handoff.",
+      "items": [
+        "GitHub",
+        "Bitbucket",
+        "AWS",
+        "WP Engine",
+        "Figma",
+        "Adobe XD",
+        "Zeplin",
+        "Notion",
+        "ClickUp",
+        "Asana",
+        "Monday"
+      ]
+    }
+  ],
+  "differentiators": [
+    {
+      "eyebrow": "Why teams trust me",
+      "title": "Design and development are connected",
+      "description": "A Graphic Design degree makes it easier to interpret layouts, collaborate with designers, and ship UI with fewer translation gaps."
+    },
+    {
+      "eyebrow": "Delivery style",
+      "title": "Remote-ready collaboration",
+      "description": "I am comfortable working with distributed teams, clear feedback loops, and project management systems that keep progress visible."
+    },
+    {
+      "eyebrow": "Technical mindset",
+      "title": "Performance is part of the build",
+      "description": "Optimization, structure, and clean implementation are treated as baseline quality, not a later patch."
+    },
+    {
+      "eyebrow": "Business value",
+      "title": "Digital work aligned to business goals",
+      "description": "I focus on websites and stores that support marketing, commerce, and operational goals instead of shipping features in isolation."
+    }
+  ],
+  "education": {
+    "title": "Education and continuous growth",
+    "summary": "Bachelor in Graphic Design from TecMilenio (2019). That foundation continues to shape how I approach interface detail, hierarchy, and collaboration with design teams.",
+    "languages": [
+      "Spanish: Native",
+      "English: Professional working proficiency"
+    ]
+  },
+  "contact": {
+    "title": "Need a frontend or CMS partner who can move from idea to launch?",
+    "description": "I can support custom frontend work, WordPress or Shopify delivery, and optimization efforts for teams that value clean execution and reliable collaboration.",
+    "note": "Contact from the CV: femiss0693@gmail.com and linkedin.com/in/jose-miss",
+    "email": "femiss0693@gmail.com",
+    "linkedIn": "https://linkedin.com/in/jose-miss"
+  }
+}

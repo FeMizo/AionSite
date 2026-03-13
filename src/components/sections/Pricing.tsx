@@ -92,10 +92,10 @@ export function Pricing({
                       : "border-white/10 bg-slate-900/50 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_30px_56px_-34px_rgba(15,23,42,0.9)]"
                 }`}
               >
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.03] via-transparent to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-white/3 via-transparent to-transparent" />
 
                 {plan.recommended ? (
-                  <div className="absolute -top-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-blue-200/40 bg-gradient-to-r from-blue-500 to-blue-400 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-[0_16px_28px_-18px_rgba(59,130,246,0.85)]">
+                  <div className="absolute -top-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-blue-200/40 bg-linear-to-r from-blue-500 to-blue-400 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-[0_16px_28px_-18px_rgba(59,130,246,0.85)]">
                     <Star size={12} />
                     Recomendado
                   </div>
