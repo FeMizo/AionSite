@@ -22,6 +22,19 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
