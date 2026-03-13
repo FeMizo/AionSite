@@ -16,6 +16,7 @@ jobs:
           cache: npm
 
       - run: npm ci
+
       - name: Disable local CMS file API for static export
         run: rm -rf app/api
 
@@ -24,31 +25,21 @@ jobs:
         env:
           NEXT_STATIC_EXPORT: "true"
 
-      - name: Deploy via FTP (sync only)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
 
-          # Next export output
-          local-dir: ./out/
-
-          # ✅ SOLO el subdominio (ajusta a tu nombre real)
-          server-dir: ./domains/aionsite.com.mx/public_html/
-
-          # ✅ NO limpiar todo
-          dangerous-clean-slate: false
-
-          # (Opcional) si quieres que borre archivos que ya no existen en out/
-          # (solo dentro del server-dir)
-          # dangerous-clean-slate: false ya es “no wipe”
-          # pero el action igual puede eliminar "stale" según config interna;
-          # si NO quieres borrar nada nunca, lo dejamos así y listo.
-
-          exclude: |
-            **/.git*
-            **/.github/**
-            **/node_modules/**
+      - name: Deploy via FTP
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+          set ftp:ssl-allow false
+          set ssl:verify-certificate no
+          set xfer:clobber on
+          set net:max-retries 2
+          set net:timeout 20
+          mirror --reverse --verbose --continue --parallel=2 ./out/ ./domains/aionsite.com.mx/public_html/
+          bye
+          EOF
