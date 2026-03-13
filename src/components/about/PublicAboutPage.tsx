@@ -17,11 +17,17 @@ import {
   loadAboutContentFromFile,
   saveAboutContentToBrowser,
 } from "@/src/about/browser-storage";
+import {
+  getAboutUiCopy,
+  getLocalizedAboutContent,
+  type AboutLanguage,
+} from "@/src/about/localized-content";
 import type { AboutContent } from "@/src/about/types";
 import { initialCmsContent } from "@/src/cms/site-content";
 import { Footer } from "@/src/components/sections/Footer";
 import { Header } from "@/src/components/sections/Header";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
+import { Button } from "@/src/components/ui/Button";
 import { Card } from "@/src/components/ui/Card";
 import { ContactPanel } from "@/src/components/ui/ContactPanel";
 import { Container } from "@/src/components/ui/Container";
@@ -64,16 +70,26 @@ const differentiatorIcons = [
   <Globe size={22} key="business" />,
 ];
 
+const ABOUT_LANGUAGE_STORAGE_KEY = "aionsite.about.language";
+
 export function PublicAboutPage({
   initialContent,
 }: {
   initialContent: AboutContent;
 }) {
   const [content, setContent] = useState(initialContent);
+  const [language, setLanguage] = useState<AboutLanguage>("en");
 
   useEffect(() => {
     let isCancelled = false;
     setContent(loadAboutContentFromBrowser());
+
+    const storedLanguage = window.localStorage.getItem(ABOUT_LANGUAGE_STORAGE_KEY);
+    if (storedLanguage === "en" || storedLanguage === "es") {
+      setLanguage(storedLanguage);
+    } else if (window.navigator.language.toLowerCase().startsWith("es")) {
+      setLanguage("es");
+    }
 
     (async () => {
       const fileContent = await loadAboutContentFromFile();
@@ -90,6 +106,14 @@ export function PublicAboutPage({
     };
   }, []);
 
+  const localizedContent = getLocalizedAboutContent(content, language);
+  const uiCopy = getAboutUiCopy(language);
+
+  function handleLanguageChange(nextLanguage: AboutLanguage) {
+    setLanguage(nextLanguage);
+    window.localStorage.setItem(ABOUT_LANGUAGE_STORAGE_KEY, nextLanguage);
+  }
+
   return (
     <>
       <Header base={base} data={headerData} />
@@ -102,27 +126,55 @@ export function PublicAboutPage({
           <Container>
             <div className="grid gap-12 xl:grid-cols-[minmax(0,1.25fr)_420px] xl:items-end">
               <div>
+                <div className="mb-6 flex flex-wrap items-center gap-3">
+                  <span className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
+                    {uiCopy.switchLabel}
+                  </span>
+                  <div className="inline-flex rounded-full border border-white/10 bg-white/5 p-1">
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant={language === "en" ? "primary" : "ghost"}
+                      className="min-w-14 rounded-full px-4"
+                      onClick={() => handleLanguageChange("en")}
+                      aria-pressed={language === "en"}
+                    >
+                      EN
+                    </Button>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant={language === "es" ? "primary" : "ghost"}
+                      className="min-w-14 rounded-full px-4"
+                      onClick={() => handleLanguageChange("es")}
+                      aria-pressed={language === "es"}
+                    >
+                      ES
+                    </Button>
+                  </div>
+                </div>
+
                 <div className="inline-flex items-center rounded-full border border-blue-300/25 bg-white/5 px-4 py-2 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)]">
-                  {content.hero.eyebrow}
+                  {localizedContent.hero.eyebrow}
                 </div>
 
                 <h1 className="mt-8 max-w-5xl text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl">
-                  {content.hero.title}
+                  {localizedContent.hero.title}
                 </h1>
 
                 <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl">
-                  {content.hero.summary}
+                  {localizedContent.hero.summary}
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-300">
                   <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
-                    {content.hero.role}
+                    {localizedContent.hero.role}
                   </span>
                   <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
-                    {content.hero.location}
+                    {localizedContent.hero.location}
                   </span>
                   <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
-                    {content.hero.availability}
+                    {localizedContent.hero.availability}
                   </span>
                 </div>
 
@@ -135,27 +187,27 @@ export function PublicAboutPage({
                     rel="noopener noreferrer"
                   >
                     <MessageCircleMore size={18} />
-                    Talk on WhatsApp
+                    {uiCopy.talkOnWhatsApp}
                   </LinkButton>
                   <LinkButton
-                    href={content.contact.linkedIn}
+                    href={localizedContent.contact.linkedIn}
                     variant="outline"
                     size="lg"
                     className="gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View LinkedIn
+                    {uiCopy.viewLinkedIn}
                   </LinkButton>
                 </div>
               </div>
 
               <Card className="rounded-[2rem] p-6 md:p-8">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-300">
-                  Snapshot
+                  {uiCopy.snapshot}
                 </p>
                 <div className="mt-6 grid gap-4">
-                  {content.hero.highlights.map((item) => (
+                  {localizedContent.hero.highlights.map((item) => (
                     <div
                       key={item.label}
                       className="rounded-2xl border border-white/8 bg-white/[0.04] px-5 py-5"
@@ -177,18 +229,18 @@ export function PublicAboutPage({
             <div className="grid gap-10 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
               <div>
                 <SectionHeading
-                  title={content.intro.title}
-                  subtitle={content.intro.paragraphs[0]}
+                  title={localizedContent.intro.title}
+                  subtitle={localizedContent.intro.paragraphs[0]}
                   centered={false}
                   className="mb-8"
                 />
                 <p className="max-w-3xl text-lg leading-relaxed text-slate-400">
-                  {content.intro.paragraphs[1]}
+                  {localizedContent.intro.paragraphs[1]}
                 </p>
               </div>
 
               <div className="grid gap-5">
-                {content.intro.principles.map((principle) => (
+                {localizedContent.intro.principles.map((principle) => (
                   <Card key={principle.title} className="p-6">
                     <h3 className="text-lg font-semibold text-white">{principle.title}</h3>
                     <p className="mt-3 leading-relaxed text-slate-400">
@@ -203,13 +255,10 @@ export function PublicAboutPage({
 
         <section className="bg-slate-900/30 py-24">
           <Container>
-            <SectionHeading
-              title="Where I add the most value"
-              subtitle="The strongest overlap in the CV is frontend delivery, CMS execution, and optimization work that supports growth."
-            />
+            <SectionHeading title={uiCopy.valueTitle} subtitle={uiCopy.valueSubtitle} />
 
             <HighlightGrid
-              items={content.valueBlocks.map((item, index) => ({
+              items={localizedContent.valueBlocks.map((item, index) => ({
                 ...item,
                 icon: valueIcons[index],
               }))}
@@ -221,24 +270,21 @@ export function PublicAboutPage({
         <section className="py-24">
           <Container>
             <SectionHeading
-              title="Selected experience"
-              subtitle="A condensed version of the CV focused on the roles and responsibilities that matter most for a web-facing About page."
+              title={uiCopy.experienceTitle}
+              subtitle={uiCopy.experienceSubtitle}
             />
 
-            <Timeline items={content.experience} />
+            <Timeline items={localizedContent.experience} />
           </Container>
         </section>
 
         <section className="bg-slate-900/30 py-24">
           <Container>
-            <SectionHeading
-              title="Skills, stack, and delivery tools"
-              subtitle="Grouped for web readability instead of repeating the CV format line by line."
-            />
+            <SectionHeading title={uiCopy.stackTitle} subtitle={uiCopy.stackSubtitle} />
 
             <div className="grid gap-8 xl:grid-cols-[minmax(0,1.2fr)_360px]">
               <div className="grid gap-8">
-                {content.stack.map((group) => (
+                {localizedContent.stack.map((group) => (
                   <TagGroup
                     key={group.title}
                     title={group.title}
@@ -252,20 +298,20 @@ export function PublicAboutPage({
                 <Card className="p-6">
                   <div className="flex items-center gap-3 text-white">
                     <GraduationCap size={20} className="text-blue-300" />
-                    <h3 className="text-lg font-semibold">Education</h3>
+                    <h3 className="text-lg font-semibold">{uiCopy.education}</h3>
                   </div>
                   <p className="mt-4 leading-relaxed text-slate-400">
-                    {content.education.summary}
+                    {localizedContent.education.summary}
                   </p>
                 </Card>
 
                 <Card className="p-6">
                   <div className="flex items-center gap-3 text-white">
                     <Languages size={20} className="text-blue-300" />
-                    <h3 className="text-lg font-semibold">Languages</h3>
+                    <h3 className="text-lg font-semibold">{uiCopy.languages}</h3>
                   </div>
                   <div className="mt-4 space-y-3">
-                    {content.education.languages.map((language) => (
+                    {localizedContent.education.languages.map((language) => (
                       <div
                         key={language}
                         className="rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-slate-300"
@@ -283,12 +329,12 @@ export function PublicAboutPage({
         <section className="py-24">
           <Container>
             <SectionHeading
-              title="Differentiators"
-              subtitle="The CV points to a profile that connects visual judgment, implementation discipline, and business-oriented web delivery."
+              title={uiCopy.differentiatorsTitle}
+              subtitle={uiCopy.differentiatorsSubtitle}
             />
 
             <HighlightGrid
-              items={content.differentiators.map((item, index) => ({
+              items={localizedContent.differentiators.map((item, index) => ({
                 ...item,
                 icon: differentiatorIcons[index],
               }))}
@@ -300,20 +346,20 @@ export function PublicAboutPage({
         <section className="pb-24">
           <Container>
             <ContactPanel
-              title={content.contact.title}
-              description={content.contact.description}
-              note={content.contact.note}
+              title={localizedContent.contact.title}
+              description={localizedContent.contact.description}
+              note={localizedContent.contact.note}
               actions={[
                 {
-                  label: "Start on WhatsApp",
+                  label: uiCopy.startOnWhatsApp,
                   href: initialCmsContent.base.whatsappLink,
                   icon: <MessageCircleMore size={18} />,
                   target: "_blank",
                   rel: "noopener noreferrer",
                 },
                 {
-                  label: "Send an email",
-                  href: `mailto:${content.contact.email}`,
+                  label: uiCopy.sendEmail,
+                  href: `mailto:${localizedContent.contact.email}`,
                   variant: "outline",
                   icon: <Mail size={18} />,
                 },
