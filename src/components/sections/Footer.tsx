@@ -1,5 +1,7 @@
-﻿import type { CmsBase, FooterSectionData } from "@/src/cms/types";
+import Link from "next/link";
+import type { CmsBase, FooterSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
+import { isInternalHref } from "@/src/lib/routing";
 
 export function Footer({
   base,
@@ -13,13 +15,13 @@ export function Footer({
       <Container>
         <div className="grid gap-12 md:grid-cols-4">
           <div className="col-span-2">
-            <a href="/" className="mb-6 flex items-center gap-2">
+            <Link href="/" className="mb-6 flex items-center gap-2">
               <img
                 src={base.logoLight}
                 alt={data.name}
                 className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
               />
-            </a>
+            </Link>
             <p className="max-w-sm leading-relaxed text-slate-400">{data.description}</p>
           </div>
 
@@ -28,12 +30,21 @@ export function Footer({
             <ul className="space-y-4">
               {data.navigation.map((item) => (
                 <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="text-slate-400 transition-colors hover:text-white"
-                  >
-                    {item.name}
-                  </a>
+                  {isInternalHref(item.href) ? (
+                    <Link
+                      href={item.href}
+                      className="text-slate-400 transition-colors hover:text-white"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="text-slate-400 transition-colors hover:text-white"
+                    >
+                      {item.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -65,4 +76,3 @@ export function Footer({
     </footer>
   );
 }
-

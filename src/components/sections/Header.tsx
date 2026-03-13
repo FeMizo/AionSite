@@ -1,10 +1,12 @@
 "use client";
 
 import { Menu, MessageCircleMore, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { CmsBase, HeaderSectionData } from "@/src/cms/types";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
+import { isInternalHref } from "@/src/lib/routing";
 
 export function Header({
   base,
@@ -34,7 +36,7 @@ export function Header({
       }`}
     >
       <Container className="flex items-center justify-between">
-        <a
+        <Link
           href="/"
           className="group inline-flex items-center"
           aria-label={`Ir a inicio - ${data.name}`}
@@ -44,17 +46,27 @@ export function Header({
             alt={data.name}
             className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
           />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {data.navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-            >
-              {item.name}
-            </a>
+            isInternalHref(item.href) ? (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              >
+                {item.name}
+              </Link>
+            ) : (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              >
+                {item.name}
+              </a>
+            )
           ))}
           <Button
             size="sm"
@@ -78,14 +90,25 @@ export function Header({
         <div className="fixed inset-0 z-40 bg-slate-950 px-6 pt-24 md:hidden">
           <nav className="flex flex-col gap-6">
             {data.navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-2xl font-bold text-white"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </a>
+              isInternalHref(item.href) ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-2xl font-bold text-white"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-2xl font-bold text-white"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
             <Button
               className="mt-4 gap-2"
