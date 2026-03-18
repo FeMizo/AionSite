@@ -175,6 +175,18 @@
           "category": "Trabajo",
           "image": "/portfolio/lg.png",
           "url": "https://www.linkgraph.com/"
+        },
+        {
+          "title": "Molotes",
+          "category": "Cliente",
+          "image": "/portfolio/molotes.png",
+          "url": "https://molotes.aionsite.com.mx/"
+        },
+        {
+          "title": "Lobby PM",
+          "category": "Cliente",
+          "image": "/portfolio/lobbypm.png",
+          "url": "https://lobbypm.aionsite.com.mx/"
         }
       ]
     },
