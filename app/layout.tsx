@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { initialCmsContent } from "@/src/cms/site-content";
+import { metadataBase } from "@/src/lib/metadata";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase,
   title: `${initialCmsContent.sections.header.data.name} | ${initialCmsContent.sections.hero.data.title}`,
   description: initialCmsContent.sections.footer.data.description,
   icons: {
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: initialCmsContent.sections.header.data.name,
     description: initialCmsContent.sections.footer.data.description,
+    url: "/",
     type: "website",
     locale: "es_MX",
   },

@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { AdminShell } from "@/src/components/admin/AdminShell";
+import { withCanonical } from "@/src/lib/metadata";
+
+export const metadata: Metadata = withCanonical("/admin/settings", {
+  title: "Configuracion | Admin | AionSite",
+  description: "Notas operativas y de arquitectura del panel local de AionSite.",
+});
 
 export default function AdminSettingsPage() {
   return (

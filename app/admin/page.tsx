@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { ArrowUpDown, Eye, EyeOff, Layers3 } from "lucide-react";
 import { AdminShell } from "@/src/components/admin/AdminShell";
 import { initialCmsContent } from "@/src/cms/site-content";
+import { withCanonical } from "@/src/lib/metadata";
+
+export const metadata: Metadata = withCanonical("/admin", {
+  title: "Admin | AionSite",
+  description: "Panel local de administracion y resumen operativo del CMS de AionSite.",
+});
 
 export default function AdminOverviewPage() {
   const content = initialCmsContent;

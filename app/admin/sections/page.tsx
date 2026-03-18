@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { AdminShell } from "@/src/components/admin/AdminShell";
 import { SectionsDashboard } from "@/src/components/admin/SectionsDashboard";
 import { initialCmsContent } from "@/src/cms/site-content";
+import { withCanonical } from "@/src/lib/metadata";
+
+export const metadata: Metadata = withCanonical("/admin/sections", {
+  title: "Secciones | Admin | AionSite",
+  description: "Gestion local del catalogo, orden y visibilidad de secciones del CMS.",
+});
 
 export default function AdminSectionsPage() {
   return (
