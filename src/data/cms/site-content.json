@@ -159,22 +159,22 @@
       "order": 5,
       "data": [
         {
-          "title": "Casa Brava",
-          "category": "Comercio electrónico",
-          "image": "/portfolio/brisa-carmen.png",
-          "url": "https://restaurante.aionsite.com.mx/"
-        },
-        {
-          "title": "SA",
+          "title": "SearchAtlas",
           "category": "Trabajo",
           "image": "/portfolio/sa.png",
           "url": "https://searchatlas.com/"
         },
         {
-          "title": "LG",
+          "title": "LinkGraph",
           "category": "Trabajo",
           "image": "/portfolio/lg.png",
           "url": "https://www.linkgraph.com/"
+        },
+        {
+          "title": "Casa Brava",
+          "category": "Comercio electrónico",
+          "image": "/portfolio/brisa-carmen.png",
+          "url": "https://restaurante.aionsite.com.mx/"
         },
         {
           "title": "Molotes",
@@ -187,6 +187,54 @@
           "category": "Cliente",
           "image": "/portfolio/lobbypm.png",
           "url": "https://lobbypm.aionsite.com.mx/"
+        },
+        {
+          "title": "Fateh",
+          "category": "Trabajo",
+          "image": "/portfolio/fateh.png",
+          "url": "https://www.fateh.net/"
+        },
+        {
+          "title": "Sea shells and sunflowers",
+          "category": "Trabajo",
+          "image": "/portfolio/seas.png",
+          "url": "https://www.seashellsandsunflowers.com/"
+        },
+        {
+          "title": "Analog medium",
+          "category": "Trabajo",
+          "image": "/portfolio/analog.png",
+          "url": "https://www.analogmedium.com/"
+        },
+        {
+          "title": "https://www.atmedica.com/",
+          "category": "Trabajo",
+          "image": "/portfolio/atmedica.png",
+          "url": "https://www.atmedica.com/"
+        },
+        {
+          "title": "Oasis Kratom",
+          "category": "Trabajo",
+          "image": "/portfolio/oasiskratom.png",
+          "url": "https://oasiskratomcom.kinsta.cloud/"
+        },
+        {
+          "title": "Signal Geesys",
+          "category": "Trabajo",
+          "image": "/portfolio/sg.png",
+          "url": "https://signalgenesys.com/"
+        },
+        {
+          "title": "Rand Mc Nally",
+          "category": "Trabajo",
+          "image": "/portfolio/randmcnally.png",
+          "url": "https://randmcnally.com/"
+        },
+        {
+          "title": "JS Fly",
+          "category": "Trabajo",
+          "image": "/portfolio/jsfly.png",
+          "url": "https://www.jsflyfishing.com/"
         }
       ]
     },

@@ -1,11 +1,22 @@
 "use client";
 
-import { ArrowDown, ArrowUp, ImagePlus, Plus, Trash2, Upload } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUp,
+  ImagePlus,
+  Plus,
+  Trash2,
+  Upload,
+} from "lucide-react";
 import type { FieldDefinition } from "@/src/cms/types";
 import { Switch } from "@/src/components/admin/Switch";
 import { Button } from "@/src/components/ui/Button";
 
-function updateNestedValue(target: unknown, path: string[], value: unknown): unknown {
+function updateNestedValue(
+  target: unknown,
+  path: string[],
+  value: unknown,
+): unknown {
   if (path.length === 0) {
     return value;
   }
@@ -109,15 +120,18 @@ function moveArrayItemAtPath(
 
 function getEmptyItem(field: Extract<FieldDefinition, { type: "array" }>) {
   if (field.itemFields) {
-    return field.itemFields.reduce<Record<string, unknown>>((accumulator, itemField) => {
-      accumulator[itemField.key] =
-        itemField.type === "array"
-          ? []
-          : itemField.type === "boolean"
-            ? false
-            : "";
-      return accumulator;
-    }, {});
+    return field.itemFields.reduce<Record<string, unknown>>(
+      (accumulator, itemField) => {
+        accumulator[itemField.key] =
+          itemField.type === "array"
+            ? []
+            : itemField.type === "boolean"
+              ? false
+              : "";
+        return accumulator;
+      },
+      {},
+    );
   }
 
   return "";
@@ -156,15 +170,24 @@ export function SectionEditor({
     reader.readAsDataURL(file);
   };
 
-  const renderField = (field: FieldDefinition, value: unknown, path: string[]) => {
+  const renderField = (
+    field: FieldDefinition,
+    value: unknown,
+    path: string[],
+  ) => {
     if (field.type === "array") {
       const items = Array.isArray(value) ? value : [];
 
       return (
-        <div key={path.join(".") || field.key} className="rounded-3xl border border-white/8 bg-white/3 p-5">
-          <div className="flex items-start justify-between gap-4">
+        <div
+          key={path.join(".") || field.key}
+          className="rounded-3xl border border-white/8 bg-white/3 p-5"
+        >
+          <div className="sticky top-0 z-10 -mx-2 mb-4 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/90 px-2 py-3 shadow-[0_18px_36px_-28px_rgba(2,6,23,0.96)] backdrop-blur">
             <div>
-              <h4 className="text-sm font-semibold text-white">{field.label}</h4>
+              <h4 className="text-sm font-semibold text-white">
+                {field.label}
+              </h4>
               {field.description ? (
                 <p className="mt-1 text-xs leading-5 text-slate-400">
                   {field.description}
@@ -176,14 +199,17 @@ export function SectionEditor({
               size="sm"
               variant="outline"
               onClick={() =>
-                handleValueChange([...path, String(items.length)], getEmptyItem(field))
+                handleValueChange(
+                  [...path, String(items.length)],
+                  getEmptyItem(field),
+                )
               }
             >
               <Plus size={16} />
             </Button>
           </div>
 
-          <div className="mt-4 space-y-4">
+          <div className="space-y-4">
             {items.map((item, index) => (
               <div
                 key={`${field.key}-${index}`}
@@ -198,7 +224,9 @@ export function SectionEditor({
                       type="button"
                       disabled={index === 0}
                       onClick={() =>
-                        onChange(moveArrayItemAtPath(data, path, index, index - 1))
+                        onChange(
+                          moveArrayItemAtPath(data, path, index, index - 1),
+                        )
                       }
                       className="rounded-full border border-white/10 p-2 text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white disabled:opacity-30"
                     >
@@ -208,7 +236,9 @@ export function SectionEditor({
                       type="button"
                       disabled={index === items.length - 1}
                       onClick={() =>
-                        onChange(moveArrayItemAtPath(data, path, index, index + 1))
+                        onChange(
+                          moveArrayItemAtPath(data, path, index, index + 1),
+                        )
                       }
                       className="rounded-full border border-white/10 p-2 text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white disabled:opacity-30"
                     >
@@ -216,7 +246,9 @@ export function SectionEditor({
                     </button>
                     <button
                       type="button"
-                      onClick={() => onChange(removeAtPath(data, [...path, String(index)]))}
+                      onClick={() =>
+                        onChange(removeAtPath(data, [...path, String(index)]))
+                      }
                       className="rounded-full border border-white/8 p-2 text-slate-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-rose-400/45 hover:bg-rose-500/10 hover:text-rose-200"
                     >
                       <Trash2 size={16} />
@@ -230,7 +262,8 @@ export function SectionEditor({
                       <div
                         key={`${path.join(".")}-${index}-${itemField.key}`}
                         className={
-                          itemField.type === "array" || itemField.type === "textarea"
+                          itemField.type === "array" ||
+                          itemField.type === "textarea"
                             ? "md:col-span-2"
                             : ""
                         }
@@ -250,7 +283,10 @@ export function SectionEditor({
                       <input
                         value={String(item ?? "")}
                         onChange={(event) =>
-                          handleValueChange([...path, String(index)], event.target.value)
+                          handleValueChange(
+                            [...path, String(index)],
+                            event.target.value,
+                          )
                         }
                         placeholder={field.placeholder}
                         className="w-full rounded-2xl border border-white/8 bg-slate-950/80 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-400/50"
@@ -273,10 +309,15 @@ export function SectionEditor({
 
     if (field.type === "boolean") {
       return (
-        <div key={path.join(".") || field.key} className="rounded-3xl border border-white/8 bg-white/3 p-5">
+        <div
+          key={path.join(".") || field.key}
+          className="rounded-3xl border border-white/8 bg-white/3 p-5"
+        >
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h4 className="text-sm font-semibold text-white">{field.label}</h4>
+              <h4 className="text-sm font-semibold text-white">
+                {field.label}
+              </h4>
               {field.description ? (
                 <p className="mt-1 text-xs leading-5 text-slate-400">
                   {field.description}
@@ -300,7 +341,10 @@ export function SectionEditor({
       const imageSrc = String(value ?? "");
 
       return (
-        <label key={path.join(".") || field.key} className="block rounded-3xl border border-white/8 bg-white/3 p-5">
+        <label
+          key={path.join(".") || field.key}
+          className="block rounded-3xl border border-white/8 bg-white/3 p-5"
+        >
           <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
             {field.label}
           </span>
@@ -350,7 +394,9 @@ export function SectionEditor({
               type="text"
               value={imageSrc}
               onChange={(event) => handleValueChange(path, event.target.value)}
-              placeholder={field.placeholder ?? "Pega una URL o carga una imagen"}
+              placeholder={
+                field.placeholder ?? "Pega una URL o carga una imagen"
+              }
               className="w-full rounded-2xl border border-white/8 bg-slate-950/80 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-400/50"
             />
           </div>
@@ -368,7 +414,10 @@ export function SectionEditor({
       "w-full rounded-2xl border border-white/8 bg-slate-950/80 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-400/50";
 
     return (
-      <label key={path.join(".") || field.key} className="block rounded-3xl border border-white/8 bg-white/3 p-5">
+      <label
+        key={path.join(".") || field.key}
+        className="block rounded-3xl border border-white/8 bg-white/3 p-5"
+      >
         <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
           {field.label}
         </span>
@@ -382,7 +431,13 @@ export function SectionEditor({
           />
         ) : (
           <input
-            type={field.type === "number" ? "number" : field.type === "url" ? "url" : "text"}
+            type={
+              field.type === "number"
+                ? "number"
+                : field.type === "url"
+                  ? "url"
+                  : "text"
+            }
             value={String(value ?? "")}
             onChange={(event) => handleValueChange(path, event.target.value)}
             placeholder={field.placeholder}
@@ -402,18 +457,15 @@ export function SectionEditor({
     <div className="grid gap-4 md:grid-cols-2">
       {fields.map((field) => {
         const fieldPath = field.key === "root" ? [] : [field.key];
-        const spanTwoColumns = field.type === "array" || field.type === "textarea";
+        const spanTwoColumns =
+          field.type === "array" || field.type === "textarea";
 
         return (
           <div
             key={`${field.key}-${field.type}`}
             className={spanTwoColumns ? "md:col-span-2" : ""}
           >
-            {renderField(
-              field,
-              getFieldValue(data, field.key),
-              fieldPath,
-            )}
+            {renderField(field, getFieldValue(data, field.key), fieldPath)}
           </div>
         );
       })}
