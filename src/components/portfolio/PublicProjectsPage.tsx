@@ -21,7 +21,7 @@ import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
 import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 
-const PAGE_SIZE_OPTIONS = [10, 20, 30] as const;
+const PAGE_SIZE_OPTIONS = [9, 18, 30] as const;
 
 export function PublicProjectsPage({
   initialContent,
@@ -33,7 +33,7 @@ export function PublicProjectsPage({
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedType, setSelectedType] = useState("all");
   const [pageSize, setPageSize] =
-    useState<(typeof PAGE_SIZE_OPTIONS)[number]>(10);
+    useState<(typeof PAGE_SIZE_OPTIONS)[number]>(9);
   const [currentPage, setCurrentPage] = useState(1);
   const deferredSearch = useDeferredValue(search.trim().toLowerCase());
 
@@ -209,7 +209,7 @@ export function PublicProjectsPage({
                   <select
                     value={String(pageSize)}
                     onChange={(event) =>
-                      setPageSize(Number(event.target.value) as 10 | 20 | 30)
+                      setPageSize(Number(event.target.value) as 9 | 18 | 30)
                     }
                     className="w-full rounded-2xl border border-white/8 bg-slate-950/80 px-4 py-3 text-sm text-white outline-none transition focus:border-blue-400/50"
                   >
