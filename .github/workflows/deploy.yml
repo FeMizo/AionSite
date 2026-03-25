@@ -74,7 +74,7 @@ jobs:
           while IFS= read -r -d '' dir; do
             rel_path="${dir#out}"
             [ -z "$rel_path" ] && continue
-            ftp_run_best_effort "mkdir -p \"$REMOTE_ROOT$rel_path\""
+            ftp_run_best_effort "mkdir -p \"$REMOTE_ROOT$rel_path\"" || true
           done < <(find out -type d -print0)
 
           upload_file() {
