@@ -34,17 +34,65 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
-          set cmd:fail-exit yes
-          set ftp:ssl-allow false
-          set ssl:verify-certificate no
-          set xfer:clobber on
-          set xfer:use-temp-file yes
-          set net:max-retries 5
-          set net:reconnect-interval-base 5
-          set net:reconnect-interval-max 30
-          set net:timeout 30
-          set mirror:parallel-directories false
-          mirror --reverse --verbose --continue --only-newer --parallel=1 ./out/ ./domains/aionsite.com.mx/public_html/
-          bye
+          set -euo pipefail
+
+          REMOTE_ROOT="./domains/aionsite.com.mx/public_html"
+
+          ftp_run() {
+            local commands="$1"
+            lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+            set cmd:fail-exit yes
+            set ftp:ssl-allow false
+            set ftp:passive-mode true
+            set ssl:verify-certificate no
+            set xfer:clobber on
+            set xfer:use-temp-file yes
+            set net:max-retries 2
+            set net:timeout 30
+            $commands
+            bye
           EOF
+          }
+
+          echo "Creating remote directories..."
+          while IFS= read -r -d '' dir; do
+            rel_path="${dir#out}"
+            [ -z "$rel_path" ] && continue
+            ftp_run "mkdir -p \"$REMOTE_ROOT$rel_path\""
+          done < <(find out -type d -print0)
+
+          upload_file() {
+            local file="$1"
+            local rel_path="${file#out/}"
+            local remote_dir
+            remote_dir="$(dirname "$rel_path")"
+            local target_dir="$REMOTE_ROOT"
+            local command_block
+
+            if [ "$remote_dir" != "." ]; then
+              target_dir="$REMOTE_ROOT/$remote_dir"
+            fi
+
+            local attempt=1
+            local max_attempts=5
+
+            while [ "$attempt" -le "$max_attempts" ]; do
+              echo "Uploading [$attempt/$max_attempts] $rel_path"
+
+              printf -v command_block 'mkdir -p "%s"\nput "%s" -O "%s"' "$target_dir" "$file" "$target_dir"
+
+              if ftp_run "$command_block"; then
+                return 0
+              fi
+
+              sleep $((attempt * 5))
+              attempt=$((attempt + 1))
+            done
+
+            echo "Failed to upload $rel_path after $max_attempts attempts." >&2
+            return 1
+          }
+
+          while IFS= read -r -d '' file; do
+            upload_file "$file"
+          done < <(find out -type f -print0)
