@@ -1,11 +1,12 @@
 {
   "name": "aionsite",
   "private": true,
-  "version": "1.16.6",
+  "version": "1.16.7",
   "type": "module",
   "scripts": {
     "dev": "next dev --port=2666 --hostname=0.0.0.0",
     "build": "next build",
+    "build:static": "node scripts/build-static.mjs",
     "lint": "next lint"
   },
   "dependencies": {

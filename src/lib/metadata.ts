@@ -20,6 +20,10 @@ function resolveSiteUrl() {
   }
 }
 
+export function getSiteUrl() {
+  return resolveSiteUrl().toString();
+}
+
 export const metadataBase = resolveSiteUrl();
 
 export function withCanonical(

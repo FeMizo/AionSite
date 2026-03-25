@@ -1,11 +1,15 @@
 import type { MetadataRoute } from "next";
-import { metadataBase } from "@/src/lib/metadata";
+import { getSiteUrl } from "@/src/lib/metadata";
+
+export const dynamic = "force-static";
 
 function buildUrl(path: string) {
-  return new URL(path, metadataBase).toString();
+  return new URL(path, getSiteUrl()).toString();
 }
 
 export default function robots(): MetadataRoute.Robots {
+  const siteUrl = getSiteUrl();
+
   return {
     rules: [
       {
@@ -15,6 +19,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: buildUrl("/sitemap.xml"),
-    host: metadataBase.origin,
+    host: new URL(siteUrl).origin,
   };
 }

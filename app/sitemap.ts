@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
-import { metadataBase } from "@/src/lib/metadata";
+import { getSiteUrl } from "@/src/lib/metadata";
+
+export const dynamic = "force-static";
 
 function buildUrl(path: string) {
-  return new URL(path, metadataBase).toString();
+  return new URL(path, getSiteUrl()).toString();
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
