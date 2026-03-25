@@ -54,11 +54,27 @@ jobs:
           EOF
           }
 
+          ftp_run_best_effort() {
+            local commands="$1"
+            lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+            set cmd:fail-exit no
+            set ftp:ssl-allow false
+            set ftp:passive-mode true
+            set ssl:verify-certificate no
+            set xfer:clobber on
+            set xfer:use-temp-file yes
+            set net:max-retries 2
+            set net:timeout 30
+            $commands
+            bye
+          EOF
+          }
+
           echo "Creating remote directories..."
           while IFS= read -r -d '' dir; do
             rel_path="${dir#out}"
             [ -z "$rel_path" ] && continue
-            ftp_run "mkdir -p \"$REMOTE_ROOT$rel_path\""
+            ftp_run_best_effort "mkdir -p \"$REMOTE_ROOT$rel_path\""
           done < <(find out -type d -print0)
 
           upload_file() {
@@ -67,8 +83,6 @@ jobs:
             local remote_dir
             remote_dir="$(dirname "$rel_path")"
             local target_dir="$REMOTE_ROOT"
-            local command_block
-
             if [ "$remote_dir" != "." ]; then
               target_dir="$REMOTE_ROOT/$remote_dir"
             fi
@@ -79,9 +93,7 @@ jobs:
             while [ "$attempt" -le "$max_attempts" ]; do
               echo "Uploading [$attempt/$max_attempts] $rel_path"
 
-              printf -v command_block 'mkdir -p "%s"\nput "%s" -O "%s"' "$target_dir" "$file" "$target_dir"
-
-              if ftp_run "$command_block"; then
+              if ftp_run "put \"$file\" -O \"$target_dir\""; then
                 return 0
               fi
 
