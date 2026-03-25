@@ -7,6 +7,7 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
 
@@ -25,86 +26,14 @@ jobs:
         env:
           NEXT_STATIC_EXPORT: "true"
 
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
       - name: Deploy via FTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          set -euo pipefail
-
-          REMOTE_ROOT="./domains/aionsite.com.mx/public_html"
-
-          ftp_run() {
-            local commands="$1"
-            lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
-            set cmd:fail-exit yes
-            set ftp:ssl-allow false
-            set ftp:passive-mode true
-            set ssl:verify-certificate no
-            set xfer:clobber on
-            set xfer:use-temp-file yes
-            set net:max-retries 2
-            set net:timeout 30
-            $commands
-            bye
-          EOF
-          }
-
-          ftp_run_best_effort() {
-            local commands="$1"
-            lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
-            set cmd:fail-exit no
-            set ftp:ssl-allow false
-            set ftp:passive-mode true
-            set ssl:verify-certificate no
-            set xfer:clobber on
-            set xfer:use-temp-file yes
-            set net:max-retries 2
-            set net:timeout 30
-            $commands
-            bye
-          EOF
-          }
-
-          echo "Creating remote directories..."
-          while IFS= read -r -d '' dir; do
-            rel_path="${dir#out}"
-            [ -z "$rel_path" ] && continue
-            ftp_run_best_effort "mkdir -p \"$REMOTE_ROOT$rel_path\"" || true
-          done < <(find out -type d -print0)
-
-          upload_file() {
-            local file="$1"
-            local rel_path="${file#out/}"
-            local remote_dir
-            remote_dir="$(dirname "$rel_path")"
-            local target_dir="$REMOTE_ROOT"
-            if [ "$remote_dir" != "." ]; then
-              target_dir="$REMOTE_ROOT/$remote_dir"
-            fi
-
-            local attempt=1
-            local max_attempts=5
-
-            while [ "$attempt" -le "$max_attempts" ]; do
-              echo "Uploading [$attempt/$max_attempts] $rel_path"
-
-              if ftp_run "put \"$file\" -O \"$target_dir\""; then
-                return 0
-              fi
-
-              sleep $((attempt * 5))
-              attempt=$((attempt + 1))
-            done
-
-            echo "Failed to upload $rel_path after $max_attempts attempts." >&2
-            return 1
-          }
-
-          while IFS= read -r -d '' file; do
-            upload_file "$file"
-          done < <(find out -type f -print0)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          local-dir: ./out/
+          server-dir: ./domains/aionsite.com.mx/public_html/
+          log-level: standard
+          timeout: 120000
