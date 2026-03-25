@@ -35,11 +35,16 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+          set cmd:fail-exit yes
           set ftp:ssl-allow false
           set ssl:verify-certificate no
           set xfer:clobber on
-          set net:max-retries 2
-          set net:timeout 20
-          mirror --reverse --verbose --continue --parallel=2 ./out/ ./domains/aionsite.com.mx/public_html/
+          set xfer:use-temp-file yes
+          set net:max-retries 5
+          set net:reconnect-interval-base 5
+          set net:reconnect-interval-max 30
+          set net:timeout 30
+          set mirror:parallel-directories false
+          mirror --reverse --verbose --continue --only-newer --parallel=1 ./out/ ./domains/aionsite.com.mx/public_html/
           bye
           EOF
