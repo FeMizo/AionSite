@@ -118,16 +118,27 @@ function moveArrayItemAtPath(
   };
 }
 
+function getDefaultValueForField(field: FieldDefinition): unknown {
+  if (field.type === "array") {
+    return [];
+  }
+
+  if (field.type === "boolean") {
+    return false;
+  }
+
+  if (field.type === "select") {
+    return field.options[0]?.value ?? "";
+  }
+
+  return "";
+}
+
 function getEmptyItem(field: Extract<FieldDefinition, { type: "array" }>) {
   if (field.itemFields) {
     return field.itemFields.reduce<Record<string, unknown>>(
       (accumulator, itemField) => {
-        accumulator[itemField.key] =
-          itemField.type === "array"
-            ? []
-            : itemField.type === "boolean"
-              ? false
-              : "";
+        accumulator[itemField.key] = getDefaultValueForField(itemField);
         return accumulator;
       },
       {},
@@ -429,6 +440,18 @@ export function SectionEditor({
             rows={4}
             className={sharedClasses}
           />
+        ) : field.type === "select" ? (
+          <select
+            value={String(value ?? field.options[0]?.value ?? "")}
+            onChange={(event) => handleValueChange(path, event.target.value)}
+            className={sharedClasses}
+          >
+            {field.options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
         ) : (
           <input
             type={

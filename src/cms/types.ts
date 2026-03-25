@@ -40,12 +40,17 @@ export type StatsSectionData = Array<{
   label: string;
 }>;
 
-export type PortfolioSectionData = Array<{
+export type PortfolioType = "CMS" | "Custom code" | "Nuxt/Next";
+
+export type PortfolioItem = {
   title: string;
   category: string;
   image: string;
   url: string;
-}>;
+  type: PortfolioType;
+};
+
+export type PortfolioSectionData = PortfolioItem[];
 
 export type ProcessSectionData = Array<{
   step: string;
@@ -152,6 +157,18 @@ export type PrimitiveFieldDefinition = {
   description?: string;
 };
 
+export type SelectFieldDefinition = {
+  key: string;
+  label: string;
+  type: "select";
+  options: Array<{
+    label: string;
+    value: string;
+  }>;
+  placeholder?: string;
+  description?: string;
+};
+
 export type ArrayFieldDefinition = {
   key: string;
   label: string;
@@ -163,7 +180,10 @@ export type ArrayFieldDefinition = {
   description?: string;
 };
 
-export type FieldDefinition = PrimitiveFieldDefinition | ArrayFieldDefinition;
+export type FieldDefinition =
+  | PrimitiveFieldDefinition
+  | SelectFieldDefinition
+  | ArrayFieldDefinition;
 
 export type SectionRegistryEntry<K extends SectionId = SectionId> = {
   id: K;

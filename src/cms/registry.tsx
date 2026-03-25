@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { portfolioTypeOptions } from "@/src/cms/portfolio";
 import { FAQ } from "@/src/components/sections/FAQ";
 import { FinalCTA } from "@/src/components/sections/FinalCTA";
 import { Footer } from "@/src/components/sections/Footer";
@@ -121,6 +122,12 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
         itemFields: [
           { key: "title", label: "Título", type: "text" },
           { key: "category", label: "Categoría", type: "text" },
+          {
+            key: "type",
+            label: "Tipo",
+            type: "select",
+            options: portfolioTypeOptions,
+          },
           { key: "image", label: "Imagen", type: "image" },
           { key: "url", label: "URL", type: "url" },
         ],

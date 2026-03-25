@@ -1,4 +1,5 @@
 import { defaultCmsContent } from "@/src/cms/default-content";
+import { normalizePortfolioItems } from "@/src/cms/portfolio";
 import type { CmsContent, SectionId } from "@/src/cms/types";
 
 function isObject(value: unknown): value is Record<string, unknown> {
@@ -42,6 +43,11 @@ export function normalizeCmsContent(content: unknown): CmsContent {
       data: deepMerge(fallback.data, section?.data) as typeof fallback.data,
     } as CmsContent["sections"][SectionId];
   });
+
+  nextSections.portfolio = {
+    ...nextSections.portfolio,
+    data: normalizePortfolioItems(nextSections.portfolio.data),
+  };
 
   const fallbackSequence = (Object.keys(nextSections) as SectionId[]).sort(
     (left, right) => nextSections[left].order - nextSections[right].order,

@@ -1,43 +1,27 @@
-import { ExternalLink } from "lucide-react";
+import { getRecentPortfolioItems } from "@/src/cms/portfolio";
 import type { PortfolioSectionData } from "@/src/cms/types";
-import { Badge } from "@/src/components/ui/Badge";
+import { PortfolioGrid } from "@/src/components/portfolio/PortfolioGrid";
 import { Container } from "@/src/components/ui/Container";
+import { LinkButton } from "@/src/components/ui/LinkButton";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
 
 export function Portfolio({ data }: { data: PortfolioSectionData }) {
+  const featuredProjects = getRecentPortfolioItems(data).slice(0, 6);
+
   return (
     <section id="portafolio" className="bg-slate-950 py-24">
       <Container>
         <SectionHeading
           title="Proyectos destacados"
-          subtitle="Una muestra de nuestro trabajo enfocado en diseño premium y resultados."
+          subtitle="Una muestra de nuestro trabajo enfocado en diseÃ±o premium y resultados."
         />
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((item) => (
-            <a
-              key={item.title}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-[0_26px_52px_-34px_rgba(2,6,23,0.98)] transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/30 hover:shadow-[0_30px_56px_-34px_rgba(37,99,235,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-            >
-              <div className="absolute right-4 top-4 z-20 inline-flex items-center gap-1 rounded-full border border-white/20 bg-slate-950/70 px-2.5 py-1 text-xs font-medium text-white">
-                <ExternalLink size={12} />
-                Abrir
-              </div>
-              <img
-                src={item.image}
-                alt={item.title}
-                className="h-72 w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-100"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-              <div className="absolute bottom-0 p-6">
-                <Badge className="mb-3">{item.category}</Badge>
-                <h3 className="text-xl font-bold text-white">{item.title}</h3>
-              </div>
-            </a>
-          ))}
+        <PortfolioGrid items={featuredProjects} />
+
+        <div className="mt-12 flex justify-center">
+          <LinkButton href="/proyectos" variant="outline" className="gap-2">
+            Ver todos los proyectos
+          </LinkButton>
         </div>
       </Container>
     </section>

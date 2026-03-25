@@ -162,79 +162,92 @@
           "title": "SearchAtlas",
           "category": "Trabajo",
           "image": "/portfolio/sa.png",
-          "url": "https://searchatlas.com/"
+          "url": "https://searchatlas.com/",
+          "type": "Nuxt/Next"
         },
         {
           "title": "LinkGraph",
           "category": "Trabajo",
           "image": "/portfolio/lg.png",
-          "url": "https://www.linkgraph.com/"
+          "url": "https://www.linkgraph.com/",
+          "type": "Nuxt/Next"
         },
         {
           "title": "Casa Brava",
           "category": "Comercio electrónico",
           "image": "/portfolio/brisa-carmen.png",
-          "url": "https://restaurante.aionsite.com.mx/"
+          "url": "https://restaurante.aionsite.com.mx/",
+          "type": "CMS"
         },
         {
           "title": "Molotes",
           "category": "Cliente",
           "image": "/portfolio/molotes.png",
-          "url": "https://molotes.aionsite.com.mx/"
+          "url": "https://molotes.aionsite.com.mx/",
+          "type": "CMS"
         },
         {
           "title": "Lobby PM",
           "category": "Cliente",
           "image": "/portfolio/lobbypm.png",
-          "url": "https://lobbypm.aionsite.com.mx/"
+          "url": "https://lobbypm.aionsite.com.mx/",
+          "type": "CMS"
         },
         {
           "title": "Fateh",
           "category": "Trabajo",
           "image": "/portfolio/fateh.png",
-          "url": "https://www.fateh.net/"
+          "url": "https://www.fateh.net/",
+          "type": "Custom code"
         },
         {
           "title": "Sea shells and sunflowers",
           "category": "Trabajo",
           "image": "/portfolio/seas.png",
-          "url": "https://www.seashellsandsunflowers.com/"
+          "url": "https://www.seashellsandsunflowers.com/",
+          "type": "CMS"
         },
         {
           "title": "Analog medium",
           "category": "Trabajo",
           "image": "/portfolio/analog.png",
-          "url": "https://www.analogmedium.com/"
+          "url": "https://www.analogmedium.com/",
+          "type": "Custom code"
         },
         {
           "title": "https://www.atmedica.com/",
           "category": "Trabajo",
           "image": "/portfolio/atmedica.png",
-          "url": "https://www.atmedica.com/"
+          "url": "https://www.atmedica.com/",
+          "type": "Custom code"
         },
         {
           "title": "Oasis Kratom",
           "category": "Trabajo",
           "image": "/portfolio/oasiskratom.png",
-          "url": "https://oasiskratomcom.kinsta.cloud/"
+          "url": "https://oasiskratomcom.kinsta.cloud/",
+          "type": "CMS"
         },
         {
           "title": "Signal Geesys",
           "category": "Trabajo",
           "image": "/portfolio/sg.png",
-          "url": "https://signalgenesys.com/"
+          "url": "https://signalgenesys.com/",
+          "type": "Nuxt/Next"
         },
         {
           "title": "Rand Mc Nally",
           "category": "Trabajo",
           "image": "/portfolio/randmcnally.png",
-          "url": "https://randmcnally.com/"
+          "url": "https://randmcnally.com/",
+          "type": "Custom code"
         },
         {
           "title": "JS Fly",
           "category": "Trabajo",
           "image": "/portfolio/jsfly.png",
-          "url": "https://www.jsflyfishing.com/"
+          "url": "https://www.jsflyfishing.com/",
+          "type": "CMS"
         }
       ]
     },
