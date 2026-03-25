@@ -174,11 +174,32 @@ export function SectionEditor({
       return;
     }
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      handleValueChange(path, String(reader.result ?? ""));
-    };
-    reader.readAsDataURL(file);
+    void (async () => {
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const response = await fetch("/api/uploads/image", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("upload_failed");
+        }
+
+        const payload = (await response.json()) as { src?: string };
+        if (!payload.src) {
+          throw new Error("missing_src");
+        }
+
+        handleValueChange(path, payload.src);
+      } catch {
+        window.alert(
+          "No se pudo guardar la imagen como archivo local. Verifica que el API local esté disponible.",
+        );
+      }
+    })();
   };
 
   const renderField = (

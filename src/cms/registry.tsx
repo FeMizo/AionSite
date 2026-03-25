@@ -83,7 +83,12 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
         itemFields: [
           { key: "title", label: "Título", type: "text" },
           { key: "description", label: "Descripción", type: "textarea" },
-          { key: "icon", label: "Ícono Lucide", type: "text", placeholder: "Globe" },
+          {
+            key: "icon",
+            label: "Ícono Lucide",
+            type: "text",
+            placeholder: "Globe",
+          },
         ],
       },
     ],
@@ -128,8 +133,8 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
             type: "select",
             options: portfolioTypeOptions,
           },
-          { key: "image", label: "Imagen", type: "image" },
           { key: "url", label: "URL", type: "url" },
+          { key: "image", label: "Imagen", type: "image" },
         ],
       },
     ],
@@ -281,46 +286,46 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
   },
 };
 
-const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> = {
-  header: (content) => (
-    <Header base={content.base} data={content.sections.header.data} />
-  ),
-  hero: (content) => (
-    <Hero
-      data={content.sections.hero.data}
-      headerData={content.sections.header.data}
-    />
-  ),
-  services: (content) => <Services data={content.sections.services.data} />,
-  stats: (content) => <Stats data={content.sections.stats.data} />,
-  portfolio: (content) => <Portfolio data={content.sections.portfolio.data} />,
-  process: (content) => <Process data={content.sections.process.data} />,
-  pricing: (content) => (
-    <Pricing
-      data={content.sections.pricing.data}
-      headerData={content.sections.header.data}
-    />
-  ),
-  testimonials: (content) => (
-    <Testimonials data={content.sections.testimonials.data} />
-  ),
-  faq: (content) => <FAQ data={content.sections.faq.data} />,
-  sideImageContent: (content) => (
-    <SideImageContent data={content.sections.sideImageContent.data} />
-  ),
-  finalCTA: (content) => <FinalCTA data={content.sections.finalCTA.data} />,
-  footer: (content) => (
-    <Footer
-      base={content.base}
-      data={content.sections.footer.data}
-    />
-  ),
-  whatsappFloatingButton: (content) => (
-    <WhatsAppFloatingButton
-      data={content.sections.whatsappFloatingButton.data}
-    />
-  ),
-};
+const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> =
+  {
+    header: (content) => (
+      <Header base={content.base} data={content.sections.header.data} />
+    ),
+    hero: (content) => (
+      <Hero
+        data={content.sections.hero.data}
+        headerData={content.sections.header.data}
+      />
+    ),
+    services: (content) => <Services data={content.sections.services.data} />,
+    stats: (content) => <Stats data={content.sections.stats.data} />,
+    portfolio: (content) => (
+      <Portfolio data={content.sections.portfolio.data} />
+    ),
+    process: (content) => <Process data={content.sections.process.data} />,
+    pricing: (content) => (
+      <Pricing
+        data={content.sections.pricing.data}
+        headerData={content.sections.header.data}
+      />
+    ),
+    testimonials: (content) => (
+      <Testimonials data={content.sections.testimonials.data} />
+    ),
+    faq: (content) => <FAQ data={content.sections.faq.data} />,
+    sideImageContent: (content) => (
+      <SideImageContent data={content.sections.sideImageContent.data} />
+    ),
+    finalCTA: (content) => <FinalCTA data={content.sections.finalCTA.data} />,
+    footer: (content) => (
+      <Footer base={content.base} data={content.sections.footer.data} />
+    ),
+    whatsappFloatingButton: (content) => (
+      <WhatsAppFloatingButton
+        data={content.sections.whatsappFloatingButton.data}
+      />
+    ),
+  };
 
 export function getOrderedSectionIds(
   content: CmsContent,

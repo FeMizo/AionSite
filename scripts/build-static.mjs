@@ -8,13 +8,15 @@ const apiBackupDir = path.join(rootDir, "app", "__api_static_backup__");
 const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 
 if (existsSync(apiBackupDir)) {
-  console.error(
-    "No se puede ejecutar build:static porque ya existe app/__api_static_backup__.",
-  );
-  process.exit(1);
+  if (!existsSync(apiDir)) {
+    cpSync(apiBackupDir, apiDir, { recursive: true });
+  }
+
+  rmSync(apiBackupDir, { recursive: true, force: true });
 }
 
 let apiMoved = false;
+let exitCode = 1;
 
 try {
   if (existsSync(apiDir)) {
@@ -36,10 +38,12 @@ try {
     throw result.error;
   }
 
-  process.exit(result.status ?? 1);
+  exitCode = result.status ?? 1;
 } finally {
   if (apiMoved && existsSync(apiBackupDir)) {
     cpSync(apiBackupDir, apiDir, { recursive: true });
     rmSync(apiBackupDir, { recursive: true, force: true });
   }
 }
+
+process.exit(exitCode);

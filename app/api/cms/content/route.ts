@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { normalizeCmsContent } from "@/src/cms/normalize";
-import { readCmsContentFromFile, writeCmsContentToFile } from "@/src/cms/file-storage";
+import {
+  readCmsContentFromFile,
+  writeCmsContentToFile,
+} from "@/src/cms/file-storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
