@@ -263,8 +263,8 @@ export function ContentDashboard({
 
         setStatusMessage(
           persistedToFile
-            ? "Cambios guardados en archivo local y navegador."
-            : "Cambios guardados en este navegador.",
+            ? "Cambios guardados en el proyecto."
+            : "Cambios guardados en el sitio.",
         );
       } catch {
         setStatusMessage("No se pudo guardar el contenido.");

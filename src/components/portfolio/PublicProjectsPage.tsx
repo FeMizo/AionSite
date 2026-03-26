@@ -140,8 +140,8 @@ export function PublicProjectsPage({
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
                 Explora el portafolio completo ordenado por reciente. Puedes
-                buscar por nombre, filtrar por categorÃ­a o por tipo de
-                implementaciÃ³n.
+                buscar por nombre, filtrar por categoría o por tipo de
+                implementación.
               </p>
             </div>
 
@@ -168,7 +168,7 @@ export function PublicProjectsPage({
 
                 <label className="block">
                   <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-                    CategorÃ­a
+                    Categoría
                   </span>
                   <select
                     value={selectedCategory}
@@ -204,7 +204,7 @@ export function PublicProjectsPage({
 
                 <label className="block">
                   <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-                    PaginaciÃ³n
+                    Paginación
                   </span>
                   <select
                     value={String(pageSize)}
@@ -243,7 +243,7 @@ export function PublicProjectsPage({
               <PortfolioGrid items={visibleItems} />
             ) : (
               <div className="rounded-[2rem] border border-dashed border-white/10 bg-white/[0.03] px-6 py-14 text-center text-slate-400">
-                Ajusta la bÃºsqueda o los filtros para encontrar proyectos.
+                Ajusta la búsqueda o los filtros para encontrar proyectos.
               </div>
             )}
 
@@ -260,7 +260,7 @@ export function PublicProjectsPage({
               </Button>
 
               <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300">
-                PÃ¡gina {safePage} de {totalPages}
+                Página {safePage} de {totalPages}
               </span>
 
               <Button

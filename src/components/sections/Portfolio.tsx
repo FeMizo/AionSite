@@ -13,7 +13,7 @@ export function Portfolio({ data }: { data: PortfolioSectionData }) {
       <Container>
         <SectionHeading
           title="Proyectos destacados"
-          subtitle="Una muestra de nuestro trabajo enfocado en diseÃ±o premium y resultados."
+          subtitle="Una muestra de nuestro trabajo enfocado en diseño premium y resultados."
         />
 
         <PortfolioGrid items={featuredProjects} />

@@ -41,7 +41,7 @@ export async function POST(request: Request) {
 
     if (!(maybeFile instanceof File)) {
       return NextResponse.json(
-        { error: "No se recibiÃ³ ningÃºn archivo." },
+        { error: "No se recibió ningún archivo." },
         { status: 400 },
       );
     }

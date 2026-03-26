@@ -6,7 +6,7 @@ import { withCanonical } from "@/src/lib/metadata";
 export const metadata: Metadata = withCanonical("/proyectos", {
   title: "Proyectos | AionSite",
   description:
-    "Portafolio completo de proyectos web ordenados por reciente, con filtros por categorÃ­a, tipo y buscador integrado.",
+    "Portafolio completo de proyectos web ordenados por reciente, con filtros por categoría, tipo y buscador integrado.",
 });
 
 export default function ProjectsPage() {

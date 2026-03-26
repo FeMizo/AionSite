@@ -212,14 +212,14 @@
           "category": "Trabajo",
           "image": "/portfolio/analog.png",
           "url": "https://www.analogmedium.com/",
-          "type": "Custom code"
+          "type": "CMS"
         },
         {
-          "title": "https://www.atmedica.com/",
+          "title": "AtMedica",
           "category": "Trabajo",
           "image": "/portfolio/atmedica.png",
           "url": "https://www.atmedica.com/",
-          "type": "Custom code"
+          "type": "CMS"
         },
         {
           "title": "Oasis Kratom",
@@ -229,18 +229,18 @@
           "type": "CMS"
         },
         {
-          "title": "Signal Geesys",
+          "title": "Signal Genesys",
           "category": "Trabajo",
           "image": "/portfolio/sg.png",
           "url": "https://signalgenesys.com/",
-          "type": "Nuxt/Next"
+          "type": "CMS"
         },
         {
           "title": "Rand Mc Nally",
           "category": "Trabajo",
           "image": "/portfolio/randmcnally.png",
           "url": "https://randmcnally.com/",
-          "type": "Custom code"
+          "type": "CMS"
         },
         {
           "title": "JS Fly",

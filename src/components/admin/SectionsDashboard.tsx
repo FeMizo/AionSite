@@ -251,8 +251,8 @@ export function SectionsDashboard({
         setSavedSnapshot(getContentSnapshot(result.content));
         setStatusMessage(
           result.persistedToFile
-            ? "Cambios guardados en archivo local y navegador."
-            : "Cambios guardados en este navegador.",
+            ? "Cambios guardados en el proyecto."
+            : "Cambios guardados en el sitio.",
         );
       } catch {
         setStatusMessage("No se pudo guardar el contenido CMS.");
