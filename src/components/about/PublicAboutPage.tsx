@@ -78,7 +78,7 @@ export function PublicAboutPage({
   initialContent: AboutContent;
 }) {
   const [content, setContent] = useState(initialContent);
-  const [language, setLanguage] = useState<AboutLanguage>("en");
+  const [language, setLanguage] = useState<AboutLanguage>("es");
 
   useEffect(() => {
     let isCancelled = false;
@@ -87,8 +87,6 @@ export function PublicAboutPage({
     const storedLanguage = window.localStorage.getItem(ABOUT_LANGUAGE_STORAGE_KEY);
     if (storedLanguage === "en" || storedLanguage === "es") {
       setLanguage(storedLanguage);
-    } else if (window.navigator.language.toLowerCase().startsWith("es")) {
-      setLanguage("es");
     }
 
     (async () => {
