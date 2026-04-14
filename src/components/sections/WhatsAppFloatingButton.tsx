@@ -13,7 +13,7 @@ export function WhatsAppFloatingButton({
       href={data.whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl transition-transform hover:scale-110 active:scale-95"
+      className="fixed bottom-8 right-8 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl transition-transform duration-200 ease-out hover:scale-105 active:scale-[0.97] active:duration-100"
       aria-label="Contactar por WhatsApp"
     >
       <MessageCircle size={32} />

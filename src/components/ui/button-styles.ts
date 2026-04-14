@@ -30,7 +30,7 @@ export function getButtonClassName({
   className?: string;
 }) {
   return cn(
-    "inline-flex items-center justify-center rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 active:scale-95 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center rounded-full transition-[transform,box-shadow,background-color,border-color] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 active:scale-[0.97] active:duration-100 active:ease-out disabled:pointer-events-none disabled:opacity-50",
     buttonVariants[variant],
     buttonSizes[size],
     className,

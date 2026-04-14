@@ -443,7 +443,7 @@ export function SectionEditor({
     }
 
     const sharedClasses =
-      "w-full rounded-2xl border border-white/8 bg-slate-950/80 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-400/50";
+      "w-full rounded-2xl border border-white/8 bg-slate-950/80 px-4 py-3 text-sm text-white outline-none transition-[border-color,box-shadow,background-color] duration-150 ease-out placeholder:text-slate-500 focus:border-blue-400/70 focus:bg-slate-950 focus:ring-2 focus:ring-blue-400/15";
 
     return (
       <label

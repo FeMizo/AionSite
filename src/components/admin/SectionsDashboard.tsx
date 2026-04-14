@@ -302,7 +302,7 @@ export function SectionsDashboard({
               onChange={(event) =>
                 setNewSectionType(event.target.value as SectionId)
               }
-              className="rounded-xl border border-white/12 bg-slate-950/80 px-3 py-2 text-xs text-slate-200 outline-none transition focus:border-blue-400/60"
+              className="rounded-xl border border-white/12 bg-slate-950/80 px-3 py-2 text-xs text-slate-200 outline-none transition-[border-color,box-shadow,background-color] duration-150 ease-out focus:border-blue-400/70 focus:bg-slate-950 focus:ring-2 focus:ring-blue-400/15"
             >
               {(Object.keys(sectionRegistry) as SectionId[])
                 .filter((id) => sectionRegistry[id].placement === "main")
