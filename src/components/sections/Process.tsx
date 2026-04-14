@@ -12,7 +12,7 @@ export function Process({ data }: { data: ProcessSectionData }) {
         />
 
         <div className="relative">
-          <div className="absolute left-8 top-0 h-full w-px bg-white/10 md:left-1/2" />
+          <div className="absolute left-8 top-0 h-full w-px bg-blue-900/70 md:left-1/2" />
 
           <div className="space-y-12">
             {data.map((item, index) => (
@@ -22,7 +22,7 @@ export function Process({ data }: { data: ProcessSectionData }) {
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                <div className="absolute left-8 z-10 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full bg-blue-600 ring-4 ring-blue-600/20 md:left-1/2" />
+                <div className="absolute left-8 z-10 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full bg-blue-500 ring-4 ring-blue-500/25 shadow-[0_0_14px_2px_rgba(59,130,246,0.45)] md:left-1/2" />
 
                 <div className="w-full pl-16 md:w-1/2 md:pl-0">
                   <div
@@ -30,7 +30,7 @@ export function Process({ data }: { data: ProcessSectionData }) {
                       index % 2 === 0 ? "md:text-left" : "md:text-right"
                     }`}
                   >
-                    <span className="mb-4 block text-4xl font-bold text-blue-600/20">
+                    <span className="mb-4 block text-4xl font-bold text-blue-400/45">
                       {item.step}
                     </span>
                     <h3 className="mb-2 text-xl font-bold text-white">{item.title}</h3>

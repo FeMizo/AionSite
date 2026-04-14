@@ -19,7 +19,7 @@ export function SideImageContent({
   return (
     <section className="bg-slate-950 py-24">
       <Container>
-        <div className="rounded-[2.5rem] border border-white/10 bg-slate-900/60 p-6 shadow-[0_28px_56px_-36px_rgba(2,6,23,0.95)] backdrop-blur md:p-10 lg:p-12">
+        <div className="rounded-[2.5rem] border border-blue-900/55 bg-slate-900/60 p-6 shadow-[0_28px_56px_-36px_rgba(2,6,23,0.95)] backdrop-blur md:p-10 lg:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div
               className={`overflow-hidden rounded-3xl border border-white/12 bg-slate-950/80 shadow-[0_22px_40px_-30px_rgba(2,6,23,0.92)] ${imageOrderClass}`}
