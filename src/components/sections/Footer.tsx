@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CmsBase, FooterSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
@@ -16,9 +17,11 @@ export function Footer({
         <div className="grid gap-12 md:grid-cols-4">
           <div className="col-span-2">
             <Link href="/" className="mb-6 flex items-center gap-2">
-              <img
+              <Image
                 src={base.logoLight}
                 alt={data.name}
+                width={160}
+                height={40}
                 className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
               />
             </Link>

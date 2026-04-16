@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, MessageCircleMore, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { CmsBase, HeaderSectionData } from "@/src/cms/types";
@@ -83,10 +84,13 @@ export function Header({
           className="group inline-flex items-center"
           aria-label={`Ir a inicio - ${data.name}`}
         >
-          <img
+          <Image
             src={base.logoLight}
             alt={data.name}
+            width={160}
+            height={40}
             className="h-10 w-auto transition-transform group-hover:scale-[1.02]"
+            priority
           />
         </Link>
 
