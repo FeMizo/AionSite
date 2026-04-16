@@ -17,7 +17,7 @@ export function SideImageContent({
   const contentOrderClass = data.reverse ? "lg:order-1" : "lg:order-2";
 
   return (
-    <section className="bg-slate-950 py-24">
+    <section className="bg-slate-950 py-16">
       <Container>
         <div className="rounded-[2.5rem] border border-blue-900/55 bg-slate-900/60 p-6 shadow-[0_28px_56px_-36px_rgba(2,6,23,0.95)] backdrop-blur md:p-10 lg:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">

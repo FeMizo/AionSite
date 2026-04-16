@@ -1,9 +1,7 @@
 import type { ComponentType } from "react";
 import { Globe, ShoppingBag, Target, TrendingUp } from "lucide-react";
 import type { ServicesSectionData } from "@/src/cms/types";
-import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
-import { SectionHeading } from "@/src/components/ui/SectionHeading";
 
 const iconMap: Record<string, ComponentType<{ size?: number }>> = {
   Globe,
@@ -35,25 +33,33 @@ export function Services({ data }: { data: ServicesSectionData }) {
   return (
     <section id="servicios" className="bg-slate-950 py-24">
       <Container>
-        <SectionHeading
-          title="Servicios que impulsan tu negocio"
-          subtitle="Soluciones digitales diseñadas para convertir visitantes en clientes leales."
-        />
+        <div className="grid gap-12 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:items-start xl:gap-20">
+          <div>
+            <h2 className="text-heading-fluid font-display font-bold text-white">
+              Servicios que impulsan tu negocio
+            </h2>
+            <p className="mt-4 max-w-sm text-lg leading-relaxed text-slate-400">
+              Soluciones digitales diseñadas para convertir visitantes en clientes leales.
+            </p>
+          </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2">
           {data.map((service) => {
             const Icon = iconMap[service.icon] ?? Globe;
             const colors = iconColors[service.icon] ?? iconColors.Globe;
             return (
-              <Card key={service.title} className="group">
-                <div className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl border transition-colors group-hover:text-white ${colors.container} ${colors.hover}`}>
-                  <Icon size={24} />
+              <div key={service.title} className="group flex gap-5">
+                <div className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-colors group-hover:text-white ${colors.container} ${colors.hover}`}>
+                  <Icon size={18} />
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-white">{service.title}</h3>
-                <p className="leading-relaxed text-slate-400">{service.description}</p>
-              </Card>
+                <div>
+                  <h3 className="mb-2 font-semibold text-white">{service.title}</h3>
+                  <p className="text-sm leading-relaxed text-slate-400">{service.description}</p>
+                </div>
+              </div>
             );
           })}
+          </div>
         </div>
       </Container>
     </section>

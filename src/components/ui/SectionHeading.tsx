@@ -17,7 +17,7 @@ export const SectionHeading = ({ title, subtitle, centered = true, className }: 
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
+        <p className={cn("mt-4 text-lg text-slate-400 max-w-2xl", centered && "mx-auto")}>
           {subtitle}
         </p>
       )}

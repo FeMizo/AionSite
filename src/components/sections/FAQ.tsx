@@ -19,9 +19,11 @@ export function FAQ({ data }: { data: FAQSectionData }) {
         <SectionHeading
           title="Preguntas frecuentes"
           subtitle="Resolvemos tus dudas antes de empezar."
+          centered={false}
+          className="mb-12"
         />
 
-        <div className="mx-auto max-w-3xl space-y-6">
+        <div className="max-w-3xl space-y-6">
           {data.map((faq, index) => {
             const isOpen = openIndex === index;
             const answerId = `faq-answer-${index}`;

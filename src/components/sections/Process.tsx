@@ -9,6 +9,7 @@ export function Process({ data }: { data: ProcessSectionData }) {
         <SectionHeading
           title="Nuestro proceso"
           subtitle="Metodología ágil diseñada para garantizar el éxito de tu proyecto."
+          centered={false}
         />
 
         <div className="relative">
