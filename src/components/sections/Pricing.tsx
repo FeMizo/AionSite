@@ -122,7 +122,7 @@ export function Pricing({
                         {priceParts.prefix}
                       </p>
                     ) : null}
-                    <p className="text-4xl font-semibold leading-none tracking-tight text-white">
+                    <p className="font-display text-4xl font-semibold leading-none tracking-tight tabular-nums text-white">
                       {priceParts.amount}
                     </p>
                     <p className="text-sm text-slate-400">

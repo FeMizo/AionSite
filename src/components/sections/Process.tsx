@@ -30,7 +30,7 @@ export function Process({ data }: { data: ProcessSectionData }) {
                       index % 2 === 0 ? "md:text-left" : "md:text-right"
                     }`}
                   >
-                    <span className="mb-4 block text-4xl font-bold text-blue-400/45">
+                    <span className="mb-4 block font-display text-4xl font-bold text-blue-400/45">
                       {item.step}
                     </span>
                     <h3 className="mb-2 text-xl font-bold text-white">{item.title}</h3>

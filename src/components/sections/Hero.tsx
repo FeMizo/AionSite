@@ -23,7 +23,7 @@ export function Hero({
           {data.badgeText}
         </div>
 
-        <h1 className="mx-auto max-w-4xl text-5xl leading-[1.1] font-bold tracking-tight text-white sm:text-7xl">
+        <h1 className="mx-auto max-w-4xl text-display font-display font-bold text-white">
           {data.title}
         </h1>
 

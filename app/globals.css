@@ -4,6 +4,10 @@
   --color-primary: #2563EB;
   --color-background: #0F172A;
   --color-accent: #7C3AED;
+
+  /* Font stacks — populated at runtime by next/font variables on <html> */
+  --font-sans: var(--font-epilogue, ui-sans-serif, system-ui, sans-serif);
+  --font-display: var(--font-bricolage, ui-sans-serif, system-ui, sans-serif);
 }
 
 :root {
@@ -20,6 +24,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-kerning: normal;
+  line-height: 1.7;
 }
 
 body.menu-open {
@@ -36,6 +42,27 @@ body.menu-open {
 }
 
 @layer utilities {
+  /* Fluid display: ~40px → 80px. Use for h1 hero text. */
+  .text-display {
+    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  /* Fluid section heading: ~30px → 48px. Use for h2 section titles. */
+  .text-heading-fluid {
+    font-size: clamp(1.875rem, 2.5vw + 0.875rem, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  /* Fluid CTA heading: ~32px → 56px. Use for large CTA blocks. */
+  .text-cta-fluid {
+    font-size: clamp(2rem, 3.5vw + 1rem, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
   }

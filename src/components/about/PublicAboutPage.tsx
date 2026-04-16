@@ -156,7 +156,7 @@ export function PublicAboutPage({
                   {localizedContent.hero.eyebrow}
                 </div>
 
-                <h1 className="mt-8 max-w-5xl text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl">
+                <h1 className="mt-8 max-w-5xl text-display font-display font-bold text-white">
                   {localizedContent.hero.title}
                 </h1>
 
@@ -210,7 +210,7 @@ export function PublicAboutPage({
                       key={item.label}
                       className="rounded-2xl border border-white/8 bg-white/[0.04] px-5 py-5"
                     >
-                      <p className="text-2xl font-semibold text-white">{item.value}</p>
+                      <p className="font-display text-2xl font-semibold tabular-nums text-white">{item.value}</p>
                       <p className="mt-2 text-sm leading-relaxed text-slate-400">
                         {item.label}
                       </p>

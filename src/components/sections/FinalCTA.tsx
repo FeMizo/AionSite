@@ -13,7 +13,7 @@ export function FinalCTA({ data }: { data: FinalCTASectionData }) {
           <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
 
-          <h2 className="mb-8 text-4xl font-bold text-white md:text-6xl">
+          <h2 className="mb-8 text-cta-fluid font-display font-bold text-white">
             {data.title}
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-xl text-blue-100">

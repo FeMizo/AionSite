@@ -13,7 +13,7 @@ export const SectionHeading = ({ title, subtitle, centered = true, className }: 
       {centered && (
         <div className="mx-auto mb-5 h-px w-10 rounded-full bg-blue-500/70" />
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+      <h2 className="text-heading-fluid font-display font-bold text-white">
         {title}
       </h2>
       {subtitle && (
