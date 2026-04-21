@@ -13,6 +13,7 @@ import { SideImageContent } from "@/src/components/sections/SideImageContent";
 import { Stats } from "@/src/components/sections/Stats";
 import { Testimonials } from "@/src/components/sections/Testimonials";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
+import { Blog } from "@/src/components/sections/Blog";
 import type {
   CmsContent,
   FieldDefinition,
@@ -284,6 +285,20 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
       { key: "tooltip", label: "Texto de apoyo", type: "text" },
     ],
   },
+  blog: {
+    id: "blog",
+    label: "Blog",
+    description: "Sección de blog con hero, artículo y formulario de contacto.",
+    placement: "main",
+    type: "blog",
+    fields: [
+      { key: "hero.badgeText", label: "Etiqueta del hero", type: "text" },
+      { key: "hero.title", label: "Título del hero", type: "textarea" },
+      { key: "hero.subtitle", label: "Subtítulo del hero", type: "textarea" },
+      { key: "form.title", label: "Título del formulario", type: "text" },
+      { key: "form.subtitle", label: "Descripción del formulario", type: "textarea" },
+    ],
+  },
 };
 
 const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> =
@@ -325,6 +340,7 @@ const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> =
         data={content.sections.whatsappFloatingButton.data}
       />
     ),
+    blog: (content) => <Blog data={content.sections.blog.data} />,
   };
 
 export function getOrderedSectionIds(

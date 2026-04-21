@@ -10,10 +10,8 @@ const base = {
   navigation: [
     { name: "Servicios", href: "#servicios" },
     { name: "Portafolio", href: "#portafolio" },
-    { name: "About Me", href: "/about" },
-    { name: "Proceso", href: "#proceso" },
+    { name: "Blog", href: "/blog" },
     { name: "Paquetes", href: "#paquetes" },
-    { name: "Preguntas frecuentes", href: "#faq" },
     { name: "Contacto", href: "#contacto" },
   ],
   logoLight: "/logo-aionsite.png",
@@ -300,6 +298,103 @@ export const defaultCmsContent: CmsContent = {
         tooltip: "¿En qué podemos ayudarte?",
       },
     },
+    blog: {
+      id: "blog",
+      enabled: true,
+      order: 13,
+      data: {
+        hero: {
+          badgeText: "Blog & Recursos",
+          title: "Conocimiento que impulsa tu negocio digital.",
+          subtitle:
+            "Estrategias, tendencias y consejos prácticos de diseño web para que tu marca destaque y convierta más.",
+        },
+        article: {
+          headings: [
+            { level: 2, id: "por-que-diseno-importa", text: "Por qué el diseño importa" },
+            { level: 3, id: "primera-impresion", text: "La primera impresión" },
+            { level: 3, id: "confianza-y-conversion", text: "Confianza y conversión" },
+            { level: 2, id: "elementos-clave", text: "Elementos clave de un sitio exitoso" },
+            { level: 3, id: "velocidad", text: "Velocidad de carga" },
+            { level: 3, id: "seo-tecnico", text: "SEO técnico" },
+            { level: 2, id: "siguiente-paso", text: "El siguiente paso" },
+          ],
+          blocks: [
+            {
+              type: "h2",
+              id: "por-que-diseno-importa",
+              text: "Por qué el diseño importa",
+            },
+            {
+              type: "p",
+              text: "En un mercado donde la atención dura segundos, tu sitio web es el primer vendedor de tu negocio. Un diseño bien ejecutado no solo comunica quién eres: genera confianza, reduce fricción y guía al visitante hacia la acción que necesitas.",
+            },
+            {
+              type: "h3",
+              id: "primera-impresion",
+              text: "La primera impresión",
+            },
+            {
+              type: "p",
+              text: "Los usuarios forman una opinión sobre un sitio en menos de 50 milisegundos. Eso significa que el color, la tipografía, el espaciado y la jerarquía visual comunican antes de que se lea una sola palabra. El diseño no es decoración: es comunicación.",
+            },
+            {
+              type: "quote",
+              text: "Un buen diseño web no se nota. Lo que se nota es cuando algo no funciona.",
+            },
+            {
+              type: "h3",
+              id: "confianza-y-conversion",
+              text: "Confianza y conversión",
+            },
+            {
+              type: "p",
+              text: "La coherencia visual, los testimonios bien colocados, los llamados a acción claros y la velocidad de carga son los pilares que transforman visitas en oportunidades reales de negocio. Sin ellos, tienes tráfico pero no resultados.",
+            },
+            {
+              type: "h2",
+              id: "elementos-clave",
+              text: "Elementos clave de un sitio exitoso",
+            },
+            {
+              type: "p",
+              text: "Más allá del aspecto visual, hay factores técnicos que determinan si tu sitio convierte o no. Aquí los más importantes que trabajamos en cada proyecto.",
+            },
+            {
+              type: "h3",
+              id: "velocidad",
+              text: "Velocidad de carga",
+            },
+            {
+              type: "p",
+              text: "Google penaliza los sitios lentos y los usuarios los abandonan. Un tiempo de carga superior a 3 segundos incrementa la tasa de rebote hasta un 53%. Optimizamos imágenes, código y servidores para que tu sitio cargue en menos de 1.5 segundos.",
+            },
+            {
+              type: "h3",
+              id: "seo-tecnico",
+              text: "SEO técnico",
+            },
+            {
+              type: "p",
+              text: "No basta con aparecer en Google: hay que aparecer cuando tu cliente tiene intención de compra. Estructuramos cada página con metadatos, schema markup, URLs limpias y arquitectura de contenido que posiciona orgánicamente.",
+            },
+            {
+              type: "h2",
+              id: "siguiente-paso",
+              text: "El siguiente paso",
+            },
+            {
+              type: "p",
+              text: "Si llegaste hasta aquí, ya tienes la información. Ahora el movimiento que marca la diferencia es decidir actuar. Cuéntanos tu proyecto y en menos de 24 horas tendrás una propuesta concreta.",
+            },
+          ],
+        },
+        form: {
+          title: "¿Tienes un proyecto?",
+          subtitle: "Cuéntanos qué necesitas y te respondemos en menos de 24 horas.",
+        },
+      },
+    },
   },
   sectionSequence: [
     "header",
@@ -313,6 +408,7 @@ export const defaultCmsContent: CmsContent = {
     "testimonials",
     "faq",
     "finalCTA",
+    "blog",
     "footer",
     "whatsappFloatingButton",
   ],

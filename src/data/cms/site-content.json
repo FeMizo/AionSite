@@ -5,34 +5,11 @@
     "email": "contacto@aionsite.com.mx",
     "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
     "navigation": [
-      {
-        "name": "Servicios",
-        "href": "#servicios"
-      },
-      {
-        "name": "Portafolio",
-        "href": "#portafolio"
-      },
-      {
-        "name": "About Me",
-        "href": "/about"
-      },
-      {
-        "name": "Proceso",
-        "href": "#proceso"
-      },
-      {
-        "name": "Paquetes",
-        "href": "#paquetes"
-      },
-      {
-        "name": "Preguntas frecuentes",
-        "href": "#faq"
-      },
-      {
-        "name": "Contacto",
-        "href": "#contacto"
-      }
+      { "name": "Servicios", "href": "#servicios" },
+      { "name": "Portafolio", "href": "#portafolio" },
+      { "name": "Blog", "href": "/blog" },
+      { "name": "Paquetes", "href": "#paquetes" },
+      { "name": "Contacto", "href": "#contacto" }
     ],
     "logoLight": "/logo-aionsite.png"
   },
@@ -44,34 +21,11 @@
       "data": {
         "name": "AionSite",
         "navigation": [
-          {
-            "name": "Servicios",
-            "href": "#servicios"
-          },
-          {
-            "name": "Portafolio",
-            "href": "#portafolio"
-          },
-          {
-            "name": "Proceso",
-            "href": "#proceso"
-          },
-          {
-            "name": "Paquetes",
-            "href": "#paquetes"
-          },
-          {
-            "name": "Preguntas frecuentes",
-            "href": "#faq"
-          },
-          {
-            "name": "Contacto",
-            "href": "#contacto"
-          },
-          {
-            "name": "Nosotros",
-            "href": "/about"
-          }
+          { "name": "Servicios", "href": "#servicios" },
+          { "name": "Portafolio", "href": "#portafolio" },
+          { "name": "Blog", "href": "/blog" },
+          { "name": "Paquetes", "href": "#paquetes" },
+          { "name": "Contacto", "href": "#contacto" }
         ],
         "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }

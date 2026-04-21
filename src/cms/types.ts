@@ -106,6 +106,30 @@ export type WhatsAppFloatingButtonData = {
   tooltip: string;
 };
 
+export type BlogSectionData = {
+  hero: {
+    badgeText: string;
+    title: string;
+    subtitle: string;
+  };
+  article: {
+    headings: Array<{
+      level: 2 | 3;
+      id: string;
+      text: string;
+    }>;
+    blocks: Array<{
+      type: "h2" | "h3" | "p" | "quote";
+      id?: string;
+      text: string;
+    }>;
+  };
+  form: {
+    title: string;
+    subtitle: string;
+  };
+};
+
 export type SectionDataMap = {
   header: HeaderSectionData;
   hero: HeroSectionData;
@@ -120,6 +144,7 @@ export type SectionDataMap = {
   finalCTA: FinalCTASectionData;
   footer: FooterSectionData;
   whatsappFloatingButton: WhatsAppFloatingButtonData;
+  blog: BlogSectionData;
 };
 
 export type SectionId = keyof SectionDataMap;
