@@ -3,7 +3,7 @@
     "name": "AionSite",
     "description": "Agencia boutique de diseño y desarrollo web premium enfocada en conversión, velocidad y SEO técnico.",
     "email": "contacto@aionsite.com.mx",
-    "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+    "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
     "navigation": [
       {
         "name": "Servicios",
@@ -73,7 +73,7 @@
             "href": "/about"
           }
         ],
-        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }
     },
     "hero": {
@@ -129,7 +129,7 @@
         "title": "Lleva tu presencia digital a un nuevo nivel",
         "description": "Combinamos estrategia, diseño y desarrollo para que tu sitio no solo se vea bien, sino que también convierta visitas en oportunidades reales para tu negocio.",
         "buttonText": "Solicitar propuesta",
-        "buttonLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+        "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
         "image": "/portfolio/lobbypm.png",
         "reverse": false
       }
@@ -398,7 +398,7 @@
         "subtitle": "Hablemos de tu proyecto y creemos algo increíble juntos.",
         "buttonText": "Iniciar conversación por WhatsApp",
         "responseText": "Respuesta en menos de 24 horas",
-        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }
     },
     "footer": {
@@ -439,7 +439,7 @@
             "href": "#contacto"
           }
         ],
-        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
       }
     },
     "whatsappFloatingButton": {
@@ -447,7 +447,7 @@
       "enabled": true,
       "order": 12,
       "data": {
-        "whatsappLink": "https://wa.me/5219381238531?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
         "tooltip": "¿En qué podemos ayudarte?"
       }
     }
