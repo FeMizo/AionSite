@@ -318,11 +318,12 @@
         },
         {
           "name": "Mantenimiento mensual",
-          "price": "$15,000/mes",
+          "price": "$3,000/mes",
           "features": [
             "Actualizaciones mensuales",
             "Optimización de velocidad",
-            "Soporte prioritario"
+            "Soporte prioritario",
+            "Reportes de rendimiento"
           ],
           "recommended": false
         },
@@ -341,23 +342,23 @@
     },
     "testimonials": {
       "id": "testimonials",
-      "enabled": false,
+      "enabled": true,
       "order": 8,
       "data": [
         {
-          "name": "Carlos R.",
-          "company": "TechFlow",
-          "text": "AionSite transformó nuestra presencia en línea. Las ventas subieron un 40% en dos meses."
+          "name": "Luis Mendoza",
+          "company": "Casa Brava",
+          "text": "Antes no teníamos presencia en Google. Hoy nos encuentran solos. El sitio quedó exactamente como lo imaginaba y el proceso fue muy claro desde el inicio."
         },
         {
-          "name": "Ana M.",
-          "company": "Lumina",
-          "text": "El diseño es impecable y la velocidad de carga es increíble. Muy recomendados."
+          "name": "Karla Ramírez",
+          "company": "Molotes",
+          "text": "Necesitaba algo sencillo pero que se viera profesional. Lo entregaron rápido, se ve increíble en el celular y ya varios clientes nos han dicho que lo encontraron por internet."
         },
         {
-          "name": "Jorge L.",
-          "company": "Vortex",
-          "text": "Un equipo profesional que entiende el negocio, no solo el código."
+          "name": "Iván Torres",
+          "company": "Lobby PM",
+          "text": "Lo que más me gustó fue que no me vendieron más de lo que necesitaba. Entendieron el negocio y propusieron lo correcto. Muy buena experiencia."
         }
       ]
     },
