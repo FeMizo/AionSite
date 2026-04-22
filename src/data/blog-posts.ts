@@ -23,6 +23,89 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "velocidad-web-posicionamiento",
+    title: "Velocidad web: el factor silencioso que está bloqueando tu crecimiento",
+    excerpt:
+      "Un sitio lento no solo frustra a tus visitantes: Google lo penaliza directamente en rankings. Descubre cómo medir, diagnosticar y mejorar la velocidad de tu sitio en pasos concretos.",
+    badgeText: "Velocidad & Rendimiento",
+    date: "22 de abril, 2026",
+    readTime: "7 min de lectura",
+    headings: [
+      { level: 2, id: "el-problema-de-la-velocidad", text: "El problema silencioso de la velocidad" },
+      { level: 3, id: "como-afecta-al-negocio", text: "Cómo afecta a tu negocio" },
+      { level: 3, id: "como-medir", text: "Cómo medir tu velocidad actual" },
+      { level: 2, id: "causas-mas-comunes", text: "Las causas más comunes de un sitio lento" },
+      { level: 3, id: "imagenes-sin-optimizar", text: "Imágenes sin optimizar" },
+      { level: 3, id: "hosting-inadecuado", text: "Hosting inadecuado" },
+      { level: 3, id: "codigo-innecesario", text: "Código innecesario o redundante" },
+      { level: 2, id: "soluciones-practicas", text: "Soluciones prácticas que realmente funcionan" },
+      { level: 3, id: "optimizar-imagenes", text: "Optimizar imágenes" },
+      { level: 3, id: "cache-y-cdn", text: "Caché y CDN" },
+      { level: 2, id: "impacto-en-seo", text: "El impacto directo en tu SEO" },
+    ],
+    blocks: [
+      { type: "h2", id: "el-problema-de-la-velocidad", text: "El problema silencioso de la velocidad" },
+      {
+        type: "p",
+        text: "La mayoría de los dueños de negocios no saben que su sitio es lento hasta que alguien se los dice. Para entonces, ya lleva meses perdiendo clientes en silencio. La velocidad no es un detalle técnico menor: es uno de los factores con mayor impacto en conversión, experiencia de usuario y posicionamiento en Google.",
+      },
+      { type: "h3", id: "como-afecta-al-negocio", text: "Cómo afecta a tu negocio" },
+      {
+        type: "p",
+        text: "Estudios de Google y Amazon revelan que por cada segundo adicional de carga, la tasa de conversión cae entre un 4% y un 7%. Si tu sitio tarda 5 segundos en cargar, más del 50% de los visitantes ya se fueron antes de ver siquiera tu propuesta de valor. Ese tráfico que estás pagando en anuncios o ganando con SEO simplemente se pierde.",
+      },
+      {
+        type: "quote",
+        text: "Un sitio que tarda 3 segundos en cargar pierde el 53% de sus visitas móviles. No hay contenido ni diseño que pueda compensar esa pérdida.",
+      },
+      { type: "h3", id: "como-medir", text: "Cómo medir tu velocidad actual" },
+      {
+        type: "p",
+        text: "Antes de corregir, hay que medir. Las herramientas gratuitas más confiables son Google PageSpeed Insights, GTmetrix y WebPageTest. Cada una te da un puntaje y, más importante, una lista de los elementos que más están ralentizando tu sitio. Busca el LCP (Largest Contentful Paint): si supera los 2.5 segundos, tienes un problema que Google ya está penalizando.",
+      },
+      { type: "h2", id: "causas-mas-comunes", text: "Las causas más comunes de un sitio lento" },
+      {
+        type: "p",
+        text: "Después de auditar decenas de sitios, las causas se repiten casi siempre. No hace falta ser desarrollador para entenderlas, pero sí hace falta un profesional para corregirlas correctamente.",
+      },
+      { type: "h3", id: "imagenes-sin-optimizar", text: "Imágenes sin optimizar" },
+      {
+        type: "p",
+        text: "Es la causa número uno de sitios lentos. Una foto tomada con un smartphone puede pesar 5 MB o más. Si tu sitio carga 10 imágenes así, el usuario tiene que descargar 50 MB antes de ver la página completa. La solución es convertir imágenes a formatos modernos como WebP, reducir su resolución al tamaño real en que se muestran y usar carga diferida (lazy loading) para las que están más abajo en la página.",
+      },
+      { type: "h3", id: "hosting-inadecuado", text: "Hosting inadecuado" },
+      {
+        type: "p",
+        text: "Un hosting barato compartido puede ser suficiente para un blog personal, pero no para un sitio de negocios. Si el servidor tarda más de 200ms en responder (TTFB: Time to First Byte), todo lo demás que hagas en optimización tendrá un techo bajo. Invertir en un hosting de calidad o en una arquitectura con CDN es lo más eficiente que puedes hacer por tu velocidad.",
+      },
+      { type: "h3", id: "codigo-innecesario", text: "Código innecesario o redundante" },
+      {
+        type: "p",
+        text: "Los sitios WordPress con decenas de plugins, los temas multipropósito cargados de funciones que nunca usas, o el JavaScript de terceros que carga de forma bloqueante son fuentes frecuentes de lentitud. Cada plugin que instalas agrega peticiones al servidor y código que el navegador debe procesar antes de mostrar la página.",
+      },
+      { type: "h2", id: "soluciones-practicas", text: "Soluciones prácticas que realmente funcionan" },
+      {
+        type: "p",
+        text: "No existe una solución única para todos los sitios, pero hay mejoras que aplican casi siempre y que generan un impacto medible en pocas horas de trabajo.",
+      },
+      { type: "h3", id: "optimizar-imagenes", text: "Optimizar imágenes" },
+      {
+        type: "p",
+        text: "Convierte todas las imágenes a WebP y comprime sin pérdida visible de calidad. Implementa lazy loading para que solo carguen las imágenes visibles en pantalla. Define explícitamente el ancho y alto de cada imagen para evitar el Cumulative Layout Shift (CLS), que es otro de los factores que Google mide. Esta sola acción puede reducir el peso de tu página en un 60% o más.",
+      },
+      { type: "h3", id: "cache-y-cdn", text: "Caché y CDN" },
+      {
+        type: "p",
+        text: "El caché almacena una versión lista para entregar de tu sitio, eliminando el tiempo de procesamiento en cada visita. Un CDN (Content Delivery Network) distribuye esos archivos en servidores alrededor del mundo, de modo que cada usuario los recibe desde el servidor geográficamente más cercano a él. La combinación de ambos puede reducir los tiempos de carga a menos de 1 segundo en la mayoría de conexiones.",
+      },
+      { type: "h2", id: "impacto-en-seo", text: "El impacto directo en tu SEO" },
+      {
+        type: "p",
+        text: "Desde 2021, Google incorporó los Core Web Vitals como factor oficial de ranking. Esto significa que la velocidad de tu sitio afecta directamente qué tan arriba apareces en los resultados de búsqueda. Un sitio lento compite con desventaja, sin importar cuánto contenido de calidad tenga. Si dos sitios tienen SEO similar pero uno es rápido y el otro lento, Google elige el rápido. La velocidad no es un lujo: es una ventaja competitiva que puedes activar hoy.",
+      },
+    ],
+  },
+  {
     id: "diseno-web-que-convierte",
     title: "Diseño web que convierte: los 7 principios que más importan",
     excerpt:
