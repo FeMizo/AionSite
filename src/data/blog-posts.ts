@@ -16,7 +16,9 @@ export type BlogPost = {
   excerpt: string;
   badgeText: string;
   date: string;
+  dateISO: string;
   readTime: string;
+  keywords: string[];
   headings: BlogHeading[];
   blocks: BlogBlock[];
 };
@@ -29,7 +31,9 @@ export const blogPosts: BlogPost[] = [
       "Un sitio lento no solo frustra a tus visitantes: Google lo penaliza directamente en rankings. Descubre cómo medir, diagnosticar y mejorar la velocidad de tu sitio en pasos concretos.",
     badgeText: "Velocidad & Rendimiento",
     date: "22 de abril, 2026",
+    dateISO: "2026-04-22",
     readTime: "7 min de lectura",
+    keywords: ["velocidad web", "Core Web Vitals", "LCP", "PageSpeed Insights", "optimización web", "SEO técnico", "sitio lento", "WebP", "CDN", "hosting web México"],
     headings: [
       { level: 2, id: "el-problema-de-la-velocidad", text: "El problema silencioso de la velocidad" },
       { level: 3, id: "como-afecta-al-negocio", text: "Cómo afecta a tu negocio" },
@@ -112,7 +116,9 @@ export const blogPosts: BlogPost[] = [
       "Un sitio hermoso no sirve de nada si no genera clientes. Descubre qué elementos de diseño determinan si un visitante se queda o se va en segundos.",
     badgeText: "Diseño & Conversión",
     date: "15 de abril, 2026",
+    dateISO: "2026-04-15",
     readTime: "6 min de lectura",
+    keywords: ["diseño web que convierte", "tasa de conversión", "CTA", "jerarquía visual", "UX diseño web", "landing page México", "diseño web negocios", "experiencia de usuario"],
     headings: [
       { level: 2, id: "por-que-falla", text: "Por qué falla la mayoría de sitios" },
       { level: 3, id: "primera-impresion", text: "La primera impresión" },
@@ -177,7 +183,9 @@ export const blogPosts: BlogPost[] = [
       "El SEO cambió. Ya no basta con poner palabras clave. Te explicamos qué factores técnicos posicionan hoy y cómo aplicarlos en tu sitio.",
     badgeText: "SEO & Visibilidad",
     date: "8 de abril, 2026",
+    dateISO: "2026-04-08",
     readTime: "8 min de lectura",
+    keywords: ["SEO técnico 2026", "Schema Markup", "Core Web Vitals", "mobile-first indexing", "posicionamiento Google", "sitemap XML", "rich snippets", "SEO para negocios México"],
     headings: [
       { level: 2, id: "seo-2026", text: "El SEO en 2026" },
       { level: 3, id: "core-web-vitals", text: "Core Web Vitals" },
@@ -236,7 +244,9 @@ export const blogPosts: BlogPost[] = [
       "Muchos negocios esperan demasiado. Otros invierten antes de tiempo. Te ayudamos a identificar el momento correcto y qué tipo de sitio necesitas.",
     badgeText: "Estrategia Digital",
     date: "1 de abril, 2026",
+    dateISO: "2026-04-01",
     readTime: "5 min de lectura",
+    keywords: ["sitio web para negocio", "cuándo crear página web", "presencia digital", "página de conversión", "tienda en línea México", "sitio corporativo", "diseño web para empresas"],
     headings: [
       { level: 2, id: "el-momento-correcto", text: "El momento correcto" },
       { level: 3, id: "senales", text: "Señales de que ya es tiempo" },

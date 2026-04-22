@@ -85,7 +85,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
       {/* 3-column layout */}
       <section className="bg-slate-950 pb-28 pt-4">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[200px_1fr_290px] lg:items-start lg:gap-14">
+          <div className="grid gap-10 lg:grid-cols-[300px_1fr_300px] lg:items-start lg:gap-14">
 
             {/* Left: TOC */}
             <aside className="hidden lg:block">

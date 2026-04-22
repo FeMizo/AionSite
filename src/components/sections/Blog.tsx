@@ -57,7 +57,7 @@ export function Blog({ data }: { data: BlogSectionData }) {
       {/* 3-column content */}
       <section className="bg-slate-950 pb-28 pt-2">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[200px_1fr_290px] lg:items-start lg:gap-14">
+          <div className="grid gap-10 lg:grid-cols-[320px_1fr_320px] lg:items-start lg:gap-14">
 
             {/* Left: Table of contents */}
             <aside className="hidden lg:block">
