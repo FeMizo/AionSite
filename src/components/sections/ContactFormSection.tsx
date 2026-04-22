@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MessageCircleMore, Send, Clock } from "lucide-react";
+import { Mail, MessageCircleMore, Send, Clock, Loader2, CheckCircle2 } from "lucide-react";
 import type { ContactFormSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { Card } from "@/src/components/ui/Card";
+import { Reveal } from "@/src/components/ui/Reveal";
 
 export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -38,12 +39,12 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
 
   return (
     <section id="contacto" className="relative overflow-hidden bg-slate-950 py-24">
-      <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-600/8 blur-[140px]" />
+      <div className="absolute left-1/2 top-0 -z-10 h-125 w-175 -translate-x-1/2 rounded-full bg-blue-600/8 blur-[140px]" />
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
 
           {/* Left */}
-          <div className="flex flex-col gap-8">
+          <Reveal className="flex flex-col gap-8">
             <div>
               <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
                 {data.title}
@@ -88,14 +89,15 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
               <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
               {data.responseText}
             </div>
-          </div>
+          </Reveal>
 
           {/* Right: form */}
+          <Reveal delay={120}>
           <Card className="p-7">
             {status === "sent" ? (
-              <div className="flex flex-col items-center gap-4 py-8 text-center">
+              <div className="animate-scale-in flex flex-col items-center gap-4 py-8 text-center">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500/15">
-                  <Send size={24} className="text-green-400" />
+                  <CheckCircle2 size={28} className="text-green-400" />
                 </div>
                 <h3 className="font-display text-xl font-bold text-white">¡Mensaje enviado!</h3>
                 <p className="text-slate-400">{data.responseText}</p>
@@ -107,7 +109,7 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className={`space-y-4 ${status === "error" ? "animate-shake" : ""}`}>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className="mb-1.5 block text-xs font-medium text-slate-400">
@@ -169,7 +171,11 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
                   disabled={status === "sending"}
                   className="flex w-full items-center justify-center gap-2 rounded-lg border border-blue-400/35 bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-16px_rgba(37,99,235,0.78)] transition hover:-translate-y-0.5 hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                 >
-                  <Send size={14} />
+                  {status === "sending" ? (
+                    <Loader2 size={14} className="animate-spin" />
+                  ) : (
+                    <Send size={14} />
+                  )}
                   {status === "sending" ? "Enviando…" : "Enviar mensaje"}
                 </button>
 
@@ -186,6 +192,7 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
               </form>
             )}
           </Card>
+          </Reveal>
         </div>
       </Container>
     </section>

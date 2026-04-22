@@ -22,15 +22,24 @@ export function Hero({
           {data.badgeText}
         </div>
 
-        <h1 className="mx-auto max-w-4xl text-display font-display font-bold text-white">
+        <h1
+          className="animate-reveal mx-auto max-w-4xl text-display font-display font-bold text-white"
+          style={{ animationDelay: "90ms" }}
+        >
           {data.title}
         </h1>
 
-        <p className="mx-auto mt-8 max-w-2xl text-lg text-slate-400 md:text-xl">
+        <p
+          className="animate-reveal mx-auto mt-8 max-w-2xl text-lg text-slate-400 md:text-xl"
+          style={{ animationDelay: "210ms" }}
+        >
           {data.subtitle}
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div
+          className="animate-reveal mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          style={{ animationDelay: "350ms" }}
+        >
           <Button
             size="lg"
             className="gap-2"
@@ -54,7 +63,10 @@ export function Hero({
           </Button>
         </div>
 
-        <div className="mt-20 border-t border-white/5 pt-10">
+        <div
+          className="animate-reveal mt-20 border-t border-white/5 pt-10"
+          style={{ animationDelay: "480ms" }}
+        >
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-slate-400">
             {data.trustBar.map((item) => (
               <div key={item} className="flex items-center gap-2">

@@ -2,6 +2,7 @@ import type { ComponentType } from "react";
 import { Globe, ShoppingBag, Target, TrendingUp } from "lucide-react";
 import type { ServicesSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
+import { Reveal } from "@/src/components/ui/Reveal";
 
 const iconMap: Record<string, ComponentType<{ size?: number }>> = {
   Globe,
@@ -44,19 +45,21 @@ export function Services({ data }: { data: ServicesSectionData }) {
           </div>
 
           <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2">
-          {data.map((service) => {
+          {data.map((service, i) => {
             const Icon = iconMap[service.icon] ?? Globe;
             const colors = iconColors[service.icon] ?? iconColors.Globe;
             return (
-              <div key={service.title} className="group flex gap-5">
-                <div className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-colors group-hover:text-white ${colors.container} ${colors.hover}`}>
-                  <Icon size={18} />
+              <Reveal key={service.title} delay={i * 80}>
+                <div className="group flex gap-5">
+                  <div className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-all duration-200 group-hover:scale-110 group-hover:text-white ${colors.container} ${colors.hover}`}>
+                    <Icon size={18} />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 font-semibold text-white">{service.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-400">{service.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="mb-2 font-semibold text-white">{service.title}</h3>
-                  <p className="text-sm leading-relaxed text-slate-400">{service.description}</p>
-                </div>
-              </div>
+              </Reveal>
             );
           })}
           </div>

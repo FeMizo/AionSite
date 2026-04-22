@@ -5,6 +5,7 @@ import type { HeaderSectionData, PricingSectionData } from "@/src/cms/types";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
+import { Reveal } from "@/src/components/ui/Reveal";
 
 function getPriceParts(rawPrice: string) {
   const cleaned = rawPrice.trim();
@@ -61,7 +62,7 @@ export function Pricing({
         />
 
         <div className={`grid gap-8 ${gridColsClass}`}>
-          {plans.map((plan) => {
+          {plans.map((plan, index) => {
             const priceParts = getPriceParts(plan.price);
             const isBasic = /esencial/i.test(plan.name);
             const isAdvanced =
@@ -82,8 +83,8 @@ export function Pricing({
             const shownFeatures = plan.features.slice(0, 5);
 
             return (
+              <Reveal key={plan.name} delay={index * 90} className="h-full">
               <article
-                key={plan.name}
                 className={`group relative flex h-full flex-col rounded-3xl border p-7 shadow-[0_24px_50px_-34px_rgba(2,6,23,0.95)] transition-all duration-300 lg:p-8 ${
                   plan.recommended
                     ? "border-blue-500/60 bg-slate-900 shadow-[0_28px_56px_-34px_rgba(37,99,235,0.46)] hover:-translate-y-1 hover:border-blue-400/80 hover:shadow-[0_38px_64px_-32px_rgba(59,130,246,0.52)]"
@@ -158,6 +159,7 @@ export function Pricing({
                   {buttonLabel}
                 </Button>
               </article>
+              </Reveal>
             );
           })}
         </div>

@@ -34,13 +34,13 @@ function PortfolioModal({
       {/* Backdrop */}
       <button
         type="button"
-        className="absolute inset-0 bg-slate-950/85 backdrop-blur-sm"
+        className="animate-backdrop-in absolute inset-0 bg-slate-950/85 backdrop-blur-sm"
         onClick={onClose}
         aria-label="Cerrar"
       />
 
       {/* Panel */}
-      <div className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-[0_40px_80px_-20px_rgba(2,6,23,0.95)]">
+      <div className="animate-scale-in relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-[0_40px_80px_-20px_rgba(2,6,23,0.95)]">
         {/* Close */}
         <button
           type="button"

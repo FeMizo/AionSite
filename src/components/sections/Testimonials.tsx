@@ -3,6 +3,7 @@ import type { TestimonialsSectionData } from "@/src/cms/types";
 import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
+import { Reveal } from "@/src/components/ui/Reveal";
 
 export function Testimonials({ data }: { data: TestimonialsSectionData }) {
   return (
@@ -14,17 +15,19 @@ export function Testimonials({ data }: { data: TestimonialsSectionData }) {
         />
 
         <div className="grid gap-8 md:grid-cols-3">
-          {data.map((testimonial) => (
-            <Card key={testimonial.name} className="relative">
-              <Quote className="absolute right-6 top-6 text-blue-600/20" size={48} />
-              <p className="mb-8 text-lg leading-relaxed text-slate-300 italic">
-                "{testimonial.text}"
-              </p>
-              <div>
-                <div className="font-bold text-white">{testimonial.name}</div>
-                <div className="text-sm text-blue-500">{testimonial.company}</div>
-              </div>
-            </Card>
+          {data.map((testimonial, i) => (
+            <Reveal key={testimonial.name} delay={i * 100}>
+              <Card className="relative h-full">
+                <Quote className="absolute right-6 top-6 text-blue-600/20" size={48} />
+                <p className="mb-8 text-lg leading-relaxed text-slate-300 italic">
+                  "{testimonial.text}"
+                </p>
+                <div>
+                  <div className="font-bold text-white">{testimonial.name}</div>
+                  <div className="text-sm text-blue-500">{testimonial.company}</div>
+                </div>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </Container>
