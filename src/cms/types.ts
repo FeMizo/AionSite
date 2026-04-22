@@ -85,6 +85,14 @@ export type SideImageContentSectionData = {
   reverse: boolean;
 };
 
+export type ContactFormSectionData = {
+  title: string;
+  subtitle: string;
+  email: string;
+  responseText: string;
+  whatsappLink: string;
+};
+
 export type FinalCTASectionData = {
   title: string;
   subtitle: string;
@@ -141,6 +149,7 @@ export type SectionDataMap = {
   testimonials: TestimonialsSectionData;
   faq: FAQSectionData;
   sideImageContent: SideImageContentSectionData;
+  contactForm: ContactFormSectionData;
   finalCTA: FinalCTASectionData;
   footer: FooterSectionData;
   whatsappFloatingButton: WhatsAppFloatingButtonData;

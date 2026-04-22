@@ -265,10 +265,22 @@ export const defaultCmsContent: CmsContent = {
         },
       ],
     },
+    contactForm: {
+      id: "contactForm",
+      enabled: true,
+      order: 10,
+      data: {
+        title: "Hablemos de tu proyecto",
+        subtitle: "Cuéntanos qué necesitas y te respondemos con una propuesta a tu medida.",
+        email: base.email,
+        responseText: "Respuesta en menos de 24 horas",
+        whatsappLink: base.whatsappLink,
+      },
+    },
     finalCTA: {
       id: "finalCTA",
       enabled: true,
-      order: 10,
+      order: 11,
       data: {
         title: "¿Listo para llevar tu negocio al siguiente nivel?",
         subtitle: "Hablemos de tu proyecto y creemos algo increíble juntos.",
@@ -280,7 +292,7 @@ export const defaultCmsContent: CmsContent = {
     footer: {
       id: "footer",
       enabled: true,
-      order: 11,
+      order: 12,
       data: {
         name: base.name,
         description: base.description,
@@ -292,7 +304,7 @@ export const defaultCmsContent: CmsContent = {
     whatsappFloatingButton: {
       id: "whatsappFloatingButton",
       enabled: true,
-      order: 12,
+      order: 13,
       data: {
         whatsappLink: base.whatsappLink,
         tooltip: "¿En qué podemos ayudarte?",

@@ -343,10 +343,22 @@
         }
       ]
     },
+    "contactForm": {
+      "id": "contactForm",
+      "enabled": true,
+      "order": 10,
+      "data": {
+        "title": "Hablemos de tu proyecto",
+        "subtitle": "Cuéntanos qué necesitas y te respondemos con una propuesta a tu medida.",
+        "email": "contacto@aionsite.com.mx",
+        "responseText": "Respuesta en menos de 24 horas",
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+      }
+    },
     "finalCTA": {
       "id": "finalCTA",
       "enabled": true,
-      "order": 10,
+      "order": 11,
       "data": {
         "title": "¿Listo para llevar tu negocio al siguiente nivel?",
         "subtitle": "Hablemos de tu proyecto y creemos algo increíble juntos.",
@@ -416,6 +428,7 @@
     "pricing",
     "testimonials",
     "faq",
+    "contactForm",
     "finalCTA",
     "sideImageContent",
     "footer",

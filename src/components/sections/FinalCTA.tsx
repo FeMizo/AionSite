@@ -7,7 +7,7 @@ import { Container } from "@/src/components/ui/Container";
 
 export function FinalCTA({ data }: { data: FinalCTASectionData }) {
   return (
-    <section id="contacto" className="py-24">
+    <section className="py-24">
       <Container>
         <div className="relative overflow-hidden rounded-[3rem] border border-blue-300/30 bg-blue-600 px-8 py-20 text-center shadow-[0_34px_68px_-36px_rgba(30,64,175,0.76)] md:px-16">
           <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl" />

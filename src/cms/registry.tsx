@@ -14,6 +14,7 @@ import { Stats } from "@/src/components/sections/Stats";
 import { Testimonials } from "@/src/components/sections/Testimonials";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Blog } from "@/src/components/sections/Blog";
+import { ContactFormSection } from "@/src/components/sections/ContactFormSection";
 import type {
   CmsContent,
   FieldDefinition,
@@ -246,6 +247,20 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
       },
     ],
   },
+  contactForm: {
+    id: "contactForm",
+    label: "Formulario de contacto",
+    description: "Sección de contacto con formulario, correo, WhatsApp y tiempo de respuesta.",
+    placement: "main",
+    type: "contacto",
+    fields: [
+      { key: "title", label: "Título", type: "textarea" },
+      { key: "subtitle", label: "Subtítulo", type: "textarea" },
+      { key: "email", label: "Correo", type: "text" },
+      { key: "responseText", label: "Texto de tiempo de respuesta", type: "text" },
+      { key: "whatsappLink", label: "Enlace de WhatsApp", type: "url" },
+    ],
+  },
   finalCTA: {
     id: "finalCTA",
     label: "Llamado final",
@@ -330,6 +345,9 @@ const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> =
     faq: (content) => <FAQ data={content.sections.faq.data} />,
     sideImageContent: (content) => (
       <SideImageContent data={content.sections.sideImageContent.data} />
+    ),
+    contactForm: (content) => (
+      <ContactFormSection data={content.sections.contactForm.data} />
     ),
     finalCTA: (content) => <FinalCTA data={content.sections.finalCTA.data} />,
     footer: (content) => (
