@@ -46,15 +46,19 @@ export function BlogListPage() {
       <section className="bg-slate-950 pb-28 pt-8">
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => (
-              <Link key={post.id} href={`/blog/${post.id}`} className="group block">
+            {blogPosts.map((post, i) => (
+              <Link
+                key={post.id}
+                href={`/blog/${post.id}`}
+                className={`group block animate-reveal transition-transform duration-150 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 active:scale-[0.97] ${["", "anim-delay-75", "anim-delay-150", "anim-delay-225"][i] ?? ""}`}
+              >
                 <Card className="flex h-full flex-col overflow-hidden p-0">
                   <div className="relative h-80 w-full overflow-hidden">
                     <Image
                       src={post.image ?? "/logo-aionsite.png"}
                       alt={post.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
                   </div>
@@ -64,7 +68,7 @@ export function BlogListPage() {
                       {post.badgeText}
                     </div>
                     <div className="flex-1">
-                      <h2 className="mb-3 font-display text-lg font-bold leading-snug text-white transition-colors group-hover:text-blue-300">
+                      <h2 className="mb-3 font-display text-lg font-bold leading-snug text-white transition-colors duration-200 group-hover:text-blue-300">
                         {post.title}
                       </h2>
                       <p className="text-sm leading-relaxed text-slate-400">{post.excerpt}</p>
@@ -74,9 +78,9 @@ export function BlogListPage() {
                         <Clock size={12} />
                         {post.readTime}
                       </span>
-                      <span className="flex items-center gap-1 text-blue-400 transition-colors group-hover:text-blue-300">
+                      <span className="flex items-center gap-1 text-blue-400 transition-colors duration-200 group-hover:text-blue-300">
                         Leer artículo
-                        <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+                        <ArrowRight size={12} className="transition-transform duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />
                       </span>
                     </div>
                   </div>
