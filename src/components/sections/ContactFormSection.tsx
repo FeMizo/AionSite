@@ -85,7 +85,6 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
             </div>
 
             <div className="flex items-center gap-2 text-sm text-slate-400">
-              <Clock size={14} className="text-green-400" />
               <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
               {data.responseText}
             </div>

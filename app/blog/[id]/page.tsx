@@ -16,10 +16,30 @@ export async function generateMetadata({
   const { id } = await params;
   const post = getBlogPost(id);
   if (!post) return {};
+  const siteUrl = getSiteUrl().replace(/\/$/, "");
+  const ogImage = post.image
+    ? `${siteUrl}${post.image}`
+    : `${siteUrl}/logo-aionsite.png`;
   return withCanonical(`/blog/${post.id}`, {
     title: `${post.title} | AionSite Blog`,
     description: post.excerpt,
     keywords: post.keywords,
+    openGraph: {
+      title: `${post.title} | AionSite Blog`,
+      description: post.excerpt,
+      url: `${siteUrl}/blog/${post.id}`,
+      siteName: "AionSite",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+      type: "article",
+      publishedTime: post.dateISO,
+      locale: "es_MX",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | AionSite Blog`,
+      description: post.excerpt,
+      images: [ogImage],
+    },
   });
 }
 
@@ -33,11 +53,15 @@ export default async function PostPage({
   if (!post) notFound();
 
   const siteUrl = getSiteUrl().replace(/\/$/, "");
+  const featuredImage = post.image
+    ? `${siteUrl}${post.image}`
+    : `${siteUrl}/logo-aionsite.png`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
+    image: featuredImage,
     datePublished: post.dateISO,
     inLanguage: "es-MX",
     url: `${siteUrl}/blog/${post.id}`,

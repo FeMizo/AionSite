@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { blogPosts } from "@/src/data/blog-posts";
@@ -47,26 +48,37 @@ export function BlogListPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {blogPosts.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`} className="group block">
-                <Card className="flex h-full flex-col gap-4 p-6">
-                  <div className="inline-flex w-fit items-center gap-1.5 rounded-full border border-violet-400/20 bg-violet-500/10 px-2.5 py-1 text-xs font-medium text-violet-300">
-                    <BookOpen size={11} />
-                    {post.badgeText}
+                <Card className="flex h-full flex-col overflow-hidden p-0">
+                  <div className="relative h-80 w-full overflow-hidden">
+                    <Image
+                      src={post.image ?? "/logo-aionsite.png"}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
                   </div>
-                  <div className="flex-1">
-                    <h2 className="mb-3 font-display text-lg font-bold leading-snug text-white transition-colors group-hover:text-blue-300">
-                      {post.title}
-                    </h2>
-                    <p className="text-sm leading-relaxed text-slate-400">{post.excerpt}</p>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-white/5 pt-4 text-xs text-slate-500">
-                    <span className="flex items-center gap-1.5">
-                      <Clock size={12} />
-                      {post.readTime}
-                    </span>
-                    <span className="flex items-center gap-1 text-blue-400 transition-colors group-hover:text-blue-300">
-                      Leer artículo
-                      <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
-                    </span>
+                  <div className="flex flex-1 flex-col gap-4 p-6">
+                    <div className="inline-flex w-fit items-center gap-1.5 rounded-full border border-violet-400/20 bg-violet-500/10 px-2.5 py-1 text-xs font-medium text-violet-300">
+                      <BookOpen size={11} />
+                      {post.badgeText}
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="mb-3 font-display text-lg font-bold leading-snug text-white transition-colors group-hover:text-blue-300">
+                        {post.title}
+                      </h2>
+                      <p className="text-sm leading-relaxed text-slate-400">{post.excerpt}</p>
+                    </div>
+                    <div className="flex items-center justify-between border-t border-white/5 pt-4 text-xs text-slate-500">
+                      <span className="flex items-center gap-1.5">
+                        <Clock size={12} />
+                        {post.readTime}
+                      </span>
+                      <span className="flex items-center gap-1 text-blue-400 transition-colors group-hover:text-blue-300">
+                        Leer artículo
+                        <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </div>
                   </div>
                 </Card>
               </Link>

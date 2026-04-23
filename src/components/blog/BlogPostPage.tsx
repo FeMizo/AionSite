@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Clock, Send } from "lucide-react";
 import type { BlogPost } from "@/src/data/blog-posts";
@@ -76,14 +77,11 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
             {post.excerpt}
           </p>
           <p className="mt-4 text-sm text-slate-600">{post.date}</p>
-          <div className="mt-12 flex justify-center">
-            <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
-          </div>
         </Container>
       </section>
 
       {/* 3-column layout */}
-      <section className="bg-slate-950 pb-28 pt-4">
+      <section className="bg-slate-950 pb-28 pt-14">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[300px_1fr_300px] lg:items-start lg:gap-14">
 

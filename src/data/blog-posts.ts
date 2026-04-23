@@ -14,6 +14,7 @@ export type BlogPost = {
   id: string;
   title: string;
   excerpt: string;
+  image?: string;
   badgeText: string;
   date: string;
   dateISO: string;
@@ -29,6 +30,7 @@ export const blogPosts: BlogPost[] = [
     title: "Velocidad web: el factor silencioso que está bloqueando tu crecimiento",
     excerpt:
       "Un sitio lento no solo frustra a tus visitantes: Google lo penaliza directamente en rankings. Descubre cómo medir, diagnosticar y mejorar la velocidad de tu sitio en pasos concretos.",
+    image: "/blog/velocidad-web.webp",
     badgeText: "Velocidad & Rendimiento",
     date: "22 de abril, 2026",
     dateISO: "2026-04-22",
@@ -114,6 +116,7 @@ export const blogPosts: BlogPost[] = [
     title: "Diseño web que convierte: los 7 principios que más importan",
     excerpt:
       "Un sitio hermoso no sirve de nada si no genera clientes. Descubre qué elementos de diseño determinan si un visitante se queda o se va en segundos.",
+    image: "/blog/diseno-web-que-convierte.webp",
     badgeText: "Diseño & Conversión",
     date: "15 de abril, 2026",
     dateISO: "2026-04-15",
@@ -181,6 +184,7 @@ export const blogPosts: BlogPost[] = [
     title: "SEO técnico en 2026: lo que sí mueve el ranking de tu negocio",
     excerpt:
       "El SEO cambió. Ya no basta con poner palabras clave. Te explicamos qué factores técnicos posicionan hoy y cómo aplicarlos en tu sitio.",
+    image: "/blog/seo-tecnico.webp",
     badgeText: "SEO & Visibilidad",
     date: "8 de abril, 2026",
     dateISO: "2026-04-08",
@@ -242,6 +246,7 @@ export const blogPosts: BlogPost[] = [
     title: "¿Cuándo realmente necesitas un sitio web para tu negocio?",
     excerpt:
       "Muchos negocios esperan demasiado. Otros invierten antes de tiempo. Te ayudamos a identificar el momento correcto y qué tipo de sitio necesitas.",
+    image: "/blog/necesitas-sitio-web.webp",
     badgeText: "Estrategia Digital",
     date: "1 de abril, 2026",
     dateISO: "2026-04-01",
