@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink, X } from "lucide-react";
 import type { PortfolioItem, PortfolioSectionData } from "@/src/cms/types";
 import { Badge } from "@/src/components/ui/Badge";
+import { LinkButton } from "@/src/components/ui/LinkButton";
 
 function PortfolioModal({
   item,
@@ -74,15 +75,17 @@ function PortfolioModal({
             {item.title}
           </h3>
 
-          <a
+          <LinkButton
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-blue-400/35 bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-16px_rgba(37,99,235,0.78)] transition hover:-translate-y-0.5 hover:bg-blue-500"
+            variant="primary"
+            size="sm"
+            className="rounded-lg gap-2"
           >
             <ExternalLink size={15} />
             Ver sitio web
-          </a>
+          </LinkButton>
         </div>
       </div>
     </div>

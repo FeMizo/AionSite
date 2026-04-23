@@ -5,7 +5,10 @@ import { Mail, MessageCircleMore, Send, Clock, Loader2, CheckCircle2 } from "luc
 import type { ContactFormSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { Card } from "@/src/components/ui/Card";
+import { Button } from "@/src/components/ui/Button";
 import { Reveal } from "@/src/components/ui/Reveal";
+import { FormInput } from "@/src/components/ui/FormInput";
+import { FormTextarea } from "@/src/components/ui/FormTextarea";
 
 export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -33,9 +36,6 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
       setStatus("error");
     }
   };
-
-  const inputClass =
-    "w-full rounded-lg border border-white/10 bg-slate-800/60 px-3 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20";
 
   return (
     <section id="contacto" className="relative overflow-hidden bg-slate-950 py-24">
@@ -110,65 +110,47 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
             ) : (
               <form onSubmit={handleSubmit} className={`space-y-4 ${status === "error" ? "animate-shake" : ""}`}>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label className="mb-1.5 block text-xs font-medium text-slate-400">
-                      Nombre <span className="text-blue-400">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="Tu nombre"
-                      className={inputClass}
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-1.5 block text-xs font-medium text-slate-400">
-                      Teléfono
-                    </label>
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      placeholder="+52 000 000 0000"
-                      className={inputClass}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="mb-1.5 block text-xs font-medium text-slate-400">
-                    Correo electrónico <span className="text-blue-400">*</span>
-                  </label>
-                  <input
-                    type="email"
+                  <FormInput
+                    label={<>Nombre <span className="text-blue-400">*</span></>}
+                    type="text"
                     required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="tu@correo.com"
-                    className={inputClass}
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder="Tu nombre"
+                  />
+                  <FormInput
+                    label="Teléfono"
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="+52 000 000 0000"
                   />
                 </div>
 
-                <div>
-                  <label className="mb-1.5 block text-xs font-medium text-slate-400">
-                    Mensaje <span className="text-blue-400">*</span>
-                  </label>
-                  <textarea
-                    required
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="Cuéntanos sobre tu proyecto..."
-                    rows={5}
-                    className={`${inputClass} resize-none`}
-                  />
-                </div>
+                <FormInput
+                  label={<>Correo electrónico <span className="text-blue-400">*</span></>}
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  placeholder="tu@correo.com"
+                />
 
-                <button
+                <FormTextarea
+                  label={<>Mensaje <span className="text-blue-400">*</span></>}
+                  required
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  placeholder="Cuéntanos sobre tu proyecto..."
+                  rows={5}
+                />
+
+                <Button
                   type="submit"
+                  variant="primary"
+                  size="sm"
                   disabled={status === "sending"}
-                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-blue-400/35 bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-16px_rgba(37,99,235,0.78)] transition hover:-translate-y-0.5 hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                  className="w-full rounded-lg gap-2 font-semibold disabled:cursor-not-allowed disabled:pointer-events-auto"
                 >
                   {status === "sending" ? (
                     <Loader2 size={14} className="animate-spin" />
@@ -176,7 +158,7 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
                     <Send size={14} />
                   )}
                   {status === "sending" ? "Enviando…" : "Enviar mensaje"}
-                </button>
+                </Button>
 
                 <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />

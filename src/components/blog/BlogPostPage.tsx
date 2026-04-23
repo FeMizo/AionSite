@@ -9,8 +9,11 @@ import { initialCmsContent } from "@/src/cms/site-content";
 import { Header } from "@/src/components/sections/Header";
 import { Footer } from "@/src/components/sections/Footer";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
+import { Button } from "@/src/components/ui/Button";
 import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
+import { FormInput } from "@/src/components/ui/FormInput";
+import { FormTextarea } from "@/src/components/ui/FormTextarea";
 import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 import { cn } from "@/src/lib/utils";
 
@@ -169,50 +172,37 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <label className="mb-1.5 block text-xs font-medium text-slate-400">
-                        Nombre
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        placeholder="Tu nombre"
-                        className="w-full rounded-lg border border-white/10 bg-slate-800/60 px-3 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-xs font-medium text-slate-400">
-                        Correo electrónico
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        placeholder="tu@correo.com"
-                        className="w-full rounded-lg border border-white/10 bg-slate-800/60 px-3 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-xs font-medium text-slate-400">
-                        Mensaje
-                      </label>
-                      <textarea
-                        required
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        placeholder="¿En qué podemos ayudarte?"
-                        rows={4}
-                        className="w-full resize-none rounded-lg border border-white/10 bg-slate-800/60 px-3 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20"
-                      />
-                    </div>
+                    <FormInput
+                      label="Nombre"
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      placeholder="Tu nombre"
+                    />
+                    <FormInput
+                      label="Correo electrónico"
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      placeholder="tu@correo.com"
+                    />
+                    <FormTextarea
+                      label="Mensaje"
+                      required
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      placeholder="¿En qué podemos ayudarte?"
+                      rows={4}
+                    />
 
-                    <button
+                    <Button
                       type="submit"
+                      variant="primary"
+                      size="sm"
                       disabled={status === "sending" || status === "sent"}
-                      className="flex w-full items-center justify-center gap-2 rounded-lg border border-blue-400/35 bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_14px_30px_-16px_rgba(37,99,235,0.78)] transition hover:-translate-y-0.5 hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                      className="w-full rounded-lg gap-2 font-semibold disabled:cursor-not-allowed disabled:pointer-events-auto"
                     >
                       <Send size={14} />
                       {status === "sending"
@@ -220,7 +210,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
                         : status === "sent"
                           ? "¡Mensaje enviado!"
                           : "Enviar mensaje"}
-                    </button>
+                    </Button>
 
                     {status === "sent" && (
                       <p className="text-center text-xs text-green-400">
