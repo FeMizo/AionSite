@@ -183,13 +183,13 @@ export const defaultCmsContent: CmsContent = {
             "Página de inicio con diseño premium",
             "5 secciones personalizadas",
             "SEO avanzado",
-            "Soporte 3 meses",
+            "Soporte 2 meses",
           ],
           recommended: true,
         },
         {
           name: "Mantenimiento mensual",
-          price: "$3,000/mes",
+          price: "Desde $3,000/mes",
           features: [
             "Actualizaciones mensuales",
             "Optimización de velocidad",
