@@ -1,0 +1,146 @@
+{
+  "config": {
+    "dimensions": {
+      "width": 1080,
+      "height": 1920,
+      "format": "vertical"
+    },
+    "colors": {
+      "primary": "#3f8cff",
+      "accent": "#22C55E",
+      "text": "#ffffff",
+      "background": "#071226"
+    },
+    "schedule": {
+      "time": "07:00",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+    }
+  },
+  "stories": {
+    "story1": {
+      "nombre": "Plataformas - WordPress, Shopify, NextJS",
+      "objetivo": "Mostrar especialización en diferentes plataformas",
+      "variations": [
+        {
+          "semana": 1,
+          "nombre": "¿Cuál es tu plataforma?",
+          "angulo": "Confusión",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar múltiples logos de plataformas (WordPress, Shopify, NextJS) confundidas o superpuestas. Diseño moderno, fondo #071226 (azul oscuro), elementos con colores #3f8cff (azul) y #22C55E (verde). Texto grande y audaz que pregunte '¿Cuál es tu plataforma?' Estilo minimalista y profesional.",
+          "copy": "¿No sabes cuál es la mejor plataforma para tu negocio? WordPress, Shopify, NextJS... tenemos experiencia en TODAS. Tu éxito no depende de la plataforma, sino de quién la construye. 🔥",
+          "hashtags": "#WordPress #Shopify #NextJS #DesarrolloWeb #TuPlataforma #AionSite"
+        },
+        {
+          "semana": 2,
+          "nombre": "Especialistas en todo",
+          "angulo": "Profundidad",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar el logotipo de AionSite con múltiples iconos de plataformas alrededor (WordPress, Shopify, NextJS). Fondo #071226, texto grande 'Especialistas en todas las plataformas'. Colores #3f8cff y #22C55E. Efecto de profundidad con capas. Diseño profesional y moderno.",
+          "copy": "Mientras otros se especializan en UNA plataforma, nosotros dominamos todas. WordPress, Shopify, NextJS... No importa donde quieras estar, sabemos cómo llevarte. 💪",
+          "hashtags": "#Especialistas #DesarrolloWeb #WordPress #Shopify #NextJS #Profesionales"
+        },
+        {
+          "semana": 3,
+          "nombre": "Tu negocio es lo primero",
+          "angulo": "ROI",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar moneda o símbolo de crecimiento en el centro. Fondo #071226, múltiples plataformas a alrededor. Texto '¿Necesitas ROI? Elige la plataforma correcta'. Colores #3f8cff y #22C55E. Diseño impactante y directo.",
+          "copy": "Cada plataforma tiene ventajas. Nosotros elegimos la que TE GENERA MÁS DINERO. No vendemos plataformas, vendemos RESULTADOS. 💰",
+          "hashtags": "#ROI #Resultados #EstrategiaDigital #CrecimientoWeb #Rentabilidad"
+        },
+        {
+          "semana": 4,
+          "nombre": "Actualizado a las tendencias",
+          "angulo": "Futuro",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar elementos futuristas, código o líneas de datos. Fondo #071226, logos de plataformas modernas. Texto 'Siempre en las últimas tendencias'. Colores #3f8cff y #22C55E. Estilo tech y moderno.",
+          "copy": "Las plataformas evolucionan. NextJS, Shopify Plus, WordPress con Headless... Nosotros no solo seguimos tendencias, las anticipamos. ⚡",
+          "hashtags": "#Tendencias #NextJS #TechStack #Innovación #FuturoDelWeb"
+        }
+      ]
+    },
+    "story2": {
+      "nombre": "Conversión - Sales Focused",
+      "objetivo": "Generar urgencia de compra y ventas",
+      "variations": [
+        {
+          "semana": 1,
+          "nombre": "Dinero Perdido",
+          "angulo": "Urgencia",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar dinero desapareciendo o gotitas de dinero cayendo. Fondo #071226 (azul oscuro), efecto de pérdida visual. Texto grande 'Cada día que esperas, pierdes dinero'. Colores #3f8cff y #22C55E. Impacto visual alto.",
+          "copy": "Tu web actual NO VENDE. ¿Cuánto dinero dejaste en la mesa este mes? Las conversiones que pierdes hoy son clientes que gana tu competencia. No esperes más. 🚨",
+          "hashtags": "#Conversiones #VentasOnline #DiñeroQueNoGanas #ActúaYa #AionSite"
+        },
+        {
+          "semana": 2,
+          "nombre": "Tu Potencial",
+          "angulo": "Oportunidad",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar grafo ascendente o montaña siendo escalada. Fondo #071226, elementos #22C55E (verde) indicando crecimiento. Texto 'Tu potencial está limitado solo por tu web'. Colores #3f8cff y #22C55E. Inspirador y motivador.",
+          "copy": "Imagina cuanto PODRÍAS vender con una web que REALMENTE CONVIERTE. Nosotros ayudamos a negocios a triplicar sus conversiones. Tu turno. 🚀",
+          "hashtags": "#Potencial #Crecimiento #VentasWeb #Oportunidad #Éxito"
+        },
+        {
+          "semana": 3,
+          "nombre": "Competencia Avanza",
+          "angulo": "FOMO",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar múltiples competidores avanzando rápido. Fondo #071226, elementos dinámicos. Texto 'Tu competencia no espera'. Colores #3f8cff y #22C55E. Efecto de urgencia y movimiento.",
+          "copy": "Mientras lees esto, tu competencia está optimizando sus conversiones. ¿Qué esperas? La diferencia entre ganar y perder es AHORA. 📍",
+          "hashtags": "#Competencia #MercadoDigital #VentasOnline #ActúaAhora #Ventaja"
+        },
+        {
+          "semana": 4,
+          "nombre": "Inversión Inteligente",
+          "angulo": "ROI",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar dinero invertido generando retorno. Fondo #071226, símbolos de inversión. Texto 'Invertir en conversión = máximo retorno'. Colores #3f8cff y #22C55E. Profesional y estratégico.",
+          "copy": "Una web optimizada para conversiones no es gasto, es la mejor inversión que harás. Cada peso invertido retorna multiplicado. Compruébalo. 💎",
+          "hashtags": "#Inversión #StrategyWeb #Rentabilidad #DigiTal #MaximoROI"
+        }
+      ]
+    },
+    "story3": {
+      "nombre": "Consulta Gratis - Lead Generation",
+      "objetivo": "Generar leads y consultas",
+      "variations": [
+        {
+          "semana": 1,
+          "nombre": "Diagnóstico Profesional",
+          "angulo": "Análisis",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar lupa o análisis detallado de un sitio web. Fondo #071226, elementos de análisis #3f8cff. Texto 'Diagnóstico GRATIS de tu web'. Colores #3f8cff y #22C55E. Profesional y técnico.",
+          "copy": "¿Sabes realmente cómo rinde tu web? Nosotros te hacemos un DIAGNÓSTICO PROFESIONAL GRATIS. Descubre qué está frenando tu crecimiento. 🔍",
+          "hashtags": "#DiagnósticoGratis #AnalisisWeb #ConsultaGratis #OptimizaciónWeb #AionSite"
+        },
+        {
+          "semana": 2,
+          "nombre": "No Sabes por Dónde Empezar",
+          "angulo": "Apoyo",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar persona confundida mirando opciones. Fondo #071226, elementos de ayuda #22C55E. Texto 'No sabes por dónde empezar?' Colores #3f8cff y #22C55E. Empático y de apoyo.",
+          "copy": "Te sientes perdido en el mundo digital? Es normal. Por eso estamos aquí. Una CONSULTA GRATIS con nuestros expertos te abrirá los ojos. 💡",
+          "hashtags": "#ConsultaGratis #AyudaDigital #Emprendedores #Asesoría #AionSite"
+        },
+        {
+          "semana": 3,
+          "nombre": "Actúa Ahora",
+          "angulo": "Urgencia",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar reloj o momento de acción. Fondo #071226, elementos dinámicos #3f8cff. Texto 'Tu momento es AHORA'. Colores vibrantes. Acción inmediata.",
+          "copy": "No esperes al próximo mes, al próximo año. AHORA es cuando más lo necesitas. Solicita tu CONSULTA GRATIS hoy. Solo 30 minutos que cambiarán tu negocio. ⚡",
+          "hashtags": "#ActúaAhora #Oportunidad #ConsultaGratis #CambioDigital #Hoy"
+        },
+        {
+          "semana": 4,
+          "nombre": "Confía como otros",
+          "angulo": "Social Proof",
+          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar múltiples usuarios satisfied o testimonios. Fondo #071226, rostros o avatares #22C55E. Texto 'Cientos confían en nosotros'. Colores #3f8cff y #22C55E. Confianza y comunidad.",
+          "copy": "¿Dudas? Cientos de negocios ya transformaron sus resultados con nosotros. Tu consulta GRATIS es el primer paso. Únete a quienes ya ganaron. 🏆",
+          "hashtags": "#Testimonios #Confianza #CasosExito #AionSite #ComoOtros"
+        }
+      ]
+    }
+  },
+  "rotation_logic": {
+    "week_calculation": "Math.floor((new Date().getTime() - new Date(2026, 0, 1).getTime()) / (7 * 24 * 60 * 60 * 1000)) % 4 + 1",
+    "day_schedule": {
+      "monday": ["story1"],
+      "tuesday": ["story2"],
+      "wednesday": ["story3"],
+      "thursday": ["story1"],
+      "friday": ["story2"]
+    },
+    "description": "Each week (1-4), the same day of week will show a different variation of the story, rotating through the 4 angles. Week 1 shows variation 0, Week 2 shows variation 1, etc."
+  }
+}
