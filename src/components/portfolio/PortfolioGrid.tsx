@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { ExternalLink, X } from "lucide-react";
 import type { PortfolioItem, PortfolioSectionData } from "@/src/cms/types";
 import { Badge } from "@/src/components/ui/Badge";
@@ -33,15 +34,25 @@ function PortfolioModal({
       aria-label={item.title}
     >
       {/* Backdrop */}
-      <button
+      <motion.button
         type="button"
-        className="animate-backdrop-in absolute inset-0 bg-slate-950/85 backdrop-blur-sm"
+        className="absolute inset-0 bg-slate-950/85 backdrop-blur-sm"
         onClick={onClose}
         aria-label="Cerrar"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.22, ease: "easeOut" }}
       />
 
       {/* Panel */}
-      <div className="animate-scale-in relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-[0_40px_80px_-20px_rgba(2,6,23,0.95)]">
+      <motion.div
+        className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-[0_40px_80px_-20px_rgba(2,6,23,0.95)]"
+        initial={{ opacity: 0, scale: 0.93 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.96 }}
+        transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+      >
         {/* Close */}
         <button
           type="button"
@@ -87,7 +98,7 @@ function PortfolioModal({
             Ver sitio web
           </LinkButton>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -119,7 +130,7 @@ export function PortfolioGrid({
             <img
               src={item.image}
               alt={item.title}
-              className="h-72 w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-100"
+              className="h-72 w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-100 will-change-transform"
             />
 
             <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-transparent to-transparent" />
@@ -139,9 +150,15 @@ export function PortfolioGrid({
         ))}
       </div>
 
-      {selected && (
-        <PortfolioModal item={selected} onClose={() => setSelected(null)} />
-      )}
+      <AnimatePresence>
+        {selected && (
+          <PortfolioModal
+            key={selected.title}
+            item={selected}
+            onClose={() => setSelected(null)}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
