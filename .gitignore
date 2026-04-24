@@ -29,3 +29,13 @@ Thumbs.db
 
 # extras
 /dist
+
+# scripts y reportes locales (no deben ir al repo)
+enviar-reporte.mjs
+generate-daily-stories.js
+stories-config.json
+stories-generated/
+REPORTE_*.md
+REPORTE_*.html
+RESUMEN_*.md
+SETUP-*.md

@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: 'contacto@aionsite.com.mx',
-    pass: process.env.SMTP_PASS || 'Bodoke0723!'
+    pass: process.env.SMTP_PASS
   }
 });
 
