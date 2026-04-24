@@ -26,6 +26,98 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "rediseno-web-cuando-por-que",
+    title: "Rediseño de tu sitio web: cuándo hacerlo, por qué importa y cómo empezar",
+    excerpt:
+      "Tu sitio tiene 3 años sin cambios. Los resultados bajaron. Te contamos los signos de que es hora de rediseñar y cómo hacerlo sin perder tu posicionamiento.",
+    image: "/blog/tu-sitio-tiene-3-anios-sin-cambios.webp",
+    badgeText: "Estrategia & Transformación",
+    date: "24 de abril, 2026",
+    dateISO: "2026-04-24",
+    readTime: "7 min de lectura",
+    keywords: ["rediseño de sitio web", "modernizar página web", "actualizar diseño web", "renovar sitio", "rediseño web sin perder SEO", "mejora visual web", "actualización de sitio web México", "página web desactualizada"],
+    headings: [
+      { level: 2, id: "cuando-redisenar", text: "Señales de que ya es tiempo de rediseñar" },
+      { level: 3, id: "tasa-rebote-alta", text: "Tu tasa de rebote subió" },
+      { level: 3, id: "competencia-adelanta", text: "Tu competencia te adelanta visualmente" },
+      { level: 3, id: "tecnologia-desactualizada", text: "Tu tecnología está desactualizada" },
+      { level: 2, id: "riesgos-rediseno", text: "Los riesgos de un rediseño mal ejecutado" },
+      { level: 3, id: "perder-seo", text: "Perder todo tu posicionamiento en Google" },
+      { level: 3, id: "experiencia-rota", text: "Romper la experiencia de usuario actual" },
+      { level: 2, id: "como-hacer-bien", text: "Cómo rediseñar correctamente" },
+      { level: 3, id: "paso-1-auditoria", text: "Paso 1: Auditoría de lo que funciona" },
+      { level: 3, id: "paso-2-arquitectura", text: "Paso 2: Planifica la nueva arquitectura" },
+      { level: 3, id: "paso-3-redirecciones", text: "Paso 3: Configura redirecciones 301" },
+      { level: 2, id: "conclusion-rediseno", text: "Conclusión" },
+    ],
+    blocks: [
+      { type: "h2", id: "cuando-redisenar", text: "Señales de que ya es tiempo de rediseñar" },
+      {
+        type: "p",
+        text: "Un sitio web es como una tienda física: con el tiempo, la pintura se despinta, los muebles envejecen y los clientes se preguntan si el negocio sigue activo. En web, esto sucede en meses, no en años. Si tu sitio sigue viendo igual que hace 3 años, tu audiencia ya pasó a competidores que lucen más modernos y confiables.",
+      },
+      { type: "h3", id: "tasa-rebote-alta", text: "Tu tasa de rebote subió" },
+      {
+        type: "p",
+        text: "Cuando más del 60-70% de los visitantes llegan a tu sitio y se van sin interactuar, algo falla. Puede ser el diseño visual, la navegación confusa, o que el contenido no responde lo que buscaban. Un rediseño enfocado en UX puede reducir esa tasa en picada.",
+      },
+      { type: "h3", id: "competencia-adelanta", text: "Tu competencia te adelanta visualmente" },
+      {
+        type: "p",
+        text: "Visita los sitios de tus competidores directos. Si ves que tienen diseño moderno, navegación clara y propuestas visibles mientras el tuyo luce como si congelara el tiempo en 2020, tienes un problema. Los usuarios forman opiniones en 50 milisegundos. Un sitio anticuado pierde credibilidad antes de que el visitante lea una palabra.",
+      },
+      {
+        type: "quote",
+        text: "La última actualización visual de tu sitio fue hace X años. La última actualización en la industria fue la semana pasada.",
+      },
+      { type: "h3", id: "tecnologia-desactualizada", text: "Tu tecnología está desactualizada" },
+      {
+        type: "p",
+        text: "Si tu sitio corre en WordPress 4.x, jQuery obsoleto o una arquitectura monolítica que no es mobile-friendly, la hora del cambio llegó. Las tecnologías modernas son más rápidas, seguras y escalables. Un cambio de framework puede doblarte la velocidad de carga, lo que directamente impacta SEO y conversiones.",
+      },
+      { type: "h2", id: "riesgos-rediseno", text: "Los riesgos de un rediseño mal ejecutado" },
+      {
+        type: "p",
+        text: "Aquí está el dilema: un rediseño puede darte un impulso tremendo, o puede hundirte en el rankings de Google. Todo depende de cómo lo hagas.",
+      },
+      { type: "h3", id: "perder-seo", text: "Perder todo tu posicionamiento en Google" },
+      {
+        type: "p",
+        text: "Si cambias todas las URLs de tus páginas sin configurar redirecciones 301, Google las verá como páginas nuevas. Pierdes el autoridad acumulada de años. Si modificas los meta títulos y descripciones sin estrategia, tu CTR cae. Si la arquitectura cambia sin un plan de migración, el Googlebot se pierde. Hemos visto negocios que tardaron 2 años en recuperarse después de un rediseño mal hecho.",
+      },
+      { type: "h3", id: "experiencia-rota", text: "Romper la experiencia de usuario actual" },
+      {
+        type: "p",
+        text: "Tus usuarios actuales conocen tu sitio. Saben dónde está el botón de contacto, cómo llegar a tu catálogo, dónde ver testimonios. Un rediseño radical que cambia todo puede confundirlos y mandarlos a competidores. El cambio debe ser una evolución, no una revolución.",
+      },
+      { type: "h2", id: "como-hacer-bien", text: "Cómo rediseñar correctamente" },
+      {
+        type: "p",
+        text: "Existen procesos que minimizan riesgo y maximizan impacto. Estos son los pasos que aplicamos en cada rediseño.",
+      },
+      { type: "h3", id: "paso-1-auditoria", text: "Paso 1: Auditoría de lo que funciona" },
+      {
+        type: "p",
+        text: "Antes de cambiar nada, descubre qué está funcionando. Analiza Google Analytics: ¿cuáles son tus páginas con más tráfico? ¿Desde dónde llega ese tráfico? ¿Qué palabras clave te traen visitantes? ¿Cuál es tu tasa de conversión por fuente? Rediseña manteniendo lo que funciona. Mejora o elimina lo que no. Esto evita lanzar al aire lo que ya está generando resultados.",
+      },
+      { type: "h3", id: "paso-2-arquitectura", text: "Paso 2: Planifica la nueva arquitectura" },
+      {
+        type: "p",
+        text: "Decide si vas a mantener las mismas URLs o si necesitas cambiarlas. Generalmente, es mejor mantenerlas. Si no puedes, planifica cada redirección: página antigua → página nueva, 301 permanente. Revisa la estructura de carpetas, las categorías, los slugs. Un cambio de arquitectura bien planeado dura un par de horas de implementación. Uno mal planeado puede costarte semanas.",
+      },
+      { type: "h3", id: "paso-3-redirecciones", text: "Paso 3: Configura redirecciones 301" },
+      {
+        type: "p",
+        text: "Las redirecciones 301 le dicen a Google: 'esta página antigua ahora es esta otra'. El buscador transfiere el autoridad de la vieja a la nueva. Sin esto, tienes un desastre SEO. Con esto, el cambio es transparente para Google y los usuarios. Verifica cada redirección después de lanzar: entra a Google Search Console, revisa errores 404 y soluciónalos antes de que se indexen.",
+      },
+      { type: "h2", id: "conclusion-rediseno", text: "Conclusión" },
+      {
+        type: "p",
+        text: "Un rediseño no es un lujo: es una necesidad si tu sitio dejó de crecer. Pero hacerlo mal es peor que no hacerlo. El proceso correcto es: auditoría → planificación → implementación con redirecciones → seguimiento. Si no tienes el tiempo o conocimiento técnico para hacerlo, es el momento de traer a un profesional. Tu posicionamiento en Google vale mucho más que lo que cuesta hacerlo correctamente.",
+      },
+    ],
+  },
+  {
     id: "velocidad-web-posicionamiento",
     title: "Velocidad web: el factor silencioso que está bloqueando tu crecimiento",
     excerpt:
