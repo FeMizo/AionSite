@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Epilogue } from "next/font/google";
 import Script from "next/script";
-import { initialCmsContent } from "@/src/cms/site-content";
 import { metadataBase } from "@/src/lib/metadata";
 import { SchemaMarkup } from "@/src/components/ui/SchemaMarkup";
 import "./globals.css";
@@ -30,11 +29,26 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: initialCmsContent.sections.header.data.name,
-    description: initialCmsContent.sections.footer.data.description,
+    title: "Diseño y Desarrollo Web Premium | AionSite",
+    description: "Creamos sitios web rápidos, modernos y orientados a conversión. Más clientes, mejor imagen, resultados reales. Cotiza hoy sin compromiso.",
     url: "/",
+    siteName: "AionSite",
     type: "website",
     locale: "es_MX",
+    images: [
+      {
+        url: "/logo-aionsite.png",
+        width: 1200,
+        height: 630,
+        alt: "AionSite — Diseño y Desarrollo Web Premium",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Diseño y Desarrollo Web Premium | AionSite",
+    description: "Creamos sitios web rápidos, modernos y orientados a conversión. Más clientes, mejor imagen, resultados reales.",
+    images: ["/logo-aionsite.png"],
   },
 };
 

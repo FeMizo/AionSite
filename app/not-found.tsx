@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/src/components/ui/Container";
 import { getButtonClassName } from "@/src/components/ui/button-styles";
+
+export const metadata: Metadata = {
+  title: "Página no encontrada | AionSite",
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (

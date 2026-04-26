@@ -18,7 +18,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: buildUrl("/sitemap.xml"),
-    host: new URL(siteUrl).origin,
+    sitemap: [buildUrl("/sitemap.xml"), buildUrl("/sitemap_blogs.xml")],
   };
 }
