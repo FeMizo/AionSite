@@ -5,12 +5,11 @@ export const dynamic = "force-static";
 
 export function GET() {
   const siteUrl = getSiteUrl().replace(/\/$/, "");
-  const lastModified = new Date().toISOString();
 
   const urls = blogPosts
     .map(
       (post) =>
-        `  <url>\n    <loc>${siteUrl}/blog/${post.id}</loc>\n    <lastmod>${lastModified}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+        `  <url>\n    <loc>${siteUrl}/blog/${post.id}</loc>\n    <lastmod>${new Date(post.dateISO).toISOString()}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
     )
     .join("\n");
 

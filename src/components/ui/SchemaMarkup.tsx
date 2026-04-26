@@ -15,8 +15,8 @@ const schema = {
   areaServed: "MX",
   serviceType: "Diseño y Desarrollo Web",
   sameAs: [
-    "https://www.instagram.com/aionsite.mx",
-    "https://www.facebook.com/aionsite.mx",
+    "https://www.facebook.com/aionsite",
+    "https://www.instagram.com/aionsite.webs/",
   ],
 };
 

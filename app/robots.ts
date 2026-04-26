@@ -8,8 +8,6 @@ function buildUrl(path: string) {
 }
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = getSiteUrl();
-
   return {
     rules: [
       {
@@ -18,6 +16,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: [buildUrl("/sitemap.xml"), buildUrl("/sitemap_blogs.xml")],
+    sitemap: buildUrl("/sitemap_index.xml"),
   };
 }
