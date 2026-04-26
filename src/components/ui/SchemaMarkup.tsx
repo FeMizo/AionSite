@@ -1,4 +1,4 @@
-const schema = {
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService"],
   "@id": "https://aionsite.com.mx/#organization",
@@ -20,11 +20,34 @@ const schema = {
   ],
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://aionsite.com.mx/#website",
+  name: "AionSite",
+  url: "https://aionsite.com.mx",
+  publisher: { "@id": "https://aionsite.com.mx/#organization" },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://aionsite.com.mx/blog?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export function SchemaMarkup() {
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+    </>
   );
 }

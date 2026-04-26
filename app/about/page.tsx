@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { initialAboutContent } from "@/src/about/content";
 import { PublicAboutPage } from "@/src/components/about/PublicAboutPage";
 import { withCanonical } from "@/src/lib/metadata";
+import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 
 export const metadata: Metadata = withCanonical("/about", {
   title: "Nosotros | AionSite — Diseño Web Premium en México",
@@ -24,5 +25,10 @@ export const metadata: Metadata = withCanonical("/about", {
 });
 
 export default function AboutPage() {
-  return <PublicAboutPage initialContent={initialAboutContent} />;
+  return (
+    <>
+      <BreadcrumbSchema items={[{ name: "Nosotros", path: "/about" }]} />
+      <PublicAboutPage initialContent={initialAboutContent} />
+    </>
+  );
 }

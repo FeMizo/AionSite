@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BlogListPage } from "@/src/components/blog/BlogListPage";
 import { withCanonical } from "@/src/lib/metadata";
+import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 
 export const metadata: Metadata = withCanonical("/blog", {
   title: "Blog | AionSite — Diseño Web, SEO y Conversión",
@@ -24,5 +25,10 @@ export const metadata: Metadata = withCanonical("/blog", {
 });
 
 export default function BlogPage() {
-  return <BlogListPage />;
+  return (
+    <>
+      <BreadcrumbSchema items={[{ name: "Blog", path: "/blog" }]} />
+      <BlogListPage />
+    </>
+  );
 }

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { blogPosts, getBlogPost } from "@/src/data/blog-posts";
 import { BlogPostPage } from "@/src/components/blog/BlogPostPage";
 import { withCanonical, getSiteUrl } from "@/src/lib/metadata";
+import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ id: post.id }));
@@ -82,6 +83,12 @@ export default async function PostPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.id}` },
+        ]}
       />
       <BlogPostPage post={post} />
     </>

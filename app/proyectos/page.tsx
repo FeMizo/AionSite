@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { initialCmsContent } from "@/src/cms/site-content";
 import { PublicProjectsPage } from "@/src/components/portfolio/PublicProjectsPage";
 import { withCanonical } from "@/src/lib/metadata";
+import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 
 export const metadata: Metadata = withCanonical("/proyectos", {
   title: "Proyectos | AionSite — Portafolio de Diseño Web",
@@ -25,5 +26,10 @@ export const metadata: Metadata = withCanonical("/proyectos", {
 });
 
 export default function ProjectsPage() {
-  return <PublicProjectsPage initialContent={initialCmsContent} />;
+  return (
+    <>
+      <BreadcrumbSchema items={[{ name: "Proyectos", path: "/proyectos" }]} />
+      <PublicProjectsPage initialContent={initialCmsContent} />
+    </>
+  );
 }
