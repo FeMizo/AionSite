@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     title: "Rediseño de tu sitio web: cuándo hacerlo, por qué importa y cómo empezar",
     excerpt:
       "Tu sitio tiene 3 años sin cambios. Los resultados bajaron. Te contamos los signos de que es hora de rediseñar y cómo hacerlo sin perder tu posicionamiento.",
-    image: "/blog/tu-sitio-tiene-3-anios-sin-cambios.webp",
+    image: "/blog/tu-sitio-tiene-3 anios-sin-cambios.webp",
     badgeText: "Estrategia & Transformación",
     date: "24 de abril, 2026",
     dateISO: "2026-04-24",

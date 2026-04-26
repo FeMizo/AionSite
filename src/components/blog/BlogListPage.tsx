@@ -32,7 +32,7 @@ export function BlogListPage() {
             <BookOpen size={14} />
             Blog & Recursos
           </div>
-          <h1 className="mx-auto max-w-3xl text-display font-display font-bold text-white">
+          <h1 className="mx-auto max-w-5xl text-display font-display font-bold text-white">
             Conocimiento que impulsa tu negocio digital.
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400">
