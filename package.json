@@ -1,7 +1,7 @@
 {
   "name": "aionsite",
   "private": true,
-  "version": "1.17.30",
+  "version": "1.17.31",
   "type": "module",
   "scripts": {
     "dev": "next dev --port=2666 --hostname=0.0.0.0",
@@ -10,13 +10,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@google/genai": "^1.29.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/nodemailer": "^8.0.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
-    "next": "15.1.7",
+    "next": "^15.5.15",
     "nodemailer": "^8.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
