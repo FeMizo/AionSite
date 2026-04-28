@@ -89,7 +89,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
           <div className="grid gap-10 lg:grid-cols-[300px_1fr_300px] lg:items-start lg:gap-14">
 
             {/* Left: TOC */}
-            <aside className="hidden lg:block">
+            <aside className="hidden lg:block md:sticky top-28">
               <div className="sticky top-24 rounded-xl border border-white/8 bg-slate-900/40 p-5 backdrop-blur-sm">
                 <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-500">
                   Contenido
@@ -161,7 +161,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
             </article>
 
             {/* Right: Contact form */}
-            <aside>
+            <aside className="md:sticky top-28">
               <div className="sticky top-24">
                 <Card className="p-6">
                   <h3 className="mb-1 font-display text-lg font-bold text-white">
