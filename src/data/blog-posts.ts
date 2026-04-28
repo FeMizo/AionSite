@@ -26,6 +26,98 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "seo-local-google-maps-negocio",
+    title: "SEO local: cómo aparecer en Google Maps y dominar las búsquedas de tu ciudad",
+    excerpt:
+      "El 46% de las búsquedas en Google tienen intención local. Si tu negocio no aparece en el mapa cuando alguien busca lo que ofreces, estás regalándole clientes a tu competencia. Esto es lo que tienes que hacer.",
+    image: "/blog/seo-local.webp",
+    badgeText: "SEO Local & Visibilidad",
+    date: "27 de abril, 2026",
+    dateISO: "2026-04-27",
+    readTime: "7 min de lectura",
+    keywords: ["SEO local", "Google Maps negocio", "Google Business Profile", "posicionamiento local", "aparecer en Google Maps", "búsquedas locales", "SEO para negocios México", "reseñas Google", "NAP consistencia", "pack local Google"],
+    headings: [
+      { level: 2, id: "que-es-seo-local", text: "Qué es el SEO local y por qué importa" },
+      { level: 3, id: "el-pack-local", text: "El pack local de Google" },
+      { level: 3, id: "intención-local", text: "Búsquedas con intención local" },
+      { level: 2, id: "google-business-profile", text: "Google Business Profile: tu base de operaciones" },
+      { level: 3, id: "perfil-completo", text: "Un perfil 100% completo marca la diferencia" },
+      { level: 3, id: "categorias-correctas", text: "Elige las categorías correctas" },
+      { level: 2, id: "resenas-y-reputacion", text: "Reseñas: el factor que más mueve el ranking local" },
+      { level: 3, id: "como-conseguir-resenas", text: "Cómo conseguir más reseñas sin violar las reglas" },
+      { level: 3, id: "responder-resenas", text: "Responder reseñas también posiciona" },
+      { level: 2, id: "nap-consistencia", text: "NAP: la consistencia que Google premia" },
+      { level: 2, id: "sitio-web-seo-local", text: "Tu sitio web como aliado del SEO local" },
+      { level: 2, id: "conclusion-local", text: "Conclusión" },
+    ],
+    blocks: [
+      { type: "h2", id: "que-es-seo-local", text: "Qué es el SEO local y por qué importa" },
+      {
+        type: "p",
+        text: "El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca en los resultados de búsqueda cuando alguien busca un producto o servicio cerca de su ubicación. No se trata solo de 'salir en Google': se trata de aparecer en el momento exacto en que alguien está listo para comprar o visitar. 'Restaurante cerca de mí', 'dentista en Guadalajara', 'diseño web Ciudad de México' — estas son búsquedas con intención inmediata, y el negocio que aparece primero se lleva la mayoría de los clics.",
+      },
+      { type: "h3", id: "el-pack-local", text: "El pack local de Google" },
+      {
+        type: "p",
+        text: "Cuando buscas algo con intención local, Google muestra un bloque especial con un mapa y tres fichas de negocios antes de los resultados orgánicos normales. A esto se le llama el 'pack local' o 'local 3-pack'. Aparecer aquí es más valioso que estar en el primer lugar orgánico: recibe el 44% de los clics totales de la página. Si tu negocio no está en ese bloque, prácticamente eres invisible para las búsquedas locales.",
+      },
+      { type: "h3", id: "intención-local", text: "Búsquedas con intención local" },
+      {
+        type: "p",
+        text: "No todas las búsquedas locales incluyen el nombre de una ciudad. Google determina la intención geográfica del usuario automáticamente. Si alguien en Monterrey busca 'agencia de diseño web', Google interpreta que busca una agencia en Monterrey y muestra resultados cercanos. Por eso, optimizar para SEO local no solo aplica a negocios físicos: cualquier empresa que sirva a clientes en una ciudad o región específica se beneficia de esta estrategia.",
+      },
+      { type: "h2", id: "google-business-profile", text: "Google Business Profile: tu base de operaciones" },
+      {
+        type: "p",
+        text: "Google Business Profile (antes Google My Business) es la herramienta gratuita que controla cómo aparece tu negocio en Google Maps y en el panel lateral de búsqueda. Es el punto de partida absoluto del SEO local. Sin un perfil activo y optimizado, es casi imposible aparecer en el pack local, sin importar cuánto inviertas en el resto.",
+      },
+      { type: "h3", id: "perfil-completo", text: "Un perfil 100% completo marca la diferencia" },
+      {
+        type: "p",
+        text: "Google prioriza los perfiles completos sobre los incompletos. Nombre exacto del negocio, dirección verificada, teléfono actualizado, horario de atención, sitio web, descripción del negocio, fotos de alta calidad y productos o servicios listados. Cada campo que completas es una señal para Google de que eres un negocio legítimo y activo. Los perfiles con fotos reciben 35% más clics a su sitio y 42% más solicitudes de ruta que los que no tienen.",
+      },
+      { type: "h3", id: "categorias-correctas", text: "Elige las categorías correctas" },
+      {
+        type: "p",
+        text: "La categoría principal es uno de los factores más importantes para el pack local. Sé específico: 'Agencia de diseño web' posiciona mejor que solo 'Agencia de marketing'. Puedes agregar categorías secundarias para servicios adicionales, pero la principal debe representar exactamente lo que haces. Investiga qué categoría usan los competidores que aparecen primero que tú y asegúrate de estar en la misma o una más específica.",
+      },
+      { type: "h2", id: "resenas-y-reputacion", text: "Reseñas: el factor que más mueve el ranking local" },
+      {
+        type: "p",
+        text: "Las reseñas son el factor más influyente en el SEO local después de la proximidad geográfica. Google considera la cantidad de reseñas, el puntaje promedio, la frecuencia con que llegan y si el negocio responde a ellas. Un negocio con 50 reseñas de 4.8 estrellas casi siempre supera a uno con 5 reseñas perfectas.",
+      },
+      {
+        type: "quote",
+        text: "El 88% de los consumidores confía en las reseñas en línea tanto como en recomendaciones personales. Una buena reputación digital no es opcional: es tu mejor vendedor.",
+      },
+      { type: "h3", id: "como-conseguir-resenas", text: "Cómo conseguir más reseñas sin violar las reglas" },
+      {
+        type: "p",
+        text: "Google prohíbe comprar o incentivar reseñas con descuentos o regalos. Lo que sí puedes hacer es pedirlas de forma directa a clientes satisfechos. El método más efectivo: envía un mensaje personalizado después de completar un servicio con un link directo a tu perfil. Crea un shortlink o código QR que lleve a la página de reseñas y colócalo en tu recepción, facturas o tarjetas de presentación. La clave es reducir la fricción al máximo: cuantos menos pasos tenga que hacer el cliente, más probable es que lo haga.",
+      },
+      { type: "h3", id: "responder-resenas", text: "Responder reseñas también posiciona" },
+      {
+        type: "p",
+        text: "Responder a las reseñas —positivas y negativas— le dice a Google que eres un negocio activo y comprometido con sus clientes. Las respuestas a reseñas negativas son especialmente poderosas: un negocio que responde profesionalmente a una crítica genera más confianza que uno con solo reseñas perfectas. Responde siempre en las primeras 48 horas y nunca de forma defensiva.",
+      },
+      { type: "h2", id: "nap-consistencia", text: "NAP: la consistencia que Google premia" },
+      {
+        type: "p",
+        text: "NAP significa Name, Address, Phone — nombre, dirección y teléfono. Google verifica tu información cruzándola en múltiples fuentes: tu sitio web, directorios de negocios, redes sociales y menciones en internet. Si en algún lugar tu dirección dice 'Av. Insurgentes 456' y en otro dice 'Insurgentes Sur 456', Google ve esa inconsistencia como una señal de desconfianza. Audita todas tus menciones en línea y asegúrate de que el NAP sea exactamente igual en todos lados.",
+      },
+      { type: "h2", id: "sitio-web-seo-local", text: "Tu sitio web como aliado del SEO local" },
+      {
+        type: "p",
+        text: "El perfil de Google no trabaja solo. Tu sitio web debe reforzar las señales locales. Incluye tu ciudad y región en los títulos de las páginas principales, en las meta descripciones y de forma natural en el contenido. Agrega el Schema Markup de negocio local con tu dirección, teléfono y horario para que Google pueda leerlo de forma estructurada. Crea una página de contacto con un mapa embebido de Google Maps. Si atiendes varias ciudades, considera páginas dedicadas para cada una con contenido específico de esa zona.",
+      },
+      { type: "h2", id: "conclusion-local", text: "Conclusión" },
+      {
+        type: "p",
+        text: "El SEO local es uno de los canales con mejor retorno de inversión para negocios que dependen de clientes en una zona geográfica. La inversión inicial es relativamente baja y los resultados son duraderos. El punto de partida es siempre el mismo: verificar y optimizar tu Google Business Profile, construir reputación con reseñas reales y asegurarte de que tu sitio web envíe señales locales coherentes. Si ya tienes presencia en Google pero no apareces donde quisieras, probablemente uno de estos puntos está fallando. Cuéntanos tu situación y hacemos el diagnóstico.",
+      },
+    ],
+  },
+  {
     id: "rediseno-web-cuando-por-que",
     title: "Rediseño de tu sitio web: cuándo hacerlo, por qué importa y cómo empezar",
     excerpt:

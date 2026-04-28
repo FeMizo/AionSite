@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { BookOpen, Send } from "lucide-react";
 import type { BlogSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
@@ -51,7 +52,16 @@ export function Blog({ data }: { data: BlogSectionData }) {
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
             {data.hero.subtitle}
           </p>
-          <div className="mt-16 flex justify-center">
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/20 hover:text-white"
+            >
+              Ver todos los artículos
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </Link>
+          </div>
+          <div className="mt-10 flex justify-center">
             <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
           </div>
         </Container>
