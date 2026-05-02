@@ -1,41 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MessageCircleMore, Send, Clock, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, MessageCircleMore, CheckCircle2 } from "lucide-react";
 import type { ContactFormSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { Card } from "@/src/components/ui/Card";
-import { Button } from "@/src/components/ui/Button";
 import { Reveal } from "@/src/components/ui/Reveal";
-import { FormInput } from "@/src/components/ui/FormInput";
-import { FormTextarea } from "@/src/components/ui/FormTextarea";
+import { ContactForm } from "@/src/components/ui/ContactForm";
 
 export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const messageWithPhone = form.phone
-        ? `${form.message}\n\nTeléfono: ${form.phone}`
-        : form.message;
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: form.name, email: form.email, message: messageWithPhone }),
-      });
-      if (res.ok) {
-        setStatus("sent");
-        setForm({ name: "", email: "", phone: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
+  const [isSent, setIsSent] = useState(false);
 
   return (
     <section id="contacto" className="relative overflow-hidden bg-slate-950 py-24">
@@ -93,7 +67,7 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
           {/* Right: form */}
           <Reveal delay={120}>
           <Card className="p-7">
-            {status === "sent" ? (
+            {isSent ? (
               <div className="animate-scale-in flex flex-col items-center gap-4 py-8 text-center">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500/15">
                   <CheckCircle2 size={28} className="text-green-400" />
@@ -101,76 +75,22 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
                 <h3 className="font-display text-xl font-bold text-white">¡Mensaje enviado!</h3>
                 <p className="text-slate-400">{data.responseText}</p>
                 <button
-                  onClick={() => setStatus("idle")}
+                  onClick={() => setIsSent(false)}
                   className="mt-2 text-sm text-blue-400 underline-offset-4 hover:underline"
                 >
                   Enviar otro mensaje
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className={`space-y-4 ${status === "error" ? "animate-shake" : ""}`}>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <FormInput
-                    label={<>Nombre <span className="text-blue-400">*</span></>}
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Tu nombre"
-                  />
-                  <FormInput
-                    label="Teléfono"
-                    type="tel"
-                    value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="+52 000 000 0000"
-                  />
-                </div>
-
-                <FormInput
-                  label={<>Correo electrónico <span className="text-blue-400">*</span></>}
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="tu@correo.com"
-                />
-
-                <FormTextarea
-                  label={<>Mensaje <span className="text-blue-400">*</span></>}
-                  required
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="Cuéntanos sobre tu proyecto..."
-                  rows={5}
-                />
-
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="sm"
-                  disabled={status === "sending"}
-                  className="w-full rounded-lg gap-2 font-semibold disabled:cursor-not-allowed disabled:pointer-events-auto"
-                >
-                  {status === "sending" ? (
-                    <Loader2 size={14} className="animate-spin" />
-                  ) : (
-                    <Send size={14} />
-                  )}
-                  {status === "sending" ? "Enviando…" : "Enviar mensaje"}
-                </Button>
-
+              <ContactForm 
+                showPhone={true}
+                onSuccess={() => setIsSent(true)}
+              >
                 <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
                   {data.responseText}
                 </div>
-
-                {status === "error" && (
-                  <p className="text-center text-xs text-red-400">
-                    Algo salió mal. Inténtalo de nuevo.
-                  </p>
-                )}
-              </form>
+              </ContactForm>
             )}
           </Card>
           </Reveal>

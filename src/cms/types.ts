@@ -58,12 +58,14 @@ export type ProcessSectionData = Array<{
   description: string;
 }>;
 
-export type PricingSectionData = Array<{
+export type PricingPlan = {
   name: string;
   price: string;
   features: string[];
   recommended: boolean;
-}>;
+};
+
+export type PricingSectionData = PricingPlan[];
 
 export type TestimonialsSectionData = Array<{
   name: string;
@@ -114,6 +116,18 @@ export type WhatsAppFloatingButtonData = {
   tooltip: string;
 };
 
+export type ArticleHeading = {
+  level: 2 | 3;
+  id: string;
+  text: string;
+};
+
+export type ArticleBlock = {
+  type: "h2" | "h3" | "p" | "quote";
+  id?: string;
+  text: string;
+};
+
 export type BlogSectionData = {
   hero: {
     badgeText: string;
@@ -121,16 +135,8 @@ export type BlogSectionData = {
     subtitle: string;
   };
   article: {
-    headings: Array<{
-      level: 2 | 3;
-      id: string;
-      text: string;
-    }>;
-    blocks: Array<{
-      type: "h2" | "h3" | "p" | "quote";
-      id?: string;
-      text: string;
-    }>;
+    headings: ArticleHeading[];
+    blocks: ArticleBlock[];
   };
   form: {
     title: string;

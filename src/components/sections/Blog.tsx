@@ -1,40 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { BookOpen, Send } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import type { BlogSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { Card } from "@/src/components/ui/Card";
-import { Button } from "@/src/components/ui/Button";
-import { FormInput } from "@/src/components/ui/FormInput";
-import { FormTextarea } from "@/src/components/ui/FormTextarea";
-import { cn } from "@/src/lib/utils";
+import { ContactForm } from "@/src/components/ui/ContactForm";
+import { TableOfContents } from "@/src/components/blog/TableOfContents";
+import { ArticleBlockRenderer } from "@/src/components/blog/ArticleBlockRenderer";
 
 export function Blog({ data }: { data: BlogSectionData }) {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setStatus("sent");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <>
       {/* Hero */}
@@ -74,74 +49,12 @@ export function Blog({ data }: { data: BlogSectionData }) {
 
             {/* Left: Table of contents */}
             <aside className="hidden lg:block">
-              <div className="sticky top-24 rounded-xl border border-white/8 bg-slate-900/40 p-5 backdrop-blur-sm">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-500">
-                  Contenido
-                </p>
-                <ul className="space-y-1">
-                  {data.article.headings.map((h) => (
-                    <li key={h.id}>
-                      <a
-                        href={`#${h.id}`}
-                        className={cn(
-                          "flex items-start gap-2 rounded-md px-2 py-1.5 text-sm transition-all duration-150 hover:bg-white/5 hover:text-white",
-                          h.level === 2
-                            ? "text-slate-300 font-medium"
-                            : "pl-5 text-slate-500"
-                        )}
-                      >
-                        <span className="mt-px shrink-0 font-mono text-xs text-blue-500/60">
-                          {h.level === 2 ? "#" : "##"}
-                        </span>
-                        {h.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <TableOfContents headings={data.article.headings} />
             </aside>
 
             {/* Center: Article */}
             <article className="min-w-0">
-              {data.article.blocks.map((block, i) => {
-                if (block.type === "h2") {
-                  return (
-                    <h2
-                      key={i}
-                      id={block.id}
-                      className="mt-14 first:mt-0 font-display text-2xl font-bold text-white md:text-3xl scroll-mt-28"
-                    >
-                      {block.text}
-                    </h2>
-                  );
-                }
-                if (block.type === "h3") {
-                  return (
-                    <h3
-                      key={i}
-                      id={block.id}
-                      className="mt-8 text-xl font-semibold text-white scroll-mt-28"
-                    >
-                      {block.text}
-                    </h3>
-                  );
-                }
-                if (block.type === "quote") {
-                  return (
-                    <blockquote
-                      key={i}
-                      className="my-6 border-l-2 border-blue-500 pl-5 text-slate-300 italic leading-relaxed"
-                    >
-                      {block.text}
-                    </blockquote>
-                  );
-                }
-                return (
-                  <p key={i} className="mt-4 text-slate-400 leading-[1.85]">
-                    {block.text}
-                  </p>
-                );
-              })}
+              <ArticleBlockRenderer blocks={data.article.blocks} />
             </article>
 
             {/* Right: Contact form */}
@@ -154,61 +67,10 @@ export function Blog({ data }: { data: BlogSectionData }) {
                   <p className="mb-5 text-sm leading-relaxed text-slate-400">
                     {data.form.subtitle}
                   </p>
-
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <FormInput
-                      label="Nombre"
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="Tu nombre"
-                    />
-
-                    <FormInput
-                      label="Correo electrónico"
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      placeholder="tu@correo.com"
-                    />
-
-                    <FormTextarea
-                      label="Mensaje"
-                      required
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      placeholder="¿En qué podemos ayudarte?"
-                      rows={4}
-                    />
-
-                    <Button
-                      type="submit"
-                      variant="primary"
-                      size="sm"
-                      disabled={status === "sending" || status === "sent"}
-                      className="w-full rounded-lg gap-2 font-semibold disabled:cursor-not-allowed disabled:pointer-events-auto"
-                    >
-                      <Send size={14} />
-                      {status === "sending"
-                        ? "Enviando…"
-                        : status === "sent"
-                          ? "¡Mensaje enviado!"
-                          : "Enviar mensaje"}
-                    </Button>
-
-                    {status === "sent" && (
-                      <p className="text-center text-xs text-green-400">
-                        Nos pondremos en contacto pronto.
-                      </p>
-                    )}
-                    {status === "error" && (
-                      <p className="text-center text-xs text-red-400">
-                        Algo salió mal. Inténtalo de nuevo.
-                      </p>
-                    )}
-                  </form>
+                  
+                  <ContactForm 
+                    showPhone={false}
+                  />
                 </Card>
               </div>
             </aside>
