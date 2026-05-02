@@ -30,13 +30,10 @@ export function Hero({
   const background = useMotionTemplate`radial-gradient(800px circle at ${smoothX}px ${smoothY}px, rgba(59, 130, 246, 0.15), transparent 80%)`;
 
   return (
-    <section 
+    <section
       onMouseMove={handleMouseMove}
       className="group relative overflow-hidden pb-20 pt-32 md:pb-32 md:pt-48"
     >
-      {/* Static ambient glow */}
-      <div className="absolute left-1/2 top-0 -z-10 h-150 w-200 -translate-x-1/2 rounded-full bg-blue-600/18 blur-[130px]" />
-
       {/* Dynamic spotlight that follows cursor */}
       <motion.div
         className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
