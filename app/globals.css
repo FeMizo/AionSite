@@ -18,6 +18,12 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Evita que el header fijo tape los títulos de sección al hacer clic en enlaces del menú */
+}
+
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
