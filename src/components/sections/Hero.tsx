@@ -1,7 +1,8 @@
 "use client";
 
+import { MouseEvent } from "react";
 import { ArrowRight, MessageCircleMore, Sparkles } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useMotionTemplate, useMotionValue, useSpring } from "motion/react";
 import type { HeaderSectionData, HeroSectionData } from "@/src/cms/types";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
@@ -14,11 +15,35 @@ export function Hero({
   data: HeroSectionData;
   headerData: HeaderSectionData;
 }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const smoothX = useSpring(mouseX, { stiffness: 50, damping: 20 });
+  const smoothY = useSpring(mouseY, { stiffness: 50, damping: 20 });
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  const background = useMotionTemplate`radial-gradient(800px circle at ${smoothX}px ${smoothY}px, rgba(59, 130, 246, 0.15), transparent 80%)`;
+
   return (
-    <section className="relative overflow-hidden pb-20 pt-32 md:pb-32 md:pt-48">
+    <section 
+      onMouseMove={handleMouseMove}
+      className="group relative overflow-hidden pb-20 pt-32 md:pb-32 md:pt-48"
+    >
+      {/* Static ambient glow */}
       <div className="absolute left-1/2 top-0 -z-10 h-150 w-200 -translate-x-1/2 rounded-full bg-blue-600/18 blur-[130px]" />
 
-      <Container className="text-center">
+      {/* Dynamic spotlight that follows cursor */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        style={{ background }}
+      />
+
+      <Container className="text-center relative z-10">
         <motion.div
           variants={CONTAINER_ANIMATION_VARIANTS}
           initial="hidden"
@@ -28,7 +53,7 @@ export function Hero({
         >
           <motion.div
             variants={FADE_UP_ANIMATION_VARIANTS}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)]"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)] backdrop-blur-sm"
           >
             <Sparkles size={14} />
             {data.badgeText}
@@ -54,7 +79,7 @@ export function Hero({
           >
             <Button
               size="lg"
-              className="gap-2"
+              className="gap-2 shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] transition-shadow hover:shadow-[0_0_60px_-15px_rgba(37,99,235,0.7)]"
               onClick={() => window.open(headerData.whatsappLink, "_blank")}
             >
               <MessageCircleMore size={18} />
@@ -63,7 +88,7 @@ export function Hero({
             <Button
               variant="outline"
               size="lg"
-              className="gap-2"
+              className="gap-2 backdrop-blur-sm"
               onClick={() =>
                 document
                   .getElementById("portafolio")
@@ -82,7 +107,7 @@ export function Hero({
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-slate-400">
               {data.trustBar.map((item) => (
                 <div key={item} className="flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-blue-500/70" />
+                  <span className="h-1 w-1 rounded-full bg-blue-500/70 shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
                   {item}
                 </div>
               ))}
