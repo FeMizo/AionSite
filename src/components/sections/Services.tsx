@@ -1,8 +1,9 @@
 import type { ComponentType } from "react";
 import { Globe, ShoppingBag, Target, TrendingUp } from "lucide-react";
+import { motion } from "motion/react";
 import type { ServicesSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
-import { Reveal } from "@/src/components/ui/Reveal";
+import { CONTAINER_ANIMATION_VARIANTS, FADE_UP_ANIMATION_VARIANTS } from "@/src/lib/animations";
 
 const iconMap: Record<string, ComponentType<{ size?: number }>> = {
   Globe,
@@ -34,22 +35,31 @@ export function Services({ data }: { data: ServicesSectionData }) {
   return (
     <section id="servicios" className="bg-slate-950 py-24">
       <Container>
-        <div className="grid gap-12 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:items-start xl:gap-20">
-          <div>
+        <motion.div 
+          variants={CONTAINER_ANIMATION_VARIANTS}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-40px" }}
+          className="grid gap-12 xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] xl:items-start xl:gap-20"
+        >
+          <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
             <h2 className="text-heading-fluid font-display font-bold text-white">
               Servicios que impulsan tu negocio
             </h2>
             <p className="mt-4 max-w-sm text-lg leading-relaxed text-slate-400">
               Soluciones digitales diseñadas para convertir visitantes en clientes leales.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2">
+          <motion.div 
+            variants={CONTAINER_ANIMATION_VARIANTS}
+            className="grid gap-x-12 gap-y-10 sm:grid-cols-2"
+          >
           {data.map((service, i) => {
             const Icon = iconMap[service.icon] ?? Globe;
             const colors = iconColors[service.icon] ?? iconColors.Globe;
             return (
-              <Reveal key={service.title} delay={i * 80}>
+              <motion.div key={service.title} variants={FADE_UP_ANIMATION_VARIANTS}>
                 <div className="group flex gap-5">
                   <div className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-all duration-200 group-hover:scale-110 group-hover:text-white ${colors.container} ${colors.hover}`}>
                     <Icon size={18} />
@@ -59,11 +69,11 @@ export function Services({ data }: { data: ServicesSectionData }) {
                     <p className="text-sm leading-relaxed text-slate-400">{service.description}</p>
                   </div>
                 </div>
-              </Reveal>
+              </motion.div>
             );
           })}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );

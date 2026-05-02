@@ -6,6 +6,7 @@ import { ExternalLink, X } from "lucide-react";
 import type { PortfolioItem, PortfolioSectionData } from "@/src/cms/types";
 import { Badge } from "@/src/components/ui/Badge";
 import { LinkButton } from "@/src/components/ui/LinkButton";
+import { CONTAINER_ANIMATION_VARIANTS, FADE_UP_ANIMATION_VARIANTS } from "@/src/lib/animations";
 
 function PortfolioModal({
   item,
@@ -114,9 +115,16 @@ export function PortfolioGrid({
 
   return (
     <>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div 
+        variants={CONTAINER_ANIMATION_VARIANTS}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-40px" }}
+        className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+      >
         {items.map((item) => (
-          <button
+          <motion.button
+            variants={FADE_UP_ANIMATION_VARIANTS}
             key={`${item.title}-${item.url}`}
             type="button"
             onClick={() => setSelected(item)}
@@ -146,9 +154,9 @@ export function PortfolioGrid({
               </div>
               <h3 className="text-xl font-bold text-white">{item.title}</h3>
             </div>
-          </button>
+          </motion.button>
         ))}
-      </div>
+      </motion.div>
 
       <AnimatePresence>
         {selected && (

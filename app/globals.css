@@ -65,68 +65,7 @@ body.menu-open {
     letter-spacing: -0.025em;
   }
 
-  .animate-fade-in {
-    animation: fadeIn 0.7s var(--ease-out-expo) both;
-  }
-
-  /* Scroll-reveal entrance — primary workhorse */
-  .animate-reveal {
-    animation: reveal 0.65s var(--ease-out-expo) both;
-  }
-
-  /* Scale-in for modals and success panels */
-  .animate-scale-in {
-    animation: scaleIn 0.28s var(--ease-out-expo) both;
-  }
-
-  /* Error shake */
-  .animate-shake {
-    animation: shake 0.42s ease-out;
-  }
-
-  /* Backdrop fade for modals */
-  .animate-backdrop-in {
-    animation: backdropIn 0.22s ease-out both;
-  }
-
-  /* Animation-delay utilities (separate from Tailwind's transition-delay) */
-  .anim-delay-75  { animation-delay: 75ms; }
-  .anim-delay-150 { animation-delay: 150ms; }
-  .anim-delay-225 { animation-delay: 225ms; }
-  .anim-delay-300 { animation-delay: 300ms; }
-  .anim-delay-375 { animation-delay: 375ms; }
-  .anim-delay-450 { animation-delay: 450ms; }
-  .anim-delay-525 { animation-delay: 525ms; }
-  .anim-delay-600 { animation-delay: 600ms; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.93); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  18%       { transform: translateX(-5px); }
-  36%       { transform: translateX(5px); }
-  54%       { transform: translateX(-4px); }
-  72%       { transform: translateX(3px); }
-  88%       { transform: translateX(-2px); }
-}
-
-@keyframes backdropIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  /* Removed static CSS animations in favor of Framer Motion */
 }
 
 /* Global reduced-motion override */
