@@ -26,10 +26,89 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: "seo-local-google-maps-negocio",
-    title: "SEO local: cómo aparecer en Google Maps y dominar las búsquedas de tu ciudad",
+    id: "seo-local-para-negocios",
+    title: "SEO local: cómo aparecer primero cuando tus clientes te buscan en Google",
     excerpt:
-      "El 46% de las búsquedas en Google tienen intención local. Si tu negocio no aparece en el mapa cuando alguien busca lo que ofreces, estás regalándole clientes a tu competencia. Esto es lo que tienes que hacer.",
+      "El 76% de las personas que buscan un negocio local lo visitan ese mismo día. Si tu empresa no aparece en los primeros resultados, estás perdiendo clientes a diario. Aquí te explicamos cómo cambiar eso.",
+    image: "/blog/local-seo.webp",
+    badgeText: "Posicionamiento SEO",
+    date: "5 de mayo, 2026",
+    dateISO: "2026-05-05",
+    readTime: "7 min de lectura",
+    keywords: [
+      "SEO local",
+      "posicionamiento Google",
+      "Google My Business",
+      "búsqueda local México",
+      "aparecer en Google",
+      "SEO para negocios",
+      "posicionamiento web",
+      "marketing digital local",
+    ],
+    headings: [
+      { level: 2, id: "que-es-seo-local", text: "¿Qué es el SEO local y por qué importa?" },
+      { level: 3, id: "perfil-google", text: "Tu perfil de Google Business: la base de todo" },
+      { level: 2, id: "factores-clave", text: "Los 5 factores que Google más valora en búsquedas locales" },
+      { level: 3, id: "palabras-clave-locales", text: "Palabras clave con intención local" },
+      { level: 3, id: "resenas", text: "Reseñas: el activo más subestimado" },
+      { level: 2, id: "errores-comunes", text: "Errores que frenan tu posicionamiento local" },
+      { level: 2, id: "plan-accion", text: "Plan de acción en 30 días" },
+    ],
+    blocks: [
+      {
+        type: "p",
+        text: "Cuando alguien escribe 'plomero cerca de mí' o 'agencia de diseño web en Monterrey', Google muestra resultados muy distintos a los de una búsqueda genérica. Este sistema, conocido como SEO local, determina qué negocios aparecen primero en ese momento crítico de decisión de compra.",
+      },
+      { type: "h2", id: "que-es-seo-local", text: "¿Qué es el SEO local y por qué importa?" },
+      {
+        type: "p",
+        text: "El SEO local es el conjunto de estrategias que mejoran la visibilidad de tu negocio en búsquedas geográficamente relevantes. A diferencia del SEO tradicional, aquí compites solo contra negocios de tu zona, lo que hace que los resultados sean más rápidos y directamente ligados a ventas reales.",
+      },
+      {
+        type: "p",
+        text: "Según datos de Google, el 76% de las personas que hacen una búsqueda local visitan un negocio en las siguientes 24 horas, y el 28% de esas búsquedas resultan en una compra. No estar en esos primeros lugares no es una opción si quieres crecer.",
+      },
+      { type: "h3", id: "perfil-google", text: "Tu perfil de Google Business: la base de todo" },
+      {
+        type: "p",
+        text: "Google Business Profile (antes Google My Business) es el punto de partida. Un perfil completo y verificado con fotos actualizadas, horarios correctos, categorías precisas y descripción optimizada puede duplicar los clics hacia tu sitio web en cuestión de semanas. Si aún no lo tienes reclamado, es lo primero que debes hacer hoy.",
+      },
+      { type: "h2", id: "factores-clave", text: "Los 5 factores que Google más valora en búsquedas locales" },
+      {
+        type: "p",
+        text: "El algoritmo de búsqueda local de Google evalúa principalmente: (1) Relevancia — qué tan bien coincide tu negocio con lo que el usuario busca. (2) Proximidad — la distancia entre el usuario y tu negocio. (3) Prominencia — qué tan conocido y valorado es tu negocio online. (4) Consistencia de NAP — que tu Nombre, Dirección y Teléfono sean idénticos en todos los directorios. (5) Señales de tu sitio web — que tu página refuerce la información local con textos, metadatos y estructuras de datos correctas.",
+      },
+      { type: "h3", id: "palabras-clave-locales", text: "Palabras clave con intención local" },
+      {
+        type: "p",
+        text: "No basta con optimizar para 'diseño web'. Necesitas frases como 'diseño web en Guadalajara', 'agencia web para restaurantes CDMX' o 'crear tienda en línea Monterrey'. Estas búsquedas tienen menor volumen pero muchísima más intención de compra. Incluirlas en los títulos de tus páginas, en los textos y en las etiquetas alt de imágenes marca una diferencia notable.",
+      },
+      { type: "h3", id: "resenas", text: "Reseñas: el activo más subestimado" },
+      {
+        type: "p",
+        text: "Las reseñas afectan directamente tu posición en el mapa de Google. No solo importa el número, sino la frecuencia con que llegan y la calidad de las respuestas que das. Un negocio que responde a cada reseña — buena o mala — transmite confianza tanto a futuros clientes como al propio algoritmo. Implementa un proceso simple para pedirle reseñas a clientes satisfechos justo después de completar un servicio.",
+      },
+      { type: "h2", id: "errores-comunes", text: "Errores que frenan tu posicionamiento local" },
+      {
+        type: "p",
+        text: "Los errores más frecuentes que vemos en negocios mexicanos son: datos NAP inconsistentes entre el sitio web y los directorios, fotos de baja calidad o inexistentes en el perfil de Google, ausencia de páginas de servicio por ciudad, no responder a reseñas negativas, y sitios web sin versión móvil optimizada. Cada uno de estos frena tu visibilidad de forma silenciosa.",
+      },
+      { type: "h2", id: "plan-accion", text: "Plan de acción en 30 días" },
+      {
+        type: "p",
+        text: "Semana 1: Verifica y completa tu perfil de Google Business. Semana 2: Audita la consistencia de tu información en directorios como Yelp, Facebook y páginas amarillas locales. Semana 3: Publica al menos 3 páginas de servicio optimizadas con ciudad y especialidad. Semana 4: Activa un flujo para obtener reseñas y responde a todas las existentes. En 60 días, la mayoría de negocios locales ya ven resultados tangibles en visibilidad y visitas.",
+      },
+      {
+        type: "p",
+        text: "El SEO local no es un gasto, es la inversión con el retorno más medible en marketing digital. Si tu negocio depende de clientes de tu ciudad o región, aparecer primero en Google no es opcional — es la diferencia entre crecer o estancarse.",
+      },
+    ],
+  },
+  {
+    id: "seo-local-google-maps-negocio",
+    title: "SEO local: domina Google Maps en tu ciudad",
+    excerpt:
+      "El 46% de búsquedas en Google tienen intención local. Si no apareces en el mapa cuando buscan lo que ofreces, estás regalando clientes a tu competencia.",
     image: "/blog/seo-local.webp",
     badgeText: "SEO Local & Visibilidad",
     date: "27 de abril, 2026",
@@ -119,7 +198,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "rediseno-web-cuando-por-que",
-    title: "Rediseño de tu sitio web: cuándo hacerlo, por qué importa y cómo empezar",
+    title: "Rediseño web: cuándo hacerlo y cómo empezar",
     excerpt:
       "Tu sitio tiene 3 años sin cambios. Los resultados bajaron. Te contamos los signos de que es hora de rediseñar y cómo hacerlo sin perder tu posicionamiento.",
     image: "/blog/tu-sitio-tiene-3 anios-sin-cambios.webp",
@@ -211,9 +290,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "velocidad-web-posicionamiento",
-    title: "Velocidad web: el factor silencioso que está bloqueando tu crecimiento",
+    title: "Velocidad web: mejora tu sitio paso a paso",
     excerpt:
-      "Un sitio lento no solo frustra a tus visitantes: Google lo penaliza directamente en rankings. Descubre cómo medir, diagnosticar y mejorar la velocidad de tu sitio en pasos concretos.",
+      "Un sitio lento frustra visitantes y Google lo penaliza en rankings. Aprende a medir, diagnosticar y mejorar la velocidad de tu sitio.",
     image: "/blog/velocidad-web.webp",
     badgeText: "Velocidad & Rendimiento",
     date: "22 de abril, 2026",
@@ -297,7 +376,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "diseno-web-que-convierte",
-    title: "Diseño web que convierte: los 7 principios que más importan",
+    title: "Diseño web que convierte: 7 principios clave",
     excerpt:
       "Un sitio hermoso no sirve de nada si no genera clientes. Descubre qué elementos de diseño determinan si un visitante se queda o se va en segundos.",
     image: "/blog/diseno-web-que-convierte.webp",
@@ -365,7 +444,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "seo-tecnico-para-negocios",
-    title: "SEO técnico en 2026: lo que sí mueve el ranking de tu negocio",
+    title: "SEO técnico 2026: qué mueve tu ranking",
     excerpt:
       "El SEO cambió. Ya no basta con poner palabras clave. Te explicamos qué factores técnicos posicionan hoy y cómo aplicarlos en tu sitio.",
     image: "/blog/seo-tecnico.webp",
@@ -427,7 +506,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "cuando-necesitas-sitio-web",
-    title: "¿Cuándo realmente necesitas un sitio web para tu negocio?",
+    title: "¿Cuándo necesitas un sitio web profesional?",
     excerpt:
       "Muchos negocios esperan demasiado. Otros invierten antes de tiempo. Te ayudamos a identificar el momento correcto y qué tipo de sitio necesitas.",
     image: "/blog/necesitas-sitio-web.webp",
