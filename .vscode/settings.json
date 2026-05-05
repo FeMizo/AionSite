@@ -1,0 +1,5 @@
+{
+  "git.autoRepositoryDetection": false,
+  "git.scanRepositories": ["."],
+  "git.repositoryScanMaxDepth": 0
+}

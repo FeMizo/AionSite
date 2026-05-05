@@ -5,6 +5,7 @@ import { getButtonClassName } from "@/src/components/ui/button-styles";
 
 export const metadata: Metadata = {
   title: "Página no encontrada | AionSite",
+  description: "La página que buscas no existe o fue movida. Regresa al inicio.",
   robots: { index: false, follow: false },
 };
 

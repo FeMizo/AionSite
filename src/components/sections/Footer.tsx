@@ -29,7 +29,7 @@ export function Footer({
           </div>
 
           <div>
-            <h4 className="mb-6 font-bold text-white">Enlaces</h4>
+            <div className="mb-6 font-bold text-white">Enlaces</div>
             <ul className="space-y-4">
               {data.navigation.map((item) => (
                 <li key={item.name}>
@@ -54,7 +54,7 @@ export function Footer({
           </div>
 
           <div>
-            <h4 className="mb-6 font-bold text-white">Contacto</h4>
+            <div className="mb-6 font-bold text-white">Contacto</div>
             <ul className="space-y-4">
               <li className="text-slate-400">{data.email}</li>
               <li>
@@ -68,7 +68,7 @@ export function Footer({
                 </a>
               </li>
             </ul>
-            <h4 className="mb-4 mt-8 font-bold text-white">Síguenos</h4>
+            <div className="mb-4 mt-8 font-bold text-white">Síguenos</div>
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/aionsite/"

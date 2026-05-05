@@ -9,6 +9,10 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({ id: post.id }));
 }
 
+function truncate(str: string, max: number) {
+  return str.length <= max ? str : str.slice(0, max - 1) + "…";
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,13 +25,15 @@ export async function generateMetadata({
   const ogImage = post.image
     ? `${siteUrl}${post.image}`
     : `${siteUrl}/logo-aionsite.png`;
+  const title = truncate(`${post.title} | AionSite Blog`, 60);
+  const description = truncate(post.excerpt, 160);
   return withCanonical(`/blog/${post.id}`, {
-    title: `${post.title} | AionSite Blog`,
-    description: post.excerpt,
+    title,
+    description,
     keywords: post.keywords,
     openGraph: {
-      title: `${post.title} | AionSite Blog`,
-      description: post.excerpt,
+      title,
+      description,
       url: `${siteUrl}/blog/${post.id}`,
       siteName: "AionSite",
       images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
@@ -37,8 +43,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | AionSite Blog`,
-      description: post.excerpt,
+      title,
+      description,
       images: [ogImage],
     },
   });
