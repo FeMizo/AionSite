@@ -166,7 +166,7 @@ export const defaultCmsContent: CmsContent = {
       data: [
         {
           name: "Esencial",
-          price: "Desde $5,000",
+          price: "Desde $3,500",
           features: [
             "Página de inicio con diseño básico",
             "Diseño adaptable",
