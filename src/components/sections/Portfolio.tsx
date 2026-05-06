@@ -19,7 +19,7 @@ export function Portfolio({ data }: { data: PortfolioSectionData }) {
         <PortfolioGrid items={featuredProjects} />
 
         <div className="mt-12 flex justify-center">
-          <LinkButton href="/proyectos" variant="outline" className="gap-2">
+          <LinkButton href="/proyectos/" variant="outline" className="gap-2">
             Ver todos los proyectos
           </LinkButton>
         </div>
