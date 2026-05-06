@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import {
   loadCmsContentFromFile,
-  loadCmsContentFromBrowser,
   saveCmsContentToBrowser,
 } from "@/src/cms/browser-storage";
 import {
@@ -22,7 +21,6 @@ export function PublicSite({
 
   useEffect(() => {
     let isCancelled = false;
-    setContent(loadCmsContentFromBrowser());
 
     (async () => {
       const fileContent = await loadCmsContentFromFile();
