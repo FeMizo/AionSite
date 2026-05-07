@@ -28,6 +28,8 @@ export function SideImageContent({
                 <img
                   src={data.image}
                   alt={data.title}
+                  width={800}
+                  height={560}
                   className="h-full min-h-[280px] w-full object-cover"
                 />
               ) : (

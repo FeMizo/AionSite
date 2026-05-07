@@ -387,6 +387,8 @@ export function SectionEditor({
                 <img
                   src={imageSrc}
                   alt={`Vista previa ${field.label}`}
+                  width={400}
+                  height={176}
                   className="h-44 w-full object-cover"
                 />
               ) : (

@@ -69,6 +69,8 @@ function PortfolioModal({
           <img
             src={item.image}
             alt={item.title}
+            width={1200}
+            height={400}
             className="h-72 w-full object-cover md:h-96"
           />
           <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent" />
@@ -138,6 +140,8 @@ export function PortfolioGrid({
             <img
               src={item.image}
               alt={item.title}
+              width={800}
+              height={288}
               className="h-72 w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-100 will-change-transform"
             />
 
