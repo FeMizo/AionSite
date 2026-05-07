@@ -138,10 +138,15 @@ export function PublicProjectsPage({
               <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
                 Proyectos recientes
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-                Explora el portafolio completo ordenado por reciente. Puedes
-                buscar por nombre, filtrar por categoría o por tipo de
-                implementación.
+              <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
+                {selectedCategory !== "all" || selectedType !== "all" || deferredSearch
+                  ? "Proyectos filtrados"
+                  : "Sitios web, ecommerce y automatización"}
+              </h2>
+              <p className="mt-3 max-w-2xl text-slate-400">
+                {selectedCategory !== "all" || selectedType !== "all" || deferredSearch
+                  ? `${filteredItems.length} proyecto${filteredItems.length !== 1 ? "s" : ""} encontrado${filteredItems.length !== 1 ? "s" : ""} con los filtros aplicados.`
+                  : "Cada proyecto es una solución digital a medida: desde sitios corporativos con SEO técnico y ecommerce modular, hasta integraciones con IA y automatización empresarial para negocios en México."}
               </p>
             </div>
 
