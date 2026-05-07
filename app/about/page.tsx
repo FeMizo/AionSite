@@ -7,6 +7,7 @@ import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 export const metadata: Metadata = withCanonical("/about", {
   title: "Nosotros | AionSite — Diseño Web Premium en México",
   description: "Conoce al equipo detrás de AionSite. Más de 35 proyectos web entregados, especializados en velocidad, conversión y SEO técnico.",
+  keywords: ["nosotros AionSite", "equipo diseño web", "agencia web México", "quiénes somos", "proyectos web entregados"],
   openGraph: {
     title: "Nosotros | AionSite — Diseño Web Premium en México",
     description: "Conoce al equipo detrás de AionSite. Más de 35 proyectos web entregados, especializados en velocidad, conversión y SEO técnico.",

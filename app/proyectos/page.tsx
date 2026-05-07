@@ -8,6 +8,7 @@ export const metadata: Metadata = withCanonical("/proyectos/", {
   title: "Proyectos | AionSite — Portafolio de Diseño Web",
   description:
     "Portafolio completo de proyectos web ordenados por reciente, con filtros por categoría, tipo y buscador integrado.",
+  keywords: ["portafolio web", "proyectos diseño web", "portfolio AionSite", "trabajos web México", "ejemplos sitios web"],
   openGraph: {
     title: "Proyectos | AionSite — Portafolio de Diseño Web",
     description: "Portafolio completo de proyectos web ordenados por reciente, con filtros por categoría, tipo y buscador integrado.",

@@ -7,6 +7,7 @@ export const metadata: Metadata = withCanonical("/blog", {
   title: "Blog | AionSite — Diseño Web, SEO y Conversión",
   description:
     "Estrategias, consejos y tendencias de diseño web, SEO técnico y conversión para negocios digitales en México.",
+  keywords: ["blog diseño web", "SEO técnico", "conversión web", "tendencias web", "negocios digitales México"],
   openGraph: {
     title: "Blog | AionSite — Diseño Web, SEO y Conversión",
     description: "Estrategias, consejos y tendencias de diseño web, SEO técnico y conversión para negocios digitales en México.",

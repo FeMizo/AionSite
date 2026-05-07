@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   metadataBase,
   title: "Diseño y Desarrollo Web Premium | AionSite",
   description: "Creamos sitios web rápidos, modernos y orientados a conversión. Más clientes, mejor imagen, resultados reales. Cotiza hoy sin compromiso.",
+  keywords: ["diseño web", "desarrollo web", "páginas web profesionales", "diseño web México", "AionSite", "agencia web", "sitios web modernos"],
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
