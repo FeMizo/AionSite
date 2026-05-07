@@ -35,13 +35,13 @@ export const defaultCmsContent: CmsContent = {
       enabled: true,
       order: 1,
       data: {
-        badgeText: "Diseño web de alto impacto",
-        title: "Sitios web modernos que generan clientes.",
+        badgeText: "Diseño web · IA · Automatización para negocios",
+        title: "Sitios web que trabajan por tu negocio.",
         subtitle:
-          "Diseñamos y desarrollamos experiencias digitales de alto impacto que posicionan tu marca y multiplican tus ventas.",
+          "Construimos presencias digitales con SEO técnico, ecommerce modular, automatización e inteligencia artificial para que tu negocio crezca sin depender de anuncios pagados.",
         primaryCTA: "Cotizar por WhatsApp",
         secondaryCTA: "Ver portafolio",
-        trustBar: ["Velocidad", "SEO técnico", "Diseño premium", "Soporte"],
+        trustBar: ["SEO técnico", "Ecommerce modular", "IA empresarial", "Automatización"],
       },
     },
     services: {
@@ -50,28 +50,28 @@ export const defaultCmsContent: CmsContent = {
       order: 2,
       data: [
         {
-          title: "Sitio Web Profesional",
+          title: "SEO técnico para negocios",
           description:
-            "Presencia digital sólida con diseño a medida, optimizado para todos los dispositivos.",
-          icon: "Globe",
+            "Posicionamos tu negocio en Google cuando tus clientes tienen intención de compra: estructura, metadatos, schema markup y arquitectura de contenido.",
+          icon: "TrendingUp",
         },
         {
-          title: "Página de conversión",
+          title: "Ecommerce modular",
           description:
-            "Páginas enfocadas en un solo objetivo: convertir visitantes en clientes potenciales.",
-          icon: "Target",
-        },
-        {
-          title: "Tienda en línea",
-          description:
-            "Comercio electrónico escalable con pasarelas de pago seguras y gestión de inventario.",
+            "Tiendas en línea que crecen contigo, con módulos de catálogo, pagos, inventario e integraciones a medida, sin pagar por funciones que no usas.",
           icon: "ShoppingBag",
         },
         {
-          title: "Mantenimiento + SEO",
+          title: "IA para empresas locales",
           description:
-            "Tu sitio siempre actualizado, seguro y escalando posiciones en Google.",
-          icon: "TrendingUp",
+            "Chatbots y asistentes virtuales entrenados con la información de tu negocio que atienden clientes, responden preguntas y cualifican prospectos las 24 horas.",
+          icon: "Bot",
+        },
+        {
+          title: "Automatización empresarial",
+          description:
+            "Conectamos tus herramientas y automatizamos procesos repetitivos: seguimiento de leads, notificaciones, reportes e integraciones entre sistemas.",
+          icon: "Zap",
         },
       ],
     },

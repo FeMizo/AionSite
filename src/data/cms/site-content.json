@@ -65,16 +65,16 @@
       "enabled": true,
       "order": 1,
       "data": {
-        "badgeText": "Diseño web de alto impacto",
-        "title": "Sitios web modernos que generan clientes.",
-        "subtitle": "Diseñamos y desarrollamos experiencias digitales de alto impacto que posicionan tu marca y multiplican tus ventas.",
+        "badgeText": "Diseño web · IA · Automatización para negocios",
+        "title": "Sitios web que trabajan por tu negocio.",
+        "subtitle": "Construimos presencias digitales con SEO técnico, ecommerce modular, automatización e inteligencia artificial para que tu negocio crezca sin depender de anuncios pagados.",
         "primaryCTA": "Cotizar por WhatsApp",
         "secondaryCTA": "Ver portafolio",
         "trustBar": [
-          "Velocidad",
           "SEO técnico",
-          "Diseño premium",
-          "Soporte"
+          "Ecommerce modular",
+          "IA empresarial",
+          "Automatización"
         ]
       }
     },
@@ -84,24 +84,24 @@
       "order": 2,
       "data": [
         {
-          "title": "Sitio Web Profesional",
-          "description": "Presencia digital sólida con diseño a medida, optimizado para todos los dispositivos.",
-          "icon": "Globe"
+          "title": "SEO técnico para negocios",
+          "description": "Posicionamos tu negocio en Google cuando tus clientes tienen intención de compra: estructura, metadatos, schema markup y arquitectura de contenido.",
+          "icon": "TrendingUp"
         },
         {
-          "title": "Página de conversión",
-          "description": "Páginas enfocadas en un solo objetivo: convertir visitantes en clientes potenciales.",
-          "icon": "Target"
-        },
-        {
-          "title": "Tienda en línea",
-          "description": "Comercio electrónico escalable con pasarelas de pago seguras y gestión de inventario.",
+          "title": "Ecommerce modular",
+          "description": "Tiendas en línea que crecen contigo, con módulos de catálogo, pagos, inventario e integraciones a medida, sin pagar por funciones que no usas.",
           "icon": "ShoppingBag"
         },
         {
-          "title": "Mantenimiento + SEO",
-          "description": "Tu sitio siempre actualizado, seguro y escalando posiciones en Google.",
-          "icon": "TrendingUp"
+          "title": "IA para empresas locales",
+          "description": "Chatbots y asistentes virtuales entrenados con la información de tu negocio que atienden clientes, responden preguntas y cualifican prospectos las 24 horas.",
+          "icon": "Bot"
+        },
+        {
+          "title": "Automatización empresarial",
+          "description": "Conectamos tus herramientas y automatizamos procesos repetitivos: seguimiento de leads, notificaciones, reportes e integraciones entre sistemas.",
+          "icon": "Zap"
         }
       ]
     },
@@ -110,8 +110,8 @@
       "enabled": true,
       "order": 3,
       "data": {
-        "title": "Lleva tu presencia digital a un nuevo nivel",
-        "description": "Combinamos estrategia, diseño y desarrollo para que tu sitio no solo se vea bien, sino que también convierta visitas en oportunidades reales para tu negocio.",
+        "title": "Tecnología que trabaja por tu negocio, no al revés.",
+        "description": "Más que un sitio web bonito: integramos SEO técnico, ecommerce modular, automatizaciones e inteligencia artificial para crear una presencia digital que genera oportunidades reales mientras tú te enfocas en hacer crecer tu empresa.",
         "buttonText": "Solicitar propuesta",
         "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
         "image": "/portfolio/lobbypm.png",
@@ -282,9 +282,9 @@
           "price": "Desde $3,500",
           "features": [
             "Página de inicio con diseño básico",
-            "Diseño adaptable",
+            "Diseño adaptable a móvil",
             "Formulario de contacto",
-            "SEO básico"
+            "SEO técnico básico"
           ],
           "recommended": false
         },
@@ -293,31 +293,36 @@
           "price": "Desde $12,000",
           "features": [
             "Todo lo del plan Esencial",
-            "Página de inicio con diseño premium",
+            "Diseño premium a medida",
             "4 secciones personalizadas",
-            "SEO avanzado",
+            "SEO técnico avanzado",
+            "Automatización de captura de leads",
             "Soporte 2 meses"
           ],
           "recommended": true
         },
         {
-          "name": "Mantenimiento mensual",
+          "name": "Mantenimiento + IA",
           "price": "Desde $3,000/mes",
           "features": [
             "Actualizaciones mensuales",
             "Optimización de velocidad",
+            "Monitoreo SEO mensual",
             "Soporte prioritario",
+            "Automatizaciones activas",
             "Reportes de rendimiento"
           ],
           "recommended": false
         },
         {
-          "name": "Comercio electrónico",
+          "name": "Ecommerce modular",
           "price": "Desde $20,000",
           "features": [
-            "Tienda en línea",
+            "Tienda en línea modular",
             "Integración con pasarelas de pago",
-            "Configuración de inventario",
+            "Catálogo e inventario escalable",
+            "SEO técnico para ecommerce",
+            "Automatización de pedidos y notificaciones",
             "Soporte 6 meses"
           ],
           "recommended": false
@@ -370,6 +375,14 @@
         {
           "question": "¿Incluyen soporte, mantenimiento y SEO después del lanzamiento?",
           "answer": "Sí. Contamos con planes de mantenimiento mensual que incluyen soporte técnico, mejoras continuas, optimización de rendimiento y acompañamiento SEO."
+        },
+        {
+          "question": "¿Pueden implementar IA o chatbots en mi negocio?",
+          "answer": "Sí. Integramos asistentes de inteligencia artificial entrenados con la información de tu negocio para atender clientes, responder preguntas frecuentes y cualificar prospectos de forma automática, los 7 días de la semana."
+        },
+        {
+          "question": "¿Qué tipo de automatizaciones pueden implementar?",
+          "answer": "Automatizamos flujos como seguimiento de leads, notificaciones por WhatsApp o email, integración entre herramientas (CRM, formularios, hojas de cálculo) y reportes automáticos, para que tu equipo dedique su tiempo a tareas de mayor valor."
         }
       ]
     },
@@ -391,7 +404,7 @@
       "order": 11,
       "data": {
         "title": "¿Listo para llevar tu negocio al siguiente nivel?",
-        "subtitle": "Hablemos de tu proyecto y creemos algo increíble juntos.",
+        "subtitle": "Hablemos de tu proyecto: sitio web, ecommerce modular, IA o automatización. En menos de 24 horas tienes una propuesta concreta.",
         "buttonText": "Iniciar conversación por WhatsApp",
         "responseText": "Respuesta en menos de 24 horas",
         "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
@@ -403,7 +416,7 @@
       "order": 11,
       "data": {
         "name": "AionSite",
-        "description": "Agencia boutique de diseño y desarrollo web premium enfocada en conversión, velocidad y SEO técnico.",
+        "description": "Diseño web, SEO técnico, ecommerce modular, IA y automatización empresarial para negocios en México.",
         "email": "contacto@aionsite.com.mx",
         "navigation": [
           {

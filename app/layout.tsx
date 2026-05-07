@@ -21,17 +21,17 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "Diseño y Desarrollo Web Premium | AionSite",
-  description: "Creamos sitios web rápidos, modernos y orientados a conversión. Más clientes, mejor imagen, resultados reales. Cotiza hoy sin compromiso.",
-  keywords: ["diseño web", "desarrollo web", "páginas web profesionales", "diseño web México", "AionSite", "agencia web", "sitios web modernos"],
+  title: "Diseño Web, IA y Automatización para Negocios | AionSite",
+  description: "Sitios web con SEO técnico, ecommerce modular, IA y automatización empresarial para negocios en México. Más clientes, menos trabajo manual.",
+  keywords: ["diseño web México", "SEO técnico para negocios", "ecommerce modular", "IA para empresas locales", "automatización empresarial", "AionSite", "agencia web"],
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Diseño y Desarrollo Web Premium | AionSite",
-    description: "Creamos sitios web rápidos, modernos y orientados a conversión. Más clientes, mejor imagen, resultados reales. Cotiza hoy sin compromiso.",
+    title: "Diseño Web, IA y Automatización para Negocios | AionSite",
+    description: "Sitios web con SEO técnico, ecommerce modular, IA y automatización empresarial para negocios en México. Más clientes, menos trabajo manual.",
     url: "/",
     siteName: "AionSite",
     type: "website",
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
         url: "/logo-aionsite.png",
         width: 1200,
         height: 630,
-        alt: "AionSite — Diseño y Desarrollo Web Premium",
+        alt: "AionSite — Diseño Web, IA y Automatización para Negocios",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diseño y Desarrollo Web Premium | AionSite",
-    description: "Creamos sitios web rápidos, modernos y orientados a conversión. Más clientes, mejor imagen, resultados reales.",
+    title: "Diseño Web, IA y Automatización para Negocios | AionSite",
+    description: "Sitios web con SEO técnico, ecommerce modular, IA y automatización para negocios en México.",
     images: ["/logo-aionsite.png"],
   },
 };

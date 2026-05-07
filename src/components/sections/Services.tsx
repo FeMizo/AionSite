@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { Globe, ShoppingBag, Target, TrendingUp } from "lucide-react";
+import { Bot, Globe, ShoppingBag, Target, TrendingUp, Zap } from "lucide-react";
 import { motion } from "motion/react";
 import type { ServicesSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
@@ -10,6 +10,8 @@ const iconMap: Record<string, ComponentType<{ size?: number }>> = {
   Target,
   ShoppingBag,
   TrendingUp,
+  Bot,
+  Zap,
 };
 
 const iconColors: Record<string, { container: string; hover: string }> = {
@@ -29,6 +31,14 @@ const iconColors: Record<string, { container: string; hover: string }> = {
     container: "border-cyan-400/25 bg-cyan-600/10 text-cyan-300 shadow-[0_10px_24px_-18px_rgba(6,182,212,0.8)]",
     hover: "group-hover:bg-cyan-600",
   },
+  Bot: {
+    container: "border-violet-400/25 bg-violet-600/10 text-violet-300 shadow-[0_10px_24px_-18px_rgba(139,92,246,0.8)]",
+    hover: "group-hover:bg-violet-600",
+  },
+  Zap: {
+    container: "border-amber-400/25 bg-amber-600/10 text-amber-300 shadow-[0_10px_24px_-18px_rgba(245,158,11,0.8)]",
+    hover: "group-hover:bg-amber-600",
+  },
 };
 
 export function Services({ data }: { data: ServicesSectionData }) {
@@ -44,10 +54,10 @@ export function Services({ data }: { data: ServicesSectionData }) {
         >
           <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
             <h2 className="text-heading-fluid font-display font-bold text-white">
-              Servicios que impulsan tu negocio
+              Diseño web, IA y automatización para negocios
             </h2>
             <p className="mt-4 max-w-sm text-lg leading-relaxed text-slate-400">
-              Soluciones digitales diseñadas para convertir visitantes en clientes leales.
+              Desde SEO técnico y ecommerce modular hasta IA y automatización, construimos la infraestructura digital que tu negocio necesita para crecer.
             </p>
           </motion.div>
 
