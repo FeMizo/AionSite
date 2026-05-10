@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Epilogue } from "next/font/google";
 import Script from "next/script";
 import { metadataBase } from "@/src/lib/metadata";
 import { SchemaMarkup } from "@/src/components/ui/SchemaMarkup";
+import { GdprConsent } from "@/src/components/ui/GdprConsent";
 import "./globals.css";
 
 const GTM_ID = "GTM-PBTGRC8R";
@@ -80,6 +81,7 @@ export default function RootLayout({
         </noscript>
         <SchemaMarkup />
         {children}
+        <GdprConsent />
       </body>
     </html>
   );
