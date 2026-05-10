@@ -26,6 +26,117 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "optimizacion-conversiones-digital",
+    title: "Optimización de conversiones: el ABC de la persuasión digital",
+    excerpt:
+      "No basta con atraer visitantes. La pregunta real es: ¿cuántos se convierten en clientes? Descubre las técnicas probadas que transforman visitantes en compradores.",
+    image: "/blog/optimización-de-conversiones.webp",
+    badgeText: "Conversión & CRO",
+    date: "12 de mayo, 2026",
+    dateISO: "2026-05-12",
+    readTime: "8 min de lectura",
+    keywords: ["optimización de conversiones", "tasa de conversión", "CRO", "persuasión digital", "analítica web", "A/B testing", "mejora de ventas online", "conversión México", "marketing digital ROI"],
+    headings: [
+      { level: 2, id: "el-problema", text: "El problema invisible: tráfico que no convierte" },
+      { level: 3, id: "costo-visitante", text: "¿Cuánto cuesta cada visitante que no convierte?" },
+      { level: 2, id: "abc-conversion", text: "El ABC de la conversión digital" },
+      { level: 3, id: "claridad", text: "A: Claridad — el visitante debe entender al instante" },
+      { level: 3, id: "beneficio", text: "B: Beneficio — por qué debería actuar ahora" },
+      { level: 3, id: "confianza", text: "C: Confianza — que sienta seguridad de su decisión" },
+      { level: 2, id: "metricas-que-importan", text: "Las métricas que realmente importan" },
+      { level: 3, id: "tasa-rebote", text: "Tasa de rebote: la puerta de salida" },
+      { level: 3, id: "tiempo-en-pagina", text: "Tiempo en página: señal de interés" },
+      { level: 2, id: "tecnicas-conversion", text: "5 técnicas de conversión que funcionan probadas" },
+      { level: 3, id: "urgencia", text: "Urgencia y escasez: motivadores de acción" },
+      { level: 3, id: "prueba-social", text: "Prueba social: testimonios y reseñas" },
+      { level: 3, id: "formularios-efectivos", text: "Formularios que realmente se completan" },
+      { level: 2, id: "proximo-paso", text: "El próximo paso: medir, ajustar, repetir" },
+    ],
+    blocks: [
+      { type: "h2", id: "el-problema", text: "El problema invisible: tráfico que no convierte" },
+      {
+        type: "p",
+        text: "Un negocio llama a nuestra oficina diciendo: 'Tengo 5,000 visitas mensuales pero casi ninguna se convierte en venta'. Es el problema número uno que vemos. Invertiste en SEO, en anuncios pagos, en atraer gente a tu sitio. Pero cuando llegan, algo falla. Se van sin preguntar, sin comprar, sin ni siquiera dejar un email.",
+      },
+      { type: "p",
+        text: "Aquí está la realidad brutal: tráfico sin conversión es dinero quemado. No importa si consigues 100,000 visitas al mes si el 99.5% se va sin hacer nada. Una página que recibe 100 visitas con 5% de conversión es infinitamente más valiosa que una con 10,000 visitas y 0.1% de conversión.",
+      },
+      { type: "h3", id: "costo-visitante", text: "¿Cuánto cuesta cada visitante que no convierte?" },
+      {
+        type: "p",
+        text: "Si estás pagando $1 por clic en Google Ads y 99 de cada 100 visitantes se van sin actuar, ese visitante realmente te costó $100. Si inviertes en SEO y conseguís 1,000 visitas gratis mensuales pero ninguna convierte, esos 1,000 clics gratis costaron el valor de lo que dejaste de ganar. La conversión no es una métrica vanidad. Es el número que determina si tu sitio web es un activo o un gasto.",
+      },
+      { type: "h2", id: "abc-conversion", text: "El ABC de la conversión digital" },
+      {
+        type: "p",
+        text: "Después de auditar y optimizar más de 50 sitios web, encontramos que la mayoría falla en los mismos puntos. No es que les falte tráfico. Les falta claridad, beneficio y confianza.",
+      },
+      { type: "h3", id: "claridad", text: "A: Claridad — el visitante debe entender al instante" },
+      {
+        type: "p",
+        text: "El usuario llega a tu sitio en modo 'escaneo rápido'. Tienen 8 segundos antes de decidir si se quedan o se van. En esos 8 segundos deben entender: ¿qué es esto? ¿es para mí? ¿cuál es el siguiente paso? Si la respuesta a cualquiera de esas preguntas no es clara, se van. El diseño confuso mata la conversión más rápido que cualquier otro factor.",
+      },
+      {
+        type: "quote",
+        text: "La claridad es el dinero. La confusión es la pobreza. Tu sitio web debe elegir un bando.",
+      },
+      { type: "h3", id: "beneficio", text: "B: Beneficio — por qué debería actuar ahora" },
+      {
+        type: "p",
+        text: "No basta con decir qué vendes. Debes explicar por qué vale la pena. 'Diseño web para negocios' es descripción. 'Aumenta tus ventas 40% en 90 días con un sitio que realmente convierte' es promesa. El visitante no compra lo que haces: compra el resultado que le prometes. Tu sitio debe dejar claro cuál es ese resultado en cada sección.",
+      },
+      { type: "h3", id: "confianza", text: "C: Confianza — que sienta seguridad de su decisión" },
+      {
+        type: "p",
+        text: "Incluso si el visitante entiende y quiere actuar, la desconfianza detiene la conversión. Será porque tu sitio parece poco profesional, o porque no muestra garantías, o porque no tiene testimonios, o porque el formulario pide demasiados datos. Cada elemento de desconfianza es una barrera. Tu trabajo es eliminar esas barreras una por una.",
+      },
+      { type: "h2", id: "metricas-que-importan", text: "Las métricas que realmente importan" },
+      {
+        type: "p",
+        text: "Google Analytics es poderoso pero abrumador. Millones de datos. ¿Cuál mirar? Si vas a revisar analítica, que sea para responder una sola pregunta: ¿por qué no convierte?",
+      },
+      { type: "h3", id: "tasa-rebote", text: "Tasa de rebote: la puerta de salida" },
+      {
+        type: "p",
+        text: "Si más del 70% de visitantes llega a tu página de inicio y se va sin hacer nada, está lloviendo sobre mojado. O el mensaje principal no es claro, o la propuesta de valor no es convincente, o tu diseño visual no genera confianza. Una tasa de rebote alta en la homepage es síntoma de que algo falla arriba, en los primeros 3 segundos.",
+      },
+      { type: "h3", id: "tiempo-en-pagina", text: "Tiempo en página: señal de interés" },
+      {
+        type: "p",
+        text: "Si la gente pasa menos de 30 segundos en tu página, no la están leyendo. Si pasan 3-5 minutos, probablemente esté leyendo y considerando. Si pasan 8+ minutos, algo te está reteniendo. Pero ojo: tiempo largo no siempre significa interés. A veces significa confusión. Por eso esta métrica funciona mejor en combinación con otras.",
+      },
+      { type: "h2", id: "tecnicas-conversion", text: "5 técnicas de conversión que funcionan probadas" },
+      {
+        type: "p",
+        text: "Teoría es buena, pero la práctica es lo que genera resultados. Estas 5 técnicas han aumentado conversiones en sitios reales:",
+      },
+      { type: "h3", id: "urgencia", text: "Urgencia y escasez: motivadores de acción" },
+      {
+        type: "p",
+        text: "Los humans procrastinan. Un botón que dice 'contacta cuando quieras' genera cero urgencia. Uno que dice 'agendamos tu consultoría gratuita de 30 minutos (solo 3 espacios disponibles esta semana)' genera urgencia. No es manipulación: es realidad. Ofrecés algo, estableces límites, y de repente el visitante actúa.",
+      },
+      { type: "h3", id: "prueba-social", text: "Prueba social: testimonios y reseñas" },
+      {
+        type: "p",
+        text: "Las reseñas de clientes reales convencen más que tu discurso. Si tenés 5 testimonios positivos visibles, la conversión sube. Si tenés fotos de clientes reales, sube más. Si tenés números ('Más de 200 negocios nos confían la transformación de su web'), la confianza se dispara. Busca testimonios de clientes satisfechos y ponlos donde los vea todo el mundo.",
+      },
+      { type: "h3", id: "formularios-efectivos", text: "Formularios que realmente se completan" },
+      {
+        type: "p",
+        text: "Si tu formulario pide 15 datos, nadie lo completará. Si pide nombre y email solamente, la mayoría lo hará. Comienza simple. Consigue el lead primero. Pide más datos después, en el email de seguimiento. Menos campos = más conversiones. Es así de simple.",
+      },
+      { type: "h2", id: "proximo-paso", text: "El próximo paso: medir, ajustar, repetir" },
+      {
+        type: "p",
+        text: "La optimización de conversiones no es un proyecto de 'una sola vez'. Es un proceso continuo: mides, identificas qué falla, ajustas, mides de nuevo. Pequeñas mejoras en cada elemento suman. Un aumento de 10% en tasa de rebote, otro 10% en formularios, otro 5% en testimonios visibles... y de repente tu tasa de conversión pasó de 1% a 1.7%, lo que significa 70% más ingresos con el mismo tráfico.",
+      },
+      {
+        type: "p",
+        text: "Si tu sitio hoy recibe tráfico pero no convierte, no necesitas más tráfico. Necesitas optimizar lo que ya tienes. Cuéntanos cuál es tu tasa de conversión actual y te ayudamos a identificar los puntos débiles.",
+      },
+    ],
+  },
+  {
     id: "seo-local-para-negocios",
     title: "SEO local: cómo aparecer primero cuando tus clientes te buscan en Google",
     excerpt:

@@ -1,4 +1,5 @@
 import { ExternalLink, MessageCircleMore } from "lucide-react";
+import Image from "next/image";
 import type { SideImageContentSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 
@@ -25,7 +26,7 @@ export function SideImageContent({
               className={`overflow-hidden rounded-3xl border border-white/12 bg-slate-950/80 shadow-[0_22px_40px_-30px_rgba(2,6,23,0.92)] ${imageOrderClass}`}
             >
               {data.image ? (
-                <img
+                <Image
                   src={data.image}
                   alt={data.title}
                   width={800}

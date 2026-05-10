@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ExternalLink, X } from "lucide-react";
 import type { PortfolioItem, PortfolioSectionData } from "@/src/cms/types";
@@ -66,12 +67,13 @@ function PortfolioModal({
 
         {/* Image */}
         <div className="relative overflow-hidden">
-          <img
+          <Image
             src={item.image}
             alt={item.title}
             width={1200}
             height={400}
             className="h-72 w-full object-cover md:h-96"
+            priority
           />
           <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent" />
         </div>
@@ -137,7 +139,7 @@ export function PortfolioGrid({
               Ver más
             </div>
 
-            <img
+            <Image
               src={item.image}
               alt={item.title}
               width={800}

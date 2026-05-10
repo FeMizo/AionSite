@@ -18,11 +18,40 @@ export default function Home() {
     ),
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: initialCmsContent.base.name,
+    description: initialCmsContent.base.description,
+    url: "https://aionsite.com.mx",
+    telephone: "+52 938 157 3988",
+    email: initialCmsContent.base.email,
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "MX",
+      addressLocality: "Cancún", // Default city
+      addressRegion: "Quintana Roo",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 21.1619,
+      longitude: -86.8515,
+    },
+    openingHours: "Mo-Fr 09:00-18:00",
+    sameAs: [
+      "https://wa.me/5219381573988",
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <PublicSite initialContent={initialCmsContent} />
     </>

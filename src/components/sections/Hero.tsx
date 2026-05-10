@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEvent } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { ArrowRight, MessageCircleMore, Sparkles } from "lucide-react";
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "motion/react";
 import type { HeaderSectionData, HeroSectionData } from "@/src/cms/types";
@@ -20,6 +20,15 @@ export function Hero({
 
   const smoothX = useSpring(mouseX, { stiffness: 50, damping: 20 });
   const smoothY = useSpring(mouseY, { stiffness: 50, damping: 20 });
+
+  const [city, setCity] = useState("Cancún");
+
+  useEffect(() => {
+    fetch("/api/location")
+      .then((res) => res.json())
+      .then((data) => setCity(data.city))
+      .catch(() => setCity("Cancún"));
+  }, []);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     const { left, top } = currentTarget.getBoundingClientRect();
@@ -53,7 +62,7 @@ export function Hero({
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)] backdrop-blur-sm"
           >
             <Sparkles size={14} />
-            {data.badgeText}
+            Agencia de diseño web en {city}
           </motion.div>
 
           <motion.h1
@@ -87,13 +96,11 @@ export function Hero({
               size="lg"
               className="gap-2 backdrop-blur-sm"
               onClick={() =>
-                document
-                  .getElementById("portafolio")
-                  ?.scrollIntoView({ behavior: "smooth" })
+                window.open("https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20solicitar%20una%20auditoria%20gratuita%20de%20mi%20sitio.", "_blank")
               }
             >
+              <MessageCircleMore size={16} />
               {data.secondaryCTA}
-              <ArrowRight size={16} />
             </Button>
           </motion.div>
 

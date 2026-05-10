@@ -57,7 +57,7 @@
             "href": "/#contacto"
           }
         ],
-        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20ver%20planes%20y%20precios."
       }
     },
     "hero": {
@@ -68,8 +68,8 @@
         "badgeText": "Diseño web · IA · Automatización para negocios",
         "title": "Sitios web que trabajan por tu negocio.",
         "subtitle": "Construimos presencias digitales con SEO técnico, ecommerce modular, automatización e inteligencia artificial para que tu negocio crezca sin depender de anuncios pagados.",
-        "primaryCTA": "Cotizar por WhatsApp",
-        "secondaryCTA": "Ver portafolio",
+        "primaryCTA": "Ver planes y precios",
+        "secondaryCTA": "Solicitar auditoría gratuita de mi sitio",
         "trustBar": [
           "SEO técnico",
           "Ecommerce modular",
@@ -282,7 +282,7 @@
           "price": "Desde $3,500",
           "features": [
             "Página de inicio con diseño básico",
-            "Diseño adaptable a móvil",
+            "Convierte visitantes en clientes con diseños que venden y cargan al instante",
             "Formulario de contacto",
             "SEO técnico básico"
           ],
@@ -405,9 +405,9 @@
       "data": {
         "title": "¿Listo para llevar tu negocio al siguiente nivel?",
         "subtitle": "Hablemos de tu proyecto: sitio web, ecommerce modular, IA o automatización. En menos de 24 horas tienes una propuesta concreta.",
-        "buttonText": "Iniciar conversación por WhatsApp",
+        "buttonText": "Agendar llamada de 15 minutos",
         "responseText": "Respuesta en menos de 24 horas",
-        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20agendar%20una%20llamada%20de%2015%20minutos."
       }
     },
     "footer": {

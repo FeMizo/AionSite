@@ -38,7 +38,7 @@ export function Pricing({
         >
           <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
             <SectionHeading
-              title="Paquetes a tu medida"
+              title="Beneficios a tu medida"
               subtitle="Inversiones inteligentes para negocios que buscan crecer."
             />
           </motion.div>
