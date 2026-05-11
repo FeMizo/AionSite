@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { ArrowRight, BookOpen, Clock, Search } from "lucide-react";
 import { blogPosts } from "@/src/data/blog-posts";
 import { initialCmsContent } from "@/src/cms/site-content";
@@ -11,6 +11,7 @@ import { Footer } from "@/src/components/sections/Footer";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
+import { BlogCardSkeleton } from "@/src/components/ui/Skeleton";
 import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 
 const nav = mapNavigationForInnerPage(
@@ -21,6 +22,7 @@ const base = { ...initialCmsContent.base, navigation: nav };
 
 export function BlogListPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const filteredPosts = useMemo(() => {
     if (!searchQuery.trim()) return blogPosts;
@@ -34,6 +36,23 @@ export function BlogListPage() {
       post.blocks.some(block => block.text.toLowerCase().includes(query))
     );
   }, [searchQuery]);
+
+  // Simulate loading delay for better UX during search
+  useEffect(() => {
+    if (searchQuery) {
+      setIsLoading(true);
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    } else {
+      setIsLoading(false);
+    }
+  }, [searchQuery]);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <>
@@ -64,7 +83,7 @@ export function BlogListPage() {
                 type="text"
                 placeholder="Buscar artículos..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={handleSearchChange}
                 className="w-full rounded-full border border-white/10 bg-white/5 py-3 pl-10 pr-4 text-white placeholder-slate-400 transition-colors focus:border-blue-400/50 focus:outline-none focus:ring-2 focus:ring-blue-400/20"
               />
             </div>
@@ -90,47 +109,58 @@ export function BlogListPage() {
                 </p>
               </div>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {filteredPosts.map((post, i) => (
-                  <Link
-                    key={post.id}
-                    href={`/blog/${post.id}`}
-                    className={`group block animate-reveal transition-transform duration-150 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 active:scale-[0.97] ${["", "anim-delay-75", "anim-delay-150", "anim-delay-225"][i] ?? ""}`}
-                  >
-                    <Card className="flex h-full flex-col overflow-hidden p-0">
-                      <div className="relative h-80 w-full overflow-hidden">
-                        <Image
-                          src={post.image ?? "/logo-aionsite.png"}
-                          alt={post.title}
-                          fill
-                          className="object-cover transition-transform duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
-                      </div>
-                      <div className="flex flex-1 flex-col gap-4 p-6">
-                        <div className="inline-flex w-fit items-center gap-1.5 rounded-full border border-violet-400/20 bg-violet-500/10 px-2.5 py-1 text-xs font-medium text-violet-300">
-                          <BookOpen size={11} />
-                          {post.badgeText}
+                {isLoading ? (
+                  // Show skeletons during loading
+                  Array.from({ length: 6 }).map((_, i) => (
+                    <BlogCardSkeleton
+                      key={`skeleton-${i}`}
+                      className={`animate-reveal ${["", "anim-delay-75", "anim-delay-150", "anim-delay-225"][i] ?? ""}`}
+                    />
+                  ))
+                ) : (
+                  // Show actual posts when loaded
+                  filteredPosts.map((post, i) => (
+                    <Link
+                      key={post.id}
+                      href={`/blog/${post.id}`}
+                      className={`group block animate-reveal transition-transform duration-150 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 active:scale-[0.97] ${["", "anim-delay-75", "anim-delay-150", "anim-delay-225"][i] ?? ""}`}
+                    >
+                      <Card className="flex h-full flex-col overflow-hidden p-0">
+                        <div className="relative h-80 w-full overflow-hidden">
+                          <Image
+                            src={post.image ?? "/logo-aionsite.png"}
+                            alt={post.title}
+                            fill
+                            className="object-cover transition-transform duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
                         </div>
-                        <div className="flex-1">
-                          <h2 className="mb-3 font-display text-lg font-bold leading-snug text-white transition-colors duration-200 group-hover:text-blue-300">
-                            {post.title}
-                          </h2>
-                          <p className="text-sm leading-relaxed text-slate-400">{post.excerpt}</p>
+                        <div className="flex flex-1 flex-col gap-4 p-6">
+                          <div className="inline-flex w-fit items-center gap-1.5 rounded-full border border-violet-400/20 bg-violet-500/10 px-2.5 py-1 text-xs font-medium text-violet-300">
+                            <BookOpen size={11} />
+                            {post.badgeText}
+                          </div>
+                          <div className="flex-1">
+                            <h2 className="mb-3 font-display text-lg font-bold leading-snug text-white transition-colors duration-200 group-hover:text-blue-300">
+                              {post.title}
+                            </h2>
+                            <p className="text-sm leading-relaxed text-slate-400">{post.excerpt}</p>
+                          </div>
+                          <div className="flex items-center justify-between border-t border-white/5 pt-4 text-xs text-slate-500">
+                            <span className="flex items-center gap-1.5">
+                              <Clock size={12} />
+                              {post.readTime}
+                            </span>
+                            <span className="flex items-center gap-1 text-blue-400 transition-colors duration-200 group-hover:text-blue-300">
+                              Leer artículo
+                              <ArrowRight size={12} className="transition-transform duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />
+                            </span>
+                          </div>
                         </div>
-                        <div className="flex items-center justify-between border-t border-white/5 pt-4 text-xs text-slate-500">
-                          <span className="flex items-center gap-1.5">
-                            <Clock size={12} />
-                            {post.readTime}
-                          </span>
-                          <span className="flex items-center gap-1 text-blue-400 transition-colors duration-200 group-hover:text-blue-300">
-                            Leer artículo
-                            <ArrowRight size={12} className="transition-transform duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />
-                          </span>
-                        </div>
-                      </div>
-                    </Card>
-                  </Link>
-                ))}
+                      </Card>
+                    </Link>
+                  ))
+                )}
               </div>
             </>
           )}

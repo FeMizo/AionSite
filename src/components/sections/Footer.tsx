@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CmsBase, FooterSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
+import { NewsletterSignup } from "@/src/components/ui/NewsletterSignup";
 import { isInternalHref } from "@/src/lib/routing";
 
 export function Footer({
@@ -14,8 +15,8 @@ export function Footer({
   return (
     <footer className="border-t border-white/5 bg-slate-950 py-12">
       <Container>
-        <div className="grid gap-12 md:grid-cols-4">
-          <div className="col-span-2">
+        <div className="grid gap-12 md:grid-cols-3 lg:grid-cols-5">
+          <div className="col-span-3 lg:col-span-2">
             <Link href="/" className="mb-6 flex items-center gap-2">
               <Image
                 src={base.logoLight}
@@ -96,6 +97,8 @@ export function Footer({
               </a>
             </div>
           </div>
+
+          <NewsletterSignup />
         </div>
 
         <div className="mt-12 border-t border-white/5 pt-8 text-center text-sm text-slate-500">

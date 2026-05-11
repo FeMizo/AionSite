@@ -26,6 +26,111 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "tipografia-color-espacio-diseno-web",
+    title: "Tipografía, color y espacio: los 3 pilares del diseño web profesional",
+    excerpt:
+      "El 94% de las primeras impresiones de un sitio dependen del diseño visual. Descubre cómo la tipografía, el color y el espacio blanco transforman tu sitio en uno que genera confianza y ventas.",
+    badgeText: "Diseño Visual & UX",
+    date: "11 de mayo, 2026",
+    dateISO: "2026-05-11",
+    readTime: "7 min de lectura",
+    keywords: ["diseño web profesional", "tipografía web", "paleta de colores web", "espacio blanco diseño", "identidad visual web", "mejora visual sitio web", "UX diseño", "diseño web México", "branding digital", "experiencia de usuario"],
+    headings: [
+      { level: 2, id: "diseno-visual-ventas", text: "Por qué el diseño visual determina si te compran o no" },
+      { level: 3, id: "neurociencia-color", text: "La neurociencia detrás del color" },
+      { level: 3, id: "tipografia-voz", text: "La tipografía como voz de tu marca" },
+      { level: 2, id: "tres-pilares", text: "Los 3 pilares del diseño web profesional" },
+      { level: 3, id: "pilar-tipografia", text: "Pilar 1: Tipografía que comunica" },
+      { level: 3, id: "pilar-color", text: "Pilar 2: Color que convierte" },
+      { level: 3, id: "pilar-espacio", text: "Pilar 3: Espacio blanco que respira" },
+      { level: 2, id: "errores-visuales", text: "Errores visuales que destruyen la confianza" },
+      { level: 3, id: "demasiadas-fuentes", text: "Demasiadas fuentes tipográficas" },
+      { level: 3, id: "colores-sin-sistema", text: "Colores sin coherencia ni sistema" },
+      { level: 2, id: "mejorar-hoy", text: "Cómo mejorar el diseño visual de tu sitio hoy" },
+    ],
+    blocks: [
+      { type: "h2", id: "diseno-visual-ventas", text: "Por qué el diseño visual determina si te compran o no" },
+      {
+        type: "p",
+        text: "Existe un estudio ampliamente citado en diseño UX que afirma que el 94% de las primeras impresiones sobre un sitio web están relacionadas con el diseño visual, no con el contenido. Antes de leer una sola palabra, el cerebro de tu visitante ya tomó una decisión: ¿este sitio parece confiable? ¿es para alguien como yo? ¿vale la pena quedarme? El diseño responde esas preguntas en milisegundos.",
+      },
+      {
+        type: "p",
+        text: "Lo que muchos negocios no entienden es que el diseño visual no es decoración. Es comunicación. Cada elección tipográfica, cada color, cada píxel de espacio vacío está transmitiendo un mensaje. La pregunta es si ese mensaje es el que quieres transmitir.",
+      },
+      { type: "h3", id: "neurociencia-color", text: "La neurociencia detrás del color" },
+      {
+        type: "p",
+        text: "El cerebro procesa el color 60,000 veces más rápido que el texto. Antes de que tu visitante lea tu propuesta de valor, el color de tu fondo, tu botón y tu logo ya activaron asociaciones emocionales. Azul transmite confianza y profesionalismo. Naranja evoca energía y acción. Verde comunica salud y crecimiento. Rojo genera urgencia. No es casualidad que los bancos usen azul y las aplicaciones de salud usen verde. El color es estrategia, no preferencia personal.",
+      },
+      { type: "h3", id: "tipografia-voz", text: "La tipografía como voz de tu marca" },
+      {
+        type: "p",
+        text: "Una tipografía serif transmite tradición, autoridad y sofisticación — piensa en despachos de abogados o marcas de lujo. Una sans-serif como Inter o Poppins comunica modernidad, accesibilidad y tecnología. Una fuente de display con personalidad dice que la marca se atreve a diferenciarse. El problema es cuando se mezclan tres o cuatro fuentes sin sistema: el resultado es ruido visual que confunde al usuario y destruye la credibilidad.",
+      },
+      { type: "h2", id: "tres-pilares", text: "Los 3 pilares del diseño web profesional" },
+      {
+        type: "p",
+        text: "Después de rediseñar decenas de sitios, identificamos que los errores visuales siempre se concentran en los mismos tres elementos. Corrígelos y el sitio da un salto de calidad inmediato.",
+      },
+      { type: "h3", id: "pilar-tipografia", text: "Pilar 1: Tipografía que comunica" },
+      {
+        type: "p",
+        text: "La regla de oro es: máximo dos familias tipográficas en un sitio. Una para títulos, otra para cuerpo de texto. Punto. El tamaño base del cuerpo no debe ser menor a 16px — en móvil, 18px es más cómodo. El contraste entre texto y fondo debe superar una relación de 4.5:1 para cumplir estándares de accesibilidad (WCAG AA). Un texto gris claro sobre fondo blanco puede verse moderno, pero si nadie lo puede leer, el diseño falló.",
+      },
+      {
+        type: "p",
+        text: "La escala tipográfica también importa. Los títulos H1, H2 y H3 deben tener tamaños claramente diferenciados para crear jerarquía visual. Cuando todos los textos tienen tamaño similar, el ojo no sabe a dónde ir primero y el visitante escanea sin retener nada.",
+      },
+      { type: "h3", id: "pilar-color", text: "Pilar 2: Color que convierte" },
+      {
+        type: "p",
+        text: "Un sistema de color profesional tiene tres niveles: un color primario (el de tu marca, el que más aparece), un color secundario (para acentos y variedad), y colores neutros para fondos y texto. Con esos tres elementos, un sitio entero puede mantener coherencia visual perfecta. La mayoría de sitios no siguen este sistema — usan cinco o seis colores sin relación entre sí — y el resultado parece amateur incluso cuando el contenido es excelente.",
+      },
+      {
+        type: "quote",
+        text: "El color correcto en el botón correcto puede aumentar la tasa de clics hasta un 34%. El color incorrecto puede hacer que ese botón sea invisible.",
+      },
+      {
+        type: "p",
+        text: "El color del botón principal (CTA) merece atención especial. Debe contrastar con el fondo para ser lo primero que ve el ojo. Si tu sitio es principalmente azul y tu botón también es azul, desaparece. El contraste visual no es un capricho: es lo que hace que la gente haga clic.",
+      },
+      { type: "h3", id: "pilar-espacio", text: "Pilar 3: Espacio blanco que respira" },
+      {
+        type: "p",
+        text: "El espacio blanco — o espacio negativo — es el área vacía entre elementos. Es uno de los recursos más subestimados en diseño web. Los sitios que parecen recargados, agobiantes o confusos casi siempre tienen poco espacio entre secciones, entre párrafos y alrededor de los elementos clave. Apple construyó una de las identidades visuales más reconocidas del mundo basándose en espacio blanco. El espacio no es desperdicio: es claridad.",
+      },
+      {
+        type: "p",
+        text: "En términos prácticos: aumenta el padding entre secciones, agrega línea de espacio entre párrafos, deja más aire alrededor de los botones. El contenido respira, la jerarquía se vuelve clara y el visitante se siente menos abrumado. El resultado visual es inmediato.",
+      },
+      { type: "h2", id: "errores-visuales", text: "Errores visuales que destruyen la confianza" },
+      {
+        type: "p",
+        text: "Más allá de los pilares, hay errores específicos que vemos de forma recurrente y que tienen un impacto directo en la percepción de profesionalismo.",
+      },
+      { type: "h3", id: "demasiadas-fuentes", text: "Demasiadas fuentes tipográficas" },
+      {
+        type: "p",
+        text: "Tres o más familias tipográficas en un mismo sitio es señal inmediata de que no hubo un sistema de diseño. Cada fuente adicional compite por atención y crea inconsistencia. Si heredaste un sitio con este problema, la solución es elegir dos fuentes compatibles y reemplazar todo lo demás. Es trabajo de un día con el impacto visual de un rediseño completo.",
+      },
+      { type: "h3", id: "colores-sin-sistema", text: "Colores sin coherencia ni sistema" },
+      {
+        type: "p",
+        text: "Cuando los botones son de tres colores distintos, los encabezados cambian de tono entre páginas y el fondo varía sin razón, el sitio transmite desorden. El usuario interpreta ese desorden como falta de cuidado, y la falta de cuidado como falta de profesionalismo. Unificar la paleta de color en un sistema consistente es uno de los cambios con mayor retorno visual por unidad de esfuerzo.",
+      },
+      { type: "h2", id: "mejorar-hoy", text: "Cómo mejorar el diseño visual de tu sitio hoy" },
+      {
+        type: "p",
+        text: "No necesitas un rediseño completo para mejorar radicalmente la percepción visual de tu sitio. Empieza con estas tres acciones: (1) Elige dos fuentes y aplícalas de forma consistente en todo el sitio. (2) Define una paleta de tres colores — primario, secundario y neutro — y elimina cualquier color que no pertenezca a ella. (3) Aumenta el espacio entre secciones y alrededor de los elementos principales en un 50%.",
+      },
+      {
+        type: "p",
+        text: "Esos tres cambios, aplicados correctamente, transforman la percepción de un sitio de amateur a profesional sin tocar una línea de contenido. Si quieres que revisemos el diseño visual de tu sitio y te digamos exactamente qué cambiar, cuéntanos tu caso y hacemos una auditoría visual sin costo.",
+      },
+    ],
+  },
+  {
     id: "optimizacion-conversiones-digital",
     title: "Optimización de conversiones: el ABC de la persuasión digital",
     excerpt:
