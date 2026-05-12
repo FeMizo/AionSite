@@ -26,6 +26,98 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "crear-sitio-web-posiciona-desde-inicio",
+    title: "Crear un sitio web que posiciona: 5 errores que mata las chances desde el inicio",
+    excerpt:
+      "La mayoría invierte en un sitio y espera resultados. Pero si cometes estos errores en la creación, ninguna estrategia SEO los salvará. Te mostramos cómo crear bien desde el principio.",
+    image: "/blog/crear-sitio-posiciona.webp",
+    badgeText: "Creación & Posicionamiento",
+    date: "12 de mayo, 2026",
+    dateISO: "2026-05-12",
+    readTime: "7 min de lectura",
+    keywords: ["crear sitio web", "sitio web que posiciona", "SEO desde cero", "estructura web correcta", "URL amigables SEO", "sitio web profesional", "creación de página web", "diseño web posicionable", "arquitectura web posicionamiento"],
+    headings: [
+      { level: 2, id: "por-que-falla-sitios-nuevos", text: "Por qué la mayoría de sitios nuevos fracasan" },
+      { level: 3, id: "tiempo-es-oro", text: "El tiempo es el factor más valioso" },
+      { level: 2, id: "5-errores-fatales", text: "Los 5 errores que matan las chances desde el inicio" },
+      { level: 3, id: "error-1-urls", text: "Error 1: URLs mal diseñadas" },
+      { level: 3, id: "error-2-sin-estructura", text: "Error 2: Crear sin estructura SEO" },
+      { level: 3, id: "error-3-metadata", text: "Error 3: Metadatos incompletos o genéricos" },
+      { level: 3, id: "error-4-velocidad", text: "Error 4: Lanzar lento desde el día 1" },
+      { level: 3, id: "error-5-contenido", text: "Error 5: Contenido sin intención de posicionamiento" },
+      { level: 2, id: "checklist-creacion", text: "Checklist antes de lanzar tu sitio" },
+      { level: 2, id: "siguiente-paso-sitio", text: "El siguiente paso" },
+    ],
+    blocks: [
+      { type: "h2", id: "por-que-falla-sitios-nuevos", text: "Por qué la mayoría de sitios nuevos fracasan" },
+      {
+        type: "p",
+        text: "Un negocio nuevo invierte en su sitio web pensando que la gente lo encontrará mágicamente en Google. Después de 6 meses sin tráfico, se dan cuenta de que nadie sabe que existe. El problema no fue la falta de esfuerzo: fue la falta de estrategia desde la fundación.",
+      },
+      {
+        type: "p",
+        text: "La diferencia entre un sitio que posiciona y uno que no no es el presupuesto. Es el conocimiento de cómo hacer las cosas correctamente desde el primer día. Si creas mal la arquitectura, los URLs, la estructura de datos desde el inicio, intentar arreglarlo después es como intentar reparar una casa tras construir los cimientos torcidos.",
+      },
+      { type: "h3", id: "tiempo-es-oro", text: "El tiempo es el factor más valioso" },
+      {
+        type: "p",
+        text: "Cuando lanzas un sitio nuevo, Google lo observa. En los primeros 3-6 meses, Googlebot está analizando activamente tu estructura, tu contenido y tu autoridad. Si en ese período pones las bases correctas, acumulas ventaja. Si pones las bases incorrectas y esperas 6 meses para darte cuenta, luego otros 6 meses para arreglarlo, acabas siendo invisible al mercado cuando finalmente estés listo para posicionar.",
+      },
+      { type: "h2", id: "5-errores-fatales", text: "Los 5 errores que matan las chances desde el inicio" },
+      {
+        type: "p",
+        text: "Estos son los errores que vemos constantemente en sitios nuevos. No son errores pequeños: son el tipo de decisiones que te perseguirán durante años si no las corriges desde el inicio.",
+      },
+      { type: "h3", id: "error-1-urls", text: "Error 1: URLs mal diseñadas" },
+      {
+        type: "p",
+        text: "Muchos sitios nuevos usan URLs como: /blog/123, /servicio/456, /articulos/post. Los buscadores no entienden qué trata ese contenido solo por ver un número. Las URLs correctas son descriptivas: /blog/como-posicionar-sitio-web, /servicios/diseno-web-conversiones, /recursos/guia-seo-local. Una URL legible para humanos es legible para Google y, además, te posiciona mejor porque contiene tus palabras clave.",
+      },
+      {
+        type: "quote",
+        text: "Tu URL es la primera oportunidad que tienes de decirle a Google de qué trata tu página. No la desaproveches con números o IDs.",
+      },
+      { type: "h3", id: "error-2-sin-estructura", text: "Error 2: Crear sin estructura SEO" },
+      {
+        type: "p",
+        text: "La estructura de carpetas importa. Si tu sitio tiene servicios pero todos los artículos están en /blog sin subcategorías, pierdes oportunidades de crear autoridad por tópico. Una estructura inteligente sería: /servicios/diseno-web, /servicios/seo-local, /blog/diseno-web/*, /blog/seo-local/*. Esto le dice a Google qué temas dominas y agrupa tu autoridad en esos tópicos, en lugar de dispersarla.",
+      },
+      { type: "h3", id: "error-3-metadata", text: "Error 3: Metadatos incompletos o genéricos" },
+      {
+        type: "p",
+        text: "Cada página debe tener un título único (máximo 60 caracteres) y una descripción única (máximo 160 caracteres). Muchos sitios nuevos usan títulos genéricos como 'Página de servicios' o descripciones copiadas en todas las páginas. Eso no posiciona. Cada página debe tener metadatos únicos y optimizados que incluyan tu palabra clave principal y comuniquen claramente qué espera encontrar el usuario.",
+      },
+      { type: "h3", id: "error-4-velocidad", text: "Error 4: Lanzar lento desde el día 1" },
+      {
+        type: "p",
+        text: "Muchos sitios nuevos lanzan sin optimizar imágenes, sin configurar caché o sin elegir un buen hosting. Desde el primer día, tienes un sitio que tarda 5 segundos en cargar. Google nota esto y te penaliza en rankings. Es así de simple: velocidad lenta = menos ranking. Tu sitio debe cargar en menos de 2 segundos desde el día de lanzamiento, no después de 6 meses de optimización.",
+      },
+      { type: "h3", id: "error-5-contenido", text: "Error 5: Contenido sin intención de posicionamiento" },
+      {
+        type: "p",
+        text: "El contenido genérico sin palabras clave investigadas no posiciona. Si escribes un artículo sobre 'diseño web' sin antes analizar qué búsquedas reales hace tu público, qué competencia existe y cuál es el volumen de búsqueda real, estás creando contenido que nadie buscará. Antes de escribir una sola palabra, debes investigar qué preguntas hace tu cliente ideal en Google y qué competencia existe por esas palabras.",
+      },
+      { type: "h2", id: "checklist-creacion", text: "Checklist antes de lanzar tu sitio" },
+      {
+        type: "p",
+        text: "Si estás a punto de lanzar un sitio nuevo o rediseñar el existente, verifica estos puntos antes de ir a producción. Esto es no negociable si quieres que tu sitio posicione desde el inicio.",
+      },
+      {
+        type: "p",
+        text: "✓ URLs descriptivas y amigables para cada página. ✓ Títulos únicos (máximo 60 caracteres) con palabra clave en cada página. ✓ Descripciones únicas (máximo 160 caracteres) que describan el contenido. ✓ Tiempo de carga menor a 2 segundos. ✓ Imágenes optimizadas en WebP con alt text. ✓ Schema Markup implementado (al menos para tu negocio local). ✓ Sitemap.xml actualizado y enviado a Google Search Console. ✓ Robots.txt correcto. ✓ Versión móvil perfectamente funcional. ✓ Contenido de al menos 500 palabras por página de servicio. ✓ Enlaces internos estratégicos entre páginas relacionadas.",
+      },
+      { type: "h2", id: "siguiente-paso-sitio", text: "El siguiente paso" },
+      {
+        type: "p",
+        text: "Si ya tienes un sitio lanzado y cometiste algunos de estos errores, no es fin del mundo. Se pueden arreglar. Pero cuanto antes, mejor. Si estás a punto de lanzar un sitio nuevo, usa este checklist y asegúrate de comenzar bien. Los primeros 6 meses de un sitio nuevo son críticos. Invierte en hacerlo correctamente desde el inicio y verás resultados exponencialmente mejores en posicionamiento.",
+      },
+      {
+        type: "p",
+        text: "Cuéntanos tu caso: ¿estás a punto de crear un sitio nuevo o necesitas auditar uno existente? Te ayudamos a identificar si comete algunos de estos errores y cómo corregirlos para posicionar más rápido.",
+      },
+    ],
+  },
+  {
     id: "tipografia-color-espacio-diseno-web",
     title: "Tipografía, color y espacio: los 3 pilares del diseño web profesional",
     excerpt:
