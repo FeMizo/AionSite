@@ -30,6 +30,7 @@ export const blogPosts: BlogPost[] = [
     title: "Tipografía, color y espacio: los 3 pilares del diseño web profesional",
     excerpt:
       "El 94% de las primeras impresiones de un sitio dependen del diseño visual. Descubre cómo la tipografía, el color y el espacio blanco transforman tu sitio en uno que genera confianza y ventas.",
+    image: "/blog/tipografia-color-espacio.webp",
     badgeText: "Diseño Visual & UX",
     date: "11 de mayo, 2026",
     dateISO: "2026-05-11",
