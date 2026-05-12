@@ -95,6 +95,14 @@ export type ContactFormSectionData = {
   whatsappLink: string;
 };
 
+export type UrgencyBannerSectionData = {
+  title: string;
+  subtitle: string;
+  buttonText: string;
+  buttonLink: string;
+  deadline: string;
+};
+
 export type FinalCTASectionData = {
   title: string;
   subtitle: string;
@@ -154,6 +162,7 @@ export type SectionDataMap = {
   pricing: PricingSectionData;
   testimonials: TestimonialsSectionData;
   faq: FAQSectionData;
+  urgencyBanner: UrgencyBannerSectionData;
   sideImageContent: SideImageContentSectionData;
   contactForm: ContactFormSectionData;
   finalCTA: FinalCTASectionData;

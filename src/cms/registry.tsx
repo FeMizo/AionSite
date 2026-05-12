@@ -12,6 +12,7 @@ import { Services } from "@/src/components/sections/Services";
 import { SideImageContent } from "@/src/components/sections/SideImageContent";
 import { Stats } from "@/src/components/sections/Stats";
 import { Testimonials } from "@/src/components/sections/Testimonials";
+import { UrgencyBanner } from "@/src/components/sections/UrgencyBanner";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Blog } from "@/src/components/sections/Blog";
 import { ContactFormSection } from "@/src/components/sections/ContactFormSection";
@@ -227,6 +228,20 @@ export const sectionRegistry: Record<SectionId, SectionRegistryEntry> = {
       },
     ],
   },
+  urgencyBanner: {
+    id: "urgencyBanner",
+    label: "Banner de urgencia",
+    description: "Banner con mensaje de escasez y llamado urgente a la acción.",
+    placement: "main",
+    type: "urgencia",
+    fields: [
+      { key: "title", label: "Título", type: "textarea" },
+      { key: "subtitle", label: "Subtítulo", type: "textarea" },
+      { key: "buttonText", label: "Texto del botón", type: "text" },
+      { key: "buttonLink", label: "Enlace del botón", type: "url" },
+      { key: "deadline", label: "Fecha límite", type: "text" },
+    ],
+  },
   sideImageContent: {
     id: "sideImageContent",
     label: "Imagen lateral + contenido",
@@ -343,6 +358,9 @@ const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> =
       <Testimonials data={content.sections.testimonials.data} />
     ),
     faq: (content) => <FAQ data={content.sections.faq.data} />,
+    urgencyBanner: (content) => (
+      <UrgencyBanner data={content.sections.urgencyBanner.data} />
+    ),
     sideImageContent: (content) => (
       <SideImageContent data={content.sections.sideImageContent.data} />
     ),

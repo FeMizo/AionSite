@@ -65,16 +65,16 @@
       "enabled": true,
       "order": 1,
       "data": {
-        "badgeText": "Diseño web · IA · Automatización para negocios",
-        "title": "Sitios web que trabajan por tu negocio.",
-        "subtitle": "Construimos presencias digitales con SEO técnico, ecommerce modular, automatización e inteligencia artificial para que tu negocio crezca sin depender de anuncios pagados.",
-        "primaryCTA": "Ver planes y precios",
-        "secondaryCTA": "Solicitar auditoría gratuita de mi sitio",
+        "badgeText": "🚀 Más de 35 sitios web entregados con resultados reales",
+        "title": "Sitios web que generan clientes automáticamente.",
+        "subtitle": "Mientras otros pagan miles en anuncios, nosotros creamos presencia digital que atrae, convierte y vende 24/7. SEO técnico + IA + automatización = crecimiento sostenible sin depender de Facebook Ads.",
+        "primaryCTA": "Ver precios y reservar consultoría gratuita",
+        "secondaryCTA": "Ver casos de éxito (+200% en conversiones)",
         "trustBar": [
-          "SEO técnico",
+          "SEO técnico certificado",
           "Ecommerce modular",
           "IA empresarial",
-          "Automatización"
+          "Automatización 24/7"
         ]
       }
     },
@@ -110,10 +110,10 @@
       "enabled": true,
       "order": 3,
       "data": {
-        "title": "Tecnología que trabaja por tu negocio, no al revés.",
-        "description": "Más que un sitio web bonito: integramos SEO técnico, ecommerce modular, automatizaciones e inteligencia artificial para crear una presencia digital que genera oportunidades reales mientras tú te enfocas en hacer crecer tu empresa.",
-        "buttonText": "Solicitar propuesta",
-        "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
+        "title": "Tecnología que genera ingresos pasivos mientras duermes.",
+        "description": "Imagina tener un equipo de ventas trabajando 24/7 sin sueldo. Eso es exactamente lo que conseguimos con nuestros sitios web: SEO que atrae clientes calificados, chatbots que cierran ventas automáticamente, y automatizaciones que eliminan el trabajo manual. Tú solo cosechas los resultados.",
+        "buttonText": "Quiero generar más clientes automáticamente",
+        "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20quiero%20un%20sitio%20web%20que%20genere%20clientes%20automaticamente.",
         "image": "/portfolio/lobbypm.png",
         "reverse": false
       }
@@ -125,15 +125,15 @@
       "data": [
         {
           "value": "+35",
-          "label": "Proyectos web entregados"
+          "label": "Sitios web generando clientes"
         },
         {
-          "value": "99%",
-          "label": "Clientes satisfechos"
+          "value": "200%",
+          "label": "Incremento promedio en conversiones"
         },
         {
-          "value": "2x",
-          "label": "Incremento en conversiones"
+          "value": "24/7",
+          "label": "Trabajando para generar leads"
         }
       ]
     },
@@ -281,10 +281,10 @@
           "name": "Esencial",
           "price": "Desde $3,500",
           "features": [
-            "Página de inicio con diseño básico",
-            "Convierte visitantes en clientes con diseños que venden y cargan al instante",
-            "Formulario de contacto",
-            "SEO técnico básico"
+            "Página de conversión que vende automáticamente",
+            "Diseño premium que genera confianza instantánea",
+            "Formulario inteligente que cualifica leads",
+            "SEO técnico básico para aparecer en Google"
           ],
           "recommended": false
         },
@@ -292,12 +292,12 @@
           "name": "Crecimiento",
           "price": "Desde $12,000",
           "features": [
-            "Todo lo del plan Esencial",
-            "Diseño premium a medida",
-            "4 secciones personalizadas",
-            "SEO técnico avanzado",
-            "Automatización de captura de leads",
-            "Soporte 2 meses"
+            "Todo lo del plan Esencial + sitio completo",
+            "Diseño premium que duplica conversiones",
+            "4 secciones estratégicas para vender más",
+            "SEO técnico avanzado + posicionamiento garantizado",
+            "Chatbot IA que cierra ventas 24/7",
+            "Soporte 2 meses incluido"
           ],
           "recommended": true
         },
@@ -305,12 +305,12 @@
           "name": "Mantenimiento + IA",
           "price": "Desde $3,000/mes",
           "features": [
-            "Actualizaciones mensuales",
-            "Optimización de velocidad",
-            "Monitoreo SEO mensual",
-            "Soporte prioritario",
-            "Automatizaciones activas",
-            "Reportes de rendimiento"
+            "Optimizaciones mensuales que aumentan ventas",
+            "Velocidad turbo para mejores posiciones SEO",
+            "Monitoreo continuo de rendimiento",
+            "Soporte prioritario ilimitado",
+            "Automatizaciones activas generando leads",
+            "Reportes semanales de crecimiento"
           ],
           "recommended": false
         },
@@ -318,12 +318,12 @@
           "name": "Ecommerce modular",
           "price": "Desde $20,000",
           "features": [
-            "Tienda en línea modular",
-            "Integración con pasarelas de pago",
-            "Catálogo e inventario escalable",
-            "SEO técnico para ecommerce",
-            "Automatización de pedidos y notificaciones",
-            "Soporte 6 meses"
+            "Tienda que vende mientras duermes",
+            "Pagos automáticos + múltiples métodos",
+            "Catálogo inteligente que aumenta ventas",
+            "SEO ecommerce + ventas orgánicas",
+            "Automatización completa de pedidos",
+            "Soporte 6 meses + crecimiento garantizado"
           ],
           "recommended": false
         }
@@ -386,16 +386,28 @@
         }
       ]
     },
+    "urgencyBanner": {
+      "id": "urgencyBanner",
+      "enabled": true,
+      "order": 9,
+      "data": {
+        "title": "⚡ Oportunidad limitada: Consultoría gratuita por tiempo limitado",
+        "subtitle": "Solo quedan 2 cupos disponibles para este mes. Nuestros próximos proyectos están programados hasta junio. No pierdas la oportunidad de tener un sitio web que genere clientes automáticamente.",
+        "buttonText": "Reservar mi cupo GRATIS ahora",
+        "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20quiero%20reservar%20mi%20cupo%20para%20la%20consultoria%20gratuita%20antes%20de%20que%20se%20acaben.",
+        "deadline": "Disponible solo hasta el 15 de mayo"
+      }
+    },
     "contactForm": {
       "id": "contactForm",
       "enabled": true,
-      "order": 10,
+      "order": 11,
       "data": {
-        "title": "Hablemos de tu proyecto",
-        "subtitle": "Cuéntanos qué necesitas y te respondemos con una propuesta a tu medida.",
+        "title": "Últimas oportunidades disponibles - Reserva tu consultoría gratuita",
+        "subtitle": "Solo atendemos 3 proyectos nuevos por mes para garantizar calidad premium. Si estás listo para duplicar tus clientes online, este es el momento. Primera consultoría sin costo + presupuesto personalizado en 24 horas.",
         "email": "contacto@aionsite.com.mx",
-        "responseText": "Respuesta en menos de 24 horas",
-        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web."
+        "responseText": "Respuesta garantizada en menos de 4 horas",
+        "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20estoy%20listo%20para%20duplicar%20mis%20clientes%20online.%20Quiero%20mi%20consultoria%20gratuita."
       }
     },
     "finalCTA": {
@@ -595,6 +607,7 @@
     "pricing",
     "testimonials",
     "faq",
+    "urgencyBanner",
     "contactForm",
     "finalCTA",
     "sideImageContent",

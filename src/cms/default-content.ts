@@ -265,6 +265,18 @@ export const defaultCmsContent: CmsContent = {
         },
       ],
     },
+    urgencyBanner: {
+      id: "urgencyBanner",
+      enabled: true,
+      order: 9,
+      data: {
+        title: "⚡ Oportunidad limitada: Consultoría gratuita por tiempo limitado",
+        subtitle: "Solo quedan 2 cupos disponibles para este mes. Nuestros próximos proyectos están programados hasta junio. No pierdas la oportunidad de tener un sitio web que genere clientes automáticamente.",
+        buttonText: "Reservar mi cupo GRATIS ahora",
+        buttonLink: getWhatsAppLink("Hola AionSite, quiero reservar mi cupo para la consultoria gratuita antes de que se acaben."),
+        deadline: "Disponible solo hasta el 15 de mayo",
+      },
+    },
     contactForm: {
       id: "contactForm",
       enabled: true,
