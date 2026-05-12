@@ -7,6 +7,7 @@ import { Container } from "@/src/components/ui/Container";
 import { Card } from "@/src/components/ui/Card";
 import { Reveal } from "@/src/components/ui/Reveal";
 import { ContactForm } from "@/src/components/ui/ContactForm";
+import { markPopupAsCompleted } from "@/src/components/ui/DashboardPopup";
 
 export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
   const [isSent, setIsSent] = useState(false);
@@ -84,7 +85,10 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
             ) : (
               <ContactForm 
                 showPhone={true}
-                onSuccess={() => setIsSent(true)}
+                onSuccess={() => {
+                  setIsSent(true);
+                  markPopupAsCompleted();
+                }}
               >
                 <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />

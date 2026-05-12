@@ -10,6 +10,7 @@ import {
   initialCmsContent,
   renderCmsSection,
 } from "@/src/cms/site-content";
+import { DashboardPopup } from "@/src/components/ui/DashboardPopup";
 import type { CmsContent } from "@/src/cms/types";
 
 export function PublicSite({
@@ -58,6 +59,7 @@ export function PublicSite({
       {floatingSections.map((id, index) => (
         <div key={`floating-${id}-${index}`}>{renderCmsSection(id, content)}</div>
       ))}
+      <DashboardPopup />
     </>
   );
 }

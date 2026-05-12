@@ -38,7 +38,7 @@ export function ContactForm({
         ? `${form.message}\n\nTeléfono: ${form.phone}`
         : form.message;
         
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: form.name, email: form.email, message: messageWithPhone }),

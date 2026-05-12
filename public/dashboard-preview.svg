@@ -1,0 +1,56 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0f172a"/>
+  
+  <!-- Dashboard header -->
+  <rect width="400" height="40" fill="#1e293b"/>
+  
+  <!-- Logo/Title area -->
+  <rect x="20" y="50" width="100" height="20" rx="4" fill="#3b82f6" opacity="0.3"/>
+  
+  <!-- Main content area -->
+  <!-- Metric card 1 -->
+  <g>
+    <rect x="20" y="80" width="160" height="100" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="30" y="90" width="50" height="8" rx="4" fill="#3b82f6" opacity="0.4"/>
+    <rect x="30" y="105" width="60" height="12" rx="4" fill="#60a5fa"/>
+    <rect x="30" y="125" width="80" height="4" rx="2" fill="#64748b"/>
+    <rect x="30" y="135" width="70" height="4" rx="2" fill="#64748b"/>
+    <rect x="30" y="145" width="60" height="4" rx="2" fill="#64748b"/>
+    <rect x="30" y="155" width="40" height="4" rx="2" fill="#64748b"/>
+  </g>
+  
+  <!-- Metric card 2 -->
+  <g>
+    <rect x="190" y="80" width="160" height="100" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="200" y="90" width="50" height="8" rx="4" fill="#3b82f6" opacity="0.4"/>
+    <rect x="200" y="105" width="60" height="12" rx="4" fill="#60a5fa"/>
+    <rect x="200" y="125" width="80" height="4" rx="2" fill="#64748b"/>
+    <rect x="200" y="135" width="70" height="4" rx="2" fill="#64748b"/>
+    <rect x="200" y="145" width="60" height="4" rx="2" fill="#64748b"/>
+    <rect x="200" y="155" width="40" height="4" rx="2" fill="#64748b"/>
+  </g>
+  
+  <!-- Chart visualization -->
+  <g>
+    <rect x="20" y="195" width="330" height="80" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    
+    <!-- Chart bars -->
+    <rect x="40" y="250" width="12" height="15" rx="2" fill="#60a5fa"/>
+    <rect x="60" y="235" width="12" height="30" rx="2" fill="#60a5fa"/>
+    <rect x="80" y="220" width="12" height="45" rx="2" fill="#60a5fa"/>
+    <rect x="100" y="240" width="12" height="25" rx="2" fill="#60a5fa"/>
+    <rect x="120" y="215" width="12" height="50" rx="2" fill="#3b82f6"/>
+    <rect x="140" y="225" width="12" height="40" rx="2" fill="#60a5fa"/>
+    <rect x="160" y="235" width="12" height="30" rx="2" fill="#60a5fa"/>
+    <rect x="180" y="245" width="12" height="20" rx="2" fill="#60a5fa"/>
+    <rect x="200" y="255" width="12" height="10" rx="2" fill="#60a5fa"/>
+    
+    <!-- Chart label -->
+    <rect x="40" y="205" width="100" height="6" rx="3" fill="#3b82f6" opacity="0.3"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="370" cy="30" r="3" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="380" cy="40" r="2" fill="#3b82f6" opacity="0.3"/>
+</svg>

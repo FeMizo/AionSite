@@ -21,6 +21,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# php credentials (upload manually via FTP)
+/public/api/smtp_config.php
+
 # system
 .DS_Store
 Thumbs.db

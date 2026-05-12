@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/src/components/ui/Button";
 import { Loader2, CheckCircle, AlertCircle, Mail } from "lucide-react";
+import { markPopupAsCompleted } from "@/src/components/ui/DashboardPopup";
 
 export function NewsletterSignup() {
   const [email, setEmail] = useState("");
@@ -32,6 +33,7 @@ export function NewsletterSignup() {
       setStatus("success");
       setMessage("¡Gracias por suscribirte! Revisa tu email para confirmar.");
       setEmail("");
+      markPopupAsCompleted();
     } catch (error) {
       setStatus("error");
       setMessage("Hubo un error. Inténtalo de nuevo.");

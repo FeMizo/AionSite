@@ -1,0 +1,6 @@
+# Deny direct HTTP access to internal PHP files.
+# PHP include/require still works server-side.
+<FilesMatch "^(_smtp|smtp_config)\.php$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
