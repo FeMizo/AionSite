@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { Container } from "@/src/components/ui/Container";
-import { Button } from "@/src/components/ui/Button";
+import { LinkButton } from "@/src/components/ui/LinkButton";
 import type { UrgencyBannerSectionData } from "@/src/cms/types";
 
 export function UrgencyBanner({
@@ -22,14 +21,15 @@ export function UrgencyBanner({
             ⏰ {data.deadline}
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link
+            <LinkButton
               href={data.buttonLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-medium text-red-600 transition-colors hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50"
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-blue-50"
             >
               {data.buttonText}
-            </Link>
+            </LinkButton>
           </div>
         </div>
       </Container>

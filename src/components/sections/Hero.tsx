@@ -39,13 +39,13 @@ export function Hero({
   const panelX = useTransform(smoothX, [0, 900], [-18, 18]);
   const panelY = useTransform(smoothY, [0, 700], [-14, 14]);
 
-  const [city, setCity] = useState("Cancún");
+  const [city, setCity] = useState("Carmen");
 
   useEffect(() => {
     fetch("/api/location")
       .then((res) => res.json())
       .then((data) => setCity(data.city))
-      .catch(() => setCity("Cancún"));
+      .catch(() => setCity("Carmen"));
   }, []);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
