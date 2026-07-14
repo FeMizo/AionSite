@@ -38,8 +38,12 @@ function requireEnv(env, key) {
 }
 
 function normalizeRemotePath(remoteDir, fileName) {
-  const cleanDir = remoteDir.replaceAll("\\", "/").replace(/^\/+|\/+$/g, "");
-  return `${cleanDir}/${fileName}`;
+  const normalizedDir = remoteDir.replaceAll("\\", "/").replace(/\/+$/g, "");
+  const cleanDir = normalizedDir.replace(/^\/+/g, "");
+  return {
+    publicPath: `${cleanDir}/${fileName}`,
+    uploadPath: `${normalizedDir.startsWith("/") ? "/" : ""}${cleanDir}/${fileName}`,
+  };
 }
 
 function normalizeFtpHost(host) {
@@ -55,8 +59,9 @@ function normalizePublicUrl(baseUrl, remotePath) {
   const normalizedBaseUrl = baseUrl.includes("://") ? baseUrl : `https://${baseUrl}`;
   const url = new URL(normalizedBaseUrl);
   const pathParts = remotePath.split("/").filter(Boolean);
-  if (pathParts[0] === "public_html") {
-    pathParts.shift();
+  const publicHtmlIndex = pathParts.lastIndexOf("public_html");
+  if (publicHtmlIndex >= 0) {
+    pathParts.splice(0, publicHtmlIndex + 1);
   }
   url.pathname = `/${pathParts.map(encodeURIComponent).join("/")}`;
   return url.toString();
@@ -82,7 +87,7 @@ async function run() {
   const remoteDir = env.FTP_REMOTE_DIR || "public_html/social";
   const fileName = path.basename(absoluteFile);
   const remotePath = normalizeRemotePath(remoteDir, fileName);
-  const ftpUrl = `ftp://${host}:${port}/${remotePath}`;
+  const ftpUrl = `ftp://${host}:${port}/${remotePath.uploadPath}`;
 
   await new Promise((resolve, reject) => {
     const child = spawn(
@@ -105,7 +110,7 @@ async function run() {
     });
   });
 
-  console.log(normalizePublicUrl(appUrl, remotePath));
+  console.log(normalizePublicUrl(appUrl, remotePath.publicPath));
 }
 
 run().catch((error) => {
