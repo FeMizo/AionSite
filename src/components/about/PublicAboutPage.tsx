@@ -12,6 +12,8 @@ import {
   PenTool,
   ShoppingBag,
 } from "lucide-react";
+import { motion } from "motion/react";
+import type { Variants } from "motion/react";
 import {
   loadAboutContentFromBrowser,
   loadAboutContentFromFile,
@@ -72,6 +74,11 @@ const differentiatorIcons = [
 
 const ABOUT_LANGUAGE_STORAGE_KEY = "aionsite.about.language";
 
+const ABOUT_REVEAL: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+};
+
 export function PublicAboutPage({
   initialContent,
 }: {
@@ -117,13 +124,18 @@ export function PublicAboutPage({
       <Header base={base} data={headerData} />
 
       <main className="min-h-screen">
-        <section className="relative overflow-hidden pb-16 pt-32 md:pb-24 md:pt-44">
-          <div className="absolute left-1/2 top-0 -z-10 h-160 w-200 -translate-x-1/2 rounded-full bg-blue-600/18 blur-[140px]" />
-          <div className="absolute right-0 top-36 -z-10 h-96 w-96 rounded-full bg-violet-500/10 blur-[120px]" />
+        <section className="relative overflow-hidden pb-16 pt-32 md:pb-24 md:pt-40">
+          <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_22%_18%,rgba(37,99,235,0.26),transparent_32%),radial-gradient(circle_at_78%_10%,rgba(124,58,237,0.18),transparent_30%),linear-gradient(180deg,#020617_0%,#0f172a_58%,#020617_100%)]" />
+          <div className="absolute left-1/2 top-28 -z-10 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full border border-white/8" />
+          <div className="absolute left-1/2 top-44 -z-10 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full border border-blue-300/15" />
 
           <Container>
-            <div className="grid gap-12 xl:grid-cols-[minmax(0,1.25fr)_420px] xl:items-end">
-              <div>
+            <div className="grid gap-12 xl:grid-cols-[minmax(0,1.08fr)_minmax(380px,0.92fr)] xl:items-center">
+              <motion.div
+                initial="hidden"
+                animate="show"
+                variants={ABOUT_REVEAL}
+              >
                 <div className="mb-6 flex flex-wrap items-center gap-3">
                   <span className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
                     {uiCopy.switchLabel}
@@ -198,33 +210,68 @@ export function PublicAboutPage({
                     {uiCopy.viewLinkedIn}
                   </LinkButton>
                 </div>
-              </div>
+              </motion.div>
 
-              <Card className="rounded-[2rem] p-6 md:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-300">
-                  {uiCopy.snapshot}
-                </p>
-                <div className="mt-6 grid gap-4">
-                  {localizedContent.hero.highlights.map((item) => (
-                    <div
+              <motion.div
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="relative min-h-[460px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 shadow-[0_42px_90px_-54px_rgba(59,130,246,0.9)]"
+              >
+                <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(37,99,235,0.22),transparent_42%,rgba(124,58,237,0.18)),radial-gradient(circle_at_50%_40%,rgba(14,165,233,0.16),transparent_34%)]" />
+                <div className="relative z-10 flex items-center justify-between text-xs uppercase tracking-[0.24em] text-slate-400">
+                  <span>{uiCopy.snapshot}</span>
+                  <span className="text-blue-300">Interactive profile</span>
+                </div>
+
+                <motion.div
+                  className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-300/20"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.div
+                  className="absolute left-1/2 top-1/2 h-88 w-88 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-300/15"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
+                />
+
+                <div className="relative z-10 mt-20 grid gap-4">
+                  {localizedContent.hero.highlights.map((item, index) => (
+                    <motion.div
                       key={item.label}
-                      className="rounded-2xl border border-white/8 bg-white/[0.04] px-5 py-5"
+                      className="rounded-2xl border border-white/10 bg-slate-950/62 px-5 py-5 backdrop-blur"
+                      animate={{
+                        x: index % 2 === 0 ? [0, 10, 0] : [0, -10, 0],
+                      }}
+                      transition={{
+                        duration: 6 + index,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
                     >
-                      <p className="font-display text-2xl font-semibold tabular-nums text-white">{item.value}</p>
+                      <p className="font-display text-2xl font-semibold tabular-nums text-white">
+                        {item.value}
+                      </p>
                       <p className="mt-2 text-sm leading-relaxed text-slate-400">
                         {item.label}
                       </p>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </Card>
+
+                <div className="absolute bottom-6 left-6 right-6 z-10 flex items-center justify-between border-t border-white/10 pt-5 text-xs uppercase tracking-[0.22em] text-slate-500">
+                  <span>Scroll</span>
+                  <span>to explore</span>
+                </div>
+              </motion.div>
             </div>
           </Container>
         </section>
 
-        <section className="py-24">
+        <section className="relative overflow-hidden py-24">
+          <div className="absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-blue-300/30 to-transparent" />
           <Container>
-            <div className="grid gap-10 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+            <div className="grid gap-10 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] xl:items-start">
               <div>
                 <SectionHeading
                   title={localizedContent.intro.title}
@@ -237,14 +284,29 @@ export function PublicAboutPage({
                 </p>
               </div>
 
-              <div className="grid gap-5">
-                {localizedContent.intro.principles.map((principle) => (
-                  <Card key={principle.title} className="p-6">
-                    <h3 className="text-lg font-semibold text-white">{principle.title}</h3>
+              <div className="grid gap-4">
+                {localizedContent.intro.principles.map((principle, index) => (
+                  <motion.div
+                    key={principle.title}
+                    className="group relative overflow-hidden border-t border-white/10 py-7"
+                    initial={{ opacity: 0, x: 28 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.55, delay: index * 0.08 }}
+                  >
+                    <div className="absolute inset-y-0 left-0 w-px bg-blue-300/0 transition-colors group-hover:bg-blue-300/60" />
+                    <div className="flex gap-5">
+                      <span className="font-display text-3xl font-semibold text-blue-300/50">
+                        0{index + 1}
+                      </span>
+                      <div>
+                    <h3 className="text-xl font-semibold text-white">{principle.title}</h3>
                     <p className="mt-3 leading-relaxed text-slate-400">
                       {principle.description}
                     </p>
-                  </Card>
+                      </div>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
