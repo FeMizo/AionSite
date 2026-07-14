@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "AionSite Social Assets"
+AuthUserFile /home/u921573884/domains/aionsite.com.mx/public_html/social/private/.htpasswd
+Require valid-user
+
+Options -Indexes
