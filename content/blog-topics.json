@@ -1,0 +1,86 @@
+[
+  {
+    "topic": "Por que crear una pagina web profesional cambia la forma en que te encuentran",
+    "primaryKeyword": "crear pagina web profesional",
+    "badgeText": "Creacion Web",
+    "audience": "duenos de negocios que dependen de recomendaciones, redes sociales o mensajes directos",
+    "angle": "explicar como un sitio web convierte busquedas, referencias y visitas en confianza, prospectos y ventas medibles"
+  },
+  {
+    "topic": "Que gana un negocio al estar online con un sitio web propio",
+    "primaryKeyword": "negocio online con sitio web",
+    "badgeText": "Presencia Digital",
+    "audience": "negocios locales y empresas pequenas que aun no tienen sitio web",
+    "angle": "mostrar beneficios concretos de estar online: visibilidad 24/7, autoridad, captacion de leads, control del mensaje y medicion"
+  },
+  {
+    "topic": "Sitio web plus: que debe incluir una pagina que no solo se ve bien",
+    "primaryKeyword": "sitio web profesional completo",
+    "badgeText": "Sitio Web Plus",
+    "audience": "empresas que quieren una pagina web mas completa que una landing basica",
+    "angle": "definir el valor plus de un sitio con SEO tecnico, velocidad, formularios, analitica, WhatsApp, estructura de contenido y mantenimiento"
+  },
+  {
+    "topic": "Mantenimiento web: por que tu sitio necesita cuidado despues de publicarse",
+    "primaryKeyword": "mantenimiento web",
+    "badgeText": "Mantenimiento Web",
+    "audience": "duenos de sitios publicados que no revisan rendimiento, seguridad ni contenido",
+    "angle": "explicar mantenimiento como proteccion de inversion: actualizaciones, backups, velocidad, contenido, errores, formularios y SEO"
+  },
+  {
+    "topic": "Optimizacion web: como mejorar una pagina que ya esta online",
+    "primaryKeyword": "optimizacion web",
+    "badgeText": "Optimizacion Web",
+    "audience": "negocios con sitio existente que no genera suficientes contactos o carga lento",
+    "angle": "mostrar un proceso practico para mejorar velocidad, mensajes, llamadas a accion, metadata, imagenes y medicion sin rehacer todo"
+  },
+  {
+    "topic": "Crear una pagina web desde cero: que decisiones tomar antes de disenar",
+    "primaryKeyword": "crear pagina web desde cero",
+    "badgeText": "Creacion & Estrategia",
+    "audience": "emprendedores y negocios que estan por invertir en su primera pagina web",
+    "angle": "ordenar las decisiones previas: objetivo, audiencia, servicios, contenido, plataforma, SEO, presupuesto y plan de lanzamiento"
+  },
+  {
+    "topic": "Como elegir entre WordPress, Shopify y Next.js para un sitio de negocio",
+    "primaryKeyword": "WordPress Shopify Next.js",
+    "badgeText": "Estrategia Web",
+    "audience": "duenos de negocios en Mexico que necesitan elegir plataforma web",
+    "angle": "comparar costo, velocidad, SEO, mantenimiento y escalabilidad sin vender una opcion unica"
+  },
+  {
+    "topic": "Checklist de SEO tecnico antes de publicar una pagina nueva",
+    "primaryKeyword": "checklist SEO tecnico",
+    "badgeText": "SEO Tecnico",
+    "audience": "negocios y equipos de marketing que publican contenido web",
+    "angle": "dar una lista accionable para evitar errores de indexacion, metadata, velocidad y estructura"
+  },
+  {
+    "topic": "Como una landing page convierte visitas en prospectos calificados",
+    "primaryKeyword": "landing page que convierte",
+    "badgeText": "Conversion & CRO",
+    "audience": "empresas de servicios que reciben trafico pero pocos contactos",
+    "angle": "explicar propuesta de valor, prueba social, llamados a accion y friccion del formulario"
+  },
+  {
+    "topic": "Automatizaciones simples que ahorran tiempo en un negocio local",
+    "primaryKeyword": "automatizacion para negocios locales",
+    "badgeText": "Automatizacion",
+    "audience": "negocios locales que atienden leads por WhatsApp, correo o formularios",
+    "angle": "mostrar automatizaciones practicas para seguimiento, respuestas, reportes y recordatorios"
+  },
+  {
+    "topic": "Por que la velocidad web afecta ventas, SEO y confianza",
+    "primaryKeyword": "velocidad web ventas SEO",
+    "badgeText": "Performance Web",
+    "audience": "duenos de sitios que no saben si su web lenta les cuesta clientes",
+    "angle": "conectar Core Web Vitals con perdida de prospectos y acciones concretas de mejora"
+  },
+  {
+    "topic": "Como estructurar servicios web para posicionar en Google",
+    "primaryKeyword": "estructura SEO servicios web",
+    "badgeText": "SEO & Arquitectura",
+    "audience": "empresas con varios servicios que quieren mejorar su posicionamiento organico",
+    "angle": "explicar arquitectura, URLs, enlaces internos, contenido pilar y paginas de servicio"
+  }
+]
