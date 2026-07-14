@@ -9,7 +9,7 @@ export function UrgencyBanner({
   data: UrgencyBannerSectionData;
 }) {
   return (
-    <section className="bg-gradient-to-r from-red-600 to-orange-600 py-8">
+    <section className="bg-gradient-to-r from-blue-400 to-blue-600 py-8">
       <Container>
         <div className="text-center">
           <h2 className="mb-2 text-xl font-bold text-white md:text-2xl">
