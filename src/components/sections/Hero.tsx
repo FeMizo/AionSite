@@ -84,7 +84,7 @@ export function Hero({
               Agencia de diseño web en {city}
             </motion.div>
 
-            <h1 className="max-w-5xl font-display text-[clamp(3.2rem,8vw,7.8rem)] font-bold leading-[0.88] text-white">
+            <h1 className="max-w-5xl font-display text-[clamp(2.5rem,8vw,7.8rem)] font-bold leading-[0.88] text-white">
               {data.title.split(" ").slice(0, 4).join(" ")}
               <motion.span
                 className="mt-3 block bg-linear-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text pb-2 text-transparent"

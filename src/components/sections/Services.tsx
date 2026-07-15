@@ -1,8 +1,28 @@
 "use client";
 
-import { useState, type ComponentType } from "react";
-import { Bot, Globe, ShoppingBag, Target, TrendingUp, Zap } from "lucide-react";
-import { motion, useMotionTemplate, useMotionValue, useSpring } from "motion/react";
+import {
+  useRef,
+  useState,
+  type ComponentType,
+  type CSSProperties,
+  type MouseEvent,
+  type PointerEvent,
+} from "react";
+import {
+  Bot,
+  Globe,
+  ShoppingBag,
+  Target,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+  type MotionProps,
+} from "motion/react";
 import type { ServicesSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import {
@@ -94,11 +114,39 @@ function InteractiveServiceCard({
   active,
   index,
   onActivate,
+  className = "",
+  style,
+  animate,
+  transition,
+  drag,
+  dragConstraints,
+  dragElastic,
+  onDragEnd,
+  whileDrag,
+  onPointerDown,
+  onPointerUp,
+  onMouseDown,
+  onMouseUp,
+  onClick,
 }: {
   service: ServicesSectionData[number];
   active: boolean;
   index: number;
   onActivate: () => void;
+  className?: string;
+  style?: CSSProperties;
+  animate?: MotionProps["animate"];
+  transition?: MotionProps["transition"];
+  drag?: MotionProps["drag"];
+  dragConstraints?: MotionProps["dragConstraints"];
+  dragElastic?: MotionProps["dragElastic"];
+  onDragEnd?: MotionProps["onDragEnd"];
+  whileDrag?: MotionProps["whileDrag"];
+  onPointerDown?: (event: PointerEvent<HTMLButtonElement>) => void;
+  onPointerUp?: (event: PointerEvent<HTMLButtonElement>) => void;
+  onMouseDown?: (event: MouseEvent<HTMLButtonElement>) => void;
+  onMouseUp?: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }) {
   const Icon = iconMap[service.icon] ?? Globe;
   const colors = iconColors[service.icon] ?? iconColors.Globe;
@@ -113,6 +161,7 @@ function InteractiveServiceCard({
     <motion.button
       type="button"
       variants={FADE_UP_ANIMATION_VARIANTS}
+      onClick={onClick ?? onActivate}
       onMouseEnter={onActivate}
       onFocus={onActivate}
       onMouseMove={(event) => {
@@ -122,11 +171,23 @@ function InteractiveServiceCard({
       }}
       whileHover={{ y: -8, scale: 1.015 }}
       whileTap={{ scale: 0.99 }}
+      style={style}
+      animate={animate}
+      transition={transition}
+      drag={drag}
+      dragConstraints={dragConstraints}
+      dragElastic={dragElastic}
+      onDragEnd={onDragEnd}
+      whileDrag={whileDrag}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
       className={`group relative min-h-[210px] overflow-hidden rounded-2xl border p-6 text-left transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
         active
-          ? "border-blue-300/45 bg-slate-900/90"
-          : "border-white/10 bg-slate-900/48 hover:border-blue-300/35"
-      }`}
+          ? "border-blue-300/45 bg-slate-900"
+          : "border-white/10 bg-slate-900 hover:border-blue-300/35"
+      } ${className}`}
     >
       <motion.div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -172,9 +233,38 @@ function InteractiveServiceCard({
 
 export function Services({ data }: { data: ServicesSectionData }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const dragStartX = useRef<number | null>(null);
+  const didSwipe = useRef(false);
   const activeService = data[activeIndex] ?? data[0];
   const ActiveIcon = iconMap[activeService?.icon] ?? Globe;
   const activeFlow = getServiceFlow(activeService?.icon ?? "Globe");
+
+  function showPreviousService() {
+    setActiveIndex((current) => (current === 0 ? data.length - 1 : current - 1));
+  }
+
+  function showNextService() {
+    setActiveIndex((current) => (current + 1) % data.length);
+  }
+
+  function finishSwipe(clientX: number) {
+    if (dragStartX.current === null) {
+      return;
+    }
+
+    const delta = clientX - dragStartX.current;
+    dragStartX.current = null;
+
+    if (delta < -45) {
+      didSwipe.current = true;
+      showNextService();
+    }
+
+    if (delta > 45) {
+      didSwipe.current = true;
+      showPreviousService();
+    }
+  }
 
   return (
     <section id="servicios" className="relative overflow-hidden bg-slate-950 py-24">
@@ -236,19 +326,117 @@ export function Services({ data }: { data: ServicesSectionData }) {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            variants={CONTAINER_ANIMATION_VARIANTS}
-            className="grid gap-5 sm:grid-cols-2"
-          >
-            {data.map((service, index) => (
-              <InteractiveServiceCard
-                key={service.title}
-                service={service}
-                active={activeIndex === index}
-                index={index}
-                onActivate={() => setActiveIndex(index)}
-              />
-            ))}
+          <motion.div variants={CONTAINER_ANIMATION_VARIANTS}>
+            <div className="sm:hidden">
+              <div className="relative mx-auto min-h-[340px] md:min-h-[300px] md:max-w-[340px] overflow-hidden">
+                {data.map((service, index) => {
+                  const depth = (index - activeIndex + data.length) % data.length;
+                  const visible = depth < 4;
+                  const isActive = depth === 0;
+                  const stackTransforms = [
+                    { x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 },
+                    { x: -10, y: 26, rotate: -5, scale: 0.8, opacity: 0.78 },
+                    { x: 10, y: 26, rotate: 5, scale: 0.80, opacity: 0.78 },
+                    { x: 0, y: 44, rotate: 0, scale: 0.75, opacity: 0.5 },
+                  ] as const;
+                  const transform = stackTransforms[depth] ?? {
+                    x: 0,
+                    y: 48,
+                    rotate: 0,
+                    scale: 0.82,
+                    opacity: 0,
+                  };
+
+                  return (
+                    <InteractiveServiceCard
+                      key={service.title}
+                      service={service}
+                      active={activeIndex === index}
+                      index={index}
+                      onActivate={() => setActiveIndex(index)}
+                      onClick={() => {
+                        if (didSwipe.current) {
+                          didSwipe.current = false;
+                          return;
+                        }
+
+                        setActiveIndex(index);
+                      }}
+                      className="!absolute inset-x-5 top-2"
+                      style={{
+                        zIndex: 40 - depth,
+                        pointerEvents: visible ? "auto" : "none",
+                      }}
+                      animate={{
+                        opacity: visible ? transform.opacity : 0,
+                        x: transform.x,
+                        y: transform.y,
+                        rotate: transform.rotate,
+                        scale: transform.scale,
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 28,
+                        mass: 0.7,
+                      }}
+                      drag={isActive ? "x" : false}
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={0.38}
+                      whileDrag={{
+                        scale: 1.02,
+                        rotate: 0,
+                      }}
+                      onPointerDown={(event) => {
+                        if (isActive) {
+                          dragStartX.current = event.clientX;
+                        }
+                      }}
+                      onPointerUp={(event) => {
+                        if (isActive) {
+                          finishSwipe(event.clientX);
+                        }
+                      }}
+                      onMouseDown={(event) => {
+                        if (isActive) {
+                          dragStartX.current = event.clientX;
+                        }
+                      }}
+                      onMouseUp={(event) => {
+                        if (isActive) {
+                          finishSwipe(event.clientX);
+                        }
+                      }}
+                      onDragEnd={(_, info) => {
+                        if (!isActive) {
+                          return;
+                        }
+
+                        if (info.offset.x < -55 || info.velocity.x < -450) {
+                          showNextService();
+                        }
+
+                        if (info.offset.x > 55 || info.velocity.x > 450) {
+                          showPreviousService();
+                        }
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="hidden gap-5 sm:grid sm:grid-cols-2">
+              {data.map((service, index) => (
+                <InteractiveServiceCard
+                  key={service.title}
+                  service={service}
+                  active={activeIndex === index}
+                  index={index}
+                  onActivate={() => setActiveIndex(index)}
+                />
+              ))}
+            </div>
           </motion.div>
         </motion.div>
       </Container>

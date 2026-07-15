@@ -54,8 +54,8 @@ const pageConfig = {
     icon: Layers3,
   },
   about: {
-    label: "About Me",
-    description: "Contenido editable de la pagina About.",
+    label: "Conoceme",
+    description: "Contenido editable de la pagina Conoceme.",
     icon: FileText,
   },
 } as const;
@@ -450,7 +450,7 @@ export function ContentDashboard({
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
               {selectedPageId === "home"
                 ? "Edita el contenido de esta seccion. El orden y la visibilidad se gestionan en el modulo de secciones."
-                : "Edita el contenido de la pagina About desde una estructura organizada por bloques."}
+                : "Edita el contenido de la pagina Conoceme desde una estructura organizada por bloques."}
             </p>
           </div>
         </div>

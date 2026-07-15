@@ -5,22 +5,38 @@ import { withCanonical } from "@/src/lib/metadata";
 import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 
 export const metadata: Metadata = withCanonical("/about", {
-  title: "Nosotros | AionSite — Diseño Web Premium en México",
-  description: "Conoce al equipo detrás de AionSite. Más de 35 proyectos web entregados, especializados en velocidad, conversión y SEO técnico.",
-  keywords: ["nosotros AionSite", "equipo diseño web", "agencia web México", "quiénes somos", "proyectos web entregados"],
+  title: "Conoceme | AionSite - Diseno Web Premium en Mexico",
+  description:
+    "Conoce al equipo detras de AionSite. Mas de 35 proyectos web entregados, especializados en velocidad, conversion y SEO tecnico.",
+  keywords: [
+    "conoceme AionSite",
+    "equipo diseno web",
+    "agencia web Mexico",
+    "quienes somos",
+    "proyectos web entregados",
+  ],
   openGraph: {
-    title: "Nosotros | AionSite — Diseño Web Premium en México",
-    description: "Conoce al equipo detrás de AionSite. Más de 35 proyectos web entregados, especializados en velocidad, conversión y SEO técnico.",
+    title: "Conoceme | AionSite - Diseno Web Premium en Mexico",
+    description:
+      "Conoce al equipo detras de AionSite. Mas de 35 proyectos web entregados, especializados en velocidad, conversion y SEO tecnico.",
     url: "/about",
     siteName: "AionSite",
     type: "website",
     locale: "es_MX",
-    images: [{ url: "/logo-aionsite.png", width: 1200, height: 630, alt: "Nosotros — AionSite" }],
+    images: [
+      {
+        url: "/logo-aionsite.png",
+        width: 1200,
+        height: 630,
+        alt: "Conoceme - AionSite",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nosotros | AionSite — Diseño Web Premium en México",
-    description: "Conoce al equipo detrás de AionSite. Más de 35 proyectos web entregados, especializados en velocidad, conversión y SEO técnico.",
+    title: "Conoceme | AionSite - Diseno Web Premium en Mexico",
+    description:
+      "Conoce al equipo detras de AionSite. Mas de 35 proyectos web entregados, especializados en velocidad, conversion y SEO tecnico.",
     images: ["/logo-aionsite.png"],
   },
 });
@@ -28,7 +44,7 @@ export const metadata: Metadata = withCanonical("/about", {
 export default function AboutPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Nosotros", path: "/about" }]} />
+      <BreadcrumbSchema items={[{ name: "Conoceme", path: "/about" }]} />
       <PublicAboutPage initialContent={initialAboutContent} />
     </>
   );

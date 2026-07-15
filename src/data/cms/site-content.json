@@ -10,12 +10,12 @@
         "href": "/#servicios"
       },
       {
-        "name": "Portafolio",
-        "href": "/#portafolio"
-      },
-      {
         "name": "Blog",
         "href": "/blog"
+      },
+      {
+        "name": "Conoceme",
+        "href": "/about"
       },
       {
         "name": "Paquetes",
@@ -47,6 +47,10 @@
           {
             "name": "Blog",
             "href": "/blog"
+          },
+          {
+            "name": "Conoceme",
+            "href": "/about"
           },
           {
             "name": "Paquetes",
@@ -143,7 +147,7 @@
       "order": 5,
       "data": [
         {
-          "title": "SearchAtlas",
+          "title": "Search Atlas",
           "category": "Trabajo",
           "image": "/portfolio/sa.png",
           "url": "https://searchatlas.com/",
@@ -388,7 +392,7 @@
     },
     "urgencyBanner": {
       "id": "urgencyBanner",
-      "enabled": true,
+      "enabled": false,
       "order": 9,
       "data": {
         "title": "⚡ Oportunidad limitada: Consultoría gratuita por tiempo limitado",
@@ -440,7 +444,7 @@
             "href": "/#portafolio"
           },
           {
-            "name": "About Me",
+            "name": "Conoceme",
             "href": "/about"
           },
           {

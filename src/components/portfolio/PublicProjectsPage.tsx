@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, Search } from "lucide-react";
-import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import {
   loadCmsContentFromBrowser,
   loadCmsContentFromFile,
@@ -35,6 +35,7 @@ export function PublicProjectsPage({
   const [pageSize, setPageSize] =
     useState<(typeof PAGE_SIZE_OPTIONS)[number]>(9);
   const [currentPage, setCurrentPage] = useState(1);
+  const projectsSectionRef = useRef<HTMLElement>(null);
   const deferredSearch = useDeferredValue(search.trim().toLowerCase());
 
   useEffect(() => {
@@ -111,6 +112,17 @@ export function PublicProjectsPage({
   const startIndex = (safePage - 1) * pageSize;
   const endIndex = Math.min(startIndex + pageSize, filteredItems.length);
   const visibleItems = filteredItems.slice(startIndex, endIndex);
+
+  function goToPage(nextPage: number) {
+    const boundedPage = Math.min(totalPages, Math.max(1, nextPage));
+    setCurrentPage(boundedPage);
+    window.requestAnimationFrame(() => {
+      projectsSectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
 
   return (
     <>
@@ -234,10 +246,19 @@ export function PublicProjectsPage({
           </Container>
         </section>
 
-        <section className="pb-24">
+        <section ref={projectsSectionRef} className="scroll-mt-24 pb-24">
           <Container>
             {visibleItems.length > 0 ? (
-              <PortfolioGrid items={visibleItems} />
+              <PortfolioGrid
+                items={visibleItems}
+                animationKey={[
+                  safePage,
+                  pageSize,
+                  selectedCategory,
+                  selectedType,
+                  deferredSearch,
+                ].join(":")}
+              />
             ) : (
               <div className="rounded-[2rem] border border-dashed border-white/10 bg-white/[0.03] px-6 py-14 text-center text-slate-400">
                 Ajusta la búsqueda o los filtros para encontrar proyectos.
@@ -249,7 +270,7 @@ export function PublicProjectsPage({
                 type="button"
                 variant="outline"
                 className="gap-2"
-                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                onClick={() => goToPage(safePage - 1)}
                 disabled={safePage === 1}
               >
                 <ChevronLeft size={16} />
@@ -264,9 +285,7 @@ export function PublicProjectsPage({
                 type="button"
                 variant="outline"
                 className="gap-2"
-                onClick={() =>
-                  setCurrentPage((page) => Math.min(totalPages, page + 1))
-                }
+                onClick={() => goToPage(safePage + 1)}
                 disabled={safePage === totalPages}
               >
                 Siguiente

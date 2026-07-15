@@ -206,9 +206,11 @@ function PortfolioTile({
 export function PortfolioGrid({
   items,
   showType = true,
+  animationKey,
 }: {
   items: PortfolioSectionData;
   showType?: boolean;
+  animationKey?: string;
 }) {
   const [selected, setSelected] = useState<PortfolioItem | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
@@ -216,10 +218,10 @@ export function PortfolioGrid({
   return (
     <>
       <motion.div
+        key={animationKey}
         variants={CONTAINER_ANIMATION_VARIANTS}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-40px" }}
+        animate="show"
         className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
       >
         {items.map((item) => (

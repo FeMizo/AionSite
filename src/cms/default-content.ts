@@ -11,6 +11,7 @@ const base = {
     { name: "Servicios", href: "#servicios" },
     { name: "Portafolio", href: "#portafolio" },
     { name: "Blog", href: "/blog" },
+    { name: "Conoceme", href: "/about" },
     { name: "Paquetes", href: "#paquetes" },
     { name: "Contacto", href: "#contacto" },
   ],
@@ -267,7 +268,7 @@ export const defaultCmsContent: CmsContent = {
     },
     urgencyBanner: {
       id: "urgencyBanner",
-      enabled: true,
+      enabled: false,
       order: 9,
       data: {
         title: "⚡ Oportunidad limitada: Consultoría gratuita por tiempo limitado",

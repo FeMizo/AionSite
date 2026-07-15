@@ -3,7 +3,7 @@ import type { AboutContent } from "@/src/about/types";
 export type AboutLanguage = "en" | "es";
 
 const SPANISH_STRING_MAP: Record<string, string> = {
-  "About Me": "Sobre mi",
+  Conoceme: "Conoceme",
   "Jose Miss builds frontend and CMS experiences with a clear business focus.":
     "Jose Miss crea experiencias frontend y CMS con un enfoque claro en negocio.",
   "Frontend & CMS Developer based in Mexico, open to USA and LATAM remote work. Specialized in Vue.js, Nuxt.js, WordPress, and Shopify with a strong focus on performance, technical SEO, and conversion-minded execution.":
@@ -210,7 +210,7 @@ const ABOUT_UI_COPY: Record<
       "La mayor fortaleza del CV esta en entrega frontend, ejecucion CMS y trabajo de optimizacion orientado al crecimiento.",
     experienceTitle: "Experiencia seleccionada",
     experienceSubtitle:
-      "Una version condensada del CV enfocada en los roles y responsabilidades que mas importan para una pagina About publica.",
+      "Una version condensada del CV enfocada en los roles y responsabilidades que mas importan para una pagina Conoceme publica.",
     stackTitle: "Skills, stack y herramientas de entrega",
     stackSubtitle:
       "Agrupado para una lectura web clara, en lugar de repetir el formato del CV linea por linea.",
