@@ -1,0 +1,15 @@
+<IfModule LiteSpeed>
+  CacheDisable public /
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|txt|xml|json)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  <FilesMatch "\.(js|css|png|jpg|jpeg|gif|webp|svg|ico|woff|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
