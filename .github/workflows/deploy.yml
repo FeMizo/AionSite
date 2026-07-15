@@ -45,6 +45,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           local-dir: ./out/
-          server-dir: ./domains/aionsite.com.mx/public_html/
+          server-dir: /domains/aionsite.com.mx/public_html/
           log-level: standard
           timeout: 120000
