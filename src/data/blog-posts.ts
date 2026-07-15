@@ -26,6 +26,127 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "mantenimiento-web-mensual-no-perder-ventas",
+    title: "Mantenimiento web mensual para no perder ventas",
+    excerpt:
+      "Tu sitio no se rompe de un día a otro: se desgasta. Esto debes revisar cada mes para evitar caídas, errores, mala velocidad y oportunidades perdidas.",
+    image: "/blog/mantenimiento-web-mensual-no-perder-ventas.webp",
+    badgeText: "Mantenimiento & Rendimiento",
+    date: "15 de julio, 2026",
+    dateISO: "2026-07-15",
+    readTime: "7 min de lectura",
+    keywords: [
+      "mantenimiento web mensual",
+      "mantenimiento de sitio web",
+      "optimización web continua",
+      "auditoría técnica web",
+      "sitio web lento soluciones",
+      "actualizar sitio web negocio",
+      "mantenimiento web México",
+      "rendimiento web",
+    ],
+    headings: [
+      { level: 2, id: "por-que-el-sitio-se-desgasta", text: "Por qué un sitio se desgasta aunque siga en línea" },
+      { level: 3, id: "deuda-digital-acumulada", text: "La deuda digital se acumula en silencio" },
+      { level: 2, id: "que-revisar-cada-mes", text: "Qué revisar cada mes en tu sitio web" },
+      { level: 3, id: "rendimiento-y-core-web-vitals", text: "1. Rendimiento y Core Web Vitals" },
+      { level: 3, id: "formularios-y-conversiones", text: "2. Formularios, WhatsApp y conversiones" },
+      { level: 3, id: "contenido-y-seo-vivo", text: "3. Contenido, metadatos y SEO vivo" },
+      { level: 3, id: "seguridad-y-actualizaciones", text: "4. Seguridad, backups y actualizaciones" },
+      { level: 2, id: "senales-de-alerta", text: "Señales de que ya vas tarde con el mantenimiento" },
+      { level: 2, id: "rutina-simple", text: "Una rutina mensual simple que sí se cumple" },
+      { level: 2, id: "cierre-mantenimiento", text: "El costo real de no revisar tu sitio" },
+    ],
+    blocks: [
+      { type: "h2", id: "por-que-el-sitio-se-desgasta", text: "Por qué un sitio se desgasta aunque siga en línea" },
+      {
+        type: "p",
+        text: "Muchos negocios creen que si su sitio todavía abre, entonces está bien. No funciona así. Un sitio web no falla solo cuando se cae: también falla cuando carga más lento que hace tres meses, cuando el formulario deja de enviar prospectos, cuando una actualización rompe una sección o cuando Google encuentra páginas desactualizadas y empieza a ignorarlas.",
+      },
+      {
+        type: "p",
+        text: "El desgaste digital es acumulativo. Cada plugin sin revisar, cada imagen nueva sin optimizar, cada CTA que nadie prueba y cada página que se queda vieja reduce el rendimiento comercial del sitio. No se nota en un día. Se nota cuando pasan semanas sin leads y nadie entiende por qué.",
+      },
+      { type: "h3", id: "deuda-digital-acumulada", text: "La deuda digital se acumula en silencio" },
+      {
+        type: "p",
+        text: "Igual que un local físico necesita limpieza, inventario y mantenimiento preventivo, tu sitio necesita revisiones periódicas. Si no las haces, empiezas a pagar intereses en forma de rebote, frustración del usuario y oportunidades perdidas. El problema es que casi siempre descubres ese costo demasiado tarde.",
+      },
+      {
+        type: "quote",
+        text: "El mantenimiento web no existe para que tu sitio siga vivo. Existe para que siga vendiendo.",
+      },
+      { type: "h2", id: "que-revisar-cada-mes", text: "Qué revisar cada mes en tu sitio web" },
+      {
+        type: "p",
+        text: "No necesitas una auditoría gigante cada semana. Sí necesitas una rutina mensual clara con pocos puntos críticos. Estos son los cuatro frentes que más impacto tienen en resultados reales.",
+      },
+      { type: "h3", id: "rendimiento-y-core-web-vitals", text: "1. Rendimiento y Core Web Vitals" },
+      {
+        type: "p",
+        text: "Revisa velocidad en móvil y desktop con PageSpeed Insights o Lighthouse. Si el LCP sube, si aparecen scripts bloqueantes o si las imágenes pesan más de lo debido, el sitio empieza a perder conversiones incluso antes de caer en rankings. La regla práctica es simple: si cada mes no mides, cada mes asumes que todo sigue bien sin evidencia.",
+      },
+      {
+        type: "p",
+        text: "También conviene revisar páginas clave por separado: inicio, servicios, landing principal y contacto. Son las que más dinero pierden cuando el rendimiento cae. Un sitio puede verse correcto en general y, aun así, tener su página más importante cargando en cinco segundos.",
+      },
+      { type: "h3", id: "formularios-y-conversiones", text: "2. Formularios, WhatsApp y conversiones" },
+      {
+        type: "p",
+        text: "Cada mes alguien debe probar que los formularios envían, que los botones de WhatsApp abren el destino correcto y que los correos llegan a la bandeja adecuada. Este tipo de falla es devastadora porque no genera ruido técnico: simplemente deja de entrar negocio. Muchas empresas pasan semanas pensando que hay baja demanda cuando el problema real era un formulario roto.",
+      },
+      {
+        type: "p",
+        text: "Haz una prueba completa como usuario real. Llena el formulario, revisa la respuesta automática, confirma la notificación al equipo y valida que el lead quede registrado donde debe. Si el sitio vende, este chequeo no es opcional.",
+      },
+      { type: "h3", id: "contenido-y-seo-vivo", text: "3. Contenido, metadatos y SEO vivo" },
+      {
+        type: "p",
+        text: "El contenido también envejece. Revisa si tus páginas siguen respondiendo las preguntas actuales del cliente, si los títulos siguen dentro de longitud útil, si las descripciones invitan al clic y si hay enlaces internos hacia tus páginas estratégicas. Un sitio sin mantenimiento editorial se queda congelado mientras la competencia sigue publicando y afinando su estructura.",
+      },
+      {
+        type: "p",
+        text: "Actualizar no siempre significa reescribir todo. A veces basta con mejorar una sección, agregar un caso real, refrescar cifras, corregir una promesa vieja o sumar una FAQ que hoy sí responde la intención de búsqueda. Pequeños cambios sostenidos mantienen vivo el posicionamiento.",
+      },
+      { type: "h3", id: "seguridad-y-actualizaciones", text: "4. Seguridad, backups y actualizaciones" },
+      {
+        type: "p",
+        text: "Un mantenimiento mensual serio incluye validar backups restaurables, revisar certificados, actualizar dependencias o plugins con criterio y detectar errores en consola o en logs básicos. No se trata de actualizar por actualizar. Se trata de reducir superficie de fallo antes de que el usuario la encuentre primero.",
+      },
+      {
+        type: "p",
+        text: "Si tu sitio depende de integraciones, agenda una revisión de APIs, formularios externos, mapas, pixels y automatizaciones. La mayoría de los incidentes pequeños empieza ahí: un token caducado, un endpoint que cambió, una integración que nadie monitoreó.",
+      },
+      { type: "h2", id: "senales-de-alerta", text: "Señales de que ya vas tarde con el mantenimiento" },
+      {
+        type: "p",
+        text: "Hay síntomas que se repiten: el sitio tarda más pero nadie sabe desde cuándo, el tráfico sigue llegando pero ya no convierte igual, aparecen páginas con información vencida, los cambios se hacen con miedo porque nadie sabe qué podría romperse y cada ajuste termina siendo una urgencia. Cuando eso pasa, ya no estás manteniendo: estás apagando incendios.",
+      },
+      {
+        type: "p",
+        text: "Otra señal crítica es depender de una sola persona que conoce todo de memoria. El mantenimiento sano deja evidencia, checklist y criterio compartido. Si nadie puede revisar el sitio sin improvisar, el riesgo operativo ya es alto.",
+      },
+      { type: "h2", id: "rutina-simple", text: "Una rutina mensual simple que sí se cumple" },
+      {
+        type: "p",
+        text: "Una rutina útil puede resolverse en menos de una hora al mes: medir velocidad en páginas clave, enviar un lead de prueba, revisar enlaces y CTAs principales, validar backups, actualizar componentes con respaldo y registrar hallazgos. Lo importante no es que sea sofisticada. Lo importante es que exista y se repita.",
+      },
+      {
+        type: "p",
+        text: "Cuando esa rutina se vuelve parte del negocio, tu sitio deja de ser una pieza olvidada y vuelve a convertirse en un activo comercial. Esa diferencia explica por qué algunos sitios mejoran mes a mes mientras otros solo se tocan cuando ya hubo pérdida.",
+      },
+      { type: "h2", id: "cierre-mantenimiento", text: "El costo real de no revisar tu sitio" },
+      {
+        type: "p",
+        text: "Posponer mantenimiento parece ahorrar tiempo y dinero, pero casi siempre hace lo contrario. Cada mes sin revisión aumenta la probabilidad de perder leads, caer en rendimiento, publicar información obsoleta o depender de una reparación más costosa. En web, lo barato casi siempre sale caro cuando el sitio es parte de tu captación.",
+      },
+      {
+        type: "p",
+        text: "Si tu sitio lleva meses sin una revisión real, ese ya es el primer hallazgo. Empieza por un checklist mensual, mide lo esencial y corrige lo que afecta negocio. Si quieres, en AionSite te ayudamos a convertir ese mantenimiento en una rutina clara para que tu sitio siga funcionando como canal de ventas y no solo como tarjeta de presentación.",
+      },
+    ],
+  },
+  {
     id: "crear-sitio-web-posiciona-desde-inicio",
     title: "Crear un sitio web que posiciona: 5 errores que mata las chances desde el inicio",
     excerpt:
