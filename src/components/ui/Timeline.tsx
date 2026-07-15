@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 import { Card } from "@/src/components/ui/Card";
 import { cn } from "@/src/lib/utils";
 
@@ -15,9 +19,25 @@ interface TimelineProps {
 }
 
 export function Timeline({ items, className }: TimelineProps) {
+  const reduce = useReducedMotion();
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 72%", "end 48%"],
+  });
+  const lineScale = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 28,
+    mass: 0.4,
+  });
+
   return (
-    <div className={cn("relative space-y-8", className)}>
+    <div ref={timelineRef} className={cn("relative space-y-8", className)}>
       <div className="absolute bottom-2 left-3 top-2 w-px bg-white/10" />
+      <motion.div
+        className="absolute bottom-2 left-3 top-2 w-[3px] origin-top -translate-x-1/2 rounded-full bg-linear-to-b from-cyan-300 via-blue-500 to-violet-500 shadow-[0_0_24px_rgba(59,130,246,0.72)]"
+        style={{ scaleY: reduce ? 1 : lineScale }}
+      />
 
       {items.map((item) => (
         <div key={`${item.title}-${item.period}`} className="relative pl-10">

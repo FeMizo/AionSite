@@ -14,8 +14,8 @@ import {
 } from "@/src/cms/portfolio";
 import type { CmsContent } from "@/src/cms/types";
 import { PortfolioGrid } from "@/src/components/portfolio/PortfolioGrid";
-import { Footer } from "@/src/components/sections/Footer";
 import { Header } from "@/src/components/sections/Header";
+import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
@@ -75,14 +75,6 @@ export function PublicProjectsPage({
       navigation,
     }),
     [content.sections.header.data, navigation],
-  );
-
-  const footerData = useMemo(
-    () => ({
-      ...content.sections.footer.data,
-      navigation,
-    }),
-    [content.sections.footer.data, navigation],
   );
 
   const portfolioItems = useMemo(
@@ -285,9 +277,7 @@ export function PublicProjectsPage({
         </section>
       </main>
 
-      {content.sections.footer.enabled ? (
-        <Footer base={base} data={footerData} />
-      ) : null}
+      <SiteFooter />
 
       {content.sections.whatsappFloatingButton.enabled ? (
         <WhatsAppFloatingButton

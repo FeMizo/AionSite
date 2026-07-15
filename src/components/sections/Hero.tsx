@@ -21,7 +21,6 @@ const signalCards = [
   { label: "CMS", value: "edita", x: "73%", y: "57%" },
   { label: "Leads", value: "convierte", x: "10%", y: "66%" },
 ];
-const kineticWords = ["diseño", "SEO", "IA", "ventas", "automatización"];
 
 export function Hero({
   data,
@@ -39,13 +38,13 @@ export function Hero({
   const panelX = useTransform(smoothX, [0, 900], [-18, 18]);
   const panelY = useTransform(smoothY, [0, 700], [-14, 14]);
 
-  const [city, setCity] = useState("Carmen");
+  const [city, setCity] = useState("Cd. Carmen");
 
   useEffect(() => {
     fetch("/api/location")
       .then((res) => res.json())
       .then((data) => setCity(data.city))
-      .catch(() => setCity("Carmen"));
+      .catch(() => setCity("Cd. Carmen"));
   }, []);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
@@ -66,21 +65,6 @@ export function Hero({
         className="pointer-events-none absolute inset-0 -z-20 opacity-75"
         style={{ background: spotlight }}
       />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(148,163,184,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.045)_1px,transparent_1px)] bg-[size:72px_72px]" />
-
-      <div className="pointer-events-none absolute left-1/2 top-24 -z-10 flex w-[170vw] -translate-x-1/2 gap-6 overflow-hidden opacity-20">
-        <motion.div
-          className="flex shrink-0 gap-6 whitespace-nowrap font-display text-[11vw] font-bold uppercase leading-none text-white"
-          animate={reduce ? undefined : { x: ["0%", "-50%"] }}
-          transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
-        >
-          {[...kineticWords, ...kineticWords].map((word, index) => (
-            <span key={`${word}-${index}`} className="px-4">
-              {word}
-            </span>
-          ))}
-        </motion.div>
-      </div>
 
       <Container className="relative z-10">
         <div className="grid min-h-[680px] gap-12 xl:grid-cols-[minmax(0,0.98fr)_minmax(440px,1.02fr)] xl:items-center">
@@ -243,19 +227,16 @@ export function Hero({
           </motion.div>
         </div>
 
-        <div className="relative mt-4 overflow-hidden border-y border-white/8 py-4">
-          <motion.div
-            className="flex w-max gap-10 whitespace-nowrap text-sm font-semibold uppercase tracking-[0.22em] text-slate-400"
-            animate={reduce ? undefined : { x: ["0%", "-50%"] }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-          >
-            {[...data.trustBar, ...data.trustBar, ...data.trustBar].map((item, index) => (
-              <span key={`${item}-${index}`} className="flex items-center gap-3">
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />
-                {item}
-              </span>
-            ))}
-          </motion.div>
+        <div className="mt-4 grid gap-3 border-y border-white/8 py-5 sm:grid-cols-2 xl:grid-cols-4">
+          {data.trustBar.map((item) => (
+            <div
+              key={item}
+              className="flex items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-slate-300"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />
+              {item}
+            </div>
+          ))}
         </div>
       </Container>
     </section>

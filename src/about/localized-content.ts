@@ -45,7 +45,7 @@ const SPANISH_STRING_MAP: Record<string, string> = {
     "Soporte en rendimiento, SEO y conversion",
   "Core Web Vitals improvements, technical SEO foundations, analytics tooling, and UX adjustments that support acquisition and conversion goals.":
     "Mejoras de Core Web Vitals, bases de SEO tecnico, herramientas de analitica y ajustes UX que apoyan objetivos de adquisicion y conversion.",
-  "Nov 2022 - Present": "Nov 2022 - Actualidad",
+  "Aug 2022 - July 2026": "Ago 2022 - Jul 2026",
   "Web Developer": "Desarrollador Web",
   LinkGraph: "LinkGraph",
   "Working across Shopify and WordPress delivery for marketing-driven websites and eCommerce implementations.":
@@ -70,7 +70,7 @@ const SPANISH_STRING_MAP: Record<string, string> = {
     "Desarrolle sitios en WordPress y Shopify desde cero.",
   "Improved UI/UX quality and overall website performance.":
     "Mejore la calidad UI/UX y el rendimiento general de los sitios.",
-  "Aug 2020 - Nov 2022": "Ago 2020 - Nov 2022",
+  "Aug 2020 - Aug 2022": "Ago 2020 - Ago 2022",
   "DUDE Agency": "DUDE Agency",
   "Delivered custom WordPress implementations for multiple client accounts with ongoing support responsibilities.":
     "Entregue implementaciones WordPress personalizadas para multiples cuentas de clientes con responsabilidades de soporte continuo.",

@@ -24,8 +24,9 @@ import {
 } from "@/src/about/localized-content";
 import type { AboutContent } from "@/src/about/types";
 import { initialCmsContent } from "@/src/cms/site-content";
-import { Footer } from "@/src/components/sections/Footer";
 import { Header } from "@/src/components/sections/Header";
+import { ScrollingSignalLine } from "@/src/components/sections/ScrollingSignalLine";
+import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Button } from "@/src/components/ui/Button";
 import { Card } from "@/src/components/ui/Card";
@@ -49,11 +50,6 @@ const base = {
 
 const headerData = {
   ...initialCmsContent.sections.header.data,
-  navigation,
-};
-
-const footerData = {
-  ...initialCmsContent.sections.footer.data,
   navigation,
 };
 
@@ -222,6 +218,19 @@ export function PublicAboutPage({
           </Container>
         </section>
 
+        <ScrollingSignalLine
+          items={[
+            "discovery",
+            "wireframes",
+            "frontend",
+            "performance",
+            "SEO tecnico",
+            "integraciones",
+            "CMS",
+            "lanzamiento",
+          ]}
+        />
+
         <section className="py-24">
           <Container>
             <div className="grid gap-10 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
@@ -367,7 +376,7 @@ export function PublicAboutPage({
         </section>
       </main>
 
-      <Footer base={base} data={footerData} />
+      <SiteFooter />
       <WhatsAppFloatingButton
         data={initialCmsContent.sections.whatsappFloatingButton.data}
       />

@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     // For local development, return default
     if (ip === "127.0.0.1" || ip === "::1") {
       return NextResponse.json({
-        city: "Carmen",
+        city: "Cd. Carmen",
         region: "Campeche",
         country: "MX",
       });
@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json({
-      city: data.city || "Carmen",
+      city: data.city || "Cd. Carmen",
       region: data.region || "Campeche",
       country: data.country_code || "MX",
     });
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
     console.error("Geolocation error:", error);
     // Fallback
     return NextResponse.json({
-      city: "Carmen",
+      city: "Cd. Carmen",
       region: "Campeche",
       country: "MX",
     });
