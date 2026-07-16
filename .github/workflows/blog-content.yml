@@ -1,0 +1,61 @@
+name: Generate Blog Draft
+
+on:
+  schedule:
+    - cron: "0 14 */2 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_TEXT_MODEL: ${{ vars.OPENAI_TEXT_MODEL || 'gpt-5-mini' }}
+      OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate next blog draft and image
+        run: npm run blog:generate
+
+      - name: Validate generated content
+        run: npm run blog:drafts:validate
+
+      - name: Validate blog catalog
+        run: npm run blog:validate
+
+      - name: Build static export
+        run: npm run build:static
+
+      - name: Create or update blog PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: codex/blogs
+          base: main
+          title: "chore: add next scheduled blog post"
+          commit-message: "chore: add scheduled blog post"
+          body: |
+            Automated scheduled blog draft for AionSite.
+
+            Review checklist:
+            - Title is 60 characters or fewer.
+            - Excerpt/meta description is 160 characters or fewer.
+            - Image exists under `public/blog`.
+            - Static build passed.
+          labels: blog, automated
