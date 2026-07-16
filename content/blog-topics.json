@@ -82,5 +82,40 @@
     "badgeText": "SEO & Arquitectura",
     "audience": "empresas con varios servicios que quieren mejorar su posicionamiento organico",
     "angle": "explicar arquitectura, URLs, enlaces internos, contenido pilar y paginas de servicio"
+  },
+  {
+    "topic": "Por que tu negocio necesita estar online aunque vendas por recomendaciones",
+    "primaryKeyword": "por que estar online",
+    "badgeText": "Presencia Digital",
+    "audience": "duenos de negocio y servicios locales",
+    "angle": "explicar el costo invisible de depender solo de redes sociales, referidos y WhatsApp"
+  },
+  {
+    "topic": "Optimizacion web continua: pequenas mejoras que levantan conversion",
+    "primaryKeyword": "optimizacion web continua",
+    "badgeText": "Optimizacion & Conversion",
+    "audience": "negocios con sitio activo pero resultados estancados",
+    "angle": "mostrar que la mejora incremental supera al rediseno esporadico"
+  },
+  {
+    "topic": "Redisenar o mejorar: como decidir si tu sitio necesita cirugia o ajustes",
+    "primaryKeyword": "redisenar sitio web o mejorar",
+    "badgeText": "Estrategia Web",
+    "audience": "empresas con sitios viejos o lentos",
+    "angle": "dar criterios de negocio y tecnicos para invertir mejor"
+  },
+  {
+    "topic": "Auditoria web para negocios: que revisar antes de invertir en anuncios",
+    "primaryKeyword": "auditoria web para negocios",
+    "badgeText": "Auditoria & ROI",
+    "audience": "negocios que quieren escalar trafico pagado",
+    "angle": "evitar quemar presupuesto en campanas que apuntan a sitios debiles"
+  },
+  {
+    "topic": "Contenido evergreen para sitios de servicios: como atraer leads sin publicar diario",
+    "primaryKeyword": "contenido evergreen para servicios",
+    "badgeText": "Contenido & SEO",
+    "audience": "empresas de servicios con poco tiempo para marketing",
+    "angle": "priorizar piezas que siguen captando demanda por meses"
   }
 ]

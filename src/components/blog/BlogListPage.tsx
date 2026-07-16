@@ -7,7 +7,7 @@ import { ArrowRight, BookOpen, Clock, Search } from "lucide-react";
 import { blogPosts } from "@/src/data/blog-posts";
 import { initialCmsContent } from "@/src/cms/site-content";
 import { Header } from "@/src/components/sections/Header";
-import { Footer } from "@/src/components/sections/Footer";
+import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
@@ -167,7 +167,7 @@ export function BlogListPage() {
         </Container>
       </section>
 
-      <Footer base={base} data={initialCmsContent.sections.footer.data} />
+      <SiteFooter />
       <WhatsAppFloatingButton data={initialCmsContent.sections.whatsappFloatingButton.data} />
     </>
   );

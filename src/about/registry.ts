@@ -21,7 +21,7 @@ export const aboutSectionRegistry: Record<AboutSectionId, AboutSectionRegistryEn
   hero: {
     id: "hero",
     label: "Hero",
-    description: "Intro principal de la página About.",
+    description: "Intro principal de la página Conoceme.",
     fields: [
       { key: "eyebrow", label: "Eyebrow", type: "text" },
       { key: "title", label: "Título", type: "textarea" },
@@ -168,7 +168,7 @@ export const aboutSectionRegistry: Record<AboutSectionId, AboutSectionRegistryEn
   contact: {
     id: "contact",
     label: "CTA final",
-    description: "Llamado final a contacto para About.",
+    description: "Llamado final a contacto para Conoceme.",
     fields: [
       { key: "title", label: "Título", type: "textarea" },
       { key: "description", label: "Descripción", type: "textarea" },

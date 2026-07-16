@@ -16,7 +16,7 @@ export async function GET() {
     });
   } catch {
     return NextResponse.json(
-      { error: "No se pudo leer el contenido About local." },
+      { error: "No se pudo leer el contenido Conoceme local." },
       { status: 500 },
     );
   }
@@ -32,7 +32,7 @@ export async function PUT(request: Request) {
     });
   } catch {
     return NextResponse.json(
-      { error: "No se pudo guardar el contenido About local." },
+      { error: "No se pudo guardar el contenido Conoceme local." },
       { status: 500 },
     );
   }

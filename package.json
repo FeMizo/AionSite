@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "next dev --port=2666 --hostname=0.0.0.0",
     "build": "next build",
-    "build:static": "node scripts/build-static.mjs",
-    "lint": "next lint",
     "blog:generate": "node scripts/blog-automation.mjs generate",
-    "blog:validate": "node scripts/blog-automation.mjs validate"
+    "blog:drafts:validate": "node scripts/blog-automation.mjs validate",
+    "blog:validate": "node scripts/blog-validate.mjs",
+    "build:static": "node scripts/build-static.mjs",
+    "upload:social": "node scripts/upload-social-asset.mjs",
+    "lint": "next lint"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.1",

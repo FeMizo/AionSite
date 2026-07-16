@@ -3,7 +3,7 @@ import type { AboutContent } from "@/src/about/types";
 export type AboutLanguage = "en" | "es";
 
 const SPANISH_STRING_MAP: Record<string, string> = {
-  "About Me": "Sobre mi",
+  Conoceme: "Conoceme",
   "Jose Miss builds frontend and CMS experiences with a clear business focus.":
     "Jose Miss crea experiencias frontend y CMS con un enfoque claro en negocio.",
   "Frontend & CMS Developer based in Mexico, open to USA and LATAM remote work. Specialized in Vue.js, Nuxt.js, WordPress, and Shopify with a strong focus on performance, technical SEO, and conversion-minded execution.":
@@ -45,7 +45,7 @@ const SPANISH_STRING_MAP: Record<string, string> = {
     "Soporte en rendimiento, SEO y conversion",
   "Core Web Vitals improvements, technical SEO foundations, analytics tooling, and UX adjustments that support acquisition and conversion goals.":
     "Mejoras de Core Web Vitals, bases de SEO tecnico, herramientas de analitica y ajustes UX que apoyan objetivos de adquisicion y conversion.",
-  "Nov 2022 - Present": "Nov 2022 - Actualidad",
+  "Aug 2022 - July 2026": "Ago 2022 - Jul 2026",
   "Web Developer": "Desarrollador Web",
   LinkGraph: "LinkGraph",
   "Working across Shopify and WordPress delivery for marketing-driven websites and eCommerce implementations.":
@@ -70,7 +70,7 @@ const SPANISH_STRING_MAP: Record<string, string> = {
     "Desarrolle sitios en WordPress y Shopify desde cero.",
   "Improved UI/UX quality and overall website performance.":
     "Mejore la calidad UI/UX y el rendimiento general de los sitios.",
-  "Aug 2020 - Nov 2022": "Ago 2020 - Nov 2022",
+  "Aug 2020 - Aug 2022": "Ago 2020 - Ago 2022",
   "DUDE Agency": "DUDE Agency",
   "Delivered custom WordPress implementations for multiple client accounts with ongoing support responsibilities.":
     "Entregue implementaciones WordPress personalizadas para multiples cuentas de clientes con responsabilidades de soporte continuo.",
@@ -210,7 +210,7 @@ const ABOUT_UI_COPY: Record<
       "La mayor fortaleza del CV esta en entrega frontend, ejecucion CMS y trabajo de optimizacion orientado al crecimiento.",
     experienceTitle: "Experiencia seleccionada",
     experienceSubtitle:
-      "Una version condensada del CV enfocada en los roles y responsabilidades que mas importan para una pagina About publica.",
+      "Una version condensada del CV enfocada en los roles y responsabilidades que mas importan para una pagina Conoceme publica.",
     stackTitle: "Skills, stack y herramientas de entrega",
     stackSubtitle:
       "Agrupado para una lectura web clara, en lugar de repetir el formato del CV linea por linea.",

@@ -29,8 +29,8 @@ export default function Home() {
     address: {
       "@type": "PostalAddress",
       addressCountry: "MX",
-      addressLocality: "Cancún", // Default city
-      addressRegion: "Quintana Roo",
+      addressLocality: "Cd. Carmen", // Default city
+      addressRegion: "Campeche", // Default state
     },
     geo: {
       "@type": "GeoCoordinates",

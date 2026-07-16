@@ -34,6 +34,9 @@ jobs:
         run: npm run blog:generate
 
       - name: Validate generated content
+        run: npm run blog:drafts:validate
+
+      - name: Validate blog catalog
         run: npm run blog:validate
 
       - name: Build static export
