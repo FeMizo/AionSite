@@ -1,0 +1,59 @@
+name: Auto Merge Blog Branch
+
+on:
+  push:
+    branches: [codex/blogs]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-merge-codex-blogs
+  cancel-in-progress: false
+
+jobs:
+  merge-to-main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge codex/blogs into main
+        run: |
+          git fetch origin main codex/blogs
+          git checkout main
+          git reset --hard origin/main
+
+          if git merge-base --is-ancestor origin/codex/blogs origin/main; then
+            echo "codex/blogs is already included in main."
+            exit 0
+          fi
+
+          git merge --no-ff origin/codex/blogs -m "Merge codex/blogs into main"
+
+      - run: npm ci
+
+      - name: Validate blog catalog
+        run: npm run blog:validate
+
+      - name: Build static export
+        run: npm run build:static
+
+      - name: Push main
+        run: git push origin HEAD:main
