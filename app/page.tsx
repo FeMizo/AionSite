@@ -29,7 +29,7 @@ export default function Home() {
     address: {
       "@type": "PostalAddress",
       addressCountry: "MX",
-      addressLocality: "Carmen", // Default city
+      addressLocality: "Cd. Carmen", // Default city
       addressRegion: "Campeche", // Default state
     },
     geo: {
