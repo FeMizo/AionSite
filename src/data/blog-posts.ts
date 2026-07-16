@@ -153,8 +153,8 @@ export const blogPosts: BlogPost[] = [
       "La mayoría invierte en un sitio y espera resultados. Pero si cometes estos errores en la creación, ninguna estrategia SEO los salvará. Te mostramos cómo crear bien desde el principio.",
     image: "/blog/crear-sitio-posiciona.webp",
     badgeText: "Creación & Posicionamiento",
-    date: "13 de mayo, 2026",
-    dateISO: "2026-05-13",
+    date: "12 de mayo, 2026",
+    dateISO: "2026-05-12",
     readTime: "7 min de lectura",
     keywords: ["crear sitio web", "sitio web que posiciona", "SEO desde cero", "estructura web correcta", "URL amigables SEO", "sitio web profesional", "creación de página web", "diseño web posicionable", "arquitectura web posicionamiento"],
     headings: [

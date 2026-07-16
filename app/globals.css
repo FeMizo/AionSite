@@ -72,22 +72,6 @@ body.menu-open {
   }
 
   /* Removed static CSS animations in favor of Framer Motion */
-  .aion-marquee {
-    animation: aion-marquee 34s linear infinite;
-  }
-
-  .aion-marquee:hover {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes aion-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 /* Global reduced-motion override */
