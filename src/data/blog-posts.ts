@@ -26,6 +26,113 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "crear-pagina-web-profesional-cambia-como-te-encuentran",
+    title: "Crear una pagina web profesional cambia como te encuentran",
+    excerpt:
+      "Un sitio propio convierte busquedas, referencias y visitas en confianza, prospectos y oportunidades medibles para tu negocio.",
+    image: "/blog/crear-pagina-web-profesional-cambia-como-te-encuentran.webp",
+    badgeText: "Creacion Web",
+    date: "17 de julio, 2026",
+    dateISO: "2026-07-17",
+    readTime: "7 min de lectura",
+    keywords: [
+      "crear pagina web profesional",
+      "pagina web profesional para negocios",
+      "sitio web para generar prospectos",
+      "presencia digital para empresas",
+      "sitio web que genera confianza",
+      "web profesional en Mexico",
+      "captacion de leads desde tu sitio",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "por-que-tu-negocio-necesita-un-sitio-propio", text: "Por que tu negocio necesita un sitio propio" },
+      { level: 3, id: "estar-en-redes-no-es-lo-mismo", text: "Estar en redes no es lo mismo que tener presencia propia" },
+      { level: 2, id: "como-cambia-la-forma-en-que-te-encuentran", text: "Como cambia la forma en que te encuentran" },
+      { level: 3, id: "busquedas-referencias-y-decision", text: "Busquedas, referencias y decision de compra" },
+      { level: 3, id: "confianza-antes-del-primer-mensaje", text: "Confianza antes del primer mensaje" },
+      { level: 2, id: "que-debe-tener-una-web-profesional", text: "Que debe tener una web profesional para funcionar" },
+      { level: 3, id: "estructura-mensaje-y-conversion", text: "Estructura, mensaje y conversion" },
+      { level: 2, id: "medir-para-mejorar", text: "Medir para mejorar en lugar de improvisar" },
+      { level: 2, id: "el-siguiente-paso-para-tu-negocio", text: "El siguiente paso para tu negocio" },
+    ],
+    blocks: [
+      { type: "h2", id: "por-que-tu-negocio-necesita-un-sitio-propio", text: "Por que tu negocio necesita un sitio propio" },
+      {
+        type: "p",
+        text: "Muchos negocios siguen operando con una mezcla de recomendaciones, mensajes directos y publicaciones en redes sociales. Ese sistema puede traer contactos, pero tiene un limite claro: depende demasiado de que la gente ya te conozca o de que alguien te recomiende en el momento correcto. Cuando no tienes un sitio propio, tu negocio aparece de forma fragmentada y pierde fuerza justo cuando alguien intenta evaluarte con seriedad.",
+      },
+      {
+        type: "p",
+        text: "Crear una pagina web profesional cambia eso porque te da un punto central donde tu mensaje, tus servicios y tus pruebas de confianza trabajan juntos. No se trata solo de verte mas formal. Se trata de convertir curiosidad en interes real y ese interes en una accion concreta: un formulario, una llamada, un WhatsApp o una solicitud de cotizacion.",
+      },
+      { type: "h3", id: "estar-en-redes-no-es-lo-mismo", text: "Estar en redes no es lo mismo que tener presencia propia" },
+      {
+        type: "p",
+        text: "Las redes ayudan a llamar la atencion, pero no fueron hechas para explicar con profundidad lo que haces ni para posicionarte cuando alguien busca una solucion especifica en Google. El algoritmo decide cuanto te muestra, el formato limita tu mensaje y cualquier cambio en la plataforma afecta tu alcance. En cambio, un sitio web propio te permite controlar la experiencia completa y construir un activo que no depende de reglas ajenas.",
+      },
+      {
+        type: "quote",
+        text: "Una red social te presta audiencia. Un sitio web profesional te construye presencia y conversion.",
+      },
+      { type: "h2", id: "como-cambia-la-forma-en-que-te-encuentran", text: "Como cambia la forma en que te encuentran" },
+      {
+        type: "p",
+        text: "La forma en que la gente te descubre cambia radicalmente cuando tienes una pagina bien estructurada. Ya no solo llegas a quienes ven una historia o reciben tu contacto por terceros. Tambien empiezas a aparecer en busquedas relacionadas con tus servicios, en resultados compartidos por clientes, en enlaces enviados por tu equipo comercial y en visitas recurrentes de personas que aun no estaban listas para escribirte el primer dia.",
+      },
+      { type: "h3", id: "busquedas-referencias-y-decision", text: "Busquedas, referencias y decision de compra" },
+      {
+        type: "p",
+        text: "Piensa en el recorrido real del cliente. Primero escucha de ti por un referido o por una publicacion. Despues abre Google, busca tu nombre o investiga el servicio que ofreces. Si en ese punto encuentra un sitio claro, rapido y profesional, la referencia gana credibilidad. Si encuentra solo redes incompletas o informacion dispersa, la decision se enfria. Tu sitio actua como la pieza que conecta descubrimiento con validacion.",
+      },
+      {
+        type: "p",
+        text: "Ademas, una web profesional te permite organizar contenido por servicio, ciudad, problema o tipo de cliente. Eso amplifica tu capacidad de aparecer en mas escenarios de busqueda y te hace mas facil responder a distintas intenciones sin repetir siempre el mismo mensaje.",
+      },
+      { type: "h3", id: "confianza-antes-del-primer-mensaje", text: "Confianza antes del primer mensaje" },
+      {
+        type: "p",
+        text: "La mayoria de los prospectos decide si confiar en ti antes de escribirte. Evalua si explicas bien lo que haces, si tus casos se ven creibles, si tu sitio carga bien en movil y si hay una llamada a la accion evidente. Esa confianza previa reduce friccion. En lugar de preguntar desde cero quien eres, llegan con una idea mas clara y con mejor disposicion para avanzar.",
+      },
+      {
+        type: "p",
+        text: "Por eso una pagina profesional no es un lujo visual. Es una herramienta comercial. Hace que cada referencia rinda mas, que cada visita desde redes tenga una siguiente accion y que cada busqueda relevante encuentre una respuesta solida en lugar de una presencia improvisada.",
+      },
+      { type: "h2", id: "que-debe-tener-una-web-profesional", text: "Que debe tener una web profesional para funcionar" },
+      {
+        type: "p",
+        text: "No basta con publicar una pagina bonita. Para que realmente cambie la forma en que te encuentran, el sitio debe estar pensado para negocio. Eso implica una propuesta de valor clara arriba del pliegue, estructura SEO basica, tiempos de carga competitivos, formularios funcionales, mensajes alineados con tu cliente ideal y rutas obvias para convertir.",
+      },
+      { type: "h3", id: "estructura-mensaje-y-conversion", text: "Estructura, mensaje y conversion" },
+      {
+        type: "p",
+        text: "La estructura define si el visitante entiende rapido que ofreces. El mensaje define si siente que eres para el. La conversion define si sabe que hacer despues. Cuando esos tres elementos trabajan juntos, la pagina deja de ser un folleto y se convierte en un sistema de captacion. Ahi es donde una web profesional cambia resultados, no solo apariencia.",
+      },
+      {
+        type: "p",
+        text: "Tambien conviene sumar pruebas de confianza: testimonios, ejemplos de trabajo, respuestas a objeciones frecuentes y medios de contacto visibles. Todo eso reduce la distancia entre una visita curiosa y un prospecto listo para hablar contigo.",
+      },
+      { type: "h2", id: "medir-para-mejorar", text: "Medir para mejorar en lugar de improvisar" },
+      {
+        type: "p",
+        text: "Otro cambio importante es que un sitio propio te permite medir. Puedes saber que paginas reciben mas trafico, que servicios despiertan interes, desde donde llegan tus visitas y en que parte abandonan. Esa informacion no solo sirve para marketing. Tambien ayuda a mejorar tu propuesta comercial, priorizar contenidos y decidir donde invertir tiempo o presupuesto.",
+      },
+      {
+        type: "p",
+        text: "Sin ese tipo de datos, muchos negocios toman decisiones a ciegas. Publican mas en redes porque parece lo unico visible o repiten mensajes que no necesariamente convierten. Con una web profesional y analitica basica, empiezas a sustituir intuicion por evidencia.",
+      },
+      { type: "h2", id: "el-siguiente-paso-para-tu-negocio", text: "El siguiente paso para tu negocio" },
+      {
+        type: "p",
+        text: "Si hoy tu negocio depende de recomendaciones, redes o mensajes sueltos, crear una pagina web profesional puede ser el movimiento que ordena todo tu canal digital. No porque sustituya lo que ya haces, sino porque lo potencia. Hace que te encuentren mejor, que te entiendan mas rapido y que sea mas facil convertir interes en oportunidad real.",
+      },
+      {
+        type: "p",
+        text: "En AionSite trabajamos sitios pensados para negocio: claros, medibles y listos para convertir. Si quieres revisar que deberia incluir tu pagina o si ya tienes una y no esta ayudando como deberia, podemos ayudarte a diagnosticarlo y convertirlo en un plan concreto.",
+      },
+    ],
+  },
+  {
     id: "mantenimiento-web-mensual-no-perder-ventas",
     title: "Mantenimiento web mensual para no perder ventas",
     excerpt:
