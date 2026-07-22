@@ -34,7 +34,8 @@ export function Timeline({ items, className }: TimelineProps) {
     }
 
     const ScrollTriggerPlugin = getScrollTrigger();
-    const tween = gsap.fromTo(
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
       line,
       { scaleY: 0 },
       {
@@ -49,10 +50,86 @@ export function Timeline({ items, className }: TimelineProps) {
             }
           : undefined,
       },
-    );
+      );
+
+      gsap.utils.toArray<HTMLElement>("[data-timeline-item]", root).forEach((item) => {
+        const card = item.querySelector<HTMLElement>("[data-timeline-card]");
+        const dot = item.querySelector<HTMLElement>("[data-timeline-dot]");
+        const points = item.querySelectorAll<HTMLElement>("[data-timeline-point]");
+
+        gsap.fromTo(
+          card,
+          { autoAlpha: 0, y: 34, filter: "blur(14px)", scale: 0.97 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            filter: "blur(0px)",
+            scale: 1,
+            duration: 0.75,
+            ease: "power3.out",
+            scrollTrigger: ScrollTriggerPlugin
+              ? {
+                  trigger: item,
+                  start: "top 82%",
+                  once: true,
+                }
+              : undefined,
+          },
+        );
+
+        gsap.fromTo(
+          dot,
+          { scale: 0.5, autoAlpha: 0 },
+          {
+            scale: 1,
+            autoAlpha: 1,
+            duration: 0.45,
+            ease: "back.out(1.8)",
+            scrollTrigger: ScrollTriggerPlugin
+              ? {
+                  trigger: item,
+                  start: "top 82%",
+                  once: true,
+                }
+              : undefined,
+          },
+        );
+
+        if (points.length) {
+          gsap.fromTo(
+            points,
+            { autoAlpha: 0, y: 12 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.45,
+              stagger: 0.06,
+              ease: "power2.out",
+              scrollTrigger: ScrollTriggerPlugin
+                ? {
+                    trigger: item,
+                    start: "top 78%",
+                    once: true,
+                  }
+                : undefined,
+            },
+          );
+        }
+      });
+
+      gsap.to("[data-timeline-dot-core]", {
+        scale: 1.45,
+        autoAlpha: 0.55,
+        duration: 1.3,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+        stagger: 0.18,
+      });
+    }, root);
 
     return () => {
-      tween.kill();
+      ctx.revert();
     };
   }, [reduce]);
 
@@ -65,12 +142,25 @@ export function Timeline({ items, className }: TimelineProps) {
       />
 
       {items.map((item) => (
-        <div key={`${item.title}-${item.period}`} className="relative pl-10">
-          <div className="absolute left-0 top-8 h-6 w-6 rounded-full border border-blue-300/35 bg-slate-950 p-1">
-            <div className="h-full w-full rounded-full bg-blue-500" />
+        <div
+          key={`${item.title}-${item.period}`}
+          data-timeline-item
+          className="relative pl-10"
+        >
+          <div
+            data-timeline-dot
+            className="absolute left-0 top-8 h-6 w-6 rounded-full border border-blue-300/35 bg-slate-950 p-1 shadow-[0_0_26px_rgba(59,130,246,0.36)]"
+          >
+            <div
+              data-timeline-dot-core
+              className="h-full w-full rounded-full bg-blue-500 shadow-[0_0_18px_rgba(96,165,250,0.9)]"
+            />
           </div>
 
-          <Card className="rounded-[1.75rem] p-6 md:p-8">
+          <div data-timeline-card>
+          <Card className="relative overflow-hidden rounded-[1.75rem] p-6 md:p-8">
+            <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-cyan-200/45 to-transparent" />
+            <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full border border-blue-200/10" />
             <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
               <div className="max-w-3xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">
@@ -97,6 +187,7 @@ export function Timeline({ items, className }: TimelineProps) {
                 {item.points.map((point) => (
                   <div
                     key={point}
+                    data-timeline-point
                     className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 text-sm leading-relaxed text-slate-300"
                   >
                     {point}
@@ -105,6 +196,7 @@ export function Timeline({ items, className }: TimelineProps) {
               </div>
             ) : null}
           </Card>
+          </div>
         </div>
       ))}
     </div>
