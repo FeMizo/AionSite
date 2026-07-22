@@ -69,7 +69,7 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
           <Reveal delay={120}>
           <Card className="p-7">
             {isSent ? (
-              <div className="animate-scale-in flex flex-col items-center gap-4 py-8 text-center">
+              <div className="flex flex-col items-center gap-4 py-8 text-center">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500/15">
                   <CheckCircle2 size={28} className="text-green-400" />
                 </div>

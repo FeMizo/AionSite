@@ -1,14 +1,39 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 import type { FAQSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
-import { CONTAINER_ANIMATION_VARIANTS, FADE_UP_ANIMATION_VARIANTS } from "@/src/lib/animations";
+import { gsap, useGsapStagger } from "@/src/lib/animations";
 
 export function FAQ({ data }: { data: FAQSectionData }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const sectionRef = useGsapStagger<HTMLDivElement>();
+  const answerRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const iconRefs = useRef<Array<HTMLSpanElement | null>>([]);
+
+  useEffect(() => {
+    answerRefs.current.forEach((answer, index) => {
+      if (!answer) return;
+      const isOpen = openIndex === index;
+      gsap.to(answer, {
+        height: isOpen ? "auto" : 0,
+        autoAlpha: isOpen ? 1 : 0,
+        marginTop: isOpen ? 12 : 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
+    });
+
+    iconRefs.current.forEach((icon, index) => {
+      if (!icon) return;
+      gsap.to(icon, {
+        rotate: openIndex === index ? 45 : 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
+    });
+  }, [openIndex]);
 
   return (
     <section
@@ -18,29 +43,24 @@ export function FAQ({ data }: { data: FAQSectionData }) {
       itemType="https://schema.org/FAQPage"
     >
       <Container>
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-40px" }}
-          variants={CONTAINER_ANIMATION_VARIANTS}
-        >
-          <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
+        <div ref={sectionRef}>
+          <div data-gsap-reveal>
             <SectionHeading
               title="Preguntas frecuentes"
               subtitle="Resolvemos tus dudas antes de empezar."
               centered={true}
               className="mb-12"
             />
-          </motion.div>
+          </div>
 
-          <motion.div variants={CONTAINER_ANIMATION_VARIANTS} className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-6">
             {data.map((faq, index) => {
               const isOpen = openIndex === index;
               const answerId = `faq-answer-${index}`;
 
               return (
-                <motion.div
-                  variants={FADE_UP_ANIMATION_VARIANTS}
+                <div
+                  data-gsap-reveal
                   key={faq.question}
                   className={`rounded-2xl border bg-slate-900/55 p-6 shadow-[0_22px_44px_-34px_rgba(2,6,23,0.95)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     isOpen
@@ -60,44 +80,41 @@ export function FAQ({ data }: { data: FAQSectionData }) {
                       onClick={() => setOpenIndex(isOpen ? null : index)}
                     >
                       <span>{faq.question}</span>
-                      <motion.span
+                      <span
+                        ref={(node) => {
+                          iconRefs.current[index] = node;
+                        }}
                         aria-hidden="true"
                         className="rounded-full border border-blue-300/30 bg-blue-500/10 px-2 py-0.5 text-blue-300 flex items-center justify-center shrink-0"
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
                         +
-                      </motion.span>
+                      </span>
                     </button>
                   </h3>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        id={answerId}
-                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                        animate={{ height: "auto", opacity: 1, marginTop: 12 }}
-                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        aria-hidden={!isOpen}
-                        className="overflow-hidden"
-                      >
-                        <p
-                          className="leading-relaxed text-slate-400"
-                          itemScope
-                          itemProp="acceptedAnswer"
-                          itemType="https://schema.org/Answer"
-                        >
-                          <span itemProp="text">{faq.answer}</span>
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                  <div
+                    ref={(node) => {
+                      answerRefs.current[index] = node;
+                    }}
+                    id={answerId}
+                    aria-hidden={!isOpen}
+                    className="overflow-hidden"
+                    style={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0, marginTop: isOpen ? 12 : 0 }}
+                  >
+                    <p
+                      className="leading-relaxed text-slate-400"
+                      itemScope
+                      itemProp="acceptedAnswer"
+                      itemType="https://schema.org/Answer"
+                    >
+                      <span itemProp="text">{faq.answer}</span>
+                    </p>
+                  </div>
+                </div>
               );
             })}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </Container>
     </section>
   );

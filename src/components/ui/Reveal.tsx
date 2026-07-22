@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
 import { cn } from "@/src/lib/utils";
-import { FADE_UP_ANIMATION_VARIANTS } from "@/src/lib/animations";
+import { useGsapReveal } from "@/src/lib/animations";
 
 interface RevealProps {
   children: React.ReactNode;
@@ -17,17 +16,13 @@ export function Reveal({
   delay = 0,
   width = "100%",
 }: RevealProps) {
+  const revealRef = useGsapReveal<HTMLDivElement>({ delay: delay / 1000 });
+
   return (
     <div style={{ width }} className={cn("relative overflow-hidden", className)}>
-      <motion.div
-        variants={FADE_UP_ANIMATION_VARIANTS}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ delay: delay / 1000 }}
-      >
+      <div ref={revealRef}>
         {children}
-      </motion.div>
+      </div>
     </div>
   );
 }
