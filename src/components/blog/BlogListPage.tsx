@@ -13,6 +13,7 @@ import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
 import { BlogCardSkeleton } from "@/src/components/ui/Skeleton";
 import { mapNavigationForInnerPage } from "@/src/lib/navigation";
+import { useGsapStagger } from "@/src/lib/animations";
 
 const nav = mapNavigationForInnerPage(
   initialCmsContent.sections.header.data.navigation,
@@ -23,6 +24,8 @@ const base = { ...initialCmsContent.base, navigation: nav };
 export function BlogListPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const heroRef = useGsapStagger<HTMLDivElement>();
+  const gridRef = useGsapStagger<HTMLDivElement>({ delay: 0.05 });
 
   const filteredPosts = useMemo(() => {
     if (!searchQuery.trim()) return blogPosts;
@@ -63,20 +66,21 @@ export function BlogListPage() {
         <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-violet-600/14 blur-[130px]" />
         <div className="absolute right-1/4 top-1/2 -z-10 h-[250px] w-[350px] rounded-full bg-blue-600/10 blur-[100px]" />
         <Container className="text-center">
-          <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-violet-300 shadow-[0_14px_28px_-20px_rgba(124,58,237,0.6)]">
+          <div ref={heroRef}>
+          <div data-gsap-reveal className="mb-8 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-violet-300 shadow-[0_14px_28px_-20px_rgba(124,58,237,0.6)]">
             <BookOpen size={14} />
             Blog & Recursos
           </div>
-          <h1 className="mx-auto max-w-5xl text-display font-display font-bold text-white">
+          <h1 data-gsap-reveal className="mx-auto max-w-5xl text-display font-display font-bold text-white">
             Conocimiento que impulsa tu negocio digital.
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400">
+          <p data-gsap-reveal className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400">
             Estrategias, tendencias y consejos prácticos de diseño web, SEO y conversión
             para que tu marca destaque y genere más clientes.
           </p>
           
           {/* Search Bar */}
-          <div className="mx-auto mt-12 max-w-md">
+          <div data-gsap-reveal className="mx-auto mt-12 max-w-md">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
               <input
@@ -87,6 +91,7 @@ export function BlogListPage() {
                 className="w-full rounded-full border border-white/10 bg-white/5 py-3 pl-10 pr-4 text-white placeholder-slate-400 transition-colors focus:border-blue-400/50 focus:outline-none focus:ring-2 focus:ring-blue-400/20"
               />
             </div>
+          </div>
           </div>
         </Container>
       </section>
@@ -108,13 +113,13 @@ export function BlogListPage() {
                   {searchQuery && ` para "${searchQuery}"`}
                 </p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div ref={gridRef} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {isLoading ? (
                   // Show skeletons during loading
                   Array.from({ length: 6 }).map((_, i) => (
                     <BlogCardSkeleton
                       key={`skeleton-${i}`}
-                      className={`animate-reveal ${["", "anim-delay-75", "anim-delay-150", "anim-delay-225"][i] ?? ""}`}
+                      className=""
                     />
                   ))
                 ) : (
@@ -123,7 +128,8 @@ export function BlogListPage() {
                     <Link
                       key={post.id}
                       href={`/blog/${post.id}`}
-                      className={`group block animate-reveal transition-transform duration-150 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 active:scale-[0.97] ${["", "anim-delay-75", "anim-delay-150", "anim-delay-225"][i] ?? ""}`}
+                      data-gsap-reveal
+                      className="group block transition-transform duration-150 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 active:scale-[0.97]"
                     >
                       <Card className="flex h-full flex-col overflow-hidden p-0">
                         <div className="relative h-80 w-full overflow-hidden">
