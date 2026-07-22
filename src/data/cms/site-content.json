@@ -306,15 +306,15 @@
           "recommended": true
         },
         {
-          "name": "Mantenimiento + IA",
-          "price": "Desde $3,000/mes",
+          "name": "Ecommerce esencial",
+          "price": "Desde $7,000",
           "features": [
-            "Optimizaciones mensuales que aumentan ventas",
-            "Velocidad turbo para mejores posiciones SEO",
-            "Monitoreo continuo de rendimiento",
-            "Soporte prioritario ilimitado",
-            "Automatizaciones activas generando leads",
-            "Reportes semanales de crecimiento"
+            "Tienda inicial lista para vender en linea",
+            "Catalogo editable de productos y servicios",
+            "Carrito simple enfocado en conversion",
+            "Integracion de pago",
+            "SEO basico para productos principales",
+            "Capacitacion para administrar pedidos"
           ],
           "recommended": false
         },
