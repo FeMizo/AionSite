@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "es_MX",
     images: [
       {
-        url: "/logo-aionsite.png",
+        url: "/placeholder.png",
         width: 1200,
         height: 630,
         alt: "AionSite — Diseño Web, IA y Automatización para Negocios",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Diseño Web, IA y Automatización para Negocios | AionSite",
     description: "Sitios web con SEO técnico, ecommerce modular, IA y automatización para negocios en México.",
-    images: ["/logo-aionsite.png"],
+    images: ["/placeholder.png"],
   },
 };
 

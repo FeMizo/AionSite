@@ -16,13 +16,13 @@ export const metadata: Metadata = withCanonical("/proyectos/", {
     siteName: "AionSite",
     type: "website",
     locale: "es_MX",
-    images: [{ url: "/logo-aionsite.png", width: 1200, height: 630, alt: "Proyectos — AionSite" }],
+    images: [{ url: "/placeholder.png", width: 1200, height: 630, alt: "Proyectos — AionSite" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Proyectos | AionSite — Portafolio de Diseño Web",
     description: "Portafolio completo de proyectos web ordenados por reciente, con filtros por categoría, tipo y buscador integrado.",
-    images: ["/logo-aionsite.png"],
+    images: ["/placeholder.png"],
   },
 });
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = withCanonical("/about", {
     locale: "es_MX",
     images: [
       {
-        url: "/logo-aionsite.png",
+        url: "/placeholder.png",
         width: 1200,
         height: 630,
         alt: "Conoceme - AionSite",
@@ -37,7 +37,7 @@ export const metadata: Metadata = withCanonical("/about", {
     title: "Conoceme | AionSite - Diseno Web Premium en Mexico",
     description:
       "Conoce al equipo detras de AionSite. Mas de 35 proyectos web entregados, especializados en velocidad, conversion y SEO tecnico.",
-    images: ["/logo-aionsite.png"],
+    images: ["/placeholder.png"],
   },
 });
 

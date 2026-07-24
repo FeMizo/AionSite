@@ -24,7 +24,7 @@ export async function generateMetadata({
   const siteUrl = getSiteUrl().replace(/\/$/, "");
   const ogImage = post.image
     ? `${siteUrl}${post.image}`
-    : `${siteUrl}/logo-aionsite.png`;
+    : `${siteUrl}/placeholder.png`;
   const title = truncate(`${post.title} | AionSite Blog`, 60);
   const description = truncate(post.excerpt, 160);
   return withCanonical(`/blog/${post.id}`, {
@@ -62,7 +62,7 @@ export default async function PostPage({
   const siteUrl = getSiteUrl().replace(/\/$/, "");
   const featuredImage = post.image
     ? `${siteUrl}${post.image}`
-    : `${siteUrl}/logo-aionsite.png`;
+    : `${siteUrl}/placeholder.png`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
