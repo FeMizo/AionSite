@@ -1,8 +1,11 @@
 import { spawn } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const envPath = path.resolve(".env.local");
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(scriptDir, "..");
+const envPath = path.join(repoRoot, ".env.local");
 
 function loadDotEnv(filePath) {
   if (!existsSync(filePath)) {
@@ -85,8 +88,10 @@ async function run() {
   const appUrl = requireEnv(env, "APP_URL");
   const port = env.FTP_PORT || "21";
   const remoteDir = env.FTP_REMOTE_DIR || "public_html/social";
-  const fileName = path.basename(absoluteFile);
-  const remotePath = normalizeRemotePath(remoteDir, fileName);
+  const socialRoot = path.join(repoRoot, "public/social");
+  const relativePath = path.relative(socialRoot, absoluteFile).replaceAll("\\", "/");
+  const filePath = relativePath.startsWith("..") ? path.basename(absoluteFile) : relativePath;
+  const remotePath = normalizeRemotePath(remoteDir, filePath);
   const ftpUrl = `ftp://${host}:${port}/${remotePath.uploadPath}`;
 
   await new Promise((resolve, reject) => {
