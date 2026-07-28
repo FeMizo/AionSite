@@ -1,11 +1,11 @@
-# Setup: Tarea Programada Daily Stories - AionSite
+# Setup: Tarea Programada AionSite social diario Buffer
 
 ## 📋 Descripción
-Este sistema genera automáticamente contenido para Instagram Stories (Prompt + Copy + Hashtags) cada día a las 7:00 AM, con rotación semanal para evitar contenido repetitivo.
+Este sistema genera automáticamente contenido diario para Buffer, listo para Instagram y Facebook, cada día a las 7:00 AM.
 
 ## 📁 Archivos Necesarios
 - `stories-config.json` - Configuración completa (colores, dimensiones, variaciones)
-- `generate-daily-stories.js` - Script Node.js que genera el contenido diario
+- `generate-daily-stories.mjs` - Script Node.js que genera el contenido diario
 
 ## 🔧 Instalación Rápida
 
@@ -18,17 +18,17 @@ Si no tienes instalado Node.js, descargalo desde https://nodejs.org/
 
 ### Paso 2: Probar el script manualmente
 ```bash
-cd D:\IGNITE\Documents\Trabajo\LG\projects\AionSite
-node generate-daily-stories.js
+cd C:\Users\mizo_\Documents\Trabajo\Personal\AionSite\social-run
+node generate-daily-stories.mjs
 ```
 
-Deberías ver las historias del día con Prompt + Copy + Hashtags.
+Deberías ver el contenido del día listo para Buffer.
 
 ## ⏰ Crear Tarea Programada (Windows)
 
 ### Opción A: Con Claude (Recomendado)
 1. En Claude, abre un nuevo chat (NO dentro de una tarea programada)
-2. Di: "Crea una tarea programada para ejecutar el script de AionSite a las 7 AM diariamente"
+2. Di: "Crea una tarea programada para ejecutar el social diario de AionSite para Buffer a las 7 AM diariamente"
 3. Claude creará la tarea automáticamente
 
 ### Opción B: Manual con Windows Task Scheduler
@@ -43,8 +43,8 @@ Deberías ver las historias del día con Prompt + Copy + Hashtags.
    - Selecciona "Create Task..."
 
 3. **Pestaña General:**
-   - Name: `AionSite Daily Stories`
-   - Description: `Genera contenido Instagram Stories cada día`
+   - Name: `AionSite social diario Buffer`
+   - Description: `Genera contenido diario listo para Buffer en Instagram y Facebook`
    - Selecciona: "Run whether user is logged in or not"
 
 4. **Pestaña Triggers:**
@@ -60,8 +60,8 @@ Deberías ver las historias del día con Prompt + Copy + Hashtags.
    - Click "New..."
    - Action: "Start a program"
    - Program/script: `C:\Program Files\nodejs\node.exe` (o ruta donde instalaste Node)
-   - Arguments: `"D:\IGNITE\Documents\Trabajo\LG\projects\AionSite\generate-daily-stories.js"`
-   - Start in: `D:\IGNITE\Documents\Trabajo\LG\projects\AionSite`
+   - Arguments: `"C:\Users\mizo_\Documents\Trabajo\Personal\AionSite\social-run\generate-daily-stories.mjs"`
+   - Start in: `C:\Users\mizo_\Documents\Trabajo\Personal\AionSite\social-run`
    - Click OK
 
 6. **Pestaña Conditions:**
@@ -74,13 +74,13 @@ Deberías ver las historias del día con Prompt + Copy + Hashtags.
 
 ### Método 1: Ver el historio
 1. Abre Task Scheduler
-2. Busca "AionSite Daily Stories"
+2. Busca "AionSite social diario Buffer"
 3. Click derecho → Properties → History
 4. Verifica que la tarea se ejecutó sin errores
 
 ### Método 2: Test Manual
 ```bash
-node generate-daily-stories.js
+node generate-daily-stories.mjs
 ```
 
 ## 📊 Sistema de Rotación
@@ -114,7 +114,7 @@ El script genera:
 Si necesitas cambiar la hora (ej: 9 AM en lugar de 7 AM):
 
 ### En Task Scheduler:
-1. Click derecho en "AionSite Daily Stories"
+1. Click derecho en "AionSite social diario Buffer"
 2. Properties
 3. Triggers → Edit
 4. Cambia el Time
@@ -135,13 +135,13 @@ Si necesitas cambiar la hora (ej: 9 AM en lugar de 7 AM):
 
 ## 📝 Logs
 
-Para habilitar logs automáticos, descomentar la última línea en generate-daily-stories.js:
+Para habilitar logs automáticos, descomentar la última línea en generate-daily-stories.mjs:
 ```javascript
 // Uncomment to save output to file
 saveOutputToFile();
 ```
 
-Esto creará una carpeta `stories-generated/` con archivos de texto diarios.
+Esto creará una carpeta `stories-generated/` con archivos de texto diarios listos para Buffer.
 
 ## ❓ ¿Preguntas?
 

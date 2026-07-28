@@ -1,5 +1,9 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Card } from "@/src/components/ui/Card";
 import { cn } from "@/src/lib/utils";
+import { getScrollTrigger, gsap, usePrefersReducedMotion } from "@/src/lib/animations";
 
 export interface TimelineItem {
   period: string;
@@ -15,9 +19,50 @@ interface TimelineProps {
 }
 
 export function Timeline({ items, className }: TimelineProps) {
+  const reduce = usePrefersReducedMotion();
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = timelineRef.current;
+    const line = lineRef.current;
+    if (!root || !line) return;
+
+    if (reduce) {
+      gsap.set(line, { scaleY: 1 });
+      return;
+    }
+
+    const ScrollTriggerPlugin = getScrollTrigger();
+    const tween = gsap.fromTo(
+      line,
+      { scaleY: 0 },
+      {
+        scaleY: 1,
+        ease: "none",
+        scrollTrigger: ScrollTriggerPlugin
+          ? {
+              trigger: root,
+              start: "top 72%",
+              end: "bottom 48%",
+              scrub: 0.4,
+            }
+          : undefined,
+      },
+    );
+
+    return () => {
+      tween.kill();
+    };
+  }, [reduce]);
+
   return (
-    <div className={cn("relative space-y-8", className)}>
+    <div ref={timelineRef} className={cn("relative space-y-8", className)}>
       <div className="absolute bottom-2 left-3 top-2 w-px bg-white/10" />
+      <div
+        ref={lineRef}
+        className="absolute bottom-2 left-3 top-2 w-[3px] origin-top -translate-x-1/2 rounded-full bg-linear-to-b from-cyan-300 via-blue-500 to-violet-500 shadow-[0_0_24px_rgba(59,130,246,0.72)]"
+      />
 
       {items.map((item) => (
         <div key={`${item.title}-${item.period}`} className="relative pl-10">

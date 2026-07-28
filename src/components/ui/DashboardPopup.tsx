@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { X, Zap, ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
+import { gsap, usePrefersReducedMotion } from "@/src/lib/animations";
 
 const COOKIE_NAME = "dashboard_popup_dismissed";
 const COOKIE_RESET_DAYS = 4;
@@ -15,6 +15,9 @@ export function DashboardPopup() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
     const shouldShow = checkShouldShowPopup();
@@ -36,6 +39,19 @@ export function DashboardPopup() {
       document.body.style.overflow = "";
     };
   }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(overlayRef.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: reduced ? 0 : 0.25 });
+      gsap.fromTo(
+        panelRef.current,
+        { autoAlpha: 0, y: reduced ? 0 : 24 },
+        { autoAlpha: 1, y: 0, duration: reduced ? 0 : 0.4, ease: "power3.out" },
+      );
+    });
+    return () => ctx.revert();
+  }, [isVisible, reduced]);
 
   const checkShouldShowPopup = (): boolean => {
     if (typeof window === "undefined") return false;
@@ -107,19 +123,13 @@ export function DashboardPopup() {
   if (!isVisible) return null;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+    <div
+      ref={overlayRef}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
       onClick={(e) => e.target === e.currentTarget && handleClose()}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 24 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+      <div
+        ref={panelRef}
         className="relative flex w-full max-w-5xl overflow-hidden rounded-2xl bg-gray-950 shadow-2xl border border-white/10"
       >
         {/* Close button */}
@@ -208,8 +218,8 @@ export function DashboardPopup() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-950/80 to-transparent" />
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
 

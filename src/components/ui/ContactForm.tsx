@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Loader2, Send } from "lucide-react";
 import { FormInput } from "@/src/components/ui/FormInput";
 import { FormTextarea } from "@/src/components/ui/FormTextarea";
 import { Button } from "@/src/components/ui/Button";
+import { gsap, usePrefersReducedMotion } from "@/src/lib/animations";
 
 interface ContactFormProps {
   showPhone?: boolean;
@@ -29,6 +30,20 @@ export function ContactForm({
 }: ContactFormProps) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    if (status !== "error" || reduced) return;
+    const tween = gsap.fromTo(
+      formRef.current,
+      { x: -8 },
+      { x: 0, duration: 0.36, ease: "elastic.out(1, 0.35)" },
+    );
+    return () => {
+      tween.kill();
+    };
+  }, [reduced, status]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,7 +72,7 @@ export function ContactForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`space-y-4 ${status === "error" ? "animate-shake" : ""}`}>
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
       {showPhone ? (
         <div className="grid gap-4 sm:grid-cols-2">
           <FormInput

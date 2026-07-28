@@ -8,8 +8,11 @@ import { Card } from "@/src/components/ui/Card";
 import { ContactForm } from "@/src/components/ui/ContactForm";
 import { TableOfContents } from "@/src/components/blog/TableOfContents";
 import { ArticleBlockRenderer } from "@/src/components/blog/ArticleBlockRenderer";
+import { useGsapStagger } from "@/src/lib/animations";
 
 export function Blog({ data }: { data: BlogSectionData }) {
+  const heroRef = useGsapStagger<HTMLDivElement>();
+
   return (
     <>
       {/* Hero */}
@@ -17,17 +20,18 @@ export function Blog({ data }: { data: BlogSectionData }) {
         <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-violet-600/14 blur-[130px]" />
         <div className="absolute left-1/4 top-1/3 -z-10 h-[300px] w-[400px] rounded-full bg-blue-600/10 blur-[100px]" />
         <Container className="text-center">
-          <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-violet-300 shadow-[0_14px_28px_-20px_rgba(124,58,237,0.6)]">
+          <div ref={heroRef}>
+          <div data-gsap-reveal className="mb-8 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-violet-300 shadow-[0_14px_28px_-20px_rgba(124,58,237,0.6)]">
             <BookOpen size={14} />
             {data.hero.badgeText}
           </div>
-          <h1 className="mx-auto max-w-4xl text-display font-display font-bold text-white">
+          <h1 data-gsap-reveal className="mx-auto max-w-4xl text-display font-display font-bold text-white">
             {data.hero.title}
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
+          <p data-gsap-reveal className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
             {data.hero.subtitle}
           </p>
-          <div className="mt-10 flex justify-center">
+          <div data-gsap-reveal className="mt-10 flex justify-center">
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/20 hover:text-white"
@@ -38,6 +42,7 @@ export function Blog({ data }: { data: BlogSectionData }) {
           </div>
           <div className="mt-10 flex justify-center">
             <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+          </div>
           </div>
         </Container>
       </section>
