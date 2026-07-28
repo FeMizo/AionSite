@@ -7,6 +7,9 @@ const pages = [
   { path: "/proyectos/", changefreq: "weekly", priority: "0.9" },
   { path: "/blog/", changefreq: "weekly", priority: "0.8" },
   { path: "/about/", changefreq: "monthly", priority: "0.7" },
+  { path: "/terminos/", changefreq: "yearly", priority: "0.3" },
+  { path: "/privacidad/", changefreq: "yearly", priority: "0.3" },
+  { path: "/legales/", changefreq: "yearly", priority: "0.3" },
 ];
 
 export function GET() {

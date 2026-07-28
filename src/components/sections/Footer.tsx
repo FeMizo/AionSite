@@ -12,6 +12,12 @@ export function Footer({
   base: CmsBase;
   data: FooterSectionData;
 }) {
+  const legalLinks = [
+    { href: "/terminos/", label: "Terminos" },
+    { href: "/privacidad/", label: "Privacidad" },
+    { href: "/legales/", label: "Legales" },
+  ];
+
   return (
     <footer className="border-t border-white/5 bg-slate-950 py-12">
       <Container>
@@ -69,7 +75,7 @@ export function Footer({
                 </a>
               </li>
             </ul>
-            <div className="mb-4 mt-8 font-bold text-white">Síguenos</div>
+            <div className="mb-4 mt-8 font-bold text-white">Siguenos</div>
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/aionsite/"
@@ -102,8 +108,27 @@ export function Footer({
         </div>
 
         <div className="mt-12 border-t border-white/5 pt-8 text-center text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} {data.name}. Todos los derechos reservados.</p>
-          <p className="mt-2">Diseñado con pasión por AionSite.</p>
+          <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+            <span>© {new Date().getFullYear()} {data.name}. Todos los derechos reservados.</span>
+            <span className="hidden sm:inline" aria-hidden="true">
+              |
+            </span>
+            <span className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+              {legalLinks.map((link, index) => (
+                <span key={link.href} className="flex items-center gap-x-3">
+                  <Link href={link.href} className="text-slate-400 transition-colors hover:text-white">
+                    {link.label}
+                  </Link>
+                  {index < legalLinks.length - 1 ? (
+                    <span className="text-slate-700" aria-hidden="true">
+                      ·
+                    </span>
+                  ) : null}
+                </span>
+              ))}
+            </span>
+          </p>
+          <p className="mt-2">Disenado con pasion por AionSite.</p>
         </div>
       </Container>
     </footer>
