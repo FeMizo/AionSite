@@ -4,8 +4,8 @@ export type AboutLanguage = "en" | "es";
 
 const SPANISH_STRING_MAP: Record<string, string> = {
   "About Me": "Sobre mi",
-  "Jose Miss builds frontend and CMS experiences with a clear business focus.":
-    "Jose Miss crea experiencias frontend y CMS con un enfoque claro en negocio.",
+  "Felipe Miss builds frontend and CMS experiences with a clear business focus.":
+    "Felipe Miss crea experiencias frontend y CMS con un enfoque claro en negocio.",
   "Frontend & CMS Developer based in Mexico, open to USA and LATAM remote work. Specialized in Vue.js, Nuxt.js, WordPress, and Shopify with a strong focus on performance, technical SEO, and conversion-minded execution.":
     "Desarrollador Frontend y CMS basado en Mexico, disponible para trabajo remoto en USA y LATAM. Especializado en Vue.js, Nuxt.js, WordPress y Shopify, con fuerte enfoque en rendimiento, SEO tecnico y ejecucion orientada a conversion.",
   Mexico: "Mexico",
