@@ -26,6 +26,100 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "negocio-online-sitio-web-propio",
+    title: "Tu negocio gana al estar online",
+    excerpt:
+      "Un sitio web propio te ayuda a ganar visibilidad, confianza y oportunidades medibles sin depender solo de redes o recomendaciones.",
+    image: "/blog/negocio-online-sitio-web-propio.webp",
+    badgeText: "Presencia Digital",
+    date: "29 de julio, 2026",
+    dateISO: "2026-07-29",
+    readTime: "7 min de lectura",
+    keywords: [
+      "negocio online con sitio web",
+      "beneficios de tener un sitio web",
+      "presencia digital para negocios",
+      "sitio web para captar clientes",
+      "pagina web profesional",
+      "visibilidad online para empresas",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "estar-disponible-cuando-te-buscan", text: "Estar disponible cuando te buscan" },
+      { level: 3, id: "visibilidad-mas-alla-de-las-redes", text: "Visibilidad mas alla de las redes" },
+      { level: 2, id: "convertir-confianza-en-oportunidades", text: "Convertir confianza en oportunidades" },
+      { level: 3, id: "un-mensaje-claro-para-el-cliente", text: "Un mensaje claro para el cliente" },
+      { level: 2, id: "tener-control-sobre-tu-presencia", text: "Tener control sobre tu presencia" },
+      { level: 2, id: "medir-para-tomar-mejores-decisiones", text: "Medir para tomar mejores decisiones" },
+      { level: 2, id: "el-sitio-como-activo-del-negocio", text: "El sitio como activo del negocio" },
+    ],
+    blocks: [
+      { type: "h2", id: "estar-disponible-cuando-te-buscan", text: "Estar disponible cuando te buscan" },
+      {
+        type: "p",
+        text: "Un negocio puede funcionar durante anos con recomendaciones, llamadas y mensajes de WhatsApp. El problema aparece cuando una persona escucha tu nombre, quiere comprobar que eres una opcion confiable y no encuentra un lugar claro donde conocerte. En ese momento, la falta de presencia propia no es un detalle de imagen: es una oportunidad que se vuelve dificil de recuperar.",
+      },
+      {
+        type: "p",
+        text: "Tener un sitio web propio crea una base disponible todos los dias y a cualquier hora. No depende de que publiques justo cuando alguien esta buscando, ni de que una red social decida mostrar tu contenido. El sitio explica quien eres, que resuelves, para quien trabajas y cual es el siguiente paso para contactarte.",
+      },
+      { type: "h3", id: "visibilidad-mas-alla-de-las-redes", text: "Visibilidad mas alla de las redes" },
+      {
+        type: "p",
+        text: "Las redes sociales sirven para llamar la atencion y mantener una relacion con tu audiencia, pero su alcance es variable. Un sitio bien estructurado puede aparecer en busquedas relacionadas con tus servicios, tu ciudad o los problemas que ayudas a resolver. Tambien funciona como destino para enlaces de anuncios, publicaciones, correos, cotizaciones y recomendaciones.",
+      },
+      {
+        type: "quote",
+        text: "Las redes pueden iniciar la conversacion; tu sitio debe ayudar a que la conversacion avance.",
+      },
+      { type: "h2", id: "convertir-confianza-en-oportunidades", text: "Convertir confianza en oportunidades" },
+      {
+        type: "p",
+        text: "Antes de escribirte, muchos prospectos revisan tu informacion por su cuenta. Quieren entender si tienes experiencia, si conoces su problema y si tu forma de trabajar parece profesional. Una pagina clara reduce esa incertidumbre porque presenta la informacion en el orden en que la persona la necesita para decidir.",
+      },
+      { type: "h3", id: "un-mensaje-claro-para-el-cliente", text: "Un mensaje claro para el cliente" },
+      {
+        type: "p",
+        text: "Un sitio eficaz no intenta decirlo todo al mismo tiempo. Empieza con una propuesta de valor concreta, muestra los servicios principales, responde objeciones y agrega pruebas de confianza. Casos, testimonios, preguntas frecuentes y ejemplos de trabajo ayudan a que el visitante se imagine trabajando contigo antes de enviar un mensaje.",
+      },
+      {
+        type: "p",
+        text: "La claridad tambien mejora la calidad de los contactos. Cuando explicas para quien es tu servicio, que incluye y que resultado busca, las personas que llegan suelen tener una expectativa mas cercana a lo que realmente puedes ofrecer. Eso ahorra tiempo y hace mas productiva cada conversacion comercial.",
+      },
+      { type: "h2", id: "tener-control-sobre-tu-presencia", text: "Tener control sobre tu presencia" },
+      {
+        type: "p",
+        text: "En una plataforma externa aceptas sus formatos, cambios y limites. En tu propio sitio decides como organizar la informacion, que paginas crear, que mensajes destacar y como conectar cada visita con tu proceso comercial. Ese control no significa trabajar aislado de las redes. Significa que tus canales tienen un punto de destino que pertenece a tu negocio.",
+      },
+      {
+        type: "p",
+        text: "Tambien puedes actualizar tu oferta cuando cambia el negocio. Si agregas un servicio, atiendes una nueva zona o identificas una pregunta frecuente, el sitio puede reflejarlo con una pagina, una seccion o un articulo. La presencia digital deja de ser una fotografia vieja y se convierte en una herramienta que acompana tu crecimiento.",
+      },
+      { type: "h2", id: "medir-para-tomar-mejores-decisiones", text: "Medir para tomar mejores decisiones" },
+      {
+        type: "p",
+        text: "Una ventaja importante de tener un sitio web es que puedes observar que ocurre despues de la visita. Con analitica basica puedes identificar que paginas reciben mas atencion, que contenidos generan contactos, desde que dispositivos llegan las personas y en que punto abandonan. No necesitas llenar el negocio de reportes: necesitas algunas señales utiles para decidir que mejorar.",
+      },
+      {
+        type: "p",
+        text: "Esos datos ayudan a ordenar prioridades. Tal vez el servicio mas rentable no esta bien explicado, el formulario pide demasiado o una pagina recibe trafico pero no tiene una llamada a la accion visible. En lugar de cambiar todo por intuicion, puedes corregir el punto que mas friccion esta creando y comparar el resultado con el tiempo.",
+      },
+      { type: "h2", id: "el-sitio-como-activo-del-negocio", text: "El sitio como activo del negocio" },
+      {
+        type: "p",
+        text: "Un sitio web propio no garantiza clientes por el simple hecho de existir. Su valor aparece cuando combina contenido claro, buena experiencia movil, velocidad, SEO basico y rutas sencillas para contactar. Tambien necesita mantenimiento: revisar formularios, actualizar informacion, cuidar imagenes y confirmar que las paginas importantes sigan funcionando.",
+      },
+      {
+        type: "p",
+        text: "La mejor forma de verlo es como un activo que trabaja junto con tus otros canales. Las recomendaciones pueden llevar visitas, las redes pueden despertar interes y los anuncios pueden acelerar el alcance. El sitio organiza esa demanda, responde las dudas y facilita el siguiente paso.",
+      },
+      {
+        type: "p",
+        text: "Si tu negocio depende hoy de mensajes sueltos o de que alguien te recomiende, una presencia web propia puede ayudarte a ganar orden, confianza y oportunidades medibles. En AionSite podemos revisar que deberia incluir tu sitio, que contenido conviene publicar primero y como convertirlo en una herramienta util para tu negocio.",
+      },
+    ],
+  },
+  {
     id: "crear-pagina-web-profesional-cambia-como-te-encuentran",
     title: "Crear una pagina web profesional cambia como te encuentran",
     excerpt:
