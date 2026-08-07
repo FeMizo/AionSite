@@ -69,9 +69,9 @@
       "enabled": true,
       "order": 1,
       "data": {
-        "badgeText": "🚀 Más de 35 sitios web entregados con resultados reales",
-        "title": "Sitios web que generan clientes automáticamente.",
-        "subtitle": "Mientras otros pagan miles en anuncios, nosotros creamos presencia digital que atrae, convierte y vende 24/7. SEO técnico + IA + automatización = crecimiento sostenible sin depender de Facebook Ads.",
+        "badgeText": "AionSite: diseño web, ecommerce e IA para negocios",
+        "title": "AionSite crea sitios web que generan clientes automáticamente.",
+        "subtitle": "Diseñamos y desarrollamos sitios, tiendas y automatizaciones para que tu negocio atraiga, convierta y venda 24/7.",
         "primaryCTA": "Ver precios y reservar consultoría gratuita",
         "secondaryCTA": "Ver casos de éxito (+200% en conversiones)",
         "trustBar": [
@@ -306,15 +306,15 @@
           "recommended": true
         },
         {
-          "name": "Mantenimiento + IA",
-          "price": "Desde $3,000/mes",
+          "name": "Ecommerce esencial",
+          "price": "Desde $7,000",
           "features": [
-            "Optimizaciones mensuales que aumentan ventas",
-            "Velocidad turbo para mejores posiciones SEO",
-            "Monitoreo continuo de rendimiento",
-            "Soporte prioritario ilimitado",
-            "Automatizaciones activas generando leads",
-            "Reportes semanales de crecimiento"
+            "Tienda inicial lista para vender en linea",
+            "Catalogo editable de productos y servicios",
+            "Carrito simple enfocado en conversion",
+            "Integracion de pago",
+            "SEO basico para productos principales",
+            "Capacitacion para administrar pedidos"
           ],
           "recommended": false
         },

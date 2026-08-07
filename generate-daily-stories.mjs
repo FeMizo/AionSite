@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * AionSite Daily Stories Generator
+ * AionSite social diario Buffer
  * Reads the stories configuration and generates daily content
  * Run this script daily at 7:00 AM
  */
@@ -45,6 +45,20 @@ function getStoriesForToday() {
   return [];
 }
 
+function buildBufferDraft(storyId, story, variation, timestamp) {
+  return {
+    title: story.nombre,
+    text: `${variation.copy}\n\n${variation.hashtags}`,
+    services: ["instagram", "facebook"],
+    date: timestamp,
+    meta: {
+      storyId,
+      angle: variation.angulo,
+      week: variation.semana,
+    },
+  };
+}
+
 // Generate daily output
 function generateDailyStories() {
   const week = getCurrentWeek();
@@ -53,18 +67,22 @@ function generateDailyStories() {
 
   if (storiesToday.length === 0) {
     console.log(`📅 ${new Date().toLocaleString()}`);
-    console.log('No stories scheduled for today.');
+    console.log('No hay publicaciones programadas para hoy.');
     return;
   }
 
+  const timestamp = new Date().toISOString();
+  const draftPayloads = [];
+
   console.log(`\n${'='.repeat(80)}`);
-  console.log(`📱 AIONSITE DAILY STORIES - ${new Date().toLocaleDateString()}`);
+  console.log(`📱 AIONSITE SOCIAL DIARIO BUFFER - ${new Date().toLocaleDateString()}`);
   console.log(`📅 Week: ${week + 1} | Day: ${day.charAt(0).toUpperCase() + day.slice(1)}`);
   console.log(`${'='.repeat(80)}\n`);
 
   storiesToday.forEach((storyId) => {
     const story = config.stories[storyId];
     const variation = story.variations[week];
+    draftPayloads.push(buildBufferDraft(storyId, story, variation, timestamp));
 
     console.log(`\n${'─'.repeat(80)}`);
     console.log(`📸 ${storyId.toUpperCase()} - ${story.nombre}`);
@@ -91,6 +109,14 @@ function generateDailyStories() {
   console.log(`${'='.repeat(80)}`);
   console.log(`✅ Generated at: ${new Date().toLocaleString()}`);
   console.log(`${'='.repeat(80)}\n`);
+
+  const outputDir = path.join(__dirname, 'stories-generated');
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+  const draftPath = path.join(outputDir, `buffer-draft-${new Date().toISOString().slice(0, 10)}.json`);
+  fs.writeFileSync(draftPath, `${JSON.stringify(draftPayloads, null, 2)}\n`);
+  console.log(`🧩 Buffer draft payload saved to: ${draftPath}`);
 }
 
 // Run generator
@@ -113,7 +139,7 @@ function saveOutputToFile() {
     return;
   }
 
-  let output = `AionSite Daily Stories - ${timestamp}\n`;
+  let output = `AionSite social diario Buffer - ${timestamp}\n`;
   output += `Week ${week + 1} | Day: ${day}\n\n`;
 
   storiesToday.forEach((storyId) => {

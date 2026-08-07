@@ -36,10 +36,10 @@ export const defaultCmsContent: CmsContent = {
       enabled: true,
       order: 1,
       data: {
-        badgeText: "Diseño web · IA · Automatización para negocios",
-        title: "Sitios web que trabajan por tu negocio.",
+        badgeText: "AionSite: diseño web, ecommerce e IA para negocios",
+        title: "AionSite crea sitios web que generan clientes automáticamente.",
         subtitle:
-          "Construimos presencias digitales con SEO técnico, ecommerce modular, automatización e inteligencia artificial para que tu negocio crezca sin depender de anuncios pagados.",
+          "Diseñamos y desarrollamos sitios, tiendas y automatizaciones para que tu negocio atraiga, convierta y venda 24/7.",
         primaryCTA: "Cotizar por WhatsApp",
         secondaryCTA: "Ver portafolio",
         trustBar: ["SEO técnico", "Ecommerce modular", "IA empresarial", "Automatización"],
@@ -189,13 +189,15 @@ export const defaultCmsContent: CmsContent = {
           recommended: true,
         },
         {
-          name: "Mantenimiento mensual",
-          price: "Desde $3,000/mes",
+          name: "Ecommerce esencial",
+          price: "Desde $7,000",
           features: [
-            "Actualizaciones mensuales",
-            "Optimización de velocidad",
-            "Soporte prioritario",
-            "Reportes de rendimiento",
+            "Tienda inicial lista para vender en linea",
+            "Catalogo editable de productos y servicios",
+            "Carrito simple enfocado en conversion",
+            "Integracion de pago",
+            "SEO basico para productos principales",
+            "Capacitacion para administrar pedidos",
           ],
           recommended: false,
         },
@@ -438,5 +440,3 @@ export const defaultCmsContent: CmsContent = {
     "whatsappFloatingButton",
   ],
 };
-
-

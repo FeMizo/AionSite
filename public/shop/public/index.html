@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Assets publicos de shop de AionSite. Las imagenes compartibles viven aqui."
+    />
+    <link rel="icon" href="/icon.png" />
+    <link rel="shortcut icon" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <title>AionSite Shop Public</title>
+    <style>
+      :root {
+        --bg: #07131f;
+        --panel: rgba(9, 19, 35, 0.84);
+        --line: rgba(116, 185, 255, 0.24);
+        --text: #f8fafc;
+        --muted: #9fb4d4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(78, 161, 255, 0.16), transparent 32rem),
+          linear-gradient(135deg, #020617 0%, var(--bg) 55%, #020617 100%);
+      }
+
+      main {
+        width: min(1160px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 40px 0 56px;
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 20px;
+        margin-bottom: 28px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(32px, 5vw, 58px);
+        line-height: 0.95;
+      }
+
+      p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .badge {
+        align-self: start;
+        border: 1px solid rgba(78, 161, 255, 0.35);
+        background: rgba(78, 161, 255, 0.1);
+        color: #dbeafe;
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 28px 90px rgba(2, 6, 23, 0.45);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border-radius: 999px;
+        color: #fff;
+        text-decoration: none;
+        border: 1px solid rgba(78, 161, 255, 0.3);
+        background: rgba(78, 161, 255, 0.08);
+      }
+
+      a.button:hover {
+        border-color: rgba(78, 161, 255, 0.55);
+        background: rgba(78, 161, 255, 0.16);
+      }
+
+      .grid {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        overflow: hidden;
+        background: rgba(2, 6, 23, 0.45);
+      }
+
+      .card a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        background: #020617;
+      }
+
+      .card figcaption {
+        padding: 12px 14px 14px;
+        font-size: 13px;
+        color: var(--muted);
+        word-break: break-word;
+      }
+
+      .note {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>AionSite Shop Public</h1>
+          <p>
+            Assets publicos de shop. Las imagenes compartibles viven en <code>/shop/public/</code>
+            y la galeria privada esta en <code>/shop/private/</code>.
+          </p>
+        </div>
+        <div class="badge">Index publico</div>
+      </header>
+
+      <section class="panel">
+        <p>
+          Este index evita el 403 de carpeta vacia y deja un punto de entrada estable para usuarios,
+          enlaces compartidos y archivos de marca.
+        </p>
+        <div class="links">
+          <a class="button" href="/shop/">Volver al shop</a>
+          <a class="button" href="/shop/private/">Galeria privada</a>
+          <a class="button" href="/shop/public/promocional1.png" target="_blank" rel="noopener">Abrir ejemplo</a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Assets publicos">
+        <figure class="card">
+          <a href="/shop/public/promocional1.png" target="_blank" rel="noopener">
+            <img src="/shop/public/promocional1.png" alt="Promocional 1 de shop" />
+            <figcaption>promocional1.png</figcaption>
+          </a>
+        </figure>
+      </section>
+
+      <p class="note">
+        Agrega nuevas piezas en <code>public/shop/</code> con slugs estables para mantener las URLs
+        compartibles.
+      </p>
+    </main>
+  </body>
+</html>

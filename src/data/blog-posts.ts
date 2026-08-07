@@ -74,6 +74,112 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    id: "sitio-web-profesional-completo",
+    title: "Que incluye un sitio web profesional",
+    excerpt:
+      "Un sitio profesional combina estrategia, SEO, velocidad, conversion y mantenimiento para convertir visitas en oportunidades reales.",
+    image: "/blog/sitio-web-profesional-completo.webp",
+    badgeText: "Sitio Web Plus",
+    date: "4 de agosto, 2026",
+    dateISO: "2026-08-04",
+    readTime: "7 min de lectura",
+    keywords: [
+      "sitio web profesional completo",
+      "que debe incluir una pagina web",
+      "servicios de sitio web",
+      "SEO tecnico para negocios",
+      "pagina web con WhatsApp",
+      "analitica web para empresas",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "una-web-profesional-resuelve-mas-que-la-imagen", text: "Una web profesional resuelve mas que la imagen" },
+      { level: 3, id: "la-diferencia-entre-verse-bien-y-funcionar", text: "La diferencia entre verse bien y funcionar" },
+      { level: 2, id: "los-elementos-que-construyen-una-base-solida", text: "Los elementos que construyen una base solida" },
+      { level: 3, id: "estructura-y-mensaje", text: "Estructura y mensaje" },
+      { level: 3, id: "seo-tecnico-y-velocidad", text: "SEO tecnico y velocidad" },
+      { level: 2, id: "convertir-visitas-en-conversaciones", text: "Convertir visitas en conversaciones" },
+      { level: 3, id: "formularios-whatsapp-y-llamadas-a-la-accion", text: "Formularios, WhatsApp y llamadas a la accion" },
+      { level: 2, id: "medicion-y-mantenimiento", text: "Medicion y mantenimiento" },
+      { level: 2, id: "como-priorizar-tu-inversion", text: "Como priorizar tu inversion" },
+    ],
+    blocks: [
+      { type: "h2", id: "una-web-profesional-resuelve-mas-que-la-imagen", text: "Una web profesional resuelve mas que la imagen" },
+      {
+        type: "p",
+        text: "Una pagina web puede verse moderna y aun asi no ayudar mucho al negocio. Si el visitante no entiende que ofreces, no encuentra una respuesta a su problema o no sabe como contactarte, el diseno se queda en decoracion. Un sitio web profesional debe unir estrategia, contenido y tecnologia para que cada visita tenga una posibilidad clara de avanzar.",
+      },
+      {
+        type: "p",
+        text: "Por eso el valor de un sitio completo no esta en tener mas secciones por tenerlas. Esta en construir una experiencia que responda las preguntas importantes: quien eres, para quien trabajas, que puedes resolver, por que confiar en ti y cual es el siguiente paso. Cuando esas respuestas aparecen en el orden correcto, la web se convierte en una herramienta comercial.",
+      },
+      { type: "h3", id: "la-diferencia-entre-verse-bien-y-funcionar", text: "La diferencia entre verse bien y funcionar" },
+      {
+        type: "p",
+        text: "Una landing basica puede ser suficiente para una campana puntual. Pero un negocio que quiere posicionarse, explicar varios servicios y aprender de sus resultados necesita una base mas amplia. Eso incluye paginas con objetivos definidos, contenido que responde intenciones de busqueda, rutas de contacto y una estructura que se pueda mantener sin rehacer todo cada vez que cambia la oferta.",
+      },
+      {
+        type: "quote",
+        text: "Una web completa no agrega ruido: organiza mejor la informacion que tu cliente necesita para decidir.",
+      },
+      { type: "h2", id: "los-elementos-que-construyen-una-base-solida", text: "Los elementos que construyen una base solida" },
+      {
+        type: "p",
+        text: "Antes de hablar de funciones, conviene definir la base. Un sitio profesional necesita una arquitectura sencilla, un mensaje coherente y una experiencia consistente en movil y escritorio. Tambien debe dejar espacio para crecer: nuevos servicios, articulos, casos de estudio, preguntas frecuentes o paginas dirigidas a diferentes zonas.",
+      },
+      { type: "h3", id: "estructura-y-mensaje", text: "Estructura y mensaje" },
+      {
+        type: "p",
+        text: "La estructura debe reflejar como piensa el cliente, no como esta organizado internamente el negocio. La pagina principal presenta la promesa y dirige hacia los servicios. Cada servicio explica un problema concreto, el proceso y la forma de iniciar. Las paginas de contacto reducen dudas y hacen visible la accion principal. Esta jerarquia ayuda tanto a las personas como a los buscadores.",
+      },
+      {
+        type: "p",
+        text: "El mensaje tambien necesita precision. Frases genericas como soluciones integrales dicen poco si no se conectan con una necesidad real. Es mejor explicar que haces, para quien y con que enfoque. La claridad evita que el visitante tenga que interpretar tu oferta y mejora la calidad de los prospectos que llegan.",
+      },
+      { type: "h3", id: "seo-tecnico-y-velocidad", text: "SEO tecnico y velocidad" },
+      {
+        type: "p",
+        text: "El SEO tecnico es la infraestructura que permite que el contenido se encuentre y se entienda. Incluye titulos y descripciones utiles, URLs claras, enlaces internos, sitemap, datos estructurados cuando aplican, control de indexacion y una version movil bien resuelta. No sustituye al buen contenido, pero evita que una buena pagina tenga problemas basicos para aparecer.",
+      },
+      {
+        type: "p",
+        text: "La velocidad es parte de la misma experiencia. Imagenes optimizadas, codigo ligero, fuentes bien cargadas y una jerarquia visual estable reducen friccion. Un sitio que tarda demasiado o cambia de posicion mientras carga puede perder la atencion antes de que el visitante lea la propuesta. El objetivo no es perseguir una cifra aislada, sino ofrecer una experiencia rapida y estable.",
+      },
+      { type: "h2", id: "convertir-visitas-en-conversaciones", text: "Convertir visitas en conversaciones" },
+      {
+        type: "p",
+        text: "Un sitio profesional no debe dejar al visitante en un callejon sin salida. Cada pagina importante necesita una siguiente accion razonable: solicitar una cotizacion, agendar una llamada, enviar un mensaje o conocer un servicio relacionado. La llamada a la accion debe aparecer despues de que la pagina haya explicado suficiente, no como una interrupcion sin contexto.",
+      },
+      { type: "h3", id: "formularios-whatsapp-y-llamadas-a-la-accion", text: "Formularios, WhatsApp y llamadas a la accion" },
+      {
+        type: "p",
+        text: "El canal depende del negocio y del tipo de decision. Un formulario puede servir para solicitudes con varios datos; WhatsApp puede ser mas natural para una primera pregunta; una llamada puede funcionar mejor cuando el servicio requiere diagnostico. Lo importante es que el canal sea visible, funcione de verdad y explique que ocurrira despues de enviar la informacion.",
+      },
+      {
+        type: "p",
+        text: "Tambien conviene reducir la friccion. Pide solo los datos necesarios, confirma que el mensaje fue recibido y evita esconder el contacto en una sola pagina. Si una persona llega desde movil, debe poder avanzar con el pulgar sin hacer zoom ni buscar durante varios segundos.",
+      },
+      { type: "h2", id: "medicion-y-mantenimiento", text: "Medicion y mantenimiento" },
+      {
+        type: "p",
+        text: "Una web completa debe permitir aprender. La analitica basica muestra de donde llegan las visitas, que servicios despiertan interes y que acciones generan contactos. Con esa informacion puedes mejorar titulares, ordenar secciones, reforzar paginas de servicio y detectar formularios que no estan cumpliendo su funcion. Medir no significa llenar el negocio de reportes, sino tomar mejores decisiones con evidencia.",
+      },
+      {
+        type: "p",
+        text: "El mantenimiento mantiene viva esa inversion. Revisar enlaces, formularios, imagenes, contenido, seguridad y rendimiento evita que el sitio se desgaste en silencio. Tambien permite incorporar aprendizajes del mercado sin esperar a un rediseño completo. La web debe poder evolucionar al ritmo del negocio.",
+      },
+      { type: "h2", id: "como-priorizar-tu-inversion", text: "Como priorizar tu inversion" },
+      {
+        type: "p",
+        text: "No todos los negocios necesitan lanzar todo al mismo tiempo. Una buena prioridad empieza por el objetivo principal y por las rutas que generan ingresos. Despues se construyen las paginas esenciales, se resuelven velocidad y SEO tecnico, y se agregan funciones que realmente ayuden a convertir o medir. Es preferible una base clara y bien mantenida que muchas funciones que nadie utiliza.",
+      },
+      {
+        type: "p",
+        text: "Si estas evaluando un sitio web profesional completo, revisa la propuesta mas alla del numero de paginas. Pregunta como se definira el contenido, que se medira, como se cuidara el rendimiento y quien podra actualizarlo. En AionSite podemos ayudarte a ordenar esas decisiones y convertirlas en un sitio que no solo se vea bien, sino que trabaje por tu negocio.",
+      },
+    ],
+  },
+  {
     id: "negocio-online-sitio-web-propio",
     title: "Tu negocio gana al estar online",
     excerpt:

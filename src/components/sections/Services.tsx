@@ -128,10 +128,62 @@ function InteractiveServiceCard({
   const Icon = iconMap[service.icon] ?? Globe;
   const colors = iconColors[service.icon] ?? iconColors.Globe;
   const flow = getServiceFlow(service.icon);
+  const cardRef = useRef<HTMLButtonElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
+
+  function moveCard(event: MouseEvent<HTMLButtonElement>) {
+    const card = cardRef.current;
+    if (!card || style || !window.matchMedia("(min-width: 640px)").matches) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const magneticX = (x / rect.width - 0.5) * 18;
+    const magneticY = (y / rect.height - 0.5) * 14;
+
+    gsap.to(card, {
+      x: magneticX,
+      y: magneticY,
+      rotateX: -(y / rect.height - 0.5) * 4,
+      rotateY: (x / rect.width - 0.5) * 5,
+      duration: 0.35,
+      ease: "power3.out",
+      transformPerspective: 700,
+    });
+    gsap.to(iconRef.current, {
+      x: magneticX * 0.35,
+      y: magneticY * 0.35,
+      rotate: active ? 8 : 4,
+      duration: 0.35,
+      ease: "power3.out",
+    });
+  }
+
+  function resetCard() {
+    const card = cardRef.current;
+    if (!card || style) return;
+
+    gsap.to(card, {
+      x: 0,
+      y: 0,
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.55,
+      ease: "elastic.out(1, 0.45)",
+    });
+    gsap.to(iconRef.current, {
+      x: 0,
+      y: 0,
+      rotate: 0,
+      duration: 0.45,
+      ease: "power3.out",
+    });
+  }
 
   return (
     <button
+      ref={cardRef}
       type="button"
       data-gsap-reveal
       onClick={onClick ?? onActivate}
@@ -139,18 +191,21 @@ function InteractiveServiceCard({
       onFocus={onActivate}
       onMouseMove={(event) => {
         const rect = event.currentTarget.getBoundingClientRect();
+        moveCard(event);
         gsap.to(glowRef.current, {
-          background: `radial-gradient(220px circle at ${event.clientX - rect.left}px ${event.clientY - rect.top}px, ${colors.glow}, transparent 68%)`,
+          background: `radial-gradient(300px circle at ${event.clientX - rect.left}px ${event.clientY - rect.top}px, ${colors.glow}, rgba(103,232,249,0.08) 32%, transparent 72%)`,
           duration: 0.25,
           ease: "power2.out",
         });
       }}
+      onMouseLeave={resetCard}
+      onBlur={resetCard}
       style={style}
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
-      className={`group relative min-h-[210px] overflow-hidden rounded-2xl border p-6 text-left transition-[transform,border-color,background-color] duration-300 ease-out hover:-translate-y-2 hover:scale-[1.015] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+      className={`group relative min-h-[210px] overflow-hidden rounded-2xl border p-6 text-left transition-[border-color,background-color,box-shadow] duration-300 ease-out hover:border-blue-300/45 hover:shadow-[0_30px_80px_-44px_rgba(59,130,246,0.85)] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
         active
           ? "border-blue-300/45 bg-slate-900"
           : "border-white/10 bg-slate-900 hover:border-blue-300/35"
@@ -160,11 +215,13 @@ function InteractiveServiceCard({
         ref={glowRef}
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
+      <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-cyan-200/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="absolute right-5 top-5 font-display text-5xl font-bold text-white/[0.035]">
         0{index + 1}
       </div>
       <div className="relative flex items-start gap-4">
         <div
+          ref={iconRef}
           className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border shadow-[0_18px_42px_-26px_rgba(59,130,246,0.9)] transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:text-white ${colors.container} ${colors.hover}`}
         >
           <Icon size={20} />

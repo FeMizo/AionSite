@@ -15,13 +15,13 @@ export const metadata: Metadata = withCanonical("/blog", {
     siteName: "AionSite",
     type: "website",
     locale: "es_MX",
-    images: [{ url: "/logo-aionsite.png", width: 1200, height: 630, alt: "Blog AionSite" }],
+    images: [{ url: "/placeholder.png", width: 1200, height: 630, alt: "Blog AionSite" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | AionSite — Diseño Web, SEO y Conversión",
     description: "Estrategias, consejos y tendencias de diseño web, SEO técnico y conversión para negocios digitales en México.",
-    images: ["/logo-aionsite.png"],
+    images: ["/placeholder.png"],
   },
 });
 
