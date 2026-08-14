@@ -1,7 +1,7 @@
 {
   "base": {
     "name": "AionSite",
-    "description": "AionSite crea sitios web, tiendas y automatizaciones para negocios que quieren atraer clientes, convertir visitas y reducir trabajo manual.",
+    "description": "AionSite crea sitios web que venden y automatizan tareas para negocios.",
     "email": "contacto@aionsite.com.mx",
     "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
     "navigation": [
@@ -70,8 +70,8 @@
       "order": 1,
       "data": {
         "badgeText": "AionSite: diseño web, ecommerce e IA para negocios",
-        "title": "AionSite crea sitios web, tiendas y automatizaciones para negocios.",
-        "subtitle": "Creamos herramientas digitales para que tu negocio atraiga clientes, convierta visitas y automatice tareas repetitivas.",
+        "title": "AionSite crea sitios web que venden.",
+        "subtitle": "Atrae clientes y automatiza tareas repetitivas.",
         "primaryCTA": "Ver precios y reservar consultoría gratuita",
         "secondaryCTA": "Ver casos de éxito (+200% en conversiones)",
         "trustBar": [

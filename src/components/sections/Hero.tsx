@@ -35,6 +35,9 @@ export function Hero({
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const signalLineRefs = useRef<Array<SVGPathElement | null>>([]);
   const signalPulseRefs = useRef<Array<HTMLSpanElement | null>>([]);
+  const titleParts = data.title.trim().split(/\s+/);
+  const titleLead = titleParts.slice(0, 4).join(" ");
+  const titleTail = titleParts.slice(4).join(" ");
 
   useEffect(() => {
     fetch("/api/location")
@@ -149,21 +152,21 @@ export function Hero({
       />
 
       <Container className="relative z-10">
-        <div className="grid min-h-[680px] gap-12 xl:grid-cols-[minmax(0,0.98fr)_minmax(440px,1.02fr)] xl:items-center">
+        <div className="grid min-h-[680px] gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(440px,0.98fr)] xl:items-center">
           <div ref={introRef} className="relative">
             <div data-hero-reveal className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)] backdrop-blur-sm">
               <Sparkles size={14} />
               Agencia de diseño web en {city}
             </div>
 
-            <h1 data-hero-reveal className="max-w-5xl font-display text-[clamp(2.5rem,6vw,7rem)] font-bold leading-[0.88] text-white">
-              {data.title.split(" ").slice(0, 4).join(" ")}
+            <h1 data-hero-reveal className="max-w-5xl font-display text-[clamp(2.5rem,5.5vw,6rem)] font-bold leading-[0.88] text-white">
+              {titleLead}
               <span
                 ref={gradientTextRef}
                 className="mt-3 block bg-linear-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text pb-2 text-transparent"
                 style={{ backgroundSize: "240% 100%", backgroundPosition: "0% 50%" }}
               >
-                en automatico.
+                {titleTail}
               </span>
             </h1>
 
