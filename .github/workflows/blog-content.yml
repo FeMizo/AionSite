@@ -1,4 +1,4 @@
-name: Generate Blog Draft
+name: Generate and Publish Blog
 
 on:
   schedule:
@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   generate-blog:
@@ -42,20 +41,26 @@ jobs:
       - name: Build static export
         run: npm run build:static
 
-      - name: Create or update blog PR
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: codex/blogs
-          base: main
-          title: "chore: add next scheduled blog post"
-          commit-message: "chore: add scheduled blog post"
-          body: |
-            Automated scheduled blog draft for AionSite.
+      - name: Commit directly to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/generated public/blog src/data/blog-posts.ts
+          if git diff --cached --quiet; then
+            echo "No new blog content generated."
+            exit 0
+          fi
+          git commit -m "chore: publish scheduled blog post"
+          git push origin HEAD:main
 
-            Review checklist:
-            - Title is 60 characters or fewer.
-            - Excerpt/meta description is 160 characters or fewer.
-            - Image exists under `public/blog`.
-            - Static build passed.
-          labels: blog, automated
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          local-dir: ./out/
+          server-dir: ./domains/aionsite.com.mx/public_html/
+          log-level: standard
+          timeout: 120000

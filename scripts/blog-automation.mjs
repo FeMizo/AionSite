@@ -38,6 +38,13 @@ function slugify(value) {
     .slice(0, 72);
 }
 
+function normalizeComparable(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 function formatSpanishDate(date) {
   return `${date.getUTCDate()} de ${monthNames[date.getUTCMonth()]}, ${date.getUTCFullYear()}`;
 }
@@ -69,8 +76,13 @@ function getNextPublishDate(source) {
   return candidate > todayUtc ? candidate : todayUtc;
 }
 
-function selectTopic(topics, existingIds) {
-  return topics.find((topic) => !existingIds.has(slugify(topic.topic)));
+function selectTopic(topics, existingIds, source) {
+  const normalizedSource = normalizeComparable(source);
+  return topics.find(
+    (topic) =>
+      !existingIds.has(slugify(topic.topic)) &&
+      !normalizedSource.includes(normalizeComparable(topic.primaryKeyword)),
+  );
 }
 
 function buildTextPrompt(topic, publishDate) {
@@ -367,7 +379,7 @@ async function generate() {
   const source = readFileSync(blogPostsPath, "utf8");
   const existingIds = new Set(extractPostIds(source));
   const topics = readJson(topicsPath);
-  const topic = selectTopic(topics, existingIds);
+  const topic = selectTopic(topics, existingIds, source);
   if (!topic) {
     console.log("No unpublished blog topics remain.");
     return;
