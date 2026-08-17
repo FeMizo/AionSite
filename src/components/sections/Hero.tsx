@@ -27,7 +27,6 @@ export function Hero({
   const introRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
-  const gradientTextRef = useRef<HTMLSpanElement>(null);
   const mainPathRef = useRef<SVGPathElement>(null);
   const pulsePathRef = useRef<SVGPathElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
@@ -35,14 +34,11 @@ export function Hero({
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const signalLineRefs = useRef<Array<SVGPathElement | null>>([]);
   const signalPulseRefs = useRef<Array<HTMLSpanElement | null>>([]);
-  const titleParts = data.title.trim().split(/\s+/);
-  const titleLead = titleParts.slice(0, 4).join(" ");
-  const titleTail = titleParts.slice(4).join(" ");
 
   useEffect(() => {
     fetch("/api/location")
       .then((res) => res.json())
-      .then((data) => setCity(data.city))
+      .then((result) => setCity(result.city))
       .catch(() => setCity("Cd. Carmen"));
   }, []);
 
@@ -66,7 +62,6 @@ export function Hero({
       gsap.fromTo(centerRef.current, { autoAlpha: 0, scale: 0.72 }, { autoAlpha: 1, scale: 1, duration: 0.75, delay: 0.35, ease: "power3.out" });
       gsap.fromTo(cardRefs.current.filter(Boolean), { autoAlpha: 0, y: 22, scale: 0.9 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, delay: 0.42, stagger: 0.08, ease: "power3.out" });
 
-      gsap.to(gradientTextRef.current, { backgroundPosition: "240% 50%", duration: 7, ease: "none", repeat: -1, yoyo: true });
       gsap.to(".hero-orbit-a", { rotate: 360, duration: 42, ease: "none", repeat: -1 });
       gsap.to(".hero-orbit-b", { rotate: -360, duration: 36, ease: "none", repeat: -1 });
       gsap.to(radarSweepRef.current, { rotate: 360, duration: 8, ease: "none", repeat: -1 });
@@ -102,16 +97,16 @@ export function Hero({
       signalLineRefs.current
         .filter((line): line is SVGPathElement => Boolean(line))
         .forEach((line, index) => {
-        const length = line.getTotalLength();
-        gsap.set(line, { strokeDasharray: `2 ${Math.max(length - 2, 1)}`, strokeDashoffset: length });
-        gsap.to(line, {
-          strokeDashoffset: -length,
-          duration: 2.6 + index * 0.22,
-          delay: index * 0.18,
-          ease: "none",
-          repeat: -1,
+          const length = line.getTotalLength();
+          gsap.set(line, { strokeDasharray: `2 ${Math.max(length - 2, 1)}`, strokeDashoffset: length });
+          gsap.to(line, {
+            strokeDashoffset: -length,
+            duration: 2.6 + index * 0.22,
+            delay: index * 0.18,
+            ease: "none",
+            repeat: -1,
+          });
         });
-      });
     }, section);
 
     return () => ctx.revert();
@@ -160,14 +155,7 @@ export function Hero({
             </div>
 
             <h1 data-hero-reveal className="max-w-5xl font-display text-[clamp(2.5rem,5.5vw,6rem)] font-bold leading-[0.88] text-white">
-              {titleLead}
-              <span
-                ref={gradientTextRef}
-                className="mt-3 block bg-linear-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text pb-2 text-transparent"
-                style={{ backgroundSize: "240% 100%", backgroundPosition: "0% 50%" }}
-              >
-                {titleTail}
-              </span>
+              AionSite crea sitios web que venden.
             </h1>
 
             <p data-hero-reveal className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
@@ -263,9 +251,7 @@ export function Hero({
             >
               <div>
                 <div className="font-display text-5xl font-bold text-white">24/7</div>
-                <div className="mt-2 text-xs uppercase tracking-[0.24em] text-blue-200">
-                  Growth loop
-                </div>
+                <div className="mt-2 text-xs uppercase tracking-[0.24em] text-blue-200">Growth loop</div>
               </div>
             </div>
 
@@ -284,9 +270,7 @@ export function Hero({
                   }}
                   className="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-cyan-300 opacity-50 shadow-[0_0_18px_rgba(103,232,249,0.95)]"
                 />
-                <div className="font-display text-3xl font-bold text-white">
-                  {card.label}
-                </div>
+                <div className="font-display text-3xl font-bold text-white">{card.label}</div>
                 <div className="mt-1 text-sm text-slate-400">{card.value}</div>
               </div>
             ))}
