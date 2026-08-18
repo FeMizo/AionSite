@@ -1,0 +1,51 @@
+export const jobStatuses = [
+  "pendiente",
+  "para_aplicar",
+  "aplicado",
+  "skipeado",
+  "no_entra_en_planes",
+  "follow_up",
+  "en_espera",
+  "rechazado",
+  "bloqueado",
+  "guardado_para_despues",
+] as const;
+
+export type JobStatus = (typeof jobStatuses)[number];
+
+export type JobsProfile = {
+  name: string;
+  email: string;
+  phone: string;
+  linkedin: string;
+  location: string;
+  country: string;
+  experience: string;
+  visaSponsorship: string;
+  salaryExpectation: string;
+  stackSummary: string;
+  about: string;
+};
+
+export type JobRecord = {
+  id: string;
+  company: string;
+  title: string;
+  salaryLabel: string;
+  salaryUsdMin: number | null;
+  salaryUsdMax: number | null;
+  zone: string;
+  region: string;
+  source: string;
+  link: string;
+  stack: string[];
+  status: JobStatus;
+  cover: string;
+  notes: string;
+  lastTouchedAt: string;
+};
+
+export type JobsContent = {
+  profile: JobsProfile;
+  jobs: JobRecord[];
+};

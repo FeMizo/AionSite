@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  Briefcase,
   ExternalLink,
   FileText,
   Layers3,
@@ -9,6 +10,7 @@ import {
 
 const items = [
   { href: "/admin", label: "Resumen", icon: LayoutDashboard },
+  { href: "/admin/jobs", label: "Jobs", icon: Briefcase },
   { href: "/admin/sections", label: "Secciones", icon: Layers3 },
   { href: "/admin/content", label: "Contenido", icon: FileText },
   { href: "/admin/settings", label: "Configuración", icon: Settings },
