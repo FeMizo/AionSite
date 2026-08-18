@@ -334,8 +334,10 @@ function buildImagePrompt(post, topic) {
     `Primary keyword: ${topic.primaryKeyword}.`,
     "Scene: modern digital workspace with abstract website layouts, search signals, performance dashboards, and conversion paths.",
     "Style: polished 3D/editorial illustration, premium agency look, deep navy background, balanced cyan and warm accent details, crisp lighting.",
-    "Composition: landscape blog hero, centered subject with clean negative space, suitable for a 1200x800 crop.",
-    "Constraints: no text, no logos, no watermark, no brand marks, no UI text.",
+    "Composition: landscape blog hero, suitable for a 1200x800 crop. Reserve the left 38% as a clean text-safe column for the article title and badge.",
+    "Keep every graphic, card, glow, icon, line, and visual subject inside the right 55% of the canvas, leaving a clearly visible empty gutter of at least 7% between the text column and the right composition.",
+    "Never let the right-side graphic overlap, touch, or crowd the left text-safe column; preserve generous breathing room around the title area.",
+    "Constraints: no text, no logos, no watermark, no brand marks, no UI text, no visual elements in the reserved left text-safe column.",
   ].join(" ");
 }
 

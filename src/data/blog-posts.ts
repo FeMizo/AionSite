@@ -26,6 +26,110 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "elegir-wordpress-shopify-nextjs",
+    title: "WordPress, Shopify o Next.js: como elegir",
+    excerpt:
+      "Compara WordPress, Shopify y Next.js por costo, velocidad, SEO, mantenimiento y crecimiento antes de elegir la base de tu sitio.",
+    image: "/blog/elegir-wordpress-shopify-nextjs.webp",
+    badgeText: "Estrategia Web",
+    date: "18 de agosto, 2026",
+    dateISO: "2026-08-18",
+    readTime: "8 min de lectura",
+    keywords: [
+      "WordPress Shopify Next.js",
+      "elegir plataforma web",
+      "plataforma para sitio de negocio",
+      "WordPress para empresas",
+      "Shopify para ecommerce",
+      "Next.js para negocios",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "la-mejor-plataforma-depende-del-negocio", text: "La mejor plataforma depende del negocio" },
+      { level: 3, id: "define-la-decision-antes-de-ver-la-tecnologia", text: "Define la decision antes de ver la tecnologia" },
+      { level: 2, id: "cuando-wordpress-tiene-sentido", text: "Cuando WordPress tiene sentido" },
+      { level: 2, id: "cuando-shopify-es-la-ruta-correcta", text: "Cuando Shopify es la ruta correcta" },
+      { level: 2, id: "cuando-nextjs-justifica-la-inversion", text: "Cuando Next.js justifica la inversion" },
+      { level: 2, id: "compara-el-costo-real", text: "Compara el costo real" },
+      { level: 2, id: "seo-velocidad-y-mantenimiento", text: "SEO, velocidad y mantenimiento" },
+      { level: 2, id: "una-decision-que-puedes-revisar", text: "Una decision que puedes revisar" },
+    ],
+    blocks: [
+      { type: "h2", id: "la-mejor-plataforma-depende-del-negocio", text: "La mejor plataforma depende del negocio" },
+      {
+        type: "p",
+        text: "Elegir entre WordPress, Shopify y Next.js no es una competencia para encontrar una tecnologia ganadora. Es una decision de negocio: la plataforma debe ayudarte a publicar, vender, medir y mejorar sin crear una carga que tu equipo no pueda sostener.",
+      },
+      {
+        type: "p",
+        text: "Las tres opciones pueden producir un sitio profesional, pero resuelven problemas distintos. WordPress destaca por su flexibilidad editorial, Shopify simplifica la operacion de una tienda y Next.js permite construir experiencias a la medida con alto control tecnico.",
+      },
+      { type: "h3", id: "define-la-decision-antes-de-ver-la-tecnologia", text: "Define la decision antes de ver la tecnologia" },
+      {
+        type: "p",
+        text: "Antes de comparar funciones, responde cinco preguntas: que vendes, quien actualizara el sitio, que integraciones necesitas, cuanto mantenimiento puedes asumir y como mediras el resultado. Una empresa de servicios no necesita las mismas herramientas que una tienda con cientos de productos.",
+      },
+      {
+        type: "quote",
+        text: "La plataforma correcta es la que reduce friccion entre tu estrategia y la experiencia que recibe el cliente.",
+      },
+      { type: "h2", id: "cuando-wordpress-tiene-sentido", text: "Cuando WordPress tiene sentido" },
+      {
+        type: "p",
+        text: "WordPress suele ser una buena base para sitios corporativos, blogs, medios y negocios que necesitan publicar contenido con frecuencia. Su ecosistema permite encontrar temas, plugins e integraciones para ampliar el sitio sin construir cada funcion desde cero.",
+      },
+      {
+        type: "p",
+        text: "Su ventaja principal es la libertad editorial. Puedes organizar servicios, casos, recursos y paginas de aterrizaje con una estructura que crece contigo. La desventaja es que esa flexibilidad requiere disciplina: demasiados plugins, actualizaciones descuidadas o un hosting debil pueden afectar seguridad, velocidad y estabilidad.",
+      },
+      { type: "h2", id: "cuando-shopify-es-la-ruta-correcta", text: "Cuando Shopify es la ruta correcta" },
+      {
+        type: "p",
+        text: "Shopify tiene sentido cuando el centro del negocio es vender productos en linea y necesitas una operacion clara para catalogo, inventario, pagos, envios y pedidos. La plataforma resuelve buena parte de la infraestructura comercial para que el equipo se concentre en producto, marketing y servicio.",
+      },
+      {
+        type: "p",
+        text: "El costo de esa simplicidad es aceptar ciertas reglas del ecosistema y revisar con cuidado las aplicaciones adicionales. Cada app puede sumar una cuota, scripts y dependencias. Antes de instalar, conviene comprobar si la funcion realmente mejora ventas o solo agrega complejidad.",
+      },
+      { type: "h2", id: "cuando-nextjs-justifica-la-inversion", text: "Cuando Next.js justifica la inversion" },
+      {
+        type: "p",
+        text: "Next.js es una alternativa adecuada cuando necesitas una experiencia personalizada, integraciones especificas, rendimiento muy controlado o una arquitectura que pueda crecer con el producto. Es especialmente util para plataformas, sitios con flujos complejos y empresas que requieren conectar varias fuentes de datos.",
+      },
+      {
+        type: "p",
+        text: "El control tecnico viene con una responsabilidad mayor. Necesitas definir quien mantendra el codigo, como se publicaran cambios, donde viviran los datos y que presupuesto existe para soporte. No conviene elegirlo solo porque suena moderno; conviene cuando la personalizacion genera valor medible.",
+      },
+      { type: "h2", id: "compara-el-costo-real", text: "Compara el costo real" },
+      {
+        type: "p",
+        text: "El precio inicial no es el costo total. Incluye hosting, dominio, licencias, aplicaciones, desarrollo, contenido, mantenimiento, soporte y el tiempo que tu equipo invertira en operar la plataforma. Una opcion economica que nadie actualiza puede costar mas que una solucion con soporte y procesos claros.",
+      },
+      {
+        type: "p",
+        text: "Tambien calcula el costo de cambiar despues. Revisa si puedes exportar contenido, migrar productos, conservar URLs y mantener tus datos de analitica. Pensar en la salida no significa esperar abandonar la plataforma; significa evitar quedar atrapado en una decision tomada sin contexto.",
+      },
+      { type: "h2", id: "seo-velocidad-y-mantenimiento", text: "SEO, velocidad y mantenimiento" },
+      {
+        type: "p",
+        text: "Ninguna plataforma posiciona por si sola. El resultado depende de la arquitectura, la calidad del contenido, la experiencia movil, la velocidad, los metadatos y la capacidad de mantener paginas utiles. Una implementacion ordenada puede hacer que cualquiera de las tres opciones funcione bien.",
+      },
+      {
+        type: "p",
+        text: "Evalua como se generan URLs, redirecciones, sitemap, datos estructurados y etiquetas canonicas. Prueba tambien cuanto tarda una pagina real y que tan facil es corregir un error. SEO y rendimiento no deben revisarse al final: forman parte de la eleccion y de la implementacion.",
+      },
+      { type: "h2", id: "una-decision-que-puedes-revisar", text: "Una decision que puedes revisar" },
+      {
+        type: "p",
+        text: "Para un sitio de servicios con contenido, WordPress puede ofrecer el equilibrio adecuado. Para una tienda que necesita operar rapido, Shopify puede reducir friccion. Para una experiencia diferenciada con integraciones propias, Next.js puede justificar una inversion mayor. La respuesta depende del siguiente resultado que necesitas conseguir.",
+      },
+      {
+        type: "p",
+        text: "Si aun no tienes claro el camino, empieza con una auditoria de objetivos, contenido, operaciones y crecimiento. En AionSite podemos ayudarte a comparar escenarios y elegir una base que sea rapida, medible y sostenible para tu negocio.",
+      },
+    ],
+  },
+  {
     id: "mantenimiento-web-despues-de-publicarse",
     title: "Mantenimiento web para no perder ventas",
     excerpt:
