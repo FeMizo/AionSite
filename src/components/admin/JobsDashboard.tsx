@@ -99,9 +99,11 @@ function matchesText(job: JobRecord, query: string) {
     job.company,
     job.title,
     job.salaryLabel,
+    job.salaryCurrency,
     job.zone,
     job.region,
     job.source,
+    job.fitReason,
     job.notes,
     job.cover,
     job.stack.join(" "),
@@ -178,6 +180,10 @@ function supportsSalary(job: JobRecord, min: number | null, max: number | null) 
   }
 
   return true;
+}
+
+function getVisibleSalaryLabel(job: JobRecord) {
+  return `${job.salaryLabel} · ${job.salaryCurrency}`;
 }
 
 export function JobsDashboard({
@@ -840,9 +846,12 @@ export function JobsDashboard({
                         </div>
                       </td>
                       <td className="px-4 py-4 align-top text-sm text-slate-300">
-                        {job.salaryLabel}
+                        <div className="font-medium text-white">{job.salaryLabel}</div>
                         <div className="mt-1 text-xs text-slate-500">
-                          {buildSalaryRange(job)}
+                          Moneda visible: {job.salaryCurrency}
+                        </div>
+                        <div className="mt-1 text-xs text-slate-500">
+                          Normalizado USD: {buildSalaryRange(job)}
                         </div>
                       </td>
                       <td className="px-4 py-4 align-top text-sm text-slate-300">
@@ -1028,11 +1037,23 @@ export function JobsDashboard({
               </div>
               <div className="flex items-center justify-between gap-3">
                 <span className="text-slate-500">Salario</span>
-                <span>{selectedJob.salaryLabel}</span>
+                <span>{getVisibleSalaryLabel(selectedJob)}</span>
               </div>
               <div className="flex items-center justify-between gap-3">
                 <span className="text-slate-500">Rango USD</span>
                 <span>{buildSalaryRange(selectedJob)}</span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-slate-500">Fit reason</span>
+                <span className="text-right">{selectedJob.fitReason || "Sin nota"}</span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-slate-500">Checked at</span>
+                <span>{selectedJob.checkedAt}</span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-slate-500">Added at</span>
+                <span>{selectedJob.addedAt}</span>
               </div>
             </div>
           </>

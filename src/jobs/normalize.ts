@@ -8,6 +8,11 @@ function asNumberOrNull(value: unknown) {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
+function asCurrency(value: unknown) {
+  const currency = asString(value, "USD").toUpperCase();
+  return currency || "USD";
+}
+
 function asStack(value: unknown) {
   if (!Array.isArray(value)) {
     return [] as string[];
@@ -27,13 +32,20 @@ function normalizeStatus(value: unknown): JobStatus {
 }
 
 function normalizeJob(job: Partial<JobRecord> & Record<string, unknown>): JobRecord {
+  const id = asString(job.id, crypto.randomUUID());
+  const checkedAt = asString(job.checkedAt, new Date().toISOString());
   return {
-    id: asString(job.id, crypto.randomUUID()),
+    id,
+    dbId: asString(job.dbId, id),
     company: asString(job.company, "Sin empresa"),
     title: asString(job.title, "Sin puesto"),
     salaryLabel: asString(job.salaryLabel, "No visible"),
+    salaryCurrency: asCurrency(job.salaryCurrency),
     salaryUsdMin: asNumberOrNull(job.salaryUsdMin),
     salaryUsdMax: asNumberOrNull(job.salaryUsdMax),
+    fitReason: asString(job.fitReason, ""),
+    checkedAt,
+    addedAt: asString(job.addedAt, checkedAt),
     zone: asString(job.zone, "Remote"),
     region: asString(job.region, "Global"),
     source: asString(job.source, "Unknown"),

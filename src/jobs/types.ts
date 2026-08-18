@@ -29,11 +29,16 @@ export type JobsProfile = {
 
 export type JobRecord = {
   id: string;
+  dbId: string;
   company: string;
   title: string;
   salaryLabel: string;
+  salaryCurrency: string;
   salaryUsdMin: number | null;
   salaryUsdMax: number | null;
+  fitReason: string;
+  checkedAt: string;
+  addedAt: string;
   zone: string;
   region: string;
   source: string;
