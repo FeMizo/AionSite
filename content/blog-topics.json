@@ -1,5 +1,75 @@
 [
   {
+    "topic": "Cuanto cuesta una pagina web en Mexico en 2026",
+    "primaryKeyword": "cuanto cuesta una pagina web en Mexico",
+    "badgeText": "Precios Web",
+    "audience": "emprendedores y empresas mexicanas que comparan opciones para crear su sitio",
+    "angle": "explicar rangos de inversion, factores que cambian el precio, costos ocultos y como comparar propuestas sin elegir solo por precio"
+  },
+  {
+    "topic": "Cuanto cuesta una tienda en linea en Mexico",
+    "primaryKeyword": "cuanto cuesta una tienda en linea",
+    "badgeText": "Ecommerce",
+    "audience": "negocios mexicanos que quieren vender productos por internet",
+    "angle": "desglosar plataforma, catalogo, pagos, envios, diseño, mantenimiento y crecimiento con ejemplos de escenarios reales"
+  },
+  {
+    "topic": "Como elegir una agencia de diseno web en Mexico",
+    "primaryKeyword": "agencia de diseno web en Mexico",
+    "badgeText": "Guia de Compra",
+    "audience": "empresas que buscan proveedor para crear o redisenar su sitio web",
+    "angle": "dar criterios para evaluar portafolio, proceso, SEO, soporte, propiedad de archivos, tiempos y resultados antes de contratar"
+  },
+  {
+    "topic": "Como aparecer en Google si tienes un negocio local",
+    "primaryKeyword": "como aparecer en Google negocio local",
+    "badgeText": "SEO Local",
+    "audience": "duenos de negocios locales que quieren recibir llamadas, visitas y solicitudes desde Google",
+    "angle": "explicar la relacion entre sitio web, Google Business Profile, paginas de servicio, reseñas, contenido local y medicion"
+  },
+  {
+    "topic": "Pagina web o redes sociales: que necesita un negocio",
+    "primaryKeyword": "pagina web o redes sociales para negocio",
+    "badgeText": "Presencia Digital",
+    "audience": "negocios que dependen de Instagram, Facebook o WhatsApp y dudan si necesitan sitio propio",
+    "angle": "comparar alcance, control, confianza, captacion, SEO y conversion para definir como deben trabajar juntas"
+  },
+  {
+    "topic": "Landing page o pagina web completa: cual conviene",
+    "primaryKeyword": "landing page o pagina web",
+    "badgeText": "Conversion Web",
+    "audience": "empresas que necesitan decidir que tipo de sitio construir para captar clientes",
+    "angle": "comparar objetivos, estructura, trafico, campanas, SEO, mantenimiento y conversion para elegir la experiencia adecuada"
+  },
+  {
+    "topic": "SEO local para negocios: guia para atraer clientes cercanos",
+    "primaryKeyword": "SEO local para negocios",
+    "badgeText": "SEO Local",
+    "audience": "servicios, tiendas y empresas que atienden una ciudad o zona especifica",
+    "angle": "crear una guia accionable sobre perfil de Google, paginas locales, reseñas, datos de contacto y contenidos que captan demanda"
+  },
+  {
+    "topic": "Como hacer una pagina web para un restaurante",
+    "primaryKeyword": "pagina web para restaurante",
+    "badgeText": "Negocios Locales",
+    "audience": "restaurantes, cafeterias y negocios de alimentos que quieren mas reservaciones y pedidos",
+    "angle": "mostrar estructura, menu, ubicacion, horarios, reservas, pedidos, fotos, SEO local y llamadas a la accion"
+  },
+  {
+    "topic": "Como saber si tu pagina web esta funcionando",
+    "primaryKeyword": "como medir una pagina web",
+    "badgeText": "Analitica Web",
+    "audience": "duenos de negocio que tienen sitio pero no saben si genera resultados",
+    "angle": "explicar metricas de trafico, conversion, formularios, llamadas, velocidad y fuentes para tomar decisiones"
+  },
+  {
+    "topic": "Como crear contenido para posicionar un negocio en Google",
+    "primaryKeyword": "contenido SEO para negocios",
+    "badgeText": "Contenido & SEO",
+    "audience": "empresas de servicios que quieren atraer trafico organico sin publicar sin estrategia",
+    "angle": "organizar temas por intencion, paginas de servicio, preguntas frecuentes, enlaces internos y actualizacion de contenidos"
+  },
+  {
     "topic": "Que gana un negocio al estar online con un sitio web propio",
     "primaryKeyword": "negocio online con sitio web",
     "badgeText": "Presencia Digital",
