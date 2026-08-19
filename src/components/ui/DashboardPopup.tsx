@@ -145,7 +145,7 @@ export function DashboardPopup() {
           {/* Badge */}
           <div className="mb-5 inline-flex w-fit items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1">
             <Zap className="h-3.5 w-3.5 text-blue-400" />
-            <span className="text-xs font-medium text-blue-400">Próximamente</span>
+            <span className="text-xs font-medium text-blue-400">Ya disponible</span>
           </div>
 
           <h3 className="mb-2 text-2xl font-bold leading-tight text-white">
@@ -153,17 +153,17 @@ export function DashboardPopup() {
           </h3>
 
           <p className="mb-1 text-sm text-gray-400">
-            Checa cómo luce tu negocio en línea, identifica qué mejorar y sube tu posicionamiento en Google — todo desde nuestro dashboard, gratis.
+            Checa cómo luce tu negocio en línea, identifica qué mejorar y sube tu posicionamiento en Google desde nuestro dashboard, gratis.
           </p>
 
           <p className="mb-6 text-sm font-medium text-blue-400">
-            Disponible a partir del 18 de mayo de 2026
+            Ya puedes usarlo hoy
           </p>
 
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-3">
               <p className="text-xs text-gray-400">
-                Déjanos tu email y te avisamos el día del lanzamiento con un descuento exclusivo.
+                Déjanos tu email y te mandamos acceso, novedades y un descuento exclusivo.
               </p>
               <div className="flex gap-2">
                 <input
@@ -187,7 +187,7 @@ export function DashboardPopup() {
           ) : (
             <div className="rounded-lg border border-green-500/20 bg-green-500/10 p-4">
               <p className="text-sm font-medium text-green-400">
-                ¡Listo! Te avisamos el 18 de mayo con acceso anticipado y tu descuento.
+                ¡Listo! Ya tienes acceso y tu descuento quedó registrado.
               </p>
             </div>
           )}
