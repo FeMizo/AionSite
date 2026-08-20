@@ -187,6 +187,9 @@ function getVisibleSalaryLabel(job: JobRecord) {
   return `${job.salaryLabel} · ${job.salaryCurrency}`;
 }
 
+const jobStatusSelectClassName =
+  "mt-3 w-full rounded-2xl border border-white/10 bg-slate-950/90 px-4 py-3 text-sm font-medium text-white outline-none transition-[border-color,box-shadow,background-color] duration-150 ease-out focus:border-blue-400/70 focus:bg-slate-950 focus:ring-2 focus:ring-blue-400/15";
+
 export function JobsDashboard({
   initialContent,
 }: {
@@ -996,10 +999,11 @@ export function JobsDashboard({
                       lastTouchedAt: new Date().toISOString(),
                     }))
                   }
-                  className="mt-3 w-full bg-transparent text-sm text-white outline-none"
+                  className={jobStatusSelectClassName}
+                  style={{ colorScheme: "dark" }}
                 >
                   {jobStatuses.map((status) => (
-                    <option key={status} value={status}>
+                    <option key={status} value={status} className="bg-slate-950 text-white">
                       {statusLabel(status)}
                     </option>
                   ))}
