@@ -23,7 +23,7 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   metadataBase,
   title: "Diseño Web, IA y Automatización para Negocios | AionSite",
-  description: "AionSite crea sitios web, tiendas y automatizaciones para negocios que quieren atraer clientes, convertir visitas y reducir trabajo manual.",
+  description: "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
   keywords: ["diseño web México", "SEO técnico para negocios", "ecommerce modular", "IA para empresas locales", "automatización empresarial", "AionSite", "agencia web"],
   icons: {
     icon: "/icon.png",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Diseño Web, IA y Automatización para Negocios | AionSite",
-    description: "AionSite crea sitios web, tiendas y automatizaciones para negocios que quieren atraer clientes, convertir visitas y reducir trabajo manual.",
+    description: "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
     url: "/",
     siteName: "AionSite",
     type: "website",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Diseño Web, IA y Automatización para Negocios | AionSite",
-    description: "AionSite crea sitios web, tiendas y automatizaciones para negocios que quieren atraer clientes, convertir visitas y reducir trabajo manual.",
+    description: "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
     images: ["/placeholder.png"],
   },
 };

@@ -4,7 +4,7 @@ import type { CmsContent } from "@/src/cms/types";
 const base = {
   name: "AionSite",
   description:
-    "Agencia boutique de diseño y desarrollo web premium enfocada en conversión, velocidad y SEO técnico.",
+    "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
   email: "contacto@aionsite.com.mx",
   whatsappLink: getWhatsAppLink(),
   navigation: [
@@ -36,10 +36,10 @@ export const defaultCmsContent: CmsContent = {
       enabled: true,
       order: 1,
       data: {
-        badgeText: "AionSite: diseño web, ecommerce e IA para negocios",
-        title: "AionSite crea sitios web que generan clientes automáticamente.",
+        badgeText: "Agencia de diseño web, ecommerce e IA para negocios",
+        title: "AionSite ayuda a los negocios a atraer clientes y vender online.",
         subtitle:
-          "Diseñamos y desarrollamos sitios, tiendas y automatizaciones para que tu negocio atraiga, convierta y venda 24/7.",
+          "Este sitio presenta nuestros servicios para crear sitios web, tiendas y automatizaciones que convierten visitas en oportunidades y reducen trabajo manual.",
         primaryCTA: "Cotizar por WhatsApp",
         secondaryCTA: "Ver portafolio",
         trustBar: ["SEO técnico", "Ecommerce modular", "IA empresarial", "Automatización"],
