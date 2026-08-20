@@ -65,33 +65,150 @@ function buildSalaryRange(job: JobRecord) {
   return formatMoney(min ?? max);
 }
 
-function buildAutofillPack(content: JobsContent, job: JobRecord) {
-  const profile = content.profile;
+const ENGLISH_JOB_MARKERS = [
+  " engineer",
+  " developer",
+  " designer",
+  " manager",
+  " specialist",
+  " analyst",
+  " lead",
+  " senior",
+  " junior",
+  " product",
+  " marketing",
+  " sales",
+  " support",
+  " remote",
+  " full stack",
+  " frontend",
+  " backend",
+  " data",
+  " software",
+  " qa",
+];
 
-  return [
-    `Nombre: ${profile.name}`,
-    `Email: ${profile.email}`,
-    `Teléfono: ${profile.phone}`,
-    `LinkedIn: ${profile.linkedin}`,
-    `Ubicación: ${profile.location}`,
-    `País: ${profile.country}`,
-    `Experiencia: ${profile.experience}`,
-    `Visa sponsorship: ${profile.visaSponsorship}`,
-    `Salary expectation: ${profile.salaryExpectation}`,
-    `Stack: ${profile.stackSummary}`,
-    "",
-    `Puesto: ${job.title}`,
-    `Empresa: ${job.company}`,
-    `Zona: ${job.zone}`,
-    `Región: ${job.region}`,
-    `Salario: ${job.salaryLabel}`,
-    `Link: ${job.link}`,
-    "",
-    "Cover:",
-    job.cover || "",
-  ].join("\n");
+const SPANISH_JOB_MARKERS = [
+  " desarroll",
+  " ingenier",
+  " analist",
+  " remoto",
+  " producto",
+  " mercad",
+  " ventas",
+  " soporte",
+  " diseno",
+  " tecnic",
+  " seniority",
+  " responsable",
+  " coordin",
+];
+
+function isLikelyEnglishJob(job: JobRecord) {
+  const text = [
+    job.title,
+    job.company,
+    job.zone,
+    job.region,
+    job.source,
+    job.fitReason,
+    job.notes,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  if (/[áéíóúñü]/i.test(text)) {
+    return false;
+  }
+
+  if (SPANISH_JOB_MARKERS.some((marker) => text.includes(marker))) {
+    return false;
+  }
+
+  if (ENGLISH_JOB_MARKERS.some((marker) => text.includes(marker))) {
+    return true;
+  }
+
+  return /^[\x00-\x7F]+$/.test(job.title) && /\b(engineer|developer|designer|manager|specialist|analyst|lead|senior|junior|product|marketing|sales|support|remote|full stack|frontend|backend|data|software|qa)\b/i.test(text);
 }
 
+function buildCoverDraft(profile: JobsContent["profile"], job: JobRecord) {
+  const isEnglish = isLikelyEnglishJob(job);
+
+  if (isEnglish) {
+    return [
+      `Hi ${job.company},`,
+      "",
+      `I am ${profile.name}, a ${profile.experience} professional focused on web design, SEO, speed optimization and custom code.`,
+      `I am reaching out because the ${job.title} role aligns with the kind of work I do best: building clean experiences that convert, measure better and move fast.`,
+      "",
+      `My background in ${profile.stackSummary} lets me adapt quickly to modern product teams, support execution, and add value without noise.`,
+      "",
+      `I would love to talk about how I can help ${job.company} ship with clarity, quality and momentum.`,
+      "",
+      `Best regards,`,
+      profile.name,
+    ].join("\n");
+  }
+
+  return [
+    `Hola ${job.company},`,
+    "",
+    `Soy ${profile.name}, con ${profile.experience} de experiencia enfocado en diseno web, SEO, optimizacion de velocidad y codigo a medida.`,
+    `Me interesa la vacante de ${job.title} porque encaja con el tipo de trabajo que mejor hago: crear experiencias claras que convierten, miden mejor y responden rapido.`,
+    "",
+    `Mi experiencia con ${profile.stackSummary} me permite adaptarme rapido, apoyar la ejecucion y sumar valor sin ruido.`,
+    "",
+    `Me gustaria conversar sobre como puedo ayudar a ${job.company} a avanzar con claridad, calidad y ritmo.`,
+    "",
+    `Saludos,`,
+    profile.name,
+  ].join("\n");
+}
+function buildAutofillPack(content: JobsContent, job: JobRecord) {
+  const profile = content.profile;
+  const coverDraft = buildCoverDraft(profile, job);
+
+  return [
+    "[Candidate]",
+    `Name: ${profile.name}`,
+    `Email: ${profile.email}`,
+    `Phone: ${profile.phone}`,
+    `LinkedIn: ${profile.linkedin}`,
+    `Location: ${profile.location}`,
+    `Country: ${profile.country}`,
+    `Experience: ${profile.experience}`,
+    `Visa sponsorship: ${profile.visaSponsorship}`,
+    `Salary expectation: ${profile.salaryExpectation}`,
+    `Stack summary: ${profile.stackSummary}`,
+    `About: ${profile.about}`,
+    "",
+    "[Vacancy]",
+    `Company: ${job.company}`,
+    `Title: ${job.title}`,
+    `Status: ${job.status}`,
+    `Source: ${job.source}`,
+    `Zone: ${job.zone}`,
+    `Region: ${job.region}`,
+    `Salary label: ${job.salaryLabel}`,
+    `Salary currency: ${job.salaryCurrency}`,
+    `Salary range USD: ${buildSalaryRange(job)}`,
+    `Link: ${job.link}`,
+    `Checked at: ${job.checkedAt}`,
+    `Added at: ${job.addedAt}`,
+    `Fit reason: ${job.fitReason || "No note"}`,
+    `Stack: ${job.stack.join(" / ") || "No stack"}`,
+    `Notes: ${job.notes || "No notes"}`,
+    "",
+    "[Cover]",
+    `Language: ${isLikelyEnglishJob(job) ? "English" : "Spanish"}`,
+    "Draft:",
+    coverDraft,
+    "",
+    "[Existing cover]",
+    job.cover || "No cover saved yet",
+  ].join("\n");
+}
 function buildJobFormLabel(job: JobRecord) {
   return `${job.company} - ${job.title}`;
 }
