@@ -26,6 +26,111 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "cuanto-cuesta-pagina-web-mexico",
+    title: "Cuanto cuesta una pagina web en Mexico en 2026",
+    excerpt:
+      "Conoce que incluye el precio de una pagina web en Mexico, que factores lo cambian y como comparar propuestas sin elegir solo por costo.",
+    image: "/blog/cuanto-cuesta-pagina-web-mexico.webp",
+    badgeText: "Precios Web",
+    date: "20 de agosto, 2026",
+    dateISO: "2026-08-20",
+    readTime: "8 min de lectura",
+    keywords: [
+      "cuanto cuesta una pagina web en Mexico",
+      "precio de pagina web",
+      "cuanto cuesta hacer un sitio web",
+      "cotizacion de pagina web",
+      "diseño web para empresas",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "el-precio-no-es-una-tarifa-unica", text: "El precio no es una tarifa unica" },
+      { level: 3, id: "que-resultado-necesitas", text: "Que resultado necesitas" },
+      { level: 2, id: "rangos-de-inversion-para-orientarte", text: "Rangos de inversion para orientarte" },
+      { level: 3, id: "sitio-informativo-o-de-servicios", text: "Sitio informativo o de servicios" },
+      { level: 3, id: "proyecto-con-conversion-e-integraciones", text: "Proyecto con conversion e integraciones" },
+      { level: 2, id: "que-factores-cambian-la-cotizacion", text: "Que factores cambian la cotizacion" },
+      { level: 2, id: "costos-que-suelen-quedar-fuera", text: "Costos que suelen quedar fuera" },
+      { level: 2, id: "como-comparar-propuestas", text: "Como comparar propuestas" },
+      { level: 2, id: "elige-por-valor-y-no-solo-por-precio", text: "Elige por valor y no solo por precio" },
+    ],
+    blocks: [
+      { type: "h2", id: "el-precio-no-es-una-tarifa-unica", text: "El precio no es una tarifa unica" },
+      {
+        type: "p",
+        text: "Preguntar cuanto cuesta una pagina web en Mexico parece sencillo, pero no existe una tarifa universal. El precio depende de lo que el sitio debe resolver: presentar servicios, captar prospectos, vender productos, recibir reservaciones o conectar procesos internos.",
+      },
+      {
+        type: "p",
+        text: "Dos propuestas pueden hablar de una pagina web y tener alcances completamente distintos. Una puede incluir una plantilla y textos basicos; otra puede contemplar estrategia, copy, diseño a la medida, SEO tecnico, formularios, analitica, integraciones y soporte. Comparar solo el numero final oculta esas diferencias.",
+      },
+      { type: "h3", id: "que-resultado-necesitas", text: "Que resultado necesitas" },
+      {
+        type: "p",
+        text: "Antes de pedir una cotizacion, define el resultado principal. Si buscas llamadas y solicitudes, la estructura debe guiar a la conversacion. Si quieres aparecer en Google, necesitas contenido, arquitectura y una base tecnica preparada para crecer. Si vendes, el catalogo, pagos y logistica cambian el alcance.",
+      },
+      {
+        type: "quote",
+        text: "Una pagina web barata no es barata si no genera confianza, contactos ni ventas para el negocio.",
+      },
+      { type: "h2", id: "rangos-de-inversion-para-orientarte", text: "Rangos de inversion para orientarte" },
+      {
+        type: "p",
+        text: "Como referencia inicial, una pagina sencilla puede cubrir una presencia basica con pocas secciones y una llamada a la accion. Un sitio profesional de servicios requiere mas trabajo de contenido, jerarquia, diseño responsive, SEO y conversion. Un proyecto avanzado suma integraciones, flujos personalizados, catalogos, membresias o automatizaciones.",
+      },
+      {
+        type: "p",
+        text: "Los rangos sirven para ordenar expectativas, no para sustituir un diagnostico. El numero correcto aparece cuando se conocen las paginas, funcionalidades, materiales disponibles, responsables de contenido y nivel de soporte que necesitas despues del lanzamiento.",
+      },
+      { type: "h3", id: "sitio-informativo-o-de-servicios", text: "Sitio informativo o de servicios" },
+      {
+        type: "p",
+        text: "Un sitio informativo puede ser adecuado para una empresa que necesita explicar quien es, que ofrece, donde trabaja y como contactarla. El costo crece cuando cada servicio necesita una pagina propia, casos de exito, preguntas frecuentes, contenido local y rutas distintas para cada tipo de cliente.",
+      },
+      { type: "h3", id: "proyecto-con-conversion-e-integraciones", text: "Proyecto con conversion e integraciones" },
+      {
+        type: "p",
+        text: "Cuando el sitio debe enviar datos a un CRM, abrir WhatsApp con contexto, medir formularios, sincronizar un calendario o conectarse con un sistema externo, ya no se trata solo de maquetar pantallas. Hay que definir datos, permisos, errores, pruebas y mantenimiento.",
+      },
+      { type: "h2", id: "que-factores-cambian-la-cotizacion", text: "Que factores cambian la cotizacion" },
+      {
+        type: "p",
+        text: "El numero de paginas es solo una parte. Tambien influyen la investigacion de audiencia, el copywriting, la identidad visual, la produccion de imagenes, la cantidad de revisiones, la adaptacion movil, el idioma, las animaciones y la migracion de contenido existente.",
+      },
+      {
+        type: "p",
+        text: "La tecnologia tambien importa, pero no debe ser el unico criterio. Una plataforma administrable puede simplificar cambios editoriales; una implementacion a la medida puede dar mas control de rendimiento e integraciones. La mejor opcion es la que corresponde a la operacion y al crecimiento esperado.",
+      },
+      { type: "h2", id: "costos-que-suelen-quedar-fuera", text: "Costos que suelen quedar fuera" },
+      {
+        type: "p",
+        text: "Revisa si la propuesta incluye dominio, hosting, correo profesional, licencias, mantenimiento, backups, seguridad, actualizaciones y soporte. Tambien pregunta quien sera propietario de las cuentas, archivos, contenidos y accesos cuando el proyecto termine.",
+      },
+      {
+        type: "p",
+        text: "El contenido es otro costo frecuente. Si el negocio no tiene textos, fotografias o estructura de servicios, alguien debe producirlos. Publicar una web sin informacion clara puede hacer que una inversion tecnica no se convierta en una experiencia convincente.",
+      },
+      { type: "h2", id: "como-comparar-propuestas", text: "Como comparar propuestas" },
+      {
+        type: "p",
+        text: "Pide que cada propuesta describa objetivo, alcance, paginas, funcionalidades, entregables, calendario, revisiones, tecnologia, optimizacion SEO, medicion y soporte. Si un punto no esta escrito, no asumas que esta incluido.",
+      },
+      {
+        type: "p",
+        text: "Busca tambien evidencia del proceso. Una buena propuesta explica como se tomaran decisiones, como se validara el contenido y que ocurrira si cambian las prioridades. El portafolio importa, pero la claridad para trabajar tambien reduce riesgos.",
+      },
+      { type: "h2", id: "elige-por-valor-y-no-solo-por-precio", text: "Elige por valor y no solo por precio" },
+      {
+        type: "p",
+        text: "El precio de una pagina web debe compararse con el valor que puede aportar durante meses: visibilidad, confianza, prospectos, ventas, ahorro de tiempo y capacidad de medir. Una propuesta mas completa puede costar mas al inicio y evitar gastos de rehacer, corregir o migrar despues.",
+      },
+      {
+        type: "p",
+        text: "En AionSite podemos ayudarte a revisar tu objetivo, ordenar el alcance y construir una cotizacion entendible. Asi puedes decidir con datos que necesita tu negocio ahora y que conviene dejar preparado para la siguiente etapa.",
+      },
+    ],
+  },
+  {
     id: "elegir-wordpress-shopify-nextjs",
     title: "WordPress, Shopify o Next.js: como elegir",
     excerpt:
