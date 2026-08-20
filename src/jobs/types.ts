@@ -53,4 +53,5 @@ export type JobRecord = {
 export type JobsContent = {
   profile: JobsProfile;
   jobs: JobRecord[];
+  lastJobsSearchAt: string;
 };

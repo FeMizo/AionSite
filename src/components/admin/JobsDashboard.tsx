@@ -196,6 +196,23 @@ function buildJobCardSubtitle(job: JobRecord) {
   return `${job.zone} · ${job.region}`;
 }
 
+function formatJobsSearchAt(value: string) {
+  if (!value) {
+    return "Sin registro";
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("es-MX", {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "America/Mexico_City",
+  }).format(date);
+}
+
 function buildStatusColumns(jobs: JobRecord[]) {
   const grouped = new Map<JobStatus, JobRecord[]>(
     jobStatuses.map((status) => [status, []]),
@@ -777,6 +794,7 @@ export function JobsDashboard({
   const selectedJobPack = selectedJob
     ? buildAutofillPack(content, selectedJob)
     : "";
+  const lastJobsSearchLabel = formatJobsSearchAt(content.lastJobsSearchAt);
 
   return (
     <div className="grid gap-6 xl:grid-cols-[minmax(0,1.35fr)_460px]">
@@ -1424,6 +1442,18 @@ export function JobsDashboard({
             No hay una vacante seleccionada.
           </div>
         )}
+      </section>
+
+      <section className="xl:col-span-2 rounded-[2rem] border border-white/8 bg-slate-950/45 px-5 py-4 text-sm text-slate-400 shadow-[0_20px_40px_-30px_rgba(2,6,23,0.8)] backdrop-blur">
+        <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+          <p>
+            Última búsqueda de jobs:
+            <span className="ml-2 font-medium text-white">{lastJobsSearchLabel}</span>
+          </p>
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+            Se actualiza cuando corre la tarea programada
+          </p>
+        </div>
       </section>
 
       {statusMessage ? (

@@ -12,6 +12,7 @@
     "stackSummary": "WordPress, WooCommerce, Shopify, Liquid, Vue.js, Nuxt.js, Next.js, React, TypeScript, JavaScript",
     "about": "Web developer focused on remote delivery, ecommerce storefronts, CMS builds, and custom code."
   },
+  "lastJobsSearchAt": "2026-08-18T10:00:00.000Z",
   "jobs": [
     {
       "id": "gruns-senior-shopify-full-stack-developer",
@@ -29,11 +30,16 @@
       "region": "United States",
       "source": "Greenhouse",
       "link": "https://job-boards.greenhouse.io/gruns/jobs/5363457008",
-      "stack": ["Shopify", "Liquid", "Custom code", "Frontend"],
-      "status": "para_aplicar",
+      "stack": [
+        "Shopify",
+        "Liquid",
+        "Custom code",
+        "Frontend"
+      ],
+      "status": "aplicado",
       "cover": "Tengo 8+ años construyendo productos web remotos, con experiencia real en Shopify, Liquid, metafields, themes personalizados y sistemas reutilizables entre storefronts. Me interesa este rol porque combina frontend, ownership y mejora tangible del ecommerce. Puedo aportar rápido en arquitectura de themes, performance, mantenimiento y ejecución autónoma.",
       "notes": "Muy buen encaje para Shopify y custom code.",
-      "lastTouchedAt": "2026-08-18T00:00:00.000Z"
+      "lastTouchedAt": "2026-08-20T18:26:58.610Z"
     },
     {
       "id": "doit-select-senior-software-engineer",
@@ -51,7 +57,12 @@
       "region": "Global",
       "source": "Greenhouse",
       "link": "https://job-boards.greenhouse.io/doitintl/jobs/7592117003",
-      "stack": ["Next.js", "React", "TypeScript", "Custom code"],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Custom code"
+      ],
       "status": "para_aplicar",
       "cover": "Tengo experiencia construyendo productos remotos con Next.js, React y TypeScript, además de sistemas de contenido y automatización. Me interesa DoiT por el enfoque en producto, calidad técnica y ejecución práctica. Puedo aportar frontend mantenible, sistemas escalables y delivery autónomo.",
       "notes": "No muestra salario, dejar en revisión.",
@@ -73,11 +84,16 @@
       "region": "North America",
       "source": "Greenhouse",
       "link": "https://job-boards.greenhouse.io/hightouch/jobs/5734303004",
-      "stack": ["Next.js", "React", "TypeScript", "Frontend"],
-      "status": "para_aplicar",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Frontend"
+      ],
+      "status": "aplicado",
       "cover": "Mi perfil mezcla frontend moderno con construcción de interfaces de producto, sistemas reutilizables y trabajo remoto con autonomía. He trabajado con Next.js, React y TypeScript en herramientas orientadas a negocio y puedo aportar mentalidad de producto, velocidad y calidad técnica.",
       "notes": "Encaje fuerte por salario y enfoque de producto.",
-      "lastTouchedAt": "2026-08-18T00:00:00.000Z"
+      "lastTouchedAt": "2026-08-20T18:32:02.154Z"
     },
     {
       "id": "teal-senior-wordpress-backend-developer",
@@ -95,11 +111,16 @@
       "region": "United States",
       "source": "Greenhouse",
       "link": "https://job-boards.greenhouse.io/tealmedia/jobs/4101445009",
-      "stack": ["WordPress", "WooCommerce", "PHP", "Custom code"],
-      "status": "para_aplicar",
+      "stack": [
+        "WordPress",
+        "WooCommerce",
+        "PHP",
+        "Custom code"
+      ],
+      "status": "aplicado",
       "cover": "He pasado años desarrollando WordPress a nivel de theme, plugins y custom fields, además de mantener sitios estables y optimizados. Me interesa este rol porque encaja con mi experiencia en WordPress técnico, mantenibilidad y desarrollo orientado a negocio.",
       "notes": "Buen match para WordPress backend y custom work.",
-      "lastTouchedAt": "2026-08-18T00:00:00.000Z"
+      "lastTouchedAt": "2026-08-20T18:45:56.248Z"
     },
     {
       "id": "automattic-experienced-software-engineer",
@@ -117,11 +138,16 @@
       "region": "Global",
       "source": "Greenhouse",
       "link": "https://job-boards.greenhouse.io/automatticcareers/jobs/5862239",
-      "stack": ["WordPress", "Frontend", "React", "Custom code"],
-      "status": "para_aplicar",
+      "stack": [
+        "WordPress",
+        "Frontend",
+        "React",
+        "Custom code"
+      ],
+      "status": "aplicado",
       "cover": "Tengo una base fuerte en WordPress, frontend moderno y trabajo remoto de alta autonomía. Me atrae Automattic por su cultura distribuida y su relación directa con WordPress. Puedo aportar experiencia real construyendo y manteniendo productos web, con foco en calidad y ownership.",
       "notes": "Buena referencia para WordPress y remoto global.",
-      "lastTouchedAt": "2026-08-18T00:00:00.000Z"
+      "lastTouchedAt": "2026-08-20T18:37:58.507Z"
     },
     {
       "id": "reedsy-senior-frontend-engineer",
@@ -139,11 +165,16 @@
       "region": "Europe",
       "source": "Ashby",
       "link": "https://jobs.ashbyhq.com/reedsy/742cc4da-d230-4707-835f-58bebe8e4e5e",
-      "stack": ["Vue.js", "Nuxt.js", "Next.js", "Frontend"],
-      "status": "para_aplicar",
+      "stack": [
+        "Vue.js",
+        "Nuxt.js",
+        "Next.js",
+        "Frontend"
+      ],
+      "status": "aplicado",
       "cover": "He construido interfaces con Vue, Nuxt, Next y React, priorizando componentes reutilizables, performance y experiencia de usuario. Me interesa Reedsy por el enfoque en producto y calidad de frontend. Puedo aportar ejecución sólida y atención al detalle.",
       "notes": "Europa, buen fit frontend.",
-      "lastTouchedAt": "2026-08-18T00:00:00.000Z"
+      "lastTouchedAt": "2026-08-20T18:46:35.481Z"
     },
     {
       "id": "reedsy-senior-software-engineer-node-vue-typescript",
@@ -161,11 +192,16 @@
       "region": "Europe",
       "source": "Ashby",
       "link": "https://jobs.ashbyhq.com/reedsy/835c9c7b-8b0a-499c-95c6-251c9aea3246",
-      "stack": ["Vue.js", "Nuxt.js", "TypeScript", "Custom code"],
-      "status": "para_aplicar",
+      "stack": [
+        "Vue.js",
+        "Nuxt.js",
+        "TypeScript",
+        "Custom code"
+      ],
+      "status": "aplicado",
       "cover": "Tengo experiencia profunda con Vue, Nuxt, TypeScript y JavaScript, además de construir productos web end to end. Me interesa este rol por la mezcla de frontend, arquitectura y producto. Puedo contribuir con código limpio, rápido y mantenible.",
       "notes": "Más backend/Node de lo que busco ahora.",
-      "lastTouchedAt": "2026-08-18T00:00:00.000Z"
+      "lastTouchedAt": "2026-08-20T18:44:29.541Z"
     }
   ]
 }

@@ -24,6 +24,20 @@ function asStack(value: unknown) {
     .filter(Boolean);
 }
 
+function deriveLatestJobsSearchAt(jobs: Array<Record<string, unknown>>) {
+  const candidates = jobs
+    .map((job) => asString(job.checkedAt))
+    .filter(Boolean)
+    .map((value) => Date.parse(value))
+    .filter((value) => Number.isFinite(value));
+
+  if (candidates.length === 0) {
+    return new Date().toISOString();
+  }
+
+  return new Date(Math.max(...candidates)).toISOString();
+}
+
 function normalizeStatus(value: unknown): JobStatus {
   const status = asString(value);
   return (jobStatuses as readonly string[]).includes(status)
@@ -84,5 +98,9 @@ export function normalizeJobsContent(input: unknown): JobsContent {
       ),
     },
     jobs: jobs.map((job) => normalizeJob(job as Partial<JobRecord> & Record<string, unknown>)),
+    lastJobsSearchAt: asString(
+      raw.lastJobsSearchAt,
+      deriveLatestJobsSearchAt(jobs as Array<Record<string, unknown>>),
+    ),
   };
 }
