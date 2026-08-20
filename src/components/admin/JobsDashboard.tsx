@@ -23,6 +23,7 @@ import { Button } from "@/src/components/ui/Button";
 
 const UNSAVED_CHANGES_MESSAGE =
   "Hay cambios sin guardar. Si sales, se perderan.";
+const JOBS_PER_PAGE = 5;
 
 function cloneContent(content: JobsContent): JobsContent {
   return JSON.parse(JSON.stringify(content)) as JobsContent;
@@ -209,6 +210,7 @@ export function JobsDashboard({
   const [salaryMaxFilter, setSalaryMaxFilter] = useState("");
   const [sortBy, setSortBy] = useState<"priority" | "salary-desc" | "salary-asc" | "az" | "recent">("priority");
   const [activeStackFilters, setActiveStackFilters] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const latestSnapshotRef = useRef(getSnapshot(initialContent));
@@ -366,15 +368,27 @@ export function JobsDashboard({
     zoneFilter,
   ]);
 
+  const totalPages = useMemo(
+    () => Math.max(1, Math.ceil(filteredJobs.length / JOBS_PER_PAGE)),
+    [filteredJobs.length],
+  );
+
+  const paginatedJobs = useMemo(() => {
+    const startIndex = (currentPage - 1) * JOBS_PER_PAGE;
+    return filteredJobs.slice(startIndex, startIndex + JOBS_PER_PAGE);
+  }, [currentPage, filteredJobs]);
+
   const selectedJob = useMemo(() => {
     return (
+      paginatedJobs.find((job) => job.id === selectedJobId) ??
+      paginatedJobs[0] ??
       filteredJobs.find((job) => job.id === selectedJobId) ??
       filteredJobs[0] ??
       content.jobs.find((job) => job.id === selectedJobId) ??
       content.jobs[0] ??
       null
     );
-  }, [content.jobs, filteredJobs, selectedJobId]);
+  }, [content.jobs, filteredJobs, paginatedJobs, selectedJobId]);
 
   useEffect(() => {
     if (!selectedJob) {
@@ -512,6 +526,20 @@ export function JobsDashboard({
     }
   }, [filteredJobs, selectedJobId]);
 
+  useEffect(() => {
+    setCurrentPage((current) => Math.min(current, totalPages));
+  }, [totalPages]);
+
+  useEffect(() => {
+    if (paginatedJobs.length === 0) {
+      return;
+    }
+
+    if (!paginatedJobs.some((job) => job.id === selectedJobId)) {
+      setSelectedJobId(paginatedJobs[0].id);
+    }
+  }, [paginatedJobs, selectedJobId]);
+
   const statusCounts = useMemo(() => {
     const counts = Object.fromEntries(
       jobStatuses.map((status) => [status, 0]),
@@ -596,7 +624,16 @@ export function JobsDashboard({
     setSalaryMaxFilter("");
     setSortBy("priority");
     setActiveStackFilters([]);
+    setCurrentPage(1);
   };
+
+  const goToPage = (page: number) => {
+    const boundedPage = Math.max(1, Math.min(page, totalPages));
+    setCurrentPage(boundedPage);
+  };
+
+  const pageStart = filteredJobs.length === 0 ? 0 : (currentPage - 1) * JOBS_PER_PAGE + 1;
+  const pageEnd = Math.min(currentPage * JOBS_PER_PAGE, filteredJobs.length);
 
   const selectedJobPack = selectedJob
     ? buildAutofillPack(content, selectedJob)
@@ -819,7 +856,7 @@ export function JobsDashboard({
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/6 bg-slate-950/40">
-                {filteredJobs.map((job) => {
+                {paginatedJobs.map((job) => {
                   const isSelected = job.id === selectedJob?.id;
                   return (
                     <tr
@@ -888,7 +925,37 @@ export function JobsDashboard({
             <div className="border-t border-white/8 px-4 py-8 text-sm text-slate-400">
               No hay vacantes con esos filtros.
             </div>
-          ) : null}
+          ) : (
+            <div className="flex flex-col gap-3 border-t border-white/8 px-4 py-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+              <p>
+                Mostrando {pageStart}-{pageEnd} de {filteredJobs.length}
+              </p>
+
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => goToPage(currentPage - 1)}
+                  disabled={currentPage <= 1}
+                >
+                  Anterior
+                </Button>
+
+                <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-400">
+                  {currentPage} / {totalPages}
+                </span>
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => goToPage(currentPage + 1)}
+                  disabled={currentPage >= totalPages}
+                >
+                  Siguiente
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
