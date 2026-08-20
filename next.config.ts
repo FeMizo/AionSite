@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
   images: { unoptimized: isStaticExport },
   trailingSlash: isStaticExport,
   async headers() {
+    if (isStaticExport) {
+      return [];
+    }
+
     return [
       {
         source: "/(.*)",

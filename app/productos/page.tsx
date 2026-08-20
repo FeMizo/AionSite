@@ -3,8 +3,6 @@ import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 import { PublicProductsPage } from "@/src/components/productos/PublicProductsPage";
 import { withCanonical } from "@/src/lib/metadata";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = withCanonical("/productos/", {
   title: "Productos | AionSite - Web, velocidad y custom code",
   description:
