@@ -10,6 +10,8 @@ import {
   Save,
   Search,
   Send,
+  LayoutGrid,
+  List,
   X,
 } from "lucide-react";
 import {
@@ -24,6 +26,9 @@ import { Button } from "@/src/components/ui/Button";
 const UNSAVED_CHANGES_MESSAGE =
   "Hay cambios sin guardar. Si sales, se perderan.";
 const JOBS_PER_PAGE = 5;
+const JOBS_VIEW_MODES = ["list", "board"] as const;
+
+type JobsViewMode = (typeof JOBS_VIEW_MODES)[number];
 
 function cloneContent(content: JobsContent): JobsContent {
   return JSON.parse(JSON.stringify(content)) as JobsContent;
@@ -187,8 +192,55 @@ function getVisibleSalaryLabel(job: JobRecord) {
   return `${job.salaryLabel} · ${job.salaryCurrency}`;
 }
 
+function buildJobCardSubtitle(job: JobRecord) {
+  return `${job.zone} · ${job.region}`;
+}
+
+function buildStatusColumns(jobs: JobRecord[]) {
+  const grouped = new Map<JobStatus, JobRecord[]>(
+    jobStatuses.map((status) => [status, []]),
+  );
+
+  jobs.forEach((job) => {
+    grouped.get(job.status)?.push(job);
+  });
+
+  return jobStatuses.map((status) => ({
+    status,
+    jobs: grouped.get(status) ?? [],
+  }));
+}
+
 const jobStatusSelectClassName =
   "mt-3 w-full rounded-2xl border border-white/10 bg-slate-950/90 px-4 py-3 text-sm font-medium text-white outline-none transition-[border-color,box-shadow,background-color] duration-150 ease-out focus:border-blue-400/70 focus:bg-slate-950 focus:ring-2 focus:ring-blue-400/15";
+
+async function writeToClipboard(text: string) {
+  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  if (typeof document === "undefined") {
+    throw new Error("clipboard_unavailable");
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "true");
+  textarea.style.position = "fixed";
+  textarea.style.top = "-9999px";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+  textarea.setSelectionRange(0, textarea.value.length);
+
+  const copied = document.execCommand("copy");
+  document.body.removeChild(textarea);
+
+  if (!copied) {
+    throw new Error("clipboard_unavailable");
+  }
+}
 
 export function JobsDashboard({
   initialContent,
@@ -214,6 +266,9 @@ export function JobsDashboard({
   const [sortBy, setSortBy] = useState<"priority" | "salary-desc" | "salary-asc" | "az" | "recent">("priority");
   const [activeStackFilters, setActiveStackFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [viewMode, setViewMode] = useState<JobsViewMode>("list");
+  const [draggedJobId, setDraggedJobId] = useState<string | null>(null);
+  const [dropTargetStatus, setDropTargetStatus] = useState<JobStatus | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const latestSnapshotRef = useRef(getSnapshot(initialContent));
@@ -381,7 +436,19 @@ export function JobsDashboard({
     return filteredJobs.slice(startIndex, startIndex + JOBS_PER_PAGE);
   }, [currentPage, filteredJobs]);
 
+  const boardColumns = useMemo(() => buildStatusColumns(filteredJobs), [filteredJobs]);
+
   const selectedJob = useMemo(() => {
+    if (viewMode === "board") {
+      return (
+        filteredJobs.find((job) => job.id === selectedJobId) ??
+        content.jobs.find((job) => job.id === selectedJobId) ??
+        filteredJobs[0] ??
+        content.jobs[0] ??
+        null
+      );
+    }
+
     return (
       paginatedJobs.find((job) => job.id === selectedJobId) ??
       paginatedJobs[0] ??
@@ -391,7 +458,7 @@ export function JobsDashboard({
       content.jobs[0] ??
       null
     );
-  }, [content.jobs, filteredJobs, paginatedJobs, selectedJobId]);
+  }, [content.jobs, filteredJobs, paginatedJobs, selectedJobId, viewMode]);
 
   useEffect(() => {
     if (!selectedJob) {
@@ -534,14 +601,14 @@ export function JobsDashboard({
   }, [totalPages]);
 
   useEffect(() => {
-    if (paginatedJobs.length === 0) {
+    if (viewMode !== "list" || paginatedJobs.length === 0) {
       return;
     }
 
     if (!paginatedJobs.some((job) => job.id === selectedJobId)) {
       setSelectedJobId(paginatedJobs[0].id);
     }
-  }, [paginatedJobs, selectedJobId]);
+  }, [paginatedJobs, selectedJobId, viewMode]);
 
   const statusCounts = useMemo(() => {
     const counts = Object.fromEntries(
@@ -559,6 +626,21 @@ export function JobsDashboard({
     () => content.jobs.filter((job) => job.salaryUsdMin !== null || job.salaryUsdMax !== null).length,
     [content.jobs],
   );
+
+  const moveJobToStatus = (id: string, status: JobStatus) => {
+    setContent((current) => ({
+      ...current,
+      jobs: current.jobs.map((job) =>
+        job.id === id
+          ? {
+              ...job,
+              status,
+              lastTouchedAt: new Date().toISOString(),
+            }
+          : job,
+      ),
+    }));
+  };
 
   const updateJob = (id: string, updater: (job: JobRecord) => JobRecord) => {
     setContent((current) => ({
@@ -590,23 +672,35 @@ export function JobsDashboard({
 
   const copyToClipboard = async (text: string, successMessage: string) => {
     try {
-      await navigator.clipboard.writeText(text);
+      await writeToClipboard(text);
       setStatusMessage(successMessage);
     } catch {
-      setStatusMessage("No se pudo copiar el texto.");
+      setStatusMessage("No se pudo copiar el texto. Usa el bloque visible de autofill.");
     }
   };
 
-  const handleAssistedAutofill = async () => {
+  const handleAssistedAutofill = () => {
     if (!selectedJob) {
       return;
     }
 
-    await copyToClipboard(
-      selectedJobPack,
-      "Autofill asistido copiado. Abriendo vacante.",
-    );
-    window.open(selectedJob.link, "_blank", "noopener,noreferrer");
+    const openedWindow = window.open(selectedJob.link, "_blank", "noopener,noreferrer");
+
+    void writeToClipboard(selectedJobPack)
+      .then(() => {
+        setStatusMessage(
+          openedWindow
+            ? "Vacante abierta. Autofill copiado."
+            : "Autofill copiado. El navegador bloqueo la nueva pestaña.",
+        );
+      })
+      .catch(() => {
+        setStatusMessage(
+          openedWindow
+            ? "Vacante abierta. Usa el bloque visible de autofill."
+            : "No se pudo abrir la vacante ni copiar el autofill.",
+        );
+      });
   };
 
   const toggleStackFilter = (stack: string) => {
@@ -630,6 +724,48 @@ export function JobsDashboard({
     setCurrentPage(1);
   };
 
+  const handleDragStart = (event: React.DragEvent<HTMLButtonElement>, jobId: string) => {
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", jobId);
+    setDraggedJobId(jobId);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedJobId(null);
+    setDropTargetStatus(null);
+  };
+
+  const handleDropOnStatus = (event: React.DragEvent<HTMLDivElement>, status: JobStatus) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const jobId = event.dataTransfer.getData("text/plain") || draggedJobId;
+    if (!jobId) {
+      handleDragEnd();
+      return;
+    }
+
+    const job = content.jobs.find((entry) => entry.id === jobId);
+    if (!job || job.status === status) {
+      handleDragEnd();
+      return;
+    }
+
+    moveJobToStatus(jobId, status);
+    setSelectedJobId(jobId);
+    setViewMode("board");
+    setStatusMessage(`Movido a ${statusLabel(status)}.`);
+    handleDragEnd();
+  };
+
+  const handleDragOverStatus = (event: React.DragEvent<HTMLDivElement>, status: JobStatus) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+    if (dropTargetStatus !== status) {
+      setDropTargetStatus(status);
+    }
+  };
+
   const goToPage = (page: number) => {
     const boundedPage = Math.max(1, Math.min(page, totalPages));
     setCurrentPage(boundedPage);
@@ -645,6 +781,39 @@ export function JobsDashboard({
   return (
     <div className="grid gap-6 xl:grid-cols-[minmax(0,1.35fr)_460px]">
       <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-5 shadow-[0_30px_60px_-42px_rgba(2,6,23,0.95)] backdrop-blur">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="inline-flex rounded-full border border-white/10 bg-slate-950/75 p-1">
+            <button
+              type="button"
+              onClick={() => setViewMode("list")}
+              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition ${
+                viewMode === "list"
+                  ? "bg-blue-500/20 text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <List size={14} />
+              Lista
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode("board")}
+              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition ${
+                viewMode === "board"
+                  ? "bg-blue-500/20 text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <LayoutGrid size={14} />
+              Columnas
+            </button>
+          </div>
+
+          <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+            {viewMode === "list" ? "Vista de tabla" : "Vista kanban"}
+          </p>
+        </div>
+
         <div className="grid gap-4 md:grid-cols-4">
           {[
             { label: "Vacantes", value: content.jobs.length },
@@ -846,120 +1015,244 @@ export function JobsDashboard({
           </div>
         </div>
 
-        <div className="mt-5 overflow-hidden rounded-[1.75rem] border border-white/8">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-white/8 text-left">
-              <thead className="bg-slate-950/85">
-                <tr className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                  <th className="px-4 py-4">Puesto</th>
-                  <th className="px-4 py-4">Salario</th>
-                  <th className="px-4 py-4">Zona</th>
-                  <th className="px-4 py-4">Link de aplicación</th>
-                  <th className="px-4 py-4">Estado</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/6 bg-slate-950/40">
-                {paginatedJobs.map((job) => {
-                  const isSelected = job.id === selectedJob?.id;
+        {viewMode === "list" ? (
+          <div className="mt-5 overflow-hidden rounded-[1.75rem] border border-white/8">
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-white/8 text-left">
+                <thead className="bg-slate-950/85">
+                  <tr className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                    <th className="px-4 py-4">Puesto</th>
+                    <th className="px-4 py-4">Salario</th>
+                    <th className="px-4 py-4">Zona</th>
+                    <th className="px-4 py-4">Link de aplicación</th>
+                    <th className="px-4 py-4">Estado</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/6 bg-slate-950/40">
+                  {paginatedJobs.map((job) => {
+                    const isSelected = job.id === selectedJob?.id;
+                    return (
+                      <tr
+                        key={job.id}
+                        className={`cursor-pointer transition ${
+                          isSelected ? "bg-blue-500/8" : "hover:bg-white/4"
+                        }`}
+                        onClick={() => setSelectedJobId(job.id)}
+                      >
+                        <td className="px-4 py-4 align-top">
+                          <div className="font-medium text-white">{job.title}</div>
+                          <div className="mt-1 text-sm text-slate-400">{job.company}</div>
+                          <div className="mt-2 flex flex-wrap gap-2">
+                            {job.stack.map((stack) => (
+                              <span
+                                key={stack}
+                                className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-slate-300"
+                              >
+                                {stack}
+                              </span>
+                            ))}
+                          </div>
+                        </td>
+                        <td className="px-4 py-4 align-top text-sm text-slate-300">
+                          <div className="font-medium text-white">{job.salaryLabel}</div>
+                          <div className="mt-1 text-xs text-slate-500">
+                            Moneda visible: {job.salaryCurrency}
+                          </div>
+                          <div className="mt-1 text-xs text-slate-500">
+                            Normalizado USD: {buildSalaryRange(job)}
+                          </div>
+                        </td>
+                        <td className="px-4 py-4 align-top text-sm text-slate-300">
+                          <div>{job.zone}</div>
+                          <div className="mt-1 text-xs text-slate-500">{job.region}</div>
+                        </td>
+                        <td className="px-4 py-4 align-top">
+                          <a
+                            href={job.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(event) => event.stopPropagation()}
+                            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm text-slate-200 transition hover:border-blue-400/30 hover:bg-blue-500/10 hover:text-white"
+                          >
+                            Abrir
+                            <ExternalLink size={14} />
+                          </a>
+                        </td>
+                        <td className="px-4 py-4 align-top">
+                          <span
+                            className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${statusClass(job.status)}`}
+                          >
+                            {statusLabel(job.status)}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            {filteredJobs.length === 0 ? (
+              <div className="border-t border-white/8 px-4 py-8 text-sm text-slate-400">
+                No hay vacantes con esos filtros.
+              </div>
+            ) : (
+              <div className="flex flex-col gap-3 border-t border-white/8 px-4 py-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+                <p>
+                  Mostrando {pageStart}-{pageEnd} de {filteredJobs.length}
+                </p>
+
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => goToPage(currentPage - 1)}
+                    disabled={currentPage <= 1}
+                  >
+                    Anterior
+                  </Button>
+
+                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-400">
+                    {currentPage} / {totalPages}
+                  </span>
+
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => goToPage(currentPage + 1)}
+                    disabled={currentPage >= totalPages}
+                  >
+                    Siguiente
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="mt-5 rounded-[1.75rem] border border-white/8 bg-slate-950/40 p-4">
+            {filteredJobs.length === 0 ? (
+              <div className="px-2 py-10 text-center text-sm text-slate-400">
+                No hay vacantes con esos filtros.
+              </div>
+            ) : (
+              <div className="flex gap-4 overflow-x-auto pb-2">
+                {boardColumns.map(({ status, jobs }) => {
+                  const isDropTarget = dropTargetStatus === status;
+
                   return (
-                    <tr
-                      key={job.id}
-                      className={`cursor-pointer transition ${
-                        isSelected
-                          ? "bg-blue-500/8"
-                          : "hover:bg-white/4"
+                    <div
+                      key={status}
+                      onDragOver={(event) => handleDragOverStatus(event, status)}
+                      onDragLeave={() => {
+                        if (dropTargetStatus === status) {
+                          setDropTargetStatus(null);
+                        }
+                      }}
+                      onDrop={(event) => handleDropOnStatus(event, status)}
+                      className={`w-[320px] shrink-0 rounded-[1.5rem] border p-3 transition ${
+                        isDropTarget
+                          ? "border-blue-400/60 bg-blue-500/10"
+                          : "border-white/8 bg-slate-950/55"
                       }`}
-                      onClick={() => setSelectedJobId(job.id)}
                     >
-                      <td className="px-4 py-4 align-top">
-                        <div className="font-medium text-white">{job.title}</div>
-                        <div className="mt-1 text-sm text-slate-400">{job.company}</div>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          {job.stack.map((stack) => (
-                            <span
-                              key={stack}
-                              className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-slate-300"
-                            >
-                              {stack}
-                            </span>
-                          ))}
+                      <div className="flex items-center justify-between gap-3">
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">
+                            {statusLabel(status)}
+                          </h4>
+                          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-500">
+                            {jobs.length} vacantes
+                          </p>
                         </div>
-                      </td>
-                      <td className="px-4 py-4 align-top text-sm text-slate-300">
-                        <div className="font-medium text-white">{job.salaryLabel}</div>
-                        <div className="mt-1 text-xs text-slate-500">
-                          Moneda visible: {job.salaryCurrency}
-                        </div>
-                        <div className="mt-1 text-xs text-slate-500">
-                          Normalizado USD: {buildSalaryRange(job)}
-                        </div>
-                      </td>
-                      <td className="px-4 py-4 align-top text-sm text-slate-300">
-                        <div>{job.zone}</div>
-                        <div className="mt-1 text-xs text-slate-500">{job.region}</div>
-                      </td>
-                      <td className="px-4 py-4 align-top">
-                        <a
-                          href={job.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          onClick={(event) => event.stopPropagation()}
-                          className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm text-slate-200 transition hover:border-blue-400/30 hover:bg-blue-500/10 hover:text-white"
-                        >
-                          Abrir
-                          <ExternalLink size={14} />
-                        </a>
-                      </td>
-                      <td className="px-4 py-4 align-top">
-                        <span
-                          className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${statusClass(job.status)}`}
-                        >
-                          {statusLabel(job.status)}
+                        <span className={`inline-flex rounded-full border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] ${statusClass(status)}`}>
+                          {jobs.length}
                         </span>
-                      </td>
-                    </tr>
+                      </div>
+
+                      <div className="mt-3 grid gap-3">
+                        {jobs.map((job) => {
+                          const isSelected = job.id === selectedJob?.id;
+                          const isDragging = draggedJobId === job.id;
+
+                          return (
+                            <button
+                              key={job.id}
+                              type="button"
+                              draggable
+                              onDragStart={(event) => handleDragStart(event, job.id)}
+                              onDragEnd={handleDragEnd}
+                              onClick={() => setSelectedJobId(job.id)}
+                              className={`rounded-[1.2rem] border p-3 text-left transition ${
+                                isSelected
+                                  ? "border-blue-400/50 bg-blue-500/10"
+                                  : "border-white/8 bg-slate-950/70 hover:border-white/15 hover:bg-slate-950/90"
+                              } ${isDragging ? "opacity-50" : ""}`}
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div>
+                                  <div className="text-sm font-semibold text-white">
+                                    {job.title}
+                                  </div>
+                                  <div className="mt-1 text-xs text-slate-400">
+                                    {job.company}
+                                  </div>
+                                </div>
+                                <span className={`rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] ${statusClass(job.status)}`}>
+                                  {statusLabel(job.status)}
+                                </span>
+                              </div>
+
+                              <div className="mt-3 grid gap-2 text-xs text-slate-400">
+                                <div className="flex items-center justify-between gap-3">
+                                  <span>Salario</span>
+                                  <span className="text-slate-200">{job.salaryLabel}</span>
+                                </div>
+                                <div className="flex items-center justify-between gap-3">
+                                  <span>Zona</span>
+                                  <span className="text-slate-200">{buildJobCardSubtitle(job)}</span>
+                                </div>
+                                <div className="flex items-center justify-between gap-3">
+                                  <span>Fuente</span>
+                                  <span className="text-slate-200">{job.source}</span>
+                                </div>
+                              </div>
+
+                              {job.cover ? (
+                                <p className="mt-3 line-clamp-3 rounded-xl border border-white/8 bg-white/4 px-3 py-2 text-xs leading-5 text-slate-300">
+                                  {job.cover}
+                                </p>
+                              ) : job.notes ? (
+                                <p className="mt-3 line-clamp-3 rounded-xl border border-white/8 bg-white/4 px-3 py-2 text-xs leading-5 text-slate-300">
+                                  {job.notes}
+                                </p>
+                              ) : null}
+
+                              <div className="mt-3 flex items-center justify-between gap-2">
+                                <a
+                                  href={job.link}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={(event) => event.stopPropagation()}
+                                  className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-xs text-slate-200 transition hover:border-blue-400/30 hover:bg-blue-500/10 hover:text-white"
+                                >
+                                  Abrir
+                                  <ExternalLink size={12} />
+                                </a>
+                                <span className="text-[11px] uppercase tracking-[0.18em] text-slate-500">
+                                  Arrastra aquí
+                                </span>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
                   );
                 })}
-              </tbody>
-            </table>
-          </div>
-
-          {filteredJobs.length === 0 ? (
-            <div className="border-t border-white/8 px-4 py-8 text-sm text-slate-400">
-              No hay vacantes con esos filtros.
-            </div>
-          ) : (
-            <div className="flex flex-col gap-3 border-t border-white/8 px-4 py-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-              <p>
-                Mostrando {pageStart}-{pageEnd} de {filteredJobs.length}
-              </p>
-
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => goToPage(currentPage - 1)}
-                  disabled={currentPage <= 1}
-                >
-                  Anterior
-                </Button>
-
-                <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-slate-400">
-                  {currentPage} / {totalPages}
-                </span>
-
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => goToPage(currentPage + 1)}
-                  disabled={currentPage >= totalPages}
-                >
-                  Siguiente
-                </Button>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </section>
 
       <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-5 shadow-[0_30px_60px_-42px_rgba(2,6,23,0.95)] backdrop-blur xl:sticky xl:top-4 xl:self-start">
@@ -1060,15 +1353,13 @@ export function JobsDashboard({
               >
                 <Copy size={14} />
                 Copiar cover
-              </Button>
-
-              <Button
+              </Button>              <Button
                 variant="outline"
                 onClick={handleAssistedAutofill}
                 className="gap-2"
               >
                 <Send size={14} />
-                Autofill asistido
+                Copiar y abrir
               </Button>
 
               <Button
@@ -1093,7 +1384,7 @@ export function JobsDashboard({
             <div className="mt-5 rounded-[1.75rem] border border-white/8 bg-white/4 p-4">
               <h4 className="text-sm font-semibold text-white">Autofill asistido</h4>
               <p className="mt-2 text-sm leading-6 text-slate-400">
-                Copia el bloque con tus datos y el cover adaptado. Luego solo pegas en el formulario.
+                Copia el bloque con tus datos y el cover adaptado. Luego pégalo en el formulario de la vacante.
               </p>
 
               <pre className="mt-4 max-h-80 overflow-auto rounded-2xl border border-white/8 bg-slate-950/70 p-4 text-xs leading-6 text-slate-300 whitespace-pre-wrap">
