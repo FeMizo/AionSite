@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AionSite Autofill</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #020617;
+        --panel: rgba(15, 23, 42, 0.96);
+        --border: rgba(96, 165, 250, 0.22);
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+      }
+      body {
+        margin: 0;
+        width: 320px;
+        font-family: Inter, system-ui, sans-serif;
+        background: radial-gradient(circle at top, rgba(37, 99, 235, 0.24), transparent 40%), var(--bg);
+        color: var(--text);
+      }
+      .wrap {
+        padding: 16px;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+      p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      button, a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(37, 99, 235, 0.14);
+        color: white;
+        padding: 12px 14px;
+        font: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        margin-top: 8px;
+      }
+      button.secondary {
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .status {
+        margin-top: 12px;
+        font-size: 12px;
+        color: var(--muted);
+        min-height: 18px;
+      }
+      .note {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        background: var(--panel);
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>AionSite Autofill</h1>
+      <p>Sincroniza el perfil de AionSite y rellena campos compatibles sin enviar el formulario.</p>
+      <button id="sync">Sincronizar perfil</button>
+      <button id="fill" class="secondary">Rellenar esta página</button>
+      <a id="options" href="#">Abrir ajustes</a>
+      <div id="status" class="status"></div>
+      <div class="note">Si un sitio bloquea automatización o usa captcha, solo se rellenarán los campos visibles compatibles.</div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

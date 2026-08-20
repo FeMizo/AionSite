@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "AionSite Job Autofill",
+  "version": "1.0.0",
+  "description": "Auto-rellena formularios de vacantes soportadas con el perfil de AionSite.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": [
+    "http://localhost:2666/*",
+    "http://127.0.0.1:2666/*",
+    "https://*.aionsite.com.mx/*",
+    "https://*.greenhouse.io/*",
+    "https://jobs.ashbyhq.com/*",
+    "https://jobs.lever.co/*",
+    "https://apply.workable.com/*",
+    "https://jobs.smartrecruiters.com/*",
+    "https://*.workdayjobs.com/*",
+    "https://*.myworkdayjobs.com/*",
+    "https://*.icims.com/*",
+    "https://www.linkedin.com/*",
+    "https://*.indeed.com/*",
+    "https://www.computrabajo.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.greenhouse.io/*",
+        "https://jobs.ashbyhq.com/*",
+        "https://jobs.lever.co/*",
+        "https://apply.workable.com/*",
+        "https://jobs.smartrecruiters.com/*",
+        "https://*.workdayjobs.com/*",
+        "https://*.myworkdayjobs.com/*",
+        "https://*.icims.com/*",
+        "https://www.linkedin.com/*",
+        "https://*.indeed.com/*",
+        "https://www.computrabajo.com/*"
+      ],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "AionSite Autofill",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AionSite Autofill - Ajustes</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #020617;
+        --panel: rgba(15, 23, 42, 0.96);
+        --border: rgba(96, 165, 250, 0.22);
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+      }
+      body {
+        margin: 0;
+        background: radial-gradient(circle at top, rgba(37, 99, 235, 0.24), transparent 40%), var(--bg);
+        color: var(--text);
+        font-family: Inter, system-ui, sans-serif;
+      }
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 28px 20px 40px;
+      }
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: var(--panel);
+        padding: 22px;
+        margin-top: 16px;
+      }
+      h1, h2 {
+        margin: 0;
+      }
+      p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      label {
+        display: block;
+        margin-top: 14px;
+        font-size: 13px;
+      }
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 8px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(2, 6, 23, 0.8);
+        color: white;
+        padding: 12px 14px;
+        font: inherit;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-top: 16px;
+        flex-wrap: wrap;
+      }
+      button {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(37, 99, 235, 0.14);
+        color: white;
+        padding: 12px 16px;
+        font: inherit;
+        cursor: pointer;
+      }
+      .status {
+        margin-top: 14px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .small {
+        font-size: 12px;
+      }
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+      }
+      code {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 2px 6px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>AionSite Autofill</h1>
+      <p>Configura la fuente del perfil y el auto-relleno. La extensión llena solo campos visibles compatibles y no envía formularios.</p>
+
+      <div class="card">
+        <h2>Fuente del perfil</h2>
+        <p class="small">Normalmente será tu instancia local o tu dominio de AionSite. Debe exponer <code>/api/admin/jobs/content</code>.</p>
+
+        <label>
+          URL base
+          <input id="sourceUrl" type="text" placeholder="http://localhost:2666" />
+        </label>
+
+        <div class="check">
+          <input id="enabled" type="checkbox" />
+          <label for="enabled">Activar autofill</label>
+        </div>
+
+        <div class="check">
+          <input id="autoFillOnLoad" type="checkbox" />
+          <label for="autoFillOnLoad">Intentar al abrir una vacante compatible</label>
+        </div>
+
+        <div class="row">
+          <button id="save">Guardar</button>
+          <button id="sync">Sincronizar perfil ahora</button>
+        </div>
+
+        <div id="status" class="status"></div>
+      </div>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
