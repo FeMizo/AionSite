@@ -12,7 +12,6 @@
     "stackSummary": "WordPress, WooCommerce, Shopify, Liquid, Vue.js, Nuxt.js, Next.js, React, TypeScript, JavaScript",
     "about": "Web developer focused on remote delivery, ecommerce storefronts, CMS builds, and custom code."
   },
-  "lastJobsSearchAt": "2026-08-18T10:00:00.000Z",
   "jobs": [
     {
       "id": "gruns-senior-shopify-full-stack-developer",
@@ -63,10 +62,10 @@
         "TypeScript",
         "Custom code"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Tengo experiencia construyendo productos remotos con Next.js, React y TypeScript, además de sistemas de contenido y automatización. Me interesa DoiT por el enfoque en producto, calidad técnica y ejecución práctica. Puedo aportar frontend mantenible, sistemas escalables y delivery autónomo.",
       "notes": "No muestra salario, dejar en revisión.",
-      "lastTouchedAt": "2026-08-18T00:00:00.000Z"
+      "lastTouchedAt": "2026-08-20T19:25:31.528Z"
     },
     {
       "id": "hightouch-web-engineer",
@@ -203,5 +202,6 @@
       "notes": "Más backend/Node de lo que busco ahora.",
       "lastTouchedAt": "2026-08-20T18:44:29.541Z"
     }
-  ]
+  ],
+  "lastJobsSearchAt": "2026-08-18T10:00:00.000Z"
 }
