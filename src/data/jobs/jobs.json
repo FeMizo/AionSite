@@ -1015,5 +1015,17 @@
       "lastTouchedAt": "2026-08-24T18:10:00.000Z"
     }
   ],
-  "lastJobsSearchAt": "2026-08-24T18:10:00.000Z"
+  "lastJobsSearchAt": "2026-08-24T18:10:00.000Z",
+  "searchCriteria": {
+    "remoteOnly": true,
+    "eligibleFromCountry": "Mexico",
+    "eligibleFromLocation": "Mexico City, Mexico",
+    "excludedLocationRestrictions": [
+      "United States only",
+      "Canada only",
+      "Europe only",
+      "India only",
+      "Any location restriction that does not include Mexico"
+    ]
+  }
 }

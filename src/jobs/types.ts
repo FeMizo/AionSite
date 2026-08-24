@@ -54,4 +54,10 @@ export type JobsContent = {
   profile: JobsProfile;
   jobs: JobRecord[];
   lastJobsSearchAt: string;
+  searchCriteria?: {
+    remoteOnly: boolean;
+    eligibleFromCountry: string;
+    eligibleFromLocation: string;
+    excludedLocationRestrictions: string[];
+  };
 };
