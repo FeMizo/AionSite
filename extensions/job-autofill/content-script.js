@@ -435,6 +435,8 @@
     const knownHost =
       host.includes("greenhouse") ||
       host.includes("ashby") ||
+      host.includes("wellfound") ||
+      host.includes("himalayas") ||
       host.includes("lever") ||
       host.includes("workable") ||
       host.includes("smartrecruiters") ||

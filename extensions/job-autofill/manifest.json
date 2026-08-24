@@ -10,6 +10,8 @@
     "https://*.aionsite.com.mx/*",
     "https://*.greenhouse.io/*",
     "https://jobs.ashbyhq.com/*",
+    "https://wellfound.com/*",
+    "https://himalayas.app/*",
     "https://jobs.lever.co/*",
     "https://apply.workable.com/*",
     "https://jobs.smartrecruiters.com/*",
@@ -25,6 +27,8 @@
       "matches": [
         "https://*.greenhouse.io/*",
         "https://jobs.ashbyhq.com/*",
+        "https://wellfound.com/*",
+        "https://himalayas.app/*",
         "https://jobs.lever.co/*",
         "https://apply.workable.com/*",
         "https://jobs.smartrecruiters.com/*",

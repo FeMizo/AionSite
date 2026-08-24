@@ -13,6 +13,8 @@ Extensión de Chrome para auto-rellenar formularios de vacantes compatibles con 
 
 - Greenhouse
 - Ashby
+- Wellfound
+- Himalayas
 - Lever
 - Workable
 - SmartRecruiters
