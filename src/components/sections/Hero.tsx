@@ -151,11 +151,11 @@ export function Hero({
           <div ref={introRef} className="relative">
             <div data-hero-reveal className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-white/5 px-3 py-1 text-sm font-medium text-blue-300 shadow-[0_14px_28px_-20px_rgba(59,130,246,0.7)] backdrop-blur-sm">
               <Sparkles size={14} />
-              Agencia de diseño web en {city}
+              {data.badgeText} en {city}
             </div>
 
             <h1 data-hero-reveal className="max-w-5xl font-display text-[clamp(2.5rem,5.5vw,6rem)] font-bold leading-[0.88] text-white">
-              AionSite crea sitios web que venden.
+              {data.title}
             </h1>
 
             <p data-hero-reveal className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
@@ -175,12 +175,7 @@ export function Hero({
                 variant="outline"
                 size="lg"
                 className="gap-2 backdrop-blur-sm"
-                onClick={() =>
-                  window.open(
-                    "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20solicitar%20una%20auditoria%20gratuita%20de%20mi%20sitio.",
-                    "_blank",
-                  )
-                }
+                onClick={() => document.getElementById("servicios")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <ArrowRight size={16} />
                 {data.secondaryCTA}
@@ -250,8 +245,8 @@ export function Hero({
               className="absolute left-1/2 top-1/2 flex h-48 w-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-slate-950/70 text-center shadow-[0_0_80px_-30px_rgba(59,130,246,0.95)] backdrop-blur-md before:absolute before:inset-[-10px] before:rounded-full before:border before:border-cyan-200/10 before:content-['']"
             >
               <div>
-                <div className="font-display text-5xl font-bold text-white">24/7</div>
-                <div className="mt-2 text-xs uppercase tracking-[0.24em] text-blue-200">Growth loop</div>
+                <div className="font-display text-5xl font-bold text-white">AionSite</div>
+                <div className="mt-2 text-xs uppercase tracking-[0.24em] text-blue-200">Web + ventas</div>
               </div>
             </div>
 

@@ -22,8 +22,8 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "Diseño Web, IA y Automatización para Negocios | AionSite",
-  description: "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
+  title: "AionSite | Sitios Web, Tiendas Online, SEO e IA para Negocios",
+  description: "AionSite vende diseño y desarrollo de sitios web, tiendas online, SEO técnico, automatizaciones e integraciones con IA para negocios.",
   keywords: ["diseño web México", "SEO técnico para negocios", "ecommerce modular", "IA para empresas locales", "automatización empresarial", "AionSite", "agencia web"],
   icons: {
     icon: "/icon.png",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Diseño Web, IA y Automatización para Negocios | AionSite",
-    description: "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
+    title: "AionSite | Sitios Web, Tiendas Online, SEO e IA para Negocios",
+    description: "AionSite vende diseño y desarrollo de sitios web, tiendas online, SEO técnico, automatizaciones e integraciones con IA para negocios.",
     url: "/",
     siteName: "AionSite",
     type: "website",
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
         url: "/placeholder.png",
         width: 1200,
         height: 630,
-        alt: "AionSite — Diseño Web, IA y Automatización para Negocios",
+        alt: "AionSite — Sitios Web, Tiendas Online, SEO e IA para Negocios",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diseño Web, IA y Automatización para Negocios | AionSite",
-    description: "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
+    title: "AionSite | Sitios Web, Tiendas Online, SEO e IA para Negocios",
+    description: "AionSite vende diseño y desarrollo de sitios web, tiendas online, SEO técnico, automatizaciones e integraciones con IA para negocios.",
     images: ["/placeholder.png"],
   },
 };

@@ -1,7 +1,7 @@
 {
   "base": {
     "name": "AionSite",
-    "description": "AionSite es una agencia de diseño y desarrollo web para negocios que crea sitios, tiendas y automatizaciones para atraer clientes y vender online.",
+    "description": "AionSite es una agencia mexicana de diseño y desarrollo web que vende sitios web, tiendas en línea, SEO técnico, automatizaciones e integraciones con IA para negocios.",
     "email": "contacto@aionsite.com.mx",
     "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
     "navigation": [
@@ -69,16 +69,16 @@
       "enabled": true,
       "order": 1,
       "data": {
-        "badgeText": "Agencia de diseño web, ecommerce e IA para negocios",
-        "title": "AionSite ayuda a los negocios a atraer clientes y vender online.",
-        "subtitle": "Este sitio presenta nuestros servicios para crear sitios web, tiendas y automatizaciones que convierten visitas en oportunidades y reducen trabajo manual.",
-        "primaryCTA": "Ver precios y reservar consultoría gratuita",
-        "secondaryCTA": "Ver casos de éxito (+200% en conversiones)",
+        "badgeText": "AionSite: sitios web, ecommerce, SEO e IA",
+        "title": "AionSite vende sitios web y tiendas online para negocios que quieren clientes.",
+        "subtitle": "Somos AionSite. En esta web puedes conocer y cotizar servicios de diseño web, desarrollo de ecommerce, SEO técnico, automatización e integraciones con IA para vender por internet.",
+        "primaryCTA": "Cotizar un sitio con AionSite",
+        "secondaryCTA": "Ver servicios de AionSite",
         "trustBar": [
-          "SEO técnico certificado",
-          "Ecommerce modular",
-          "IA empresarial",
-          "Automatización 24/7"
+          "Diseño y desarrollo web",
+          "Tiendas online y catálogos",
+          "SEO para aparecer en Google",
+          "Automatización e IA"
         ]
       }
     },
