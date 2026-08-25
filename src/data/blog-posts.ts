@@ -26,6 +26,111 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "cuanto-cuesta-tienda-en-linea-mexico",
+    title: "Cuanto cuesta una tienda en linea en Mexico",
+    excerpt:
+      "Descubre que incluye el costo de una tienda en linea en Mexico: plataforma, catalogo, pagos, envios, diseño y mantenimiento.",
+    image: "/blog/cuanto-cuesta-tienda-en-linea-mexico.webp",
+    badgeText: "Ecommerce",
+    date: "25 de agosto, 2026",
+    dateISO: "2026-08-25",
+    readTime: "8 min de lectura",
+    keywords: [
+      "cuanto cuesta una tienda en linea",
+      "precio ecommerce Mexico",
+      "crear tienda online",
+      "plataforma ecommerce",
+      "pagos y envios online",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "el-costo-depende-de-la-operacion", text: "El costo depende de la operacion" },
+      { level: 3, id: "que-vas-a-vender-y-como", text: "Que vas a vender y como" },
+      { level: 2, id: "que-incluye-una-tienda-en-linea", text: "Que incluye una tienda en linea" },
+      { level: 3, id: "catalogo-y-experiencia-de-compra", text: "Catalogo y experiencia de compra" },
+      { level: 3, id: "pagos-envios-y-pedidos", text: "Pagos, envios y pedidos" },
+      { level: 2, id: "tres-niveles-de-inversion", text: "Tres niveles de inversion" },
+      { level: 2, id: "costos-recurrentes-que-debes-calcular", text: "Costos recurrentes que debes calcular" },
+      { level: 2, id: "como-comparar-propuestas-ecommerce", text: "Como comparar propuestas ecommerce" },
+      { level: 2, id: "crece-sin-pagar-complejidad-innecesaria", text: "Crece sin pagar complejidad innecesaria" },
+    ],
+    blocks: [
+      { type: "h2", id: "el-costo-depende-de-la-operacion", text: "El costo depende de la operacion" },
+      {
+        type: "p",
+        text: "Preguntar cuanto cuesta una tienda en linea en Mexico no tiene una sola respuesta. El precio cambia segun la cantidad de productos, la forma de cobrar, la logistica de entrega, las integraciones y el trabajo que tu equipo puede operar despues del lanzamiento.",
+      },
+      {
+        type: "p",
+        text: "Una tienda con pocos productos y procesos sencillos puede iniciar con una base mas compacta. Un catalogo grande, varias sucursales, reglas de envio, promociones complejas o integraciones con inventario requieren mas planeacion y pruebas.",
+      },
+      { type: "h3", id: "que-vas-a-vender-y-como", text: "Que vas a vender y como" },
+      {
+        type: "p",
+        text: "Antes de cotizar, define si vendes productos fisicos, digitales, servicios, suscripciones o una combinacion. Tambien aclara si cada producto tiene variantes, si el inventario cambia por sucursal y si necesitas facturacion, descuentos o ventas mayoristas.",
+      },
+      {
+        type: "quote",
+        text: "Una tienda online no es solo un catalogo: es un sistema completo para convertir interes en pedidos entregados.",
+      },
+      { type: "h2", id: "que-incluye-una-tienda-en-linea", text: "Que incluye una tienda en linea" },
+      {
+        type: "p",
+        text: "Una propuesta profesional debe explicar que incluye el diseño, la estructura de categorias, las fichas de producto, el carrito, el checkout, los pagos, los envios, los correos de confirmacion y el panel desde donde se administran pedidos.",
+      },
+      {
+        type: "p",
+        text: "Tambien conviene revisar la estrategia de contenido. Fotos consistentes, nombres claros, descripciones utiles, preguntas frecuentes y politicas visibles reducen dudas y ayudan a que el cliente avance con confianza.",
+      },
+      { type: "h3", id: "catalogo-y-experiencia-de-compra", text: "Catalogo y experiencia de compra" },
+      {
+        type: "p",
+        text: "El catalogo debe facilitar la decision. Filtros, busqueda, categorias, variantes, disponibilidad y recomendaciones pueden ser sencillos o muy avanzados. El trabajo aumenta cuando la tienda debe importar datos, sincronizar inventario o manejar miles de combinaciones.",
+      },
+      { type: "h3", id: "pagos-envios-y-pedidos", text: "Pagos, envios y pedidos" },
+      {
+        type: "p",
+        text: "En Mexico, la experiencia de pago y entrega influye directamente en la conversion. Define que metodos aceptaras, como se calculara el envio, que zonas cubres, como se notificara el pedido y quien resolvera incidencias o devoluciones.",
+      },
+      { type: "h2", id: "tres-niveles-de-inversion", text: "Tres niveles de inversion" },
+      {
+        type: "p",
+        text: "Una tienda inicial puede cubrir un catalogo pequeno, un diseño adaptado, pagos basicos y una logistica sencilla. Un proyecto profesional suma mejor arquitectura, contenido de producto, SEO, analitica, automatizaciones y una experiencia mas cuidada para movil.",
+      },
+      {
+        type: "p",
+        text: "Una operacion avanzada puede requerir integracion con ERP, inventario en tiempo real, multiples almacenes, reglas de precio, cuentas de cliente, suscripciones o un frontend personalizado. No necesitas ese nivel desde el primer dia si aun no existe la demanda que lo justifique.",
+      },
+      { type: "h2", id: "costos-recurrentes-que-debes-calcular", text: "Costos recurrentes que debes calcular" },
+      {
+        type: "p",
+        text: "Ademas del desarrollo, considera dominio, hosting o plan de plataforma, comisiones de pago, aplicaciones, correo, fotografia, publicidad, soporte, mantenimiento y actualizaciones. Estos costos forman parte del presupuesto real para operar, no son detalles secundarios.",
+      },
+      {
+        type: "p",
+        text: "Pregunta tambien que ocurre si necesitas cambiar una seccion, agregar productos o resolver un error. Una tienda que nadie puede mantener termina perdiendo oportunidades aunque el lanzamiento haya sido visualmente atractivo.",
+      },
+      { type: "h2", id: "como-comparar-propuestas-ecommerce", text: "Como comparar propuestas ecommerce" },
+      {
+        type: "p",
+        text: "Compara alcance y no solo precio. Revisa numero de productos, carga de contenido, diseño, funcionalidades, integraciones, pruebas, capacitacion, propiedad de cuentas, soporte y calendario. Si algo es importante para vender, debe aparecer escrito en la propuesta.",
+      },
+      {
+        type: "p",
+        text: "Pide ejemplos del proceso de compra en movil y escritorio. Verifica tambien que la tienda tenga medicion de productos vistos, carritos, compras y errores de pago. Sin datos, sera dificil saber que mejorar despues.",
+      },
+      { type: "h2", id: "crece-sin-pagar-complejidad-innecesaria", text: "Crece sin pagar complejidad innecesaria" },
+      {
+        type: "p",
+        text: "La mejor tienda no es la que tiene mas funciones, sino la que permite vender con claridad y crecer sin bloquear la operacion. Empieza con lo necesario, deja una arquitectura ordenada y agrega automatizaciones cuando los datos demuestren que hacen falta.",
+      },
+      {
+        type: "p",
+        text: "En AionSite podemos ayudarte a definir el alcance, comparar plataformas y construir una tienda en linea preparada para convertir. El objetivo es que sepas que estas pagando, por que lo necesitas y como medir el resultado.",
+      },
+    ],
+  },
+  {
     id: "cuanto-cuesta-pagina-web-mexico",
     title: "Cuanto cuesta una pagina web en Mexico en 2026",
     excerpt:
