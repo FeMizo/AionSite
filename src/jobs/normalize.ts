@@ -76,6 +76,14 @@ export function normalizeJobsContent(input: unknown): JobsContent {
   const raw = (input ?? {}) as Record<string, unknown>;
   const profile = (raw.profile ?? {}) as Record<string, unknown>;
   const jobs = Array.isArray(raw.jobs) ? raw.jobs : [];
+  const rawSearchCriteria = (raw.searchCriteria ?? {}) as Record<string, unknown>;
+  const excludedLocationRestrictions = Array.isArray(
+    rawSearchCriteria.excludedLocationRestrictions,
+  )
+    ? rawSearchCriteria.excludedLocationRestrictions.filter(
+        (entry): entry is string => typeof entry === "string",
+      )
+    : [];
 
   return {
     profile: {
@@ -96,6 +104,12 @@ export function normalizeJobsContent(input: unknown): JobsContent {
         profile.about,
         "Web developer focused on remote delivery, ecommerce storefronts, CMS builds, and custom code.",
       ),
+    },
+    searchCriteria: {
+      remoteOnly: rawSearchCriteria.remoteOnly !== false,
+      eligibleFromCountry: asString(rawSearchCriteria.eligibleFromCountry, "Mexico"),
+      eligibleFromLocation: asString(rawSearchCriteria.eligibleFromLocation, "Mexico"),
+      excludedLocationRestrictions,
     },
     jobs: jobs.map((job) => normalizeJob(job as Partial<JobRecord> & Record<string, unknown>)),
     lastJobsSearchAt: asString(

@@ -12,6 +12,7 @@ import {
   Send,
   LayoutGrid,
   List,
+  SlidersHorizontal,
   X,
 } from "lucide-react";
 import {
@@ -27,6 +28,7 @@ const UNSAVED_CHANGES_MESSAGE =
   "Hay cambios sin guardar. Si sales, se perderan.";
 const JOBS_PER_PAGE = 5;
 const JOBS_VIEW_MODES = ["list", "board"] as const;
+const JOBS_VIEW_MODE_STORAGE_KEY = "aionsite.jobs.view-mode";
 
 type JobsViewMode = (typeof JOBS_VIEW_MODES)[number];
 
@@ -36,6 +38,15 @@ function cloneContent(content: JobsContent): JobsContent {
 
 function getSnapshot(content: JobsContent) {
   return JSON.stringify(content);
+}
+
+function loadJobsViewMode(): JobsViewMode {
+  if (typeof window === "undefined") {
+    return "list";
+  }
+
+  const storedMode = window.localStorage.getItem(JOBS_VIEW_MODE_STORAGE_KEY);
+  return storedMode === "board" ? "board" : "list";
 }
 
 function formatMoney(value: number | null) {
@@ -243,7 +254,7 @@ function statusLabel(status: JobStatus) {
     para_aplicar: "Para aplicar",
     aplicado: "Aplicado",
     skipeado: "Skipeado",
-    no_entra_en_planes: "No entra en planes",
+    no_entra_en_planes: "No es aplicable",
     follow_up: "Follow up",
     en_espera: "En espera",
     rechazado: "Rechazado",
@@ -400,12 +411,18 @@ export function JobsDashboard({
   const [sortBy, setSortBy] = useState<"priority" | "salary-desc" | "salary-asc" | "az" | "recent">("priority");
   const [activeStackFilters, setActiveStackFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [viewMode, setViewMode] = useState<JobsViewMode>("list");
+  const [viewMode, setViewMode] = useState<JobsViewMode>(loadJobsViewMode);
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [draggedJobId, setDraggedJobId] = useState<string | null>(null);
   const [dropTargetStatus, setDropTargetStatus] = useState<JobStatus | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const latestSnapshotRef = useRef(getSnapshot(initialContent));
+
+  const changeViewMode = (nextViewMode: JobsViewMode) => {
+    setViewMode(nextViewMode);
+    window.localStorage.setItem(JOBS_VIEW_MODE_STORAGE_KEY, nextViewMode);
+  };
 
   useEffect(() => {
     const nextContent = cloneContent(initialContent);
@@ -914,13 +931,13 @@ export function JobsDashboard({
   const lastJobsSearchLabel = formatJobsSearchAt(content.lastJobsSearchAt);
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[minmax(0,1.35fr)_460px]">
+    <div className="grid gap-6 xl:grid-cols-[minmax(0,1.35fr)_400px]">
       <section className="rounded-[2rem] border border-white/8 bg-slate-950/55 p-5 shadow-[0_30px_60px_-42px_rgba(2,6,23,0.95)] backdrop-blur">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
           <div className="inline-flex rounded-full border border-white/10 bg-slate-950/75 p-1">
             <button
               type="button"
-              onClick={() => setViewMode("list")}
+              onClick={() => changeViewMode("list")}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition ${
                 viewMode === "list"
                   ? "bg-blue-500/20 text-white"
@@ -932,7 +949,7 @@ export function JobsDashboard({
             </button>
             <button
               type="button"
-              onClick={() => setViewMode("board")}
+              onClick={() => changeViewMode("board")}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition ${
                 viewMode === "board"
                   ? "bg-blue-500/20 text-white"
@@ -982,13 +999,51 @@ export function JobsDashboard({
               </div>
             </div>
 
-            <Button variant="outline" size="sm" onClick={resetFilters} className="gap-2">
-              <X size={14} />
-              Limpiar filtros
-            </Button>
+            <div className="flex flex-wrap items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIsFiltersOpen(true)}
+                className="gap-2"
+              >
+                <SlidersHorizontal size={14} />
+                Abrir filtros
+              </Button>
+              <Button variant="outline" size="sm" onClick={resetFilters} className="gap-2">
+                <X size={14} />
+                Limpiar
+              </Button>
+            </div>
           </div>
+        </div>
 
-          <div className="mt-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-4">
+        {isFiltersOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-950/75 p-4 pt-16 backdrop-blur-sm"
+            onClick={() => setIsFiltersOpen(false)}
+          >
+            <div
+              className="w-full max-w-5xl rounded-[1.75rem] border border-white/10 bg-slate-950 p-5 shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-white">Filtros de jobs</h3>
+                  <p className="text-sm text-slate-400">Ajusta la búsqueda y cierra el panel al terminar.</p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsFiltersOpen(false)}
+                  className="gap-2"
+                  aria-label="Cerrar filtros"
+                >
+                  <X size={14} />
+                  Cerrar
+                </Button>
+              </div>
+
+              <div className="mt-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-4">
             <label className="rounded-2xl border border-white/8 bg-slate-950/55 px-4 py-3">
               <span className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-slate-500">
                 <Search size={14} />
@@ -1127,28 +1182,30 @@ export function JobsDashboard({
                 <option value="recent">Reciente</option>
               </select>
             </label>
-          </div>
+              </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            {availableStacks.map((stack) => {
-              const active = activeStackFilters.includes(stack);
-              return (
-                <button
-                  key={stack}
-                  type="button"
-                  onClick={() => toggleStackFilter(stack)}
-                  className={`rounded-full border px-3 py-1 text-xs transition ${
-                    active
-                      ? "border-blue-400/40 bg-blue-500/15 text-blue-100"
-                      : "border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:bg-white/8"
-                  }`}
-                >
-                  {stack}
-                </button>
-              );
-            })}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {availableStacks.map((stack) => {
+                  const active = activeStackFilters.includes(stack);
+                  return (
+                    <button
+                      key={stack}
+                      type="button"
+                      onClick={() => toggleStackFilter(stack)}
+                      className={`rounded-full border px-3 py-1 text-xs transition ${
+                        active
+                          ? "border-blue-400/40 bg-blue-500/15 text-blue-100"
+                          : "border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:bg-white/8"
+                      }`}
+                    >
+                      {stack}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-        </div>
+        )}
 
         {viewMode === "list" ? (
           <div className="mt-5 overflow-hidden rounded-[1.75rem] border border-white/8">
@@ -1270,7 +1327,7 @@ export function JobsDashboard({
                 No hay vacantes con esos filtros.
               </div>
             ) : (
-              <div className="flex gap-4 overflow-x-auto pb-2">
+              <div className="flex gap-4 overflow-x-auto max-h-[75vh] pb-2">
                 {boardColumns.map(({ status, jobs }) => {
                   const isDropTarget = dropTargetStatus === status;
 
@@ -1284,7 +1341,7 @@ export function JobsDashboard({
                         }
                       }}
                       onDrop={(event) => handleDropOnStatus(event, status)}
-                      className={`w-[320px] shrink-0 rounded-[1.5rem] border p-3 transition ${
+                      className={`w-[320px] shrink-0 rounded-[1.5rem] border p-3 max-h-[65vh] overflow-y-scroll transition ${
                         isDropTarget
                           ? "border-blue-400/60 bg-blue-500/10"
                           : "border-white/8 bg-slate-950/55"
@@ -1398,19 +1455,13 @@ export function JobsDashboard({
                 <p className="text-xs uppercase tracking-[0.24em] text-blue-300/80">
                   Detalle
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">
+                <h3 className="mt-2 text-xl font-semibold text-white">
                   {buildJobFormLabel(selectedJob)}
                 </h3>
                 <p className="mt-2 text-sm text-slate-400">
                   {selectedJob.source} · {selectedJob.zone} · {selectedJob.region}
                 </p>
               </div>
-
-              <span
-                className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${statusClass(selectedJob.status)}`}
-              >
-                {statusLabel(selectedJob.status)}
-              </span>
             </div>
 
             <div className="mt-5 grid gap-3">
@@ -1488,7 +1539,8 @@ export function JobsDashboard({
               >
                 <Copy size={14} />
                 Copiar cover
-              </Button>              <Button
+              </Button>
+              <Button
                 variant="outline"
                 onClick={handleAssistedAutofill}
                 className="gap-2"

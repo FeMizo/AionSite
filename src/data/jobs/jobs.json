@@ -12,6 +12,17 @@
     "stackSummary": "WordPress, WooCommerce, Shopify, Liquid, Vue.js, Nuxt.js, Next.js, React, TypeScript, JavaScript",
     "about": "Web developer focused on remote delivery, ecommerce storefronts, CMS builds, and custom code."
   },
+  "searchCriteria": {
+    "remoteOnly": true,
+    "eligibleFromCountry": "Mexico",
+    "eligibleFromLocation": "Mexico",
+    "excludedLocationRestrictions": [
+      "United States only",
+      "US work authorization required",
+      "US sponsorship required",
+      "Colombia only"
+    ]
+  },
   "jobs": [
     {
       "id": "gruns-senior-shopify-full-stack-developer",
@@ -35,10 +46,10 @@
         "Custom code",
         "Frontend"
       ],
-      "status": "aplicado",
+      "status": "no_entra_en_planes",
       "cover": "Tengo 8+ años construyendo productos web remotos, con experiencia real en Shopify, Liquid, metafields, themes personalizados y sistemas reutilizables entre storefronts. Me interesa este rol porque combina frontend, ownership y mejora tangible del ecommerce. Puedo aportar rápido en arquitectura de themes, performance, mantenimiento y ejecución autónoma.",
       "notes": "Muy buen encaje para Shopify y custom code.",
-      "lastTouchedAt": "2026-08-20T18:26:58.610Z"
+      "lastTouchedAt": "2026-08-24T23:08:22.195Z"
     },
     {
       "id": "doit-select-senior-software-engineer",
@@ -251,10 +262,10 @@
         "React",
         "Product engineering"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Verse porque el rol se enfoca en producto, experiencia de usuario y frontend moderno con Next.js y TypeScript. Mi experiencia creando sitios, ecommerce y soluciones custom me ha acostumbrado a conectar diseño, negocio y código mantenible. Puedo aportar en ejecución rápida, mejora de UX, integraciones y decisiones técnicas pragmáticas que hagan el producto más claro y confiable para usuarios reales.",
       "notes": "Buen encaje por Next.js/TypeScript y product experience; revisar elegibilidad remota US.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "lastTouchedAt": "2026-08-24T22:53:29.612Z"
     },
     {
       "id": "oneimaging-full-stack-software-engineer-typescript-react",
@@ -278,10 +289,10 @@
         "Next.js",
         "Node.js"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa este puesto porque combina full stack TypeScript con construcción de producto web. Mi experiencia en desarrollo web custom, Next.js, ecommerce y CMS me ha dado práctica resolviendo desde interfaces hasta integraciones y flujos completos. Puedo sumar en features end-to-end, calidad de UI, comunicación remota y mantenimiento de código pensado para crecer sin volverse frágil.",
       "notes": "Encaje fuerte por TypeScript/Next.js/Node; revisar condiciones remotas exactas.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "lastTouchedAt": "2026-08-25T05:53:58.901Z"
     },
     {
       "id": "centralreach-software-engineer-applications",
@@ -305,10 +316,10 @@
         "Frontend",
         "Applications"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa CentralReach por el enfoque en aplicaciones web con Next.js y TypeScript. He trabajado creando experiencias web, ecommerce y soluciones custom donde la claridad de producto, la estabilidad y la ejecución práctica importan mucho. Puedo aportar desarrollando interfaces mantenibles, integrando APIs y resolviendo problemas de producto con una mentalidad pragmática y orientada a usuarios.",
       "notes": "Buen encaje técnico; salario y remoto visibles.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "lastTouchedAt": "2026-08-25T06:49:40.465Z"
     },
     {
       "id": "leaflink-senior-full-stack-engineer-ii-frontend-leaning",
@@ -332,10 +343,10 @@
         "Frontend",
         "Full stack"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa este rol porque combina frontend fuerte con responsabilidades full stack y uso de Vue.js/TypeScript. Mi experiencia creando sitios y sistemas web a medida me ha dado criterio para construir interfaces claras, reutilizables y fáciles de mantener. Puedo aportar en arquitectura frontend, calidad visual, integraciones y ejecución autónoma dentro de un equipo remoto.",
       "notes": "Encaje visible por Vue.js y senior frontend leaning.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "lastTouchedAt": "2026-08-24T23:01:18.880Z"
     },
     {
       "id": "pantheon-senior-developer-advocate-nextjs-javascript",
@@ -359,10 +370,10 @@
         "WordPress",
         "Web platform"
       ],
-      "status": "para_aplicar",
+      "status": "bloqueado",
       "cover": "Me interesa Pantheon porque conecta WordPress, web performance y tecnologías modernas como Next.js. Mi experiencia creando sitios WordPress, ecommerce y soluciones custom me permite explicar decisiones técnicas desde la práctica, no solo desde teoría. Puedo aportar como puente entre producto, comunidad y desarrollo, generando ejemplos claros, contenido técnico útil y feedback realista para mejorar la experiencia de desarrolladores.",
       "notes": "Encaje fuerte por WordPress + Next.js; rol mezcla ingeniería y advocacy.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "lastTouchedAt": "2026-08-25T06:49:58.180Z"
     },
     {
       "id": "cherry-technologies-software-engineer",
@@ -413,10 +424,10 @@
         "Full stack",
         "Frontend"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Allocate porque el puesto combina full stack con interfaces en Vue y TypeScript. Tengo experiencia construyendo productos web, ecommerce y soluciones custom donde importa tanto la experiencia visual como la arquitectura práctica. Puedo aportar ejecución end-to-end, criterio para mantener componentes reutilizables y comunicación clara en equipos donde cada decisión técnica debe mover el producto.",
       "notes": "Encaje técnico por Vue/TypeScript; revisar ubicación porque puede ser remote/hybrid.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "lastTouchedAt": "2026-08-25T06:50:42.827Z"
     },
     {
       "id": "impact-senior-software-engineer-vue",
@@ -467,10 +478,10 @@
         "Shopify ecosystem",
         "Custom code"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Narvar porque combina producto ecommerce, integraciones y nuevas capacidades con AI. Mi experiencia con Shopify, WordPress, Next.js y código custom me ha acostumbrado a conectar experiencia de usuario, sistemas externos y entregas útiles para negocio. Puedo aportar una visión práctica para construir features full stack, mejorar flujos y mantener soluciones que escalen sin volverse difíciles de operar.",
       "notes": "Encaje por ecommerce, full stack y mención de Shopify; remoto y salario claros.",
-      "lastTouchedAt": "2026-08-21T14:31:18.084Z"
+      "lastTouchedAt": "2026-08-25T06:51:13.596Z"
     },
     {
       "id": "tapcart-sr-full-stack-engineer",
@@ -494,10 +505,10 @@
         "Ecommerce",
         "Product engineering"
       ],
-      "status": "skipeado",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Tapcart porque trabaja sobre commerce para marcas Shopify con alto impacto real en experiencia de compra. Mi experiencia en Shopify, ecommerce, frontend y soluciones custom me permite entender tanto el lado técnico como el objetivo de negocio. Puedo aportar construyendo features full stack, mejorando UX y usando AI de forma práctica para acelerar sin perder criterio de ingeniería.",
       "notes": "Encaje por Shopify commerce; revisar restricción de remoto US antes de aplicar.",
-      "lastTouchedAt": "2026-08-24T17:22:13.250Z"
+      "lastTouchedAt": "2026-08-24T22:50:34.361Z"
     },
     {
       "id": "projekt-network-senior-full-stack-developer",
@@ -575,10 +586,10 @@
         "Frontend",
         "AI interfaces"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Clarify porque el rol combina frontend moderno con Next.js y construcción de interfaces de producto. Mi experiencia en Next.js, ecommerce, CMS y custom code me ha dado criterio para convertir necesidades ambiguas en experiencias claras y mantenibles. Puedo aportar sensibilidad visual, ejecución rápida e integración práctica de AI cuando realmente mejora el flujo del usuario.",
       "notes": "Salario visible; confirmar modalidad exacta antes de aplicar.",
-      "lastTouchedAt": "2026-08-21T14:31:18.084Z"
+      "lastTouchedAt": "2026-08-24T22:57:38.176Z"
     },
     {
       "id": "lexroom-frontend-engineer",
@@ -683,10 +694,10 @@
         "Full stack",
         "Product engineering"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Upstart por el enfoque en producto, sistemas modernos y alto impacto tecnico. Mi experiencia con Next.js, desarrollo web custom, ecommerce y CMS me ha dado una forma practica de construir soluciones que conectan frontend, datos e integraciones. Puedo aportar criterio para interfaces mantenibles, ejecucion end-to-end y colaboracion clara en entornos remotos.",
       "notes": "Rol senior alto; encaje por Next.js/Prisma y salario visible.",
-      "lastTouchedAt": "2026-08-24T15:45:14.503Z"
+      "lastTouchedAt": "2026-08-24T22:52:57.703Z"
     },
     {
       "id": "vercel-software-engineer-ai-gateway",
@@ -710,10 +721,10 @@
         "Developer tools",
         "Full stack"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Vercel porque esta directamente conectado con Next.js y herramientas que uso para construir productos web modernos. Mi experiencia en Next.js, ecommerce, WordPress, Shopify y custom code me da una perspectiva practica sobre DX, performance y despliegue. Puedo aportar desde la experiencia de construir para clientes reales y mejorar flujos tecnicos con criterio de producto.",
       "notes": "Encaje estrategico por Next.js; confirmar ajuste de compensacion fuera de SF.",
-      "lastTouchedAt": "2026-08-24T15:45:14.503Z"
+      "lastTouchedAt": "2026-08-24T22:50:28.569Z"
     },
     {
       "id": "nmi-senior-software-engineer-php",
@@ -765,10 +776,10 @@
         "CSS",
         "API"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa TixTrack porque el rol combina Vue.js, JavaScript, APIs y trabajo remoto en un producto con necesidades reales de integracion. Mi experiencia en sitios, ecommerce y soluciones custom me ha dado practica manteniendo interfaces claras y conectando frontend con sistemas externos. Puedo aportar ejecucion autonoma, atencion al detalle y codigo web mantenible.",
       "notes": "Wellfound muestra salario US$130k-150k y skills Vue/API.",
-      "lastTouchedAt": "2026-08-24T15:45:14.503Z"
+      "lastTouchedAt": "2026-08-25T06:50:54.235Z"
     },
     {
       "id": "bare-full-stack-engineer-pacific-hours-remote-india",
@@ -819,10 +830,10 @@
         "TypeScript",
         "Frontend Architecture"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa EarnIn porque el rol combina frontend senior con Next.js, TypeScript, performance y diseño de sistemas. Mi experiencia construyendo sitios, ecommerce y soluciones custom me permite aportar en interfaces mantenibles, accesibles y orientadas a negocio. Puedo contribuir con criterio visual, delivery autonomo y mejoras tecnicas que se noten en la experiencia real del usuario.",
       "notes": "Fuente sin pago para aplicar; salario y stack visibles en Himalayas.",
-      "lastTouchedAt": "2026-08-24T18:10:00.000Z"
+      "lastTouchedAt": "2026-08-24T22:51:29.721Z"
     },
     {
       "id": "xcelirate-senior-full-stack-engineer-contract",
@@ -847,10 +858,10 @@
         "Next.js",
         "React"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Xcelirate porque el rol pide experiencia fuerte en web full stack, PHP y frameworks frontend como Vue, Nuxt o Next.js. Mi experiencia en WordPress, ecommerce, frontend moderno y custom code encaja con plataformas donde hay que mantener, refactorizar y construir features sin perder estabilidad. Puedo aportar criterio practico, ownership y codigo mantenible.",
       "notes": "Himalayas indica que no se debe enviar dinero; salario visible EUR 125k.",
-      "lastTouchedAt": "2026-08-24T18:10:00.000Z"
+      "lastTouchedAt": "2026-08-25T06:51:50.358Z"
     },
     {
       "id": "reddit-senior-frontend-software-engineer-feeds-experience",
@@ -874,10 +885,10 @@
         "Vue.js",
         "Frontend"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Reddit por el reto de construir experiencias frontend usadas a gran escala. Mi experiencia creando productos web, ecommerce y soluciones custom me ha dado criterio para balancear rapidez, mantenibilidad y experiencia de usuario. Puedo aportar sensibilidad frontend, buena comunicacion remota y capacidad para mejorar flujos visibles con codigo claro y medible.",
       "notes": "Salario visible en Himalayas; revisar elegibilidad US antes de aplicar.",
-      "lastTouchedAt": "2026-08-24T18:10:00.000Z"
+      "lastTouchedAt": "2026-08-24T22:52:20.344Z"
     },
     {
       "id": "dacodes-fullstack-nuxt-vue-dotnet-latam",
@@ -888,11 +899,11 @@
       "salaryCurrency": "USD",
       "salaryUsdMin": 24000,
       "salaryUsdMax": 444000,
-      "fitReason": "Nuxt, Vue.js, APIs REST y remoto LATAM/Mexico.",
+      "fitReason": "Buen encaje técnico, pero la vacante exige residencia en Colombia.",
       "checkedAt": "2026-08-24T18:10:00.000Z",
       "addedAt": "2026-08-24T18:10:00.000Z",
       "zone": "Remote",
-      "region": "LATAM/Mexico",
+      "region": "Colombia only",
       "source": "Himalayas",
       "link": "https://himalayas.app/companies/dacodes/jobs/fullstack-developer-semi-senior-nuxt-vue-js-net-blazor-latam",
       "stack": [
@@ -901,9 +912,9 @@
         ".NET",
         "REST APIs"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa DaCodes porque el rol combina Nuxt, Vue.js, APIs y trabajo remoto LATAM, muy cercano a mi experiencia construyendo interfaces y soluciones web custom. He trabajado con productos donde hay que entregar rapido, integrar servicios y mantener claridad tecnica. Puedo aportar frontend fuerte, criterio de arquitectura y buena comunicacion en equipos distribuidos.",
-      "notes": "Salario mensual visible; fuente gratuita para candidatos segun Himalayas.",
+      "notes": "Himalayas indica Colombia only en los requisitos de ubicación; no elegible desde México.",
       "lastTouchedAt": "2026-08-24T18:10:00.000Z"
     },
     {
@@ -955,10 +966,10 @@
         "Product engineering",
         "Custom code"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Marco Experiences porque el rol combina liderazgo tecnico, producto y marketplace, con ownership real sobre la experiencia web. Mi experiencia en ecommerce, sitios custom y frontend moderno me permite conectar necesidades de negocio con implementacion clara. Puedo aportar criterio para priorizar, construir y mantener features que generen valor medible.",
       "notes": "Salario visible y remoto America; revisar antiguedad del post antes de aplicar.",
-      "lastTouchedAt": "2026-08-24T18:10:00.000Z"
+      "lastTouchedAt": "2026-08-25T06:48:34.188Z"
     },
     {
       "id": "developer-tag-senior-software-engineer",
@@ -1009,23 +1020,11 @@
         "Product engineering",
         "Custom code"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Rec porque el rol full stack combina producto, frontend y construccion de features con impacto directo. Mi experiencia en sitios, ecommerce y soluciones custom me permite aportar desde UX hasta integraciones y mantenimiento. Puedo sumar ejecucion autonoma, criterio tecnico y una forma practica de convertir requerimientos en producto estable.",
       "notes": "Salario visible en Wellfound; revisar elegibilidad US antes de aplicar.",
-      "lastTouchedAt": "2026-08-24T18:10:00.000Z"
+      "lastTouchedAt": "2026-08-24T23:08:19.618Z"
     }
   ],
-  "lastJobsSearchAt": "2026-08-24T18:10:00.000Z",
-  "searchCriteria": {
-    "remoteOnly": true,
-    "eligibleFromCountry": "Mexico",
-    "eligibleFromLocation": "Mexico City, Mexico",
-    "excludedLocationRestrictions": [
-      "United States only",
-      "Canada only",
-      "Europe only",
-      "India only",
-      "Any location restriction that does not include Mexico"
-    ]
-  }
+  "lastJobsSearchAt": "2026-08-24T18:10:00.000Z"
 }
