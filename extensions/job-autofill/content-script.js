@@ -337,6 +337,22 @@
     return false;
   }
 
+  function fillLinkedInCombobox(element, profile) {
+    const host = normalizeText(window.location.hostname);
+    if (host.includes("linkedin") && element.getAttribute("role") === "combobox") {
+      const candidateText = getCandidateText(element);
+      const value = pickValue(candidateText, profile);
+      if (value && !(element.value && String(element.value).trim())) {
+        setNativeValue(element, value);
+        element.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
+        element.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   function fillBooleanLikeControl(element, profile) {
     const text = getCandidateText(element);
     if (
@@ -388,6 +404,10 @@
       return true;
     }
 
+    if (fillLinkedInCombobox(element, profile)) {
+      return true;
+    }
+
     if (element.matches('input, textarea') && element.value && String(element.value).trim()) {
       return false;
     }
@@ -424,7 +444,7 @@
   function collectControls() {
     return Array.from(
       document.querySelectorAll(
-        'input, textarea, select, [contenteditable="true"]',
+        'input, textarea, select, [contenteditable="true"], [role="combobox"]',
       ),
     ).filter((element) => isVisible(element));
   }
@@ -508,18 +528,19 @@
   }
 
   function watchForFields(profile, resolve) {
-    const tryFill = () => {
-      if (autoFillDone) {
-        resolve({ filled: 0, status: "already-filled" });
-        return true;
-      }
+    let filledTotal = 0;
+    let idleTimer = null;
 
+    const tryFill = () => {
       const filled = fillPage(profile);
       if (filled > 0) {
-        autoFillDone = true;
-        showToast(`Autofill aplicado: ${filled} campos.`);
-        resolve({ filled, status: "filled" });
-        return true;
+        filledTotal += filled;
+        showToast(`Autofill aplicado: ${filledTotal} campos.`);
+        window.clearTimeout(idleTimer);
+        idleTimer = window.setTimeout(() => {
+          autoFillDone = true;
+          resolve({ filled: filledTotal, status: "filled" });
+        }, 1200);
       }
 
       return false;
@@ -545,7 +566,7 @@
 
     stopTimer = window.setTimeout(() => {
       stopWatcher();
-      resolve({ filled: 0, status: "no-fields" });
+      resolve({ filled: filledTotal, status: filledTotal ? "filled" : "no-fields" });
     }, FIELD_WAIT_MS);
 
     if (tryFill()) {
