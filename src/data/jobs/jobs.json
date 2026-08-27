@@ -235,10 +235,10 @@
         "Full stack",
         "SaaS"
       ],
-      "status": "para_aplicar",
+      "status": "rechazado",
       "cover": "Me interesa este rol porque combina desarrollo full stack con Vue.js en un producto SaaS remoto. Tengo experiencia construyendo interfaces web, integraciones y soluciones a medida, cuidando performance, mantenibilidad y entrega constante. Aunque mi foco reciente ha estado en WordPress, Shopify, Next.js y Vue.js, ese contexto me permite aportar rápido en producto, frontend estructurado y colaboración remota con ownership técnico.",
-      "notes": "Encaje visible por Vue.js, full stack y salario claro sobre el umbral.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "notes": "Encaje visible por Vue.js, full stack y salario claro sobre el umbral. 2026-08-27: Patriot Software informó que no continuará con la candidatura.",
+      "lastTouchedAt": "2026-08-27T14:32:15.907Z"
     },
     {
       "id": "verse-software-engineer-product-experience-buyer-solutions",
@@ -343,10 +343,10 @@
         "Frontend",
         "Full stack"
       ],
-      "status": "aplicado",
+      "status": "rechazado",
       "cover": "Me interesa este rol porque combina frontend fuerte con responsabilidades full stack y uso de Vue.js/TypeScript. Mi experiencia creando sitios y sistemas web a medida me ha dado criterio para construir interfaces claras, reutilizables y fáciles de mantener. Puedo aportar en arquitectura frontend, calidad visual, integraciones y ejecución autónoma dentro de un equipo remoto.",
-      "notes": "Encaje visible por Vue.js y senior frontend leaning.",
-      "lastTouchedAt": "2026-08-24T23:01:18.880Z"
+      "notes": "Encaje visible por Vue.js y senior frontend leaning. 2026-08-27: LeafLink informó que no continuará con la candidatura.",
+      "lastTouchedAt": "2026-08-27T14:32:15.907Z"
     },
     {
       "id": "pantheon-senior-developer-advocate-nextjs-javascript",
@@ -397,10 +397,10 @@
         "Frontend",
         "Custom code"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Cherry porque el rol busca desarrollo web moderno y capacidad de construir producto con autonomía. Mi experiencia en Vue.js, Next.js, WordPress, Shopify y custom code me ha dado una base práctica para resolver interfaces, flujos y componentes con foco en negocio. Puedo aportar rapidez, criterio visual y técnico, y buena adaptación a un equipo remoto-first.",
       "notes": "Salario mensual visible sobre 2k USD; confirmar alcance remoto al aplicar.",
-      "lastTouchedAt": "2026-08-21T01:33:23.162Z"
+      "lastTouchedAt": "2026-08-25T15:50:10.791Z"
     },
     {
       "id": "allocate-sr-software-engineer-full-stack",
@@ -451,10 +451,10 @@
         "SaaS",
         "Frontend"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Impact.com porque el rol combina desarrollo de producto SaaS con Vue.js, una tecnología alineada con mi experiencia construyendo interfaces web mantenibles. He trabajado en soluciones custom, ecommerce y sitios con foco en rendimiento, claridad visual e integración de negocio. Puedo aportar ejecución autónoma, criterio frontend y capacidad para mover features de forma práctica sin perder calidad.",
       "notes": "Vue.js aparece como esencial y la compensación CAD supera claramente 2k USD mensuales.",
-      "lastTouchedAt": "2026-08-21T14:31:18.084Z"
+      "lastTouchedAt": "2026-08-26T17:52:56.199Z"
     },
     {
       "id": "narvar-senior-fullstack-developer-ai",
@@ -478,10 +478,10 @@
         "Shopify ecosystem",
         "Custom code"
       ],
-      "status": "aplicado",
+      "status": "rechazado",
       "cover": "Me interesa Narvar porque combina producto ecommerce, integraciones y nuevas capacidades con AI. Mi experiencia con Shopify, WordPress, Next.js y código custom me ha acostumbrado a conectar experiencia de usuario, sistemas externos y entregas útiles para negocio. Puedo aportar una visión práctica para construir features full stack, mejorar flujos y mantener soluciones que escalen sin volverse difíciles de operar.",
-      "notes": "Encaje por ecommerce, full stack y mención de Shopify; remoto y salario claros.",
-      "lastTouchedAt": "2026-08-25T06:51:13.596Z"
+      "notes": "Encaje por ecommerce, full stack y mención de Shopify; remoto y salario claros. 2026-08-27: Narvar informó que seguirá con otros candidatos.",
+      "lastTouchedAt": "2026-08-27T14:32:15.907Z"
     },
     {
       "id": "tapcart-sr-full-stack-engineer",
@@ -532,10 +532,10 @@
         "TypeScript",
         "Full stack"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Projekt Network porque el rol combina Next.js, React, TypeScript y ownership full stack en un producto vivo. Mi experiencia creando soluciones web custom, ecommerce y sitios de producto encaja con equipos pequeños donde se necesita diagnosticar, construir y mejorar sin demasiada fricción. Puedo aportar criterio frontend, ejecución end-to-end y atención a UX y performance.",
       "notes": "Buen encaje por Next.js/React/TypeScript; requiere autorización de trabajo en Canada.",
-      "lastTouchedAt": "2026-08-21T14:31:18.084Z"
+      "lastTouchedAt": "2026-08-25T15:40:51.647Z"
     },
     {
       "id": "aditude-software-engineer-front-end",
@@ -559,10 +559,10 @@
         "TypeScript",
         "Frontend"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Aditude porque el rol se centra en frontend con React, Vue y TypeScript, un espacio muy alineado con mi experiencia construyendo interfaces web y soluciones custom. He trabajado en proyectos donde la rapidez debe convivir con calidad visual, mantenibilidad y claridad para negocio. Puedo aportar creando componentes, mejorando UX y manteniendo código frontend confiable.",
       "notes": "Encaje visible por Vue/React/TypeScript; salario y remoto visibles en el snippet de Ashby.",
-      "lastTouchedAt": "2026-08-21T14:31:18.084Z"
+      "lastTouchedAt": "2026-08-25T15:31:56.184Z"
     },
     {
       "id": "clarify-frontend-engineer",
@@ -613,10 +613,10 @@
         "Frontend",
         "TypeScript"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Lexroom porque el rol pide construir experiencias frontend con Next.js y React, cuidando performance y usabilidad. Mi experiencia creando sitios y productos web con Next.js, Vue.js, WordPress, Shopify y custom code me permite aportar una mezcla práctica de criterio visual y técnico. Puedo ayudar a convertir ideas de producto en interfaces claras, rápidas y sostenibles.",
       "notes": "Conversión estimada EUR a USD; salario anual visible sobre 2k USD mensuales.",
-      "lastTouchedAt": "2026-08-21T14:31:18.084Z"
+      "lastTouchedAt": "2026-08-25T15:38:18.916Z"
     },
     {
       "id": "ketryx-full-stack-software-engineer",
@@ -640,10 +640,10 @@
         "React",
         "Tailwind"
       ],
-      "status": "para_aplicar",
+      "status": "rechazado",
       "cover": "Me interesa Ketryx porque el rol combina Next.js, TypeScript y desarrollo full stack en un producto con estandares altos. Mi experiencia creando sitios, ecommerce y soluciones custom me permite aportar en interfaces, integraciones y entregas claras. Puedo sumar rapidez, criterio de producto y codigo mantenible para construir funcionalidades web que sean confiables y faciles de evolucionar.",
-      "notes": "Salario europeo visible; conversion USD estimada y encima de 2k mensuales.",
-      "lastTouchedAt": "2026-08-24T15:45:14.503Z"
+      "notes": "Salario europeo visible; conversion USD estimada y encima de 2k mensuales. 2026-08-27: Ketryx confirmó por Greenhouse que seguirá con otros candidatos después de revisar la candidatura.",
+      "lastTouchedAt": "2026-08-27T14:32:15.907Z"
     },
     {
       "id": "impiricus-software-engineer-full-stack",
@@ -667,10 +667,10 @@
         "Custom code",
         "Product engineering"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa Impiricus porque el rol pide ownership full stack en un producto web real. He trabajado construyendo soluciones custom, sitios y ecommerce donde hay que conectar necesidades de negocio con interfaces claras e integraciones confiables. Puedo aportar ejecucion autonoma, atencion a UX y criterio tecnico para entregar features mantenibles en un entorno remoto o hibrido.",
       "notes": "Salario visible y opcion remota; revisar stack detallado al aplicar.",
-      "lastTouchedAt": "2026-08-24T15:45:14.503Z"
+      "lastTouchedAt": "2026-08-25T15:34:50.513Z"
     },
     {
       "id": "upstart-principal-software-engineer",
@@ -748,10 +748,10 @@
         "JavaScript",
         "CSS/SCSS"
       ],
-      "status": "para_aplicar",
+      "status": "aplicado",
       "cover": "Me interesa NMI porque el rol combina PHP y frontend moderno con Vue, una mezcla cercana a mi experiencia construyendo sitios, CMS y soluciones web custom. He trabajado resolviendo necesidades practicas de negocio con codigo mantenible, interfaces claras e integraciones. Puedo aportar rapidez, criterio frontend y buena adaptacion a productos web con requisitos de estabilidad.",
       "notes": "Salario CAD visible y Vue/PHP alineado con WordPress/custom code.",
-      "lastTouchedAt": "2026-08-24T15:45:14.503Z"
+      "lastTouchedAt": "2026-08-25T15:27:26.532Z"
     },
     {
       "id": "tixtrack-sr-software-engineer-ii-remote-us",
@@ -776,10 +776,10 @@
         "CSS",
         "API"
       ],
-      "status": "aplicado",
+      "status": "rechazado",
       "cover": "Me interesa TixTrack porque el rol combina Vue.js, JavaScript, APIs y trabajo remoto en un producto con necesidades reales de integracion. Mi experiencia en sitios, ecommerce y soluciones custom me ha dado practica manteniendo interfaces claras y conectando frontend con sistemas externos. Puedo aportar ejecucion autonoma, atencion al detalle y codigo web mantenible.",
-      "notes": "Wellfound muestra salario US$130k-150k y skills Vue/API.",
-      "lastTouchedAt": "2026-08-25T06:50:54.235Z"
+      "notes": "Wellfound muestra salario US$130k-150k y skills Vue/API. 2026-08-27: Wellfound informó que TixTrack no continuará con la candidatura.",
+      "lastTouchedAt": "2026-08-27T14:32:15.907Z"
     },
     {
       "id": "bare-full-stack-engineer-pacific-hours-remote-india",
@@ -803,10 +803,10 @@
         "Full stack",
         "Frontend frameworks"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Bare porque el rol pide desarrollo full stack y experiencia con frameworks frontend modernos como Vue o React. Mi experiencia creando soluciones web custom, ecommerce y sitios de producto encaja con equipos que necesitan ownership y capacidad de entregar de punta a punta. Puedo aportar criterio visual, implementacion practica e integraciones mantenibles.",
       "notes": "Salario mensual USD visible; revisar restriccion India/Pacific hours antes de aplicar.",
-      "lastTouchedAt": "2026-08-24T15:45:14.503Z"
+      "lastTouchedAt": "2026-08-27T16:04:11.918Z"
     },
     {
       "id": "earnin-senior-front-end-engineer",
@@ -939,10 +939,10 @@
         "Commerce",
         "Full stack"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa este rol porque une Next.js, AI y commerce, tres areas alineadas con mi experiencia en desarrollo web, ecommerce y automatizacion practica. He construido soluciones custom para sitios y productos donde importa convertir ideas en interfaces utiles y mantenibles. Puedo aportar ownership full stack, sensibilidad de producto y ejecucion rapida.",
       "notes": "Wellfound no requiere pago para aplicar; salario y remoto visibles.",
-      "lastTouchedAt": "2026-08-24T18:10:00.000Z"
+      "lastTouchedAt": "2026-08-25T15:47:43.111Z"
     },
     {
       "id": "marco-experiences-senior-software-engineer-lead-remote",
@@ -993,10 +993,10 @@
         "Node.js",
         "Custom code"
       ],
-      "status": "para_aplicar",
+      "status": "no_entra_en_planes",
       "cover": "Me interesa Developer Tag porque es remoto global y busca construir producto con TypeScript, React y Node. Mi experiencia en Next.js, Vue.js, WordPress, Shopify y custom code me ha dado una base practica para resolver frontend, integraciones y flujos completos. Puedo aportar autonomia, buena comunicacion y enfoque en entregar software util sin sobrecomplicar.",
       "notes": "Remote everywhere y salario visible en Wellfound.",
-      "lastTouchedAt": "2026-08-24T18:10:00.000Z"
+      "lastTouchedAt": "2026-08-25T15:39:53.829Z"
     },
     {
       "id": "rec-senior-software-engineer-full-stack",
@@ -1024,7 +1024,122 @@
       "cover": "Me interesa Rec porque el rol full stack combina producto, frontend y construccion de features con impacto directo. Mi experiencia en sitios, ecommerce y soluciones custom me permite aportar desde UX hasta integraciones y mantenimiento. Puedo sumar ejecucion autonoma, criterio tecnico y una forma practica de convertir requerimientos en producto estable.",
       "notes": "Salario visible en Wellfound; revisar elegibilidad US antes de aplicar.",
       "lastTouchedAt": "2026-08-24T23:08:19.618Z"
+    },
+    {
+      "id": "solara6-senior-frontend-engineer",
+      "dbId": "solara6-senior-frontend-engineer",
+      "company": "Solara6",
+      "title": "Senior Frontend Engineer",
+      "salaryLabel": "US$60k-85k",
+      "salaryCurrency": "USD",
+      "salaryUsdMin": 60000,
+      "salaryUsdMax": 85000,
+      "fitReason": "Next.js, React, TypeScript, ecommerce y performance; acepta Mexico.",
+      "checkedAt": "2026-08-25T10:00:00.000Z",
+      "addedAt": "2026-08-25T10:00:00.000Z",
+      "zone": "Remote only",
+      "region": "Mexico / Latin America",
+      "source": "Wellfound",
+      "link": "https://wellfound.com/jobs/3509472-senior-frontend-engineer",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Ecommerce",
+        "Performance"
+      ],
+      "status": "no_entra_en_planes",
+      "cover": "I am interested in Solara6 because the role combines frontend engineering, ecommerce, performance, and modern technologies such as React, Next.js, and TypeScript. My experience with Shopify, WordPress, custom web development, and modern frontend systems allows me to contribute both to implementation quality and to the business goals behind the experience. I would bring strong ownership, attention to detail, and practical remote collaboration.",
+      "notes": "Wellfound explicitly lists Mexico, remote-only work, relocation not allowed, and US$60k-85k. Review the application questions before submitting.",
+      "lastTouchedAt": "2026-08-27T16:04:49.675Z"
+    },
+    {
+      "id": "beyond-logix-founding-full-stack-engineer-mexico",
+      "dbId": "beyond-logix-founding-full-stack-engineer-mexico",
+      "company": "Beyond Logix",
+      "title": "Founding Full-Stack Engineer - Mexico",
+      "salaryLabel": "US$70k",
+      "salaryCurrency": "USD",
+      "salaryUsdMin": 70000,
+      "salaryUsdMax": 70000,
+      "fitReason": "Next.js, TypeScript, Node.js, APIs y remoto plenamente localizado en Mexico.",
+      "checkedAt": "2026-08-25T10:00:00.000Z",
+      "addedAt": "2026-08-25T10:00:00.000Z",
+      "zone": "Remote",
+      "region": "Mexico / Guadalajara / Monterrey / Mexico City",
+      "source": "Wellfound",
+      "link": "https://wellfound.com/jobs/3876319-founding-full-stack-engineer-mexico",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "APIs",
+        "AWS",
+        "AI-assisted development"
+      ],
+      "status": "no_disponible",
+      "cover": "I am interested in Beyond Logix because this is a Mexico-based remote role with real ownership over a production SaaS platform. My experience with Next.js, TypeScript, custom web development, ecommerce, and AI-assisted coding gives me a strong foundation for building clear interfaces and reliable integrations. I am comfortable working autonomously, collaborating in English and Spanish, and turning business requirements into shipped product.",
+      "notes": "Wellfound explicitly lists Mexico, Guadalajara, Monterrey and Mexico City; fully remote Mexico and US$70k salary. Review the founding-engineer scope and form before submitting.",
+      "lastTouchedAt": "2026-08-27T16:26:46.150Z"
+    },
+    {
+      "id": "blockquote-ai-full-stack-engineer-nextjs-supabase",
+      "dbId": "blockquote-ai-full-stack-engineer-nextjs-supabase",
+      "company": "BlockQuote.ai",
+      "title": "Full-Stack Engineer (Next.js + Supabase)",
+      "salaryLabel": "US$75k-120k",
+      "salaryCurrency": "USD",
+      "salaryUsdMin": 75000,
+      "salaryUsdMax": 120000,
+      "fitReason": "Next.js, TypeScript, Supabase, APIs y remoto compatible con Mexico.",
+      "checkedAt": "2026-08-25T10:00:00.000Z",
+      "addedAt": "2026-08-25T10:00:00.000Z",
+      "zone": "Remote",
+      "region": "Mexico / South America / United States",
+      "source": "Wellfound",
+      "link": "https://wellfound.com/jobs/4135842-full-stack-engineer-next-js-supabase-build-blockquote-ai-pilot-mvp-resort-group-quoting",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "Tailwind"
+      ],
+      "status": "no_entra_en_planes",
+      "cover": "I am interested in BlockQuote.ai because the role combines Next.js, TypeScript, product ownership, and an AI-assisted workflow. My background in custom web development, ecommerce, CMS platforms, and modern frontend systems would help me contribute to a practical product experience while learning the Supabase and data layer deeply. I enjoy working end-to-end and improving a product through short, measurable iterations.",
+      "notes": "Wellfound explicitly lists Mexico, remote work, no relocation, and US$75k-120k. Contract-to-start; review terms in the form.",
+      "lastTouchedAt": "2026-08-27T16:04:36.426Z"
+    },
+    {
+      "id": "codal-full-stack-javascript-engineer-cms-mexico",
+      "dbId": "codal-full-stack-javascript-engineer-cms-mexico",
+      "company": "Codal",
+      "title": "Full Stack JavaScript Engineer, CMS",
+      "salaryLabel": "US$120k-155k",
+      "salaryCurrency": "USD",
+      "salaryUsdMin": 120000,
+      "salaryUsdMax": 155000,
+      "fitReason": "CMS, React/Next.js, Node.js, ecommerce integrations y remoto desde Mexico.",
+      "checkedAt": "2026-08-25T10:00:00.000Z",
+      "addedAt": "2026-08-25T10:00:00.000Z",
+      "zone": "Remote from Mexico",
+      "region": "Mexico City / Mexico",
+      "source": "Wellfound",
+      "link": "https://wellfound.com/jobs/4271266-full-stack-javascript-engineer-cms",
+      "stack": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Headless CMS",
+        "REST",
+        "GraphQL",
+        "Ecommerce"
+      ],
+      "status": "no_entra_en_planes",
+      "cover": "I am interested in Codal because the role sits directly at the intersection of CMS, ecommerce, frontend engineering, and custom web development. My experience with WordPress, Shopify, Next.js, Vue.js, React, and integrations gives me a practical perspective on building editor-friendly systems and polished customer-facing experiences. I would bring strong ownership, attention to performance, and clear communication with technical and non-technical stakeholders.",
+      "notes": "Wellfound explicitly says remote for candidates in Mexico and lists US$120k-155k. Review CMS-specific requirements and application questions before submitting.",
+      "lastTouchedAt": "2026-08-26T17:52:05.525Z"
     }
   ],
-  "lastJobsSearchAt": "2026-08-24T18:10:00.000Z"
+  "lastJobsSearchAt": "2026-08-25T10:00:00.000Z"
 }
