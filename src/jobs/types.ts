@@ -4,6 +4,7 @@ export const jobStatuses = [
   "aplicado",
   "skipeado",
   "no_entra_en_planes",
+  "no_disponible",
   "follow_up",
   "en_espera",
   "rechazado",

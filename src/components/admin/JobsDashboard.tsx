@@ -255,6 +255,7 @@ function statusLabel(status: JobStatus) {
     aplicado: "Aplicado",
     skipeado: "Skipeado",
     no_entra_en_planes: "No es aplicable",
+    no_disponible: "No disponible",
     follow_up: "Follow up",
     en_espera: "En espera",
     rechazado: "Rechazado",
@@ -272,6 +273,7 @@ function statusClass(status: JobStatus) {
     aplicado: "border-emerald-400/20 bg-emerald-500/10 text-emerald-100",
     skipeado: "border-amber-400/20 bg-amber-500/10 text-amber-100",
     no_entra_en_planes: "border-rose-400/20 bg-rose-500/10 text-rose-100",
+    no_disponible: "border-zinc-400/20 bg-zinc-500/10 text-zinc-100",
     follow_up: "border-cyan-400/20 bg-cyan-500/10 text-cyan-100",
     en_espera: "border-violet-400/20 bg-violet-500/10 text-violet-100",
     rechazado: "border-red-400/20 bg-red-500/10 text-red-100",
@@ -552,8 +554,9 @@ export function JobsDashboard({
             aplicado: 5,
             skipeado: 6,
             no_entra_en_planes: 7,
-            rechazado: 8,
-            bloqueado: 9,
+            no_disponible: 8,
+            rechazado: 9,
+            bloqueado: 10,
           };
 
           return (
