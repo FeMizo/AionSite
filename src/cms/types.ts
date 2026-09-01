@@ -48,6 +48,8 @@ export type PortfolioItem = {
   image: string;
   url: string;
   type: PortfolioType;
+  description?: string;
+  tags?: string[];
 };
 
 export type PortfolioSectionData = PortfolioItem[];

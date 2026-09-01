@@ -90,6 +90,25 @@ function PortfolioModal({
             {item.title}
           </h3>
 
+          {item.description ? (
+            <p className="mb-5 max-w-2xl text-sm leading-6 text-slate-300">
+              {item.description}
+            </p>
+          ) : null}
+
+          {item.tags && item.tags.length > 0 ? (
+            <div className="mb-6 flex flex-wrap gap-2">
+              {item.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-cyan-300/15 bg-cyan-300/5 px-2.5 py-1 text-xs text-cyan-100/80"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ) : null}
+
           <LinkButton
             href={item.url}
             target="_blank"

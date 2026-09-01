@@ -161,7 +161,7 @@
           "type": "Nuxt/Next"
         },
         {
-          "title": "Casa Brava",
+          "title": "Bisas Carmen",
           "category": "Comercio electrónico",
           "image": "/portfolio/brisa-carmen.png",
           "url": "https://restaurante.aionsite.com.mx/",
@@ -230,13 +230,22 @@
           "url": "https://randmcnally.com/",
           "type": "CMS"
         },
-        {
-          "title": "JS Fly",
-          "category": "Trabajo",
-          "image": "/portfolio/jsfly.png",
-          "url": "https://www.jsflyfishing.com/",
-          "type": "CMS"
-        }
+    {
+      "title": "JS Fly",
+      "category": "Trabajo",
+      "image": "/portfolio/jsfly.png",
+      "url": "https://www.jsflyfishing.com/",
+      "type": "CMS"
+    },
+    {
+      "title": "No Glory",
+      "category": "Editorial",
+      "image": "/portfolio/no-glory.png",
+      "url": "https://www.noglory.org/",
+      "type": "CMS",
+      "description": "Revista digital de estilo de vida con contenidos sobre tecnología, bienes raíces, productividad y cultura contemporánea.",
+      "tags": ["WordPress", "Blog", "Contenido editorial", "SEO"]
+    }
       ]
     },
     "process": {

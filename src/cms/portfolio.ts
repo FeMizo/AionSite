@@ -36,6 +36,11 @@ export function normalizePortfolioItem(item: unknown): PortfolioItem {
     image: typeof source.image === "string" ? source.image : "",
     url: typeof source.url === "string" ? source.url : "",
     type: normalizePortfolioType(source.type),
+    description:
+      typeof source.description === "string" ? source.description : "",
+    tags: Array.isArray(source.tags)
+      ? source.tags.filter((tag): tag is string => typeof tag === "string")
+      : [],
   };
 }
 
@@ -50,7 +55,7 @@ export function normalizePortfolioItems(items: unknown): PortfolioSectionData {
 export function getRecentPortfolioItems(
   items: PortfolioSectionData,
 ): PortfolioSectionData {
-  return [...items].reverse();
+  return [...items];
 }
 
 export function getPortfolioCategories(items: PortfolioSectionData) {
