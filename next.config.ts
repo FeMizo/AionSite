@@ -15,7 +15,12 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   output: isStaticExport ? "export" : undefined,
-  images: { unoptimized: isStaticExport },
+  images: {
+    unoptimized: isStaticExport,
+    remotePatterns: [
+      { protocol: "https", hostname: "pub-36eefd528bbb4e28bdef0ce39a1018e0.r2.dev", pathname: "/Prompt/36-exoform/public/**" },
+    ],
+  },
   trailingSlash: isStaticExport,
   async headers() {
     if (isStaticExport) {
