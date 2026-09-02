@@ -5,12 +5,14 @@ import {
   FileText,
   Layers3,
   LayoutDashboard,
+  MapPinned,
   Settings,
 } from "lucide-react";
 
 const items = [
   { href: "/admin", label: "Resumen", icon: LayoutDashboard },
   { href: "/admin/jobs", label: "Jobs", icon: Briefcase },
+  { href: "/admin/prospectos", label: "Prospectos", icon: MapPinned },
   { href: "/admin/sections", label: "Secciones", icon: Layers3 },
   { href: "/admin/content", label: "Contenido", icon: FileText },
   { href: "/admin/settings", label: "Configuración", icon: Settings },
