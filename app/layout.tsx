@@ -5,6 +5,11 @@ import { metadataBase } from "@/src/lib/metadata";
 import { SchemaMarkup } from "@/src/components/ui/SchemaMarkup";
 import { GdprConsent } from "@/src/components/ui/GdprConsent";
 import "./globals.css";
+import "./claymorphism/claymorphism.css";
+import "./specialui/specialui.css";
+import "./skeuomorphism/skeuomorphism.css";
+import "./spatial-ui/spatial-ui.css";
+import "./style-page-chrome.css";
 
 const GTM_ID = "GTM-PBTGRC8R";
 

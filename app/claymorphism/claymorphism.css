@@ -1,0 +1,601 @@
+/* Claymorphism landing: soft, tactile and intentionally warm. */
+.clay-page {
+  --clay-cream: #f4eee3;
+  --clay-ink: #35433a;
+  --clay-sage: #b9cbb7;
+  --clay-coral: #ef997b;
+  --clay-yellow: #f3ce7d;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--clay-ink);
+  background: var(--clay-cream);
+  font-family: var(--font-epilogue), sans-serif;
+}
+.clay-page a {
+  color: inherit;
+  text-decoration: none;
+}
+.clay-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1240px;
+  margin: auto;
+  padding: 30px 34px;
+}
+.clay-logo {
+  font:
+    700 23px var(--font-bricolage),
+    sans-serif;
+  letter-spacing: -0.06em;
+}
+.clay-logo span {
+  color: var(--clay-coral);
+  font-size: 29px;
+  margin-right: 7px;
+}
+.clay-links {
+  display: flex;
+  gap: 36px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.clay-links a:hover {
+  color: var(--clay-coral);
+}
+.clay-menu {
+  display: none;
+  background: none;
+  border: 0;
+  color: inherit;
+}
+.clay-hero {
+  max-width: 1240px;
+  min-height: 670px;
+  margin: auto;
+  padding: 75px 34px 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.clay-eyebrow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 26px;
+  color: #7b8e80;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.clay-hero h1,
+.clay-cta h2 {
+  margin: 0;
+  font:
+    500 clamp(60px, 7vw, 100px)/0.91 var(--font-bricolage),
+    sans-serif;
+  letter-spacing: -0.08em;
+}
+.clay-hero h1 em,
+.clay-section-heading h2 em,
+.clay-manifesto em,
+.clay-cta h2 em {
+  color: var(--clay-coral);
+  font-style: normal;
+}
+.clay-lede {
+  max-width: 370px;
+  margin: 34px 0 28px;
+  color: #66766c;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a.clay-button,
+.clay-cta-panel button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border: 0;
+  border-radius: 99px;
+  padding: 16px 22px;
+  color: #fff;
+  background: var(--clay-ink);
+  box-shadow: 6px 7px 0 #d9cdbb;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.clay-button:hover,
+.clay-cta-panel button:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 4px 0 #d9cdbb;
+}
+.clay-proof {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 47px;
+  color: #7b8e80;
+  font-size: 11px;
+  line-height: 1.35;
+}
+.clay-avatars {
+  display: flex;
+}
+.clay-avatars span {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  margin-right: -7px;
+  border: 2px solid var(--clay-cream);
+  border-radius: 50%;
+  color: var(--clay-ink);
+  background: var(--clay-yellow);
+  font-size: 9px;
+  font-weight: 700;
+}
+.clay-avatars span:nth-child(2) {
+  background: var(--clay-sage);
+}
+.clay-avatars span:nth-child(3) {
+  background: var(--clay-coral);
+}
+.clay-orbit {
+  position: relative;
+  height: 510px;
+}
+.clay-blob {
+  position: absolute;
+  border-radius: 48% 52% 60% 40%/46% 42% 58% 54%;
+}
+.clay-blob-a {
+  inset: 50px 35px 35px 55px;
+  background: var(--clay-sage);
+  box-shadow:
+    inset 18px 20px 24px #d4dfd1,
+    inset -20px -22px 24px #93ad96,
+    16px 20px 0 #ddcfba;
+  transform: rotate(14deg);
+}
+.clay-blob-b {
+  width: 205px;
+  height: 170px;
+  top: 5px;
+  right: 20px;
+  background: var(--clay-yellow);
+  box-shadow:
+    inset 15px 15px 19px #ffe4aa,
+    inset -16px -17px 18px #dcae61,
+    8px 10px 0 #ddcfba;
+  transform: rotate(-18deg);
+}
+.clay-flower {
+  position: absolute;
+  top: 125px;
+  left: 145px;
+  width: 240px;
+  height: 240px;
+  display: grid;
+  place-items: center;
+  border-radius: 46% 54% 50% 50%;
+  background: var(--clay-coral);
+  box-shadow:
+    inset 18px 18px 20px #ffc0a8,
+    inset -20px -22px 23px #d47763,
+    13px 15px 0 #d9cbb9;
+  transform: rotate(-9deg);
+}
+.clay-flower span {
+  position: absolute;
+  width: 90px;
+  height: 120px;
+  border-radius: 60% 40% 60% 40%;
+  background: #f8b49c;
+  box-shadow:
+    inset 10px 8px 12px #ffd5bf,
+    inset -9px -10px 12px #d97d6a;
+}
+.clay-flower span:nth-child(1) {
+  top: -54px;
+}
+.clay-flower span:nth-child(2) {
+  right: -48px;
+  transform: rotate(90deg);
+}
+.clay-flower span:nth-child(3) {
+  bottom: -54px;
+  transform: rotate(180deg);
+}
+.clay-flower span:nth-child(4) {
+  left: -48px;
+  transform: rotate(270deg);
+}
+.clay-flower b {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font:
+    500 22px var(--font-bricolage),
+    sans-serif;
+  letter-spacing: -0.08em;
+}
+.clay-note {
+  position: absolute;
+  z-index: 2;
+  padding: 13px 17px;
+  border-radius: 16px;
+  color: #66766c;
+  background: rgba(255, 252, 245, 0.74);
+  box-shadow: 5px 6px 0 rgba(137, 122, 100, 0.12);
+  font-size: 10px;
+  line-height: 1.35;
+}
+.clay-note strong {
+  color: var(--clay-ink);
+  font:
+    700 19px var(--font-bricolage),
+    sans-serif;
+}
+.clay-note-top {
+  top: 110px;
+  left: 24px;
+  transform: rotate(-8deg);
+}
+.clay-note-bottom {
+  right: 0;
+  bottom: 65px;
+  transform: rotate(7deg);
+  text-align: right;
+}
+.clay-note-bottom strong {
+  color: var(--clay-coral);
+  font-size: 27px;
+}
+.clay-rituals {
+  max-width: 1240px;
+  margin: auto;
+  padding: 100px 34px 135px;
+}
+.clay-section-heading h2 {
+  margin: 0;
+  font:
+    500 clamp(50px, 6vw, 80px)/0.9 var(--font-bricolage),
+    sans-serif;
+  letter-spacing: -0.08em;
+}
+.clay-section-heading .clay-eyebrow {
+  margin-bottom: 18px;
+}
+.clay-ritual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 70px;
+}
+.clay-card {
+  min-height: 290px;
+  padding: 27px;
+  border-radius: 27px;
+  box-shadow:
+    11px 12px 0 rgba(117, 101, 76, 0.13),
+    inset 8px 8px 15px rgba(255, 255, 255, 0.38),
+    inset -10px -11px 16px rgba(81, 81, 63, 0.11);
+}
+.clay-card-1 {
+  background: var(--clay-sage);
+}
+.clay-card-2 {
+  background: var(--clay-yellow);
+  transform: translateY(25px);
+}
+.clay-card-3 {
+  background: #edc9bb;
+}
+.clay-card-icon {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  place-items: center;
+  border-radius: 15px;
+  color: var(--clay-ink);
+  background: rgba(255, 255, 255, 0.32);
+}
+.clay-card-number {
+  display: block;
+  margin-top: 25px;
+  color: rgba(53, 67, 58, 0.5);
+  font: 12px monospace;
+}
+.clay-card h3 {
+  margin: 6px 0 7px;
+  font:
+    500 31px var(--font-bricolage),
+    sans-serif;
+  letter-spacing: -0.06em;
+}
+.clay-card p {
+  margin: 0;
+  color: #66766c;
+  font-size: 13px;
+}
+.clay-card a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 29px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.clay-card a:hover {
+  color: var(--clay-coral);
+}
+.clay-manifesto {
+  position: relative;
+  max-width: 1240px;
+  margin: auto;
+  padding: 105px 34px;
+}
+.clay-manifesto p {
+  margin: 0;
+  text-align: center;
+  font:
+    500 clamp(45px, 6vw, 84px)/0.94 var(--font-bricolage),
+    sans-serif;
+  letter-spacing: -0.08em;
+}
+.clay-manifesto-mark {
+  position: absolute;
+  top: 50px;
+  left: 14%;
+  color: var(--clay-coral);
+  font: 120px Georgia;
+  transform: rotate(10deg);
+}
+.clay-manifesto-line {
+  width: 85px;
+  height: 5px;
+  margin: 48px auto 0;
+  border-radius: 99px;
+  background: var(--clay-yellow);
+}
+.clay-cta {
+  max-width: 1240px;
+  margin: 60px auto 0;
+  padding: 100px 34px;
+  display: grid;
+  grid-template-columns: 1fr 390px;
+  gap: 90px;
+  align-items: center;
+  border-radius: 38px 38px 0 0;
+  background: #dbe5d7;
+  box-shadow: inset 10px 11px 20px rgba(255, 255, 255, 0.4);
+}
+.clay-cta-panel {
+  padding: 28px;
+  border-radius: 25px;
+  background: var(--clay-cream);
+  box-shadow: 9px 10px 0 rgba(117, 101, 76, 0.13);
+}
+.clay-cta-panel > span {
+  color: #7b8e80;
+  font: 11px monospace;
+}
+.clay-cta-panel h3 {
+  margin: 28px 0 12px;
+  font:
+    500 35px/0.95 var(--font-bricolage),
+    sans-serif;
+  letter-spacing: -0.06em;
+}
+.clay-cta-panel p {
+  color: #66766c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.clay-cta-panel button {
+  margin-top: 15px;
+  padding: 13px 17px;
+  font-size: 12px;
+}
+.clay-footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: auto;
+  padding: 28px 34px 38px;
+  color: #8a9b8d;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .clay-nav,
+  .special-nav {
+    padding: 22px 20px;
+  }
+  .clay-links,
+  .special-nav-links,
+  .special-nav-cta {
+    display: none;
+  }
+  .clay-menu,
+  .special-menu {
+    display: block;
+    border: 0;
+    background: none;
+    color: inherit;
+  }
+  .clay-hero {
+    display: block;
+    min-height: 0;
+    padding: 50px 23px 90px;
+  }
+  .clay-hero h1 {
+    font-size: 65px;
+  }
+  .clay-orbit {
+    height: 400px;
+    margin-top: 50px;
+  }
+  .clay-blob-a {
+    inset: 50px 12px 25px 15px;
+  }
+  .clay-flower {
+    top: 104px;
+    left: calc(50% - 115px);
+    width: 210px;
+    height: 210px;
+  }
+  .clay-note-top {
+    left: 0;
+    top: 80px;
+  }
+  .clay-note-bottom {
+    right: 0;
+    bottom: 22px;
+  }
+  .clay-rituals {
+    padding: 75px 23px 90px;
+  }
+  .clay-ritual-grid {
+    grid-template-columns: 1fr;
+    margin-top: 45px;
+  }
+  .clay-card-2 {
+    transform: none;
+  }
+  .clay-manifesto {
+    padding: 90px 23px;
+  }
+  .clay-manifesto-mark {
+    left: 5%;
+  }
+  .clay-cta {
+    display: block;
+    margin: 20px 15px 0;
+    padding: 65px 25px;
+  }
+  .clay-cta h2 {
+    font-size: 52px;
+  }
+  .clay-cta-panel {
+    margin-top: 45px;
+  }
+  .clay-footer {
+    padding-left: 23px;
+    padding-right: 23px;
+    gap: 15px;
+    flex-direction: column;
+  }
+}
+@keyframes clay-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(14deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(16deg);
+  }
+}
+@keyframes clay-flower-breathe {
+  0%,
+  100% {
+    transform: rotate(-9deg) scale(1);
+  }
+  50% {
+    transform: rotate(-6deg) scale(1.035);
+  }
+}
+@keyframes clay-note-drift {
+  0%,
+  100% {
+    transform: rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-5deg) translateY(-7px);
+  }
+}
+.clay-blob-a {
+  animation: clay-float 7s ease-in-out infinite;
+}
+.clay-flower {
+  animation: clay-flower-breathe 5s ease-in-out infinite;
+}
+.clay-note-top {
+  animation: clay-note-drift 4s ease-in-out infinite;
+}
+.clay-note-bottom {
+  animation: clay-note-drift 4.8s ease-in-out 0.6s infinite reverse;
+}
+.clay-card {
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    box-shadow 0.35s ease;
+}
+.clay-card:hover {
+  transform: translateY(-9px) rotate(-1deg);
+  box-shadow:
+    15px 18px 0 rgba(117, 101, 76, 0.13),
+    inset 8px 8px 15px rgba(255, 255, 255, 0.38),
+    inset -10px -11px 16px rgba(81, 81, 63, 0.11);
+}
+.clay-card-2:hover {
+  transform: translateY(16px) rotate(1deg);
+}
+@keyframes clay-hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes clay-blob-sway {
+  0%,
+  100% {
+    transform: rotate(14deg) translate(0);
+  }
+  50% {
+    transform: rotate(19deg) translate(12px, -16px);
+  }
+}
+.clay-hero-copy {
+  animation: clay-hero-in 0.9s var(--ease-out-expo) both;
+}
+.clay-orbit {
+  animation: clay-hero-in 1.1s var(--ease-out-expo) 0.18s both;
+}
+.clay-blob-a {
+  animation: clay-blob-sway 5s ease-in-out infinite;
+}
+.clay-blob-b {
+  animation: clay-float 4s ease-in-out 0.3s infinite reverse;
+}
+.clay-card {
+  animation: clay-hero-in 0.7s var(--ease-out-expo) both;
+}
+.clay-card-1 {
+  animation-delay: 0.1s;
+}
+.clay-card-2 {
+  animation-delay: 0.22s;
+}
+.clay-card-3 {
+  animation-delay: 0.34s;
+}
+.clay-rituals,
+.clay-manifesto,
+.clay-cta { opacity:0; transform:translateY(75px) rotate(1deg); transition:opacity .9s ease,transform 1s var(--ease-out-expo); }
+.clay-rituals.is-visible,
+.clay-manifesto.is-visible,
+.clay-cta.is-visible { opacity:1; transform:translateY(0) rotate(0); }
