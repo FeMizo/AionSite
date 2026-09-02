@@ -599,3 +599,6 @@ a.clay-button,
 .clay-rituals.is-visible,
 .clay-manifesto.is-visible,
 .clay-cta.is-visible { opacity:1; transform:translateY(0) rotate(0); }
+html:not(.motion-ready) .clay-rituals,html:not(.motion-ready) .clay-manifesto,html:not(.motion-ready) .clay-cta { opacity:1; transform:none; }
+.clay-rituals .clay-card { opacity:0; transform:translateY(32px); animation:none; }.clay-rituals.is-visible .clay-card { animation:clay-hero-in .7s var(--ease-out-expo) both; }.clay-rituals.is-visible .clay-card-1 { animation-delay:.08s; }.clay-rituals.is-visible .clay-card-2 { animation-delay:.2s; }.clay-rituals.is-visible .clay-card-3 { animation-delay:.32s; }.clay-rituals:not(.is-visible) .clay-card-2 { transform:translateY(32px); }
+html:not(.motion-ready) .clay-rituals .clay-card { opacity:1; transform:none; animation:none; }

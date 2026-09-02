@@ -689,6 +689,7 @@
 .spatial-mission { opacity:0; transform:translateY(100px) perspective(900px) rotateX(4deg); transition:opacity .85s ease,transform 1s var(--ease-out-expo); }
 .spatial-layers.is-visible,
 .spatial-mission.is-visible { opacity:1; transform:translateY(0) perspective(900px) rotateX(0); }
+html:not(.motion-ready) .spatial-layers,html:not(.motion-ready) .spatial-mission { opacity:1; transform:none; }
 .spatial-layers.is-visible .spatial-layer-back { animation:spatial-depth-in .8s .08s both; }
 .spatial-layers.is-visible .spatial-layer-mid { animation:spatial-depth-in .8s .22s both; }
 .spatial-layers.is-visible .spatial-layer-front { animation:spatial-depth-in .8s .36s both; }
