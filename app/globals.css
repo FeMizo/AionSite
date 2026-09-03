@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563EB;
-  --color-background: #0F172A;
-  --color-accent: #7C3AED;
+  --color-primary: #2563eb;
+  --color-background: #0f172a;
+  --color-accent: #7c3aed;
 
   /* Font stacks — populated at runtime by next/font variables on <html> */
   --font-sans: var(--font-epilogue, ui-sans-serif, system-ui, sans-serif);
@@ -22,7 +22,6 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px; /* Evita que el header fijo tape los títulos de sección al hacer clic en enlaces del menú */
 }
-
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -83,4 +82,8 @@ body.menu-open {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+.arkkhe-shell > .arkkhe-header,
+.arkkhe-shell > .arkkhe-footer {
+  display: none;
 }
