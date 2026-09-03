@@ -11,7 +11,7 @@ const blankProspect = (): ProspectRecord => {
   return { id: crypto.randomUUID(), name: "Nuevo prospecto", location: "Ciudad del Carmen", website: "", phone: "", facebook: "", instagram: "", status: "por visitar", notes: "", createdAt: now, updatedAt: now };
 };
 
-const PROSPECTS_PER_PAGE = 20;
+const PROSPECTS_PER_PAGE = 10;
 
 function linkLabel(value: string) {
   if (!value) return "No localizado";
