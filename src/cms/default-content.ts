@@ -11,7 +11,7 @@ const base = {
     { name: "Servicios", href: "#servicios" },
     { name: "Portafolio", href: "#portafolio" },
     { name: "Blog", href: "/blog" },
-    { name: "Conoceme", href: "/about" },
+    { name: "Conoceme", href: "/conoceme" },
     { name: "Paquetes", href: "#paquetes" },
     { name: "Contacto", href: "#contacto" },
   ],
