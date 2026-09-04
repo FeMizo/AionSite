@@ -6,6 +6,10 @@
 /.next
 /.next-*
 /out
+/.biscuy-pdf-review
+/.biscuy-slides-build
+/.biscuy-final-review
+/tmp
 
 # production
 /build
