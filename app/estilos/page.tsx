@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const styles = [
-  { name: "KV / Luma", route: "/design-reference", type: "Editorial makeup", description: "Belleza cálida, composición editorial y terracota premium.", colors: ["#c97854", "#fffaf5", "#191716"], className: "luma" },
+  { name: "KV / Luma", route: "/luma", type: "Editorial makeup", description: "Belleza cálida, composición editorial y terracota premium.", colors: ["#c97854", "#fffaf5", "#191716"], className: "luma" },
   { name: "Arkkhe", route: "/arkkhe", type: "Luxury digital", description: "Presencia sofisticada con ritmo cinematográfico y contraste.", colors: ["#d8ff3e", "#171717", "#f5f0e8"], className: "arkkhe" },
   { name: "Special UI", route: "/specialui", type: "Signal system", description: "Interfaz oscura, técnica y orientada a señales medibles.", colors: ["#d9ff5f", "#11120f", "#eee9df"], className: "special" },
   { name: "Spatial UI", route: "/spatial-ui", type: "Immersive product", description: "Profundidad, movimiento y capas para una experiencia espacial.", colors: ["#8b5cf6", "#111827", "#dbeafe"], className: "spatial" },

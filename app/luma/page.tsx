@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
-import { ArrowUpRight, Check, Code2, Gauge, Layers3, Menu, Sparkles } from "lucide-react";
-import design from "@/src/data/design-reference.json";
-import "./design-reference.css";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Luma",
-  description: design.content.description,
-};
+import { ArrowUpRight, Check, Code2, Gauge, Layers3, Menu, Sparkles } from "lucide-react";
+import design from "@/src/data/luma.json";
+import "./luma.css";
 
 const images = [
   "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=85",
