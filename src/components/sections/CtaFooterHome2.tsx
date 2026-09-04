@@ -11,7 +11,7 @@ const video = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07l
 export function CtaFooterHome2({ base, cta, footer, process }: { base: CmsBase; cta: FinalCTASectionData; footer: FooterSectionData; process: ProcessSectionData }) {
   return (
     <section id="contacto" className="relative overflow-hidden bg-slate-950 py-24 text-center text-white md:py-36">
-      <video autoPlay loop muted playsInline preload="auto" className="absolute inset-0 h-full w-full object-cover opacity-25" src={video} />
+      <video autoPlay loop muted playsInline preload="auto" className="absolute inset-0 h-full w-full object-cover opacity-50" src={video} />
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/75 to-slate-950" />
       <Container className="relative z-10">
         <motion.div initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.8 }}>

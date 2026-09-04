@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Check, ArrowUpRight } from "lucide-react";
 import { Container } from "@/src/components/ui/Container";
 import { Heading } from "@/src/components/ui/Heading";
+import { getWhatsAppLink } from "@/src/config/whatsapp";
 
 const services = ["Website", "Marketing Digital", "SEO", "Publicidad", "Consultoría"];
 
@@ -14,17 +15,22 @@ function useTypewriter(text: string, speed = 38, startDelay = 600) {
 
   useEffect(() => {
     let index = 0;
+    let timer: number | undefined;
     const start = window.setTimeout(() => {
-      const timer = window.setInterval(() => {
+      timer = window.setInterval(() => {
         index += 1;
         setDisplayed(text.slice(0, index));
         if (index >= text.length) {
           window.clearInterval(timer);
+          timer = undefined;
           setDone(true);
         }
       }, speed);
     }, startDelay);
-    return () => window.clearTimeout(start);
+    return () => {
+      window.clearTimeout(start);
+      if (timer !== undefined) window.clearInterval(timer);
+    };
   }, [speed, startDelay, text]);
 
   return { displayed, done };
@@ -37,6 +43,10 @@ export function ContactHome2() {
   function toggleService(service: string) {
     setSelected((current) => current.includes(service) ? current.filter((item) => item !== service) : [...current, service]);
   }
+
+  const whatsappLink = getWhatsAppLink(
+    `Hola AionSite, me gustaria recibir informacion sobre: ${selected.join(", ")}.`,
+  );
 
   return (
     <section id="contact" className="relative overflow-hidden bg-slate-950 py-24 text-white lg:py-36">
@@ -59,7 +69,7 @@ export function ContactHome2() {
             })}
           </div>
           <AnimatePresence mode="wait" initial={false}>
-            {selected.length === 0 ? <motion.p key="empty" initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} exit={{ opacity: 0 }} className="mt-7 text-xs italic text-slate-400">Selecciona servicios para continuar.</motion.p> : <motion.div key="active" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="mt-7 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/70 p-4"><p className="text-sm text-slate-300">Quieres consultar sobre: {selected.join(", ")}</p><button type="button" className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300">Vamos <ArrowUpRight size={14} /></button></motion.div>}
+            {selected.length === 0 ? <motion.p key="empty" initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} exit={{ opacity: 0 }} className="mt-7 text-xs italic text-slate-400">Selecciona servicios para continuar.</motion.p> : <motion.div key="active" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="mt-7 flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/70 p-4"><p className="text-sm text-slate-300">Quieres consultar sobre: {selected.join(", ")}</p><a href={whatsappLink} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold uppercase tracking-[0.12em] text-blue-300 transition-colors hover:text-white">Vamos <ArrowUpRight size={14} /></a></motion.div>}
           </AnimatePresence>
         </motion.div>
       </Container>
