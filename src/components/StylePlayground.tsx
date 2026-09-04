@@ -16,17 +16,17 @@ export function StylePlayground({ rootSelector, accent: initialAccent, backgroun
   const [spacing, setSpacing] = useState(24);
   const reset = () => { setAccent(initialAccent); setBackground(initialBackground); setText(initialText); setRadius(24); setScale(100); setSpacing(24); };
   const themeVars = rootSelector === ".luma-page"
-    ? `--ref-terracotta: ${accent}; --ref-terracottaDark: ${accent}; --ref-paper: ${background}; --ref-cream: ${background}; --ref-ink: ${text}; --ref-muted: ${text};`
+    ? `--ref-terracotta: ${accent} !important; --ref-terracottaDark: ${accent} !important; --ref-paper: ${background} !important; --ref-cream: ${background} !important; --ref-ink: ${text} !important; --ref-muted: ${text} !important;`
     : rootSelector === ".special-page"
-      ? `--sp-lime: ${accent}; --sp-ink: ${background}; --sp-paper: ${text}; --sp-muted: ${text};`
+      ? `--sp-lime: ${accent} !important; --sp-ink: ${background} !important; --sp-paper: ${text} !important; --sp-muted: ${text} !important;`
       : rootSelector === ".spatial-page"
-        ? `--space-blue: ${accent}; --space-pink: ${accent}; --space-bg: ${background}; --space-paper: ${text}; --space-muted: ${text};`
+        ? `--space-blue: ${accent} !important; --space-pink: ${accent} !important; --space-bg: ${background} !important; --space-paper: ${text} !important; --space-muted: ${text} !important;`
         : rootSelector === ".clay-page"
-          ? `--clay-coral: ${accent}; --clay-sage: ${accent}; --clay-yellow: ${accent}; --clay-cream: ${background}; --clay-ink: ${text};`
+          ? `--clay-coral: ${accent} !important; --clay-sage: ${accent} !important; --clay-yellow: ${accent} !important; --clay-cream: ${background} !important; --clay-ink: ${text} !important;`
           : rootSelector === ".skeu-page"
-            ? `--sk-green: ${accent}; --sk-paper: ${background}; --sk-ink: ${text}; --sk-muted: ${text};`
-            : `--ak-blue: ${accent}; --ak-purple: ${accent}; --ak-ink: ${background}; --ak-bone: ${text}; --ak-muted: ${text};`;
-  const liveStyles = `${rootSelector} { --play-accent: ${accent}; --play-bg: ${background}; --play-text: ${text}; --play-radius: ${radius}px; --play-scale: ${scale / 100}; --play-spacing: ${spacing}px; ${themeVars} zoom: var(--play-scale); } ${rootSelector} h1 em, ${rootSelector} h2 em, ${rootSelector} a:not(.style-playground-control):not(.luma-button), ${rootSelector} button:not(.style-playground-control) { color: var(--play-accent) !important; border-color: var(--play-accent) !important; } ${rootSelector} section { padding-top: var(--play-spacing) !important; padding-bottom: var(--play-spacing) !important; } ${rootSelector} article, ${rootSelector} [class*="card"], ${rootSelector} [class*="panel"], ${rootSelector} [class*="plate"] { border-radius: var(--play-radius) !important; }`;
+            ? `--sk-green: ${accent} !important; --sk-paper: ${background} !important; --sk-ink: ${text} !important; --sk-muted: ${text} !important;`
+            : `--ak-blue: ${accent} !important; --ak-purple: ${accent} !important; --ak-ink: ${background} !important; --ak-bone: ${text} !important; --ak-muted: ${text} !important;`;
+  const liveStyles = `${rootSelector} { --play-accent: ${accent} !important; --play-bg: ${background} !important; --play-text: ${text} !important; --play-radius: ${radius}px !important; --play-scale: ${scale / 100} !important; --play-spacing: ${spacing}px !important; ${themeVars} zoom: var(--play-scale) !important; } ${rootSelector} h1 em, ${rootSelector} h2 em, ${rootSelector} a:not(.style-playground-control):not([class*="-button"]), ${rootSelector} button:not(.style-playground-control) { color: var(--play-accent) !important; border-color: var(--play-accent) !important; } ${rootSelector} section { padding-top: var(--play-spacing) !important; padding-bottom: var(--play-spacing) !important; } ${rootSelector} article, ${rootSelector} [class*="card"], ${rootSelector} [class*="panel"], ${rootSelector} [class*="plate"] { border-radius: var(--play-radius) !important; }`;
   return <>
     <style>{liveStyles}</style>
     <Link href="/estilos" className="style-playground-back">← Estilos</Link>
