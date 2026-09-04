@@ -30,6 +30,7 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
   useEffect(() => {
     const browserContent = loadProspectsFromBrowser();
     setContent(browserContent);
+    if (window.localStorage.getItem("aionsite.prospects.content")) return;
     loadProspectsFromFile().then((fileContent) => { if (fileContent) { setContent(fileContent); saveProspectsToBrowser(fileContent); } });
   }, []);
 
@@ -49,24 +50,32 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
     setPage((current) => Math.min(current, pageCount));
   }, [pageCount]);
 
-  function updateProspect(id: string, patch: Partial<ProspectRecord>) {
-    setContent((current) => ({ prospects: current.prospects.map((prospect) => prospect.id === id ? { ...prospect, ...patch, updatedAt: new Date().toISOString() } : prospect) }));
+  async function persistContent(nextContent: ProspectsContent) {
+    setSaving(true);
+    const result = await saveProspects(nextContent);
+    setContent(result.content);
+    setSaving(false);
+    setSavedMessage(result.persistedToFile ? "Guardado en archivo y navegador" : "Guardado en este navegador");
+  }
+
+  function updateProspect(id: string, patch: Partial<ProspectRecord>, persistImmediately = false) {
+    const nextContent = { prospects: content.prospects.map((prospect) => prospect.id === id ? { ...prospect, ...patch, updatedAt: new Date().toISOString() } : prospect) };
+    setContent(nextContent);
     setSavedMessage("");
+    if (persistImmediately) void persistContent(nextContent);
   }
 
   function removeProspect(id: string) {
     const prospect = content.prospects.find((entry) => entry.id === id);
     if (!prospect || !window.confirm(`¿Eliminar ${prospect.name}?`)) return;
-    setContent((current) => ({ prospects: current.prospects.filter((entry) => entry.id !== id) }));
+    const nextContent = { prospects: content.prospects.filter((entry) => entry.id !== id) };
+    setContent(nextContent);
     setSavedMessage("");
+    void persistContent(nextContent);
   }
 
   async function persist() {
-    setSaving(true);
-    const result = await saveProspects(content);
-    setContent(result.content);
-    setSaving(false);
-    setSavedMessage(result.persistedToFile ? "Guardado en archivo y navegador" : "Guardado en este navegador");
+    await persistContent(content);
   }
 
   function addProspect() {
@@ -101,7 +110,7 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
                 <td className="px-4 py-3">{prospect.website ? <a href={prospect.website} target="_blank" rel="noreferrer" className="inline-flex max-w-40 items-center gap-1 truncate text-blue-300 hover:text-white" title={prospect.website}>{linkLabel(prospect.website)} <ExternalLink size={13} /></a> : <span className="text-slate-500">No localizado</span>}</td>
                 <td className="px-4 py-3 whitespace-nowrap text-slate-300">{prospect.phone || "No localizado"}</td>
                 <td className="px-4 py-3"><div className="flex max-w-48 flex-col gap-1">{prospect.facebook ? <a href={prospect.facebook} target="_blank" rel="noreferrer" className="truncate text-blue-300 hover:text-white">Facebook</a> : <span className="text-slate-500">Facebook no localizado</span>}{prospect.instagram ? <a href={prospect.instagram} target="_blank" rel="noreferrer" className="truncate text-pink-300 hover:text-white">Instagram</a> : <span className="text-slate-500">Instagram no localizado</span>}</div></td>
-                <td className="px-4 py-3"><select value={prospect.status} onChange={(event) => updateProspect(prospect.id, { status: event.target.value as ProspectStatus })} className="rounded-lg border border-white/10 bg-slate-900 px-2 py-1.5 text-xs text-white outline-none">{prospectStatuses.map((item) => <option key={item}>{item}</option>)}</select></td>
+                <td className="px-4 py-3"><select value={prospect.status} onChange={(event) => updateProspect(prospect.id, { status: event.target.value as ProspectStatus }, true)} className="rounded-lg border border-white/10 bg-slate-900 px-2 py-1.5 text-xs text-white outline-none">{prospectStatuses.map((item) => <option key={item}>{item}</option>)}</select></td>
                 <td className="px-4 py-3"><button onClick={() => removeProspect(prospect.id)} className="rounded-lg p-2 text-rose-300 transition hover:bg-rose-500/15 hover:text-rose-200" title="Eliminar prospecto"><Trash2 size={16} /></button></td>
               </tr>)}
             </tbody>

@@ -7,14 +7,26 @@ function statusValue(value: unknown): ProspectStatus {
   return (prospectStatuses as readonly string[]).includes(status) ? status as ProspectStatus : "por visitar";
 }
 
+function stableId(name: string, location: string) {
+  const key = `${name}-${location}`
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return `prospect-${key || "sin-nombre"}`;
+}
+
 function normalizeProspect(value: unknown): ProspectRecord {
   const raw = (value ?? {}) as Record<string, unknown>;
   const now = new Date().toISOString();
-  const id = stringValue(raw.id, crypto.randomUUID());
+  const name = stringValue(raw.name, "Sin nombre");
+  const location = stringValue(raw.location, "Ciudad del Carmen");
+  const id = stringValue(raw.id, stableId(name, location));
   return {
     id,
-    name: stringValue(raw.name, "Sin nombre"),
-    location: stringValue(raw.location, "Ciudad del Carmen"),
+    name,
+    location,
     website: stringValue(raw.website),
     phone: stringValue(raw.phone),
     facebook: stringValue(raw.facebook),
