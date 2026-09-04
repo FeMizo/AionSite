@@ -1,6 +1,7 @@
 "use client";
 
 import { Paintbrush, RotateCcw, SlidersHorizontal, X } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 type Props = { rootSelector: string; accent: string; background: string; text: string };
@@ -28,6 +29,7 @@ export function StylePlayground({ rootSelector, accent: initialAccent, backgroun
   const liveStyles = `${rootSelector} { --play-accent: ${accent}; --play-bg: ${background}; --play-text: ${text}; --play-radius: ${radius}px; --play-scale: ${scale / 100}; --play-spacing: ${spacing}px; ${themeVars} zoom: var(--play-scale); } ${rootSelector} h1 em, ${rootSelector} h2 em, ${rootSelector} a:not(.style-playground-control):not(.luma-button), ${rootSelector} button:not(.style-playground-control) { color: var(--play-accent) !important; border-color: var(--play-accent) !important; } ${rootSelector} section { padding-top: var(--play-spacing) !important; padding-bottom: var(--play-spacing) !important; } ${rootSelector} article, ${rootSelector} [class*="card"], ${rootSelector} [class*="panel"], ${rootSelector} [class*="plate"] { border-radius: var(--play-radius) !important; }`;
   return <>
     <style>{liveStyles}</style>
+    <Link href="/estilos" className="style-playground-back">← Estilos</Link>
     <button type="button" className="style-playground-trigger style-playground-control" onClick={() => setOpen(true)}><Paintbrush size={16} /> Personalizar</button>
     {open && <aside className="style-playground-panel" aria-label="Personalizar estilo" style={{ "--play-accent": accent, "--play-bg": background, "--play-text": text } as React.CSSProperties}>
       <div className="style-playground-head"><div><span><SlidersHorizontal size={14} /> LIVE STYLE LAB</span><h2>Personalizar</h2></div><button className="style-playground-close style-playground-control" type="button" onClick={() => setOpen(false)} aria-label="Cerrar personalizador"><X size={18} /></button></div>
