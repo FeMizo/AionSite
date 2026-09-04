@@ -4,7 +4,7 @@ import design from "@/src/data/design-reference.json";
 import "./design-reference.css";
 
 export const metadata: Metadata = {
-  title: "Makeup | AionSite",
+  title: "Luma",
   description: design.content.description,
 };
 
