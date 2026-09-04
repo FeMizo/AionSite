@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { StylePlayground } from "@/src/components/StylePlayground";
 
 const vectors = [
   ["01", "Sitios web", "Páginas web rápidas, claras y preparadas para convertir visitas en oportunidades.", "01.84"],
@@ -71,6 +72,7 @@ export default function ArkkheLanding() {
 
         <section className="arkkhe-section arkkhe-closing"><Reveal><p className="arkkhe-overline">Tu siguiente proyecto / 2026</p><h2>Tu web<br /><em>empieza</em><br />hoy<span>.</span></h2><div className="arkkhe-stats"><span><b>01</b> estrategia</span><span><b>02</b> diseño + código</span><span><b>∞</b> posibilidades</span></div></Reveal></section>
       </main>
+      <StylePlayground rootSelector=".arkkhe-shell" accent="#d8ff3e" background="#171717" text="#f5f0e8" />
 
     </div>
   );
