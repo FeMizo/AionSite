@@ -18,7 +18,7 @@ export function StylePlayground({ rootSelector, accent: initialAccent, backgroun
   return <>
     <style>{liveStyles}</style>
     <button type="button" className="style-playground-trigger style-playground-control" onClick={() => setOpen(true)}><Paintbrush size={16} /> Personalizar</button>
-    {open && <aside className="style-playground-panel" aria-label="Personalizar estilo">
+    {open && <aside className="style-playground-panel" aria-label="Personalizar estilo" style={{ "--play-accent": accent, "--play-bg": background, "--play-text": text } as React.CSSProperties}>
       <div className="style-playground-head"><div><span><SlidersHorizontal size={14} /> LIVE STYLE LAB</span><h2>Personalizar</h2></div><button className="style-playground-close style-playground-control" type="button" onClick={() => setOpen(false)} aria-label="Cerrar personalizador"><X size={18} /></button></div>
       <p className="style-playground-note">Ajusta la dirección visual y observa los cambios en esta página.</p>
       <div className="style-playground-surface" style={{ borderRadius: `${radius}px`, padding: `${spacing}px`, transform: `scale(${scale / 100})`, transformOrigin: "top left", width: `${10000 / scale}%` }}><small>PREVIEW / LIVE</small><strong>Tu idea<br /><em>toma forma.</em></strong><span style={{ background: accent }} /></div>
