@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap");
 
-.reference-page {
+.luma-page {
   --ref-ink: #191716;
   --ref-paper: #fffaf5;
   --ref-cream: #f7ece2;
@@ -15,7 +15,7 @@
   position: relative;
   font-family: var(--font-epilogue), sans-serif;
 }
-.reference-noise {
+.luma-noise {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -23,7 +23,7 @@
   z-index: 5;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
-.reference-header {
+.luma-header {
   width: min(1240px, calc(100% - 64px));
   margin: auto;
   padding: 28px 0;
@@ -33,7 +33,7 @@
   position: relative;
   z-index: 10;
 }
-.reference-logo {
+.luma-logo {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -43,7 +43,7 @@
   text-transform: uppercase;
   font-size: 12px;
 }
-.reference-logo span {
+.luma-logo span {
   width: 32px;
   height: 38px;
   display: grid;
@@ -55,32 +55,32 @@
   font-size: 24px;
   border-radius: 0 16px 16px 0;
 }
-.reference-logo strong {
+.luma-logo strong {
   font-weight: 600;
 }
-.reference-header nav {
+.luma-header nav {
   display: flex;
   gap: 30px;
 }
-.reference-header nav a,
-.reference-search {
+.luma-header nav a,
+.luma-search {
   color: inherit;
   text-decoration: none;
   font-size: 11px;
 }
-.reference-search {
+.luma-search {
   display: flex;
   align-items: center;
   gap: 7px;
   border-bottom: 1px solid var(--ref-ink);
   padding-bottom: 5px;
 }
-.reference-menu {
+.luma-menu {
   display: none;
   border: 0;
   background: transparent;
 }
-.reference-hero {
+.luma-hero {
   width: min(1240px, calc(100% - 64px));
   margin: 60px auto 120px;
   display: grid;
@@ -88,7 +88,7 @@
   align-items: center;
   gap: 70px;
 }
-.reference-kicker {
+.luma-kicker {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -122,7 +122,7 @@
   line-height: 1.7;
   font-size: 14px;
 }
-.reference-button {
+.luma-button {
   position: relative;
   z-index: 2;
   display: inline-flex;
@@ -142,7 +142,7 @@
     transform 0.25s ease,
     background 0.25s ease;
 }
-.reference-button:hover {
+.luma-button:hover {
   transform: translateY(-3px);
   background: #a95538;
 }
@@ -243,7 +243,7 @@
   border-radius: 999px;
   box-shadow: 0 10px 30px rgba(92, 56, 39, 0.08);
 }
-.reference-promise {
+.luma-promise {
   width: min(1120px, calc(100% - 64px));
   margin: 0 auto 130px;
   display: grid;
@@ -305,14 +305,14 @@
   line-height: 1.5;
   margin: 0;
 }
-.reference-collection {
+.luma-collection {
   background: var(--ref-cream);
   padding: 90px max(32px, calc((100% - 1120px) / 2)) 105px;
 }
 .collection-heading {
   text-align: center;
 }
-.collection-heading .reference-kicker {
+.collection-heading .luma-kicker {
   margin-bottom: 15px;
 }
 .collection-grid {
@@ -346,7 +346,7 @@
   margin: 0;
   flex: 1;
 }
-.reference-cta {
+.luma-cta {
   width: min(1120px, calc(100% - 64px));
   margin: 90px auto;
   padding: 34px 42px;
@@ -357,7 +357,7 @@
   align-items: center;
   gap: 22px;
 }
-.reference-cta p {
+.luma-cta p {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 32px;
   line-height: 1;
@@ -374,13 +374,13 @@
   color: var(--ref-terracotta);
   border-radius: 50%;
 }
-.reference-button.light {
+.luma-button.light {
   background: #fff;
   background-color: #fff;
   color: var(--ref-terracottaDark, #9d4e35) !important;
   white-space: nowrap;
 }
-.reference-footer {
+.luma-footer {
   width: min(1120px, calc(100% - 64px));
   margin: 0 auto;
   border-top: 1px solid var(--ref-line);
@@ -393,24 +393,24 @@
   letter-spacing: 0.1em;
 }
 @media (max-width: 800px) {
-  .reference-header,
-  .reference-hero,
-  .reference-promise,
-  .reference-cta,
-  .reference-footer {
+  .luma-header,
+  .luma-hero,
+  .luma-promise,
+  .luma-cta,
+  .luma-footer {
     width: calc(100% - 36px);
   }
-  .reference-header {
+  .luma-header {
     padding: 20px 0;
   }
-  .reference-header nav,
-  .reference-search {
+  .luma-header nav,
+  .luma-search {
     display: none;
   }
-  .reference-menu {
+  .luma-menu {
     display: block;
   }
-  .reference-hero {
+  .luma-hero {
     grid-template-columns: 1fr;
     gap: 55px;
     margin-top: 45px;
@@ -434,7 +434,7 @@
   .browser-copy h2 {
     font-size: 34px;
   }
-  .reference-promise {
+  .luma-promise {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-bottom: 90px;
@@ -446,7 +446,7 @@
   .promise-pillars {
     order: 3;
   }
-  .reference-collection {
+  .luma-collection {
     padding: 65px 18px 75px;
   }
   .collection-grid {
@@ -456,16 +456,17 @@
   .collection-image {
     aspect-ratio: 1.5;
   }
-  .reference-cta {
+  .luma-cta {
     margin: 65px auto;
     padding: 28px 24px;
     flex-wrap: wrap;
   }
-  .reference-cta p {
+  .luma-cta p {
     font-size: 28px;
   }
-  .reference-footer {
+  .luma-footer {
     flex-direction: column;
     gap: 10px;
   }
 }
+

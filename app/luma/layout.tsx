@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Showcase editorial de maquillaje y belleza.",
 };
 
-export default function DesignReferenceLayout({
+export default function LumaLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return children;
