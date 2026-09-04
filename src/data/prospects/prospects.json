@@ -1,5 +1,6 @@
 {
   "prospects": [
+    {"name":"Grupo Biscuy","location":"Ciudad de México (por confirmar)","website":"http://www.grupobiscuy.com.mx/","phone":"55 6493 5453","status":"contactados","notes":"Cliente nuevo: Biscuy. Solicita dos cotizadores, landing y CRM manual independiente."},
     {"name":"Burger King","location":"Plaza Real","website":"https://www.burgerking.com.mx/es/restaurantes/ciudad-del-carmen-s.html","phone":"938 381 3872","facebook":"https://www.facebook.com/BurgerKingMexico","instagram":"https://www.instagram.com/burgerkingmx/"},
     {"name":"Dairy Queen","location":"Plaza Real","website":"https://dairyqueen.com.mx/","phone":"938 381 4196","facebook":"https://www.facebook.com/DairyQueenMexico","instagram":"https://www.instagram.com/dairyqueenmx/"},
     {"name":"La Crepería","location":"Plaza Real"},{"name":"Café Síorghrá","location":"Plaza Real"},{"name":"Ciudad del Carmen FC","location":"Plaza Real"},{"name":"Snowtea","location":"Plaza Real"},{"name":"Toks","location":"Plaza Real","website":"https://www.toks.com.mx/"},
