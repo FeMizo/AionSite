@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ExternalLink, LoaderCircle, Plus, Save, Search, Trash2 } from "lucide-react";
+import { ExternalLink, Pencil, Plus, Save, Search, Trash2, X } from "lucide-react";
 import { Button } from "@/src/components/ui/Button";
 import { loadProspectsFromBrowser, loadProspectsFromFile, saveProspects, saveProspectsToBrowser } from "@/src/prospects/browser-storage";
 import { prospectStatuses, type ProspectRecord, type ProspectStatus, type ProspectsContent } from "@/src/prospects/types";
@@ -26,6 +26,8 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
   const [page, setPage] = useState(1);
   const [saving, setSaving] = useState(false);
   const [savedMessage, setSavedMessage] = useState("");
+  const [editingIds, setEditingIds] = useState<Set<string>>(new Set());
+  const [originals, setOriginals] = useState<Record<string, ProspectRecord>>({});
 
   useEffect(() => {
     const browserContent = loadProspectsFromBrowser();
@@ -58,11 +60,23 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
     setSavedMessage(result.persistedToFile ? "Guardado en archivo y navegador" : "Guardado en este navegador");
   }
 
-  function updateProspect(id: string, patch: Partial<ProspectRecord>, persistImmediately = false) {
+  function updateProspect(id: string, patch: Partial<ProspectRecord>) {
     const nextContent = { prospects: content.prospects.map((prospect) => prospect.id === id ? { ...prospect, ...patch, updatedAt: new Date().toISOString() } : prospect) };
     setContent(nextContent);
     setSavedMessage("");
-    if (persistImmediately) void persistContent(nextContent);
+  }
+
+  function startEditing(prospect: ProspectRecord) {
+    setOriginals((current) => ({ ...current, [prospect.id]: prospect }));
+    setEditingIds((current) => new Set(current).add(prospect.id));
+  }
+
+  function cancelEditing(id: string) {
+    const original = originals[id];
+    if (original) setContent((current) => ({ prospects: current.prospects.map((prospect) => prospect.id === id ? original : prospect) }));
+    setEditingIds((current) => { const next = new Set(current); next.delete(id); return next; });
+    setOriginals((current) => { const next = { ...current }; delete next[id]; return next; });
+    setSavedMessage("");
   }
 
   function removeProspect(id: string) {
@@ -75,11 +89,14 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
   }
 
   async function persist() {
+    if (!window.confirm("¿Guardar los cambios de prospectos en el archivo JSON?")) return;
     await persistContent(content);
   }
 
   function addProspect() {
-    setContent((current) => ({ prospects: [blankProspect(), ...current.prospects] }));
+    const prospect = blankProspect();
+    setContent((current) => ({ prospects: [prospect, ...current.prospects] }));
+    setEditingIds((current) => new Set(current).add(prospect.id));
     setSavedMessage("");
   }
 
@@ -101,17 +118,19 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
         {savedMessage && <p className="mt-3 text-sm text-emerald-300">{savedMessage}</p>}
 
         <div className="mt-5 overflow-x-auto rounded-2xl border border-white/8">
-          <table className="min-w-[1100px] w-full text-left text-sm">
-            <thead className="bg-white/5 text-xs uppercase tracking-[0.14em] text-slate-400"><tr><th className="px-4 py-3">Nombre</th><th className="px-4 py-3">Lugar</th><th className="px-4 py-3">Website</th><th className="px-4 py-3">Teléfono</th><th className="px-4 py-3">Redes sociales</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Acciones</th></tr></thead>
+          <table className="min-w-[1480px] w-full text-left text-sm">
+            <thead className="bg-white/5 text-xs uppercase tracking-[0.14em] text-slate-400"><tr><th className="px-4 py-3">Nombre</th><th className="px-4 py-3">Lugar</th><th className="px-4 py-3">Website</th><th className="px-4 py-3">Teléfono</th><th className="px-4 py-3">Facebook</th><th className="px-4 py-3">Instagram</th><th className="px-4 py-3">Notas</th><th className="px-4 py-3">Estado</th><th className="px-4 py-3">Acciones</th></tr></thead>
             <tbody className="divide-y divide-white/8">
               {visibleProspects.map((prospect) => <tr key={prospect.id} className="align-top hover:bg-white/[0.03]">
-                <td className="px-4 py-3"><input value={prospect.name} onChange={(event) => updateProspect(prospect.id, { name: event.target.value })} className="w-44 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-white outline-none focus:border-blue-400/60" /></td>
-                <td className="px-4 py-3"><input value={prospect.location} onChange={(event) => updateProspect(prospect.id, { location: event.target.value })} className="w-32 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-slate-300 outline-none focus:border-blue-400/60" /></td>
-                <td className="px-4 py-3">{prospect.website ? <a href={prospect.website} target="_blank" rel="noreferrer" className="inline-flex max-w-40 items-center gap-1 truncate text-blue-300 hover:text-white" title={prospect.website}>{linkLabel(prospect.website)} <ExternalLink size={13} /></a> : <span className="text-slate-500">No localizado</span>}</td>
-                <td className="px-4 py-3 whitespace-nowrap text-slate-300">{prospect.phone || "No localizado"}</td>
-                <td className="px-4 py-3"><div className="flex max-w-48 flex-col gap-1">{prospect.facebook ? <a href={prospect.facebook} target="_blank" rel="noreferrer" className="truncate text-blue-300 hover:text-white">Facebook</a> : <span className="text-slate-500">Facebook no localizado</span>}{prospect.instagram ? <a href={prospect.instagram} target="_blank" rel="noreferrer" className="truncate text-pink-300 hover:text-white">Instagram</a> : <span className="text-slate-500">Instagram no localizado</span>}</div></td>
-                <td className="px-4 py-3"><select value={prospect.status} onChange={(event) => updateProspect(prospect.id, { status: event.target.value as ProspectStatus }, true)} className="rounded-lg border border-white/10 bg-slate-900 px-2 py-1.5 text-xs text-white outline-none">{prospectStatuses.map((item) => <option key={item}>{item}</option>)}</select></td>
-                <td className="px-4 py-3"><button onClick={() => removeProspect(prospect.id)} className="rounded-lg p-2 text-rose-300 transition hover:bg-rose-500/15 hover:text-rose-200" title="Eliminar prospecto"><Trash2 size={16} /></button></td>
+                <td className="px-4 py-3">{editingIds.has(prospect.id) ? <input value={prospect.name} onChange={(event) => updateProspect(prospect.id, { name: event.target.value })} className="w-44 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-white outline-none focus:border-blue-400/60" /> : <span className="text-white">{prospect.name}</span>}</td>
+                <td className="px-4 py-3">{editingIds.has(prospect.id) ? <input value={prospect.location} onChange={(event) => updateProspect(prospect.id, { location: event.target.value })} className="w-32 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-slate-300 outline-none focus:border-blue-400/60" /> : <span className="text-slate-300">{prospect.location}</span>}</td>
+                <td className="px-4 py-3">{editingIds.has(prospect.id) ? <input value={prospect.website} onChange={(event) => updateProspect(prospect.id, { website: event.target.value })} placeholder="URL website" className="w-48 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-white outline-none focus:border-blue-400/60" /> : prospect.website ? <a href={prospect.website} target="_blank" rel="noreferrer" className="inline-flex max-w-48 items-center gap-1 truncate text-blue-300 hover:text-white" title={prospect.website}>{linkLabel(prospect.website)} <ExternalLink size={13} /></a> : <span className="text-slate-500">No localizado</span>}</td>
+                <td className="px-4 py-3"><input disabled={!editingIds.has(prospect.id)} value={prospect.phone} onChange={(event) => updateProspect(prospect.id, { phone: event.target.value })} placeholder="Teléfono" className="w-36 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-slate-300 outline-none disabled:cursor-not-allowed disabled:opacity-70 focus:border-blue-400/60" /></td>
+                <td className="px-4 py-3"><input disabled={!editingIds.has(prospect.id)} value={prospect.facebook} onChange={(event) => updateProspect(prospect.id, { facebook: event.target.value })} placeholder="URL Facebook" className="w-48 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-white outline-none disabled:cursor-not-allowed disabled:opacity-70 focus:border-blue-400/60" /></td>
+                <td className="px-4 py-3"><input disabled={!editingIds.has(prospect.id)} value={prospect.instagram} onChange={(event) => updateProspect(prospect.id, { instagram: event.target.value })} placeholder="URL Instagram" className="w-48 rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-white outline-none disabled:cursor-not-allowed disabled:opacity-70 focus:border-blue-400/60" /></td>
+                <td className="px-4 py-3"><textarea disabled={!editingIds.has(prospect.id)} value={prospect.notes} onChange={(event) => updateProspect(prospect.id, { notes: event.target.value })} placeholder="Notas" rows={2} className="w-56 resize-y rounded-lg border border-white/10 bg-transparent px-2 py-1.5 text-slate-300 outline-none disabled:cursor-not-allowed disabled:opacity-70 focus:border-blue-400/60" /></td>
+                <td className="px-4 py-3"><select disabled={!editingIds.has(prospect.id)} value={prospect.status} onChange={(event) => updateProspect(prospect.id, { status: event.target.value as ProspectStatus })} className="rounded-lg border border-white/10 bg-slate-900 px-2 py-1.5 text-xs text-white outline-none disabled:cursor-not-allowed disabled:opacity-70">{prospectStatuses.map((item) => <option key={item}>{item}</option>)}</select></td>
+                <td className="px-4 py-3"><div className="flex items-center gap-1">{editingIds.has(prospect.id) ? <button onClick={() => cancelEditing(prospect.id)} className="rounded-lg p-2 text-slate-300 transition hover:bg-white/10" title="Cancelar edición"><X size={16} /></button> : <button onClick={() => startEditing(prospect)} className="rounded-lg p-2 text-blue-300 transition hover:bg-blue-500/15 hover:text-blue-200" title="Editar prospecto"><Pencil size={16} /></button>}<button onClick={() => removeProspect(prospect.id)} className="rounded-lg p-2 text-rose-300 transition hover:bg-rose-500/15 hover:text-rose-200" title="Eliminar prospecto"><Trash2 size={16} /></button></div></td>
               </tr>)}
             </tbody>
           </table>
