@@ -6,128 +6,172 @@
       "format": "vertical"
     },
     "colors": {
-      "primary": "#3f8cff",
-      "accent": "#22C55E",
-      "text": "#ffffff",
-      "background": "#071226"
+      "primary": "#008CFF",
+      "accent": "#3F6BFF",
+      "secondaryAccent": "#7B61D1",
+      "text": "#FFFFFF",
+      "background": "#030617",
+      "surface": "#071226"
     },
     "schedule": {
       "time": "07:00",
-      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ]
     }
   },
   "stories": {
     "story1": {
-      "nombre": "Plataformas - WordPress, Shopify, NextJS",
-      "objetivo": "Mostrar especialización en diferentes plataformas",
+      "nombre": "Diseño web y presencia digital",
+      "objetivo": "Mostrar el valor de una web profesional",
       "variations": [
         {
           "semana": 1,
-          "nombre": "¿Cuál es tu plataforma?",
-          "angulo": "Confusión",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar múltiples logos de plataformas (WordPress, Shopify, NextJS) confundidas o superpuestas. Diseño moderno, fondo #071226 (azul oscuro), elementos con colores #3f8cff (azul) y #22C55E (verde). Texto grande y audaz que pregunte '¿Cuál es tu plataforma?' Estilo minimalista y profesional.",
-          "copy": "¿No sabes cuál es la mejor plataforma para tu negocio? WordPress, Shopify, NextJS... tenemos experiencia en TODAS. Tu éxito no depende de la plataforma, sino de quién la construye. 🔥",
-          "hashtags": "#WordPress #Shopify #NextJS #DesarrolloWeb #TuPlataforma #AionSite"
+          "nombre": "Tu marca con espacio propio",
+          "angulo": "Identidad",
+          "description": "Diseñamos páginas web que presentan tu negocio con claridad.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Tablet con interfaz abstracta, título arriba y descripción debajo. Título exacto: \"Tu marca con espacio propio\". Descripción exacta en máximo dos líneas: \"Diseñamos páginas web que presentan tu negocio con claridad.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Diseñamos páginas web que presentan tu negocio con claridad. Cotiza tu web: https://aionsite.com.mx",
+          "hashtags": "#PresenciaProfesional #AionSite"
         },
         {
           "semana": 2,
-          "nombre": "Especialistas en todo",
-          "angulo": "Profundidad",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar el logotipo de AionSite con múltiples iconos de plataformas alrededor (WordPress, Shopify, NextJS). Fondo #071226, texto grande 'Especialistas en todas las plataformas'. Colores #3f8cff y #22C55E. Efecto de profundidad con capas. Diseño profesional y moderno.",
-          "copy": "Mientras otros se especializan en UNA plataforma, nosotros dominamos todas. WordPress, Shopify, NextJS... No importa donde quieras estar, sabemos cómo llevarte. 💪",
-          "hashtags": "#Especialistas #DesarrolloWeb #WordPress #Shopify #NextJS #Profesionales"
+          "nombre": "Diseño pensado para tus clientes",
+          "angulo": "Experiencia",
+          "description": "Una web ordenada facilita explorar tus servicios desde cualquier dispositivo.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Smartphone y tablet, texto a la izquierda sin superposición. Título exacto: \"Diseño pensado para tus clientes\". Descripción exacta en máximo dos líneas: \"Una web ordenada facilita explorar tus servicios desde cualquier dispositivo.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Una web ordenada facilita explorar tus servicios desde cualquier dispositivo. Cotiza tu web: https://aionsite.com.mx",
+          "hashtags": "#PresenciaProfesional #AionSite"
         },
         {
           "semana": 3,
-          "nombre": "Tu negocio es lo primero",
-          "angulo": "ROI",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar moneda o símbolo de crecimiento en el centro. Fondo #071226, múltiples plataformas a alrededor. Texto '¿Necesitas ROI? Elige la plataforma correcta'. Colores #3f8cff y #22C55E. Diseño impactante y directo.",
-          "copy": "Cada plataforma tiene ventajas. Nosotros elegimos la que TE GENERA MÁS DINERO. No vendemos plataformas, vendemos RESULTADOS. 💰",
-          "hashtags": "#ROI #Resultados #EstrategiaDigital #CrecimientoWeb #Rentabilidad"
+          "nombre": "Cada servicio merece destacar",
+          "angulo": "Servicios",
+          "description": "Presenta lo que ofreces con una web clara y profesional.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Paneles abstractos de servicios, texto a la derecha. Título exacto: \"Cada servicio merece destacar\". Descripción exacta en máximo dos líneas: \"Presenta lo que ofreces con una web clara y profesional.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Presenta lo que ofreces con una web clara y profesional. Cotiza tu web: https://aionsite.com.mx",
+          "hashtags": "#PresenciaProfesional #AionSite"
         },
         {
           "semana": 4,
-          "nombre": "Actualizado a las tendencias",
-          "angulo": "Futuro",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar elementos futuristas, código o líneas de datos. Fondo #071226, logos de plataformas modernas. Texto 'Siempre en las últimas tendencias'. Colores #3f8cff y #22C55E. Estilo tech y moderno.",
-          "copy": "Las plataformas evolucionan. NextJS, Shopify Plus, WordPress con Headless... Nosotros no solo seguimos tendencias, las anticipamos. ⚡",
-          "hashtags": "#Tendencias #NextJS #TechStack #Innovación #FuturoDelWeb"
+          "nombre": "Un sitio a tu medida",
+          "angulo": "Personalización",
+          "description": "Creamos tu página web según los objetivos de tu negocio.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Dispositivo frontal con módulos abstractos, título inferior. Título exacto: \"Un sitio a tu medida\". Descripción exacta en máximo dos líneas: \"Creamos tu página web según los objetivos de tu negocio.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Creamos tu página web según los objetivos de tu negocio. Cotiza tu web: https://aionsite.com.mx",
+          "hashtags": "#PresenciaProfesional #AionSite"
         }
       ]
     },
     "story2": {
-      "nombre": "Conversión - Sales Focused",
-      "objetivo": "Generar urgencia de compra y ventas",
+      "nombre": "Catálogo y comercio digital",
+      "objetivo": "Dar visibilidad digital a productos",
       "variations": [
         {
           "semana": 1,
-          "nombre": "Dinero Perdido",
-          "angulo": "Urgencia",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar dinero desapareciendo o gotitas de dinero cayendo. Fondo #071226 (azul oscuro), efecto de pérdida visual. Texto grande 'Cada día que esperas, pierdes dinero'. Colores #3f8cff y #22C55E. Impacto visual alto.",
-          "copy": "Tu web actual NO VENDE. ¿Cuánto dinero dejaste en la mesa este mes? Las conversiones que pierdes hoy son clientes que gana tu competencia. No esperes más. 🚨",
-          "hashtags": "#Conversiones #VentasOnline #DiñeroQueNoGanas #ActúaYa #AionSite"
+          "nombre": "Un catálogo para descubrirte",
+          "angulo": "Catálogo",
+          "description": "Organiza tus productos en una web fácil de explorar.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx/productos",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Catálogo abstracto en smartphone, título arriba. Título exacto: \"Un catálogo para descubrirte\". Descripción exacta en máximo dos líneas: \"Organiza tus productos en una web fácil de explorar.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx/productos\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Organiza tus productos en una web fácil de explorar. Cotiza tu web: https://aionsite.com.mx/productos",
+          "hashtags": "#CatalogoDigital #AionSite"
         },
         {
           "semana": 2,
-          "nombre": "Tu Potencial",
-          "angulo": "Oportunidad",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar grafo ascendente o montaña siendo escalada. Fondo #071226, elementos #22C55E (verde) indicando crecimiento. Texto 'Tu potencial está limitado solo por tu web'. Colores #3f8cff y #22C55E. Inspirador y motivador.",
-          "copy": "Imagina cuanto PODRÍAS vender con una web que REALMENTE CONVIERTE. Nosotros ayudamos a negocios a triplicar sus conversiones. Tu turno. 🚀",
-          "hashtags": "#Potencial #Crecimiento #VentasWeb #Oportunidad #Éxito"
+          "nombre": "Tus colecciones en primera fila",
+          "angulo": "Colecciones",
+          "description": "Presenta tus colecciones con una tienda digital clara y atractiva.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx/productos",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Ropa de eventos solo en pantalla de tablet, texto lateral derecho. Título exacto: \"Tus colecciones en primera fila\". Descripción exacta en máximo dos líneas: \"Presenta tus colecciones con una tienda digital clara y atractiva.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx/productos\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Presenta tus colecciones con una tienda digital clara y atractiva. Cotiza tu web: https://aionsite.com.mx/productos",
+          "hashtags": "#CatalogoDigital #AionSite"
         },
         {
           "semana": 3,
-          "nombre": "Competencia Avanza",
-          "angulo": "FOMO",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar múltiples competidores avanzando rápido. Fondo #071226, elementos dinámicos. Texto 'Tu competencia no espera'. Colores #3f8cff y #22C55E. Efecto de urgencia y movimiento.",
-          "copy": "Mientras lees esto, tu competencia está optimizando sus conversiones. ¿Qué esperas? La diferencia entre ganar y perder es AHORA. 📍",
-          "hashtags": "#Competencia #MercadoDigital #VentasOnline #ActúaAhora #Ventaja"
+          "nombre": "Detalles que acercan la compra",
+          "angulo": "Claridad",
+          "description": "Muestra tus productos con imágenes y descripciones claras en tu web.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx/productos",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Ficha abstracta de producto en dispositivo, texto lateral izquierdo. Título exacto: \"Detalles que acercan la compra\". Descripción exacta en máximo dos líneas: \"Muestra tus productos con imágenes y descripciones claras en tu web.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx/productos\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Muestra tus productos con imágenes y descripciones claras en tu web. Cotiza tu web: https://aionsite.com.mx/productos",
+          "hashtags": "#CatalogoDigital #AionSite"
         },
         {
           "semana": 4,
-          "nombre": "Inversión Inteligente",
-          "angulo": "ROI",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar dinero invertido generando retorno. Fondo #071226, símbolos de inversión. Texto 'Invertir en conversión = máximo retorno'. Colores #3f8cff y #22C55E. Profesional y estratégico.",
-          "copy": "Una web optimizada para conversiones no es gasto, es la mejor inversión que harás. Cada peso invertido retorna multiplicado. Compruébalo. 💎",
-          "hashtags": "#Inversión #StrategyWeb #Rentabilidad #DigiTal #MaximoROI"
+          "nombre": "Más espacio para tus novedades",
+          "angulo": "Novedades",
+          "description": "Comparte tus nuevos productos desde un catálogo digital profesional.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx/productos",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Pantalla con catálogo abstracto, título debajo del dispositivo. Título exacto: \"Más espacio para tus novedades\". Descripción exacta en máximo dos líneas: \"Comparte tus nuevos productos desde un catálogo digital profesional.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx/productos\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Comparte tus nuevos productos desde un catálogo digital profesional. Cotiza tu web: https://aionsite.com.mx/productos",
+          "hashtags": "#CatalogoDigital #AionSite"
         }
       ]
     },
     "story3": {
-      "nombre": "Consulta Gratis - Lead Generation",
-      "objetivo": "Generar leads y consultas",
+      "nombre": "Asesoría y contratación",
+      "objetivo": "Generar consultas con mensajes positivos",
       "variations": [
         {
           "semana": 1,
-          "nombre": "Diagnóstico Profesional",
-          "angulo": "Análisis",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar lupa o análisis detallado de un sitio web. Fondo #071226, elementos de análisis #3f8cff. Texto 'Diagnóstico GRATIS de tu web'. Colores #3f8cff y #22C55E. Profesional y técnico.",
-          "copy": "¿Sabes realmente cómo rinde tu web? Nosotros te hacemos un DIAGNÓSTICO PROFESIONAL GRATIS. Descubre qué está frenando tu crecimiento. 🔍",
-          "hashtags": "#DiagnósticoGratis #AnalisisWeb #ConsultaGratis #OptimizaciónWeb #AionSite"
+          "nombre": "Demos forma a tu proyecto",
+          "angulo": "Consulta",
+          "description": "Te orientamos para crear una web alineada con tu negocio.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Interfaz abstracta de planificación, título superior centrado. Título exacto: \"Demos forma a tu proyecto\". Descripción exacta en máximo dos líneas: \"Te orientamos para crear una web alineada con tu negocio.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Te orientamos para crear una web alineada con tu negocio. Cotiza tu web: https://aionsite.com.mx",
+          "hashtags": "#ProyectoWeb #AionSite"
         },
         {
           "semana": 2,
-          "nombre": "No Sabes por Dónde Empezar",
-          "angulo": "Apoyo",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar persona confundida mirando opciones. Fondo #071226, elementos de ayuda #22C55E. Texto 'No sabes por dónde empezar?' Colores #3f8cff y #22C55E. Empático y de apoyo.",
-          "copy": "Te sientes perdido en el mundo digital? Es normal. Por eso estamos aquí. Una CONSULTA GRATIS con nuestros expertos te abrirá los ojos. 💡",
-          "hashtags": "#ConsultaGratis #AyudaDigital #Emprendedores #Asesoría #AionSite"
+          "nombre": "Elige tu próximo paso digital",
+          "angulo": "Planes",
+          "description": "Conoce opciones para crear una página web a tu medida.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx/#paquetes",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Tarjetas abstractas de planes sin precios inventados, texto derecho. Título exacto: \"Elige tu próximo paso digital\". Descripción exacta en máximo dos líneas: \"Conoce opciones para crear una página web a tu medida.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx/#paquetes\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Conoce opciones para crear una página web a tu medida. Cotiza tu web: https://aionsite.com.mx/#paquetes",
+          "hashtags": "#ProyectoWeb #AionSite"
         },
         {
           "semana": 3,
-          "nombre": "Actúa Ahora",
-          "angulo": "Urgencia",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar reloj o momento de acción. Fondo #071226, elementos dinámicos #3f8cff. Texto 'Tu momento es AHORA'. Colores vibrantes. Acción inmediata.",
-          "copy": "No esperes al próximo mes, al próximo año. AHORA es cuando más lo necesitas. Solicita tu CONSULTA GRATIS hoy. Solo 30 minutos que cambiarán tu negocio. ⚡",
-          "hashtags": "#ActúaAhora #Oportunidad #ConsultaGratis #CambioDigital #Hoy"
+          "nombre": "Tu próximo proyecto empieza aquí",
+          "angulo": "Contratación",
+          "description": "Encuentra el plan web adecuado para presentar tu negocio online.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx/#paquetes",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Tablet sobre pedestal discreto, título a la izquierda. Título exacto: \"Tu próximo proyecto empieza aquí\". Descripción exacta en máximo dos líneas: \"Encuentra el plan web adecuado para presentar tu negocio online.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx/#paquetes\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Encuentra el plan web adecuado para presentar tu negocio online. Cotiza tu web: https://aionsite.com.mx/#paquetes",
+          "hashtags": "#ProyectoWeb #AionSite"
         },
         {
           "semana": 4,
-          "nombre": "Confía como otros",
-          "angulo": "Social Proof",
-          "prompt": "Crear una imagen de Instagram Story (1080x1920px) vertical. Mostrar múltiples usuarios satisfied o testimonios. Fondo #071226, rostros o avatares #22C55E. Texto 'Cientos confían en nosotros'. Colores #3f8cff y #22C55E. Confianza y comunidad.",
-          "copy": "¿Dudas? Cientos de negocios ya transformaron sus resultados con nosotros. Tu consulta GRATIS es el primer paso. Únete a quienes ya ganaron. 🏆",
-          "hashtags": "#Testimonios #Confianza #CasosExito #AionSite #ComoOtros"
+          "nombre": "Diseñemos tu nueva presencia digital",
+          "angulo": "Asesoría",
+          "description": "Una consulta nos ayuda a entender tus objetivos y tu negocio.",
+          "cta": "Cotiza tu web",
+          "url": "https://aionsite.com.mx",
+          "prompt": "Crear una historia vertical 1080x1920 de AionSite. Estilo premium minimalista, navy #030617, azul #008CFF y blanco; violeta discreto, sin verde dominante ni naranja. Luz editorial suave, sin exceso de glow. Composición editorial con interfaz abstracta, título inferior. Título exacto: \"Diseñemos tu nueva presencia digital\". Descripción exacta en máximo dos líneas: \"Una consulta nos ayuda a entender tus objetivos y tu negocio.\". CTA: \"Cotiza tu web\". Enlace: \"https://aionsite.com.mx\". Usar logo original C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png, nunca recrearlo con IA; generar sin logo y componer el original después. No cubrir ni recortar objetos. Sin microtexto, cifras, testimonios o promesas inventadas. Aplicar visual_guidelines y revisar historial antes de usar este ejemplo.",
+          "copy": "Una consulta nos ayuda a entender tus objetivos y tu negocio. Cotiza tu web: https://aionsite.com.mx",
+          "hashtags": "#ProyectoWeb #AionSite"
         }
       ]
     }
@@ -135,12 +179,136 @@
   "rotation_logic": {
     "week_calculation": "Math.floor((new Date().getTime() - new Date(2026, 0, 1).getTime()) / (7 * 24 * 60 * 60 * 1000)) % 4 + 1",
     "day_schedule": {
-      "monday": ["story1"],
-      "tuesday": ["story2"],
-      "wednesday": ["story3"],
-      "thursday": ["story1"],
-      "friday": ["story2"]
+      "monday": [
+        "story1"
+      ],
+      "tuesday": [
+        "story2"
+      ],
+      "wednesday": [
+        "story3"
+      ],
+      "thursday": [
+        "story1"
+      ],
+      "friday": [
+        "story2"
+      ]
     },
-    "description": "Each week (1-4), the same day of week will show a different variation of the story, rotating through the 4 angles. Week 1 shows variation 0, Week 2 shows variation 1, etc."
+    "description": "Compatibilidad con el generador legado: cuatro variaciones por tema. Son ejemplos; para contenido nuevo revisar historial y crear título, copy y composición inéditos siguiendo visual_guidelines."
+  },
+  "visual_guidelines": {
+    "updatedAt": "2026-09-04",
+    "scope": "Guía visual. No modifica horarios ni publica contenido. El generador legado usa las variaciones; los consumidores nuevos deben aplicar también estas reglas.",
+    "style": "Tecnológico, elegante, minimalista y premium; iluminación editorial suave, volumen discreto y espacio negativo.",
+    "paletteRules": [
+      "Navy, negro, azul eléctrico y blanco dominantes.",
+      "Violeta como acento secundario discreto.",
+      "Verde solo como detalle mínimo: nunca fondo, bloque grande, titular o CTA.",
+      "Sin naranja ni rojo; evitar exceso de glow, neón y superficies brillantes."
+    ],
+    "logos": {
+      "horizontal": "C:/Users/mizo_/OneDrive/AionSite/Web/logo-aionsite.png",
+      "square": "C:/Users/mizo_/OneDrive/AionSite/Web/favicon.png",
+      "rules": [
+        "Usar únicamente archivos originales, conservando proporciones.",
+        "Nunca generar, redibujar ni sustituir el logo con IA, tampoco dentro de mockups.",
+        "Generar el fondo sin logo y componer el original después cuando sea necesario.",
+        "Integrar el fondo del logo sin una caja sólida discordante."
+      ]
+    },
+    "formats": {
+      "feed": {
+        "width": 1080,
+        "height": 1080
+      },
+      "carousel": {
+        "width": 1080,
+        "height": 1080,
+        "minSlides": 2,
+        "maxSlides": 4
+      },
+      "story": {
+        "width": 1080,
+        "height": 1920
+      },
+      "cover": {
+        "orientation": "horizontal",
+        "reference": "public/social/cover-facebook-aionsite.png",
+        "rule": "Revisar recorte de escritorio y móvil; mantener contenido esencial en zona segura."
+      }
+    },
+    "composition": [
+      "Alternar izquierda, derecha, arriba, abajo e invertida según espacio disponible e historial.",
+      "Nunca tapar dispositivos, iconos, personas o productos con texto.",
+      "Integrar texto en el diseño, sin recortes ni elementos que parezcan cortados.",
+      "Usar márgenes seguros; revisar PNG final a tamaño móvil.",
+      "Personas opcionales y variadas; fotografía natural, no repetir siempre la misma persona.",
+      "Ropa y productos para eventos solo dentro del catálogo de la pantalla, sin acumulaciones decorativas externas.",
+      "La oferta principal es crear páginas web y digitalizar negocios, no vender ropa."
+    ],
+    "text": {
+      "titleWords": {
+        "min": 3,
+        "max": 7
+      },
+      "descriptionWords": {
+        "min": 6,
+        "max": 14
+      },
+      "descriptionMaxLines": 2,
+      "ctaWords": {
+        "min": 2,
+        "max": 5
+      },
+      "ctaPlacement": "Solo última imagen del carrusel; incluir en piezas individuales.",
+      "rules": [
+        "Título y una descripción concreta en todas las imágenes.",
+        "Una idea por imagen, tipografía grande y contraste alto.",
+        "Sin párrafos ni texto diminuto en mockups: interfaces abstractas.",
+        "Revisar ortografía, legibilidad y ausencia de texto deformado."
+      ]
+    },
+    "tone": [
+      "Positivo, aspiracional, útil y orientado a consultas o contratación.",
+      "No miedo, pérdidas, competencia amenazante ni urgencia agresiva.",
+      "No inventar testimonios, clientes, cifras, porcentajes ni resultados garantizados."
+    ],
+    "links": {
+      "general": "https://aionsite.com.mx",
+      "catalog": "https://aionsite.com.mx/productos",
+      "packages": "https://aionsite.com.mx/#paquetes",
+      "rule": "Un único destino por pieza, idéntico en imagen y copy; elegir según tema."
+    },
+    "history": {
+      "directory": "public/social/",
+      "rules": [
+        "Revisar historial visual y copy antes de generar.",
+        "No reutilizar títulos, slugs, copy, hashtag principal, imágenes, mockups, conceptos o composiciones exactas.",
+        "Las variaciones son ejemplos de dirección creativa, no publicaciones para repetir automáticamente."
+      ]
+    },
+    "references": [
+      {
+        "file": "public/social/diseno-web-que-conecta.png",
+        "use": "Dispositivos e interfaces abstractas, diseño web minimalista."
+      },
+      {
+        "file": "public/social/tu-tienda-siempre-abierta.png",
+        "use": "Ecommerce y catálogo dentro de pantalla."
+      },
+      {
+        "file": "public/social/convierte-interes-en-clientes.png",
+        "use": "Título a la derecha y dispositivo a la izquierda; simplificar microtexto."
+      },
+      {
+        "file": "public/social/haz-visible-tu-experiencia.png",
+        "use": "Historia editorial centrada, título arriba, dispositivo central y descripción debajo."
+      },
+      {
+        "file": "public/social/cover-facebook-aionsite.png",
+        "use": "Banner horizontal premium; no reutilizar estadísticas de los mockups."
+      }
+    ]
   }
 }
