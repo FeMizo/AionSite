@@ -14,7 +14,18 @@ export function StylePlayground({ rootSelector, accent: initialAccent, backgroun
   const [scale, setScale] = useState(100);
   const [spacing, setSpacing] = useState(24);
   const reset = () => { setAccent(initialAccent); setBackground(initialBackground); setText(initialText); setRadius(24); setScale(100); setSpacing(24); };
-  const liveStyles = `${rootSelector} { --play-accent: ${accent}; --play-bg: ${background}; --play-text: ${text}; --play-radius: ${radius}px; --play-scale: ${scale / 100}; --play-spacing: ${spacing}px; } ${rootSelector} h1 em, ${rootSelector} h2 em, ${rootSelector} a:not(.style-playground-control), ${rootSelector} button:not(.style-playground-control) { color: var(--play-accent) !important; }`;
+  const themeVars = rootSelector === ".luma-page"
+    ? `--ref-terracotta: ${accent}; --ref-terracottaDark: ${accent}; --ref-paper: ${background}; --ref-cream: ${background}; --ref-ink: ${text}; --ref-muted: ${text};`
+    : rootSelector === ".special-page"
+      ? `--sp-lime: ${accent}; --sp-ink: ${background}; --sp-paper: ${text}; --sp-muted: ${text};`
+      : rootSelector === ".spatial-page"
+        ? `--space-blue: ${accent}; --space-pink: ${accent}; --space-bg: ${background}; --space-paper: ${text}; --space-muted: ${text};`
+        : rootSelector === ".clay-page"
+          ? `--clay-coral: ${accent}; --clay-sage: ${accent}; --clay-yellow: ${accent}; --clay-cream: ${background}; --clay-ink: ${text};`
+          : rootSelector === ".skeu-page"
+            ? `--sk-green: ${accent}; --sk-paper: ${background}; --sk-ink: ${text}; --sk-muted: ${text};`
+            : `--ak-blue: ${accent}; --ak-purple: ${accent}; --ak-ink: ${background}; --ak-bone: ${text}; --ak-muted: ${text};`;
+  const liveStyles = `${rootSelector} { --play-accent: ${accent}; --play-bg: ${background}; --play-text: ${text}; --play-radius: ${radius}px; --play-scale: ${scale / 100}; --play-spacing: ${spacing}px; ${themeVars} zoom: var(--play-scale); } ${rootSelector} h1 em, ${rootSelector} h2 em, ${rootSelector} a:not(.style-playground-control):not(.luma-button), ${rootSelector} button:not(.style-playground-control) { color: var(--play-accent) !important; border-color: var(--play-accent) !important; } ${rootSelector} section { padding-top: var(--play-spacing) !important; padding-bottom: var(--play-spacing) !important; } ${rootSelector} article, ${rootSelector} [class*="card"], ${rootSelector} [class*="panel"], ${rootSelector} [class*="plate"] { border-radius: var(--play-radius) !important; }`;
   return <>
     <style>{liveStyles}</style>
     <button type="button" className="style-playground-trigger style-playground-control" onClick={() => setOpen(true)}><Paintbrush size={16} /> Personalizar</button>
