@@ -291,52 +291,35 @@
       "order": 7,
       "data": [
         {
-          "name": "Esencial",
-          "price": "Desde $3,500",
+          "name": "Sitio web basico",
+          "price": "Desde $2,000",
           "features": [
-            "Página de conversión que vende automáticamente",
-            "Diseño premium que genera confianza instantánea",
-            "Formulario inteligente que cualifica leads",
-            "SEO técnico básico para aparecer en Google"
+            "2 paginas: Home y Contact",
+            "Diseño adaptable",
+            "Formulario de contacto",
+            "SEO básico"
           ],
           "recommended": false
         },
         {
-          "name": "Crecimiento",
-          "price": "Desde $12,000",
+          "name": "Sitio completo",
+          "price": "Desde $4,000",
           "features": [
-            "Todo lo del plan Esencial + sitio completo",
-            "Diseño premium que duplica conversiones",
-            "4 secciones estratégicas para vender más",
-            "SEO técnico avanzado + posicionamiento garantizado",
-            "Chatbot IA que cierra ventas 24/7",
-            "Soporte 2 meses incluido"
+            "4 paginas personalizadas",
+            "Diseño adaptable",
+            "Formulario de contacto",
+            "SEO básico"
           ],
           "recommended": true
         },
         {
-          "name": "Ecommerce esencial",
-          "price": "Desde $7,000",
+          "name": "Ecommerce",
+          "price": "Desde $6,000",
           "features": [
-            "Tienda inicial lista para vender en linea",
-            "Catalogo editable de productos y servicios",
-            "Carrito simple enfocado en conversion",
-            "Integracion de pago",
-            "SEO basico para productos principales",
-            "Capacitacion para administrar pedidos"
-          ],
-          "recommended": false
-        },
-        {
-          "name": "Ecommerce modular",
-          "price": "Desde $20,000",
-          "features": [
-            "Tienda que vende mientras duermes",
-            "Pagos automáticos + múltiples métodos",
-            "Catálogo inteligente que aumenta ventas",
-            "SEO ecommerce + ventas orgánicas",
-            "Automatización completa de pedidos",
-            "Soporte 6 meses + crecimiento garantizado"
+            "8 paginas para vender en linea",
+            "Catalogo editable de productos",
+            "Carrito e integracion de pago",
+            "SEO basico para productos principales"
           ],
           "recommended": false
         }

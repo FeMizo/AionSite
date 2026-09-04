@@ -12,12 +12,15 @@ Explora las opciones de AionSite para impulsar tu presencia digital.
 
 Creamos soluciones digitales claras y accesibles para que tu negocio gane visibilidad, conecte con mas clientes y crezca con confianza.
 
-### Sitios Web
+### Sitio web basico
 
-Sitios rapidos, claros y orientados a convertir visitas en contactos.
+- 2 paginas: Home y Contact
+- Precio base: $2,000
 
-- Precio: Desde $4,000-$15,000
-- Tiempo: 2-4 semanas
+### Sitio completo
+
+- 4 paginas
+- Precio base: $4,000
 
 ### Redes Sociales
 
@@ -26,12 +29,10 @@ Imagenes y publicaciones para mantener tus redes sociales.
 - Precio: Desde $3,500-$5,000 / mes
 - Tiempo: 1 semana de configuracion
 
-### Ecommerce Basico
+### Ecommerce
 
-Catalogo, carrito y pagos para comenzar a vender en linea.
-
-- Precio: Desde $6,000-$20,000
-- Tiempo: 3-6 semanas
+- 8 paginas
+- Precio base: $6,000
 
 ### Optimizacion Web
 
