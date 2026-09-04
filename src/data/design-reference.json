@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "name": "Makeup Editorial Landing",
+    "source": "User-provided visual reference",
+    "intent": "Luxury, editorial and conversion-focused makeup showcase"
+  },
+  "designTokens": {
+    "colors": {
+      "ink": "#191716",
+      "paper": "#fffaf5",
+      "cream": "#f7ece2",
+      "terracotta": "#c97854",
+      "terracottaDark": "#9d4e35",
+      "line": "#e5cdbd",
+      "muted": "#6f625b"
+    },
+    "typography": {
+      "display": "Cormorant Garamond",
+      "body": "Epilogue",
+      "displayWeight": 500,
+      "bodyWeight": 400
+    },
+    "shape": {
+      "radiusCard": "28px",
+      "radiusPill": "999px",
+      "shadow": "0 24px 70px rgba(92, 56, 39, 0.16)"
+    }
+  },
+  "content": {
+    "brand": "AionSite",
+    "eyebrow": "MAKEUP / BELLEZA & EXPRESIÓN",
+    "headline": ["Maquillaje que", "realza tu", "belleza cada", "día."],
+    "description": "Descubre maquillaje pensado para resaltar tus facciones, crear looks memorables y acompañarte desde el primer café hasta la última salida.",
+    "cta": "Descubrir la colección",
+    "nav": ["Maquillaje", "Consejos", "Colección", "Contacto"],
+    "promise": {
+      "eyebrow": "NUESTRA PROMESA",
+      "title": "Color con intención. Belleza que se siente.",
+      "description": "Fórmulas cómodas y tonos versátiles para que cada look se sienta tan auténtico como tú.",
+      "pillars": [
+        { "title": "Ingredientes conscientes", "description": "Selecciones cuidadas para una rutina bonita y responsable." },
+        { "title": "Texturas que enamoran", "description": "Acabados ligeros, pigmentos intensos y aplicación sencilla." },
+        { "title": "Belleza sin reglas", "description": "Productos para experimentar, combinar y expresarte." }
+      ]
+    },
+    "collection": {
+      "eyebrow": "NUESTRA COLECCIÓN",
+      "title": "Un look para cada momento",
+      "items": ["Piel luminosa", "Mirada protagonista", "Labios irresistibles"]
+    },
+    "closing": "No solo es maquillaje. Es la forma más divertida de volver a ti."
+  },
+  "layout": {
+    "type": "asymmetric-editorial",
+    "sections": ["hero", "promise", "collection", "closing-cta"],
+    "responsive": { "desktop": "split showcase with floating browser frame", "mobile": "stacked editorial cards" }
+  }
+}
