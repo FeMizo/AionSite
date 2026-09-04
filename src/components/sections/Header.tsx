@@ -13,9 +13,11 @@ import { isInternalHref } from "@/src/lib/routing";
 export function Header({
   base,
   data,
+  desktopBreakpoint = "md",
 }: {
   base: CmsBase;
   data: HeaderSectionData;
+  desktopBreakpoint?: "md" | "lg";
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,6 +33,10 @@ export function Header({
   }, []);
 
   const navLinkClass = "text-sm font-medium text-slate-300 transition-colors hover:text-white";
+  const desktopNavClass = desktopBreakpoint === "lg"
+    ? "hidden items-center gap-8 lg:flex"
+    : "hidden items-center gap-8 md:flex";
+  const mobileMenuButtonClass = desktopBreakpoint === "lg" ? "lg:hidden" : "md:hidden";
 
   return (
     <header
@@ -56,7 +62,7 @@ export function Header({
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className={desktopNavClass}>
           {data.navigation.map((item) => (
             isInternalHref(item.href) ? (
               <Link
@@ -88,7 +94,7 @@ export function Header({
 
         <button
           type="button"
-          className="rounded-full border border-white/10 bg-white/5 p-3 text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:hidden"
+          className={`rounded-full border border-white/10 bg-white/5 p-3 text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${mobileMenuButtonClass}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-navigation"

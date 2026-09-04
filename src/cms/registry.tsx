@@ -8,7 +8,7 @@ import { Hero } from "@/src/components/sections/Hero";
 import { Portfolio } from "@/src/components/sections/Portfolio";
 import { Pricing } from "@/src/components/sections/Pricing";
 import { Process } from "@/src/components/sections/Process";
-import { Services } from "@/src/components/sections/Services";
+import { ServicesApproach } from "@/src/components/sections/ServicesApproach";
 import { SideImageContent } from "@/src/components/sections/SideImageContent";
 import { Stats } from "@/src/components/sections/Stats";
 import { Testimonials } from "@/src/components/sections/Testimonials";
@@ -350,7 +350,7 @@ const sectionRenderers: Record<SectionId, (content: CmsContent) => ReactNode> =
         headerData={content.sections.header.data}
       />
     ),
-    services: (content) => <Services data={content.sections.services.data} />,
+    services: (content) => <ServicesApproach data={content.sections.services.data} />,
     stats: (content) => <Stats data={content.sections.stats.data} />,
     portfolio: (content) => (
       <Portfolio data={content.sections.portfolio.data} />
