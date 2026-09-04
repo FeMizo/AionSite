@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowUpRight, Check, Code2, Gauge, Layers3, Menu, Sparkles } from "lucide-react";
 import design from "@/src/data/luma.json";
 import "./luma.css";
