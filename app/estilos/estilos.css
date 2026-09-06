@@ -92,7 +92,7 @@
   color: #60a5fa;
 }
 .lab-intro h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-bricolage), sans-serif;
   font-size: clamp(58px, 9vw, 130px);
   line-height: 0.82;
   letter-spacing: -0.07em;
@@ -121,7 +121,7 @@
   padding-top: 12px;
 }
 .lab-count strong {
-  font-family: Georgia, serif;
+  font-family: var(--font-bricolage), sans-serif;
   font-size: 37px;
   font-weight: 400;
 }
@@ -206,7 +206,7 @@
   overflow: hidden;
 }
 .card-preview > strong {
-  font-family: Georgia, serif;
+  font-family: var(--font-bricolage), sans-serif;
   font-size: 150px;
   font-weight: 400;
   opacity: 0.9;
@@ -244,7 +244,7 @@
   align-items: end;
 }
 .card-bottom h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-bricolage), sans-serif;
   font-size: 25px;
   font-weight: 400;
   margin: 0 0 6px;

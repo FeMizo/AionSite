@@ -72,7 +72,7 @@ export default function ArkkheLanding() {
 
         <section className="arkkhe-section arkkhe-closing"><Reveal><p className="arkkhe-overline">Tu siguiente proyecto / 2026</p><h2>Tu web<br /><em>empieza</em><br />hoy<span>.</span></h2><div className="arkkhe-stats"><span><b>01</b> estrategia</span><span><b>02</b> diseño + código</span><span><b>∞</b> posibilidades</span></div></Reveal></section>
       </main>
-      <StylePlayground rootSelector=".arkkhe-shell" accent="#d8ff3e" background="#171717" text="#f5f0e8" />
+      <StylePlayground rootSelector=".arkkhe-shell" accent="#2563eb" secondary="#7c3aed" background="#0f172a" surface="#1e293b" text="#ffffff" muted="#94a3b8" />
 
     </div>
   );

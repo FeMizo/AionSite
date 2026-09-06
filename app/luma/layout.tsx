@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 export default function LumaLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <><StylePlayground rootSelector=".luma-page" accent="#c97854" background="#fffaf5" text="#191716" />{children}</>;
+  return <><StylePlayground rootSelector=".luma-page" accent="#c97854" secondary="#9d4e35" background="#fffaf5" surface="#f7ece2" text="#191716" muted="#6f625b" />{children}</>;
 }
