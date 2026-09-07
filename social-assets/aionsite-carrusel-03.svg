@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071126"/><stop offset="1" stop-color="#061a3b"/></linearGradient><radialGradient id="glow"><stop stop-color="#287dff" stop-opacity=".45"/><stop offset="1" stop-color="#287dff" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/><circle cx="810" cy="280" r="470" fill="url(#glow)"/><path d="M0 820C300 680 570 1040 1080 760" fill="none" stroke="#45d7ff" stroke-opacity=".24" stroke-width="2"/><path d="M0 860C300 720 570 1080 1080 800" fill="none" stroke="#45d7ff" stroke-opacity=".1" stroke-width="2"/>
+  <text x="84" y="116" fill="#69d9ff" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="7">AIONSITE / SIGUIENTE PASO</text>
+  <text x="84" y="340" fill="#ffffff" font-family="Arial,sans-serif" font-size="76" font-weight="800">Haz que tu web</text><text x="84" y="430" fill="#ffffff" font-family="Arial,sans-serif" font-size="76" font-weight="800">trabaje por</text><text x="84" y="520" fill="#58d5ff" font-family="Arial,sans-serif" font-size="76" font-weight="800">tu negocio.</text>
+  <rect x="84" y="650" width="570" height="74" rx="37" fill="#38c8f5"/><text x="126" y="698" fill="#061224" font-family="Arial,sans-serif" font-size="25" font-weight="800">AGENDA UNA CONVERSACIÓN</text>
+  <text x="84" y="890" fill="#ffffff" font-family="Arial,sans-serif" font-size="38" font-weight="700">aionsite.com</text><text x="84" y="982" fill="#6b7f9b" font-family="Arial,sans-serif" font-size="23" letter-spacing="4">03 / 03</text>
+</svg>
