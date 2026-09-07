@@ -1139,7 +1139,67 @@
       "cover": "I am interested in Codal because the role sits directly at the intersection of CMS, ecommerce, frontend engineering, and custom web development. My experience with WordPress, Shopify, Next.js, Vue.js, React, and integrations gives me a practical perspective on building editor-friendly systems and polished customer-facing experiences. I would bring strong ownership, attention to performance, and clear communication with technical and non-technical stakeholders.",
       "notes": "Wellfound explicitly says remote for candidates in Mexico and lists US$120k-155k. Review CMS-specific requirements and application questions before submitting.",
       "lastTouchedAt": "2026-08-26T17:52:05.525Z"
+    },
+    {
+      "id": "hired-frontend-engineer-remote-mexico",
+      "dbId": "hired-frontend-engineer-remote-mexico",
+      "company": "Hired",
+      "title": "Frontend Engineer (Remote)",
+      "salaryLabel": "US$40-$50/hour",
+      "salaryCurrency": "USD",
+      "salaryUsdMin": 83200,
+      "salaryUsdMax": 104000,
+      "fitReason": "Frontend moderno con React/Vue, TypeScript, responsive design, accesibilidad, APIs, performance y trabajo remoto desde Mexico.",
+      "checkedAt": "2026-09-07T14:30:57.014Z",
+      "addedAt": "2026-09-07T14:30:57.014Z",
+      "zone": "Remote",
+      "region": "Mexico / Work from Anywhere",
+      "source": "LinkedIn",
+      "link": "https://www.linkedin.com/jobs/view/4464337017",
+      "stack": [
+        "React",
+        "Vue.js",
+        "TypeScript",
+        "JavaScript",
+        "Accessibility",
+        "REST APIs",
+        "Frontend"
+      ],
+      "status": "para_aplicar",
+      "cover": "I am interested in this Frontend Engineer opportunity because it matches my experience building responsive web interfaces and custom digital products with modern JavaScript, TypeScript, React, Vue.js, and Next.js. I bring a practical focus on reusable components, accessibility, performance, API integrations, and clear remote collaboration, with the autonomy to deliver polished work and review technical decisions carefully.",
+      "notes": "LinkedIn lists Mexico, remote work, contract, and US$40-$50/hour. The company application redirects to a micro1 form; the visible first step asks for email and has not been submitted.",
+      "lastTouchedAt": "2026-09-07T14:30:57.014Z"
+    },
+    {
+      "id": "dacodes-semi-senior-fullstack-nuxt-vue-blazor-remote-latam",
+      "dbId": "dacodes-semi-senior-fullstack-nuxt-vue-blazor-remote-latam",
+      "company": "DaCodes",
+      "title": "Semi-Senior Fullstack Developer (Nuxt VueJs / Blazor .NET) - Remote LATAM",
+      "salaryLabel": "US$2,000-$2,200/month",
+      "salaryCurrency": "USD",
+      "salaryUsdMin": 24000,
+      "salaryUsdMax": 26400,
+      "fitReason": "Nuxt/Vue.js, REST APIs, GitHub y desarrollo full stack remoto desde Mexico; el .NET/Blazor es un gap parcial.",
+      "checkedAt": "2026-09-07T14:30:57.014Z",
+      "addedAt": "2026-09-07T14:30:57.014Z",
+      "zone": "Remote",
+      "region": "Mexico / LATAM",
+      "source": "Himalayas",
+      "link": "https://himalayas.app/companies/dacodes/jobs/semi-senior-fullstack-developer-nuxt-vuejs-blazor-net-remote-latam",
+      "stack": [
+        "Nuxt.js",
+        "Vue.js",
+        "REST APIs",
+        "GitHub",
+        "Blazor",
+        ".NET",
+        "SQL"
+      ],
+      "status": "para_aplicar",
+      "cover": "Me interesa DaCodes porque el rol combina Nuxt, Vue.js, APIs y trabajo remoto desde México con proyectos de software a medida. Mi experiencia en WordPress, Shopify, Vue.js, Next.js y custom code me permite aportar en interfaces reutilizables, integraciones y delivery autónomo; el alcance de Blazor y .NET sería el principal punto de adaptación técnica.",
+      "notes": "Himalayas muestra México, remoto 100%, US$2,000-$2,200 mensuales y fecha límite del 20 de septiembre de 2026. La página muestra Apply now; no se enviaron datos ni se avanzó el formulario.",
+      "lastTouchedAt": "2026-09-07T14:30:57.014Z"
     }
   ],
-  "lastJobsSearchAt": "2026-09-02T14:31:41.045Z"
+  "lastJobsSearchAt": "2026-09-07T14:30:57.014Z"
 }
