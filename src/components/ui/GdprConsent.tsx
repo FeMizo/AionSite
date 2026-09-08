@@ -44,12 +44,14 @@ export function GdprConsent() {
   const handleAccept = () => {
     setConsentCookie("accepted");
     setConsent("accepted");
+    window.dispatchEvent(new Event("aionsite-consent-change"));
     setShowDetails(false);
   };
 
   const handleReject = () => {
     setConsentCookie("rejected");
     setConsent("rejected");
+    window.dispatchEvent(new Event("aionsite-consent-change"));
     setShowDetails(false);
   };
 

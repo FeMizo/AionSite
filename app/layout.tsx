@@ -4,6 +4,7 @@ import Script from "next/script";
 import { metadataBase } from "@/src/lib/metadata";
 import { SchemaMarkup } from "@/src/components/ui/SchemaMarkup";
 import { GdprConsent } from "@/src/components/ui/GdprConsent";
+import { MetaPixel } from "@/src/components/analytics/MetaPixel";
 import "./globals.css";
 import "./claymorphism/claymorphism.css";
 import "./specialui/specialui.css";
@@ -85,6 +86,7 @@ export default function RootLayout({
           />
         </noscript>
         <SchemaMarkup />
+        <MetaPixel />
         {children}
         <GdprConsent />
       </body>
