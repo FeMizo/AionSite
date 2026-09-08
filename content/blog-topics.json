@@ -1,184 +1,21 @@
 [
-  {
-    "topic": "Cuanto cuesta una pagina web en Mexico en 2026",
-    "primaryKeyword": "cuanto cuesta una pagina web en Mexico",
-    "badgeText": "Precios Web",
-    "audience": "emprendedores y empresas mexicanas que comparan opciones para crear su sitio",
-    "angle": "explicar rangos de inversion, factores que cambian el precio, costos ocultos y como comparar propuestas sin elegir solo por precio"
-  },
-  {
-    "topic": "Cuanto cuesta una tienda en linea en Mexico",
-    "primaryKeyword": "cuanto cuesta una tienda en linea",
-    "badgeText": "Ecommerce",
-    "audience": "negocios mexicanos que quieren vender productos por internet",
-    "angle": "desglosar plataforma, catalogo, pagos, envios, diseño, mantenimiento y crecimiento con ejemplos de escenarios reales"
-  },
-  {
-    "topic": "Como elegir una agencia de diseno web en Mexico",
-    "primaryKeyword": "agencia de diseno web en Mexico",
-    "badgeText": "Guia de Compra",
-    "audience": "empresas que buscan proveedor para crear o redisenar su sitio web",
-    "angle": "dar criterios para evaluar portafolio, proceso, SEO, soporte, propiedad de archivos, tiempos y resultados antes de contratar"
-  },
-  {
-    "topic": "Como aparecer en Google si tienes un negocio local",
-    "primaryKeyword": "como aparecer en Google negocio local",
-    "badgeText": "SEO Local",
-    "audience": "duenos de negocios locales que quieren recibir llamadas, visitas y solicitudes desde Google",
-    "angle": "explicar la relacion entre sitio web, Google Business Profile, paginas de servicio, reseñas, contenido local y medicion"
-  },
-  {
-    "topic": "Pagina web o redes sociales: que necesita un negocio",
-    "primaryKeyword": "pagina web o redes sociales para negocio",
-    "badgeText": "Presencia Digital",
-    "audience": "negocios que dependen de Instagram, Facebook o WhatsApp y dudan si necesitan sitio propio",
-    "angle": "comparar alcance, control, confianza, captacion, SEO y conversion para definir como deben trabajar juntas"
-  },
-  {
-    "topic": "Landing page o pagina web completa: cual conviene",
-    "primaryKeyword": "landing page o pagina web",
-    "badgeText": "Conversion Web",
-    "audience": "empresas que necesitan decidir que tipo de sitio construir para captar clientes",
-    "angle": "comparar objetivos, estructura, trafico, campanas, SEO, mantenimiento y conversion para elegir la experiencia adecuada"
-  },
-  {
-    "topic": "SEO local para negocios: guia para atraer clientes cercanos",
-    "primaryKeyword": "SEO local para negocios",
-    "badgeText": "SEO Local",
-    "audience": "servicios, tiendas y empresas que atienden una ciudad o zona especifica",
-    "angle": "crear una guia accionable sobre perfil de Google, paginas locales, reseñas, datos de contacto y contenidos que captan demanda"
-  },
-  {
-    "topic": "Como hacer una pagina web para un restaurante",
-    "primaryKeyword": "pagina web para restaurante",
-    "badgeText": "Negocios Locales",
-    "audience": "restaurantes, cafeterias y negocios de alimentos que quieren mas reservaciones y pedidos",
-    "angle": "mostrar estructura, menu, ubicacion, horarios, reservas, pedidos, fotos, SEO local y llamadas a la accion"
-  },
-  {
-    "topic": "Como saber si tu pagina web esta funcionando",
-    "primaryKeyword": "como medir una pagina web",
-    "badgeText": "Analitica Web",
-    "audience": "duenos de negocio que tienen sitio pero no saben si genera resultados",
-    "angle": "explicar metricas de trafico, conversion, formularios, llamadas, velocidad y fuentes para tomar decisiones"
-  },
-  {
-    "topic": "Como crear contenido para posicionar un negocio en Google",
-    "primaryKeyword": "contenido SEO para negocios",
-    "badgeText": "Contenido & SEO",
-    "audience": "empresas de servicios que quieren atraer trafico organico sin publicar sin estrategia",
-    "angle": "organizar temas por intencion, paginas de servicio, preguntas frecuentes, enlaces internos y actualizacion de contenidos"
-  },
-  {
-    "topic": "Que gana un negocio al estar online con un sitio web propio",
-    "primaryKeyword": "negocio online con sitio web",
-    "badgeText": "Presencia Digital",
-    "audience": "negocios locales y empresas pequenas que aun no tienen sitio web",
-    "angle": "mostrar beneficios concretos de estar online: visibilidad 24/7, autoridad, captacion de leads, control del mensaje y medicion"
-  },
-  {
-    "topic": "Sitio web plus: que debe incluir una pagina que no solo se ve bien",
-    "primaryKeyword": "sitio web profesional completo",
-    "badgeText": "Sitio Web Plus",
-    "audience": "empresas que quieren una pagina web mas completa que una landing basica",
-    "angle": "definir el valor plus de un sitio con SEO tecnico, velocidad, formularios, analitica, WhatsApp, estructura de contenido y mantenimiento"
-  },
-  {
-    "topic": "Mantenimiento web: por que tu sitio necesita cuidado despues de publicarse",
-    "primaryKeyword": "mantenimiento web",
-    "badgeText": "Mantenimiento Web",
-    "audience": "duenos de sitios publicados que no revisan rendimiento, seguridad ni contenido",
-    "angle": "explicar mantenimiento como proteccion de inversion: actualizaciones, backups, velocidad, contenido, errores, formularios y SEO"
-  },
-  {
-    "topic": "Optimizacion web: como mejorar una pagina que ya esta online",
-    "primaryKeyword": "optimizacion web",
-    "badgeText": "Optimizacion Web",
-    "audience": "negocios con sitio existente que no genera suficientes contactos o carga lento",
-    "angle": "mostrar un proceso practico para mejorar velocidad, mensajes, llamadas a accion, metadata, imagenes y medicion sin rehacer todo"
-  },
-  {
-    "topic": "Crear una pagina web desde cero: que decisiones tomar antes de disenar",
-    "primaryKeyword": "crear pagina web desde cero",
-    "badgeText": "Creacion & Estrategia",
-    "audience": "emprendedores y negocios que estan por invertir en su primera pagina web",
-    "angle": "ordenar las decisiones previas: objetivo, audiencia, servicios, contenido, plataforma, SEO, presupuesto y plan de lanzamiento"
-  },
-  {
-    "topic": "Como elegir entre WordPress, Shopify y Next.js para un sitio de negocio",
-    "primaryKeyword": "WordPress Shopify Next.js",
-    "badgeText": "Estrategia Web",
-    "audience": "duenos de negocios en Mexico que necesitan elegir plataforma web",
-    "angle": "comparar costo, velocidad, SEO, mantenimiento y escalabilidad sin vender una opcion unica"
-  },
-  {
-    "topic": "Checklist de SEO tecnico antes de publicar una pagina nueva",
-    "primaryKeyword": "checklist SEO tecnico",
-    "badgeText": "SEO Tecnico",
-    "audience": "negocios y equipos de marketing que publican contenido web",
-    "angle": "dar una lista accionable para evitar errores de indexacion, metadata, velocidad y estructura"
-  },
-  {
-    "topic": "Como una landing page convierte visitas en prospectos calificados",
-    "primaryKeyword": "landing page que convierte",
-    "badgeText": "Conversion & CRO",
-    "audience": "empresas de servicios que reciben trafico pero pocos contactos",
-    "angle": "explicar propuesta de valor, prueba social, llamados a accion y friccion del formulario"
-  },
-  {
-    "topic": "Automatizaciones simples que ahorran tiempo en un negocio local",
-    "primaryKeyword": "automatizacion para negocios locales",
-    "badgeText": "Automatizacion",
-    "audience": "negocios locales que atienden leads por WhatsApp, correo o formularios",
-    "angle": "mostrar automatizaciones practicas para seguimiento, respuestas, reportes y recordatorios"
-  },
-  {
-    "topic": "Por que la velocidad web afecta ventas, SEO y confianza",
-    "primaryKeyword": "velocidad web ventas SEO",
-    "badgeText": "Performance Web",
-    "audience": "duenos de sitios que no saben si su web lenta les cuesta clientes",
-    "angle": "conectar Core Web Vitals con perdida de prospectos y acciones concretas de mejora"
-  },
-  {
-    "topic": "Como estructurar servicios web para posicionar en Google",
-    "primaryKeyword": "estructura SEO servicios web",
-    "badgeText": "SEO & Arquitectura",
-    "audience": "empresas con varios servicios que quieren mejorar su posicionamiento organico",
-    "angle": "explicar arquitectura, URLs, enlaces internos, contenido pilar y paginas de servicio"
-  },
-  {
-    "topic": "Por que tu negocio necesita estar online aunque vendas por recomendaciones",
-    "primaryKeyword": "por que estar online",
-    "badgeText": "Presencia Digital",
-    "audience": "duenos de negocio y servicios locales",
-    "angle": "explicar el costo invisible de depender solo de redes sociales, referidos y WhatsApp"
-  },
-  {
-    "topic": "Optimizacion web continua: pequenas mejoras que levantan conversion",
-    "primaryKeyword": "optimizacion web continua",
-    "badgeText": "Optimizacion & Conversion",
-    "audience": "negocios con sitio activo pero resultados estancados",
-    "angle": "mostrar que la mejora incremental supera al rediseno esporadico"
-  },
-  {
-    "topic": "Redisenar o mejorar: como decidir si tu sitio necesita cirugia o ajustes",
-    "primaryKeyword": "redisenar sitio web o mejorar",
-    "badgeText": "Estrategia Web",
-    "audience": "empresas con sitios viejos o lentos",
-    "angle": "dar criterios de negocio y tecnicos para invertir mejor"
-  },
-  {
-    "topic": "Auditoria web para negocios: que revisar antes de invertir en anuncios",
-    "primaryKeyword": "auditoria web para negocios",
-    "badgeText": "Auditoria & ROI",
-    "audience": "negocios que quieren escalar trafico pagado",
-    "angle": "evitar quemar presupuesto en campanas que apuntan a sitios debiles"
-  },
-  {
-    "topic": "Contenido evergreen para sitios de servicios: como atraer leads sin publicar diario",
-    "primaryKeyword": "contenido evergreen para servicios",
-    "badgeText": "Contenido & SEO",
-    "audience": "empresas de servicios con poco tiempo para marketing",
-    "angle": "priorizar piezas que siguen captando demanda por meses"
-  }
+  {"topic":"Landing page o pagina web completa: cual conviene","primaryKeyword":"landing page o pagina web","badgeText":"Conversion Web","audience":"empresas que necesitan decidir que experiencia construir para captar clientes","angle":"comparar objetivos, trafico, SEO, estructura, mantenimiento y conversion con una recomendacion por escenario"},
+  {"topic":"Como saber si tu pagina web esta funcionando","primaryKeyword":"como medir una pagina web","badgeText":"Analitica Web","audience":"duenos de negocio que tienen sitio pero no saben si genera resultados","angle":"explicar metricas de negocio, formularios, llamadas, fuentes, velocidad y un tablero minimo de medicion"},
+  {"topic":"9 errores de una pagina web que hacen perder clientes","primaryKeyword":"errores de una pagina web","badgeText":"Conversion Web","audience":"negocios con trafico pero pocos contactos o ventas","angle":"mostrar errores de mensaje, confianza, movil, velocidad, SEO y llamados a la accion con correcciones concretas"},
+  {"topic":"Auditoria web antes de invertir en anuncios","primaryKeyword":"auditoria web antes de anuncios","badgeText":"Auditoria & ROI","audience":"negocios que quieren escalar trafico pagado sin desperdiciar presupuesto","angle":"dar un checklist de landing, tracking, velocidad, oferta, formularios y seguimiento antes de lanzar campanas"},
+  {"topic":"SEO local para negocios en Mexico: guia de 90 dias","primaryKeyword":"SEO local para negocios en Mexico","badgeText":"SEO Local","audience":"servicios, tiendas y empresas que atienden una ciudad o zona especifica","angle":"ordenar Perfil de Negocio, sitio, paginas de servicio, reseñas, menciones locales y medicion en un plan accionable"},
+  {"topic":"Como estructurar servicios web para posicionar en Google","primaryKeyword":"estructura SEO servicios web","badgeText":"SEO & Arquitectura","audience":"empresas con varios servicios que quieren captar demanda organica","angle":"explicar arquitectura, URLs, enlaces internos, paginas de servicio, contenido pilar e intencion de busqueda"},
+  {"topic":"Como crear una pagina web para un restaurante","primaryKeyword":"pagina web para restaurante","badgeText":"Negocios Locales","audience":"restaurantes y cafeterias que quieren mas reservaciones, pedidos y visitas","angle":"mostrar estructura de menu, reservas, pedidos, ubicacion, horarios, fotos, SEO local y llamadas a la accion"},
+  {"topic":"Pagina web para clinica: que debe incluir","primaryKeyword":"pagina web para clinica","badgeText":"Servicios Profesionales","audience":"clinicas, consultorios y profesionales de salud que necesitan generar confianza","angle":"cubrir servicios, especialistas, ubicacion, citas, confianza, accesibilidad, contenido y limites de comunicacion"},
+  {"topic":"Pagina web para abogado: estructura para captar consultas","primaryKeyword":"pagina web para abogado","badgeText":"Servicios Profesionales","audience":"despachos y abogados independientes que quieren recibir consultas calificadas","angle":"explicar especialidades, zonas, casos, preguntas, privacidad, formularios y conversion sin promesas exageradas"},
+  {"topic":"Pagina web para inmobiliaria: como generar prospectos","primaryKeyword":"pagina web para inmobiliaria","badgeText":"Generacion de Leads","audience":"inmobiliarias y asesores que necesitan captar compradores o propietarios","angle":"definir propiedades, filtros, zonas, confianza, formularios, WhatsApp, SEO local y seguimiento de prospectos"},
+  {"topic":"Contenido evergreen para sitios de servicios","primaryKeyword":"contenido evergreen para servicios","badgeText":"Contenido & SEO","audience":"empresas de servicios con poco tiempo para publicar pero necesidad de trafico constante","angle":"priorizar guias, comparativas, preguntas y paginas que siguen captando demanda durante meses"},
+  {"topic":"Como crear contenido que responda preguntas de clientes","primaryKeyword":"contenido para responder preguntas de clientes","badgeText":"Contenido & AEO","audience":"negocios que quieren aparecer en buscadores y respuestas generativas","angle":"convertir dudas reales en respuestas claras, estructuras FAQ, ejemplos, entidades y llamados a la accion"},
+  {"topic":"Como aparecer en Google con paginas de servicio locales","primaryKeyword":"paginas de servicio locales SEO","badgeText":"SEO Local","audience":"negocios que atienden varias ciudades o zonas cercanas","angle":"explicar cuando crear paginas por servicio y ubicacion, que contenido incluir y como evitar paginas duplicadas"},
+  {"topic":"Cuanto cuesta mantener una pagina web en Mexico","primaryKeyword":"cuanto cuesta mantener una pagina web","badgeText":"Mantenimiento Web","audience":"duenos de sitios que necesitan presupuestar soporte y actualizaciones","angle":"desglosar hosting, seguridad, backups, contenido, soporte, mejoras, licencias y costos que suelen omitirse"},
+  {"topic":"Redisenar o mejorar: como decidir que necesita tu sitio","primaryKeyword":"redisenar sitio web o mejorar","badgeText":"Estrategia Web","audience":"empresas con sitios viejos, lentos o que dejaron de generar contactos","angle":"separar problemas de mensaje, conversion y tecnologia para invertir solo en los cambios necesarios"},
+  {"topic":"Por que la velocidad web afecta ventas y SEO","primaryKeyword":"velocidad web ventas SEO","badgeText":"Performance Web","audience":"duenos de sitios que cargan lento o pierden prospectos en movil","angle":"conectar experiencia, Core Web Vitals, conversion y acciones tecnicas priorizadas por impacto"},
+  {"topic":"WordPress, Shopify o Next.js para un negocio","primaryKeyword":"WordPress Shopify Next.js negocio","badgeText":"Estrategia Web","audience":"duenos de negocios que deben elegir plataforma para crecer","angle":"comparar costo total, velocidad, SEO, mantenimiento, contenido, ecommerce e integraciones por escenario"},
+  {"topic":"Automatizaciones simples para convertir leads en clientes","primaryKeyword":"automatizacion de leads para negocios","badgeText":"Automatizacion","audience":"negocios que pierden oportunidades por responder tarde o sin seguimiento","angle":"mostrar flujos practicos para formularios, WhatsApp, correo, agenda, recordatorios y reportes"},
+  {"topic":"Como convertir visitas de Google en contactos","primaryKeyword":"convertir visitas de Google en clientes","badgeText":"Conversion & CRO","audience":"empresas que reciben trafico organico pero pocas solicitudes","angle":"alinear intencion, pagina de destino, prueba social, CTA, formulario, velocidad y seguimiento"}
 ]
