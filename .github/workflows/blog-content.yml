@@ -1,22 +1,17 @@
-name: Generate and Publish Blog
+name: Validate Published Blog
 
 on:
-  schedule:
-    - cron: "0 14 */2 * *"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  generate-blog:
+  validate-blog:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_TEXT_MODEL: ${{ vars.OPENAI_TEXT_MODEL || 'gpt-5-mini' }}
-      OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -24,43 +19,13 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - run: npm ci
-
-      - name: Generate next blog draft and image
-        run: npm run blog:generate
-
-      - name: Validate generated content
-        run: npm run blog:drafts:validate
 
       - name: Validate blog catalog
         run: npm run blog:validate
 
       - name: Build static export
         run: npm run build:static
-
-      - name: Commit directly to main
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/generated public/blog src/data/blog-posts.ts
-          if git diff --cached --quiet; then
-            echo "No new blog content generated."
-            exit 0
-          fi
-          git commit -m "chore: publish scheduled blog post"
-          git push origin HEAD:main
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.FTP_SERVER || secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME || secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          local-dir: ./out/
-          server-dir: /domains/aionsite.com.mx/public_html/
-          log-level: standard
-          timeout: 120000
