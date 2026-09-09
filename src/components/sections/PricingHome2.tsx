@@ -9,9 +9,17 @@ type ServiceType = "website" | "social" | "both";
 type Timeline = "regular" | "fast" | "rush";
 type PackageType = "basic" | "complete" | "ecommerce";
 
+const INCLUDED_ECOMMERCE_PRODUCTS = 50;
+const EXTRA_ECOMMERCE_PRODUCTS_STEP = 50;
+const EXTRA_ECOMMERCE_PRODUCTS_COST = 500;
+
 const money = (value: number) => `$${value.toLocaleString("en-US")}`;
 
-function websitePrice(extraPagesCount: number, packageType: PackageType) {
+function websitePrice(
+  extraPagesCount: number,
+  packageType: PackageType,
+  products: number,
+) {
   const base =
     packageType === "ecommerce"
       ? 6000
@@ -20,7 +28,14 @@ function websitePrice(extraPagesCount: number, packageType: PackageType) {
         : 2000;
   const firstPages = Math.min(extraPagesCount, 4) * 500;
   const extraPages = Math.max(extraPagesCount - 4, 0) * 350;
-  return base + firstPages + extraPages;
+  const extraProducts =
+    packageType === "ecommerce"
+      ? Math.ceil(
+          Math.max(products - INCLUDED_ECOMMERCE_PRODUCTS, 0) /
+            EXTRA_ECOMMERCE_PRODUCTS_STEP,
+        ) * EXTRA_ECOMMERCE_PRODUCTS_COST
+      : 0;
+  return base + firstPages + extraPages + extraProducts;
 }
 
 function socialPrice(extraPosts: number, withWebsite: boolean) {
@@ -33,16 +48,17 @@ function calculatePrice(
   pages: number,
   posts: number,
   packageType: PackageType,
+  products: number,
   needContent: boolean,
   needSEO: boolean,
   timeline: Timeline,
 ) {
   let total =
     serviceType === "website"
-      ? websitePrice(pages, packageType)
+      ? websitePrice(pages, packageType, products)
       : serviceType === "social"
         ? socialPrice(posts, false)
-        : websitePrice(pages, packageType) + socialPrice(posts, true);
+        : websitePrice(pages, packageType, products) + socialPrice(posts, true);
   if (needContent && serviceType !== "social") total += pages * 50;
   if (needSEO && serviceType !== "social") total += pages * 50;
   if (timeline === "rush" && serviceType !== "social") total *= 1.3;
@@ -53,6 +69,7 @@ function calculatePrice(
 export function PricingHome2() {
   const [serviceType, setServiceType] = useState<ServiceType>("both");
   const [pages, setPages] = useState(0);
+  const [products, setProducts] = useState(INCLUDED_ECOMMERCE_PRODUCTS);
   const [posts, setPosts] = useState(0);
   const [packageType, setPackageType] = useState<PackageType>("basic");
   const [needContent, setNeedContent] = useState(false);
@@ -65,11 +82,21 @@ export function PricingHome2() {
         pages,
         posts,
         packageType,
+        products,
         needContent,
         needSEO,
         timeline,
       ),
-    [serviceType, pages, posts, packageType, needContent, needSEO, timeline],
+    [
+      serviceType,
+      pages,
+      posts,
+      packageType,
+      products,
+      needContent,
+      needSEO,
+      timeline,
+    ],
   );
   const agency = Math.round(price * 1.8);
   const freelancer = Math.round(price * 1.25);
@@ -171,6 +198,38 @@ export function PricingHome2() {
                   paginas. Cada pagina extra cuesta $500; despues de 4 extras
                   baja a $350.
                 </p>
+                {packageType === "ecommerce" && (
+                  <div className="mt-8 border-t border-white/10 pt-8">
+                    <div className="mb-4 flex items-center justify-between">
+                      <h3 className="text-lg font-medium">
+                        Productos del catálogo{" "}
+                        <span className="text-blue-300">({products})</span>
+                      </h3>
+                      <span className="font-mono text-sm text-slate-400">
+                        {products} productos
+                      </span>
+                    </div>
+                    <input
+                      aria-label="Numero de productos del catalogo"
+                      type="range"
+                      min={INCLUDED_ECOMMERCE_PRODUCTS}
+                      max="500"
+                      step={EXTRA_ECOMMERCE_PRODUCTS_STEP}
+                      value={products}
+                      onChange={(event) => setProducts(Number(event.target.value))}
+                      className="h-2 w-full cursor-pointer accent-blue-400"
+                    />
+                    <div className="mt-2 flex justify-between text-xs text-slate-500">
+                      <span>{INCLUDED_ECOMMERCE_PRODUCTS}</span>
+                      <span>500</span>
+                    </div>
+                    <p className="mt-3 text-xs text-slate-400">
+                      El paquete ecommerce incluye hasta 50 productos para cuidar
+                      el rendimiento, el tamaño y la estabilidad del sitio. Cada
+                      bloque adicional de 50 productos suma +$500.
+                    </p>
+                  </div>
+                )}
               </div>
             )}
             {hasSocial && (
@@ -244,8 +303,8 @@ export function PricingHome2() {
                 </h3>
                 <div className="space-y-4">
                   {[
-                      ["rush", "En 7 dias", "+30%"],
-                      ["fast", "En 14 dias", "+15%"],
+                    ["rush", "En 7 dias", "+30%"],
+                    ["fast", "En 14 dias", "+15%"],
                     [
                       "regular",
                       "Velocidad regular (segun lo acordado)",
@@ -275,7 +334,7 @@ export function PricingHome2() {
             )}
           </div>
           <div className="min-h-[717px] border-t border-white/10 bg-slate-900/70 p-8 lg:rounded-r-2xl lg:border-l lg:border-t-0 lg:p-12">
-            <div className="lg:sticky lg:top-24">
+            <div className="lg:sticky lg:top-28">
               <h3 className="font-display text-3xl font-normal">
                 Costo estimado
               </h3>
@@ -297,7 +356,7 @@ export function PricingHome2() {
                 <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 p-6 text-white">
                   <p className="text-sm font-medium">Con AionSite</p>
                   <p className="mt-2 text-5xl font-bold tracking-tight">
-                  <AnimatedMoney value={price} />
+                    <AnimatedMoney value={price} />
                   </p>
                   <p className="mt-3 text-sm text-white/85">
                     Ahorra dinero, tiempo y preocupaciones

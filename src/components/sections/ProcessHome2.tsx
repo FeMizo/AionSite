@@ -31,7 +31,6 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
 
   return (
     <section id="proceso" className="relative overflow-hidden bg-slate-950 py-24 text-white md:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(37,99,235,0.16),transparent_28%),radial-gradient(circle_at_100%_100%,rgba(124,58,237,0.12),transparent_32%)]" />
       <Container className="relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

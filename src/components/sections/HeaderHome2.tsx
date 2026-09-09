@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { CmsBase, HeaderSectionData } from "@/src/cms/types";
 import { MobileMenu } from "@/src/components/ui/MobileMenu";
+import MotionButton from "@/src/components/ui/motion-button";
 import { isInternalHref } from "@/src/lib/routing";
 
 export function HeaderHome2({ base, data }: { base: CmsBase; data: HeaderSectionData }) {
@@ -19,7 +20,7 @@ export function HeaderHome2({ base, data }: { base: CmsBase; data: HeaderSection
         </Link>
         <nav className="hidden items-center gap-6 lg:flex">
           {data.navigation.map((item) => isInternalHref(item.href) ? <Link key={item.name} href={item.href} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">{item.name}</Link> : <a key={item.name} href={item.href} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">{item.name}</a>)}
-          <a href={data.whatsappLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-blue-500"><MessageCircleMore size={15} />Cotizar por WhatsApp</a>
+          <MotionButton as="a" href={data.whatsappLink} target="_blank" rel="noreferrer" label="Cotizar por WhatsApp" classes="hidden min-h-10 min-w-0 w-auto text-xs lg:inline-flex" icon={<MessageCircleMore size={15} />} />
         </nav>
         <button type="button" onClick={() => setOpen((value) => !value)} className="rounded-full border border-white/10 bg-white/5 p-2.5 text-white lg:hidden" aria-expanded={open} aria-label={open ? "Cerrar menu" : "Abrir menu"}>{open ? <X size={20} /> : <Menu size={20} />}</button>
       </div>

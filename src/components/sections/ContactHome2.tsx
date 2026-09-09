@@ -49,7 +49,7 @@ export function ContactHome2() {
   );
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-slate-950 py-24 text-white lg:py-36">
+    <section id="contact" className="relative overflow-hidden bg-slate-950 py-18 text-white lg:py-36">
       <div className="pointer-events-none absolute -right-40 top-20 h-80 w-80 rounded-full bg-blue-600/15 blur-3xl" />
       <Container className="relative grid gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div>
