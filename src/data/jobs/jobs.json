@@ -1199,7 +1199,38 @@
       "cover": "Me interesa DaCodes porque el rol combina Nuxt, Vue.js, APIs y trabajo remoto desde México con proyectos de software a medida. Mi experiencia en WordPress, Shopify, Vue.js, Next.js y custom code me permite aportar en interfaces reutilizables, integraciones y delivery autónomo; el alcance de Blazor y .NET sería el principal punto de adaptación técnica.",
       "notes": "Himalayas muestra México, remoto 100%, US$2,000-$2,200 mensuales y fecha límite del 20 de septiembre de 2026. La página muestra Apply now; no se enviaron datos ni se avanzó el formulario.",
       "lastTouchedAt": "2026-09-07T14:30:57.014Z"
+    },
+    {
+      "id": "quik-hire-frontend-web-developer-remote-mexico",
+      "dbId": "quik-hire-frontend-web-developer-remote-mexico",
+      "company": "Quik Hire Staffing",
+      "title": "FrontEnd Web Developer (Remote)",
+      "salaryLabel": "US$20-$70/hour",
+      "salaryCurrency": "USD",
+      "salaryUsdMin": 41600,
+      "salaryUsdMax": 145600,
+      "fitReason": "Desarrollo web remoto desde Mexico con HTML, CSS, JavaScript, APIs, responsive design, CMS y optimizacion de performance; encaja con WordPress y frontend custom.",
+      "checkedAt": "2026-09-09T14:31:44.637Z",
+      "addedAt": "2026-09-09T14:31:44.637Z",
+      "zone": "Remote",
+      "region": "Mexico / Work from Anywhere",
+      "source": "LinkedIn",
+      "link": "https://www.linkedin.com/jobs/view/4465060174",
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "REST APIs",
+        "Responsive Design",
+        "WordPress",
+        "CMS",
+        "Frontend"
+      ],
+      "status": "para_aplicar",
+      "cover": "I am interested in the FrontEnd Web Developer opportunity because it aligns with my experience building responsive, user-focused websites and custom web applications. My background with HTML, CSS, JavaScript, WordPress, APIs, performance optimization, and remote collaboration would allow me to contribute clean, maintainable solutions from implementation through deployment.",
+      "notes": "LinkedIn lists Mexico, remote contract work, and US$20-$70/hour. The application redirects to Micro1, where the job description and the first-step email form were inspected without entering or submitting data.",
+      "lastTouchedAt": "2026-09-09T14:31:44.637Z"
     }
   ],
-  "lastJobsSearchAt": "2026-09-07T14:30:57.014Z"
+  "lastJobsSearchAt": "2026-09-09T14:31:44.637Z"
 }
