@@ -7,6 +7,7 @@ import type { CmsBase, FinalCTASectionData, FooterSectionData, ProcessSectionDat
 import { Container } from "@/src/components/ui/Container";
 import { Heading } from "@/src/components/ui/Heading";
 import MotionButton from "@/src/components/ui/motion-button";
+import { sendMetaCapiEvent } from "@/src/components/analytics/MetaPixel";
 
 const video = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4";
 
@@ -58,6 +59,7 @@ export function CtaFooterHome2({ base, cta, footer, process }: { base: CmsBase; 
     try {
       const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
       if (!response.ok) throw new Error("Request failed");
+      sendMetaCapiEvent("LeadSubmitted", { email: form.email });
       setStatus("success");
     } catch {
       setStatus("error");
@@ -65,7 +67,7 @@ export function CtaFooterHome2({ base, cta, footer, process }: { base: CmsBase; 
   }
 
   return (
-    <section id="contacto" className="relative overflow-hidden bg-slate-950 py-24 text-white md:py-36">
+    <section id="contacto" className="relative overflow-hidden bg-slate-950 py-18 text-white md:py-24">
       <video autoPlay loop muted playsInline preload="auto" className="absolute inset-0 h-full w-full object-cover opacity-35" src={video} />
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950" />
       <Container className="relative z-10">

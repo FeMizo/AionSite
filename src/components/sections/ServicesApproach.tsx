@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Bot, Globe, ShoppingBag, Target, TrendingUp, Zap } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ComponentType, SVGProps } from "react";
 import type { ServicesSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
@@ -23,6 +23,17 @@ const positions = [
 export function ServicesApproach({ data }: { data: ServicesSectionData }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const reduce = useReducedMotion();
+
+  useEffect(() => {
+    if (reduce || data.length < 2) return undefined;
+
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % data.length);
+    }, 18_000);
+
+    return () => window.clearInterval(intervalId);
+  }, [data.length, reduce]);
+
   const activeService = data[activeIndex] ?? data[0];
   if (!activeService) return null;
 
@@ -31,9 +42,9 @@ export function ServicesApproach({ data }: { data: ServicesSectionData }) {
 
   return (
     <section id="servicios" className="overflow-hidden bg-slate-950 text-white">
-      <Container className="py-24 lg:py-32">
+      <Container className="py-18 lg:py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.7, ease }} className="mb-12 md:mb-16">
-          <Heading as="h2" className="max-w-4xl text-white"><span className="block">Diseno web, IA y automatizacion</span><span className="block text-blue-300">para negocios</span></Heading>
+          <Heading as="h2" className="max-w-4xl text-white"><span className="block">Diseño web, IA y automatización</span><span className="block text-blue-300">para negocios</span></Heading>
         </motion.div>
 
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(520px,1.22fr)] lg:gap-16">
@@ -75,7 +86,7 @@ export function ServicesApproach({ data }: { data: ServicesSectionData }) {
                 </div>
                 <span className="shrink-0 rounded-full border border-blue-300/30 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-blue-200 hidden md:block">Activo</span>
               </div>
-              <p className="mt-3 md:mt-5 break-words text-sm leading-6 text-slate-300 sm:text-base">{activeService.description}</p>
+              <p className="mt-3 md:mt-5 break-words text-sm leading-6 text-slate-300 sm:text-[10px]">{activeService.description}</p>
               <div className="mt-5 h-1 overflow-hidden rounded-full bg-white/10"><motion.div className="h-full rounded-full bg-blue-300" initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.7, ease }} /></div>
             </motion.div>
           </div>

@@ -45,11 +45,11 @@ export function ContactHome2() {
   }
 
   const whatsappLink = getWhatsAppLink(
-    `Hola AionSite, me gustaria recibir informacion sobre: ${selected.join(", ")}.`,
+    `Hola AionSite, me gustaría recibir información sobre: ${selected.join(", ")}.`,
   );
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-slate-950 py-18 text-white lg:py-36">
+    <section id="contact" className="relative overflow-hidden bg-slate-950 py-14 text-white lg:py-24">
       <div className="pointer-events-none absolute -right-40 top-20 h-80 w-80 rounded-full bg-blue-600/15 blur-3xl" />
       <Container className="relative grid gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div>

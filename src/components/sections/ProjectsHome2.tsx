@@ -77,7 +77,7 @@ export function ProjectsHome2({ data }: { data: PortfolioSectionData }) {
   };
 
   return (
-    <section id="portafolio" className="relative overflow-hidden bg-slate-950 py-24 text-white md:py-32">
+    <section id="portafolio" className="relative overflow-hidden bg-slate-950 py-18 text-white md:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(124,58,237,0.12),transparent_32%)]" />
       <Container className="relative">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.7 }} className="mb-12 flex items-end justify-between gap-6 md:mb-16">

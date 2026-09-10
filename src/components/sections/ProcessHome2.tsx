@@ -30,7 +30,7 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
   }
 
   return (
-    <section id="proceso" className="relative overflow-hidden bg-slate-950 py-24 text-white md:py-32">
+    <section id="proceso" className="relative overflow-hidden bg-slate-950 py-18 text-white md:py-24">
       <Container className="relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
           transition={{ duration: 0.7, ease }}
           className="mb-14 max-w-2xl md:mb-20"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-blue-300">Como trabajamos</p>
+          <p className="font-mono text-xs uppercase tracking-[0.24em] text-blue-300">Cómo trabajamos</p>
           <Heading as="h2" className="mt-4 text-white">Nuestro proceso</Heading>
           <p className="mt-4 text-lg leading-relaxed text-slate-400">Metodologia agil disenada para garantizar el exito de tu proyecto.</p>
         </motion.div>

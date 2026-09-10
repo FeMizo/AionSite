@@ -44,7 +44,7 @@ export function Hero2({ data, headerData }: { data: HeroSectionData; headerData:
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,6,23,0.18),rgba(2,6,23,0.76)_48%,rgba(2,6,23,0.98))]" />
       <SonarGrid className="absolute inset-0 z-0" />
 
-      <Container className="flex min-h-[calc(100vh-20px)] w-full flex-col items-center justify-center pb-12 pt-28 text-center md:pb-16">
+      <Container className="flex min-h-[88dvh] w-full flex-col items-center justify-center pb-10 pt-24 text-center md:pb-12">
         <div className="relative z-10 flex max-w-5xl flex-col items-center">
           <div className="hero2-reveal mb-6 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-slate-950/55 px-4 py-2 text-xs font-medium tracking-[0.08em] text-blue-200 backdrop-blur-md sm:text-sm"><Sparkles size={14} />{data.badgeText} en {city}</div>
           <div className="hero2-reveal mb-7 flex flex-wrap items-center justify-center gap-2"><span className="flex h-10 items-center gap-2 rounded-full border border-white/20 bg-slate-950/70 px-3 text-xs font-medium text-slate-300"><Globe2 size={15} className="text-blue-300" /> Sitios web</span><span className="flex h-10 items-center gap-2 rounded-full border border-white/20 bg-slate-950/70 px-3 text-xs font-medium text-slate-300"><Search size={15} className="text-blue-300" /> SEO</span><span className="flex h-10 items-center gap-2 rounded-full border border-white/20 bg-slate-950/70 px-3 text-xs font-medium text-slate-300"><Bot size={15} className="text-blue-300" /> IA</span></div>
