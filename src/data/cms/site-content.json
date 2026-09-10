@@ -70,8 +70,8 @@
       "order": 1,
       "data": {
         "badgeText": "AionSite: sitios web, ecommerce, SEO e IA",
-        "title": "AionSite vende sitios web y tiendas online para negocios que quieren clientes.",
-        "subtitle": "Somos AionSite. En esta web puedes conocer y cotizar servicios de diseño web, desarrollo de ecommerce, SEO técnico, automatización e integraciones con IA para vender por internet.",
+        "title": "Convierte tu presencia digital en más conversaciones con clientes.",
+        "subtitle": "AionSite crea sitios web, tiendas online, SEO y automatizaciones para que tu negocio se encuentre, se entienda y reciba contactos.",
         "primaryCTA": "Cotizar un sitio con AionSite",
         "secondaryCTA": "Ver servicios de AionSite",
         "trustBar": [
@@ -114,7 +114,7 @@
       "enabled": true,
       "order": 3,
       "data": {
-        "title": "Tecnología que genera ingresos pasivos mientras duermes.",
+      "title": "Tecnología que mantiene tu negocio disponible y facilita nuevos contactos.",
         "description": "Imagina tener un equipo de ventas trabajando 24/7 sin sueldo. Eso es exactamente lo que conseguimos con nuestros sitios web: SEO que atrae clientes calificados, chatbots que cierran ventas automáticamente, y automatizaciones que eliminan el trabajo manual. Tú solo cosechas los resultados.",
         "buttonText": "Quiero generar más clientes automáticamente",
         "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20quiero%20un%20sitio%20web%20que%20genere%20clientes%20automaticamente.",
@@ -291,7 +291,7 @@
       "order": 7,
       "data": [
         {
-          "name": "Sitio web basico",
+          "name": "Sitio web básico",
           "price": "Desde $2,000",
           "features": [
             "2 paginas: Home y Contact",
@@ -317,9 +317,9 @@
           "price": "Desde $6,000",
           "features": [
             "8 paginas para vender en linea",
-            "Catalogo editable de productos",
-            "Carrito e integracion de pago",
-            "SEO basico para productos principales"
+            "Catálogo editable de productos",
+            "Carrito e integración de pago",
+            "SEO básico para productos principales"
           ],
           "recommended": false
         }
@@ -399,10 +399,10 @@
       "enabled": true,
       "order": 11,
       "data": {
-        "title": "Últimas oportunidades disponibles - Reserva tu consultoría gratuita",
-        "subtitle": "Solo atendemos 3 proyectos nuevos por mes para garantizar calidad premium. Si estás listo para duplicar tus clientes online, este es el momento. Primera consultoría sin costo + presupuesto personalizado en 24 horas.",
+        "title": "Cuéntame qué quieres mejorar en tu negocio",
+        "subtitle": "Te orientamos sobre la solución adecuada y te enviamos una propuesta clara en menos de 24 horas.",
         "email": "contacto@aionsite.com.mx",
-        "responseText": "Respuesta garantizada en menos de 4 horas",
+        "responseText": "Respuesta en menos de 24 horas",
         "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20estoy%20listo%20para%20duplicar%20mis%20clientes%20online.%20Quiero%20mi%20consultoria%20gratuita."
       }
     },

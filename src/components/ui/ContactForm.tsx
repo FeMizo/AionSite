@@ -28,7 +28,7 @@ export function ContactForm({
   children,
   onSuccess,
 }: ContactFormProps) {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
   const reduced = usePrefersReducedMotion();
@@ -49,19 +49,25 @@ export function ContactForm({
     e.preventDefault();
     setStatus("sending");
     try {
-      const messageWithPhone = form.phone
-        ? `${form.message}\n\nTeléfono: ${form.phone}`
-        : form.message;
+      const details = [
+        `Servicio de interés: ${form.service}`,
+        form.phone ? `Teléfono: ${form.phone}` : "",
+      ].filter(Boolean).join("\n");
+      const messageWithPhone = `${form.message}\n\n${details}`;
         
-      const res = await fetch("/api/contact.php", {
+      const request = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: form.name, email: form.email, message: messageWithPhone }),
-      });
+      };
+      let res = await fetch("/api/contact", request);
+      if (res.status === 404) {
+        res = await fetch("/api/contact.php", request);
+      }
       
       if (res.ok) {
         setStatus("sent");
-        setForm({ name: "", email: "", phone: "", message: "" });
+        setForm({ name: "", email: "", phone: "", service: "", message: "" });
         if (onSuccess) onSuccess();
       } else {
         setStatus("error");
@@ -110,6 +116,26 @@ export function ContactForm({
         onChange={(e) => setForm({ ...form, email: e.target.value })}
         placeholder="tu@correo.com"
       />
+
+      <div className="space-y-2">
+        <label htmlFor="contact-service" className="block text-sm font-medium text-slate-200">
+          ¿Qué necesitas? <span className="text-blue-400">*</span>
+        </label>
+        <select
+          id="contact-service"
+          required
+          value={form.service}
+          onChange={(e) => setForm({ ...form, service: e.target.value })}
+          className="w-full rounded-lg border border-white/10 bg-slate-950 px-3 py-3 text-sm text-white outline-none transition focus:border-blue-400"
+        >
+          <option value="" disabled>Selecciona una opción</option>
+          <option value="Sitio web">Sitio web</option>
+          <option value="Tienda online">Tienda online</option>
+          <option value="SEO">SEO</option>
+          <option value="IA o automatización">IA o automatización</option>
+          <option value="Todavía no lo sé">Todavía no lo sé</option>
+        </select>
+      </div>
 
       <FormTextarea
         label={<>Mensaje <span className="text-blue-400">*</span></>}

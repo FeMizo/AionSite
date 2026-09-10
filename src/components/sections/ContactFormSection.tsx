@@ -75,9 +75,18 @@ export function ContactFormSection({ data }: { data: ContactFormSectionData }) {
                 </div>
                 <h3 className="font-display text-xl font-bold text-white">¡Mensaje enviado!</h3>
                 <p className="text-slate-400">{data.responseText}</p>
+                <a
+                  href={data.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-500"
+                >
+                  <MessageCircleMore size={16} />
+                  Continuar por WhatsApp
+                </a>
                 <button
                   onClick={() => setIsSent(false)}
-                  className="mt-2 text-sm text-blue-400 underline-offset-4 hover:underline"
+                  className="text-sm text-blue-400 underline-offset-4 hover:underline"
                 >
                   Enviar otro mensaje
                 </button>

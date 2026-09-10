@@ -37,9 +37,9 @@ export const defaultCmsContent: CmsContent = {
       order: 1,
       data: {
         badgeText: "AionSite: sitios web, ecommerce, SEO e IA",
-        title: "AionSite vende sitios web y tiendas online para negocios que quieren clientes.",
+        title: "Convierte tu presencia digital en más conversaciones con clientes.",
         subtitle:
-          "Somos AionSite. En esta web puedes conocer y cotizar servicios de diseño web, desarrollo de ecommerce, SEO técnico, automatización e integraciones con IA para vender por internet.",
+          "AionSite crea sitios web, tiendas online, SEO y automatizaciones para que tu negocio se encuentre, se entienda y reciba contactos.",
         primaryCTA: "Cotizar un sitio con AionSite",
         secondaryCTA: "Ver servicios de AionSite",
         trustBar: ["Diseño y desarrollo web", "Tiendas online y catálogos", "SEO para aparecer en Google", "Automatización e IA"],
@@ -246,7 +246,7 @@ export const defaultCmsContent: CmsContent = {
       order: 7,
       data: [
         {
-          name: "Sitio web basico",
+          name: "Sitio web básico",
           price: "Desde $2,000",
           features: [
             "2 paginas: Home y Contact",
@@ -272,9 +272,9 @@ export const defaultCmsContent: CmsContent = {
           price: "Desde $6,000",
           features: [
             "8 paginas para vender en linea",
-            "Catalogo editable de productos",
-            "Carrito e integracion de pago",
-            "SEO basico para productos principales",
+            "Catálogo editable de productos",
+            "Carrito e integración de pago",
+            "SEO básico para productos principales",
           ],
           recommended: false,
         },
@@ -351,8 +351,8 @@ export const defaultCmsContent: CmsContent = {
       enabled: true,
       order: 10,
       data: {
-        title: "Hablemos de tu proyecto",
-        subtitle: "Cuéntanos qué necesitas y te respondemos con una propuesta a tu medida.",
+        title: "Cuéntame qué quieres mejorar en tu negocio",
+        subtitle: "Te orientamos sobre la solución adecuada y te enviamos una propuesta clara en menos de 24 horas.",
         email: base.email,
         responseText: "Respuesta en menos de 24 horas",
         whatsappLink: base.whatsappLink,
