@@ -36,6 +36,9 @@ $eventName = trim((string)($input['event_name'] ?? 'Contact'));
 $eventId = trim((string)($input['event_id'] ?? ''));
 $email = trim((string)($input['email'] ?? ''));
 $phone = trim((string)($input['phone'] ?? ''));
+$sourceUrl = trim((string)($input['event_source_url'] ?? ''));
+$sourceHost = parse_url($sourceUrl, PHP_URL_HOST);
+$eventSourceUrl = $sourceHost === 'aionsite.com.mx' ? $sourceUrl : 'https://aionsite.com.mx/';
 
 if (!in_array($eventName, ['Contact', 'LeadSubmitted'], true)) {
     http_response_code(400);
@@ -67,9 +70,12 @@ $event = [
     'event_time' => time(),
     'event_id' => $eventId,
     'action_source' => 'website',
-    'event_source_url' => 'https://aionsite.com.mx/',
+    'event_source_url' => $eventSourceUrl,
     'user_data' => $userData,
-    'custom_data' => ['messaging_channel' => $messagingChannel, 'page_id' => $pageId],
+    'custom_data' => array_merge(
+        ['messaging_channel' => $messagingChannel, 'page_id' => $pageId],
+        array_intersect_key((array)($input['custom_data'] ?? []), array_flip(['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'])),
+    ),
 ];
 
 $url = 'https://graph.facebook.com/v26.0/' . rawurlencode($pixelId) . '/events?access_token=' . rawurlencode($accessToken);

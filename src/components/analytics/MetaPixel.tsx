@@ -18,10 +18,17 @@ function hasConsent() {
 export function sendMetaCapiEvent(eventName: "Contact" | "LeadSubmitted", details: { email?: string; phone?: string } = {}) {
   if (typeof document === "undefined" || !hasConsent()) return "";
   const eventId = crypto.randomUUID();
+  const params = new URLSearchParams(window.location.search);
+  const attribution = Object.fromEntries(
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content"].flatMap((key) => {
+      const value = params.get(key);
+      return value ? [[key, value]] : [];
+    }),
+  );
   void fetch("/api/meta-capi.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ event_name: eventName, event_id: eventId, ...details }),
+    body: JSON.stringify({ event_name: eventName, event_id: eventId, event_source_url: window.location.href, custom_data: attribution, ...details }),
     keepalive: true,
   }).catch(() => undefined);
   return eventId;
