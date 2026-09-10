@@ -6,6 +6,7 @@ import { FormInput } from "@/src/components/ui/FormInput";
 import { FormTextarea } from "@/src/components/ui/FormTextarea";
 import { Button } from "@/src/components/ui/Button";
 import { gsap, usePrefersReducedMotion } from "@/src/lib/animations";
+import { sendMetaCapiEvent } from "@/src/components/analytics/MetaPixel";
 
 interface ContactFormProps {
   showPhone?: boolean;
@@ -66,6 +67,7 @@ export function ContactForm({
       }
       
       if (res.ok) {
+        sendMetaCapiEvent("LeadSubmitted", { email: form.email, phone: form.phone });
         setStatus("sent");
         setForm({ name: "", email: "", phone: "", service: "", message: "" });
         if (onSuccess) onSuccess();

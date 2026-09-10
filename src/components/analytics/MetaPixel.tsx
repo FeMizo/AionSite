@@ -15,6 +15,18 @@ function hasConsent() {
   return document.cookie.split("; ").includes(`${CONSENT_COOKIE}=accepted`);
 }
 
+export function sendMetaCapiEvent(eventName: "Contact" | "LeadSubmitted", details: { email?: string; phone?: string } = {}) {
+  if (typeof document === "undefined" || !hasConsent()) return "";
+  const eventId = crypto.randomUUID();
+  void fetch("/api/meta-capi.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ event_name: eventName, event_id: eventId, ...details }),
+    keepalive: true,
+  }).catch(() => undefined);
+  return eventId;
+}
+
 export function MetaPixel() {
   const [enabled, setEnabled] = useState(false);
 
@@ -51,7 +63,8 @@ export function MetaPixel() {
       const target = event.target as HTMLElement | null;
       const link = target?.closest<HTMLAnchorElement>("a[href*='wa.me'], a[href*='whatsapp.com']");
       if (!link || !window.fbq) return;
-      window.fbq("track", "Contact", {}, { eventID: crypto.randomUUID() });
+      const eventId = sendMetaCapiEvent("Contact");
+      window.fbq("track", "Contact", {}, { eventID: eventId });
     };
 
     document.addEventListener("click", handleWhatsAppClick, true);
