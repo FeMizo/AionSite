@@ -4,6 +4,13 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -43,7 +50,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER || secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME || secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
+          protocol: ftps
           local-dir: ./out/
           server-dir: /domains/aionsite.com.mx/public_html/
           log-level: standard

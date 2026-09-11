@@ -14,7 +14,7 @@
         "href": "/blog"
       },
       {
-        "name": "Conoceme",
+        "name": "Conóceme",
         "href": "/conoceme"
       },
       {
@@ -26,7 +26,7 @@
         "href": "/#contacto"
       }
     ],
-    "logoLight": "/logo-aionsite.png"
+    "logoLight": "/logo-aionsite.webp"
   },
   "sections": {
     "header": {
@@ -49,7 +49,7 @@
             "href": "/blog"
           },
           {
-            "name": "Conoceme",
+            "name": "Conóceme",
             "href": "/conoceme"
           },
           {
@@ -118,7 +118,7 @@
         "description": "Imagina tener un equipo de ventas trabajando 24/7 sin sueldo. Eso es exactamente lo que conseguimos con nuestros sitios web: SEO que atrae clientes calificados, chatbots que cierran ventas automáticamente, y automatizaciones que eliminan el trabajo manual. Tú solo cosechas los resultados.",
         "buttonText": "Quiero generar más clientes automáticamente",
         "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20quiero%20un%20sitio%20web%20que%20genere%20clientes%20automaticamente.",
-        "image": "/portfolio/lobbypm.png",
+        "image": "/portfolio/lobbypm.webp",
         "reverse": false
       }
     },
@@ -149,103 +149,134 @@
         {
           "title": "Search Atlas",
           "category": "Trabajo",
-          "image": "/portfolio/sa.png",
+          "image": "/portfolio/sa.webp",
           "url": "https://searchatlas.com/",
-          "type": "Nuxt/Next"
+          "type": "Nuxt/Next",
+          "description": "",
+          "tags": []
         },
         {
           "title": "LinkGraph",
           "category": "Trabajo",
-          "image": "/portfolio/lg.png",
+          "image": "/portfolio/lg.webp",
           "url": "https://www.linkgraph.com/",
-          "type": "Nuxt/Next"
-        },
-        {
-          "title": "Bisas Carmen",
-          "category": "Comercio electrónico",
-          "image": "/portfolio/brisa-carmen.png",
-          "url": "https://restaurante.aionsite.com.mx/",
-          "type": "CMS"
+          "type": "Nuxt/Next",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Molotes",
           "category": "Cliente",
-          "image": "/portfolio/molotes.png",
+          "image": "/portfolio/molotes.webp",
           "url": "https://molotes.aionsite.com.mx/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Lobby PM",
           "category": "Cliente",
-          "image": "/portfolio/lobbypm.png",
+          "image": "/portfolio/lobbypm.webp",
           "url": "https://lobbypm.aionsite.com.mx/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Fateh",
           "category": "Trabajo",
-          "image": "/portfolio/fateh.png",
+          "image": "/portfolio/fateh.webp",
           "url": "https://www.fateh.net/",
-          "type": "Custom code"
+          "type": "Custom code",
+          "description": "",
+          "tags": []
+        },
+        {
+          "title": "Bisas Carmen",
+          "category": "Comercio electrónico",
+          "image": "/portfolio/brisa-carmen.webp",
+          "url": "https://restaurante.aionsite.com.mx/",
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Sea shells and sunflowers",
           "category": "Trabajo",
-          "image": "/portfolio/seas.png",
+          "image": "/portfolio/seas.webp",
           "url": "https://www.seashellsandsunflowers.com/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Analog medium",
           "category": "Trabajo",
-          "image": "/portfolio/analog.png",
+          "image": "/portfolio/analog.webp",
           "url": "https://www.analogmedium.com/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "AtMedica",
           "category": "Trabajo",
-          "image": "/portfolio/atmedica.png",
+          "image": "/portfolio/atmedica.webp",
           "url": "https://www.atmedica.com/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Oasis Kratom",
           "category": "Trabajo",
-          "image": "/portfolio/oasiskratom.png",
+          "image": "/portfolio/oasiskratom.webp",
           "url": "https://oasiskratomcom.kinsta.cloud/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Signal Genesys",
           "category": "Trabajo",
-          "image": "/portfolio/sg.png",
+          "image": "/portfolio/sg.webp",
           "url": "https://signalgenesys.com/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
         {
           "title": "Rand Mc Nally",
           "category": "Trabajo",
-          "image": "/portfolio/randmcnally.png",
+          "image": "/portfolio/randmcnally.webp",
           "url": "https://randmcnally.com/",
-          "type": "CMS"
+          "type": "CMS",
+          "description": "",
+          "tags": []
         },
-    {
-      "title": "JS Fly",
-      "category": "Trabajo",
-      "image": "/portfolio/jsfly.png",
-      "url": "https://www.jsflyfishing.com/",
-      "type": "CMS"
-    },
-    {
-      "title": "No Glory",
-      "category": "Editorial",
-      "image": "/portfolio/no-glory.png",
-      "url": "https://www.noglory.org/",
-      "type": "CMS",
-      "description": "Revista digital de estilo de vida con contenidos sobre tecnología, bienes raíces, productividad y cultura contemporánea.",
-      "tags": ["WordPress", "Blog", "Contenido editorial", "SEO"]
-    }
+        {
+          "title": "JS Fly",
+          "category": "Trabajo",
+          "image": "/portfolio/jsfly.webp",
+          "url": "https://www.jsflyfishing.com/",
+          "type": "CMS",
+          "description": "",
+          "tags": []
+        },
+        {
+          "title": "No Glory",
+          "category": "Editorial",
+          "image": "/portfolio/no-glory.webp",
+          "url": "https://www.noglory.org/",
+          "type": "CMS",
+          "description": "Revista digital de estilo de vida con contenidos sobre tecnología, bienes raíces, productividad y cultura contemporánea.",
+          "tags": [
+            "WordPress",
+            "Blog",
+            "Contenido editorial",
+            "SEO"
+          ]
+        }
       ]
     },
     "process": {
@@ -294,7 +325,7 @@
           "name": "Sitio web básico",
           "price": "Desde $2,000",
           "features": [
-            "2 paginas: Home y Contact",
+            "2 páginas: Inicio y Contacto",
             "Diseño adaptable",
             "Formulario de contacto",
             "SEO básico"
@@ -305,7 +336,7 @@
           "name": "Sitio completo",
           "price": "Desde $4,000",
           "features": [
-            "4 paginas personalizadas",
+            "4 páginas personalizadas",
             "Diseño adaptable",
             "Formulario de contacto",
             "SEO básico"
@@ -316,7 +347,7 @@
           "name": "Ecommerce",
           "price": "Desde $6,000",
           "features": [
-            "8 paginas para vender en linea",
+            "8 páginas para vender en línea",
             "Catálogo editable de productos",
             "Carrito e integración de pago",
             "SEO básico para productos principales"
@@ -436,7 +467,7 @@
             "href": "/#portafolio"
           },
           {
-            "name": "Conoceme",
+              "name": "Conóceme",
             "href": "/conoceme"
           },
           {

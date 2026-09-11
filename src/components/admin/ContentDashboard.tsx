@@ -50,12 +50,12 @@ function getUniqueSectionIds(sectionSequence: SectionId[]) {
 const pageConfig = {
   home: {
     label: "Inicio",
-    description: "Contenido editable de la pagina principal.",
+    description: "Contenido editable de la página principal.",
     icon: Layers3,
   },
   about: {
-    label: "Conoceme",
-    description: "Contenido editable de la pagina Conoceme.",
+    label: "Conóceme",
+    description: "Contenido editable de la página Conóceme.",
     icon: FileText,
   },
 } as const;
@@ -285,7 +285,7 @@ export function ContentDashboard({
                 Paginas y secciones
               </h3>
               <p className="mt-1 text-sm text-slate-400">
-                Primero eliges la pagina y despues la seccion que quieres editar.
+                Primero eliges la página y después la sección que quieres editar.
               </p>
             </div>
             <Button
@@ -449,8 +449,8 @@ export function ContentDashboard({
             </h3>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
               {selectedPageId === "home"
-                ? "Edita el contenido de esta seccion. El orden y la visibilidad se gestionan en el modulo de secciones."
-                : "Edita el contenido de la pagina Conoceme desde una estructura organizada por bloques."}
+                ? "Edita el contenido de esta sección. El orden y la visibilidad se gestionan en el módulo de secciones."
+                : "Edita el contenido de la página Conóceme desde una estructura organizada por bloques."}
             </p>
           </div>
         </div>

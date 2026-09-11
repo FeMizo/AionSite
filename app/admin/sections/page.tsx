@@ -6,7 +6,7 @@ import { withCanonical } from "@/src/lib/metadata";
 
 export const metadata: Metadata = withCanonical("/admin/sections", {
   title: "Secciones | Admin | AionSite",
-  description: "Gestion local del catalogo, orden y visibilidad de secciones del CMS.",
+  description: "Gestión local del catálogo, orden y visibilidad de secciones del CMS.",
 });
 
 export default function AdminSectionsPage() {

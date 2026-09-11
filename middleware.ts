@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (pathname === "/admin/login") return NextResponse.next();
+  if (pathname === "/admin/login" || pathname === "/api/admin/login") return NextResponse.next();
 
   const adminToken = process.env.ADMIN_TOKEN;
   // If not configured, block access entirely to avoid a false sense of security
@@ -33,5 +33,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/cms/:path*", "/api/about/:path*"],
+  matcher: ["/admin/:path*", "/api/admin/:path*", "/api/cms/:path*", "/api/about/:path*"],
 };

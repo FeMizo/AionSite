@@ -24,7 +24,7 @@ export const metadata: Metadata = withCanonical("/productos/", {
     locale: "es_MX",
     images: [
       {
-        url: "/placeholder.png",
+        url: "/placeholder.webp",
         width: 1200,
         height: 630,
         alt: "Productos de AionSite",
@@ -36,7 +36,7 @@ export const metadata: Metadata = withCanonical("/productos/", {
     title: "Productos | AionSite - Web, velocidad y custom code",
     description:
       "Tres productos premium de AionSite: creación de webs, mejora de velocidad y custom code.",
-    images: ["/placeholder.png"],
+    images: ["/placeholder.webp"],
   },
 });
 

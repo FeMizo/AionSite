@@ -6,7 +6,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 function LoginInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect") ?? "/admin";
+  const requestedRedirect = searchParams.get("redirect");
+  const redirect = requestedRedirect?.startsWith("/") && !requestedRedirect.startsWith("//")
+    ? requestedRedirect
+    : "/admin";
 
   const [token, setToken] = useState("");
   const [error, setError] = useState("");

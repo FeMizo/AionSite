@@ -20,7 +20,7 @@ export function Testimonials({ data }: { data: TestimonialsSectionData }) {
               <Card className="relative h-full">
                 <Quote className="absolute right-6 top-6 text-blue-600/20" size={48} />
                 <p className="mb-8 text-lg leading-relaxed text-slate-300 italic">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
                 <div>
                   <div className="font-bold text-white">{testimonial.name}</div>

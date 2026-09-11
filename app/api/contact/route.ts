@@ -4,6 +4,7 @@ import nodemailer from "nodemailer";
 const MAX_NAME = 100;
 const MAX_EMAIL = 254;
 const MAX_MESSAGE = 5000;
+const MAX_BODY_BYTES = 12_000;
 
 // Tracks submissions per IP: { count, resetAt }
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -25,6 +26,11 @@ function isValidEmail(value: string): boolean {
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
+  if (rateLimitMap.size > 1000) {
+    for (const [key, value] of rateLimitMap) {
+      if (now >= value.resetAt) rateLimitMap.delete(key);
+    }
+  }
   const entry = rateLimitMap.get(ip);
 
   if (!entry || now >= entry.resetAt) {
@@ -40,7 +46,11 @@ function checkRateLimit(ip: string): boolean {
 
 export async function POST(request: Request) {
   const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
+    request.headers.get("x-real-ip") ?? request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
+
+  if (Number(request.headers.get("content-length") ?? 0) > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Cuerpo demasiado grande." }, { status: 413 });
+  }
 
   if (!checkRateLimit(ip)) {
     return NextResponse.json(

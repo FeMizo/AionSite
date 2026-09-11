@@ -4,10 +4,10 @@ import { withCanonical } from "@/src/lib/metadata";
 
 export const metadata: Metadata = withCanonical("/legales/", {
   title: "Aviso legal | AionSite",
-  description: "Aviso legal con informacion corporativa, propiedad intelectual y limitaciones.",
+  description: "Aviso legal con información corporativa, propiedad intelectual y limitaciones.",
   openGraph: {
     title: "Aviso legal | AionSite",
-    description: "Aviso legal con informacion corporativa, propiedad intelectual y limitaciones.",
+    description: "Aviso legal con información corporativa, propiedad intelectual y limitaciones.",
     url: "/legales/",
     siteName: "AionSite",
     type: "website",
@@ -16,7 +16,7 @@ export const metadata: Metadata = withCanonical("/legales/", {
   twitter: {
     card: "summary",
     title: "Aviso legal | AionSite",
-    description: "Aviso legal con informacion corporativa, propiedad intelectual y limitaciones.",
+    description: "Aviso legal con información corporativa, propiedad intelectual y limitaciones.",
   },
 });
 
@@ -24,7 +24,7 @@ export default function LegalesPage() {
   return (
     <LegalPage
       title="Aviso legal"
-      subtitle="Informacion corporativa y condiciones generales sobre el uso de los contenidos de AionSite."
+      subtitle="Información corporativa y condiciones generales sobre el uso de los contenidos de AionSite."
       updatedAt="28 de julio de 2026"
       sections={[
         {
@@ -32,7 +32,7 @@ export default function LegalesPage() {
           content: (
             <p>
               Este sitio es operado por AionSite. Los datos de contacto publicados en el sitio
-              forman parte de la informacion oficial para solicitudes comerciales y de soporte.
+              forman parte de la información oficial para solicitudes comerciales y de soporte.
             </p>
           ),
         },
@@ -40,8 +40,8 @@ export default function LegalesPage() {
           title: "Propiedad intelectual",
           content: (
             <p>
-              Los textos, disenos, imagenes, marcas y materiales del sitio estan protegidos por las
-              normas aplicables de propiedad intelectual y no pueden reproducirse sin autorizacion.
+              Los textos, diseños, imágenes, marcas y materiales del sitio están protegidos por las
+              normas aplicables de propiedad intelectual y no pueden reproducirse sin autorización.
             </p>
           ),
         },
@@ -49,8 +49,8 @@ export default function LegalesPage() {
           title: "Enlaces externos",
           content: (
             <p>
-              Cuando el sitio incluya enlaces a terceros, AionSite no controla sus politicas ni su
-              contenido. Revisa sus propios terminos antes de usar esos servicios.
+              Cuando el sitio incluya enlaces a terceros, AionSite no controla sus políticas ni su
+              contenido. Revisa sus propios términos antes de usar esos servicios.
             </p>
           ),
         },

@@ -13,7 +13,7 @@ export function Footer({
   data: FooterSectionData;
 }) {
   const legalLinks = [
-    { href: "/terminos/", label: "Terminos" },
+    { href: "/terminos/", label: "Términos" },
     { href: "/privacidad/", label: "Privacidad" },
     { href: "/legales/", label: "Legales" },
   ];

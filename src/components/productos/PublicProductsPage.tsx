@@ -32,9 +32,9 @@ type Chapter = {
 const chapters: Chapter[] = [
   {
     eyebrow: "Creacion de webs",
-    title: "Sitios con jerarquia, belleza y venta clara.",
+    title: "Sitios con jerarquía, belleza y venta clara.",
     summary:
-      "Diseno a medida, copy preciso y una estructura pensada para convertir sin ruido visual.",
+      "Diseño a medida, copy preciso y una estructura pensada para convertir sin ruido visual.",
     details: [
       "Home premium con mensaje directo",
       "Secciones comerciales limpias",
@@ -54,7 +54,7 @@ const chapters: Chapter[] = [
     summary:
       "Optimizacion real para que el sitio cargue antes, se mueva mejor y sostenga la atencion.",
     details: [
-      "Reduccion de peso visual y tecnico",
+      "Reducción de peso visual y técnico",
       "Imagenes, fuentes y scripts afinados",
       "Mejor lectura de Core Web Vitals",
     ],
@@ -267,10 +267,10 @@ function BrowserScene({ active }: { active: boolean }) {
             lanzamiento
           </div>
           <h3 className="mt-5 max-w-sm font-display text-3xl font-semibold leading-[1.02] text-white">
-            Diseno sobrio que hace sentir el valor antes de explicarlo.
+            Diseño sobrio que hace sentir el valor antes de explicarlo.
           </h3>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-            La navegacion, la jerarquia y el detalle visual se alinean para que el
+            La navegación, la jerarquía y el detalle visual se alinean para que el
             mensaje se entienda en segundos.
           </p>
         </div>
@@ -490,7 +490,7 @@ function CodeScene({ active }: { active: boolean }) {
               Codigo que se siente invisible y hace el trabajo dificil.
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Integraciones, medicion y automatizacion pensadas para crecer sin depender
+              Integraciones, medición y automatización pensadas para crecer sin depender
               de un parche generico.
             </p>
           </div>
@@ -518,7 +518,7 @@ function CodeScene({ active }: { active: boolean }) {
 
           <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-5">
             <div className="flex flex-wrap gap-2">
-              {["APIs", "funnels", "tracking", "automatizacion", "microinteracciones"].map(
+              {["APIs", "funnels", "tracking", "automatización", "microinteracciones"].map(
                 (item) => (
                   <span
                     key={item}
@@ -881,7 +881,7 @@ export function PublicProductsPage() {
                 <div data-reveal className="mt-10 grid gap-3 sm:grid-cols-3">
                   {[
                     "Visual minimalista",
-                    "SEO tecnico",
+                    "SEO técnico",
                     "Todo en espanol",
                   ].map((item) => (
                     <div
@@ -994,13 +994,13 @@ export function PublicProductsPage() {
                               "custom code",
                               "conversion",
                               "motion",
-                              "seo tecnico",
+                              "SEO técnico",
                               "web premium",
                               "performance",
                               "custom code",
                               "conversion",
                               "motion",
-                              "seo tecnico",
+                              "SEO técnico",
                             ].map((word) => (
                               <span key={word} className="inline-flex items-center gap-10">
                                 {word}

@@ -119,7 +119,7 @@ export function BlogListPage() {
               className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400"
             >
               Estrategias, tendencias y consejos practicos de diseno web, SEO y
-              conversion para que tu marca destaque y genere mas clientes.
+              conversión para que tu marca destaque y genere más clientes.
             </p>
 
             <div
@@ -191,7 +191,7 @@ export function BlogListPage() {
                 No se encontraron articulos
               </h3>
               <p className="text-slate-400">
-                Intenta con otros terminos de busqueda
+                Intenta con otros términos de búsqueda
               </p>
             </div>
           ) : (
@@ -220,7 +220,7 @@ export function BlogListPage() {
                         <Card className="flex h-full flex-col overflow-hidden p-0">
                           <div className="relative h-80 w-full overflow-hidden">
                             <Image
-                              src={post.image ?? "/logo-aionsite.png"}
+                              src={post.image ?? "/logo-aionsite.webp"}
                               alt={post.title}
                               fill
                               className="object-cover transition-transform duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"

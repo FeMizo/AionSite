@@ -24,15 +24,15 @@ export default function PrivacidadPage() {
   return (
     <LegalPage
       title="Aviso de privacidad"
-      subtitle="Aqui se explica como recopilamos, usamos y protegemos los datos personales que nos compartes."
+      subtitle="Aquí se explica cómo recopilamos, usamos y protegemos los datos personales que nos compartes."
       updatedAt="28 de julio de 2026"
       sections={[
         {
           title: "Datos que podemos recopilar",
           content: (
             <p>
-              Podemos recibir nombre, correo, telefono, empresa, mensaje y datos tecnicos basicos
-              derivados de formularios, analitica y navegacion.
+              Podemos recibir nombre, correo, teléfono, empresa, mensaje y datos técnicos básicos
+              derivados de formularios, analítica y navegación.
             </p>
           ),
         },
@@ -40,7 +40,7 @@ export default function PrivacidadPage() {
           title: "Finalidades",
           content: (
             <p>
-              Usamos la informacion para responder solicitudes, enviar propuestas, dar seguimiento a
+              Usamos la información para responder solicitudes, enviar propuestas, dar seguimiento a
               proyectos, mejorar el sitio y cumplir obligaciones legales o contractuales.
             </p>
           ),
@@ -49,7 +49,7 @@ export default function PrivacidadPage() {
           title: "Derechos y contacto",
           content: (
             <p>
-              Si deseas acceder, rectificar, cancelar u oponerte al uso de tus datos, escribenos al
+              Si deseas acceder, rectificar, cancelar u oponerte al uso de tus datos, escríbenos al
               correo publicado en el sitio y atenderemos tu solicitud conforme a la ley aplicable.
             </p>
           ),

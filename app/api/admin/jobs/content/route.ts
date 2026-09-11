@@ -4,11 +4,14 @@ import {
   readJobsContentFromFile,
   writeJobsContentToFile,
 } from "@/src/jobs/file-storage";
+import { requireAdmin } from "@/src/lib/admin-auth";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
+  const unauthorized = await requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const content = await readJobsContentFromFile();
     return NextResponse.json(content, {
@@ -23,6 +26,8 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
+  const unauthorized = await requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const payload = await request.json();
     const normalized = normalizeJobsContent(payload);

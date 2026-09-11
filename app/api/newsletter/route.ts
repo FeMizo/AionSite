@@ -2,6 +2,16 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 const MAX_EMAIL = 254;
+const MAX_BODY_BYTES = 2_000;
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
+}
 
 function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -13,6 +23,11 @@ const RATE_WINDOW = 60_000;
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
+  if (rateLimitMap.size > 1000) {
+    for (const [key, value] of rateLimitMap) {
+      if (now >= value.resetAt) rateLimitMap.delete(key);
+    }
+  }
   const entry = rateLimitMap.get(ip);
   if (!entry || now >= entry.resetAt) {
     rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW });
@@ -25,7 +40,11 @@ function checkRateLimit(ip: string): boolean {
 
 export async function POST(request: Request) {
   const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
+    request.headers.get("x-real-ip") ?? request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
+
+  if (Number(request.headers.get("content-length") ?? 0) > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Cuerpo demasiado grande." }, { status: 413 });
+  }
 
   if (!checkRateLimit(ip)) {
     return NextResponse.json(
@@ -45,6 +64,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Correo inválido." }, { status: 400 });
   }
 
+  const safeEmail = escapeHtml(email);
+
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT ?? 587),
@@ -59,11 +80,11 @@ export async function POST(request: Request) {
     from: `"AionSite" <${process.env.SMTP_USER}>`,
     to: "contacto@aionsite.com.mx",
     replyTo: email,
-    subject: `Nuevo registro al newsletter — ${email}`,
+    subject: "Nuevo registro al newsletter",
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #1e40af;">Nuevo registro al newsletter (popup)</h2>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${safeEmail}</p>
         <p style="color: #64748b; font-size: 14px;">Este usuario quiere ser avisado del lanzamiento del dashboard el 18 de mayo de 2026.</p>
       </div>
     `,

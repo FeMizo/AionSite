@@ -5,12 +5,12 @@ import { gsap, usePrefersReducedMotion } from "@/src/lib/animations";
 
 const defaultSignals = [
   "arquitectura web",
-  "SEO tecnico",
+  "SEO técnico",
   "Core Web Vitals",
   "CMS editable",
-  "automatizacion",
-  "analitica",
-  "conversion",
+  "automatización",
+  "analítica",
+  "conversión",
   "IA aplicada",
 ];
 

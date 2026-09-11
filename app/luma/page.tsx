@@ -1,4 +1,5 @@
 import { ArrowUpRight, Check, Code2, Gauge, Layers3, Menu, Sparkles } from "lucide-react";
+import Link from "next/link";
 import design from "@/src/data/luma.json";
 import "./luma.css";
 
@@ -56,7 +57,7 @@ export default function LumaPage() {
 
       <section className="luma-collection" id="coleccion"><div className="collection-heading"><p className="luma-kicker">{design.content.collection.eyebrow}</p><h2>{design.content.collection.title}</h2></div><div className="collection-grid">{design.content.collection.items.map((item, index) => <article key={item} className="collection-card"><div className="collection-image" style={{ backgroundImage: `url(${images[index]})` }} /><div className="collection-meta"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item}</h3><ArrowUpRight size={18} /></div></article>)}</div></section>
 
-      <section className="luma-cta" id="contacto"><div className="cta-mark"><Check size={24} /></div><p>{design.content.closing}</p><a className="luma-button light" href="/">Crear algo extraordinario <ArrowUpRight size={17} /></a></section>
+      <section className="luma-cta" id="contacto"><div className="cta-mark"><Check size={24} /></div><p>{design.content.closing}</p><Link className="luma-button light" href="/">Crear algo extraordinario <ArrowUpRight size={17} /></Link></section>
       <footer className="luma-footer"><span>© 2026 {design.content.brand}</span><span>Color · Cuidado · Expresión</span><span>Hecho con intención</span></footer>
     </main>
   );

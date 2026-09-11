@@ -165,7 +165,7 @@ function buildCoverDraft(profile: JobsContent["profile"], job: JobRecord) {
   return [
     `Hola ${job.company},`,
     "",
-    `Soy ${profile.name}, con ${profile.experience} de experiencia enfocado en diseno web, SEO, optimizacion de velocidad y codigo a medida.`,
+    `Soy ${profile.name}, con ${profile.experience} de experiencia enfocado en diseño web, SEO, optimización de velocidad y código a medida.`,
     `Me interesa la vacante de ${job.title} porque encaja con el tipo de trabajo que mejor hago: crear experiencias claras que convierten, miden mejor y responden rapido.`,
     "",
     `Mi experiencia con ${profile.stackSummary} me permite adaptarme rapido, apoyar la ejecucion y sumar valor sin ruido.`,

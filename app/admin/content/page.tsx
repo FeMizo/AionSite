@@ -7,7 +7,7 @@ import { withCanonical } from "@/src/lib/metadata";
 
 export const metadata: Metadata = withCanonical("/admin/content", {
   title: "Contenido | Admin | AionSite",
-  description: "Editor local de contenido para las paginas y secciones del sitio.",
+  description: "Editor local de contenido para las páginas y secciones del sitio.",
 });
 
 export default function AdminContentPage() {
@@ -15,7 +15,7 @@ export default function AdminContentPage() {
     <AdminShell
       pathname="/admin/content"
       title="Contenido"
-      description="Edita contenido por pagina. Primero eliges la pagina y despues la seccion especifica que quieres ajustar."
+      description="Edita contenido por página. Primero eliges la página y después la sección específica que quieres ajustar."
     >
       <ContentDashboard
         initialCmsContent={initialCmsContent}

@@ -29,6 +29,8 @@ function sanitizeSvg(content: string): string {
     .replace(/\s+on\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "")
     // Remove javascript: URLs in href / xlink:href / action / src
     .replace(/(href|xlink:href|action|src)\s*=\s*["']?\s*javascript:[^"'\s>]*/gi, "")
+    // Do not allow embedded data or external resource URLs in uploaded SVGs.
+    .replace(/(href|xlink:href|action|src)\s*=\s*["']?\s*data:[^"'\s>]*/gi, "")
     // Remove <foreignObject> (can embed HTML)
     .replace(/<foreignObject[\s\S]*?<\/foreignObject>/gi, "");
 }
@@ -44,9 +46,6 @@ function sanitizeFileName(name: string) {
 }
 
 function getFileExtension(file: File) {
-  const sourceExtension = path.extname(file.name).toLowerCase();
-  if (sourceExtension) return sourceExtension;
-
   if (file.type === "image/jpeg") return ".jpg";
   if (file.type === "image/png") return ".png";
   if (file.type === "image/webp") return ".webp";
@@ -55,6 +54,15 @@ function getFileExtension(file: File) {
   if (file.type === "image/svg+xml") return ".svg";
 
   return "";
+}
+
+function hasValidSignature(buffer: Buffer, mimeType: string) {
+  if (mimeType === "image/jpeg") return buffer.subarray(0, 3).equals(Buffer.from([0xff, 0xd8, 0xff]));
+  if (mimeType === "image/png") return buffer.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]));
+  if (mimeType === "image/gif") return buffer.subarray(0, 4).toString("ascii") === "GIF8";
+  if (mimeType === "image/webp") return buffer.subarray(0, 4).toString("ascii") === "RIFF" && buffer.subarray(8, 12).toString("ascii") === "WEBP";
+  if (mimeType === "image/avif") return buffer.subarray(4, 8).toString("ascii") === "ftyp";
+  return true;
 }
 
 export async function POST(request: Request) {
@@ -96,17 +104,27 @@ export async function POST(request: Request) {
     await fs.mkdir(UPLOADS_DIRECTORY, { recursive: true });
 
     const extension = getFileExtension(maybeFile);
+    if (!extension) {
+      return NextResponse.json({ error: "Extensión de imagen no permitida." }, { status: 400 });
+    }
     const baseName =
-      sanitizeFileName(path.basename(maybeFile.name, extension)) || "imagen";
+      sanitizeFileName(path.basename(maybeFile.name, path.extname(maybeFile.name))) || "imagen";
     const fileName = `${Date.now()}-${randomUUID()}-${baseName}${extension}`;
     const filePath = path.join(UPLOADS_DIRECTORY, fileName);
 
     let fileBuffer: Buffer;
     if (maybeFile.type === "image/svg+xml") {
       const text = await maybeFile.text();
-      fileBuffer = Buffer.from(sanitizeSvg(text), "utf-8");
+      const sanitized = sanitizeSvg(text);
+      if (!/<svg\b/i.test(sanitized)) {
+        return NextResponse.json({ error: "SVG inválido." }, { status: 400 });
+      }
+      fileBuffer = Buffer.from(sanitized, "utf-8");
     } else {
       fileBuffer = Buffer.from(await maybeFile.arrayBuffer());
+      if (!hasValidSignature(fileBuffer, maybeFile.type)) {
+        return NextResponse.json({ error: "El contenido no coincide con el tipo de imagen." }, { status: 400 });
+      }
     }
 
     await fs.writeFile(filePath, fileBuffer);

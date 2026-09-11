@@ -4,7 +4,7 @@ const organizationSchema = {
   "@id": "https://aionsite.com.mx/#organization",
   name: "AionSite",
   url: "https://aionsite.com.mx",
-  logo: "https://aionsite.com.mx/logo-aionsite.png",
+  logo: "https://aionsite.com.mx/logo-aionsite.webp",
   email: "contacto@aionsite.com.mx",
   contactPoint: {
     "@type": "ContactPoint",

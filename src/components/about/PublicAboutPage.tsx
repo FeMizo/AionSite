@@ -224,7 +224,7 @@ export function PublicAboutPage({
             "wireframes",
             "frontend",
             "performance",
-            "SEO tecnico",
+            "SEO técnico",
             "integraciones",
             "CMS",
             "lanzamiento",
