@@ -26,7 +26,7 @@ function MotionButton({ as = "button", label, variant = "primary", classes, anim
   const content = (
     <span className="relative z-10 flex min-w-0 w-full items-center gap-7 pr-3 pl-5 py-2 text-left">
       <span aria-hidden="true" className="shrink-0 text-white transition-transform duration-500 group-hover:translate-x-1">{icon}</span>
-      <span className="min-w-0 flex-1 whitespace-normal break-words font-[inherit] text-lg font-semibold leading-tight tracking-tight text-white">{label}</span>
+      <span className="min-w-0 flex-1 whitespace-normal break-words font-[inherit] text-lg leading-tight tracking-tight text-white">{label}</span>
     </span>
   );
   const background = <span aria-hidden="true" className={cn("pointer-events-none absolute inset-y-1 left-1 w-14 rounded-full border border-blue-300/70 bg-blue-500/40 transition-[width,background-color] duration-500 ease-out", variant === "outline" && "border-blue-300/50 bg-blue-500/5", animate && "group-hover:w-[calc(100%-0.5rem)] group-hover:bg-blue-500/25")} />;
