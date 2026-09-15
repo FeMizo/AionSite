@@ -30,17 +30,17 @@ export const ecommerceConfig: LocalLandingConfig = {
   whatsappMessage: "Hola AionSite, quiero cotizar una tienda online en Ciudad del Carmen.",
 };
 
-export const localSeoConfig: LocalLandingConfig = {
-  eyebrow: "SEO local en Ciudad del Carmen",
-  title: "Haz que más personas encuentren tu negocio cuando buscan lo que ofreces.",
-  description: "Mejoramos la presencia local de negocios de Ciudad del Carmen para ganar visibilidad en Google, atraer visitas relevantes y convertir búsquedas en contactos.",
-  intro: "El SEO local conecta tu oferta con las búsquedas que ocurren cerca de ti. Revisamos páginas, contenidos, datos del negocio y oportunidades para que tu presencia digital sea más consistente y útil.",
-  benefits: ["Páginas enfocadas en servicios y zonas reales", "Mejor estructura para buscadores y usuarios", "Contenidos que responden dudas de compra", "Seguimiento de visitas, consultas y conversiones"],
-  process: ["Detectamos búsquedas y oportunidades", "Optimizamos páginas y contenidos", "Medimos posiciones, tráfico y contactos"],
+export const seoMexicoConfig: LocalLandingConfig = {
+  eyebrow: "SEO para negocios en México",
+  title: "Atrae más clientes desde Google con una estrategia SEO hecha para tu negocio.",
+  description: "Mejoramos sitios y contenidos de negocios en México para aumentar su visibilidad en búsquedas relevantes, atraer visitas con intención y convertirlas en contactos.",
+  intro: "El SEO conecta lo que ofreces con las búsquedas de tus clientes en todo México. Revisamos tu sitio, tus servicios, tus contenidos y las oportunidades de búsqueda para atraer tráfico útil y medir su impacto comercial.",
+  benefits: ["Páginas enfocadas en tus servicios y mercados", "Mejor estructura para buscadores y usuarios", "Contenidos que responden dudas de compra", "Seguimiento de tráfico, consultas y conversiones"],
+  process: ["Detectamos búsquedas y oportunidades en tu mercado", "Optimizamos páginas y contenidos", "Medimos visibilidad, visitas y contactos"],
   faq: [
-    { question: "¿El SEO local sirve si todavía no tengo ficha de Google?", answer: "Sí. Podemos preparar el sitio y la información del negocio; después definimos si eres elegible para una ficha de Google Business Profile." },
-    { question: "¿Cuánto tarda en llegar tráfico?", answer: "Depende de la competencia y del estado actual del sitio. Medimos avances por impresiones, clics y contactos, no solo por posiciones." },
+    { question: "¿Pueden trabajar con negocios de cualquier estado?", answer: "Sí. Atendemos proyectos en línea para empresas de todo México." },
+    { question: "¿Cuánto tarda en llegar tráfico?", answer: "Depende de la competencia, el mercado y el estado actual del sitio. Medimos avances por impresiones, clics y contactos, no solo por posiciones." },
     { question: "¿También crean artículos?", answer: "Sí, pero cada artículo debe apoyar un servicio, resolver una duda real y llevar a una acción concreta." },
   ],
-  whatsappMessage: "Hola AionSite, quiero mejorar el SEO local de mi negocio en Ciudad del Carmen.",
+  whatsappMessage: "Hola AionSite, quiero mejorar el SEO de mi negocio en México.",
 };

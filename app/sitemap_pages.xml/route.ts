@@ -10,7 +10,7 @@ const pages = [
   { path: "/conoceme/", changefreq: "monthly", priority: "0.7" },
   { path: "/diseno-web-ciudad-del-carmen/", changefreq: "monthly", priority: "0.8" },
   { path: "/tiendas-online-ciudad-del-carmen/", changefreq: "monthly", priority: "0.8" },
-  { path: "/seo-local-ciudad-del-carmen/", changefreq: "monthly", priority: "0.8" },
+  { path: "/seo-mexico/", changefreq: "monthly", priority: "0.8" },
   { path: "/terminos/", changefreq: "yearly", priority: "0.3" },
   { path: "/privacidad/", changefreq: "yearly", priority: "0.3" },
   { path: "/legales/", changefreq: "yearly", priority: "0.3" },

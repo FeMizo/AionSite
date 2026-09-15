@@ -10,6 +10,6 @@ export const metadata: Metadata = withCanonical("/seo-mexico/", {
   keywords: ["SEO México", "posicionamiento web México", "SEO para negocios México"],
 });
 
-export default function LocalSeoPage() {
+export default function SeoMexicoPage() {
   return <><BreadcrumbSchema items={[{ name: "SEO para negocios en México", path: "/seo-mexico/" }]} /><LocalLandingPage config={seoMexicoConfig} /></>;
 }

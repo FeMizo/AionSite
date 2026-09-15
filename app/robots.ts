@@ -15,6 +15,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: buildUrl("/sitemap_index.xml"),
+    sitemap: buildUrl("/sitemap.xml"),
   };
 }
