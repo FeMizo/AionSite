@@ -1230,6 +1230,32 @@
       "cover": "I am interested in the FrontEnd Web Developer opportunity because it aligns with my experience building responsive, user-focused websites and custom web applications. My background with HTML, CSS, JavaScript, WordPress, APIs, performance optimization, and remote collaboration would allow me to contribute clean, maintainable solutions from implementation through deployment.",
       "notes": "LinkedIn lists Mexico, remote contract work, and US$20-$70/hour. The application redirects to Micro1, where the job description and the first-step email form were inspected without entering or submitting data.",
       "lastTouchedAt": "2026-09-09T14:31:44.637Z"
+    },
+    {
+      "id": "ige-wordpress-graphic-designer-website-administrator",
+      "dbId": "ige-wordpress-graphic-designer-website-administrator",
+      "company": "IGE",
+      "title": "WordPress - Graphic Designer & Website Administrator",
+      "salaryLabel": "Not provided",
+      "salaryCurrency": "N/A",
+      "salaryUsdMin": null,
+      "salaryUsdMax": null,
+      "fitReason": "La invitación de entrevista confirma avance en el proceso; el rol se relaciona con la experiencia en WordPress, desarrollo web y formación en diseño gráfico.",
+      "checkedAt": "2026-09-14T22:21:40.000Z",
+      "addedAt": "2026-09-15T13:56:34.892Z",
+      "zone": "Not confirmed",
+      "region": "Not specified",
+      "source": "Email (Pinpoint)",
+      "link": "https://igegroup.pinpointhq.com",
+      "stack": [
+        "WordPress",
+        "Website administration",
+        "Graphic design"
+      ],
+      "status": "follow_up",
+      "cover": "Thank you for reviewing my application. I would be glad to discuss how my experience developing and maintaining WordPress websites, custom themes, plugins, and responsive web experiences can support IGE's needs. I look forward to speaking with you.",
+      "notes": "2026-09-14: IGE invitó a entrevista y pidió seleccionar fecha y hora. Salario y elegibilidad remota desde México no indicados en el correo. El enlace personal para agendar está en el correo y no se guarda aquí porque contiene un token privado.",
+      "lastTouchedAt": "2026-09-15T13:56:34.892Z"
     }
   ],
   "lastJobsSearchAt": "2026-09-11T14:31:59.482Z"
