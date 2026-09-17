@@ -181,10 +181,10 @@
         "Next.js",
         "Frontend"
       ],
-      "status": "aplicado",
+      "status": "rechazado",
       "cover": "He construido interfaces con Vue, Nuxt, Next y React, priorizando componentes reutilizables, performance y experiencia de usuario. Me interesa Reedsy por el enfoque en producto y calidad de frontend. Puedo aportar ejecución sólida y atención al detalle.",
-      "notes": "Europa, buen fit frontend.",
-      "lastTouchedAt": "2026-08-20T18:46:35.481Z"
+      "notes": "Europa, buen fit frontend. 2026-09-17: Reedsy (wiki@reedsy.com), asunto 'Reedsy Application Update': comunicaron que la candidatura no coincide suficientemente con sus requisitos.",
+      "lastTouchedAt": "2026-09-17T14:31:31Z"
     },
     {
       "id": "reedsy-senior-software-engineer-node-vue-typescript",
@@ -208,10 +208,10 @@
         "TypeScript",
         "Custom code"
       ],
-      "status": "aplicado",
+      "status": "rechazado",
       "cover": "Tengo experiencia profunda con Vue, Nuxt, TypeScript y JavaScript, además de construir productos web end to end. Me interesa este rol por la mezcla de frontend, arquitectura y producto. Puedo contribuir con código limpio, rápido y mantenible.",
-      "notes": "Más backend/Node de lo que busco ahora.",
-      "lastTouchedAt": "2026-08-20T18:44:29.541Z"
+      "notes": "Más backend/Node de lo que busco ahora. 2026-09-17: Reedsy (wiki@reedsy.com), asunto 'Reedsy Application Update': comunicaron que la candidatura no coincide suficientemente con sus requisitos.",
+      "lastTouchedAt": "2026-09-17T14:31:31Z"
     },
     {
       "id": "patriot-software-engineer-iii-full-stack-vue-dotnet",
