@@ -1,59 +1,33 @@
 import type { Metadata } from "next";
-import { PublicSite } from "@/src/components/cms/PublicSite";
+import { Hero2 } from "@/src/components/sections/Hero2";
+import { HeaderHome2 } from "@/src/components/sections/HeaderHome2";
 import { initialCmsContent } from "@/src/cms/site-content";
+import { ContactHome2 } from "@/src/components/sections/ContactHome2";
+import { PricingHome2 } from "@/src/components/sections/PricingHome2";
+import { ProcessHome2 } from "@/src/components/sections/ProcessHome2";
+import { ServicesApproach } from "@/src/components/sections/ServicesApproach";
+import { ProjectsHome2 } from "@/src/components/sections/ProjectsHome2";
+import { CtaFooterHome2 } from "@/src/components/sections/CtaFooterHome2";
+import { InnovationVisionHome2 } from "@/src/components/sections/InnovationVisionHome2";
 import { withCanonical } from "@/src/lib/metadata";
 
-export const metadata: Metadata = withCanonical("/");
+export const metadata: Metadata = withCanonical("/", {
+  description: initialCmsContent.base.description,
+});
 
 export default function Home() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: initialCmsContent.sections.faq.data.map(
-      (item: { question: string; answer: string }) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-      }),
-    ),
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: initialCmsContent.base.name,
-    description: initialCmsContent.base.description,
-    url: "https://aionsite.com.mx",
-    telephone: "+52 938 157 3988",
-    email: initialCmsContent.base.email,
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "MX",
-      addressLocality: "Cd. Carmen", // Default city
-      addressRegion: "Campeche", // Default state
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 21.1619,
-      longitude: -86.8515,
-    },
-    openingHours: "Mo-Fr 09:00-18:00",
-    sameAs: [
-      "https://wa.me/5219381573988",
-    ],
-  };
-
+  const { base, sections } = initialCmsContent;
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <PublicSite initialContent={initialCmsContent} />
+      <HeaderHome2 base={base} data={sections.header.data} />
+      <Hero2 data={sections.hero.data} headerData={sections.header.data} />
+      <ServicesApproach data={sections.services.data} />
+      <InnovationVisionHome2 content={sections.sideImageContent.data} process={sections.process.data} />
+      <ProcessHome2 data={sections.process.data} />
+      <ProjectsHome2 data={sections.portfolio.data} />
+      <PricingHome2 />
+      <ContactHome2 />
+      <CtaFooterHome2 base={base} cta={sections.finalCTA.data} footer={sections.footer.data} process={sections.process.data} />
     </>
   );
 }

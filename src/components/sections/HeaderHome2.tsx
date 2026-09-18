@@ -16,7 +16,7 @@ export function HeaderHome2({ base, data }: { base: CmsBase; data: HeaderSection
     <header className="fixed top-0 z-50 w-full px-6 py-5 lg:px-8">
       <div className="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-white/10 bg-slate-950/45 px-4 py-2.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)] backdrop-blur-md sm:px-6">
         <Link href="/" className="shrink-0" aria-label={`Ir a inicio - ${data.name}`}>
-          <Image src={base.logoLight} alt={data.name} width={160} height={40} className="h-9 w-auto" priority />
+          <Image src={base.logoLight} alt={data.name} width={160} height={40} className="h-7 w-auto" priority />
         </Link>
         <nav className="hidden items-center gap-6 lg:flex">
           {data.navigation.map((item) => isInternalHref(item.href) ? <Link key={item.name} href={item.href} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">{item.name}</Link> : <a key={item.name} href={item.href} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">{item.name}</a>)}
