@@ -12,7 +12,7 @@ const examples = [
   { name: "Typewriter", detail: "El texto aparece al pasar el cursor", style: "typewriter", content: <><span className="type-prefix">&gt; </span><span className="type-word">Quantum</span><span className="type-cursor" /></> },
   { name: "Rocket", detail: "Gradiente y lanzamiento", style: "rocket", content: <><Rocket size={17} /><span>Launch</span></> },
   { name: "Icon Swap", detail: "Cambia el ícono al interactuar", style: "icon-swap", content: <><span className="swap-first"><ArrowUpRight size={16} /></span><span className="swap-last"><Check size={16} /></span><span>Deploy</span></> },
-  { name: "Spark", detail: "Destello que cruza el botón", style: "spark", content: <><span>Ignite</span><Sparkles size={16} /></> },
+  { name: "Spark", detail: "Destellos que saltan desde el ícono", style: "spark", content: <><span>Ignite</span><span className="spark-glyph"><Sparkles size={16} /></span></> },
   { name: "Circle Expand", detail: "Un círculo revela el color", style: "circle-expand", content: <><span className="circle-bloom" /><span> Nebula</span></> },
   { name: "Shine", detail: "Brillo en movimiento", style: "shine", content: <><span>Supernova</span><span className="shine-sweep" /></> },
   { name: "Flip", detail: "Voltea para revelar el mensaje", style: "flip", content: <><span className="flip-inner"><span>Receive</span><span>Success <Check size={15} /></span></span></> },
