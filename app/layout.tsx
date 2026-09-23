@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     locale: "es_MX",
     images: [
       {
-        url: "/placeholder.webp",
+        url: "/aionsite-share.png",
         width: 1200,
         height: 630,
         alt: "AionSite — Sitios Web, Tiendas Online, SEO e IA para Negocios",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AionSite | Sitios Web, Tiendas Online, SEO e IA para Negocios",
     description: "AionSite vende diseño y desarrollo de sitios web, tiendas online, SEO técnico, automatizaciones e integraciones con IA para negocios.",
-    images: ["/placeholder.webp"],
+    images: ["/aionsite-share.png"],
   },
 };
 
