@@ -11,9 +11,13 @@
     "blog:validate": "node scripts/blog-validate.mjs",
     "build:static": "node scripts/build-static.mjs",
     "upload:social": "node scripts/upload-social-asset.mjs",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "mcp:whatsapp": "tsx mcp/whatsapp-server.ts",
+    "test:whatsapp": "tsx --test tests/whatsapp.test.ts"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/nodemailer": "^8.0.0",
     "clsx": "^2.1.1",
@@ -25,7 +29,9 @@
     "nodemailer": "^8.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.5.0"
+    "tailwind-merge": "^3.5.0",
+    "tsx": "^4.20.6",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

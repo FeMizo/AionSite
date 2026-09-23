@@ -18,3 +18,7 @@ View your app in AI Studio: https://ai.studio/apps/9b8b4794-11ed-44f4-b5bc-3fe7e
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## WhatsApp Business MCP
+
+La integración oficial y su configuración están documentadas en [mcp/README.md](mcp/README.md). Requiere un número dedicado, una cuenta de WhatsApp Business y credenciales de Meta.

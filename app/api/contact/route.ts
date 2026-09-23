@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { recordContactFormLead } from "@/src/lib/whatsapp/store";
 
 const MAX_NAME = 100;
 const MAX_EMAIL = 254;
@@ -111,6 +112,8 @@ export async function POST(request: Request) {
       </div>
     `,
   });
+
+  await recordContactFormLead({ name, email, message });
 
   return NextResponse.json({ ok: true });
 }
