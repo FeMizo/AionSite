@@ -16,6 +16,7 @@ import { FormInput } from "@/src/components/ui/FormInput";
 import { FormTextarea } from "@/src/components/ui/FormTextarea";
 import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 import { cn } from "@/src/lib/utils";
+import { ArticleEngagementTracker } from "@/src/components/analytics/ArticleEngagementTracker";
 
 const nav = mapNavigationForInnerPage(
   initialCmsContent.sections.header.data.navigation,
@@ -49,6 +50,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
 
   return (
     <>
+      <ArticleEngagementTracker articleId={post.id} articleTitle={post.title} />
       <Header base={base} data={headerData} />
 
       {/* Hero */}

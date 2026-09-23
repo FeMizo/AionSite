@@ -22,6 +22,7 @@ import { BlogCardSkeleton } from "@/src/components/ui/Skeleton";
 import { Button } from "@/src/components/ui/Button";
 import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 import { useGsapStagger } from "@/src/lib/animations";
+import { trackContentInteraction } from "@/src/lib/analytics";
 
 const PAGE_SIZE_OPTIONS = [9, 18, 30] as const;
 
@@ -214,6 +215,14 @@ export function BlogListPage() {
                       <Link
                         key={post.id}
                         href={`/blog/${post.id}`}
+                        onClick={() =>
+                          trackContentInteraction({
+                            content_action: "click",
+                            article_id: post.id,
+                            article_title: post.title,
+                            placement: "blog_index",
+                          })
+                        }
                         data-gsap-reveal
                         className="group block transition-transform duration-150 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 active:scale-[0.97]"
                       >
