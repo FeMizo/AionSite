@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Bot, Globe, ShoppingBag, Target, TrendingUp, Zap } from "lucide-react";
+import { Bot, Globe, ShieldCheck, ShoppingBag, Target, TrendingUp, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { ComponentType, SVGProps } from "react";
 import type { ServicesSectionData } from "@/src/cms/types";
@@ -10,7 +10,7 @@ import { Heading } from "@/src/components/ui/Heading";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
-const iconMap: Record<string, ComponentType<IconProps>> = { Globe, Target, ShoppingBag, TrendingUp, Bot, Zap };
+const iconMap: Record<string, ComponentType<IconProps>> = { Globe, Target, ShoppingBag, TrendingUp, Bot, Zap, ShieldCheck };
 const positions = [
   { left: "50%", top: "4%" },
   { left: "90%", top: "28%" },

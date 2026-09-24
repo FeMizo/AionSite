@@ -12,8 +12,6 @@ import "./skeuomorphism/skeuomorphism.css";
 import "./spatial-ui/spatial-ui.css";
 import "./style-page-chrome.css";
 
-const GTM_ID = "GTM-PBTGRC8R";
-
 const epilogue = Epilogue({
   subsets: ["latin"],
   variable: "--font-epilogue",
@@ -28,17 +26,17 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   metadataBase,
-  title: "AionSite | Sitios Web, Tiendas Online, SEO e IA para Negocios",
-  description: "AionSite vende diseño y desarrollo de sitios web, tiendas online, SEO técnico, automatizaciones e integraciones con IA para negocios.",
-  keywords: ["diseño web México", "SEO técnico para negocios", "ecommerce modular", "IA para empresas locales", "automatización empresarial", "AionSite", "agencia web"],
+  title: "AionSite | Sitios Web Premium, Mantenimiento y SEO para Negocios",
+  description: "Diseño web premium, mantenimiento web, tiendas online y SEO técnico para que más clientes encuentren tu negocio en México.",
+  keywords: ["diseño web México", "sitios web premium", "mantenimiento web", "SEO técnico para negocios", "ecommerce", "agencia web", "AionSite"],
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    title: "AionSite | Sitios Web, Tiendas Online, SEO e IA para Negocios",
-    description: "AionSite vende diseño y desarrollo de sitios web, tiendas online, SEO técnico, automatizaciones e integraciones con IA para negocios.",
+    title: "AionSite | Sitios Web Premium, Mantenimiento y SEO para Negocios",
+    description: "Diseño web premium, mantenimiento web, tiendas online y SEO técnico para que más clientes encuentren tu negocio en México.",
     url: "/",
     siteName: "AionSite",
     type: "website",
@@ -48,14 +46,14 @@ export const metadata: Metadata = {
         url: "/aionsite-share.png",
         width: 1200,
         height: 630,
-        alt: "AionSite — Sitios Web, Tiendas Online, SEO e IA para Negocios",
+        alt: "AionSite — Sitios Web Premium, Mantenimiento y SEO para Negocios",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AionSite | Sitios Web, Tiendas Online, SEO e IA para Negocios",
-    description: "AionSite vende diseño y desarrollo de sitios web, tiendas online, SEO técnico, automatizaciones e integraciones con IA para negocios.",
+    title: "AionSite | Sitios Web Premium, Mantenimiento y SEO para Negocios",
+    description: "Diseño web premium, mantenimiento web, tiendas online y SEO técnico para que más clientes encuentren tu negocio en México.",
     images: ["/aionsite-share.png"],
   },
 };

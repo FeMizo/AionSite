@@ -9,6 +9,7 @@ import { ServicesApproach } from "@/src/components/sections/ServicesApproach";
 import { ProjectsHome2 } from "@/src/components/sections/ProjectsHome2";
 import { CtaFooterHome2 } from "@/src/components/sections/CtaFooterHome2";
 import { InnovationVisionHome2 } from "@/src/components/sections/InnovationVisionHome2";
+import { SearchPresence } from "@/src/components/sections/SearchPresence";
 import { withCanonical } from "@/src/lib/metadata";
 
 export const metadata: Metadata = withCanonical("/", {
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <HeaderHome2 base={base} data={sections.header.data} />
       <Hero2 data={sections.hero.data} headerData={sections.header.data} />
+      <SearchPresence />
       <ServicesApproach data={sections.services.data} />
       <InnovationVisionHome2 content={sections.sideImageContent.data} process={sections.process.data} />
       <ProcessHome2 data={sections.process.data} />

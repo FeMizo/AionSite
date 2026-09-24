@@ -1,7 +1,7 @@
 {
   "base": {
     "name": "AionSite",
-    "description": "AionSite es una agencia mexicana de diseño y desarrollo web que vende sitios web, tiendas en línea, SEO técnico, automatizaciones e integraciones con IA para negocios.",
+    "description": "AionSite crea sitios web premium, tiendas en línea, mantenimiento web, SEO técnico y automatizaciones para negocios en México.",
     "email": "contacto@aionsite.com.mx",
     "whatsappLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20me%20gustaria%20cotizar%20un%20sitio%20web.",
     "navigation": [
@@ -69,16 +69,16 @@
       "enabled": true,
       "order": 1,
       "data": {
-        "badgeText": "AionSite: sitios web, ecommerce, SEO e IA",
-        "title": "Convierte tu presencia digital en más conversaciones con clientes.",
-        "subtitle": "AionSite crea sitios web, tiendas online, SEO y automatizaciones para que tu negocio se encuentre, se entienda y reciba contactos.",
+        "badgeText": "AionSite: sitios web premium, SEO y mantenimiento",
+        "title": "Un sitio premium para que tu negocio se vea, se encuentre y convierta.",
+        "subtitle": "Creamos y mantenemos sitios web de alto nivel, ecommerce y SEO para que más personas encuentren tu negocio cuando buscan una solución.",
         "primaryCTA": "Cotizar un sitio con AionSite",
         "secondaryCTA": "Ver servicios de AionSite",
         "trustBar": [
           "Diseño y desarrollo web",
           "Tiendas online y catálogos",
           "SEO para aparecer en Google",
-          "Automatización e IA"
+          "Mantenimiento web continuo"
         ]
       }
     },
@@ -87,6 +87,11 @@
       "enabled": true,
       "order": 2,
       "data": [
+        {
+          "title": "Mantenimiento web premium",
+          "description": "Mantenemos tu sitio rápido, seguro y actualizado con mejoras continuas para que nunca deje de representar bien a tu negocio.",
+          "icon": "ShieldCheck"
+        },
         {
           "title": "SEO técnico para negocios",
           "description": "Posicionamos tu negocio en Google cuando tus clientes tienen intención de compra: estructura, metadatos, schema markup y arquitectura de contenido.",

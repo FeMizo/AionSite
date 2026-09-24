@@ -13,7 +13,7 @@ const organizationSchema = {
     email: "contacto@aionsite.com.mx",
   },
   areaServed: "MX",
-  serviceType: "Diseño y Desarrollo Web",
+  serviceType: ["Diseño y Desarrollo Web", "Mantenimiento Web", "SEO Técnico", "Comercio Electrónico"],
   sameAs: [
     "https://www.facebook.com/aionsite",
     "https://www.instagram.com/aionsite.webs/",
