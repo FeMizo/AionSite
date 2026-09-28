@@ -1252,10 +1252,10 @@
         "Website administration",
         "Graphic design"
       ],
-      "status": "follow_up",
+      "status": "rechazado",
       "cover": "Thank you for reviewing my application. I would be glad to discuss how my experience developing and maintaining WordPress websites, custom themes, plugins, and responsive web experiences can support IGE's needs. I look forward to speaking with you.",
-      "notes": "2026-09-14: IGE invitó a entrevista y pidió seleccionar fecha y hora. Salario y elegibilidad remota desde México no indicados en el correo. El enlace personal para agendar está en el correo y no se guarda aquí porque contiene un token privado. 2026-09-23: entrevista realizada; estado confirmado como follow_up.",
-      "lastTouchedAt": "2026-09-24T19:08:00.678Z"
+      "notes": "2026-09-14: IGE invitó a entrevista y pidió seleccionar fecha y hora. Salario y elegibilidad remota desde México no indicados en el correo. El enlace personal para agendar está en el correo y no se guarda aquí porque contiene un token privado. 2026-09-23: entrevista realizada; estado confirmado como follow_up. 2026-09-28: IGE Group rechazó la solicitud después de la entrevista.",
+      "lastTouchedAt": "2026-09-28T14:17:39-06:00"
     },
     {
       "salaryLabel": "No aplica (prospecto)",
