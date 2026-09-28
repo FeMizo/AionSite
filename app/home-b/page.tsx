@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Home2Page from "../home2/page";
+import { redirect } from "next/navigation";
 import { initialCmsContent } from "@/src/cms/site-content";
 
 export const metadata: Metadata = {
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomeBPage() {
-  return <Home2Page />;
+  redirect("/future");
 }
