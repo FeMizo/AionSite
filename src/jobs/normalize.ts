@@ -45,6 +45,14 @@ function normalizeStatus(value: unknown): JobStatus {
     : "pendiente";
 }
 
+function isProspectRecord(value: unknown) {
+  const job = (value ?? {}) as Record<string, unknown>;
+  const source = asString(job.source);
+  const zone = asString(job.zone);
+  const status = asString(job.status);
+  return source.startsWith("Google Maps") || zone === "Prospecto comercial" || status === "prospecto";
+}
+
 function normalizeJob(job: Partial<JobRecord> & Record<string, unknown>): JobRecord {
   const id = asString(job.id, crypto.randomUUID());
   const checkedAt = asString(job.checkedAt, new Date().toISOString());
@@ -111,7 +119,9 @@ export function normalizeJobsContent(input: unknown): JobsContent {
       eligibleFromLocation: asString(rawSearchCriteria.eligibleFromLocation, "Mexico"),
       excludedLocationRestrictions,
     },
-    jobs: jobs.map((job) => normalizeJob(job as Partial<JobRecord> & Record<string, unknown>)),
+    jobs: jobs
+      .filter((job) => !isProspectRecord(job))
+      .map((job) => normalizeJob(job as Partial<JobRecord> & Record<string, unknown>)),
     lastJobsSearchAt: asString(
       raw.lastJobsSearchAt,
       deriveLatestJobsSearchAt(jobs as Array<Record<string, unknown>>),

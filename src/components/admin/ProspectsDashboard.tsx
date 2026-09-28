@@ -32,8 +32,23 @@ export function ProspectsDashboard({ initialContent }: { initialContent: Prospec
   useEffect(() => {
     const browserContent = loadProspectsFromBrowser();
     setContent(browserContent);
-    if (window.localStorage.getItem("aionsite.prospects.content")) return;
-    loadProspectsFromFile().then((fileContent) => { if (fileContent) { setContent(fileContent); saveProspectsToBrowser(fileContent); } });
+    loadProspectsFromFile().then((fileContent) => {
+      if (!fileContent) return;
+      const browserIds = new Set(browserContent.prospects.map((prospect) => prospect.id));
+      const fileIds = new Set(fileContent.prospects.map((prospect) => prospect.id));
+      const mergedContent = {
+        prospects: [
+          ...fileContent.prospects.map((prospect) =>
+            browserIds.has(prospect.id)
+              ? browserContent.prospects.find((entry) => entry.id === prospect.id) ?? prospect
+              : prospect,
+          ),
+          ...browserContent.prospects.filter((prospect) => !fileIds.has(prospect.id)),
+        ],
+      };
+      setContent(mergedContent);
+      saveProspectsToBrowser(mergedContent);
+    });
   }, []);
 
   const locations = useMemo(() => ["Todas", ...Array.from(new Set(content.prospects.map((prospect) => prospect.location)))], [content.prospects]);

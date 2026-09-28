@@ -1,6 +1,5 @@
 export const jobStatuses = [
   "pendiente",
-  "prospecto",
   "para_aplicar",
   "aplicado",
   "skipeado",

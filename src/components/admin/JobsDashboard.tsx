@@ -251,7 +251,6 @@ function matchesText(job: JobRecord, query: string) {
 function statusLabel(status: JobStatus) {
   const labels: Record<JobStatus, string> = {
     pendiente: "Pendiente",
-    prospecto: "Prospecto",
     para_aplicar: "Para aplicar",
     aplicado: "Aplicado",
     skipeado: "Skipeado",
@@ -270,7 +269,6 @@ function statusLabel(status: JobStatus) {
 function statusClass(status: JobStatus) {
   const classes: Record<JobStatus, string> = {
     pendiente: "border-slate-500/20 bg-slate-500/10 text-slate-200",
-    prospecto: "border-fuchsia-400/20 bg-fuchsia-500/10 text-fuchsia-100",
     para_aplicar: "border-blue-400/20 bg-blue-500/10 text-blue-100",
     aplicado: "border-emerald-400/20 bg-emerald-500/10 text-emerald-100",
     skipeado: "border-amber-400/20 bg-amber-500/10 text-amber-100",
@@ -550,16 +548,15 @@ export function JobsDashboard({
           const priorityOrder: Record<JobStatus, number> = {
             para_aplicar: 0,
             pendiente: 1,
-            prospecto: 2,
-            guardado_para_despues: 3,
-            en_espera: 4,
-            follow_up: 5,
-            aplicado: 6,
-            skipeado: 7,
-            no_entra_en_planes: 8,
-            no_disponible: 9,
-            rechazado: 10,
-            bloqueado: 11,
+            guardado_para_despues: 2,
+            en_espera: 3,
+            follow_up: 4,
+            aplicado: 5,
+            skipeado: 6,
+            no_entra_en_planes: 7,
+            no_disponible: 8,
+            rechazado: 9,
+            bloqueado: 10,
           };
 
           return (
