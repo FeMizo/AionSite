@@ -40,15 +40,6 @@ function getSnapshot(content: JobsContent) {
   return JSON.stringify(content);
 }
 
-function loadJobsViewMode(): JobsViewMode {
-  if (typeof window === "undefined") {
-    return "list";
-  }
-
-  const storedMode = window.localStorage.getItem(JOBS_VIEW_MODE_STORAGE_KEY);
-  return storedMode === "board" ? "board" : "list";
-}
-
 function formatMoney(value: number | null) {
   if (value === null) {
     return "No visible";
@@ -413,7 +404,7 @@ export function JobsDashboard({
   const [sortBy, setSortBy] = useState<"priority" | "salary-desc" | "salary-asc" | "az" | "recent">("priority");
   const [activeStackFilters, setActiveStackFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [viewMode, setViewMode] = useState<JobsViewMode>(loadJobsViewMode);
+  const [viewMode, setViewMode] = useState<JobsViewMode>("list");
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [draggedJobId, setDraggedJobId] = useState<string | null>(null);
   const [dropTargetStatus, setDropTargetStatus] = useState<JobStatus | null>(null);
@@ -433,6 +424,11 @@ export function JobsDashboard({
     setSelectedJobId(nextContent.jobs[0]?.id ?? "");
     latestSnapshotRef.current = getSnapshot(nextContent);
   }, [initialContent]);
+
+  useEffect(() => {
+    const storedMode = window.localStorage.getItem(JOBS_VIEW_MODE_STORAGE_KEY);
+    setViewMode(storedMode === "board" ? "board" : "list");
+  }, []);
 
   useEffect(() => {
     let isCancelled = false;
