@@ -26,6 +26,117 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "landing-page-o-pagina-web-completa-cual-conviene",
+    title: "Landing page o página web completa: ¿cuál conviene?",
+    excerpt:
+      "Compara objetivos, tráfico, SEO y mantenimiento para elegir entre una landing page y una página web completa sin gastar de más.",
+    image: "/blog/landing-page-o-pagina-web-completa-cual-conviene.webp",
+    badgeText: "Conversión Web",
+    date: "20 de octubre, 2026",
+    dateISO: "2026-10-20",
+    readTime: "9 min de lectura",
+    keywords: [
+      "landing page o pagina web",
+      "diferencia entre landing page y sitio web",
+      "pagina web para negocio",
+      "conversion web",
+      "SEO para negocios",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "la-decision-depende-del-objetivo", text: "La decisión depende del objetivo" },
+      { level: 2, id: "cuando-conviene-una-landing-page", text: "Cuándo conviene una landing page" },
+      { level: 3, id: "campanas-y-ofertas-concretas", text: "Campañas y ofertas concretas" },
+      { level: 2, id: "cuando-necesitas-una-web-completa", text: "Cuándo necesitas una web completa" },
+      { level: 3, id: "varios-servicios-y-audiencias", text: "Varios servicios y audiencias" },
+      { level: 2, id: "trafico-pagado-y-trafico-organico", text: "Tráfico pagado y tráfico orgánico" },
+      { level: 2, id: "estructura-y-conversion", text: "Estructura y conversión" },
+      { level: 2, id: "mantenimiento-y-crecimiento", text: "Mantenimiento y crecimiento" },
+      { level: 2, id: "checklist-para-elegir", text: "Checklist para elegir" },
+      { level: 2, id: "una-recomendacion-por-escenario", text: "Una recomendación por escenario" },
+    ],
+    blocks: [
+      {
+        type: "p",
+        text: "Elegir entre una landing page y una página web completa no es una decisión de diseño: es una decisión de negocio. La estructura correcta depende de qué quieres vender, de dónde llegará el tráfico y de cuánto contenido necesitas para que una persona confíe y actúe.",
+      },
+      { type: "h2", id: "la-decision-depende-del-objetivo", text: "La decisión depende del objetivo" },
+      {
+        type: "p",
+        text: "Una landing page concentra la atención en una oferta y una acción principal. Una web completa organiza varias necesidades: explicar servicios, posicionar páginas en Google, presentar el equipo, responder preguntas y ofrecer distintos caminos de contacto.",
+      },
+      {
+        type: "quote",
+        text: "No necesitas más páginas por tener más presupuesto. Necesitas las páginas que ayuden a tu cliente a decidir.",
+      },
+      { type: "h2", id: "cuando-conviene-una-landing-page", text: "Cuándo conviene una landing page" },
+      {
+        type: "p",
+        text: "Una landing page suele ser la mejor opción cuando tienes una oferta concreta, una audiencia definida y una campaña que llevará visitas directamente a esa página. Puede funcionar para una promoción, una consulta inicial, un evento, un servicio específico o una prueba de mercado.",
+      },
+      { type: "h3", id: "campanas-y-ofertas-concretas", text: "Campañas y ofertas concretas" },
+      {
+        type: "p",
+        text: "La landing debe conectar el anuncio o enlace con el mensaje de la página. Presenta el problema, explica el valor de la oferta, resuelve objeciones, muestra evidencia y termina con un formulario o botón claro. Cuantas menos decisiones compitan con la acción principal, más fácil es medir el resultado.",
+      },
+      { type: "h2", id: "cuando-necesitas-una-web-completa", text: "Cuándo necesitas una web completa" },
+      {
+        type: "p",
+        text: "Una web completa conviene cuando el negocio tiene varios servicios, diferentes tipos de cliente, cobertura local amplia o una estrategia de contenido y SEO. También ayuda cuando una persona necesita investigar antes de contactar: comparar opciones, conocer al equipo, revisar procesos o confirmar ubicación y horarios.",
+      },
+      { type: "h3", id: "varios-servicios-y-audiencias", text: "Varios servicios y audiencias" },
+      {
+        type: "p",
+        text: "Cada servicio importante puede tener su propia página, con una intención de búsqueda y una llamada a la acción específicas. Esto evita que la portada tenga que explicar todo y permite crear rutas más relevantes para clientes, buscadores y campañas futuras.",
+      },
+      { type: "h2", id: "trafico-pagado-y-trafico-organico", text: "Tráfico pagado y tráfico orgánico" },
+      {
+        type: "p",
+        text: "Para tráfico pagado, una landing enfocada puede reducir distracciones y facilitar la atribución de conversiones. Para tráfico orgánico, una web completa suele ofrecer más oportunidades: páginas de servicio, contenidos informativos, preguntas frecuentes y señales locales conectadas entre sí.",
+      },
+      {
+        type: "p",
+        text: "La diferencia no significa que una landing no pueda posicionar o que una web completa no sirva para anuncios. Significa que cada canal necesita una experiencia alineada con la intención de la visita. Mide formularios, llamadas, clics a WhatsApp y contactos calificados, no solo sesiones.",
+      },
+      { type: "h2", id: "estructura-y-conversion", text: "Estructura y conversión" },
+      {
+        type: "p",
+        text: "En ambos casos, el mensaje debe aparecer antes que la decoración. Explica para quién es la solución, qué problema resuelve, qué incluye y cuál es el siguiente paso. Usa pruebas reales, información verificable y un formulario que pida solo lo necesario para iniciar la conversación.",
+      },
+      {
+        type: "p",
+        text: "Una web con muchas secciones no convierte automáticamente. Una landing corta tampoco. La calidad depende de la claridad de la oferta, la confianza, la velocidad, la experiencia móvil y la continuidad entre el origen del tráfico y la página de destino.",
+      },
+      { type: "h2", id: "mantenimiento-y-crecimiento", text: "Mantenimiento y crecimiento" },
+      {
+        type: "p",
+        text: "Una landing requiere revisar oferta, anuncios, formularios, velocidad y conversiones. Una web completa añade más superficies que mantener: páginas, enlaces, datos de contacto, contenido, seguridad, analítica y posicionamiento. Elige una estructura que tu equipo pueda actualizar con consistencia.",
+      },
+      {
+        type: "p",
+        text: "Puedes empezar con una landing y convertirla después en una arquitectura mayor si el mensaje y la oferta ya demostraron demanda. También puedes lanzar una web completa por etapas, priorizando portada, servicios clave, contacto y medición antes de ampliar el contenido.",
+      },
+      { type: "h2", id: "checklist-para-elegir", text: "Checklist para elegir" },
+      {
+        type: "p",
+        text: "Elige una landing page si tienes una oferta principal, una campaña concreta, una audiencia definida y una conversión que puedas medir con claridad. Elige una web completa si necesitas explicar varios servicios, captar búsquedas distintas, generar confianza institucional o crecer con contenido y SEO.",
+      },
+      {
+        type: "p",
+        text: "Antes de decidir, responde cinco preguntas: qué acción quieres provocar, de dónde llegará el tráfico, cuántas necesidades debes explicar, qué información necesita el cliente para confiar y quién mantendrá la experiencia actualizada.",
+      },
+      { type: "h2", id: "una-recomendacion-por-escenario", text: "Una recomendación por escenario" },
+      {
+        type: "p",
+        text: "Para validar una oferta nueva, comienza con una landing medible. Para un negocio local con varios servicios, construye una web con páginas de servicio y ubicación. Para una campaña puntual, usa una landing conectada al anuncio. Para una empresa que quiere crecer en Google, planifica una arquitectura completa desde el inicio.",
+      },
+      {
+        type: "p",
+        text: "La mejor elección es la que conecta estrategia, contenido, tecnología y medición. En AionSite podemos ayudarte a decidir qué experiencia construir primero y cómo convertirla en un activo que crezca contigo.",
+      },
+    ],
+  },
+  {
     id: "pagina-web-abogado-estructura-captar-consultas",
     title: "Página web para abogado: estructura para captar consultas",
     excerpt:
