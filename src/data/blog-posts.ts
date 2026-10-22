@@ -26,6 +26,117 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "como-saber-si-tu-pagina-web-esta-funcionando",
+    title: "¿Cómo saber si tu página web está funcionando?",
+    excerpt:
+      "Mide visitas, contactos, llamadas y ventas para saber si tu página web genera negocio y qué debes mejorar primero.",
+    image: "/blog/como-saber-si-tu-pagina-web-esta-funcionando.webp",
+    badgeText: "Analítica Web",
+    date: "22 de octubre, 2026",
+    dateISO: "2026-10-22",
+    readTime: "9 min de lectura",
+    keywords: [
+      "como medir una pagina web",
+      "metricas de pagina web",
+      "conversion web",
+      "analitica para negocios",
+      "medir leads y ventas",
+      "AionSite",
+    ],
+    headings: [
+      { level: 2, id: "empieza-por-el-resultado-de-negocio", text: "Empieza por el resultado de negocio" },
+      { level: 2, id: "las-metricas-que-si-importan", text: "Las métricas que sí importan" },
+      { level: 3, id: "visitas-y-fuentes", text: "Visitas y fuentes" },
+      { level: 3, id: "contactos-y-conversiones", text: "Contactos y conversiones" },
+      { level: 2, id: "configura-un-tablero-minimo", text: "Configura un tablero mínimo" },
+      { level: 3, id: "eventos-que-debes-medir", text: "Eventos que debes medir" },
+      { level: 2, id: "interpreta-el-embudo", text: "Interpreta el embudo" },
+      { level: 2, id: "revisa-la-experiencia", text: "Revisa la experiencia" },
+      { level: 2, id: "convierte-los-datos-en-mejoras", text: "Convierte los datos en mejoras" },
+      { level: 2, id: "checklist-de-medicion", text: "Checklist de medición" },
+    ],
+    blocks: [
+      {
+        type: "p",
+        text: "Una página web no está funcionando solo porque recibe visitas o aparece en Google. Funciona cuando ayuda a que las personas correctas entiendan tu oferta, confíen en tu negocio y realicen una acción que puedas atender y medir.",
+      },
+      { type: "h2", id: "empieza-por-el-resultado-de-negocio", text: "Empieza por el resultado de negocio" },
+      {
+        type: "p",
+        text: "Antes de abrir cualquier reporte, define qué debe producir tu sitio: llamadas, formularios, mensajes, reservas, cotizaciones, ventas o visitas a una ubicación. Si no existe un objetivo claro, terminarás celebrando métricas que no necesariamente generan clientes.",
+      },
+      {
+        type: "quote",
+        text: "La métrica más importante no es la que sube más rápido: es la que conecta la visita con una decisión real.",
+      },
+      { type: "h2", id: "las-metricas-que-si-importan", text: "Las métricas que sí importan" },
+      { type: "h3", id: "visitas-y-fuentes", text: "Visitas y fuentes" },
+      {
+        type: "p",
+        text: "Mide usuarios, sesiones, páginas de entrada y fuentes de tráfico. Separa búsqueda orgánica, anuncios, redes sociales, referencias y acceso directo. Una cifra total puede ocultar que el canal que más visitas genera apenas produce contactos.",
+      },
+      { type: "h3", id: "contactos-y-conversiones", text: "Contactos y conversiones" },
+      {
+        type: "p",
+        text: "Registra envíos de formularios, clics a WhatsApp, llamadas, reservas, solicitudes de ruta y compras. Define qué cuenta como conversión y evita contar como éxito acciones que no representan una oportunidad real para el negocio.",
+      },
+      {
+        type: "p",
+        text: "Después, calcula la tasa de conversión: divide las conversiones entre las visitas relevantes. También revisa la calidad de los contactos: una página puede convertir mucho y atraer personas que no pertenecen a tu mercado.",
+      },
+      { type: "h2", id: "configura-un-tablero-minimo", text: "Configura un tablero mínimo" },
+      {
+        type: "p",
+        text: "Un tablero útil debe responder en pocos minutos qué ocurrió, de dónde llegaron las personas y qué acción realizaron. Incluye periodo, visitas, fuente, página de entrada, conversiones, tasa de conversión y contactos calificados.",
+      },
+      { type: "h3", id: "eventos-que-debes-medir", text: "Eventos que debes medir" },
+      {
+        type: "p",
+        text: "Configura eventos para botones de contacto, formularios enviados, clics en teléfono, mensajes, descargas, reservas y compras. Valida que se disparen una sola vez y que no se activen al cargar la página sin una interacción real.",
+      },
+      {
+        type: "p",
+        text: "Relaciona cada evento con una página y una fuente. Así sabrás si una guía genera consultas, si una campaña atrae tráfico sin intención o si una página de servicio convierte mejor que la portada.",
+      },
+      { type: "h2", id: "interpreta-el-embudo", text: "Interpreta el embudo" },
+      {
+        type: "p",
+        text: "Observa el recorrido desde la visita hasta el contacto. Muchas visitas y pocos clics en el CTA pueden indicar un mensaje débil, una oferta poco clara o una llamada a la acción difícil de encontrar. Muchos clics y pocos formularios enviados pueden revelar fricción, errores o preguntas excesivas.",
+      },
+      {
+        type: "p",
+        text: "Si hay formularios enviados pero pocos contactos calificados, revisa la segmentación, el contenido de la página y las preguntas del formulario. Si hay contactos calificados pero pocas ventas, el problema puede estar en la respuesta, el proceso comercial o la oferta, no en la web.",
+      },
+      { type: "h2", id: "revisa-la-experiencia", text: "Revisa la experiencia" },
+      {
+        type: "p",
+        text: "Compara móvil y escritorio, velocidad, páginas de entrada y dispositivos. Una página puede verse bien en tu computadora y fallar para la mayoría de las visitas. Comprueba que el contenido principal cargue rápido, que el botón funcione y que el formulario pueda completarse con una mano.",
+      },
+      {
+        type: "p",
+        text: "Lee grabaciones o revisa mapas de interacción solo como apoyo. Los datos te indican dónde ocurre la fricción; la observación y las conversaciones con clientes ayudan a entender por qué ocurre.",
+      },
+      { type: "h2", id: "convierte-los-datos-en-mejoras", text: "Convierte los datos en mejoras" },
+      {
+        type: "p",
+        text: "No cambies diez elementos a la vez. Prioriza una hipótesis: aclarar el titular, hacer visible el CTA, reducir campos, mejorar la prueba social, corregir un error móvil o acelerar la página. Define qué métrica debería cambiar y durante cuánto tiempo observarás el resultado.",
+      },
+      {
+        type: "p",
+        text: "Compara periodos equivalentes y considera estacionalidad, campañas y cambios en la demanda. Un aumento de tráfico no demuestra una mejora si la tasa de conversión o la calidad de los contactos bajó.",
+      },
+      { type: "h2", id: "checklist-de-medicion", text: "Checklist de medición" },
+      {
+        type: "p",
+        text: "Verifica que tu sitio tenga objetivos de negocio definidos, analítica instalada, eventos probados, fuentes etiquetadas, formularios y llamadas medidos, páginas de entrada identificadas, experiencia móvil revisada y un proceso para registrar la calidad de los contactos.",
+      },
+      {
+        type: "p",
+        text: "Una página web que se mide puede mejorar. Una que solo recibe visitas deja al negocio adivinando. En AionSite podemos ayudarte a conectar contenido, conversiones y un tablero que sirva para tomar decisiones, no solo para presentar números.",
+      },
+    ],
+  },
+  {
     id: "landing-page-o-pagina-web-completa-cual-conviene",
     title: "Landing page o página web completa: ¿cuál conviene?",
     excerpt:
