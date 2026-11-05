@@ -40,6 +40,7 @@ Thumbs.db
 
 # extras
 /dist
+/docs/
 
 # scripts y reportes locales (no deben ir al repo)
 enviar-reporte.mjs
