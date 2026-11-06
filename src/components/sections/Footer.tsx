@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import type { CmsBase, FooterSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { NewsletterSignup } from "@/src/components/ui/NewsletterSignup";
@@ -21,8 +21,8 @@ export function Footer({
   return (
     <footer className="border-t border-white/5 bg-slate-950 py-12">
       <Container>
-        <div className="grid gap-12 md:grid-cols-3 lg:grid-cols-5">
-          <div className="col-span-3 lg:col-span-2">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <div className="min-w-0 sm:col-span-2 md:col-span-3 lg:col-span-2">
             <Link href="/" className="mb-6 flex items-center gap-2">
               <Image
                 src={base.logoLight}

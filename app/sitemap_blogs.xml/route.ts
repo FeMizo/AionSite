@@ -1,5 +1,6 @@
 import { blogPosts } from "@/src/data/blog-posts";
 import { getSiteUrl } from "@/src/lib/metadata";
+import { resolvePageHref } from "@/src/lib/site-pages";
 
 export const dynamic = "force-static";
 
@@ -9,7 +10,7 @@ export function GET() {
   const urls = blogPosts
     .map(
       (post) =>
-        `  <url>\n    <loc>${siteUrl}/blog/${post.id}</loc>\n    <lastmod>${new Date(post.dateISO).toISOString()}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+        `  <url>\n    <loc>${siteUrl}${resolvePageHref(`/blog/${post.id}`)}</loc>\n    <lastmod>${new Date(post.dateISO).toISOString()}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
     )
     .join("\n");
 

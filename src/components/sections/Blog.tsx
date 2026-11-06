@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { BookOpen } from "lucide-react";
 import type { BlogSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";

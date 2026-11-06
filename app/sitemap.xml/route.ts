@@ -1,3 +1,4 @@
+import { resolvePageHref } from "@/src/lib/site-pages";
 import { blogPosts } from "@/src/data/blog-posts";
 import { getSiteUrl } from "@/src/lib/metadata";
 
@@ -9,7 +10,7 @@ export function GET() {
   const pages = [
     ["/", "weekly", "1.0"],
     ["/proyectos/", "weekly", "0.9"],
-    ["/productos/", "weekly", "0.9"],
+    ["/cotizar-proyecto/", "weekly", "0.9"],
     ["/blog/", "weekly", "0.8"],
     ["/conoceme/", "monthly", "0.7"],
     ["/diseno-web-ciudad-del-carmen/", "monthly", "0.8"],
@@ -21,10 +22,10 @@ export function GET() {
   ] as const;
   const urls = [
     ...pages.map(([path, changefreq, priority]) =>
-      `  <url>\n    <loc>${siteUrl}${path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`,
+      `  <url>\n    <loc>${siteUrl}${resolvePageHref(path)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`,
     ),
     ...blogPosts.map((post) =>
-      `  <url>\n    <loc>${siteUrl}/blog/${post.id}</loc>\n    <lastmod>${new Date(post.dateISO).toISOString()}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+      `  <url>\n    <loc>${siteUrl}${resolvePageHref(`/blog/${post.id}`)}</loc>\n    <lastmod>${new Date(post.dateISO).toISOString()}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
     ),
   ].join("\n");
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;

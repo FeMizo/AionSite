@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { resolvePageHref, sitePages } from "@/src/lib/site-pages";
 
 const PRODUCTION_SITE_URL = "https://aionsite.com.mx";
 const LOCAL_SITE_URL = "http://localhost:2666";
@@ -30,11 +31,15 @@ export function withCanonical(
   canonicalPath: string,
   metadata: Omit<Metadata, "metadataBase"> = {},
 ): Metadata {
+  const canonical = resolvePageHref(canonicalPath);
+  const page = sitePages.find((entry) => entry.path === canonical);
   return {
     ...metadata,
+    ...(page?.title ? { title: page.title } : {}),
+    ...(metadata.openGraph ? { openGraph: { ...metadata.openGraph, url: canonical, ...(page?.title ? {title: page.title} : {}) } } : {}),
     alternates: {
       ...metadata.alternates,
-      canonical: canonicalPath,
+      canonical,
     },
   };
 }

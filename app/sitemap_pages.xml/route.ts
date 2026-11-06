@@ -1,3 +1,4 @@
+import { resolvePageHref } from "@/src/lib/site-pages";
 import { getSiteUrl } from "@/src/lib/metadata";
 
 export const dynamic = "force-static";
@@ -5,7 +6,8 @@ export const dynamic = "force-static";
 const pages = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/proyectos/", changefreq: "weekly", priority: "0.9" },
-  { path: "/productos/", changefreq: "weekly", priority: "0.9" },
+  { path: "/cotizar-proyecto/", changefreq: "weekly", priority: "0.9" },
+  { path: "/solicitar-sitio/", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/", changefreq: "weekly", priority: "0.8" },
   { path: "/conoceme/", changefreq: "monthly", priority: "0.7" },
   { path: "/diseno-web-ciudad-del-carmen/", changefreq: "monthly", priority: "0.8" },
@@ -23,7 +25,7 @@ export function GET() {
   const urls = pages
     .map(
       ({ path, changefreq, priority }) =>
-        `  <url>\n    <loc>${siteUrl}${path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`,
+        `  <url>\n    <loc>${siteUrl}${resolvePageHref(path)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`,
     )
     .join("\n");
 

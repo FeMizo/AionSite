@@ -9,10 +9,10 @@ const base = {
   whatsappLink: getWhatsAppLink(),
   navigation: [
     { name: "Servicios", href: "#servicios" },
-    { name: "Portafolio", href: "#portafolio" },
+    { name: "Proyectos", href: "/proyectos/" },
     { name: "Blog", href: "/blog" },
     { name: "Conóceme", href: "/conoceme" },
-    { name: "Paquetes", href: "#paquetes" },
+    { name: "Paquetes", href: "/#calculator-section" },
     { name: "Contacto", href: "#contacto" },
   ],
   logoLight: "/logo-aionsite.webp",

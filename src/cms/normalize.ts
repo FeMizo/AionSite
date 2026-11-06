@@ -1,6 +1,7 @@
 import { defaultCmsContent } from "@/src/cms/default-content";
 import { normalizePortfolioItems } from "@/src/cms/portfolio";
 import type { CmsContent, SectionId } from "@/src/cms/types";
+import { resolvePageNavigation } from "@/src/lib/site-pages";
 
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -59,8 +60,12 @@ export function normalizeCmsContent(content: unknown): CmsContent {
       ) as SectionId[])
     : fallbackSequence;
 
+  const base = deepMerge(defaultCmsContent.base, merged.base);
+  base.navigation = resolvePageNavigation(base.navigation);
+  nextSections.header.data.navigation = resolvePageNavigation(nextSections.header.data.navigation);
+  nextSections.footer.data.navigation = resolvePageNavigation(nextSections.footer.data.navigation);
   return {
-    base: deepMerge(defaultCmsContent.base, merged.base),
+    base,
     sections: nextSections,
     sectionSequence:
       sectionSequence.length > 0 ? sectionSequence : fallbackSequence,

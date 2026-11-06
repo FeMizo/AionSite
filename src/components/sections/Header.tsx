@@ -1,19 +1,20 @@
 "use client";
 
-import { Menu, MessageCircleMore, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { useEffect, useState } from "react";
 import type { CmsBase, HeaderSectionData } from "@/src/cms/types";
-import { Button } from "@/src/components/ui/Button";
+import { LinkButton } from "@/src/components/ui/LinkButton";
 import { Container } from "@/src/components/ui/Container";
 import { MobileMenu } from "@/src/components/ui/MobileMenu";
 import { isInternalHref } from "@/src/lib/routing";
+import { getSitePage } from "@/src/lib/site-pages";
 
 export function Header({
   base,
   data,
-  desktopBreakpoint = "md",
+  desktopBreakpoint = "lg",
 }: {
   base: CmsBase;
   data: HeaderSectionData;
@@ -34,7 +35,7 @@ export function Header({
 
   const navLinkClass = "text-sm font-medium text-slate-300 transition-colors hover:text-white";
   const desktopNavClass = desktopBreakpoint === "lg"
-    ? "hidden items-center gap-8 lg:flex"
+    ? "hidden items-center gap-5 xl:gap-8 lg:flex"
     : "hidden items-center gap-8 md:flex";
   const mobileMenuButtonClass = desktopBreakpoint === "lg" ? "lg:hidden" : "md:hidden";
 
@@ -82,14 +83,14 @@ export function Header({
               </a>
             )
           ))}
-          <Button
+          <LinkButton
             size="sm"
             className="gap-2"
-            onClick={() => window.open(data.whatsappLink, "_blank")}
+            href="/cotizar-proyecto/"
           >
-            <MessageCircleMore size={16} />
-            Cotizar por WhatsApp
-          </Button>
+            {getSitePage('quote').displayName}
+            <ArrowRight size={16} aria-hidden="true" />
+          </LinkButton>
         </nav>
 
         <button
@@ -108,7 +109,7 @@ export function Header({
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
         navigation={data.navigation}
-        whatsappLink={data.whatsappLink}
+        desktopBreakpoint={desktopBreakpoint}
       />
     </header>
   );

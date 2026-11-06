@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import type { ReactNode } from "react";
 import { Container } from "@/src/components/ui/Container";
 import { SiteFooter } from "@/src/components/sections/SiteFooter";

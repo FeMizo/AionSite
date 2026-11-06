@@ -16,7 +16,6 @@ import type { CmsContent } from "@/src/cms/types";
 import { PortfolioGrid } from "@/src/components/portfolio/PortfolioGrid";
 import { Header } from "@/src/components/sections/Header";
 import { SiteFooter } from "@/src/components/sections/SiteFooter";
-import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
 import { mapNavigationForInnerPage } from "@/src/lib/navigation";
@@ -298,11 +297,6 @@ export function PublicProjectsPage({
 
       <SiteFooter />
 
-      {content.sections.whatsappFloatingButton.enabled ? (
-        <WhatsAppFloatingButton
-          data={content.sections.whatsappFloatingButton.data}
-        />
-      ) : null}
     </>
   );
 }

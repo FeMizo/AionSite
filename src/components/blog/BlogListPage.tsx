@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -15,7 +15,6 @@ import { blogPosts } from "@/src/data/blog-posts";
 import { initialCmsContent } from "@/src/cms/site-content";
 import { Header } from "@/src/components/sections/Header";
 import { SiteFooter } from "@/src/components/sections/SiteFooter";
-import { WhatsAppFloatingButton } from "@/src/components/sections/WhatsAppFloatingButton";
 import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
 import { BlogCardSkeleton } from "@/src/components/ui/Skeleton";
@@ -301,9 +300,6 @@ export function BlogListPage() {
       </section>
 
       <SiteFooter />
-      <WhatsAppFloatingButton
-        data={initialCmsContent.sections.whatsappFloatingButton.data}
-      />
     </>
   );
 }

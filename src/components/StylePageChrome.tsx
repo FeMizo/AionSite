@@ -1,6 +1,6 @@
 import { ArrowUpRight, Menu } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { initialCmsContent } from "@/src/cms/site-content";
 import { ScrollMotion } from "@/src/components/ScrollMotion";
 

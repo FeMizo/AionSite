@@ -1,7 +1,7 @@
 "use client";
 
 import { Paintbrush, RotateCcw, SlidersHorizontal, X } from "lucide-react";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { useEffect, useState } from "react";
 
 type Props = { rootSelector: string; accent: string; secondary?: string; background: string; surface?: string; text: string; muted?: string; radius?: number; borderWidth?: number; borderStyle?: string; shadow?: number; headingFontFamily?: string; bodyFontFamily?: string; scale?: number; spacing?: number };

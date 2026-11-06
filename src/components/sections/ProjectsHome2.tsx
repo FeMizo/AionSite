@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { motion } from "framer-motion";
 import type { PortfolioSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";

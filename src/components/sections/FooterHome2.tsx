@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { motion } from "framer-motion";
 import type { CmsBase, FooterSectionData } from "@/src/cms/types";
 import { isInternalHref } from "@/src/lib/routing";

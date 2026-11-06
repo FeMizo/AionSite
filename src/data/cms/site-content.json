@@ -10,6 +10,10 @@
         "href": "/#servicios"
       },
       {
+        "name": "Proyectos",
+        "href": "/proyectos/"
+      },
+      {
         "name": "Blog",
         "href": "/blog"
       },
@@ -19,7 +23,7 @@
       },
       {
         "name": "Paquetes",
-        "href": "/#paquetes"
+        "href": "/#calculator-section"
       },
       {
         "name": "Contacto",
@@ -41,8 +45,8 @@
             "href": "/#servicios"
           },
           {
-            "name": "Portafolio",
-            "href": "/#portafolio"
+            "name": "Proyectos",
+            "href": "/proyectos/"
           },
           {
             "name": "Blog",
@@ -54,7 +58,7 @@
           },
           {
             "name": "Paquetes",
-            "href": "/#paquetes"
+            "href": "/#calculator-section"
           },
           {
             "name": "Contacto",
@@ -119,7 +123,7 @@
       "enabled": true,
       "order": 3,
       "data": {
-      "title": "Tecnología que mantiene tu negocio disponible y facilita nuevos contactos.",
+        "title": "Tecnología que mantiene tu negocio disponible y facilita nuevos contactos.",
         "description": "Imagina tener un equipo de ventas trabajando 24/7 sin sueldo. Eso es exactamente lo que conseguimos con nuestros sitios web: SEO que atrae clientes calificados, chatbots que cierran ventas automáticamente, y automatizaciones que eliminan el trabajo manual. Tú solo cosechas los resultados.",
         "buttonText": "Quiero generar más clientes automáticamente",
         "buttonLink": "https://wa.me/5219381573988?text=Hola%20AionSite%2C%20quiero%20un%20sitio%20web%20que%20genere%20clientes%20automaticamente.",
@@ -468,11 +472,11 @@
             "href": "/#servicios"
           },
           {
-            "name": "Portafolio",
-            "href": "/#portafolio"
+            "name": "Proyectos",
+            "href": "/proyectos/"
           },
           {
-              "name": "Conóceme",
+            "name": "Conóceme",
             "href": "/conoceme"
           },
           {
@@ -481,7 +485,7 @@
           },
           {
             "name": "Paquetes",
-            "href": "/#paquetes"
+            "href": "/#calculator-section"
           },
           {
             "name": "Preguntas frecuentes",

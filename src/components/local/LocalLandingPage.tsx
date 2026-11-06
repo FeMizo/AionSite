@@ -1,5 +1,5 @@
 import { ArrowRight, Check, MessageCircleMore, MapPin } from "lucide-react";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { Container } from "@/src/components/ui/Container";
 import { LinkButton } from "@/src/components/ui/LinkButton";
 import { getWhatsAppLink } from "@/src/config/whatsapp";

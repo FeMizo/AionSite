@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import Image from "next/image";
 import { X, Zap, ArrowRight } from "lucide-react";
 import { gsap, usePrefersReducedMotion } from "@/src/lib/animations";

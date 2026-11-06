@@ -1,13 +1,14 @@
 "use client";
 
-import { Menu, MessageCircleMore, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { useState } from "react";
 import type { CmsBase, HeaderSectionData } from "@/src/cms/types";
 import { MobileMenu } from "@/src/components/ui/MobileMenu";
 import MotionButton from "@/src/components/ui/motion-button";
 import { isInternalHref } from "@/src/lib/routing";
+import { getSitePage } from "@/src/lib/site-pages";
 
 export function HeaderHome2({ base, data }: { base: CmsBase; data: HeaderSectionData }) {
   const [open, setOpen] = useState(false);
@@ -20,11 +21,11 @@ export function HeaderHome2({ base, data }: { base: CmsBase; data: HeaderSection
         </Link>
         <nav className="hidden items-center gap-6 lg:flex">
           {data.navigation.map((item) => isInternalHref(item.href) ? <Link key={item.name} href={item.href} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">{item.name}</Link> : <a key={item.name} href={item.href} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">{item.name}</a>)}
-          <MotionButton as="a" href={data.whatsappLink} target="_blank" rel="noreferrer" label="Cotizar por WhatsApp" classes="hidden min-h-10 min-w-0 w-auto text-xs lg:inline-flex" icon={<MessageCircleMore size={15} />} />
+          <MotionButton as="a" href="/cotizar-proyecto/" label={getSitePage('quote').displayName} classes="hidden min-h-10 min-w-0 w-auto text-xs lg:inline-flex" icon={<ArrowRight size={15} />} />
         </nav>
         <button type="button" onClick={() => setOpen((value) => !value)} className="rounded-full border border-white/10 bg-white/5 p-2.5 text-white lg:hidden" aria-expanded={open} aria-label={open ? "Cerrar menu" : "Abrir menu"}>{open ? <X size={20} /> : <Menu size={20} />}</button>
       </div>
-      <MobileMenu isOpen={open} onClose={() => setOpen(false)} navigation={data.navigation} whatsappLink={data.whatsappLink} />
+      <MobileMenu isOpen={open} onClose={() => setOpen(false)} navigation={data.navigation} desktopBreakpoint="lg" />
     </header>
   );
 }

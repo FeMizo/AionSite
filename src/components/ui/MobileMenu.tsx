@@ -1,19 +1,20 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
-import { MessageCircleMore, X } from "lucide-react";
-import { Button } from "@/src/components/ui/Button";
+import Link from "@/src/components/ui/SiteLink";
+import { ArrowRight, X } from "lucide-react";
+import { getButtonClassName } from "@/src/components/ui/button-styles";
 import { isInternalHref } from "@/src/lib/routing";
+import { getSitePage } from "@/src/lib/site-pages";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   navigation: { name: string; href: string }[];
-  whatsappLink: string;
+  desktopBreakpoint?: "md" | "lg";
 }
 
-export function MobileMenu({ isOpen, onClose, navigation, whatsappLink }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, navigation, desktopBreakpoint = "md" }: MobileMenuProps) {
   useEffect(() => {
     document.body.classList.toggle("menu-open", isOpen);
     return () => {
@@ -22,7 +23,7 @@ export function MobileMenu({ isOpen, onClose, navigation, whatsappLink }: Mobile
   }, [isOpen]);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const mediaQuery = window.matchMedia(desktopBreakpoint === "lg" ? "(min-width: 1024px)" : "(min-width: 768px)");
     const handleViewportChange = (event: MediaQueryListEvent) => {
       if (event.matches) onClose();
     };
@@ -31,21 +32,17 @@ export function MobileMenu({ isOpen, onClose, navigation, whatsappLink }: Mobile
 
     mediaQuery.addEventListener("change", handleViewportChange);
     return () => mediaQuery.removeEventListener("change", handleViewportChange);
-  }, [onClose]);
-
-  const handleWhatsAppClick = () => {
-    onClose();
-    window.open(whatsappLink, "_blank");
-  };
+  }, [onClose, desktopBreakpoint]);
 
   const mobileNavLinkClass = "text-2xl font-bold text-white";
 
   return (
     <div
-      className={`fixed inset-0 z-40 md:hidden ${
+      className={`fixed inset-0 z-40 ${desktopBreakpoint === "lg" ? "lg:hidden" : "md:hidden"} ${
         isOpen ? "pointer-events-auto" : "pointer-events-none"
       }`}
       aria-hidden={!isOpen}
+      inert={!isOpen}
     >
       <button
         type="button"
@@ -59,7 +56,7 @@ export function MobileMenu({ isOpen, onClose, navigation, whatsappLink }: Mobile
 
       <div
         id="mobile-navigation"
-        className={`mobile-menu absolute inset-0 px-6 pb-8 pt-24 transition-all duration-300 ${
+        className={`mobile-menu absolute inset-0 overflow-y-auto px-6 pb-8 pt-24 transition-all duration-300 ${
           isOpen
             ? "translate-y-0 opacity-100"
             : "-translate-y-3 opacity-0"
@@ -109,10 +106,10 @@ export function MobileMenu({ isOpen, onClose, navigation, whatsappLink }: Mobile
               )
             ))}
 
-            <Button className="mt-4 gap-2 self-start" onClick={handleWhatsAppClick}>
-              <MessageCircleMore size={16} />
-              Cotizar por WhatsApp
-            </Button>
+            <Link href="/cotizar-proyecto/" className={getButtonClassName({ className: "mt-4 gap-2 self-start" })} onClick={onClose}>
+              {getSitePage('quote').displayName}
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
           </nav>
         </div>
       </div>

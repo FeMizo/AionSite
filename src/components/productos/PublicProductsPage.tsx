@@ -97,24 +97,25 @@ function ChapterSection({
   index,
   active,
   slideRef,
+  staticLayout,
 }: {
   chapter: Chapter;
   index: number;
   active: boolean;
   slideRef: (node: HTMLDivElement | null) => void;
+  staticLayout: boolean;
 }) {
   const copy = (
     <div
       data-stage-copy
-      className={`max-w-2xl ${chapter.layout === "reverse" ? "xl:ml-auto" : ""}`}
+      className={`min-w-0 max-w-2xl ${chapter.layout === "reverse" ? "xl:ml-auto" : ""}`}
     >
       <div
         data-reveal
-        className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-[0.26em] transition duration-300 ${
-          active
+        className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-[0.26em] transition duration-300 ${active
             ? "border-blue-300/30 bg-blue-300/10 text-blue-200"
             : "border-white/10 bg-white/[0.04] text-slate-400"
-        }`}
+          }`}
       >
         <WandSparkles size={14} />
         {chapter.eyebrow}
@@ -144,6 +145,7 @@ function ChapterSection({
       </div>
 
       <div data-reveal className="mt-10 flex flex-wrap gap-3">
+        {chapter.scene === "web" && <LinkButton href="/solicitar-sitio/" className="gap-2">Solicitar mi sitio <ArrowRight size={16} /></LinkButton>}
         <LinkButton
           href={initialCmsContent.base.whatsappLink}
           target="_blank"
@@ -159,7 +161,7 @@ function ChapterSection({
   );
 
   const visual = (
-    <div data-stage-visual className="relative">
+    <div data-stage-visual className="relative min-w-0">
       <div className="absolute inset-0 -z-10 rounded-full bg-blue-300/8 blur-[120px]" />
       {chapter.scene === "web" ? <BrowserScene active={active} /> : null}
       {chapter.scene === "speed" ? <SpeedScene active={active} /> : null}
@@ -173,20 +175,19 @@ function ChapterSection({
   return (
     <div
       ref={slideRef}
-      className="absolute inset-0 grid items-center px-4 py-6 opacity-0 will-change-transform sm:px-6 md:px-10"
+      className={staticLayout ? "relative grid min-w-0 items-center px-2 py-8 opacity-100 sm:px-6 md:px-10" : "absolute inset-0 grid items-center px-4 py-6 opacity-0 will-change-transform sm:px-6 md:px-10"}
       style={{ zIndex: active ? 3 : index + 1 }}
     >
       <div
-        className={`grid h-full gap-12 ${
-          chapter.layout === "reverse"
+        className={`grid min-w-0 grid-cols-1 h-full gap-12 ${chapter.layout === "reverse"
             ? "xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]"
             : chapter.layout === "stacked"
               ? "xl:grid-cols-1"
               : "xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)]"
-        } xl:items-center`}
+          } xl:items-center`}
       >
         {chapter.layout === "stacked" ? (
-          <div className="mx-auto grid max-w-5xl gap-10">
+          <div className="mx-auto grid w-full min-w-0 grid-cols-1 max-w-5xl gap-10">
             {visual}
             <div className="grid gap-10 xl:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] xl:items-start">
               <div>{copy}</div>
@@ -215,7 +216,7 @@ function ChapterSection({
                       <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
                         {metric.label}
                       </div>
-                      <div className="mt-2 font-display text-2xl font-semibold text-white">
+                      <div className="mt-2 font-display text-xl font-semibold text-white">
                         {metric.value}
                       </div>
                     </div>
@@ -238,9 +239,8 @@ function ChapterSection({
 function BrowserScene({ active }: { active: boolean }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border bg-white/[0.03] p-4 shadow-[0_28px_90px_-54px_rgba(59,130,246,0.45)] backdrop-blur-xl transition duration-500 ${
-        active ? "border-blue-300/35" : "border-white/10"
-      }`}
+      className={`relative overflow-hidden rounded-[2rem] border bg-white/[0.03] p-4 shadow-[0_28px_90px_-54px_rgba(59,130,246,0.45)] backdrop-blur-xl transition duration-500 ${active ? "border-blue-300/35" : "border-white/10"
+        }`}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(59,130,246,0.2),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(255,255,255,0.06),transparent_30%),linear-gradient(180deg,rgba(2,6,23,0.2),rgba(2,6,23,0.76))]" />
       <div className="relative flex items-center gap-2 border-b border-white/10 pb-4">
@@ -315,7 +315,7 @@ function BrowserScene({ active }: { active: boolean }) {
 
         <div
           data-stage-orb
-            className="pointer-events-none absolute -right-10 top-12 h-40 w-40 rounded-full border border-blue-300/18"
+          className="pointer-events-none absolute -right-10 top-12 h-40 w-40 rounded-full border border-blue-300/18"
         />
         <div
           data-stage-orb
@@ -329,9 +329,8 @@ function BrowserScene({ active }: { active: boolean }) {
 function SpeedScene({ active }: { active: boolean }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border bg-white/[0.03] p-4 shadow-[0_28px_90px_-54px_rgba(59,130,246,0.38)] backdrop-blur-xl transition duration-500 ${
-        active ? "border-blue-300/35" : "border-white/10"
-      }`}
+      className={`relative overflow-hidden rounded-[2rem] border bg-white/[0.03] p-4 shadow-[0_28px_90px_-54px_rgba(59,130,246,0.38)] backdrop-blur-xl transition duration-500 ${active ? "border-blue-300/35" : "border-white/10"
+        }`}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(59,130,246,0.15),transparent_24%),radial-gradient(circle_at_82%_30%,rgba(59,130,246,0.12),transparent_26%),linear-gradient(180deg,rgba(2,6,23,0.18),rgba(2,6,23,0.76))]" />
       <div className="relative grid gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(240px,1.1fr)] lg:items-center">
@@ -349,7 +348,7 @@ function SpeedScene({ active }: { active: boolean }) {
             <span>after</span>
           </div>
 
-          <div className="mt-5 grid grid-cols-2 gap-3">
+          <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
               <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
                 peso
@@ -367,7 +366,7 @@ function SpeedScene({ active }: { active: boolean }) {
           </div>
 
           <div className="mt-4 rounded-[1.4rem] border border-white/10 bg-white/[0.04] p-4">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <div className="flex h-14 w-14 items-center justify-center rounded-full border border-blue-300/20 bg-blue-300/10 text-blue-200">
                 <Gauge size={22} />
               </div>
@@ -411,7 +410,7 @@ function SpeedScene({ active }: { active: boolean }) {
                   <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
                     {label}
                   </div>
-                  <div className="mt-2 font-display text-2xl font-semibold text-white">
+                  <div className="mt-2 font-display text-xl font-semibold text-white">
                     {value}
                   </div>
                 </div>
@@ -435,9 +434,8 @@ function SpeedScene({ active }: { active: boolean }) {
 function CodeScene({ active }: { active: boolean }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border bg-white/[0.03] p-4 shadow-[0_28px_90px_-54px_rgba(59,130,246,0.45)] backdrop-blur-xl transition duration-500 ${
-        active ? "border-blue-300/35" : "border-white/10"
-      }`}
+      className={`relative overflow-hidden rounded-[2rem] border bg-white/[0.03] p-4 shadow-[0_28px_90px_-54px_rgba(59,130,246,0.45)] backdrop-blur-xl transition duration-500 ${active ? "border-blue-300/35" : "border-white/10"
+        }`}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.15),transparent_24%),radial-gradient(circle_at_82%_28%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(180deg,rgba(2,6,23,0.18),rgba(2,6,23,0.76))]" />
       <div className="relative grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(240px,0.82fr)]">
@@ -509,7 +507,7 @@ function CodeScene({ active }: { active: boolean }) {
                 <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">
                   {label}
                 </div>
-                <div className="mt-2 font-display text-2xl font-semibold text-white">
+                <div className="mt-2 font-display text-xl font-semibold text-white">
                   {value}
                 </div>
               </div>
@@ -555,6 +553,15 @@ export function PublicProductsPage() {
   const storyRef = useRef<HTMLElement | null>(null);
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [compactView, setCompactView] = useState(false);
+  const staticStory = reduceMotion || compactView;
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 1279px), (max-height: 849px)');
+    const update = () => setCompactView(query.matches);
+    update(); query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     const slides = slideRefs.current.filter((slide): slide is HTMLDivElement => Boolean(slide));
@@ -564,11 +571,12 @@ export function PublicProductsPage() {
       return;
     }
 
-    if (reduceMotion) {
+    if (staticStory) {
       slides.forEach((slide) => {
         gsap.set(slide.querySelectorAll("[data-reveal]"), { autoAlpha: 1, y: 0, clearProps: "transform" });
         gsap.set(slide, { autoAlpha: 1, y: 0, scale: 1, clearProps: "transform" });
       });
+      gsap.set(heroSceneRefs.current.filter(Boolean), { clearProps: 'transform,opacity,visibility' });
       return;
     }
 
@@ -812,7 +820,7 @@ export function PublicProductsPage() {
     }, rootRef);
 
     return () => ctx.revert();
-  }, [reduceMotion]);
+  }, [staticStory]);
 
   return (
     <>
@@ -820,7 +828,7 @@ export function PublicProductsPage() {
         base={initialCmsContent.base}
         data={initialCmsContent.sections.header.data}
       />
-      <BreadcrumbSchema items={[{ name: "Productos", path: "/productos/" }]} />
+      <BreadcrumbSchema items={[{ name: "Productos", path: "/cotizar-proyecto/" }]} />
 
       <main ref={rootRef} className="relative overflow-hidden bg-[#02040a] text-white">
         <section
@@ -897,7 +905,7 @@ export function PublicProductsPage() {
               <div data-reveal className="relative">
                 <div className="absolute inset-0 -z-10 rounded-full bg-blue-300/10 blur-[140px]" />
                 <div className="rounded-[2.3rem] border border-white/10 bg-white/[0.02] p-4 shadow-[0_34px_100px_-62px_rgba(59,130,246,0.72)]">
-                  <div className="relative min-h-[560px] overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/70 p-5">
+                  <div className={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/70 p-5 ${staticStory ? '' : 'min-h-[560px]'}`}>
                     <div
                       ref={(node) => {
                         heroRingRefs.current[0] = node;
@@ -920,23 +928,22 @@ export function PublicProductsPage() {
                         </span>
                       </div>
 
-                      <div className="relative flex min-h-[430px] items-center justify-center">
+                      <div className={`relative flex items-center justify-center ${staticStory ? '' : 'min-h-[430px]'}`}>
                         {[chapters[0], chapters[1], chapters[2]].map((chapter, index) => (
                           <div
                             key={chapter.title}
                             ref={(node) => {
                               heroSceneRefs.current[index] = node;
                             }}
-                            className={`absolute w-full max-w-[25rem] rounded-[2rem] border bg-white/[0.04] p-5 shadow-[0_28px_80px_-48px_rgba(59,130,246,0.6)] backdrop-blur-xl transition duration-300 ${
-                              index === 0
+                            className={`${staticStory ? (index === 0 ? 'relative' : 'hidden') : 'absolute'} w-full max-w-[25rem] rounded-[2rem] border bg-white/[0.04] p-5 shadow-[0_28px_80px_-48px_rgba(59,130,246,0.6)] backdrop-blur-xl transition duration-300 ${index === 0
                                 ? "border-blue-300/28"
                                 : index === 1
                                   ? "border-white/12"
                                   : "border-blue-300/24"
-                            }`}
+                              }`}
                             style={{
                               transform:
-                                index === 0
+                                staticStory ? 'none' : index === 0
                                   ? "translate3d(-150px, 84px, 0) rotate(-10deg) scale(0.8)"
                                   : index === 1
                                     ? "translate3d(0, 0, 0) rotate(0deg) scale(1)"
@@ -1001,8 +1008,8 @@ export function PublicProductsPage() {
                               "conversion",
                               "motion",
                               "SEO técnico",
-                            ].map((word) => (
-                              <span key={word} className="inline-flex items-center gap-10">
+                            ].map((word, wordIndex) => (
+                              <span key={`${word}-${wordIndex}`} className="inline-flex items-center gap-10">
                                 {word}
                                 <span className="h-px w-12 bg-white/10" />
                               </span>
@@ -1030,11 +1037,10 @@ export function PublicProductsPage() {
                 return (
                   <div
                     key={chapter.title}
-                    className={`rounded-full border px-4 py-2 text-sm font-medium transition duration-300 ${
-                      active
+                    className={`rounded-full border px-4 py-2 text-sm font-medium transition duration-300 ${active
                         ? "border-blue-300/35 bg-blue-500 text-slate-950"
                         : "border-white/10 bg-white/[0.04] text-slate-300"
-                    }`}
+                      }`}
                   >
                     {chapter.eyebrow}
                   </div>
@@ -1047,9 +1053,9 @@ export function PublicProductsPage() {
         <section
           ref={storyRef}
           id="productos"
-          className="relative min-h-[140vh] border-y border-white/10 bg-white/[0.015]"
+          className={`relative border-y border-white/10 bg-white/[0.015] ${staticStory ? '' : 'min-h-[140vh]'}`}
         >
-          <div className="sticky top-0 flex min-h-[100dvh] items-center py-12 md:py-14">
+          <div className={`${staticStory ? 'relative' : 'sticky top-0 min-h-[100dvh]'} flex items-center py-12 md:py-14`}>
             <Container>
               <div className="mx-auto grid max-w-6xl gap-8">
                 <div className="flex flex-wrap items-center justify-between gap-4">
@@ -1061,8 +1067,8 @@ export function PublicProductsPage() {
                   </div>
                 </div>
 
-                <div className="relative h-[min(78vh,780px)] overflow-hidden rounded-[3rem] border border-white/10 bg-white/[0.025] p-4 shadow-[0_34px_100px_-62px_rgba(59,130,246,0.45)] md:p-6">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(59,130,246,0.11),transparent_28%),radial-gradient(circle_at_82%_32%,rgba(255,255,255,0.06),transparent_26%),linear-gradient(180deg,rgba(2,4,10,0.4),rgba(2,4,10,0.92))]" />
+                <div className={`relative rounded-[3rem] border border-white/10 bg-white/[0.025] p-4 shadow-[0_34px_100px_-62px_rgba(59,130,246,0.45)] md:p-6 ${staticStory ? 'grid gap-8' : 'h-[min(78vh,780px)] overflow-hidden'}`}>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(59,130,246,0.11),transparent_28%),radial-gradient(circle_at_82%_32%,rgba(255,255,255,0.06),transparent_26%),linear-gradient(180deg,rgba(2,4,10,0.4),rgba(2,4,10,0.92))]" />
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300/30 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
@@ -1072,6 +1078,7 @@ export function PublicProductsPage() {
                       chapter={chapter}
                       index={index}
                       active={index === activeIndex}
+                      staticLayout={staticStory}
                       slideRef={(node) => {
                         slideRefs.current[index] = node;
                       }}
@@ -1087,11 +1094,10 @@ export function PublicProductsPage() {
                       <div
                         key={chapter.title}
                         data-stage-card
-                        className={`rounded-2xl border px-4 py-4 transition duration-300 ${
-                          active
+                        className={`rounded-2xl border px-4 py-4 transition duration-300 ${active
                             ? "border-blue-300/30 bg-blue-300/8 text-white"
                             : "border-white/10 bg-white/[0.03] text-slate-400"
-                        }`}
+                          }`}
                       >
                         <div className="text-[10px] uppercase tracking-[0.24em] text-slate-500">
                           {chapter.eyebrow}
@@ -1108,7 +1114,7 @@ export function PublicProductsPage() {
           </div>
         </section>
 
-        <section className="relative -mt-56 overflow-hidden py-12 md:-mt-114 md:py-20">
+        <section className={`relative overflow-hidden py-12 md:py-20 ${staticStory ? '' : '-mt-56 md:-mt-114'}`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.18),transparent_24%),radial-gradient(circle_at_82%_30%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(180deg,rgba(2,4,10,0.76),rgba(2,4,10,1))]" />
           <Container className="relative">
             <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/8 bg-white/[0.025] p-8 text-center shadow-[0_34px_100px_-62px_rgba(59,130,246,0.55)] md:p-12">
@@ -1125,14 +1131,12 @@ export function PublicProductsPage() {
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <LinkButton
-                  href={initialCmsContent.base.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/solicitar-sitio/"
                   size="lg"
                   className="gap-2 border border-blue-300/35 bg-blue-500 text-slate-950 hover:bg-blue-400"
                 >
-                  <MessageCircleMore size={18} />
-                  Hablar por WhatsApp
+                  <ArrowRight size={18} />
+                  Solicitar mi sitio
                 </LinkButton>
                 <div className="text-sm text-slate-400">
                   Respuesta directa. Todo en espanol.

@@ -4,6 +4,7 @@ import {
   type ButtonSize,
   type ButtonVariant,
 } from "@/src/components/ui/button-styles";
+import { resolvePageHref } from "@/src/lib/site-pages";
 
 interface LinkButtonProps {
   href: string;
@@ -26,7 +27,7 @@ export function LinkButton({
 }: LinkButtonProps) {
   return (
     <a
-      href={href}
+      href={resolvePageHref(href)}
       target={target}
       rel={rel}
       className={getButtonClassName({ variant, size, className })}

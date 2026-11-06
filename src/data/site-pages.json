@@ -22,6 +22,16 @@
     "parentId": "estilos"
   },
   {
+    "id": "blog",
+    "name": "Blog",
+    "displayName": "Blog",
+    "title": "",
+    "sourcePath": "/blog/",
+    "path": "/blog/",
+    "aliases": [],
+    "parentId": "home"
+  },
+  {
     "id": "claymorphism",
     "name": "claymorphism",
     "displayName": "claymorphism",
@@ -32,6 +42,40 @@
       "/claymorphism/"
     ],
     "parentId": "estilos"
+  },
+  {
+    "id": "conoceme",
+    "name": "Conóceme",
+    "displayName": "Conóceme",
+    "title": "",
+    "sourcePath": "/conoceme/",
+    "path": "/conoceme/",
+    "aliases": [
+      "/about/"
+    ],
+    "parentId": "home"
+  },
+  {
+    "id": "quote",
+    "name": "Cotizar tu proyecto",
+    "displayName": "Cotizar tu proyecto",
+    "title": "",
+    "sourcePath": "/cotizar-proyecto/",
+    "path": "/cotizar-proyecto/",
+    "aliases": [
+      "/productos/"
+    ],
+    "parentId": "home"
+  },
+  {
+    "id": "diseno-web-ciudad-del-carmen",
+    "name": "diseno-web-ciudad-del-carmen",
+    "displayName": "diseno-web-ciudad-del-carmen",
+    "title": "",
+    "sourcePath": "/diseno-web-ciudad-del-carmen/",
+    "path": "/diseno-web-ciudad-del-carmen/",
+    "aliases": [],
+    "parentId": "home"
   },
   {
     "id": "estilos",
@@ -56,6 +100,46 @@
     "parentId": "estilos"
   },
   {
+    "id": "home-b",
+    "name": "home-b",
+    "displayName": "home-b",
+    "title": "",
+    "sourcePath": "/home-b/",
+    "path": "/home-b/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "home1",
+    "name": "home1",
+    "displayName": "home1",
+    "title": "",
+    "sourcePath": "/home1/",
+    "path": "/home1/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "home2",
+    "name": "home2",
+    "displayName": "home2",
+    "title": "",
+    "sourcePath": "/home2/",
+    "path": "/home2/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "legales",
+    "name": "Legales",
+    "displayName": "Legales",
+    "title": "",
+    "sourcePath": "/legales/",
+    "path": "/legales/",
+    "aliases": [],
+    "parentId": "home"
+  },
+  {
     "id": "luma",
     "name": "luma",
     "displayName": "luma",
@@ -68,6 +152,46 @@
     "parentId": "estilos"
   },
   {
+    "id": "privacidad",
+    "name": "Privacidad",
+    "displayName": "Privacidad",
+    "title": "",
+    "sourcePath": "/privacidad/",
+    "path": "/privacidad/",
+    "aliases": [],
+    "parentId": "legales"
+  },
+  {
+    "id": "proyectos",
+    "name": "Proyectos",
+    "displayName": "Proyectos",
+    "title": "",
+    "sourcePath": "/proyectos/",
+    "path": "/proyectos/",
+    "aliases": [],
+    "parentId": "home"
+  },
+  {
+    "id": "seo-local-ciudad-del-carmen",
+    "name": "seo-local-ciudad-del-carmen",
+    "displayName": "seo-local-ciudad-del-carmen",
+    "title": "",
+    "sourcePath": "/seo-local-ciudad-del-carmen/",
+    "path": "/seo-local-ciudad-del-carmen/",
+    "aliases": [],
+    "parentId": "home"
+  },
+  {
+    "id": "seo-mexico",
+    "name": "seo-mexico",
+    "displayName": "seo-mexico",
+    "title": "",
+    "sourcePath": "/seo-mexico/",
+    "path": "/seo-mexico/",
+    "aliases": [],
+    "parentId": "home"
+  },
+  {
     "id": "skeuomorphism",
     "name": "skeuomorphism",
     "displayName": "skeuomorphism",
@@ -78,6 +202,16 @@
       "/skeuomorphism/"
     ],
     "parentId": "estilos"
+  },
+  {
+    "id": "solicitar-sitio",
+    "name": "Solicitar mi sitio",
+    "displayName": "Solicitar mi sitio",
+    "title": "",
+    "sourcePath": "/solicitar-sitio/",
+    "path": "/solicitar-sitio/",
+    "aliases": [],
+    "parentId": "quote"
   },
   {
     "id": "spatial-ui",
@@ -101,6 +235,26 @@
     "aliases": [
       "/specialui/"
     ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "terminos",
+    "name": "Términos",
+    "displayName": "Términos",
+    "title": "",
+    "sourcePath": "/terminos/",
+    "path": "/terminos/",
+    "aliases": [],
+    "parentId": "legales"
+  },
+  {
+    "id": "tiendas-online-ciudad-del-carmen",
+    "name": "tiendas-online-ciudad-del-carmen",
+    "displayName": "tiendas-online-ciudad-del-carmen",
+    "title": "",
+    "sourcePath": "/tiendas-online-ciudad-del-carmen/",
+    "path": "/tiendas-online-ciudad-del-carmen/",
+    "aliases": [],
     "parentId": "estilos"
   },
   {

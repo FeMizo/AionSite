@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Menu, MessageCircleMore, X } from "lucide-react";
 import { useRef, useState } from "react";

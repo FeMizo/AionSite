@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/src/components/ui/SiteLink";
 import { ArrowRight, ArrowUpRight, Menu, MessageCircleMore, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { CmsContent } from "@/src/cms/types";

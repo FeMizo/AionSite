@@ -41,7 +41,7 @@ export function PublicSite({
   const headerSections = getRenderableSectionIds(content, "header");
   const mainSections = getRenderableSectionIds(content, "main");
   const footerSections = getRenderableSectionIds(content, "footer");
-  const floatingSections = getRenderableSectionIds(content, "floating");
+  const floatingSections = getRenderableSectionIds(content, "floating").filter((id) => id !== "whatsappFloatingButton");
 
   return (
     <>

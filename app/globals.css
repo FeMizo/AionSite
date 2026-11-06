@@ -73,6 +73,19 @@ body.menu-open {
   overflow: hidden;
 }
 
+/* Let real content wrap inside cards and controls, including long names/URLs. */
+@layer base {
+  :where(h1, h2, h3, h4, h5, h6, p, li, dt, dd, button, a, label) {
+    overflow-wrap: anywhere;
+  }
+  :where(main, section, article, nav, form) {
+    min-width: 0;
+  }
+  :where(input, select, textarea, button) {
+    max-width: 100%;
+  }
+}
+
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -175,6 +188,14 @@ body.menu-open {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   max-height: calc(100vh - 150px);
   overflow: auto;
+}
+
+body:has([data-whatsapp-floating]) .style-playground-trigger {
+  bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 5rem);
+}
+body:has([data-whatsapp-floating]) .style-playground-panel {
+  bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 8.5rem);
+  max-height: calc(100dvh - 180px);
 }
 .style-playground-head {
   display: flex;

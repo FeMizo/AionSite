@@ -3,8 +3,11 @@ import { Bricolage_Grotesque, Epilogue } from "next/font/google";
 import { metadataBase } from "@/src/lib/metadata";
 import { SchemaMarkup } from "@/src/components/ui/SchemaMarkup";
 import { GdprConsent } from "@/src/components/ui/GdprConsent";
+import { PublicAnalytics } from "@/src/components/analytics/PublicAnalytics";
 import { MetaPixel } from "@/src/components/analytics/MetaPixel";
 import { GoogleTagManager } from "@/src/components/analytics/GoogleTagManager";
+import { SitePageChrome } from "@/src/components/sections/SitePageChrome";
+import { initialCmsContent } from "@/src/cms/site-content";
 import "./globals.css";
 import "./claymorphism/claymorphism.css";
 import "./specialui/specialui.css";
@@ -67,9 +70,9 @@ export default function RootLayout({
     <html lang="es" className={`scroll-smooth ${epilogue.variable} ${bricolage.variable}`}>
       <body className="font-sans bg-slate-950 text-slate-200 antialiased">
         <SchemaMarkup />
-        <GoogleTagManager />
-        <MetaPixel />
+        <PublicAnalytics><GoogleTagManager /><MetaPixel /></PublicAnalytics>
         {children}
+        <SitePageChrome enabled={initialCmsContent.sections.whatsappFloatingButton.enabled} data={initialCmsContent.sections.whatsappFloatingButton.data} />
         <GdprConsent />
       </body>
     </html>

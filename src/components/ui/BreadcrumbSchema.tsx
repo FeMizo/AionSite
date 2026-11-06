@@ -1,3 +1,4 @@
+import { resolvePageHref, sitePages } from "@/src/lib/site-pages";
 const SITE_URL = "https://aionsite.com.mx";
 
 type BreadcrumbItem = { name: string; path: string };
@@ -11,8 +12,8 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
       ...items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 2,
-        name: item.name,
-        item: `${SITE_URL}${item.path}`,
+        name: sitePages.find((page) => page.path === resolvePageHref(item.path))?.displayName || item.name,
+        item: `${SITE_URL}${resolvePageHref(item.path)}`,
       })),
     ],
   };

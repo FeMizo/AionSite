@@ -41,7 +41,7 @@ export function NewsletterSignup() {
   };
 
   return (
-    <div className="col-span-2 md:col-span-1">
+    <div className="min-w-0 sm:col-span-2 md:col-span-1">
       <div className="mb-6 font-bold text-white">Newsletter</div>
       <p className="mb-4 text-sm text-slate-400">
         Recibe las últimas actualizaciones y consejos sobre diseño web.
