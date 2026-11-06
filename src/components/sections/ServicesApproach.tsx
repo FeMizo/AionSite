@@ -7,6 +7,8 @@ import type { ComponentType, SVGProps } from "react";
 import type { ServicesSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { Heading } from "@/src/components/ui/Heading";
+import MotionButton from "@/src/components/ui/motion-button";
+import { getWhatsAppLink } from "@/src/config/whatsapp";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
@@ -57,6 +59,17 @@ export function ServicesApproach({ data }: { data: ServicesSectionData }) {
                 const isActive = index === activeIndex;
                 return <motion.button key={service.title} type="button" onClick={() => setActiveIndex(index)} whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.3, ease }} className={`flex min-h-16 min-w-0 items-center gap-3 rounded-xl border px-4 py-3 text-left transition-[border-color,background-color,color,opacity] duration-500 ${isActive ? "border-blue-300/50 bg-blue-500/15 text-white" : "border-white/10 bg-white/[0.03] text-slate-400 opacity-60 hover:border-blue-300/30 hover:text-white"}`} aria-pressed={isActive}><Icon size={18} className={isActive ? "shrink-0 text-blue-200" : "shrink-0 text-slate-500"} /><span className="min-w-0 break-words text-sm font-medium">{service.title}</span></motion.button>;
               })}
+            </div>
+            <div className="mt-6">
+              <MotionButton
+                as="a"
+                href={getWhatsAppLink(`Hola AionSite, me gustaría recibir información sobre: ${activeService.title}.`)}
+                target="_blank"
+                rel="noreferrer"
+                label="Consultar este servicio por WhatsApp"
+                aria-label={`Consultar sobre ${activeService.title} por WhatsApp`}
+                classes="min-h-12 min-w-0 w-full text-base"
+              />
             </div>
           </motion.div>
 
