@@ -1,0 +1,48 @@
+{
+  "source_revisions": {
+    "impeccable": "c3bb418ee38ee49a6b999b7752c1368f3123a2bd",
+    "skills": "ca45fc496a3436251f191354091d557da31c15b5",
+    "ui-ux-pro-max-skill": "b7d5353e0130feb8c5574ef1251f8a1db1873ccb"
+  },
+  "engine": {
+    "version": "0.1.18",
+    "sha256": "8f61e96b0c97001546a824d79b44f46b423b560f3eb1a0cc44a8695a1b395d9f",
+    "note": "Runtime engine cache is intentionally not committed. Installed launcher verifies downloads with its upstream manifest."
+  },
+  "skills": [
+    {
+      "skill": "impeccable",
+      "agent": "claude",
+      "path": ".claude/skills/impeccable"
+    },
+    {
+      "skill": "impeccable",
+      "agent": "codex",
+      "path": ".agents/skills/impeccable"
+    },
+    {
+      "skill": "frontend-design",
+      "agent": "claude",
+      "path": ".claude/skills/frontend-design"
+    },
+    {
+      "skill": "frontend-design",
+      "agent": "codex",
+      "path": ".agents/skills/frontend-design"
+    },
+    {
+      "skill": "ui-ux-pro-max",
+      "agent": "claude",
+      "path": ".claude/skills/ui-ux-pro-max"
+    },
+    {
+      "skill": "ui-ux-pro-max",
+      "agent": "codex",
+      "path": ".agents/skills/ui-ux-pro-max"
+    }
+  ],
+  "adaptations": [
+    "UI/UX Python command paths adjusted for Windows and project-relative skill discovery"
+  ],
+  "hooks_installed": false
+}
