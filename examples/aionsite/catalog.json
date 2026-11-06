@@ -1,0 +1,339 @@
+{
+  "version": 1,
+  "status": "local examples; no publication",
+  "proposals": [
+    {
+      "id": "propuesta-1",
+      "number": 1,
+      "revision": 1,
+      "title": "Demo animada",
+      "description": "Portada con transiciones y portafolio en perspectiva.",
+      "tags": [
+        "Hero",
+        "Banners",
+        "Proyectos",
+        "CTA"
+      ],
+      "approvedDirection": false,
+      "entry": "collections/aionsite-2026-11-05/propuesta-1/proposal.html",
+      "thumbnail": "thumbnails/propuesta-1.png",
+      "sections": [
+        {
+          "family": "inicio",
+          "id": "inicio",
+          "class": "hero wrap"
+        },
+        {
+          "family": "solucion",
+          "id": "solucion",
+          "class": "solution"
+        },
+        {
+          "family": "proyectos",
+          "id": "proyectos",
+          "class": "projects"
+        },
+        {
+          "family": "split wrap",
+          "id": null,
+          "class": "split wrap"
+        },
+        {
+          "family": "cotizar",
+          "id": "cotizar",
+          "class": "closing"
+        }
+      ],
+      "viewPath": "/estilos/propuesta-1/"
+    },
+    {
+      "id": "propuesta-2",
+      "number": 2,
+      "revision": 1,
+      "title": "Comercial y editorial",
+      "description": "Banners, imágenes y soluciones que se expanden.",
+      "tags": [
+        "Banners",
+        "Imágenes",
+        "Acordeón",
+        "CTA"
+      ],
+      "approvedDirection": false,
+      "entry": "collections/aionsite-2026-11-05/propuesta-2/proposal.html",
+      "thumbnail": "thumbnails/propuesta-2.png",
+      "sections": [
+        {
+          "family": "hero",
+          "id": "inicio",
+          "class": "hero shell"
+        },
+        {
+          "family": "banner",
+          "id": "alcance",
+          "class": "commercial-banner"
+        },
+        {
+          "family": "image-left",
+          "id": "identidad",
+          "class": "image-section shell"
+        },
+        {
+          "family": "creative",
+          "id": "soluciones",
+          "class": "routes-section"
+        },
+        {
+          "family": "banner-projects",
+          "id": "muestra",
+          "class": "case-banner"
+        },
+        {
+          "family": "image-right",
+          "id": "proceso",
+          "class": "process-section"
+        },
+        {
+          "family": "cta",
+          "id": "cotizar",
+          "class": "contact-section"
+        }
+      ],
+      "viewPath": "/estilos/propuesta-2/"
+    },
+    {
+      "id": "propuesta-3",
+      "number": 3,
+      "revision": 2,
+      "title": "Recorrido y movimiento",
+      "description": "Tarjetas, recorrido por scroll e imagen con llamadas a cotizar.",
+      "tags": [
+        "Hero",
+        "Scroll",
+        "Imágenes",
+        "CTA"
+      ],
+      "approvedDirection": false,
+      "entry": "collections/aionsite-2026-11-05/propuesta-3/proposal.html",
+      "thumbnail": "thumbnails/propuesta-3.png",
+      "sections": [
+        {
+          "family": "hero-cards",
+          "id": "inicio",
+          "class": "hero wrap"
+        },
+        {
+          "family": "commercial-banner",
+          "id": null,
+          "class": "promise"
+        },
+        {
+          "family": "scroll-horizontal",
+          "id": "recorrido",
+          "class": "horizontal-stage"
+        },
+        {
+          "family": "image-left",
+          "id": "identidad",
+          "class": "new-static-case wrap"
+        },
+        {
+          "family": "cta-banner",
+          "id": "siguiente",
+          "class": "new-static-band"
+        },
+        {
+          "family": "magnetic-cta",
+          "id": "cotizar",
+          "class": "closing"
+        }
+      ],
+      "viewPath": "/estilos/propuesta-3/"
+    },
+    {
+      "id": "propuesta-4",
+      "number": 4,
+      "revision": 3,
+      "title": "Composición escultórica",
+      "description": "Alcance en capas, exposición asimétrica y proceso editorial.",
+      "tags": [
+        "Hero",
+        "Alcance",
+        "Imágenes",
+        "Proceso"
+      ],
+      "approvedDirection": true,
+      "entry": "collections/aionsite-premium-2026-11-05/propuesta-4/proposal.html",
+      "thumbnail": "thumbnails/propuesta-4.png",
+      "sections": [
+        {
+          "family": "sculptural-scope-hero",
+          "id": "inicio",
+          "class": "sculpture-hero"
+        },
+        {
+          "family": "commercial-banner",
+          "id": "detalle",
+          "class": "thin-banner"
+        },
+        {
+          "family": "flip-scope",
+          "id": "alcance",
+          "class": "scope-section wrap"
+        },
+        {
+          "family": "editorial-case-exhibit",
+          "id": null,
+          "class": "split-exhibit"
+        },
+        {
+          "family": "editorial-process",
+          "id": null,
+          "class": "project-letter"
+        },
+        {
+          "family": "cta",
+          "id": "cotizar",
+          "class": "quote-ending wrap"
+        }
+      ],
+      "viewPath": "/estilos/propuesta-4/"
+    },
+    {
+      "id": "propuesta-5",
+      "number": 5,
+      "revision": 3,
+      "title": "Portada cinematográfica",
+      "description": "Imagen a todo ancho, servicios y portafolio interactivo.",
+      "tags": [
+        "Hero",
+        "Imágenes",
+        "Servicios",
+        "Proyectos"
+      ],
+      "approvedDirection": true,
+      "entry": "collections/aionsite-premium-2026-11-05/propuesta-5/proposal.html",
+      "thumbnail": "thumbnails/propuesta-5.png",
+      "sections": [
+        {
+          "family": "cinematic-portfolio-hero",
+          "id": "inicio",
+          "class": "cinema-hero"
+        },
+        {
+          "family": "creative-service-index",
+          "id": "detalle",
+          "class": "staggered-offer"
+        },
+        {
+          "family": "creative-projects",
+          "id": "proyectos",
+          "class": "work-section"
+        },
+        {
+          "family": "image-right",
+          "id": null,
+          "class": "editorial-split image-right wrap"
+        },
+        {
+          "family": "cta",
+          "id": "cotizar",
+          "class": "contact-strip"
+        }
+      ],
+      "viewPath": "/estilos/propuesta-5/"
+    },
+    {
+      "id": "propuesta-6",
+      "number": 6,
+      "revision": 1,
+      "title": "Galería editorial",
+      "description": "Proyectos escalonados, selector de contenido y cierre tipográfico.",
+      "tags": [
+        "Galería",
+        "Servicios",
+        "Proceso",
+        "CTA"
+      ],
+      "approvedDirection": true,
+      "entry": "collections/aionsite-premium-2026-11-05/propuesta-6/proposal.html",
+      "thumbnail": "thumbnails/propuesta-6.png",
+      "sections": [
+        {
+          "family": "exhibition-hero",
+          "id": "inicio",
+          "class": "exhibit-hero wrap"
+        },
+        {
+          "family": "staggered-project-gallery",
+          "id": "proyectos",
+          "class": "gallery"
+        },
+        {
+          "family": "service-index-preview",
+          "id": "diseno",
+          "class": "design-index wrap"
+        },
+        {
+          "family": "commercial-banner",
+          "id": null,
+          "class": "agreement"
+        },
+        {
+          "family": "editorial-process",
+          "id": null,
+          "class": "process"
+        },
+        {
+          "family": "monumental-cta",
+          "id": "cotizar",
+          "class": "closing wrap"
+        }
+      ],
+      "viewPath": "/estilos/propuesta-6/"
+    },
+    {
+      "id": "propuesta-7",
+      "number": 7,
+      "revision": 1,
+      "title": "Dirección arquitectónica",
+      "description": "Estructura vectorial, capítulos interactivos y evidencia visual.",
+      "tags": [
+        "Hero",
+        "Capítulos",
+        "Proyectos",
+        "Proceso"
+      ],
+      "approvedDirection": true,
+      "entry": "collections/aionsite-premium-2026-11-05/propuesta-7/proposal.html",
+      "thumbnail": "thumbnails/propuesta-7.png",
+      "sections": [
+        {
+          "family": "spatial-hero",
+          "id": "inicio",
+          "class": "spatial-hero frame"
+        },
+        {
+          "family": "service-chapters",
+          "id": "estructura",
+          "class": "scope-studio"
+        },
+        {
+          "family": "asymmetric-project",
+          "id": "proyectos",
+          "class": "spotlight frame"
+        },
+        {
+          "family": "technical-process",
+          "id": null,
+          "class": "process"
+        },
+        {
+          "family": "monumental-cta",
+          "id": "cotizar",
+          "class": "quote"
+        }
+      ],
+      "viewPath": "/estilos/propuesta-7/"
+    }
+  ]
+}

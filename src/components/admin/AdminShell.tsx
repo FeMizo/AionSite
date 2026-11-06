@@ -11,6 +11,7 @@ const items = [
   { href: "/admin", label: "Resumen", icon: LayoutDashboard },
   { href: "/admin/sections", label: "Secciones", icon: Layers3 },
   { href: "/admin/content", label: "Contenido", icon: FileText },
+  { href: "/admin/ejemplos", label: "Ejemplos de diseño", icon: Layers3 },
   { href: "/admin/settings", label: "Configuración", icon: Settings },
 ];
 

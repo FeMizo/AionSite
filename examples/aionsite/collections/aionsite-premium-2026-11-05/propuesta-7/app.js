@@ -1,0 +1,12 @@
+const media=matchMedia('(prefers-reduced-motion: reduce)');
+let paused=media.matches;
+function pause(value){paused=value;document.documentElement.classList.toggle('paused',value);const b=document.getElementById('pause');b.textContent=value?'Activar movimiento':'Pausar movimiento';b.setAttribute('aria-pressed',String(value));}
+document.getElementById('pause').addEventListener('click',()=>pause(!paused));media.addEventListener('change',e=>pause(e.matches));pause(paused);
+const chapters=[{word:'ORDEN',label:'QUÉ NECESITA ENTENDER TU CLIENTE',title:'Tus servicios,<br>sin rodeos.',text:'Definimos qué páginas necesitas y organizamos el contenido para explicar lo que haces.'},{word:'DISEÑO',label:'UNA IDENTIDAD PARA TU NEGOCIO',title:'Una web que<br>se sienta tuya.',text:'Acordamos una dirección visual propia: tipografía, imágenes, composición y su adaptación a móvil.'},{word:'ACCIÓN',label:'DEL INTERÉS A LA CONSULTA',title:'Que sepan<br>cómo encontrarte.',text:'Definimos el canal de contacto y su lugar en la página: formulario, WhatsApp o los que tu proyecto necesite.'}];
+const tabs=[...document.querySelectorAll('[data-chapter]')];
+let active=0;
+function select(index,focus=false){active=index;tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.tabIndex=i===index?0:-1});const item=chapters[index];document.getElementById('chapter-label').textContent=item.label;document.getElementById('chapter-title').innerHTML=item.title;document.getElementById('chapter-text').textContent=item.text;document.getElementById('diagram-word').textContent=item.word;document.querySelector('.chapter-diagram').dataset.state=String(index);document.getElementById('chapter-panel').setAttribute('aria-labelledby',tabs[index].id);if(focus)tabs[index].focus()}
+tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>select(i));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowDown'||e.key==='ArrowRight')next=(i+1)%3;else if(e.key==='ArrowUp'||e.key==='ArrowLeft')next=(i+2)%3;else if(e.key==='Home')next=0;else if(e.key==='End')next=2;else return;e.preventDefault();select(next,true)})});
+function orientation(){document.querySelector('.chapter-tabs').setAttribute('aria-orientation',matchMedia('(max-width:700px)').matches?'horizontal':'vertical')};orientation();addEventListener('resize',orientation);
+document.querySelectorAll('.mobile a').forEach(a=>a.addEventListener('click',()=>a.closest('details').open=false));
+window.proposal7={get paused(){return paused},get activeChapter(){return active}};

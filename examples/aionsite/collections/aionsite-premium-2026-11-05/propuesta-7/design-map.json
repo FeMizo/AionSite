@@ -1,0 +1,70 @@
+{
+  "proposal": 7,
+  "status": "independent visual study, no final implementation selected",
+  "direction": "Precision / spatial studio",
+  "built_from_scratch": true,
+  "platform": "pending client choice; standalone HTML/CSS/JS study",
+  "goal": "quote requests from businesses without a website",
+  "sections": [
+    {
+      "section": "#inicio",
+      "family": "spatial hero",
+      "references": [
+        "https://www.awwwards.com/sites/deepbook",
+        "https://soypablocarballo.com/motion-ai/spacesis/",
+        "https://soypablocarballo.com/motion-ai/progravity/"
+      ],
+      "observed": "dark linefield and central dominant object surrounded by sparse context; oversized overlapping hierarchy",
+      "adaptation": "Original SVG architectural prism, AionSite blues, title and quote action; no reference assets copied",
+      "behavior": "animated path trace, pause and reduced-motion static fallback"
+    },
+    {
+      "section": "#estructura",
+      "family": "service chapters",
+      "references": [
+        "https://soypablocarballo.com/motion-ai/brain-trainer/",
+        "https://www.awwwards.com/sites/deepbook"
+      ],
+      "observed": "technical annotation and differentiated blue/light panels",
+      "adaptation": "Three actual website needs exposed through semantic tabs and responsive diagram",
+      "behavior": "click, arrow keys, Home/End, roving tabindex, synchronized aria-labelledby and content"
+    },
+    {
+      "section": "#proyectos",
+      "family": "asymmetric project evidence",
+      "references": [
+        "https://www.awwwards.com/sites/triptych-interactive"
+      ],
+      "observed": "vertical grid, large visual field, staggered service words in scroll screenshot",
+      "adaptation": "Offset own portfolio image and text, subordinate second project; no fixed-height preloader or copied imagery",
+      "behavior": "real outbound links to own projects"
+    },
+    {
+      "section": ".process",
+      "family": "technical line-grid process",
+      "references": [
+        "https://www.awwwards.com/sites/deepbook"
+      ],
+      "observed": "framed panels, corner crosses, restrained technical geometry",
+      "adaptation": "Actual proposal→design→review process, no fake dashboard",
+      "behavior": "static semantic steps, mobile stacking"
+    },
+    {
+      "section": "#cotizar",
+      "family": "commercial CTA",
+      "references": [
+        "https://www.awwwards.com/sites/deepbook"
+      ],
+      "observed": "full blue panel as contrast surface",
+      "adaptation": "Business-specific request invitation and real local request-form link",
+      "behavior": "native anchor, no submit or automatic messaging"
+    }
+  ],
+  "limits": [
+    "Spacesis, Progravity and Brain Trainer observed as public video previews, not interactive websites.",
+    "Triptych desktop initial state appeared as preloader at 100%; only visible screenshot/scroll states used.",
+    "No new Scrapling extraction or Cloner materialization; original brief/assets retained.",
+    "Form remains local and requires running original AionSite server on port 2666; not submitted.",
+    "No publication, external messaging, final selection or CMS integration."
+  ]
+}

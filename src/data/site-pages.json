@@ -1,0 +1,176 @@
+[
+  {
+    "id": "home",
+    "name": "Inicio",
+    "displayName": "Inicio",
+    "title": "",
+    "sourcePath": "/",
+    "path": "/",
+    "aliases": [],
+    "parentId": null
+  },
+  {
+    "id": "arkkhe",
+    "name": "arkkhe",
+    "displayName": "arkkhe",
+    "title": "",
+    "sourcePath": "/arkkhe/",
+    "path": "/estilos/arkkhe/",
+    "aliases": [
+      "/arkkhe/"
+    ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "claymorphism",
+    "name": "claymorphism",
+    "displayName": "claymorphism",
+    "title": "",
+    "sourcePath": "/claymorphism/",
+    "path": "/estilos/claymorphism/",
+    "aliases": [
+      "/claymorphism/"
+    ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "estilos",
+    "name": "Estilos",
+    "displayName": "Estilos",
+    "title": "",
+    "sourcePath": "/estilos/",
+    "path": "/estilos/",
+    "aliases": [],
+    "parentId": "home"
+  },
+  {
+    "id": "future",
+    "name": "future",
+    "displayName": "future",
+    "title": "",
+    "sourcePath": "/future/",
+    "path": "/estilos/future/",
+    "aliases": [
+      "/future/"
+    ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "luma",
+    "name": "luma",
+    "displayName": "luma",
+    "title": "",
+    "sourcePath": "/luma/",
+    "path": "/estilos/luma/",
+    "aliases": [
+      "/luma/"
+    ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "skeuomorphism",
+    "name": "skeuomorphism",
+    "displayName": "skeuomorphism",
+    "title": "",
+    "sourcePath": "/skeuomorphism/",
+    "path": "/estilos/skeuomorphism/",
+    "aliases": [
+      "/skeuomorphism/"
+    ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "spatial-ui",
+    "name": "spatial-ui",
+    "displayName": "spatial-ui",
+    "title": "",
+    "sourcePath": "/spatial-ui/",
+    "path": "/estilos/spatial-ui/",
+    "aliases": [
+      "/spatial-ui/"
+    ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "specialui",
+    "name": "specialui",
+    "displayName": "specialui",
+    "title": "",
+    "sourcePath": "/specialui/",
+    "path": "/estilos/specialui/",
+    "aliases": [
+      "/specialui/"
+    ],
+    "parentId": "estilos"
+  },
+  {
+    "id": "propuesta-1",
+    "name": "Propuesta 1",
+    "displayName": "Demo animada",
+    "title": "",
+    "sourcePath": "/estilos/propuesta-1/",
+    "path": "/estilos/propuesta-1/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "propuesta-2",
+    "name": "Propuesta 2",
+    "displayName": "Comercial y editorial",
+    "title": "",
+    "sourcePath": "/estilos/propuesta-2/",
+    "path": "/estilos/propuesta-2/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "propuesta-3",
+    "name": "Propuesta 3",
+    "displayName": "Recorrido y movimiento",
+    "title": "",
+    "sourcePath": "/estilos/propuesta-3/",
+    "path": "/estilos/propuesta-3/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "propuesta-4",
+    "name": "Propuesta 4",
+    "displayName": "Composición escultórica",
+    "title": "",
+    "sourcePath": "/estilos/propuesta-4/",
+    "path": "/estilos/propuesta-4/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "propuesta-5",
+    "name": "Propuesta 5",
+    "displayName": "Portada cinematográfica",
+    "title": "",
+    "sourcePath": "/estilos/propuesta-5/",
+    "path": "/estilos/propuesta-5/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "propuesta-6",
+    "name": "Propuesta 6",
+    "displayName": "Galería editorial",
+    "title": "",
+    "sourcePath": "/estilos/propuesta-6/",
+    "path": "/estilos/propuesta-6/",
+    "aliases": [],
+    "parentId": "estilos"
+  },
+  {
+    "id": "propuesta-7",
+    "name": "Propuesta 7",
+    "displayName": "Dirección arquitectónica",
+    "title": "",
+    "sourcePath": "/estilos/propuesta-7/",
+    "path": "/estilos/propuesta-7/",
+    "aliases": [],
+    "parentId": "estilos"
+  }
+]

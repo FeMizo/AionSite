@@ -1,0 +1,608 @@
+{
+  "sources": [
+    {
+      "name": "voltaire-motors",
+      "source": "https://soypablocarballo.com/motion-ai/voltaire-motors/",
+      "kind": "video",
+      "states": [
+        "desktop",
+        "public-video-0.1",
+        "public-video-0.5",
+        "public-video-0.85",
+        "mobile"
+      ],
+      "url": "https://soypablocarballo.com/motion-ai/voltaire-motors/",
+      "status": 200,
+      "title": "Voltaire Motors — prompt para crear un sitio web con inteligencia artificial · Pablo Carballo",
+      "headings": [
+        "Voltaire Motors",
+        "Anual",
+        "De por vida",
+        "¿Te gusta pero no querés armarlo vos?",
+        "Más sitios web",
+        " Cómo se usa ",
+        " Elegí cómo querés tu acceso ",
+        "Anual",
+        "De por vida"
+      ],
+      "video": {
+        "src": "https://pub-36eefd528bbb4e28bdef0ce39a1018e0.r2.dev/Prompt/Voltaire%20Motors.mp4?v=1785619272946",
+        "duration": 6.233333
+      },
+      "assessment": "public preview video only; not live demo interaction"
+    },
+    {
+      "name": "brain-trainer",
+      "source": "https://soypablocarballo.com/motion-ai/brain-trainer/",
+      "kind": "video",
+      "states": [
+        "desktop",
+        "public-video-0.1",
+        "public-video-0.5",
+        "public-video-0.85",
+        "mobile"
+      ],
+      "url": "https://soypablocarballo.com/motion-ai/brain-trainer/",
+      "status": 200,
+      "title": "Brain Trainer — prompt para crear un sitio web con inteligencia artificial · Pablo Carballo",
+      "headings": [
+        "Brain Trainer",
+        "Anual",
+        "De por vida",
+        "¿Te gusta pero no querés armarlo vos?",
+        "Más sitios web",
+        " Cómo se usa ",
+        " Elegí cómo querés tu acceso ",
+        "Anual",
+        "De por vida"
+      ],
+      "video": {
+        "src": "https://pub-36eefd528bbb4e28bdef0ce39a1018e0.r2.dev/Prompt/38-abrany-brain-trainer/public/img/chrome_HGxPxPRcsc.mp4?v=1789133274854",
+        "duration": 8.8
+      },
+      "assessment": "public preview video only; not live demo interaction"
+    },
+    {
+      "name": "progravity",
+      "source": "https://soypablocarballo.com/motion-ai/progravity/",
+      "kind": "video",
+      "states": [
+        "desktop",
+        "public-video-0.1",
+        "public-video-0.5",
+        "public-video-0.85",
+        "mobile"
+      ],
+      "url": "https://soypablocarballo.com/motion-ai/progravity/",
+      "status": 200,
+      "title": "Progravity — prompt para crear un sitio web con inteligencia artificial · Pablo Carballo",
+      "headings": [
+        "Progravity",
+        "Anual",
+        "De por vida",
+        "¿Te gusta pero no querés armarlo vos?",
+        "Más sitios web",
+        " Cómo se usa ",
+        " Elegí cómo querés tu acceso ",
+        "Anual",
+        "De por vida"
+      ],
+      "video": {
+        "src": "https://pub-36eefd528bbb4e28bdef0ce39a1018e0.r2.dev/Prompt/43-progravity/public/figma/chrome_6k4kbINtLu.mp4?v=1789921529220",
+        "duration": 7.8
+      },
+      "assessment": "public preview video only; not live demo interaction"
+    },
+    {
+      "name": "spacesis",
+      "source": "https://soypablocarballo.com/motion-ai/spacesis/",
+      "kind": "video",
+      "states": [
+        "desktop",
+        "public-video-0.1",
+        "public-video-0.5",
+        "public-video-0.85",
+        "mobile"
+      ],
+      "url": "https://soypablocarballo.com/motion-ai/spacesis/",
+      "status": 200,
+      "title": "Spacesis — prompt para crear un sitio web con inteligencia artificial · Pablo Carballo",
+      "headings": [
+        "Spacesis",
+        "Anual",
+        "De por vida",
+        "¿Te gusta pero no querés armarlo vos?",
+        "Más sitios web",
+        " Cómo se usa ",
+        " Elegí cómo querés tu acceso ",
+        "Anual",
+        "De por vida"
+      ],
+      "video": {
+        "src": "https://pub-36eefd528bbb4e28bdef0ce39a1018e0.r2.dev/Prompt/spacesis.mp4?v=1785466072353",
+        "duration": 5.7
+      },
+      "assessment": "public preview video only; not live demo interaction"
+    },
+    {
+      "name": "visita-mexico",
+      "source": "https://soypablocarballo.com/motion-ai/visita-mexico/",
+      "kind": "video",
+      "states": [
+        "desktop",
+        "public-video-0.1",
+        "public-video-0.5",
+        "public-video-0.85",
+        "mobile"
+      ],
+      "url": "https://soypablocarballo.com/motion-ai/visita-mexico/",
+      "status": 200,
+      "title": "Visita México — prompt para crear un sitio web con inteligencia artificial · Pablo Carballo",
+      "headings": [
+        "Visita México",
+        "Anual",
+        "De por vida",
+        "¿Te gusta pero no querés armarlo vos?",
+        "Más sitios web",
+        " Cómo se usa ",
+        " Elegí cómo querés tu acceso ",
+        "Anual",
+        "De por vida"
+      ],
+      "video": {
+        "src": "https://pub-36eefd528bbb4e28bdef0ce39a1018e0.r2.dev/Prompt/visita-mexico.mp4?v=1785797946861",
+        "duration": 12.933333
+      },
+      "assessment": "public preview video only; not live demo interaction"
+    },
+    {
+      "name": "velocity-beyond",
+      "source": "https://soypablocarballo.com/motion-ai/velocity-beyond/",
+      "kind": "video",
+      "states": [
+        "desktop",
+        "public-video-0.1",
+        "public-video-0.5",
+        "public-video-0.85",
+        "mobile"
+      ],
+      "url": "https://soypablocarballo.com/motion-ai/velocity-beyond/",
+      "status": 200,
+      "title": "Velocity Beyond — prompt para crear un sitio web con inteligencia artificial · Pablo Carballo",
+      "headings": [
+        "Velocity  Beyond",
+        "Anual",
+        "De por vida",
+        "¿Te gusta pero no querés armarlo vos?",
+        "Más sitios web",
+        " Cómo se usa ",
+        " Elegí cómo querés tu acceso ",
+        "Anual",
+        "De por vida"
+      ],
+      "video": {
+        "src": "https://pub-36eefd528bbb4e28bdef0ce39a1018e0.r2.dev/Prompt/26-bike-premium/public/figma/chrome_WuJpBfDnnG.mp4?v=1786837015091",
+        "duration": 8.3
+      },
+      "assessment": "public preview video only; not live demo interaction"
+    },
+    {
+      "name": "deepbook",
+      "source": "https://www.awwwards.com/sites/deepbook",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://deepbook-v2-wip.webflow.io/",
+      "url": "https://deepbook-v2-wip.webflow.io/",
+      "status": 200,
+      "title": "DeepBook on Sui | Fully On-Chain Order Book for DeFi",
+      "headings": [
+        "Where Sui Finance Starts",
+        "Where Sui Finance Starts",
+        "Spot. Margin. Predict.",
+        "Three primitives, shared liquidity, and one composable stack.",
+        "Everything you need to go from idea to launch. Fast.",
+        "Combine them to build financial products that don't exist yet.",
+        "Whether you're building or trading — it starts here.",
+        "Builders",
+        "Traders",
+        "Who’s Building On DeepBook",
+        "The teams below skipped the hard parts and launched on DeepBook’s financial stack.",
+        "Battle-Tested Security",
+        "Where Sui Finance Starts",
+        "Where Sui Finance Starts"
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "grids-1",
+      "source": "https://www.awwwards.com/sites/grids-1",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://grids03.obys.agency/",
+      "url": "https://grids03.obys.agency/",
+      "status": 403,
+      "title": "403 Forbidden - Nginx",
+      "headings": [],
+      "assessment": "blocked: HTTP 403"
+    },
+    {
+      "name": "brandon-yasin",
+      "source": "https://www.awwwards.com/sites/brandon-yasin",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://brandonyasin.com",
+      "url": "https://brandonyasin.com/",
+      "status": 200,
+      "title": "Brandon Yasin — Creative Director & Designer",
+      "headings": [
+        "archive",
+        " I build refined brands and experiences across digital and physical spaces ",
+        "my signature approach is guided by core values",
+        " established design process tried and tested on small and large brands ",
+        "thank you",
+        " let’s buildtogether ",
+        " join mynetwork "
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "offfforum",
+      "source": "https://www.awwwards.com/sites/offfforum",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://www.offforum.com/",
+      "url": "https://www.offforum.com/",
+      "status": 200,
+      "title": "A WEEK OF DESIGN, ART & DIGITAL CULTURE · FORUM · SEPT 15, 2027 · OFFF SEPT 16–17 · SAT, MONTRÉAL",
+      "headings": [
+        "A WEEK OF DESIGN, ART & DIGITAL CULTURE · FORUM · SEPT 15, 2027 · OFFF SEPT 16–17 · SAT, MONTRÉAL "
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "structure-consulting-engineers",
+      "source": "https://www.awwwards.com/sites/structure-consulting-engineers",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://structureengineering.com.au/",
+      "url": "https://structureengineering.com.au/",
+      "status": 200,
+      "title": "Structure Consulting Engineers | Structural Engineering Sydney",
+      "headings": [
+        "A different approach  to traditional structural engineering",
+        "See our work",
+        "Latest work",
+        "Not all structural engineering businesses think like we do",
+        "Do it once.  Do it right.",
+        "Our work",
+        "Picton Smart Hub",
+        "Tahmoor Sports Complex",
+        "Redfern Community Centre",
+        "Habilis Housing",
+        "Interloop",
+        "Spring Farm Playground",
+        "Castlecrag House II",
+        "Spin"
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "aya",
+      "source": "https://www.awwwards.com/sites/aya",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://aya.nl",
+      "url": "https://aya.nl/",
+      "status": 200,
+      "title": "Danstheater AYA - eigenzinnige voorstellingen voor jong publiek",
+      "headings": [
+        "BRRRothers   6+",
+        "Eigenzinnig  danstheater voor een jong publiek.",
+        "As you Are"
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "auge-experience",
+      "source": "https://www.awwwards.com/sites/auge-experience",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://auge-xp.com/",
+      "url": "https://auge-xp.com/",
+      "status": 200,
+      "title": "Digital Experience Studio | AUGE Experience",
+      "headings": [
+        "AUGE EXPERIENCE©RCCS YFZVYTYHHV©",
+        "AUGE EXPERIENCE©RCCS YFZVYTYHHV©"
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "estudio-bang",
+      "source": "https://www.awwwards.com/sites/estudio-bang",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://bybang.co/",
+      "url": "https://bybang.co/",
+      "status": 200,
+      "title": "Estudio Bang | Architecture, Interiors, Objects & Digital Media",
+      "headings": [],
+      "assessment": "partial: loader/limited rendered states; not full interaction verified"
+    },
+    {
+      "name": "rubens-cantuni-1",
+      "source": "https://www.awwwards.com/sites/rubens-cantuni-1",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://www.rubens.design/",
+      "url": "https://www.rubens.design/",
+      "status": 200,
+      "title": "Rubens Cantuni — Digital Product Designer",
+      "headings": [
+        "Harmony OS",
+        "One OS, many contexts",
+        "Starting from the smartphone",
+        "Defining the core mobile experience",
+        "Two control centers for two levels of control",
+        "Moving tasks across devices",
+        "Adding depth without adding complexity",
+        "Expanding the mobile model",
+        "Adapting the system for productivity",
+        "Designing for lean-back entertainment",
+        "Reducing complexity for driving",
+        "Compressing the ecosystem into quick actions",
+        "Car OS",
+        "Designing for the car"
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "bello",
+      "source": "https://www.awwwards.com/sites/bello",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://mijobello.com/",
+      "url": "https://mijobello.com/",
+      "status": 200,
+      "title": "bello.",
+      "headings": [
+        "bello.",
+        "developer.",
+        "works.",
+        "services.",
+        "chat?"
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "triptych-interactive",
+      "source": "https://www.awwwards.com/sites/triptych-interactive",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "http://3dv2.triptych.co",
+      "url": "https://3dv2.triptych.co/",
+      "status": 200,
+      "title": "Triptych Interactive — AI Strategy & Interactive Digital Agency",
+      "headings": [
+        "Wemakethecomplexsimple."
+      ],
+      "assessment": "partial: loader/limited rendered states; not full interaction verified"
+    },
+    {
+      "name": "ray-corral-personal-brand",
+      "source": "https://www.awwwards.com/sites/ray-corral-personal-brand",
+      "kind": "site",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "original": "https://raycorral.com/",
+      "url": "https://raycorral.com/",
+      "status": 200,
+      "title": "Ray Corral - Mosaic Artist, Architectural Designer, Philanthropist",
+      "headings": [
+        "And you can have more content here ...",
+        "ray corral",
+        "BEFORE FOUNDING MOSAICIST, RAY CORRAL BUILT A CAREER AS A PROFESSIONAL PERCUSSIONIST, CO-WRITING MUSIC THROUGHOUT THE 1990S WHILE BECOMING A PARTNER IN MECCA MULTI MEDIA (M3), ONE OF THE SOUTHEAST'S LEADING RECORDING STUDIOS.",
+        "Forbes",
+        "Wikipedia",
+        "Piscine Oggi",
+        "Pool Magazine",
+        "Aqua Magazine",
+        "Haute Living",
+        "Elle Decor",
+        "In 2023, Ray Corral and Catherine Cathers established the Mosaic Art Fund, a grant program dedicated to supporting working visual artists",
+        "ray corral"
+      ],
+      "assessment": "desktop/mobile and native wheel observations; no complete interaction reproduction claimed"
+    },
+    {
+      "name": "art-section-zchry-org",
+      "source": "https://www.awwwards.com/inspiration/art-section-zchry-org",
+      "kind": "inspiration",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "url": "https://www.awwwards.com/inspiration/art-section-zchry-org",
+      "status": 200,
+      "title": "Art section - Awwwards",
+      "headings": [
+        "\n                    Art section\n                                            from\n                        \n                            zchry.org\n                        \n                                    ",
+        "More inspiration"
+      ],
+      "assessment": "Awwwards embedded visual inspiration; not tested original interaction"
+    },
+    {
+      "name": "danielle-levitt-portfolio",
+      "source": "https://www.awwwards.com/inspiration/danielle-levitt-portfolio",
+      "kind": "inspiration",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "url": "https://www.awwwards.com/inspiration/danielle-levitt-portfolio",
+      "status": 200,
+      "title": "Danielle Levitt Portfolio - Awwwards",
+      "headings": [
+        "\n                    Danielle Levitt Portfolio\n                                            from\n                        \n                            Danielle Levitt\n                        \n                                    ",
+        "More inspiration"
+      ],
+      "assessment": "Awwwards embedded visual inspiration; not tested original interaction"
+    },
+    {
+      "name": "artworks-contemporary-art-exhibition",
+      "source": "https://www.awwwards.com/inspiration/artworks-contemporary-art-exhibition",
+      "kind": "inspiration",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "url": "https://www.awwwards.com/inspiration/artworks-contemporary-art-exhibition",
+      "status": 200,
+      "title": "Artworks - Awwwards",
+      "headings": [
+        "\n                    Artworks\n                                            from\n                        \n                            Contemporary Art Exhibition\n                        \n                                    ",
+        "More inspiration"
+      ],
+      "assessment": "Awwwards embedded visual inspiration; not tested original interaction"
+    },
+    {
+      "name": "building",
+      "source": "https://www.awwwards.com/inspiration/building",
+      "kind": "inspiration",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "url": "https://www.awwwards.com/inspiration/building",
+      "status": 200,
+      "title": "Building - Awwwards",
+      "headings": [
+        "\n                    Building\n                                            from\n                        \n                            Free Fonts\n                        \n                                    ",
+        "More inspiration"
+      ],
+      "assessment": "Awwwards embedded visual inspiration; not tested original interaction"
+    },
+    {
+      "name": "edu-carrillo-horizontal-slider-gallery-edu-carrillo",
+      "source": "https://www.awwwards.com/inspiration/edu-carrillo-horizontal-slider-gallery-edu-carrillo",
+      "kind": "inspiration",
+      "states": [
+        "desktop",
+        "scroll",
+        "mobile"
+      ],
+      "url": "https://www.awwwards.com/inspiration/edu-carrillo-horizontal-slider-gallery-edu-carrillo",
+      "status": 200,
+      "title": "Edu Carrillo - Horizontal slider gallery - Awwwards",
+      "headings": [
+        "\n                    Edu Carrillo - Horizontal slider gallery\n                                            from\n                        \n                            Edu Carrillo\n                        \n                                    ",
+        "More inspiration"
+      ],
+      "assessment": "Awwwards embedded visual inspiration; not tested original interaction"
+    }
+  ],
+  "implemented_45": [
+    {
+      "proposal": 4,
+      "section": "sculpture-hero",
+      "sources": [
+        "progravity",
+        "brain-trainer",
+        "spacesis"
+      ],
+      "adaptation": "Large offset type, central layered agreement object, peripheral annotations; own CSS plane animation, no copied 3D model"
+    },
+    {
+      "proposal": 4,
+      "section": "split-exhibit",
+      "sources": [
+        "danielle-levitt-portfolio",
+        "velocity-beyond",
+        "ray-corral-personal-brand"
+      ],
+      "adaptation": "Asymmetric two-scale project display, staggered media, original client screenshots"
+    },
+    {
+      "proposal": 5,
+      "section": "cinema-hero",
+      "sources": [
+        "visita-mexico",
+        "voltaire-motors",
+        "structure-consulting-engineers",
+        "aya",
+        "offfforum"
+      ],
+      "adaptation": "Full-bleed image with constrained slow pan, large type, precise grid and circular exploration CTA; photo from client portfolio website, not reference media"
+    },
+    {
+      "proposal": 5,
+      "section": "staggered-offer",
+      "sources": [
+        "art-section-zchry-org",
+        "bello"
+      ],
+      "adaptation": "Divided service index with accessible native details, no extra carousel"
+    }
+  ],
+  "new_proposals": {
+    "6": "previews/propuesta-6/design-map.json",
+    "7": "previews/propuesta-7/design-map.json"
+  },
+  "not_claimed": [
+    "No copied paid prompts or reference imagery",
+    "No use of inaccessible Grids layout",
+    "No new Cloner template materialization or final site build",
+    "No publication or messages"
+  ]
+}

@@ -39,6 +39,10 @@ try {
   }
 
   exitCode = result.status ?? 1;
+  if (exitCode === 0) {
+    const routes = spawnSync(process.execPath, [path.join(rootDir, "node_modules", "tsx", "dist", "cli.mjs"), "scripts/apply-page-routes.ts"], { stdio: "inherit" });
+    exitCode = routes.status ?? 1;
+  }
 } finally {
   if (apiMoved && existsSync(apiBackupDir)) {
     cpSync(apiBackupDir, apiDir, { recursive: true });

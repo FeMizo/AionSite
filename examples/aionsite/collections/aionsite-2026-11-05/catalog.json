@@ -1,0 +1,46 @@
+{
+  "source_run": "C:\\Users\\mizo_\\.codex\\aionsite-demos\\aionsite\\20261103T224613Z-fac7f320",
+  "status": "saved-options",
+  "proposals": [
+    {
+      "number": 1,
+      "path": "propuesta-1/proposal.html",
+      "source": "C:\\Users\\mizo_\\.codex\\aionsite-demos\\aionsite\\20261103T224613Z-fac7f320\\previews\\revision-7",
+      "status": "posible referencia reutilizable; no elegida como sitio final",
+      "revision": 1
+    },
+    {
+      "number": 2,
+      "path": "propuesta-2/proposal.html",
+      "source": "C:\\Users\\mizo_\\.codex\\aionsite-demos\\aionsite\\20261103T224613Z-fac7f320\\previews\\propuesta-2",
+      "status": "posible referencia reutilizable; no elegida como sitio final",
+      "revision": 1
+    },
+    {
+      "number": 3,
+      "path": "propuesta-3/proposal.html",
+      "source": "C:\\Users\\mizo_\\.codex\\aionsite-demos\\aionsite\\20261103T224613Z-fac7f320\\previews\\propuesta-3",
+      "status": "posible referencia reutilizable; no elegida como sitio final",
+      "revision": 2
+    },
+    {
+      "number": 4,
+      "path": "propuesta-4/proposal.html",
+      "source": "C:\\Users\\mizo_\\.codex\\aionsite-demos\\aionsite\\20261103T224613Z-fac7f320\\previews\\propuesta-4",
+      "status": "posible referencia reutilizable; no elegida como sitio final",
+      "revision": 2
+    },
+    {
+      "number": 5,
+      "path": "propuesta-5/proposal.html",
+      "source": "C:\\Users\\mizo_\\.codex\\aionsite-demos\\aionsite\\20261103T224613Z-fac7f320\\previews\\propuesta-5",
+      "status": "posible referencia reutilizable; no elegida como sitio final",
+      "revision": 2
+    }
+  ],
+  "restrictions": [
+    "No publication approval",
+    "No automatic reuse of AionSite brand or portfolio for other clients",
+    "Local quote URLs must be replaced for the next project"
+  ]
+}

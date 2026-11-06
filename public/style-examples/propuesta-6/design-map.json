@@ -1,0 +1,72 @@
+{
+  "proposal": 6,
+  "status": "new independent visual study; not selected or published",
+  "direction": "Exhibition / image-led gallery",
+  "source_observation_root": "../../references/premium-round/",
+  "sections": [
+    {
+      "section": ".exhibit-hero",
+      "family": "exhibition-hero",
+      "sources": [
+        "offfforum",
+        "structure-consulting-engineers",
+        "visita-mexico"
+      ],
+      "adopted": "All-width headline and dominant visual scene; secondary image at different scale; image reveals client work, not a decorative reference scene.",
+      "business_goal": "Recognize the service, audience and request a quote."
+    },
+    {
+      "section": ".gallery",
+      "family": "staggered-project-gallery",
+      "sources": [
+        "danielle-levitt-portfolio",
+        "artworks-contemporary-art-exhibition"
+      ],
+      "adopted": "Uneven image scale and asymmetric exhibition rhythm; three real portfolio links, no carousel.",
+      "business_goal": "Provide real work to evaluate design capability."
+    },
+    {
+      "section": ".design-index",
+      "family": "service-index-preview",
+      "sources": [
+        "velocity-beyond"
+      ],
+      "adopted": "Large editorial index beside visual detail, manual pointer/focus/touch selection.",
+      "business_goal": "Explain content, visual direction and contact without a wall of text."
+    },
+    {
+      "section": ".agreement",
+      "family": "commercial-banner",
+      "sources": [
+        "offfforum"
+      ],
+      "adopted": "Typographic scale contrast and framed supporting information; concrete agreement on scope/platform/cost/times.",
+      "business_goal": "Make quote deliverables clear."
+    },
+    {
+      "section": ".process",
+      "family": "editorial-process",
+      "sources": [],
+      "adopted": "Quiet paper surface and static process, providing contrast to dominant imagery."
+    },
+    {
+      "section": ".closing",
+      "family": "monumental-cta",
+      "sources": [
+        "offfforum"
+      ],
+      "adopted": "Oversized clear text link with visible directional response.",
+      "business_goal": "Open actual local request form."
+    }
+  ],
+  "limits": [
+    "Public videos inspected for Visita Mexico and Velocity Beyond; no live interaction of those demos claimed.",
+    "Danielle Levitt and Artworks inspected as Awwwards inspiration screenshots only, not live sites.",
+    "No copied reference assets, brand, video, paid prompts, testimonials or metrics.",
+    "Source portfolio screenshots are deliberately cropped in gallery; full real sites remain linked.",
+    "Static prototype uses local form URL; form submission, CMS and production are not integrated here.",
+    "Not a new Scrapling extraction or materialized Cloner site."
+  ],
+  "verification": "checks/browser.json",
+  "walkthrough": "recorrido-actual.webm"
+}

@@ -1,0 +1,45 @@
+{
+  "status": "possible options, not final selection",
+  "source_run": "C:\\Users\\mizo_\\.codex\\aionsite-demos\\aionsite\\20261103T224613Z-fac7f320",
+  "proposals": [
+    {
+      "immutable": false,
+      "number": 4,
+      "path": "propuesta-4/proposal.html",
+      "label": "Propuesta 4",
+      "status": "revisada con referencias premium; pendiente de elección",
+      "revision": 3,
+      "archive": "propuesta-4-v2/proposal.html",
+      "description": "Revisión 3: portada escultórica, alcance Flip, exposición asimétrica y proceso editorial."
+    },
+    {
+      "immutable": false,
+      "number": 5,
+      "path": "propuesta-5/proposal.html",
+      "label": "Propuesta 5",
+      "status": "revisada con referencias premium; pendiente de elección",
+      "revision": 3,
+      "archive": "propuesta-5-v2/proposal.html",
+      "description": "Revisión 3: portada cinematográfica, índice de servicios, proyectos Creative y CTA."
+    },
+    {
+      "number": 6,
+      "label": "Propuesta 6",
+      "path": "propuesta-6/proposal.html",
+      "revision": 1,
+      "immutable": false,
+      "status": "nueva desde cero; pendiente de elección",
+      "description": "Desde cero: galería editorial, proyectos escalonados, índice interactivo y cierre tipográfico."
+    },
+    {
+      "number": 7,
+      "label": "Propuesta 7",
+      "path": "propuesta-7/proposal.html",
+      "revision": 1,
+      "immutable": false,
+      "status": "nueva desde cero; pendiente de elección",
+      "description": "Desde cero: identidad arquitectónica, capítulos interactivos, evidencia y proceso técnico."
+    }
+  ],
+  "limits": "Public video and visual inspiration only where declared; no new materialized Cloner or publication"
+}

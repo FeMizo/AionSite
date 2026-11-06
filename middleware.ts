@@ -1,8 +1,23 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { managedRoute } from "@/src/lib/site-pages";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const requiresAdmin = /^\/admin(?:\/|$)/.test(pathname) || /^\/api\/(admin|cms|about)(?:\/|$)/.test(pathname);
+  if (!requiresAdmin) {
+    if (pathname.startsWith('/api/')) return NextResponse.next();
+    if (request.headers.get('x-aionsite-page-source') === pathname) return NextResponse.next();
+    const managed = managedRoute(pathname);
+    if (!managed) return NextResponse.next();
+    const destination = request.nextUrl.clone();
+    destination.pathname = managed.path === '/' ? '/' : managed.path.replace(/\/$/, '');
+    if (managed.action === 'redirect') return NextResponse.redirect(destination, 308);
+    const headers = new Headers(request.headers);
+    headers.set('x-aionsite-page-source', destination.pathname);
+    return NextResponse.rewrite(destination, { request: { headers } });
+  }
 
   if (pathname === "/admin/login" || pathname === "/api/admin/login") return NextResponse.next();
 
@@ -33,5 +48,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*", "/api/cms/:path*", "/api/about/:path*"],
+  matcher: ["/((?!_next/|favicon.ico|icon.png).*)"],
 };

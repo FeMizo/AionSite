@@ -1,0 +1,77 @@
+{
+  "browser": [
+    {
+      "proposal": 1,
+      "width": 1440,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 1,
+      "width": 390,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 2,
+      "width": 1440,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 2,
+      "width": 390,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 3,
+      "width": 1440,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 3,
+      "width": 390,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 4,
+      "width": 1440,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 4,
+      "width": 390,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 5,
+      "width": 1440,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    },
+    {
+      "proposal": 5,
+      "width": 390,
+      "images": "passed",
+      "overflow": false,
+      "swiper": "initialized"
+    }
+  ],
+  "console_errors": [],
+  "snapshot_integrity": "passed",
+  "publication": "not performed"
+}

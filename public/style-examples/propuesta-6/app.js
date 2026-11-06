@@ -1,0 +1,12 @@
+const media=matchMedia('(prefers-reduced-motion: reduce)');
+let paused=media.matches;
+const pauseButton=document.getElementById('pause');
+function pause(value){paused=value;document.documentElement.classList.toggle('motion-paused',value);pauseButton.textContent=value?'Activar movimiento':'Pausar movimiento';pauseButton.setAttribute('aria-pressed',String(value))}
+pauseButton.addEventListener('click',()=>pause(!paused));media.addEventListener('change',e=>pause(e.matches));pause(paused);
+document.querySelectorAll('.mobile-menu a').forEach(link=>link.addEventListener('click',()=>link.closest('details').open=false));
+const tabs=[...document.querySelectorAll('[data-index]')];
+const content=[{image:'molotes.webp',label:'CONTENIDO Y ESTRUCTURA',copy:'Organizamos tus servicios y la información necesaria para que tu cliente sepa qué puedes hacer por él.',alt:'Ejemplo de presentación del negocio en Molotes El Tradicional'},{image:'lobbypm.webp',label:'DIRECCIÓN VISUAL',copy:'Adaptamos tipografía, imágenes y distribución al carácter de tu negocio. Cada proyecto tiene su propia presentación.',alt:'Dirección visual del sitio Lobby PM'},{image:'fateh.webp',label:'CONTACTO Y NAVEGACIÓN',copy:'Definimos contigo los enlaces, el formulario o WhatsApp para recibir consultas. El canal queda acordado en tu propuesta.',alt:'Ejemplo de navegación del proyecto Fateh'}];
+let selected=0;
+function select(index,focus=false){selected=index;tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.tabIndex=i===index?0:-1});const item=content[index];const image=document.getElementById('index-image');image.src='assets/'+item.image;image.alt=item.alt;document.getElementById('index-label').textContent=item.label;document.getElementById('index-copy').textContent=item.copy;document.getElementById('index-panel').setAttribute('aria-labelledby',tabs[index].id);if(focus)tabs[index].focus()}
+tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>select(index));tab.addEventListener('focus',()=>select(index));tab.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')select(index)});tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowDown'||event.key==='ArrowRight')next=(index+1)%tabs.length;else if(event.key==='ArrowUp'||event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();select(next,true)})});
+window.proposal6={get paused(){return paused},get selected(){return selected}};
