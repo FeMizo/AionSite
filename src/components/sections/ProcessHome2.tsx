@@ -41,7 +41,7 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
         >
           <p className="font-mono text-xs uppercase tracking-[0.24em] text-blue-300">Cómo trabajamos</p>
           <Heading as="h2" className="mt-4 text-white">Nuestro proceso</Heading>
-          <p className="mt-4 text-lg leading-relaxed text-slate-400">Metodologia agil disenada para garantizar el exito de tu proyecto.</p>
+          <p className="mt-4 text-lg leading-relaxed text-slate-400">Metodología ágil diseñada para garantizar el éxito de tu proyecto.</p>
         </motion.div>
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
@@ -51,7 +51,7 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
               <span className="font-mono text-xs tracking-[0.2em] text-slate-500">0{activeIndex + 1} / 0{data.length}</span>
             </div>
 
-            <div className="relative min-h-[270px] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/65 p-7 shadow-[0_30px_90px_-58px_rgba(59,130,246,0.9)] backdrop-blur-sm sm:p-10">
+            <div aria-live="polite" aria-atomic="true" className="relative min-h-[270px] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/65 p-7 shadow-[0_30px_90px_-58px_rgba(59,130,246,0.9)] backdrop-blur-sm sm:p-10">
               <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full border border-blue-300/15" />
               <div className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-blue-600/10 blur-3xl" />
               <AnimatePresence initial={false} mode="wait" custom={direction}>
@@ -74,15 +74,15 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
             </div>
 
             <div className="mt-8 flex items-center justify-between gap-4">
-              <button type="button" onClick={() => moveStep(-1)} className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-slate-300 transition-colors hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white" aria-label="Paso anterior">
+              <button type="button" onClick={() => moveStep(-1)} className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300 text-slate-300 transition-colors hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white" aria-label="Paso anterior">
                 <ArrowLeft size={18} />
               </button>
-              <div className="flex flex-1 items-center justify-center gap-2" role="tablist" aria-label="Pasos del proceso">
+              <div className="flex min-w-0 flex-1 flex-wrap items-center justify-center gap-1" role="group" aria-label="Pasos del proceso">
                 {data.map((item, index) => (
-                  <button key={item.step} type="button" onClick={() => selectStep(index)} role="tab" aria-selected={index === activeIndex} aria-label={`Ir al paso ${item.step}`} className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex ? "w-10 bg-blue-300" : "w-2 bg-white/25 hover:bg-white/50"}`} />
+                  <button key={item.step} type="button" onClick={() => selectStep(index)} aria-pressed={index === activeIndex} aria-label={`Paso ${item.step}: ${item.title}`} className="flex min-h-11 min-w-11 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300"><span aria-hidden="true" className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex ? "w-10 bg-blue-300" : "w-2 bg-white/25 hover:bg-white/50"}`} /></button>
                 ))}
               </div>
-              <button type="button" onClick={() => moveStep(1)} className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-slate-300 transition-colors hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white" aria-label="Siguiente paso">
+              <button type="button" onClick={() => moveStep(1)} className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300 text-slate-300 transition-colors hover:border-blue-300/50 hover:bg-blue-500/10 hover:text-white" aria-label="Siguiente paso">
                 <ArrowRight size={18} />
               </button>
             </div>
@@ -90,7 +90,7 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
 
           <div className="relative mx-auto w-full max-w-xl">
             <div className="absolute left-1/2 top-1/2 h-px w-[82%] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-300/40 to-transparent" />
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div role="group" aria-label="Seleccionar etapa del proceso" className="grid grid-cols-2 gap-4 sm:grid-cols-3">
               {data.map((item, index) => {
                 const Icon = icons[index % icons.length] ?? Compass;
                 const active = index === activeIndex;
@@ -98,8 +98,7 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
                   <motion.button
                     key={item.step}
                     type="button"
-                    role="tab"
-                    aria-selected={active}
+                    aria-pressed={active}
                     onClick={() => selectStep(index)}
                     initial={{ opacity: 0, y: 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -107,7 +106,7 @@ export function ProcessHome2({ data }: { data: ProcessSectionData }) {
                     transition={{ duration: 0.55, delay: index * 0.08, ease }}
                     whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.97 }}
-                    className={`relative z-10 flex min-h-36 flex-col items-start justify-between rounded-2xl border p-5 text-left transition-colors sm:min-h-40 ${active ? "border-blue-300/55 bg-blue-500/15 text-white shadow-[0_20px_50px_-34px_rgba(59,130,246,0.95)]" : "border-white/10 bg-slate-900/80 text-slate-400 hover:border-blue-300/35 hover:text-white"} ${index === data.length - 1 && data.length % 2 === 1 ? "col-span-2 sm:col-span-1" : ""}`}
+                    className={`relative z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300 flex min-h-36 flex-col items-start justify-between rounded-2xl border p-5 text-left transition-colors sm:min-h-40 ${active ? "border-blue-300/55 bg-blue-500/15 text-white shadow-[0_20px_50px_-34px_rgba(59,130,246,0.95)]" : "border-white/10 bg-slate-900/80 text-slate-400 hover:border-blue-300/35 hover:text-white"} ${index === data.length - 1 && data.length % 2 === 1 ? "col-span-2 sm:col-span-1" : ""}`}
                   >
                     <span className={`flex h-10 w-10 items-center justify-center rounded-xl border ${active ? "border-blue-200/40 bg-blue-300/15 text-blue-200" : "border-white/10 bg-white/[0.03] text-slate-500"}`}><Icon size={18} /></span>
                     <span><span className="block font-mono text-xs text-blue-300">{item.step}</span><span className="mt-2 block text-sm font-medium leading-snug">{item.title}</span></span>
