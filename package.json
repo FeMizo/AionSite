@@ -14,7 +14,10 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "mcp:whatsapp": "tsx mcp/whatsapp-server.ts",
-    "test:whatsapp": "tsx --test tests/whatsapp.test.ts"
+    "test:whatsapp": "tsx --test tests/whatsapp.test.ts",
+    "test:demos": "tsx --test tests/demo-request.test.ts tests/stage-demo.test.mjs",
+    "demo:stage": "node scripts/stage-demo.mjs",
+    "test:pages": "tsx --test tests/site-pages.test.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",

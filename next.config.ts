@@ -14,6 +14,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  distDir: process.env.CODEX_OPS_VERIFY === 'true' ? '.next-codex-ops-verify' : '.next',
   output: isStaticExport ? "export" : undefined,
   images: {
     unoptimized: isStaticExport,
@@ -37,3 +38,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
