@@ -46,7 +46,9 @@ export function ContactHome2() {
   }
 
   const whatsappLink = getWhatsAppLink(
-    `Hola AionSite, me gustaría recibir información sobre: ${selected.join(", ")}.`,
+    selected.length > 0
+      ? `Hola AionSite, me gustaría recibir información sobre: ${selected.join(", ")}.`
+      : undefined,
   );
 
   return (
@@ -64,7 +66,7 @@ export function ContactHome2() {
           <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full border border-blue-300/15 bg-blue-400/10 blur-2xl" />
           <div className="relative">
             <p className="text-2xl font-medium tracking-tight text-white">Que servicio necesitas?</p>
-            <p className="mb-8 mt-2 max-w-md text-sm leading-relaxed text-slate-400">Selecciona todas las opciones que correspondan</p>
+            <p className="mb-8 mt-2 max-w-md text-sm leading-relaxed text-slate-400">Puedes seleccionar servicios o consultarnos directamente</p>
           </div>
           <div className="relative grid gap-3 sm:grid-cols-2">
             {services.map((service) => {
@@ -72,9 +74,12 @@ export function ContactHome2() {
               return <motion.button key={service} type="button" whileTap={{ scale: 0.98 }} aria-pressed={active} onClick={() => toggleService(service)} className={`group flex min-h-14 items-center justify-between rounded-2xl border px-4 py-3 text-left text-sm font-medium transition-[border-color,background-color,box-shadow,transform] ${active ? "border-blue-400/70 bg-blue-500/15 text-white shadow-[0_16px_32px_-20px_rgba(59,130,246,0.95)]" : "border-white/10 bg-slate-950/30 text-slate-200 hover:border-white/25 hover:bg-white/[0.07]"}`}><span>{service}</span><span className={`flex h-6 w-6 items-center justify-center rounded-full border transition-colors ${active ? "border-blue-300 bg-blue-400 text-slate-950" : "border-white/20 text-transparent group-hover:border-white/40"}`}><AnimatePresence initial={false}>{active && <motion.span initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0, opacity: 0 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}><Check size={14} /></motion.span>}</AnimatePresence></span></motion.button>;
             })}
           </div>
-          <AnimatePresence mode="wait" initial={false}>
-            {selected.length === 0 ? <motion.p key="empty" initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} exit={{ opacity: 0 }} className="mt-7 text-xs italic text-slate-400">Selecciona servicios para continuar.</motion.p> : <motion.div key="active" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="mt-7 flex flex-col gap-4 rounded-2xl border border-white/10 bg-slate-950/70 p-4 sm:flex-row sm:items-center sm:justify-between"><p className="text-sm leading-relaxed text-slate-300">Quieres consultar sobre: {selected.join(", ")}</p><MotionButton as="a" href={whatsappLink} target="_blank" rel="noreferrer" label="Vamos" icon={<ArrowUpRight size={17} />} classes="min-h-12 min-w-0 w-full sm:w-auto" /></motion.div>}
-          </AnimatePresence>
+          <div className="mt-7 flex flex-col gap-4 rounded-2xl border border-white/10 bg-slate-950/70 p-4">
+            <p aria-live="polite" aria-atomic="true" className="text-sm leading-relaxed text-slate-300">
+              {selected.length > 0 ? `Quieres consultar sobre: ${selected.join(", ")}` : "Cuéntanos qué necesitas y te orientamos."}
+            </p>
+            <MotionButton as="a" href={whatsappLink} target="_blank" rel="noreferrer" label="Consultar por WhatsApp" icon={<ArrowUpRight size={17} />} classes="min-h-12 min-w-0 w-full" />
+          </div>
         </motion.div>
       </Container>
     </section>
