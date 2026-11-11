@@ -62,8 +62,7 @@ export function CtaFooterHome2({ base, cta, footer, process }: { base: CmsBase; 
     setStatus("sending");
     try {
       const request = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) };
-      let response = await fetch("/api/contact", request);
-      if (response.status === 404) response = await fetch("/api/contact.php", request);
+      const response = await fetch("/api/contact.php", request);
       if (!response.ok) throw new Error("Request failed");
       sendMetaCapiEvent("LeadSubmitted", { email: form.email });
       setStatus("success");

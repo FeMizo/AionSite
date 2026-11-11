@@ -61,10 +61,7 @@ export function ContactForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: form.name, email: form.email, message: messageWithPhone }),
       };
-      let res = await fetch("/api/contact", request);
-      if (res.status === 404) {
-        res = await fetch("/api/contact.php", request);
-      }
+      const res = await fetch("/api/contact.php", request);
       
       if (res.ok) {
         sendMetaCapiEvent("LeadSubmitted", { email: form.email, phone: form.phone });

@@ -36,8 +36,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, subject: `Blog: ${post.title}` }),
       };
-      let res = await fetch("/api/contact", request);
-      if (res.status === 404) res = await fetch("/api/contact.php", request);
+      const res = await fetch("/api/contact.php", request);
       if (res.ok) {
         setStatus("sent");
         setForm({ name: "", email: "", message: "" });
