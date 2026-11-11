@@ -71,7 +71,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Campos requeridos." }, { status: 400 });
   }
 
-  if (typeof name !== "string" || name.length > MAX_NAME) {
+  if (typeof name !== "string" || !name.trim() || name.length > MAX_NAME) {
     return NextResponse.json({ error: "Nombre inválido." }, { status: 400 });
   }
 
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Correo inválido." }, { status: 400 });
   }
 
-  if (typeof message !== "string" || message.length > MAX_MESSAGE) {
+  if (typeof message !== "string" || !message.trim() || message.length > MAX_MESSAGE) {
     return NextResponse.json({ error: "Mensaje inválido." }, { status: 400 });
   }
 

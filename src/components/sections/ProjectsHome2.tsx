@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import type { PortfolioSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { Heading } from "@/src/components/ui/Heading";
+import MotionButton from "@/src/components/ui/motion-button";
 
 export function ProjectsHome2({ data }: { data: PortfolioSectionData }) {
   const projects = data.slice(0, 6);
@@ -80,9 +81,9 @@ export function ProjectsHome2({ data }: { data: PortfolioSectionData }) {
     <section id="portafolio" className="relative overflow-hidden bg-slate-950 py-18 text-white md:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(124,58,237,0.12),transparent_32%)]" />
       <Container className="relative">
-        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.7 }} className="mb-12 flex items-end justify-between gap-6 md:mb-16">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.7 }} className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end md:mb-16">
           <div><p className="font-mono text-xs uppercase tracking-[0.24em] text-blue-300">Proyectos</p><Heading as="h2" className="mt-4 text-white">Proyectos destacados</Heading></div>
-          <Link href="/proyectos" className="hidden items-center gap-2 text-sm font-medium text-slate-300 transition-colors hover:text-white sm:inline-flex">Ver todos los proyectos <ArrowUpRight size={17} /></Link>
+          <Link href="/proyectos" className="inline-flex min-h-11 items-center gap-2 rounded-lg text-sm font-medium text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300">Ver todos los proyectos <ArrowUpRight size={17} /></Link>
         </motion.div>
         <div
           ref={carouselRef}
@@ -110,6 +111,9 @@ export function ProjectsHome2({ data }: { data: PortfolioSectionData }) {
         <div className="mt-7 flex justify-center gap-3">
           <button type="button" aria-label="Ver proyectos anteriores" onClick={() => scrollByCard("left")} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-slate-900 text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"><ArrowLeft size={17} /></button>
           <button type="button" aria-label="Ver siguientes proyectos" onClick={() => scrollByCard("right")} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-slate-900 text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"><ArrowRight size={17} /></button>
+        </div>
+        <div className="mt-8 flex justify-center">
+          <MotionButton as="a" href="#contact" label="Hablemos de tu proyecto" classes="min-h-12 min-w-0 w-full sm:w-auto" />
         </div>
       </Container>
     </section>
