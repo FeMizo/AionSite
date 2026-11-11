@@ -1,0 +1,589 @@
+/* Home 3 — hero details, strip controls, pricing, FAQ, contact */
+.h3-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.h3-localtime {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+}
+
+.h3-localtime__dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #22c55e;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .h3-localtime__dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    animation: h3-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}
+
+@keyframes h3-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* Strip footer */
+.h3-work__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin: 1.25rem var(--gutter) 0;
+}
+
+.h3-strip-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.h3-strip-controls p {
+  margin: 0;
+  min-width: 8.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.h3-strip-controls__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.h3-round {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px rgb(148 163 184 / 0.45);
+  cursor: pointer;
+  transition: transform 160ms var(--ease-out), background-color 150ms ease, color 150ms ease, opacity 150ms ease;
+}
+
+.h3-round:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.h3-round:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .h3-round:hover:not(:disabled) {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+/* Secondary solid button: white on navy */
+.h3-btn--ink {
+  background: var(--ink);
+  color: var(--paper) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .h3-btn--ink:hover {
+    background: #fff;
+  }
+}
+
+/* Pricing — three columns hung from a heavy rule, not cards */
+.h3-pricing {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  justify-items: start;
+}
+
+.h3-pricing__head {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.h3-pricing__head p {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 1000px) {
+  .h3-pricing__head {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    align-items: end;
+    gap: 4rem;
+  }
+}
+
+.h3-plans {
+  display: grid;
+  gap: 2.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.h3-plan {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+}
+
+.h3-plan::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--blue);
+  transform-origin: left;
+}
+
+@media (min-width: 820px) {
+  .h3-plans {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+  .h3-plan {
+    padding-inline: 2rem;
+  }
+  .h3-plan + .h3-plan {
+    border-left: 1px solid var(--line);
+  }
+  .h3-plan:first-child {
+    padding-left: 0;
+  }
+  .h3-plan:last-child {
+    padding-right: 0;
+  }
+  .h3-plan::before {
+    left: 2rem;
+    right: 2rem;
+  }
+  .h3-plan:first-child::before {
+    left: 0;
+  }
+  .h3-plan:last-child::before {
+    right: 0;
+  }
+}
+
+.h3-plan h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.h3-plan__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0.25rem 0 0;
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.h3-plan__from,
+.h3-plan__cur {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.h3-plan__fit {
+  margin: 0;
+  color: var(--muted);
+}
+
+.h3-plan__list {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.h3-plan__list li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.h3-plan__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 0.7rem;
+  height: 2px;
+  background: var(--sky);
+}
+
+/* FAQ — mist block, native <details> with animated height */
+.h3-faq {
+  display: grid;
+  gap: 2.5rem;
+  background: var(--bg-3);
+  border-top: 0;
+}
+
+@media (min-width: 900px) {
+  .h3-faq {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: 4rem;
+  }
+}
+
+.h3-faq__item {
+  position: relative;
+  interpolate-size: allow-keywords;
+}
+
+.h3-faq__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.14;
+  transform-origin: left;
+}
+
+.h3-faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  list-style: none;
+  cursor: pointer;
+}
+
+.h3-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.h3-faq__icon {
+  position: relative;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px rgb(148 163 184 / 0.45);
+  transition: transform 250ms var(--ease-out), background-color 150ms ease, color 150ms ease;
+}
+
+.h3-faq__icon::before,
+.h3-faq__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 1.8px;
+  margin: -0.9px 0 0 -6px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.h3-faq__icon::after {
+  transform: rotate(90deg);
+}
+
+.h3-faq__item[open] .h3-faq__icon {
+  transform: rotate(45deg);
+  background: var(--blue);
+  color: #fff;
+  box-shadow: none;
+}
+
+.h3-faq__item p {
+  margin: 0;
+  padding: 0 3.5rem 1.6rem 0;
+  max-width: 40rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .h3-faq__item::details-content {
+    block-size: 0;
+    opacity: 0;
+    overflow-y: clip;
+    transition:
+      block-size 300ms var(--ease-out),
+      opacity 250ms ease,
+      content-visibility 300ms allow-discrete;
+  }
+  .h3-faq__item[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
+}
+
+/* Contact picker */
+.h3-picker {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.h3-picker__label {
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-weight: 500;
+}
+
+.h3-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.h3-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.9rem;
+  padding: 0 1.15rem 0 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(148 163 184 / 0.08);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 500;
+  box-shadow: inset 0 0 0 1.5px rgb(243 245 244 / 0.22);
+  cursor: pointer;
+  transition: transform 160ms var(--ease-out), background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.h3-chip:active {
+  transform: scale(0.96);
+}
+
+.h3-chip__check {
+  display: grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px rgb(243 245 244 / 0.4);
+  transition: background-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+
+.h3-chip__check svg {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 150ms ease, transform 220ms var(--ease-out);
+}
+
+.h3-chip[aria-pressed="true"] {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: none;
+}
+
+.h3-chip[aria-pressed="true"] .h3-chip__check {
+  background: #fff;
+  color: var(--blue);
+  box-shadow: none;
+}
+
+.h3-chip[aria-pressed="true"] .h3-chip__check svg {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .h3-chip[aria-pressed="false"]:hover {
+    background: rgb(243 245 244 / 0.14);
+  }
+}
+
+/* Reveals for the new sections. Opacity/translate live on wrappers so
+   the chips' own press transform stays fast. */
+@media (prefers-reduced-motion: no-preference) {
+  .h3-js [data-reveal="plans"] .h3-plan > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 650ms var(--ease-out) calc(var(--d) + 250ms),
+      transform 650ms var(--ease-out) calc(var(--d) + 250ms);
+  }
+  .h3-js [data-reveal="plans"] .h3-plan::before {
+    transform: scaleX(0);
+    transition: transform 900ms cubic-bezier(0.77, 0, 0.175, 1) var(--d);
+  }
+  .h3-js [data-reveal="plans"].is-in .h3-plan > * {
+    opacity: 1;
+    transform: none;
+  }
+  .h3-js [data-reveal="plans"].is-in .h3-plan::before {
+    transform: scaleX(1);
+  }
+
+  .h3-js [data-reveal="chips"] .h3-picker > * {
+    opacity: 0;
+    translate: 0 12px;
+    transition:
+      opacity 550ms var(--ease-out),
+      translate 550ms var(--ease-out);
+  }
+  .h3-js [data-reveal="chips"] .h3-picker > :nth-child(2) {
+    transition-delay: 220ms;
+  }
+  .h3-js [data-reveal="chips"] .h3-picker > :nth-child(3) {
+    transition-delay: 360ms;
+  }
+  .h3-js [data-reveal="chips"].is-in .h3-picker > * {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Process as a swipeable slider on phones */
+.h3-steps-controls {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .h3-steps {
+    display: flex;
+    gap: 0.75rem;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 0.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .h3-steps::-webkit-scrollbar {
+    display: none;
+  }
+  .h3-steps li {
+    flex: 0 0 80%;
+    min-height: 13rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: var(--bg-3);
+    box-shadow: inset 0 0 0 1px var(--line);
+    scroll-snap-align: start;
+  }
+  .h3-steps .h3-steps__n {
+    box-shadow: none;
+  }
+  .h3-steps-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+  }
+}
+
+/* Process, scroll-linked: in browsers with scroll-driven animations the
+   thread fills and each step arrives as you scroll, tied to scroll position.
+   Others keep the one-shot reveal from home3.css. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .h3-steps {
+      view-timeline: --h3-steps block;
+    }
+
+    .h3-js [data-reveal="steps"] li,
+    .h3-js [data-reveal="steps"] .h3-steps__n,
+    .h3-js [data-reveal="steps"]::before {
+      transition: none;
+    }
+
+    .h3-js [data-reveal="steps"] li {
+      animation: h3-step-in linear both;
+      animation-timeline: --h3-steps;
+      animation-range: cover calc(4% + var(--i) * 5%) cover calc(24% + var(--i) * 5%);
+    }
+
+    .h3-js [data-reveal="steps"] .h3-steps__n {
+      animation: h3-step-dot linear both;
+      animation-timeline: --h3-steps;
+      animation-range: cover calc(8% + var(--i) * 5%) cover calc(22% + var(--i) * 5%);
+    }
+
+    .h3-js [data-reveal="steps"]::before {
+      animation: h3-step-line linear both;
+      animation-timeline: --h3-steps;
+      animation-range: cover 4% cover 50%;
+    }
+  }
+}
+
+@keyframes h3-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes h3-step-dot {
+  from {
+    transform: scale(0.4);
+    background-color: rgb(37 99 235 / 0.2);
+  }
+  to {
+    transform: none;
+    background-color: var(--blue);
+  }
+}
+
+@keyframes h3-step-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

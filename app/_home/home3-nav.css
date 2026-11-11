@@ -1,0 +1,347 @@
+/* Home 3 — sticky header, phone menu, about photo, plan info */
+
+/* Sticky header so the menu is reachable from anywhere */
+.h3-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+/* Blur lives on a pseudo-element: backdrop-filter on the header itself
+   would trap the fixed menu sheet inside the header's box. */
+.h3-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgb(2 6 23 / 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Keep logo and buttons above the open menu sheet */
+.h3-header > .h3-logo,
+.h3-header__end > .h3-btn,
+.h3-header__end > .h3-menu-btn {
+  position: relative;
+  z-index: 70;
+}
+
+/* Anchored sections land below the sticky header */
+.h3 section[id],
+.h3-anchor {
+  scroll-margin-top: 4.5rem;
+}
+
+.h3-anchor {
+  position: absolute;
+}
+
+.h3-pricing {
+  position: relative;
+}
+
+.h3-header__end {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Menu button: two lines that turn into an X */
+.h3-menu-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(148 163 184 / 0.1);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 160ms var(--ease-out), background-color 150ms ease;
+}
+
+.h3-menu-btn:active {
+  transform: scale(0.94);
+}
+
+.h3-menu-btn__lines,
+.h3-menu-btn__lines::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 1.8px;
+  margin-left: -8px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 220ms var(--ease-out);
+}
+
+.h3-menu-btn__lines {
+  transform: translateY(-3.5px);
+}
+
+.h3-menu-btn__lines::before {
+  content: "";
+  left: 0;
+  top: 0;
+  margin: 0;
+  transform: translateY(7px);
+}
+
+.h3-menu-btn[aria-expanded="true"] .h3-menu-btn__lines {
+  transform: rotate(45deg);
+}
+
+.h3-menu-btn[aria-expanded="true"] .h3-menu-btn__lines::before {
+  transform: rotate(-90deg);
+}
+
+@media (min-width: 820px) {
+  .h3-menu-btn,
+  .h3-menu {
+    display: none !important;
+  }
+}
+
+/* The sheet */
+.h3-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 5.5rem var(--gutter) 2rem;
+  background: var(--paper);
+  outline: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 160ms ease, visibility 0s linear 160ms;
+}
+
+.h3-menu[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 220ms var(--ease-out), visibility 0s;
+}
+
+.h3-menu ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.h3-menu li a {
+  display: block;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.h3-menu__actions {
+  display: grid;
+  gap: 0.6rem;
+}
+
+/* Links arrive in a quick cascade; closing is a plain fast fade */
+@media (prefers-reduced-motion: no-preference) {
+  .h3-menu li,
+  .h3-menu__actions {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 120ms ease, transform 120ms ease;
+  }
+  .h3-menu[data-open="true"] li,
+  .h3-menu[data-open="true"] .h3-menu__actions {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 320ms var(--ease-out) calc(40ms + var(--i) * 35ms),
+      transform 320ms var(--ease-out) calc(40ms + var(--i) * 35ms);
+  }
+}
+
+/* About with photo */
+.h3-about {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.h3-about__photo {
+  margin: 0;
+  width: min(100%, 22rem);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgb(2 6 23 / 0.6), 0 0 0 1px rgb(255 255 255 / 0.18);
+}
+
+.h3-about__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.h3-about__lead {
+  max-width: 34ch;
+}
+
+@media (min-width: 900px) {
+  .h3-about {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: 4rem;
+  }
+  .h3-about__photo {
+    order: 2;
+    width: 100%;
+    max-width: 26rem;
+    justify-self: end;
+    rotate: 2deg;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Clip the image, not the observed figure: a fully clipped target
+     never reports as intersecting. */
+  .h3-js [data-reveal="photo"] {
+    transform: translateY(24px);
+    transition: transform 1000ms var(--ease-out);
+  }
+  .h3-js [data-reveal="photo"] img {
+    clip-path: inset(100% 0 0 0);
+    scale: 1.08;
+    transition:
+      clip-path 1000ms cubic-bezier(0.77, 0, 0.175, 1),
+      scale 1200ms var(--ease-out);
+  }
+  .h3-js [data-reveal="photo"].is-in {
+    transform: none;
+  }
+  .h3-js [data-reveal="photo"].is-in img {
+    clip-path: inset(0 0 0 0);
+    scale: 1;
+  }
+}
+
+/* Plan info (i) */
+.h3-plan__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.h3-info {
+  position: relative;
+}
+
+.h3-info__btn {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: transform 160ms var(--ease-out), color 150ms ease, background-color 150ms ease;
+}
+
+.h3-info__btn:active {
+  transform: scale(0.92);
+}
+
+.h3-info__btn[aria-expanded="true"] {
+  background: var(--blue);
+  color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .h3-info__btn:hover {
+    color: var(--ink);
+    background: rgb(148 163 184 / 0.12);
+  }
+  .h3-info__btn[aria-expanded="true"]:hover {
+    background: var(--blue-hi);
+  }
+}
+
+.h3-info__panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: -0.25rem;
+  z-index: 20;
+  width: min(19rem, calc(100vw - 2 * var(--gutter)));
+  padding: 1.1rem 1.2rem 1.2rem;
+  border-radius: 14px;
+  background: var(--bg-3);
+  box-shadow:
+    0 0 0 1px rgb(148 163 184 / 0.2),
+    0 24px 48px -12px rgb(0 0 0 / 0.6);
+  font-size: 0.95rem;
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.96) translateY(-4px);
+  visibility: hidden;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    visibility 0s linear 150ms;
+}
+
+.h3-info__panel[data-open="true"] {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out),
+    visibility 0s;
+}
+
+.h3-info__title {
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.h3-info__panel ol {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--ink);
+}
+
+.h3-info__panel ol li::marker {
+  color: var(--sky);
+  font-weight: 700;
+}
+
+.h3-info__notes {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.9rem 0 0;
+  padding: 0.9rem 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h3-info__panel,
+  .h3-info__panel[data-open="true"] {
+    transform: none;
+  }
+}

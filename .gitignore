@@ -52,3 +52,6 @@ REPORTE_*.md
 REPORTE_*.html
 RESUMEN_*.md
 SETUP-*.md
+
+# Playwright MCP session artifacts
+.playwright-mcp/
