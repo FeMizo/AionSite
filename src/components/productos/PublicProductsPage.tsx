@@ -595,12 +595,14 @@ export function PublicProductsPage() {
           (ring): ring is HTMLDivElement => Boolean(ring),
         );
 
-        gsap.to(marqueeRef.current, {
-          xPercent: -50,
-          duration: 28,
-          ease: "none",
-          repeat: -1,
-        });
+        if (marqueeRef.current) {
+          gsap.to(marqueeRef.current, {
+            xPercent: -50,
+            duration: 28,
+            ease: "none",
+            repeat: -1,
+          });
+        }
 
         gsap.to(heroRings, {
           rotate: (index) => (index % 2 === 0 ? 360 : -360),
@@ -629,20 +631,22 @@ export function PublicProductsPage() {
           },
         });
 
-        heroTimeline
-          .to(heroScenes[0], { x: -220, y: -55, rotate: -15, scale: 0.82, autoAlpha: 0.38 }, 0.08)
-          .to(heroScenes[1], { x: 0, y: 0, rotate: 0, scale: 1, autoAlpha: 1 }, 0.18)
-          .to(heroScenes[2], { x: 220, y: 68, rotate: 14, scale: 0.84, autoAlpha: 0.42 }, 0.28)
-          .to(heroRingRefs.current[0], { rotate: 180, scale: 1.08 }, 0.18)
-          .to(heroRingRefs.current[1], { rotate: -180, scale: 0.95 }, 0.28)
-          .to(heroScenes[0], { x: -320, y: -140, rotate: -22, scale: 0.68, autoAlpha: 0.12 }, 0.72)
-          .to(heroScenes[1], { x: -140, y: -16, rotate: -8, scale: 0.9, autoAlpha: 0.72 }, 0.82)
-          .to(heroScenes[2], { x: 130, y: 18, rotate: 8, scale: 0.92, autoAlpha: 0.9 }, 0.92)
-          .to(heroScenes[1], { x: -40, y: -8, rotate: -4, scale: 0.96, autoAlpha: 0.5 }, 1.28)
-          .to(heroScenes[2], { x: 0, y: 0, rotate: 0, scale: 1, autoAlpha: 1 }, 1.48)
-          .to(heroScenes[0], { x: -120, y: 72, rotate: -10, scale: 0.72, autoAlpha: 0.24 }, 1.62)
-          .to(heroScenes[1], { x: 130, y: 40, rotate: 10, scale: 0.84, autoAlpha: 0.44 }, 1.72)
-          .to(heroScenes[2], { x: 0, y: -26, rotate: 0, scale: 1.04, autoAlpha: 1 }, 1.88);
+        if (heroScenes.length >= 3 && heroRingRefs.current[0] && heroRingRefs.current[1]) {
+          heroTimeline
+            .to(heroScenes[0], { x: -220, y: -55, rotate: -15, scale: 0.82, autoAlpha: 0.38 }, 0.08)
+            .to(heroScenes[1], { x: 0, y: 0, rotate: 0, scale: 1, autoAlpha: 1 }, 0.18)
+            .to(heroScenes[2], { x: 220, y: 68, rotate: 14, scale: 0.84, autoAlpha: 0.42 }, 0.28)
+            .to(heroRingRefs.current[0], { rotate: 180, scale: 1.08 }, 0.18)
+            .to(heroRingRefs.current[1], { rotate: -180, scale: 0.95 }, 0.28)
+            .to(heroScenes[0], { x: -320, y: -140, rotate: -22, scale: 0.68, autoAlpha: 0.12 }, 0.72)
+            .to(heroScenes[1], { x: -140, y: -16, rotate: -8, scale: 0.9, autoAlpha: 0.72 }, 0.82)
+            .to(heroScenes[2], { x: 130, y: 18, rotate: 8, scale: 0.92, autoAlpha: 0.9 }, 0.92)
+            .to(heroScenes[1], { x: -40, y: -8, rotate: -4, scale: 0.96, autoAlpha: 0.5 }, 1.28)
+            .to(heroScenes[2], { x: 0, y: 0, rotate: 0, scale: 1, autoAlpha: 1 }, 1.48)
+            .to(heroScenes[0], { x: -120, y: 72, rotate: -10, scale: 0.72, autoAlpha: 0.24 }, 1.62)
+            .to(heroScenes[1], { x: 130, y: 40, rotate: 10, scale: 0.84, autoAlpha: 0.44 }, 1.72)
+            .to(heroScenes[2], { x: 0, y: -26, rotate: 0, scale: 1.04, autoAlpha: 1 }, 1.88);
+        }
       }
 
       gsap.set(slides, { autoAlpha: 0, y: 58, scale: 0.98 });
