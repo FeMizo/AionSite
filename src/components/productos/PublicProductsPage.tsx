@@ -31,7 +31,7 @@ type Chapter = {
 
 const chapters: Chapter[] = [
   {
-    eyebrow: "Creacion de webs",
+    eyebrow: "Creación de webs",
     title: "Sitios con jerarquía, belleza y venta clara.",
     summary:
       "Diseño a medida, copy preciso y una estructura pensada para convertir sin ruido visual.",
@@ -50,18 +50,18 @@ const chapters: Chapter[] = [
   },
   {
     eyebrow: "Mejora de velocidad",
-    title: "Menos friccion. Mas sensacion de respuesta.",
+    title: "Menos fricción. Más sensación de respuesta.",
     summary:
-      "Optimizacion real para que el sitio cargue antes, se mueva mejor y sostenga la atencion.",
+      "Optimización real para que el sitio cargue antes, se mueva mejor y sostenga la atención.",
     details: [
       "Reducción de peso visual y técnico",
-      "Imagenes, fuentes y scripts afinados",
+      "Imágenes, fuentes y scripts afinados",
       "Mejor lectura de Core Web Vitals",
     ],
     metrics: [
       { label: "LCP", value: "-1.2 s" },
       { label: "Peso", value: "menos" },
-      { label: "INP", value: "mas agiles" },
+      { label: "INP", value: "más ágiles" },
     ],
     scene: "speed",
     layout: "reverse",
@@ -70,16 +70,16 @@ const chapters: Chapter[] = [
     eyebrow: "Custom code",
     title: "Funciones exactas para vender, medir y automatizar.",
     summary:
-      "Codigo a medida para conectar sistemas, crear micro experiencias y dejar una ventaja que no se copia.",
+      "Código a medida para conectar sistemas, crear micro experiencias y dejar una ventaja que no se copia.",
     details: [
       "Integraciones con APIs y formularios",
       "Tracking de eventos y conversiones",
-      "Automatizaciones y logica de negocio",
+      "Automatizaciones y lógica de negocio",
     ],
     metrics: [
       { label: "Integraciones", value: "a medida" },
       { label: "Tracking", value: "fino" },
-      { label: "Automatizacion", value: "si" },
+      { label: "Automatización", value: "sí" },
     ],
     scene: "code",
     layout: "split",
@@ -482,14 +482,14 @@ function CodeScene({ active }: { active: boolean }) {
           <div className="rounded-[1.6rem] border border-white/10 bg-slate-950/80 p-5">
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/20 bg-blue-300/8 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-blue-200">
               <Code2 size={12} />
-              logica
+              lógica
             </div>
             <h3 className="mt-5 font-display text-3xl font-semibold leading-[1.02] text-white">
-              Codigo que se siente invisible y hace el trabajo dificil.
+              Código que se siente invisible y hace el trabajo difícil.
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
               Integraciones, medición y automatización pensadas para crecer sin depender
-              de un parche generico.
+              de un parche genérico.
             </p>
           </div>
 
@@ -862,8 +862,8 @@ export function PublicProductsPage() {
                   data-reveal
                   className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl"
                 >
-                  Creacion de webs, mejora de velocidad y custom code para que AionSite se
-                  vea mas premium, responda mejor y cierre mas rapido.
+                  Creación de webs, mejora de velocidad y custom code para que AionSite se
+                  vea más premium, responda mejor y cierre más rápido.
                 </p>
 
                 <div data-reveal className="mt-10 flex flex-wrap gap-3">

@@ -22,7 +22,7 @@ export function Hero({
   headerData: HeaderSectionData;
 }) {
   const reduce = usePrefersReducedMotion();
-  const [city, setCity] = useState("Cd. Carmen");
+  const [city] = useState("Cd. Carmen");
   const sectionRef = useRef<HTMLElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
@@ -34,13 +34,6 @@ export function Hero({
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const signalLineRefs = useRef<Array<SVGPathElement | null>>([]);
   const signalPulseRefs = useRef<Array<HTMLSpanElement | null>>([]);
-
-  useEffect(() => {
-    fetch("/api/location")
-      .then((res) => res.json())
-      .then((result) => setCity(result.city))
-      .catch(() => setCity("Cd. Carmen"));
-  }, []);
 
   useEffect(() => {
     const section = sectionRef.current;

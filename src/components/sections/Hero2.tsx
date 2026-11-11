@@ -12,13 +12,9 @@ import { gsap, usePrefersReducedMotion } from "@/src/lib/animations";
 
 export function Hero2({ data, headerData }: { data: HeroSectionData; headerData: HeaderSectionData }) {
   const reduce = usePrefersReducedMotion();
-  const [city, setCity] = useState("Cd. Carmen");
+  const [city] = useState("Cd. Carmen");
   const rootRef = useRef<HTMLElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    fetch("/api/location").then((res) => res.json()).then((result) => setCity(result.city)).catch(() => setCity("Cd. Carmen"));
-  }, []);
 
   useEffect(() => {
     const root = rootRef.current;

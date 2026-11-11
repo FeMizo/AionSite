@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { ArrowUpRight, Atom, Instagram, Send } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { CmsBase, FinalCTASectionData, FooterSectionData, ProcessSectionData } from "@/src/cms/types";
 import { Container } from "@/src/components/ui/Container";
 import { Heading } from "@/src/components/ui/Heading";
 import MotionButton from "@/src/components/ui/motion-button";
+import { getWhatsAppLink } from "@/src/config/whatsapp";
 import { sendMetaCapiEvent } from "@/src/components/analytics/MetaPixel";
 
 const video = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4";
@@ -47,22 +48,29 @@ export function CtaFooterHome2({ base, cta, footer, process }: { base: CmsBase; 
   const [form, setForm] = useState<FormState>({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const reduce = useReducedMotion();
+  const submissionPending = useRef(false);
 
   function updateField(field: keyof FormState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
-    if (status !== "idle") setStatus("idle");
+    if (status !== "idle" && !submissionPending.current) setStatus("idle");
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submissionPending.current) return;
+    submissionPending.current = true;
     setStatus("sending");
     try {
-      const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
+      const request = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) };
+      let response = await fetch("/api/contact", request);
+      if (response.status === 404) response = await fetch("/api/contact.php", request);
       if (!response.ok) throw new Error("Request failed");
       sendMetaCapiEvent("LeadSubmitted", { email: form.email });
       setStatus("success");
     } catch {
       setStatus("error");
+    } finally {
+      submissionPending.current = false;
     }
   }
 
@@ -109,7 +117,17 @@ export function CtaFooterHome2({ base, cta, footer, process }: { base: CmsBase; 
             <label className="mt-5 grid gap-2 text-sm text-slate-300">¿Qué necesitas construir?<textarea required rows={5} value={form.message} onChange={(event) => updateField("message", event.target.value)} className="resize-y rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition-colors placeholder:text-slate-600 focus:border-blue-300/60 focus:bg-white/[0.06]" placeholder="Cuéntanos sobre tu idea, objetivos o problema..." /></label>
             <MotionButton type="submit" label={status === "sending" ? "Enviando..." : "Enviar mensaje"} classes="mt-6 w-full" icon={<Send size={17} />} disabled={status === "sending"} />
             {status === "success" && <p className="mt-4 text-sm text-emerald-300">Mensaje enviado. Te responderemos pronto.</p>}
-            {status === "error" && <p className="mt-4 text-sm text-rose-300">No pudimos enviar el mensaje. Intenta de nuevo o escríbenos por WhatsApp.</p>}
+            {status === "error" && (
+              <div role="alert" className="mt-4 text-sm text-rose-300">
+                <p>No pudimos enviar el mensaje. Puedes intentar de nuevo o continuar por WhatsApp.</p>
+                <a
+                  href={getWhatsAppLink(`Hola AionSite, soy ${form.name}. ${form.message}`)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex min-h-11 items-center rounded-lg font-medium text-blue-200 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+                >Continuar por WhatsApp</a>
+              </div>
+            )}
             <p className="mt-4 text-xs text-slate-500">{cta.responseText}</p>
           </motion.form>
         </div>
