@@ -2,6 +2,13 @@
   CacheDisable public /
 </IfModule>
 
+# Never expose private deployment configuration files.
+<FilesMatch "^(smtp_config|meta_capi_config|_smtp)\.php$">
+  Require all denied
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|txt|xml|json)$">
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
