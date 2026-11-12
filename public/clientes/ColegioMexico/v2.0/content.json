@@ -1,0 +1,120 @@
+{
+  "_info": "Contenido editable del home. El futuro panel /admin editará este archivo. Los campos con \"pendiente\": true son de ejemplo y deben confirmarse con el colegio.",
+  "contacto": {
+    "whatsapp": "529383820874",
+    "whatsappMensaje": "Hola, me gustaría agendar una visita al Colegio México.",
+    "telefono": "938 382 0874",
+    "correo": "colegiomexico.carmen@gmail.com",
+    "direccion": "Calle 46 no. 46, col. Tila, Ciudad del Carmen, Campeche, C.P. 24170",
+    "horario": "Lunes a viernes de 7:30 a.m. a 2:00 p.m.",
+    "facebook": "https://www.facebook.com/colegiomexico.carmen/",
+    "mapa": "https://www.google.com/maps/search/?api=1&query=Calle+46+46+Tila+Ciudad+del+Carmen+Campeche"
+  },
+  "hero": {
+    "titulo": "Aquí se forman campeones",
+    "texto": "Preescolar y Primaria en la colonia Tila, Ciudad del Carmen. En 2026, nuestra alumna Alondra ganó el primer lugar estatal de la Olimpiada del Conocimiento Infantil.",
+    "cta": "Agendar visita por WhatsApp",
+    "cta2": "Ver logros",
+    "fotoPie": "Alondra Vera Matías, primer lugar estatal en la Olimpiada del Conocimiento Infantil 2026."
+  },
+  "datos": [
+    {
+      "titulo": "Preescolar y Primaria",
+      "texto": "Dos niveles, un mismo acompañamiento"
+    },
+    {
+      "titulo": "7:30 a 2:00",
+      "texto": "Atención de lunes a viernes"
+    },
+    {
+      "titulo": "Col. Tila",
+      "texto": "Calle 46 no. 46, Ciudad del Carmen"
+    }
+  ],
+  "logros": {
+    "titulo": "De la colonia Tila al Congreso del Estado",
+    "items": [
+      {
+        "lugar": "1er lugar estatal",
+        "titulo": "Olimpiada del Conocimiento Infantil 2026",
+        "alumno": "Alondra Vera Matías",
+        "texto": "Representó a la Zona Escolar 040 y obtuvo el primer lugar en la etapa estatal.",
+        "foto": "assets/img/alondra-600.jpg"
+      },
+      {
+        "lugar": "1er lugar sector",
+        "titulo": "Concurso de Oratoria",
+        "alumno": "Andrés Mateo Moreno Tatum",
+        "texto": "Su primer lugar lo llevó al Congreso Infantil del estado.",
+        "foto": "assets/img/andres-legislatura-600.jpg"
+      },
+      {
+        "lugar": "Congreso del Estado",
+        "titulo": "XXIV Legislatura Infantil 2026",
+        "alumno": "Andrés Mateo Moreno Tatum",
+        "texto": "Presentó en tribuna una propuesta a favor de los derechos de las niñas campechanas.",
+        "foto": "assets/img/andres-legislatura-900.jpg"
+      }
+    ]
+  },
+  "inclusion": {
+    "titulo": "Diversidad entre páginas",
+    "texto": "En nuestra feria inclusiva los alumnos saludan en lengua maya, lengua de señas mexicana y braille, y comparten cuentos, trabalenguas y poemas de nuestras raíces. Aquí aprender también es aprender a convivir."
+  },
+  "niveles": {
+    "titulo": "Dos niveles, una misma puerta",
+    "items": [
+      {
+        "nombre": "Preescolar",
+        "texto": "Primeros pasos en la lectura, los números y la convivencia, con juego y acompañamiento cercano.",
+        "pendiente": true
+      },
+      {
+        "nombre": "Primaria",
+        "texto": "De primero a sexto grado, con preparación para olimpiadas, oratoria y concursos académicos.",
+        "pendiente": true
+      }
+    ]
+  },
+  "programas": {
+    "titulo": "De las olimpiadas a la tribuna",
+    "pendiente": true,
+    "items": [
+      {
+        "nombre": "Olimpiadas y concursos",
+        "texto": "Preparación para la Olimpiada del Conocimiento y otros certámenes."
+      },
+      {
+        "nombre": "Oratoria y civismo",
+        "texto": "Hablar en público, argumentar y participar como ciudadanos."
+      },
+      {
+        "nombre": "Inclusión y lenguas",
+        "texto": "Lengua maya, lengua de señas y braille en la vida escolar."
+      },
+      {
+        "nombre": "Inglés",
+        "texto": "Clases de inglés en todos los grados."
+      }
+    ]
+  },
+  "galeria": {
+    "titulo": "Toda la escuela bajo la misma cancha"
+  },
+  "visita": {
+    "titulo": "Pasa a conocernos",
+    "texto": "Estamos en la Calle 46, colonia Tila. Escríbenos por WhatsApp, elige el día y te mostramos las instalaciones, los salones y a nuestros maestros."
+  },
+  "certificaciones": [
+    {
+      "nivel": "Preescolar",
+      "cct": "04PJN0000X",
+      "pendiente": true
+    },
+    {
+      "nivel": "Primaria",
+      "cct": "04PPR0000X",
+      "pendiente": true
+    }
+  ]
+}
