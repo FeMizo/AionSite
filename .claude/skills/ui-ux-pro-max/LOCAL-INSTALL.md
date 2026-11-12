@@ -1,1 +1,0 @@
-Project-scoped copy. SKILL.md uses <skill-base-dir> resolved from the loaded skill location, plus the existing isolated Windows Python. Upstream scripts and data are unchanged. No API credentials, global settings, hooks or cached engine binary are stored here.
