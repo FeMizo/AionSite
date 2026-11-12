@@ -113,7 +113,12 @@ export async function POST(request: Request) {
     `,
   });
 
-  await recordContactFormLead({ name, email, message });
+  try {
+    await recordContactFormLead({ name, email, message });
+  } catch {
+    // Mail was accepted; an audit failure must not prompt a duplicate submission.
+    console.error("Contact email accepted, but audit recording failed.");
+  }
 
   return NextResponse.json({ ok: true });
 }

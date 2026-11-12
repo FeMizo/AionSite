@@ -153,8 +153,8 @@ const SPANISH_STRING_MAP: Record<string, string> = {
     "¿Necesitas un partner de frontend o CMS que pueda llevar una idea hasta lanzamiento?",
   "I can support custom frontend work, WordPress or Shopify delivery, and optimization efforts for teams that value clean execution and reliable collaboration.":
     "Puedo apoyar desarrollo frontend a medida, entrega con WordPress o Shopify y esfuerzos de optimización para equipos que valoran ejecución limpia y colaboración confiable.",
-  "Contact from the CV: femiss0693@gmail.com and linkedin.com/in/jose-miss":
-    "Contacto del CV: femiss0693@gmail.com y linkedin.com/in/jose-miss",
+  "Contact from the CV: femiss0693@gmail.com and linkedin.com/in/felipe-miss":
+    "Contacto del CV: femiss0693@gmail.com y linkedin.com/in/felipe-miss",
 };
 
 const ABOUT_UI_COPY: Record<

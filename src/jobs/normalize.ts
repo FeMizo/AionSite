@@ -98,7 +98,7 @@ export function normalizeJobsContent(input: unknown): JobsContent {
       name: asString(profile.name, "Felipe Miss"),
       email: asString(profile.email, "femiss0693@gmail.com"),
       phone: asString(profile.phone, "+52 938 123 85-31"),
-      linkedin: asString(profile.linkedin, "https://www.linkedin.com/in/jose-miss/"),
+      linkedin: asString(profile.linkedin, "https://www.linkedin.com/in/felipe-miss/"),
       location: asString(profile.location, "Mexico City, Mexico"),
       country: asString(profile.country, "Mexico"),
       experience: asString(profile.experience, "8+ years"),

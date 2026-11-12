@@ -11,8 +11,8 @@ const compiled = await build({
   plugins: [{ name: 'isolate-contact-effects', setup(builder) {
     builder.onResolve({ filter: /^(nodemailer|@\/src\/lib\/whatsapp\/store)$/ }, args => ({ path: args.path, namespace: 'contact-test' }));
     builder.onLoad({ filter: /.*/, namespace: 'contact-test' }, args => ({ contents: args.path === 'nodemailer'
-      ? 'export default {createTransport:()=>({sendMail:async mail=>effects.mail.push(mail)})};'
-      : 'export const recordContactFormLead=async lead=>effects.leads.push(lead);', loader: 'js' }));
+      ? 'export default {createTransport:()=>({sendMail:async mail=>{if(effects.failMail)throw new Error("simulated-mail-failure");effects.mail.push(mail);}})};'
+      : 'export const recordContactFormLead=async lead=>{if(effects.failStore)throw new Error("private-store-details");effects.leads.push(lead);};', loader: 'js' }));
   } }],
 });
 const compiledModule = { exports: {} };
@@ -55,4 +55,37 @@ test('retains type, email and size validation without side effects', async () =>
   ]) assert.equal((await submit(body)).status, 400);
   assert.equal(effects.mail.length, 0);
   assert.equal(effects.leads.length, 0);
+});
+
+test('does not report mail failure when only the subsequent audit fails', async () => {
+  effects.mail.length = effects.leads.length = 0;
+  effects.failStore = true;
+  const logs = [];
+  const originalError = console.error;
+  console.error = (...args) => logs.push(args.join(' '));
+  try {
+    const response = await submit(valid);
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { ok: true });
+    assert.equal(effects.mail.length, 1);
+    assert.equal(effects.leads.length, 0);
+    assert.equal(logs.length, 1);
+    assert.equal(logs[0].includes('private-store-details'), false);
+    assert.equal(logs[0].includes(valid.email), false);
+  } finally {
+    effects.failStore = false;
+    console.error = originalError;
+  }
+});
+
+test('never claims success or records audit when mail itself fails', async () => {
+  effects.mail.length = effects.leads.length = 0;
+  effects.failMail = true;
+  try {
+    await assert.rejects(() => submit(valid), /simulated-mail-failure/);
+    assert.equal(effects.mail.length, 0);
+    assert.equal(effects.leads.length, 0);
+  } finally {
+    effects.failMail = false;
+  }
 });
