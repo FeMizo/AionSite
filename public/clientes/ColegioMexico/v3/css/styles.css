@@ -1,4 +1,4 @@
-/* Colegio México · v3.0 — estructura tipo portada editorial + técnicas Apple
+/* Colegio México · v3 — estructura tipo portada editorial + técnicas Apple
    (respuesta inmediata, materiales translúcidos, tarjeta que se expande, arrastre con inercia). */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 1rem)}

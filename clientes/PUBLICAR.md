@@ -1,7 +1,7 @@
 # Cómo publicar la propuesta de un cliente en aionsite.com.mx
 
 Cada cliente se ve en `https://aionsite.com.mx/clientes/<Cliente>/<version>/`, protegido con contraseña y sin indexar.
-Ejemplos vivos: `ColegioMexico` (raíz, v1.0, v2.0, v3.0) y `continental` (raíz, v1, v2, v3).
+Ejemplos vivos: `ColegioMexico` (raíz, v1, v2, v3) y `continental` (raíz, v1, v2, v3).
 
 Esta carpeta (`clientes/` en la raíz del repo) es **privada**: no se publica.
 Lo que se publica vive en `public/clientes/<Cliente>/`.
@@ -16,6 +16,11 @@ Lo que se publica vive en `public/clientes/<Cliente>/`.
 | `.htaccess` (lo genera el script, ver paso 4) | respaldos, `.bak`, logs, capturas de pantalla |
 
 Regla de oro: **nunca** subir capturas de pantalla, respaldos, notas internas ni fotos que la propuesta no use.
+
+## Reglas de nombres
+
+- Las versiones se llaman siempre `v1`, `v2`, `v3`… (nunca `v1.0`, `v2.0`).
+- La raíz `/clientes/<Cliente>/` siempre es solo un `index.html` que redirige a `v1/` (copia el de `continental`). No lleva su propia copia del sitio.
 
 ## Pasos
 

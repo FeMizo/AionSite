@@ -11,4 +11,4 @@ Cada versión carga su propio content.json. Cambiarlo no afecta a la otra.
 
 3.0: http://127.0.0.1:8794/v3/index.html — formas circulares y curvas sobre la estructura de 2.0, con animación de todas las secciones y recursos independientes.
 
-Nota (publicación): la raíz de /clientes/continental/ ahora solo redirige a v3/. Las imágenes viven una sola vez en public/clientes/continental/assets/ y las versiones las cargan desde ../assets/. Las notas privadas comparten un único PRODUCT.md en esta carpeta.
+Nota (publicación): la raíz de /clientes/continental/ ahora solo redirige a v1/. Las imágenes viven una sola vez en public/clientes/continental/assets/ y las versiones las cargan desde ../assets/. Las notas privadas comparten un único PRODUCT.md en esta carpeta.
