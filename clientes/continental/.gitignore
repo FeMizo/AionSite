@@ -1,0 +1,5 @@
+# Archivos de revisión y capturas; no forman parte del sitio.
+.impeccable/
+v3-review-*.png
+v1/snapshot.json
+v3/previous-versions-snapshot.json
