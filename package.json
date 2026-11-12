@@ -15,8 +15,8 @@
     "typecheck": "tsc --noEmit",
     "mcp:whatsapp": "tsx mcp/whatsapp-server.ts",
     "test:whatsapp": "tsx --test tests/whatsapp.test.ts",
-    "test:demos": "tsx --test tests/demo-request.test.ts tests/stage-demo.test.mjs",
-    "demo:stage": "node scripts/stage-demo.mjs",
+    "test:demos": "tsx --test tests/demo-request.test.ts tests/stage-client.test.mjs",
+    "client:stage": "node scripts/stage-client.mjs",
     "test:pages": "tsx --test tests/site-pages.test.ts"
   },
   "dependencies": {

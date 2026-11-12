@@ -52,7 +52,7 @@ export function DemoRequestDashboard() {
     </section>
     <section className="rounded-3xl border border-white/10 p-6 text-sm leading-relaxed text-slate-300">
       <h3 className="text-lg font-semibold text-white">Dónde queda cada cosa</h3>
-      <ul className="mt-4 list-inside list-disc space-y-3"><li>La solicitud enviada queda en tu conversación de WhatsApp.</li><li>Este panel solo prepara el comando en la pestaña actual; no guarda solicitudes en el servidor ni en el CRM.</li><li>Al ejecutar la habilidad en Codex, se guardan brief, datos, referencias y propuestas en <code className="break-all">C:\Users\mizo_\.codex\aionsite-demos\negocio\fecha-id\</code>.</li><li>Elige A o B para desarrollar. La demo queda en su carpeta independiente y se publica solo cuando lo solicites.</li></ul>
+      <ul className="mt-4 list-inside list-disc space-y-3"><li>La solicitud enviada queda en tu conversación de WhatsApp.</li><li>Este panel solo prepara el comando en la pestaña actual; no guarda solicitudes en el servidor ni en el CRM.</li><li>Al ejecutar la habilidad en Codex, se guardan brief, datos, referencias y propuestas en <code className="break-all">C:\Users\mizo_\.codex\aionsite-demos\negocio\fecha-id\</code>.</li><li>Recibes tres propuestas (v1, v2 y v3) con la misma paleta. Cada una queda en su carpeta independiente y se publica en /clientes/ con contraseña solo cuando lo solicites.</li></ul>
     </section>
   </div>;
 }

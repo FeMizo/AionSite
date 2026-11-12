@@ -2,6 +2,8 @@
 
 Proceso destilado de dos proyectos reales: Colegio México y Colegio Continental 2000. Para publicar el resultado, ver `PUBLICAR.md`.
 
+El flujo ejecutable por fases (con puertas de aprobación, hasta "finalizar": debug, critique y security) vive en la skill `/aionsite-demo`; este documento es su resumen para el repo. Fases: 0 arranque (desde cero o renovar un sitio existente), 1 datos, 2 colores, 3 diseño y referencias, 4 construir y cambios, 5 pruebas y segundos cambios, 6 finalizar.
+
 Este documento se corrige con cada proyecto. Al cerrar uno, añade lo aprendido en "Bitácora de aprendizajes" (al final) y, si es una regla general, súbela a "Reglas".
 
 ## Reglas
@@ -10,9 +12,9 @@ Este documento se corrige con cada proyecto. Al cerrar uno, añade lo aprendido 
 2. **Las tres son distintas de verdad.** Cada una tiene su propia idea de portada, distribución, ritmo y forma de las secciones. Una versión que solo cambia detalles de otra no cuenta como versión: se rehace.
 3. **Los colores salen de la marca del cliente y son los mismos en las tres.** Cambian el layout, la forma (rectas, curvas, círculos) y la tipografía de acento, no la paleta. Si la paleta se ajusta (por ejemplo al color real del uniforme), se ajusta una vez y para las tres.
 4. **Cada cliente se trabaja aislado.** Nunca se copian al sitio de un cliente su logo, uniforme, alumnos ni elementos de identidad de otro. De una referencia se toma la estructura y el movimiento, con ejecución propia.
-5. **Se critica el responsivo** de cada versión antes de entregar: celular (375 px), tablet y escritorio (1280 px).
+5. **Se critica el responsivo** de cada versión antes de entregar: escritorio (1440 px), tablet (1024 px) y móvil (680 px).
 6. **La animación depende del proyecto.** Se decide qué se anima y por qué; no se anima por animar.
-7. **Lo que no se sabe se marca "por confirmar"**, nunca se inventa.
+7. **Lo que no se sabe es un placeholder visible, marcado "por confirmar", que reserva el espacio definido**; nunca se inventa y el layout no se colapsa.
 
 ## Pasos
 

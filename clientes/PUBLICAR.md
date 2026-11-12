@@ -4,6 +4,8 @@ Cada cliente se ve en `https://aionsite.com.mx/clientes/<Cliente>/<version>/`, p
 
 Cómo se construye una propuesta (3 versiones, mismos colores, skills usadas): ver `PROCESO.md`.
 Ejemplos vivos: `ColegioMexico` (raíz, v1, v2, v3) y `continental` (raíz, v1, v2, v3).
+Si la propuesta salió de `/aionsite-demo`, `npm run client:stage -- --run RUTA --variant v1 --dry-run` (y luego sin `--dry-run`) copia la versión verificada a `public/clientes/<cliente>/` y genera la contraseña; publicar sigue siendo el paso 7.
+
 
 Esta carpeta (`clientes/` en la raíz del repo) es **privada**: no se publica.
 Lo que se publica vive en `public/clientes/<Cliente>/`.
@@ -35,7 +37,7 @@ Regla de oro: **nunca** subir capturas de pantalla, respaldos, notas internas ni
    ```
    Escribe un `.htaccess` en cada carpeta de `public/clientes/`. Usuario y contraseña son el nombre de la carpeta en minúsculas y sin símbolos: `clientes/ColegioMexico` → `colegiomexico`; `clientes/continental` → `continental`. El script se puede repetir sin problema.
 5. **Robots.** `app/robots.ts` ya tiene `disallow: ["/clientes/"]` para todos los clientes. No hay que tocarlo.
-6. **Revisar en local** abriendo el `index.html` de cada versión con un servidor estático (la contraseña solo actúa en el servidor real). Prueba a 375 px y a 1280 px, y que no haya enlaces rotos ni imágenes faltantes.
+6. **Revisar en local** abriendo el `index.html` de cada versión con un servidor estático (la contraseña solo actúa en el servidor real). Prueba a 1440, 1024 y 680 px, y que no haya enlaces rotos ni imágenes faltantes.
 7. **Subir.** Haz commit de `public/clientes/<Cliente>/` (y de los cambios en `clientes/<Cliente>/` si los hay) y push a `main`. El push dispara GitHub Actions, que construye el sitio y lo sube por FTP a Hostinger. Se publica **todo** lo que esté en `main`, así que revisa `git status` antes.
 8. **Verificar.** Cuando termine el deploy, abre la URL en una ventana privada. Debe pedir usuario y contraseña. Si entra sin pedirlos, el servidor no está pasando el encabezado de autorización y hay que cambiar el método. Comprueba también que `/clientes/<Cliente>/.htaccess` y los `.md` den error (403 o 404).
 9. **Entregar.** Manda al cliente la URL de la versión y la contraseña por separado.
@@ -43,4 +45,4 @@ Regla de oro: **nunca** subir capturas de pantalla, respaldos, notas internas ni
 ## Antes de publicar, confirma con el cliente
 
 - Permiso para mostrar nombres y fotos de menores de edad.
-- Datos reales: teléfonos, correos, claves y cifras. Lo no confirmado se deja visible como "por confirmar", no se inventa.
+- Datos reales: teléfonos, correos, claves y cifras. Lo no confirmado se deja como placeholder visible que reserva su espacio, marcado "por confirmar"; no se inventa.
