@@ -1,0 +1,15 @@
+# >>> acceso-cliente (generado por scripts/proteger-clientes.mjs)
+Options -Indexes
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP:Authorization} !^Basic\ Y29udGluZW50YWw6Y29udGluZW50YWw\=$
+  RewriteRule ^ - [R=401,L]
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set WWW-Authenticate "Basic realm=\"Propuesta continental\"" "expr=%{REQUEST_STATUS} == 401"
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+<FilesMatch "\.(md|bak)$">
+  Require all denied
+</FilesMatch>
+# <<< acceso-cliente
