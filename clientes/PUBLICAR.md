@@ -1,6 +1,8 @@
 # Cómo publicar la propuesta de un cliente en aionsite.com.mx
 
 Cada cliente se ve en `https://aionsite.com.mx/clientes/<Cliente>/<version>/`, protegido con contraseña y sin indexar.
+
+Cómo se construye una propuesta (3 versiones, mismos colores, skills usadas): ver `PROCESO.md`.
 Ejemplos vivos: `ColegioMexico` (raíz, v1, v2, v3) y `continental` (raíz, v1, v2, v3).
 
 Esta carpeta (`clientes/` en la raíz del repo) es **privada**: no se publica.
