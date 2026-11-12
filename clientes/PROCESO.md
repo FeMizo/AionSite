@@ -1,27 +1,39 @@
 # Cómo se construye la propuesta de un cliente
 
-Este es el proceso que se siguió con Colegio México y Colegio Continental 2000. Para publicar el resultado, ver `PUBLICAR.md`.
+Proceso destilado de dos proyectos reales: Colegio México y Colegio Continental 2000. Para publicar el resultado, ver `PUBLICAR.md`.
 
-## Reglas del proceso
+Este documento se corrige con cada proyecto. Al cerrar uno, añade lo aprendido en "Bitácora de aprendizajes" (al final) y, si es una regla general, súbela a "Reglas".
 
-1. **Se mandan 3 propuestas** por cliente (`v1`, `v2`, `v3`). Así el cliente compara y elige.
-2. **Las tres tienen estilos distintos.** No son variaciones menores: cada una tiene su propia idea de portada, ritmo y forma de las secciones.
-3. **Los colores no cambian.** La paleta sale de la marca del cliente (logo, uniforme) y se comparte entre las tres. Lo que cambia es el layout y la tipografía de acento.
-4. **Se critica el responsivo** de cada versión antes de entregar, a 375 px y a 1280 px.
-5. **La animación depende del proyecto.** Una escuela primaria pide movimiento tranquilo y legible; no se anima por animar, y siempre se respeta `prefers-reduced-motion`.
+## Reglas
 
-La raíz del cliente siempre abre `v1`. Las versiones se llaman `v1`, `v2`, `v3`, sin `.0`.
+1. **Se mandan 3 propuestas** por cliente (`v1`, `v2`, `v3`) para que compare y elija.
+2. **Las tres son distintas de verdad.** Cada una tiene su propia idea de portada, distribución, ritmo y forma de las secciones. Una versión que solo cambia detalles de otra no cuenta como versión: se rehace.
+3. **Los colores salen de la marca del cliente y son los mismos en las tres.** Cambian el layout, la forma (rectas, curvas, círculos) y la tipografía de acento, no la paleta. Si la paleta se ajusta (por ejemplo al color real del uniforme), se ajusta una vez y para las tres.
+4. **Cada cliente se trabaja aislado.** Nunca se copian al sitio de un cliente su logo, uniforme, alumnos ni elementos de identidad de otro. De una referencia se toma la estructura y el movimiento, con ejecución propia.
+5. **Se critica el responsivo** de cada versión antes de entregar: celular (375 px), tablet y escritorio (1280 px).
+6. **La animación depende del proyecto.** Se decide qué se anima y por qué; no se anima por animar.
+7. **Lo que no se sabe se marca "por confirmar"**, nunca se inventa.
 
 ## Pasos
 
-1. **Contexto y marca.** Reunir lo que ya existe del cliente: logo, colores, uniforme, fotos, redes. Escribir `PRODUCT.md` (quién es, a quién le habla) y `DESIGN.md` (paleta, tipografía, reglas) en `clientes/<Cliente>/`. Los datos que no se conocen se dejan como "por confirmar", nunca se inventan.
-2. **Tokens.** Un solo `tokens.css` con la paleta y las tipografías de la marca. Las tres versiones lo usan; así los colores se mantienen.
-3. **v1: la base.** La versión más sobria e institucional. Define el contenido y la estructura que las otras reutilizan.
-4. **v2 y v3: otros estilos.** Misma paleta, otro layout. En Colegio México, v2 fue la versión "premium" y v3 replicó la estructura de una referencia de otro colegio con técnicas de `apple-design`.
-5. **Crítica de responsivo.** Revisar cada versión en celular y escritorio: desbordes horizontales, botones de al menos 44 px, contraste, imágenes que no carguen. Corregir lo que salga.
-6. **Animación.** Elegir qué se anima según el cliente (ver abajo), medir su costo en celulares modestos y dejar la alternativa para movimiento reducido.
-7. **Pulido.** Una pasada final por versión: textos, enlaces, foco de teclado, detalles de espaciado.
-8. **Publicar.** Seguir `PUBLICAR.md`: carpeta pública, contraseña por cliente, limpieza, commit y push.
+0. **Arranque.** Acordar con el cliente el alcance mínimo. Por defecto: solo el inicio, en HTML directo, con el contenido en un `content.json` editable y sin panel de administración. Definir la acción principal (aquí: pedir informes o agendar visita por WhatsApp). Pedir logo, fotos, colores del uniforme, teléfono y correo. El contenido provisional se deja identificado hasta tener el definitivo.
+1. **Contexto y marca.** Escribir `PRODUCT.md` (quién es y a quién le habla) y `DESIGN.md` (paleta, tipografía, reglas) en `clientes/<Cliente>/`.
+2. **Referencias.** Pedir 2 o 3 sitios de referencia y decidir qué se toma de cada uno (estructura, animación). Se conservan siempre la información, las fotos y los colores del cliente.
+3. **Tokens.** Un solo `tokens.css` con la paleta y las tipografías, compartido por las tres versiones.
+4. **v1: la base.** La versión sobria e institucional. Define el contenido que las otras reutilizan.
+5. **v2 y v3: otros estilos.** Misma paleta, otro layout y otra forma. Ejemplos:
+
+   | | Colegio México | Continental |
+   |---|---|---|
+   | v1 | institucional | base sobria |
+   | v2 | premium | recortes y barridos; mezcla de dos referencias |
+   | v3 | estructura de una referencia más técnicas de `apple-design` | círculos, arcos y esquinas suaves, conservando la seriedad |
+
+6. **Crítica de responsivo.** Desbordes horizontales, botones de al menos 44 px, contraste, imágenes que no carguen, encabezado que se mantiene visible, fondos que asoman detrás de esquinas curvas. Corregir antes de seguir.
+7. **Animación.** Ver "Animar según el proyecto". Medir el costo en celulares modestos.
+8. **Pulido.** Textos, enlaces, foco de teclado, espaciado.
+9. **Limpieza antes de guardar.** Quitar capturas y evidencias de revisión antes del commit, no después. Notas y críticas se quedan en `clientes/<Cliente>/` (privado).
+10. **Publicar.** Seguir `PUBLICAR.md`.
 
 ## Skills que se usaron
 
@@ -29,21 +41,33 @@ La raíz del cliente siempre abre `v1`. Las versiones se llaman `v1`, `v2`, `v3`
 |---|---|
 | `superpowers:brainstorming` | Aclarar qué quiere el cliente antes de diseñar. |
 | `brand` | Voz y reglas de marca del cliente. |
-| `design-system` | Tokens (colores, tipografías, espaciado) compartidos entre versiones. |
+| `design-system` | Tokens compartidos entre versiones. |
 | `frontend-design` | Punto de vista visual propio, para que no parezca plantilla. |
 | `ui-ux-pro-max` | Lista de UX: contraste, tamaños táctiles, CLS, guía de animación. |
-| `impeccable` | Crítica (`critique`) de v1 y v2, y pulido (`polish`). Las críticas quedan en `clientes/<Cliente>/.impeccable/critique/`. |
-| `apple-design` | Movimiento y materiales: encabezado translúcido, retroalimentación al presionar, carrusel con inercia. Se usó en la v3 de Colegio México. |
-| `animation-performance` | Revisar el costo de las animaciones en celulares de gama baja. |
+| `impeccable` | Crítica (`critique`) y pulido (`polish`). Las críticas quedan en `clientes/<Cliente>/.impeccable/critique/`. |
+| `apple-design` | Movimiento y materiales: encabezado translúcido, retroalimentación al presionar, carrusel con inercia. |
+| `animation-performance` | Costo de las animaciones en celulares de gama baja. |
+| `animate-expo` | Solo aporta principios de movimiento; el resultado sigue siendo HTML, no una app Expo. |
 
 ## Animar según el proyecto
 
-- **Escuela de primaria y preescolar:** movimiento suave y corto. Trazo del arco del logo, entrada de la portada, encabezado translúcido, botón flotante. Nada que distraiga ni que mueva el texto mientras se lee.
-- **Siempre:** animar solo `transform` y `opacity`; respetar `prefers-reduced-motion`, `prefers-reduced-transparency` y `prefers-contrast`; probar en celular real o emulado.
-- **Otro tipo de cliente** (restaurante, despacho, tienda): decidir de nuevo qué movimiento tiene sentido; no copiar el de la escuela.
+- **Qué se anima:** el sitio completo, no solo la portada. Cada versión con entradas distintas, no la misma animación repetida.
+- **Cómo:** una sola animación de entrada activa a la vez, coordinadas entre sí. Ningún texto visible antes de que empiece su animación, sin destellos previos y sin giros en las fotos. Los sliders se mueven suave, sin saltos.
+- **Con qué:** preferir `transform` y `opacity`. Recortes (`clip-path`) y barridos son válidos si se miden en celular.
+- **Accesibilidad:** respetar `prefers-reduced-motion`, `prefers-reduced-transparency` y `prefers-contrast`. En un slider, con movimiento reducido o pantalla corta, usar navegación directa.
+- **Escuela de primaria o preescolar:** movimiento tranquilo y legible. Otro tipo de cliente (restaurante, despacho, tienda) se decide de nuevo.
 
 ## Qué se entrega
 
-- 3 URLs (`v1`, `v2`, `v3`) y la contraseña, mandadas por separado.
-- Lo pendiente del cliente, dicho claro: claves, aviso de privacidad, descripciones, y permiso para mostrar nombres y fotos de menores.
-- Las notas, críticas y capturas se quedan en `clientes/<Cliente>/`, que es privado.
+- 3 URLs (`v1`, `v2`, `v3`) y la contraseña por separado.
+- Lo pendiente del cliente: número de WhatsApp habilitado, dirección, horarios, contenido institucional, claves, aviso de privacidad y permiso para mostrar nombres y fotos de menores.
+
+## Bitácora de aprendizajes
+
+Una línea por hallazgo, con el cliente y la fecha. Si se repite en dos proyectos, pasa a "Reglas".
+
+- **Continental, nov 2026:** la v2 salió casi igual a la v1 y se rehízo; la v3 nació cerca de la v2 y hubo que separarla con otras formas. Definir desde el inicio qué hace distinta a cada versión.
+- **Continental, nov 2026:** se rechazaron animaciones solo en el hero, entradas iguales entre versiones y texto visible antes de animarse.
+- **Continental, nov 2026:** se commitearon capturas de revisión y hubo que limpiarlas en un commit aparte.
+- **Colegio México, nov 2026:** se copiaron elementos de Colegio México a Continental por error; cada cliente va aislado.
+- **Ambos, nov 2026:** las versiones se nombran `v1`, `v2`, `v3` y la raíz redirige a `v1`.
