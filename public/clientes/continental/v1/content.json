@@ -3,7 +3,7 @@
   "hero": {
     "title": "De preescolar a preparatoria, en Ciudad del Carmen.",
     "description": "Conoce las etapas educativas de Colegio Continental 2000 y prepara una visita para resolver tus dudas con la institución.",
-    "image": "assets/referencia-uniformes.png",
+    "image": "../assets/referencia-uniformes.png",
     "alt": "Fotografías proporcionadas del colegio, con uniformes amarillo pálido y guinda."
   },
   "about": {
@@ -58,7 +58,7 @@
     "status": "Logo y playeras inspeccionados mediante capturas proporcionadas por el usuario el 12 de noviembre de 2026."
   },
   "branding": {
-    "logo": "assets/logo-continental.png",
+    "logo": "../assets/logo-continental.png",
     "colors": {
       "burgundy": "#77183D",
       "navy": "#182234",
