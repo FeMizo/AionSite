@@ -1,0 +1,29 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "heroGroundChildren": 1,
+    "images": true
+  },
+  {
+    "width": 375,
+    "scrollWidth": 375,
+    "heroGroundChildren": 1,
+    "images": true
+  },
+  {
+    "menuClosed": "false",
+    "focusVisible": "solid"
+  },
+  {
+    "keyboardTab": "Secundaria"
+  },
+  {
+    "selected": "Preparatoria",
+    "messageIncludesStage": true
+  },
+  {
+    "fallbackTabs": 4,
+    "errorVisible": true
+  }
+]

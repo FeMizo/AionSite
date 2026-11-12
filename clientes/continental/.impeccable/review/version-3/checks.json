@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "photos": true,
+    "motionElements": 14,
+    "circle": "50%"
+  },
+  {
+    "width": 375,
+    "scrollWidth": 375,
+    "photos": true,
+    "motionElements": 14,
+    "circle": "50%"
+  },
+  {
+    "stage": "Secundaria"
+  },
+  {
+    "running": 3
+  },
+  {
+    "reduced": 0
+  },
+  {
+    "largeText": 375,
+    "scrollWidth": 375
+  },
+  {
+    "errors": []
+  }
+]

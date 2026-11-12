@@ -1,0 +1,42 @@
+[
+  {
+    "width": 1440,
+    "playing": 3
+  },
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "photos": 2,
+    "selector": true,
+    "images": true
+  },
+  {
+    "width": 375,
+    "playing": 3
+  },
+  {
+    "width": 375,
+    "scrollWidth": 375,
+    "photos": 2,
+    "selector": true,
+    "images": true
+  },
+  {
+    "selected": "Secundaria",
+    "animation": 1
+  },
+  {
+    "message": true
+  },
+  {
+    "reducedAnimations": 0,
+    "replayDisabled": true
+  },
+  {
+    "largeTextWidth": 375,
+    "scrollWidth": 375
+  },
+  {
+    "errors": []
+  }
+]

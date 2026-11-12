@@ -1,0 +1,652 @@
+[
+  {
+    "size": [
+      1250,
+      695
+    ],
+    "opening": {
+      "running": [
+        {
+          "target": "H1.",
+          "id": "hero-title",
+          "time": 0,
+          "delay": 0,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "P.",
+          "id": "",
+          "time": 0,
+          "delay": 180,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "A.button",
+          "id": "",
+          "time": 0,
+          "delay": 340,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.collage-field",
+          "id": "",
+          "time": 0,
+          "delay": 70,
+          "clip": "inset(0px 0px 100%)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-group",
+          "id": "",
+          "time": 0,
+          "delay": 140,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-student",
+          "id": "",
+          "time": 0,
+          "delay": 330,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 17,
+      "conflicts": [],
+      "overflow": false
+    },
+    "stageDuringEntrance": {
+      "running": [
+        {
+          "target": "DIV.education-heading",
+          "id": "",
+          "time": 150.00499999892415,
+          "delay": 0,
+          "clip": "inset(35.3078% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-tabs",
+          "id": "stage-tabs",
+          "time": 150.00499999892415,
+          "delay": 0,
+          "clip": "inset(0px 42.4908% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-details",
+          "id": "stage-details",
+          "time": 150.00499999892415,
+          "delay": 130,
+          "clip": "inset(0px 0px 89.5585%)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 14,
+      "conflicts": [],
+      "overflow": false
+    },
+    "rapidScroll": {
+      "running": [
+        {
+          "target": "DIV.education-heading",
+          "id": "",
+          "time": 516.698999998924,
+          "delay": 0,
+          "clip": "inset(1.04497% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-tabs",
+          "id": "stage-tabs",
+          "time": 516.698999998924,
+          "delay": 0,
+          "clip": "inset(0px 2.68732% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-details",
+          "id": "stage-details",
+          "time": 516.698999998924,
+          "delay": 130,
+          "clip": "inset(0px 0px 5.49705%)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.contact-heading",
+          "id": "",
+          "time": 183.3789999991935,
+          "delay": 0,
+          "clip": "inset(0px 29.4522% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 183.3789999991935,
+          "delay": 70,
+          "clip": "inset(41.4367% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 183.3789999991935,
+          "delay": 160,
+          "clip": "inset(85.3464% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 183.3789999991935,
+          "delay": 250,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.footer-brand",
+          "id": "",
+          "time": 183.3789999991935,
+          "delay": 0,
+          "clip": "inset(24.3867% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "P.",
+          "id": "",
+          "time": 183.3789999991935,
+          "delay": 100,
+          "clip": "inset(0px 60.5405% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 183.3789999991935,
+          "delay": 170,
+          "clip": "inset(92.0369% 0px 0px)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 7,
+      "conflicts": [],
+      "overflow": false
+    },
+    "replay": {
+      "running": [
+        {
+          "target": "H1.",
+          "id": "hero-title",
+          "time": 50.08700000012656,
+          "delay": 0,
+          "clip": "inset(77.4032% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "P.",
+          "id": "",
+          "time": 50.08700000012656,
+          "delay": 180,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "A.button",
+          "id": "",
+          "time": 50.08700000012656,
+          "delay": 340,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.collage-field",
+          "id": "",
+          "time": 50.08700000012656,
+          "delay": 70,
+          "clip": "inset(0px 0px 100%)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-group",
+          "id": "",
+          "time": 50.08700000012656,
+          "delay": 140,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-student",
+          "id": "",
+          "time": 50.08700000012656,
+          "delay": 330,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 17,
+      "conflicts": [],
+      "overflow": false
+    },
+    "keyboardTab": {
+      "id": "stage-tab-1",
+      "outline": "rgb(255, 255, 255) solid 3px",
+      "ancestors": [
+        {
+          "class": "stage-tab",
+          "clip": "none"
+        },
+        {
+          "class": "stage-tabs",
+          "clip": "none"
+        },
+        {
+          "class": "education wrap",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "js",
+          "clip": "none"
+        }
+      ]
+    },
+    "keyboardSelect": {
+      "id": "stage",
+      "ancestors": [
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "request-sheet",
+          "clip": "none"
+        },
+        {
+          "class": "wrap visit-layout",
+          "clip": "none"
+        },
+        {
+          "class": "visit-section",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "js",
+          "clip": "none"
+        }
+      ]
+    },
+    "reduced": {
+      "running": [],
+      "paused": 0,
+      "conflicts": [],
+      "overflow": false
+    },
+    "reducedReplayDisabled": true,
+    "errors": []
+  },
+  {
+    "size": [
+      375,
+      812
+    ],
+    "opening": {
+      "running": [
+        {
+          "target": "H1.",
+          "id": "hero-title",
+          "time": 16.68699999937345,
+          "delay": 0,
+          "clip": "inset(92.1567% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "P.",
+          "id": "",
+          "time": 16.68699999937345,
+          "delay": 180,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "A.button",
+          "id": "",
+          "time": 16.68699999937345,
+          "delay": 340,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.collage-field",
+          "id": "",
+          "time": 16.68699999937345,
+          "delay": 70,
+          "clip": "inset(0px 0px 100%)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-group",
+          "id": "",
+          "time": 16.68699999937345,
+          "delay": 140,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-student",
+          "id": "",
+          "time": 16.68699999937345,
+          "delay": 330,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 17,
+      "conflicts": [],
+      "overflow": true
+    },
+    "stageDuringEntrance": {
+      "running": [
+        {
+          "target": "DIV.education-heading",
+          "id": "",
+          "time": 133.35699999895567,
+          "delay": 0,
+          "clip": "inset(40.2398% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-tabs",
+          "id": "stage-tabs",
+          "time": 133.35699999895567,
+          "delay": 0,
+          "clip": "inset(0px 47.2794% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-details",
+          "id": "stage-details",
+          "time": 133.35699999895567,
+          "delay": 130,
+          "clip": "inset(0px 0px 98.2117%)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 14,
+      "conflicts": [],
+      "overflow": false
+    },
+    "rapidScroll": {
+      "running": [
+        {
+          "target": "DIV.welcome-copy",
+          "id": "",
+          "time": 250.05299999917162,
+          "delay": 160,
+          "clip": "inset(0px 0px 57.8948%)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.city-note",
+          "id": "",
+          "time": 250.05299999917162,
+          "delay": 100,
+          "clip": "inset(0px 42.4776% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.education-heading",
+          "id": "",
+          "time": 516.7089999989561,
+          "delay": 0,
+          "clip": "inset(1.04484% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-tabs",
+          "id": "stage-tabs",
+          "time": 516.7089999989561,
+          "delay": 0,
+          "clip": "inset(0px 2.68708% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.stage-details",
+          "id": "stage-details",
+          "time": 516.7089999989561,
+          "delay": 130,
+          "clip": "inset(0px 0px 5.49655%)",
+          "opacity": "1"
+        },
+        {
+          "target": "H2.",
+          "id": "visit-title",
+          "time": 200.05500000057629,
+          "delay": 0,
+          "clip": "inset(28.2239% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "P.",
+          "id": "",
+          "time": 200.05500000057629,
+          "delay": 130,
+          "clip": "inset(0px 62.1589% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "P.visit-notice",
+          "id": "visit-notice",
+          "time": 200.05500000057629,
+          "delay": 220,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.request-sheet",
+          "id": "",
+          "time": 200.05500000057629,
+          "delay": 160,
+          "clip": "inset(0px 0px 0px 82.5628%)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.contact-heading",
+          "id": "",
+          "time": 150.05700000016196,
+          "delay": 0,
+          "clip": "inset(0px 37.8395% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 150.05700000016196,
+          "delay": 70,
+          "clip": "inset(55.1494% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 150.05700000016196,
+          "delay": 160,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 150.05700000016196,
+          "delay": 250,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.footer-brand",
+          "id": "",
+          "time": 150.05700000016196,
+          "delay": 0,
+          "clip": "inset(32.5863% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.",
+          "id": "",
+          "time": 150.05700000016196,
+          "delay": 170,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 2,
+      "conflicts": [],
+      "overflow": false
+    },
+    "replay": {
+      "running": [
+        {
+          "target": "H1.",
+          "id": "hero-title",
+          "time": 50.08700000015853,
+          "delay": 0,
+          "clip": "inset(77.4032% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "P.",
+          "id": "",
+          "time": 50.08700000015853,
+          "delay": 180,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "A.button",
+          "id": "",
+          "time": 50.08700000015853,
+          "delay": 340,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "DIV.collage-field",
+          "id": "",
+          "time": 50.08700000015853,
+          "delay": 70,
+          "clip": "inset(0px 0px 100%)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-group",
+          "id": "",
+          "time": 50.08700000015853,
+          "delay": 140,
+          "clip": "inset(0px 100% 0px 0px)",
+          "opacity": "1"
+        },
+        {
+          "target": "FIGURE.photo photo-student",
+          "id": "",
+          "time": 50.08700000015853,
+          "delay": 330,
+          "clip": "inset(100% 0px 0px)",
+          "opacity": "1"
+        }
+      ],
+      "paused": 17,
+      "conflicts": [],
+      "overflow": true
+    },
+    "keyboardTab": {
+      "id": "stage-tab-1",
+      "outline": "rgb(255, 255, 255) solid 3px",
+      "ancestors": [
+        {
+          "class": "stage-tab",
+          "clip": "none"
+        },
+        {
+          "class": "stage-tabs",
+          "clip": "none"
+        },
+        {
+          "class": "education wrap",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "js",
+          "clip": "none"
+        }
+      ]
+    },
+    "keyboardSelect": {
+      "id": "stage",
+      "ancestors": [
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "request-sheet",
+          "clip": "none"
+        },
+        {
+          "class": "wrap visit-layout",
+          "clip": "none"
+        },
+        {
+          "class": "visit-section",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "",
+          "clip": "none"
+        },
+        {
+          "class": "js",
+          "clip": "none"
+        }
+      ]
+    },
+    "reduced": {
+      "running": [],
+      "paused": 0,
+      "conflicts": [],
+      "overflow": false
+    },
+    "reducedReplayDisabled": true,
+    "errors": []
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "heroColor": "rgb(119, 24, 61)",
+    "stageColumns": "308.531px 907.453px",
+    "photos": true
+  },
+  {
+    "width": 375,
+    "scrollWidth": 375,
+    "heroColor": "rgb(119, 24, 61)",
+    "stageColumns": "327px",
+    "photos": true
+  },
+  {
+    "selectedStage": "Secundaria"
+  },
+  {
+    "menuClosed": "false"
+  },
+  {
+    "zoom200": 375,
+    "scrollWidth": 375
+  },
+  {
+    "errors": []
+  }
+]

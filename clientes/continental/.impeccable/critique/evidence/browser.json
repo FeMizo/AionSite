@@ -1,0 +1,81 @@
+{
+  "nativeBrowserFailure": "Browser is already in use; used independent Python Playwright process",
+  "visible": false,
+  "viewports": [
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "images": [
+        {
+          "loaded": true,
+          "src": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=85"
+        },
+        {
+          "loaded": true,
+          "src": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85"
+        }
+      ],
+      "jsonLoaded": 4,
+      "contactStatus": "En esta demo, el enlace de WhatsApp estará disponible al confirmar el número del colegio.",
+      "whatsappHidden": true
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "images": [
+        {
+          "loaded": true,
+          "src": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=85"
+        },
+        {
+          "loaded": true,
+          "src": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85"
+        }
+      ],
+      "jsonLoaded": 4,
+      "contactStatus": "En esta demo, el enlace de WhatsApp estará disponible al confirmar el número del colegio.",
+      "whatsappHidden": true
+    }
+  ],
+  "preflight": {
+    "title": "[Human] Continental — Propuesta de sitio web",
+    "script": true
+  },
+  "menuOpen": "true",
+  "menuEscape": "false",
+  "menuNavigationCloses": "false",
+  "accordionOpen": true,
+  "accordionCloses": true,
+  "overlayInjected": true,
+  "console": [
+    {
+      "type": "startGroup",
+      "text": "%c[impeccable] 3 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold"
+    },
+    {
+      "type": "log",
+      "text": "%cstraggler%c \"24154\" alone on the last of 2 lines (12% of the measure) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node"
+    },
+    {
+      "type": "log",
+      "text": "%cstraggler%c \"validación.\" alone on the last of 2 lines (23% of the measure) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node"
+    },
+    {
+      "type": "log",
+      "text": "%ccream-palette%c cream/beige page background rgb(246, 244, 237) color: oklch(84% 0.19 80.46); font-weight: bold color: inherit JSHandle@node"
+    },
+    {
+      "type": "endGroup",
+      "text": "console.groupEnd"
+    }
+  ],
+  "impeccableConsole": [
+    {
+      "type": "startGroup",
+      "text": "%c[impeccable] 3 anti-patterns found color: oklch(84% 0.19 80.46); font-weight: bold"
+    }
+  ],
+  "cleanup": "Independent headless browser closed. No UI/source edits. Preflight DOM and overlay removed by browser close. Live server stopped separately with --keep-inject. Server started immediately before preflight, rather than after; no source injection performed."
+}

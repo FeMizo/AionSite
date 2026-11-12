@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "title": "Colegio Continental 2000 — propuesta escolar",
+  "generatedAt": "2026-11-12",
+  "narrative": {
+    "overview": "Home escolar de Continental 2000 con comunidad fotográfica real, apertura blanca, franja guinda, explorador de etapas en marino y solicitud de visita en amarillo pálido. Información y archivos fotográficos conservados.",
+    "northStar": "Claridad escolar con evidencia pendiente",
+    "keyCharacteristics": [
+      "Archivo y Atkinson Hyperlegible Next",
+      "Dos momentos fotográficos de las capturas originales",
+      "Pestañas accesibles para cuatro etapas y visita con selección conservada"
+    ],
+    "rules": [],
+    "dos": [
+      "Mantener visibles los datos pendientes",
+      "Conservar la etapa en la solicitud"
+    ],
+    "donts": [
+      "No trasladar materiales de Colegio México",
+      "No inventar acreditaciones ni tratar los códigos aproximados como oficiales"
+    ]
+  },
+  "components": [
+    {
+      "kind": "button",
+      "refersTo": "visit-action",
+      "name": "Agendar visita",
+      "description": "Abre la vista previa o WhatsApp solo con número validado",
+      "html": "<a class=\"button\" href=\"#visita\">Agendar visita por WhatsApp</a>",
+      "css": ".button{background:#E02028;color:#FFFFFF;border-radius:4px;min-height:52px;padding:15px 22px;font:700 18px/1.35 'Atkinson Hyperlegible Next',sans-serif}"
+    }
+  ],
+  "extensions": {
+    "colors": {
+      "sand": "#F4F2EC",
+      "alternate": "#ECE8DF",
+      "white": "#FFFFFF",
+      "ink": "#3A3A3C",
+      "green": "#294E80",
+      "deep": "#182234",
+      "red": "#E02028",
+      "burgundy": "#77183D",
+      "paleYellow": "#F1EDAF"
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      }
+    ],
+    "status": "Paleta aproximada de capturas del usuario: guinda, marino, amarillo pálido y azul. Logo y fotografía propios aportados."
+  }
+}

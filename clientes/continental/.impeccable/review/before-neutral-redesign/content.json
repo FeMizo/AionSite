@@ -1,0 +1,13 @@
+{
+  "school": "Continental",
+  "hero": {"title": "Un gran comienzo. Un mundo por descubrir.", "description": "De preescolar a preparatoria, cada etapa abre nuevas posibilidades. Conoce una propuesta de comunidad educativa en Ciudad del Carmen.", "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=85", "alt": "Fotografía de muestra de un espacio de aprendizaje"},
+  "about": {"title": "Crecer también es descubrir quién puedes ser.", "text": "Elegir un colegio es imaginar el futuro. Este espacio propone una forma cercana de conocer Continental: sus etapas educativas, su comunidad y las oportunidades que acompañan cada momento del aprendizaje."},
+  "levels": [
+    {"name":"Preescolar", "phrase":"El mundo comienza con una pregunta.", "description":"Espacio provisional para presentar el aprendizaje, el juego y el acompañamiento durante los primeros años. El programa oficial será confirmado por el colegio."},
+    {"name":"Primaria", "phrase":"La curiosidad encuentra su camino.", "description":"Espacio provisional para explicar el programa de primaria, sus actividades y su propuesta de acompañamiento. Información sujeta a validación institucional."},
+    {"name":"Secundaria", "phrase":"Nuevas ideas. Una voz propia.", "description":"Espacio provisional para presentar la experiencia de secundaria y el desarrollo de nuevos intereses. Contenido demostrativo pendiente de aprobación."},
+    {"name":"Preparatoria", "phrase":"El siguiente capítulo empieza contigo.", "description":"Espacio provisional para describir la preparatoria y sus opciones académicas. No representa acreditaciones, convenios ni programas confirmados."}
+  ],
+  "life": {"title":"Hay mucho por descubrir, dentro y fuera del aula.", "text":"Aprender, compartir y encontrar nuevos intereses. Una mirada a la vida escolar que podrá completarse con historias y fotografías autorizadas del colegio.", "image":"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85", "alt":"Fotografía de muestra de estudiantes en un aula"},
+  "contact": {"city":"Ciudad del Carmen, Campeche", "address":"Av. Amado Nervo #4, San Manuel / El Potrero, C.P. 24154", "phoneDisplay":"938 118 1010", "whatsapp":"", "email":"continental_sanmanuel@hotmail.com", "message":"Hola, me gustaría recibir informes sobre Continental."}
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "title": "Colegio Continental | Propuesta de sitio web",
+    "paragraphSize": "18px",
+    "photos": [
+      {
+        "loaded": true,
+        "src": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85"
+      }
+    ],
+    "fonts": [
+      "Archivo",
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Next"
+    ],
+    "background": "rgb(244, 242, 236)",
+    "shadows": 0
+  },
+  {
+    "width": 375,
+    "scrollWidth": 375,
+    "title": "Colegio Continental | Propuesta de sitio web",
+    "paragraphSize": "18px",
+    "photos": [
+      {
+        "loaded": true,
+        "src": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85"
+      }
+    ],
+    "fonts": [
+      "Archivo",
+      "Atkinson Hyperlegible Next",
+      "Atkinson Hyperlegible Next"
+    ],
+    "background": "rgb(244, 242, 236)",
+    "shadows": 0
+  },
+  {
+    "menuOpen": "true"
+  },
+  {
+    "menuClosed": "false",
+    "focusOutline": "solid"
+  },
+  {
+    "selectedStage": "Primaria",
+    "message": "Hola, me gustaría agendar una visita a Colegio Continental. Me interesa Primaria. ¿Qué fechas tienen disponibles?",
+    "whatsappHidden": true
+  },
+  {
+    "reducedMotion": "auto"
+  },
+  {
+    "errorVisible": true,
+    "fallbackStages": 4
+  }
+]
