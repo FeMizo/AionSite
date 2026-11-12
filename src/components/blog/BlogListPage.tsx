@@ -13,23 +13,14 @@ import {
 } from "lucide-react";
 import { blogPosts } from "@/src/data/blog-posts";
 import { initialCmsContent } from "@/src/cms/site-content";
-import { Header } from "@/src/components/sections/Header";
-import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
 import { BlogCardSkeleton } from "@/src/components/ui/Skeleton";
 import { Button } from "@/src/components/ui/Button";
-import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 import { useGsapStagger } from "@/src/lib/animations";
 import { trackContentInteraction } from "@/src/lib/analytics";
 
 const PAGE_SIZE_OPTIONS = [9, 18, 30] as const;
-
-const nav = mapNavigationForInnerPage(
-  initialCmsContent.sections.header.data.navigation,
-);
-const headerData = { ...initialCmsContent.sections.header.data, navigation: nav };
-const base = { ...initialCmsContent.base, navigation: nav };
 
 export function BlogListPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -94,9 +85,8 @@ export function BlogListPage() {
 
   return (
     <>
-      <Header base={base} data={headerData} />
 
-      <section className="relative overflow-hidden bg-slate-950 pb-20 pt-32 md:pb-28 md:pt-44">
+      <section className="relative overflow-hidden bg-slate-950 pb-20 pt-12 md:pb-28 md:pt-24">
         <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-violet-600/14 blur-[130px]" />
         <div className="absolute right-1/4 top-1/2 -z-10 h-[250px] w-[350px] rounded-full bg-blue-600/10 blur-[100px]" />
         <Container className="text-center">
@@ -299,7 +289,6 @@ export function BlogListPage() {
         </Container>
       </section>
 
-      <SiteFooter />
     </>
   );
 }

@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { Header } from "@/src/components/sections/Header";
-import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { SiteRequestForm } from "@/src/components/productos/SiteRequestForm";
 import { Container } from "@/src/components/ui/Container";
 import { withCanonical } from "@/src/lib/metadata";
-import { initialCmsContent } from "@/src/cms/site-content";
-import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 
 export const metadata: Metadata = withCanonical("/solicitar-sitio/", {
   title: "Solicita tu sitio web | AionSite",
@@ -13,9 +9,9 @@ export const metadata: Metadata = withCanonical("/solicitar-sitio/", {
 });
 
 export default function RequestSitePage() {
-  return <><Header base={initialCmsContent.base} data={{ ...initialCmsContent.sections.header.data, navigation: mapNavigationForInnerPage(initialCmsContent.sections.header.data.navigation) }} /><main id="main-content" className="bg-slate-950 pb-24 pt-36 text-white">
+  return <main id="main-content" className="bg-slate-950 pb-24 pt-16 text-white">
     <Container><div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-      <div className="lg:sticky lg:top-32 lg:self-start">
+      <div className="lg:sticky lg:top-28 lg:self-start">
         <a href="/cotizar-proyecto/" className="text-sm text-blue-300 hover:underline">← Volver a cotizar proyecto</a>
         <p className="mt-10 text-xs uppercase tracking-[0.25em] text-blue-300">Tu siguiente paso</p>
         <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl">Tu negocio.<br /><span className="text-blue-300">Una web a su altura.</span></h1>
@@ -26,5 +22,5 @@ export default function RequestSitePage() {
       </div>
       <SiteRequestForm />
     </div></Container>
-  </main><SiteFooter /></>;
+  </main>;
 }

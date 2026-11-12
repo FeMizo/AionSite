@@ -1,7 +1,6 @@
 import Link from "@/src/components/ui/SiteLink";
 import type { ReactNode } from "react";
 import { Container } from "@/src/components/ui/Container";
-import { SiteFooter } from "@/src/components/sections/SiteFooter";
 
 type LegalSection = {
   title: string;
@@ -53,7 +52,6 @@ export function LegalPage({
           </div>
         </Container>
       </main>
-      <SiteFooter />
     </>
   );
 }

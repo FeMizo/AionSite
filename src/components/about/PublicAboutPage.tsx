@@ -24,9 +24,7 @@ import {
 } from "@/src/about/localized-content";
 import type { AboutContent } from "@/src/about/types";
 import { initialCmsContent } from "@/src/cms/site-content";
-import { Header } from "@/src/components/sections/Header";
 import { ScrollingSignalLine } from "@/src/components/sections/ScrollingSignalLine";
-import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { Button } from "@/src/components/ui/Button";
 import { Card } from "@/src/components/ui/Card";
 import { ContactPanel } from "@/src/components/ui/ContactPanel";
@@ -36,21 +34,6 @@ import { LinkButton } from "@/src/components/ui/LinkButton";
 import { SectionHeading } from "@/src/components/ui/SectionHeading";
 import { TagGroup } from "@/src/components/ui/TagGroup";
 import { Timeline } from "@/src/components/ui/Timeline";
-import { mapNavigationForInnerPage } from "@/src/lib/navigation";
-
-const navigation = mapNavigationForInnerPage(
-  initialCmsContent.sections.header.data.navigation,
-);
-
-const base = {
-  ...initialCmsContent.base,
-  navigation,
-};
-
-const headerData = {
-  ...initialCmsContent.sections.header.data,
-  navigation,
-};
 
 const valueIcons = [
   <Globe size={22} key="frontend" />,
@@ -109,10 +92,9 @@ export function PublicAboutPage({
 
   return (
     <>
-      <Header base={base} data={headerData} />
 
       <main className="min-h-screen">
-        <section className="relative overflow-hidden pb-16 pt-32 md:pb-24 md:pt-44">
+        <section className="relative overflow-hidden pb-16 pt-12 md:pb-24 md:pt-24">
           <div className="absolute left-1/2 top-0 -z-10 h-160 w-200 -translate-x-1/2 rounded-full bg-blue-600/18 blur-[140px]" />
           <div className="absolute right-0 top-36 -z-10 h-96 w-96 rounded-full bg-violet-500/10 blur-[120px]" />
 
@@ -375,7 +357,6 @@ export function PublicAboutPage({
         </section>
       </main>
 
-      <SiteFooter />
     </>
   );
 }

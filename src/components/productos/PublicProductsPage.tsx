@@ -12,8 +12,6 @@ import {
   WandSparkles,
 } from "lucide-react";
 import { initialCmsContent } from "@/src/cms/site-content";
-import { Header } from "@/src/components/sections/Header";
-import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { BreadcrumbSchema } from "@/src/components/ui/BreadcrumbSchema";
 import { Container } from "@/src/components/ui/Container";
 import { LinkButton } from "@/src/components/ui/LinkButton";
@@ -828,16 +826,12 @@ export function PublicProductsPage() {
 
   return (
     <>
-      <Header
-        base={initialCmsContent.base}
-        data={initialCmsContent.sections.header.data}
-      />
       <BreadcrumbSchema items={[{ name: "Productos", path: "/cotizar-proyecto/" }]} />
 
       <main ref={rootRef} className="relative overflow-hidden bg-[#02040a] text-white">
         <section
           ref={heroRef}
-          className="relative min-h-[100dvh] overflow-hidden pt-28 md:pt-32"
+          className="relative min-h-[calc(100dvh-5rem)] overflow-hidden pt-8 md:pt-12"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(59,130,246,0.18),transparent_28%),radial-gradient(circle_at_82%_12%,rgba(255,255,255,0.07),transparent_24%),linear-gradient(180deg,#02040a_0%,#050b14_50%,#02040a_100%)]" />
           <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.35)_1px,transparent_1px)] [background-size:72px_72px]" />
@@ -1151,7 +1145,6 @@ export function PublicProductsPage() {
         </section>
       </main>
 
-      <SiteFooter />
     </>
   );
 }

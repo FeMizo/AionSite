@@ -8,12 +8,16 @@ import { MetaPixel } from "@/src/components/analytics/MetaPixel";
 import { GoogleTagManager } from "@/src/components/analytics/GoogleTagManager";
 import { SitePageChrome } from "@/src/components/sections/SitePageChrome";
 import { initialCmsContent } from "@/src/cms/site-content";
+import { GlobalHeader } from "@/src/components/site/GlobalHeader";
+import { GlobalFooter } from "@/src/components/site/GlobalFooter";
+import { PublicChrome } from "@/src/components/site/PublicChrome";
 import "./globals.css";
 import "./claymorphism/claymorphism.css";
 import "./specialui/specialui.css";
 import "./skeuomorphism/skeuomorphism.css";
 import "./spatial-ui/spatial-ui.css";
 import "./style-page-chrome.css";
+import "@/src/components/site/site-chrome.css";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -71,7 +75,13 @@ export default function RootLayout({
       <body className="font-sans bg-slate-950 text-slate-200 antialiased">
         <SchemaMarkup />
         <PublicAnalytics><GoogleTagManager /><MetaPixel /></PublicAnalytics>
+        <PublicChrome>
+          <GlobalHeader />
+        </PublicChrome>
         {children}
+        <PublicChrome>
+          <GlobalFooter />
+        </PublicChrome>
         <SitePageChrome enabled={initialCmsContent.sections.whatsappFloatingButton.enabled} data={initialCmsContent.sections.whatsappFloatingButton.data} />
         <GdprConsent />
       </body>

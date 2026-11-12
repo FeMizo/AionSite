@@ -135,7 +135,6 @@ export function CtaFooterHome2({ base, cta, footer, process }: { base: CmsBase; 
           {process.slice(0, 3).map((item) => <div key={item.step} className="rounded-2xl border border-white/10 bg-slate-950/45 p-5 backdrop-blur-sm"><p className="font-mono text-xs text-blue-300">{item.step}</p><p className="mt-3 text-sm font-semibold text-white">{item.title}</p><p className="mt-2 text-xs leading-relaxed text-slate-400">{item.description}</p></div>)}
         </div>
 
-        <footer className="mt-24 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-7 text-xs text-slate-500 md:flex-row"><p>(c) 2026 {base.name}. Todos los derechos reservados.</p><nav className="flex flex-wrap justify-center gap-5">{footer.navigation.slice(0, 5).map((item) => <a key={item.name} href={item.href} className="transition-colors hover:text-white">{item.name}</a>)}</nav><a href={footer.whatsappLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 transition-colors hover:text-blue-300">WhatsApp directo <ArrowUpRight size={13} /></a></footer>
       </Container>
     </section>
   );

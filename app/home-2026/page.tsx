@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Hero2 } from "@/src/components/sections/Hero2";
-import { HeaderHome2 } from "@/src/components/sections/HeaderHome2";
 import { initialCmsContent } from "@/src/cms/site-content";
 import { ContactHome2 } from "@/src/components/sections/ContactHome2";
 import { PricingHome2 } from "@/src/components/sections/PricingHome2";
@@ -21,7 +20,6 @@ export default function Home2026() {
   const { base, sections } = initialCmsContent;
   return (
     <>
-      <HeaderHome2 base={base} data={sections.header.data} />
       <Hero2 data={sections.hero.data} headerData={sections.header.data} />
       <SearchPresence />
       <ServicesApproach data={sections.services.data} />

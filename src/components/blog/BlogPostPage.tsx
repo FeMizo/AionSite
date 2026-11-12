@@ -6,22 +6,13 @@ import Link from "@/src/components/ui/SiteLink";
 import { ArrowLeft, BookOpen, Clock, Send } from "lucide-react";
 import type { BlogPost } from "@/src/data/blog-posts";
 import { initialCmsContent } from "@/src/cms/site-content";
-import { Header } from "@/src/components/sections/Header";
-import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { Button } from "@/src/components/ui/Button";
 import { Card } from "@/src/components/ui/Card";
 import { Container } from "@/src/components/ui/Container";
 import { FormInput } from "@/src/components/ui/FormInput";
 import { FormTextarea } from "@/src/components/ui/FormTextarea";
-import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 import { cn } from "@/src/lib/utils";
 import { ArticleEngagementTracker } from "@/src/components/analytics/ArticleEngagementTracker";
-
-const nav = mapNavigationForInnerPage(
-  initialCmsContent.sections.header.data.navigation,
-);
-const headerData = { ...initialCmsContent.sections.header.data, navigation: nav };
-const base = { ...initialCmsContent.base, navigation: nav };
 
 export function BlogPostPage({ post }: { post: BlogPost }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -51,10 +42,9 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
   return (
     <>
       <ArticleEngagementTracker articleId={post.id} articleTitle={post.title} />
-      <Header base={base} data={headerData} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-slate-950 pb-20 pt-32 md:pb-24 md:pt-44">
+      <section className="relative overflow-hidden bg-slate-950 pb-20 pt-12 md:pb-24 md:pt-24">
         <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-violet-600/13 blur-[130px]" />
         <div className="absolute left-1/4 top-1/2 -z-10 h-[250px] w-[350px] rounded-full bg-blue-600/9 blur-[100px]" />
         <Container className="text-center">
@@ -232,7 +222,6 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
         </Container>
       </section>
 
-      <SiteFooter />
     </>
   );
 }

@@ -56,51 +56,6 @@
   white-space: nowrap;
 }
 
-/* Header */
-.h3-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 1.25rem var(--gutter);
-}
-
-.h3-logo {
-  display: block;
-  flex: none;
-}
-
-.h3-logo img {
-  display: block;
-  width: auto;
-  height: 1.75rem;
-}
-
-.h3-nav {
-  display: none;
-  gap: 2rem;
-  margin-right: auto;
-  margin-left: 3rem;
-}
-
-.h3-nav a {
-  text-decoration: none;
-  color: var(--muted);
-  transition: color 150ms ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .h3-nav a:hover {
-    color: var(--ink);
-  }
-}
-
-@media (min-width: 820px) {
-  .h3-nav {
-    display: flex;
-  }
-}
-
 /* Buttons */
 .h3-btn {
   display: inline-flex;
@@ -507,39 +462,6 @@
   margin: 0 0 1rem;
   color: var(--muted);
   font-size: 1.125rem;
-}
-
-/* Footer */
-.h3-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem 2rem;
-  padding: 2rem var(--gutter) 6rem;
-  background: var(--paper);
-  color: var(--muted);
-  font-size: 0.95rem;
-  border-top: 1px solid var(--line);
-}
-
-.h3-footer p {
-  margin: 0;
-}
-
-.h3-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.h3-footer a {
-  text-decoration: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .h3-footer a:hover {
-    color: var(--ink);
-  }
 }
 
 /* ── Scroll reveals ──────────────────────────────────────────────

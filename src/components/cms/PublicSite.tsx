@@ -38,24 +38,18 @@ export function PublicSite({
     };
   }, []);
 
-  const headerSections = getRenderableSectionIds(content, "header");
+  // Header and footer placements are skipped: the site-wide header and footer
+  // come from the root layout (src/components/site).
   const mainSections = getRenderableSectionIds(content, "main");
-  const footerSections = getRenderableSectionIds(content, "footer");
   const floatingSections = getRenderableSectionIds(content, "floating").filter((id) => id !== "whatsappFloatingButton");
 
   return (
     <>
-      {headerSections.map((id, index) => (
-        <div key={`header-${id}-${index}`}>{renderCmsSection(id, content)}</div>
-      ))}
       <main className="min-h-screen">
         {mainSections.map((id, index) => (
           <div key={`main-${id}-${index}`}>{renderCmsSection(id, content)}</div>
         ))}
       </main>
-      {footerSections.map((id, index) => (
-        <div key={`footer-${id}-${index}`}>{renderCmsSection(id, content)}</div>
-      ))}
       {floatingSections.map((id, index) => (
         <div key={`floating-${id}-${index}`}>{renderCmsSection(id, content)}</div>
       ))}

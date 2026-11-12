@@ -5,13 +5,13 @@ import { initialCmsContent } from "@/src/cms/site-content";
 import { withCanonical } from "@/src/lib/metadata";
 import { Reveal } from "./_home/Reveal";
 import { ContactPicker, LocalTime, StripControls } from "./_home/client";
-import { MobileNav, PlanInfo } from "./_home/client-nav";
+import { PlanInfo } from "./_home/client-nav";
 import "./_home/home3.css";
 import "./_home/home3-sections.css";
 import "./_home/home3-nav.css";
 
 const aboutText =
-  "Soy Jose Miss. Estudié diseño gráfico y llevo años programando frontend para equipos en Estados Unidos y Latinoamérica. Con AionSite trabajas directamente conmigo, desde la primera llamada hasta después del lanzamiento.";
+  "Soy Felipe Miss. Estudié diseño gráfico y llevo años programando frontend para equipos en Estados Unidos y Latinoamérica. Con AionSite trabajas directamente conmigo, desde la primera llamada hasta después del lanzamiento.";
 
 export const metadata: Metadata = withCanonical("/", {
   title: "AionSite | Diseño web premium y SEO para negocios",
@@ -127,35 +127,6 @@ export default function Home() {
 
   return (
     <div className="h3">
-      <header className="h3-header">
-        <Link href="/" className="h3-logo" aria-label="AionSite, inicio">
-          <Image src={base.logoLight ?? "/logo-aionsite.webp"} alt="" width={590} height={119} priority />
-        </Link>
-        <nav aria-label="Principal" className="h3-nav">
-          <a href="#proyectos">Proyectos</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#paquetes">Precios</a>
-          <Link href="/conoceme">Conóceme</Link>
-        </nav>
-        <div className="h3-header__end">
-          <Link href="/cotizar-proyecto/" className="h3-btn h3-btn--small">
-            Cotizar
-          </Link>
-          <MobileNav
-            links={[
-              { name: "Proyectos", href: "#proyectos" },
-              { name: "Servicios", href: "#servicios" },
-              { name: "Proceso", href: "#proceso" },
-              { name: "Precios", href: "#paquetes" },
-              { name: "Preguntas", href: "#faq" },
-              { name: "Conóceme", href: "/conoceme" },
-            ]}
-            quoteHref="/cotizar-proyecto/"
-            whatsapp={whatsapp}
-          />
-        </div>
-      </header>
 
       <main>
         <section className="h3-hero" aria-labelledby="h3-title">
@@ -237,7 +208,7 @@ export default function Home() {
           <figure className="h3-about__photo" data-reveal="photo">
             <Image
               src="/media/jose-miss.webp"
-              alt="Ilustración de Jose Miss en su escritorio, con saco azul y lentes"
+              alt="Ilustración de Felipe Miss en su escritorio, con saco azul y lentes"
               width={1122}
               height={1402}
               sizes="(max-width: 899px) 70vw, 30vw"
@@ -349,15 +320,6 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="h3-footer">
-        <p>AionSite, Ciudad del Carmen, Campeche. © {new Date().getFullYear()}</p>
-        <nav aria-label="Pie de página">
-          <Link href="/proyectos/">Proyectos</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/conoceme">Conóceme</Link>
-          <Link href="/privacidad">Privacidad</Link>
-        </nav>
-      </footer>
       <Reveal />
     </div>
   );

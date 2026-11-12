@@ -1,5 +1,4 @@
 import { ArrowRight, Check, MessageCircleMore, MapPin } from "lucide-react";
-import Link from "@/src/components/ui/SiteLink";
 import { Container } from "@/src/components/ui/Container";
 import { LinkButton } from "@/src/components/ui/LinkButton";
 import { getWhatsAppLink } from "@/src/config/whatsapp";
@@ -30,15 +29,6 @@ export function LocalLandingPage({ config }: { config: LocalLandingConfig }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <header className="border-b border-white/10 bg-slate-950/95">
-        <Container className="flex items-center justify-between py-5">
-          <Link href="/" className="font-display text-xl font-bold tracking-tight text-white">AionSite</Link>
-          <LinkButton href={whatsappLink} target="_blank" rel="noopener noreferrer" size="sm">
-            Hablar por WhatsApp
-          </LinkButton>
-        </Container>
-      </header>
-
       <main className="min-h-screen bg-slate-950">
         <section className="relative overflow-hidden border-b border-white/10 py-20 md:py-28">
           <div className="absolute left-1/2 top-0 -z-0 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-600/15 blur-[130px]" />

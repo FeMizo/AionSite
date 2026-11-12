@@ -14,11 +14,8 @@ import {
 } from "@/src/cms/portfolio";
 import type { CmsContent } from "@/src/cms/types";
 import { PortfolioGrid } from "@/src/components/portfolio/PortfolioGrid";
-import { Header } from "@/src/components/sections/Header";
-import { SiteFooter } from "@/src/components/sections/SiteFooter";
 import { Button } from "@/src/components/ui/Button";
 import { Container } from "@/src/components/ui/Container";
-import { mapNavigationForInnerPage } from "@/src/lib/navigation";
 
 const PAGE_SIZE_OPTIONS = [9, 18, 30] as const;
 
@@ -55,27 +52,6 @@ export function PublicProjectsPage({
       isCancelled = true;
     };
   }, []);
-
-  const navigation = useMemo(
-    () => mapNavigationForInnerPage(content.sections.header.data.navigation),
-    [content.sections.header.data.navigation],
-  );
-
-  const base = useMemo(
-    () => ({
-      ...content.base,
-      navigation,
-    }),
-    [content.base, navigation],
-  );
-
-  const headerData = useMemo(
-    () => ({
-      ...content.sections.header.data,
-      navigation,
-    }),
-    [content.sections.header.data, navigation],
-  );
 
   const portfolioItems = useMemo(
     () => getRecentPortfolioItems(content.sections.portfolio.data),
@@ -125,12 +101,8 @@ export function PublicProjectsPage({
 
   return (
     <>
-      {content.sections.header.enabled ? (
-        <Header base={base} data={headerData} />
-      ) : null}
-
       <main className="min-h-screen">
-        <section className="relative overflow-hidden pb-10 pt-32 md:pb-14 md:pt-40">
+        <section className="relative overflow-hidden pb-10 pt-12 md:pb-14 md:pt-20">
           <div className="absolute left-1/2 top-0 -z-10 h-160 w-200 -translate-x-1/2 rounded-full bg-blue-600/14 blur-[140px]" />
 
           <Container>
@@ -295,7 +267,6 @@ export function PublicProjectsPage({
         </section>
       </main>
 
-      <SiteFooter />
 
     </>
   );
