@@ -1,0 +1,4 @@
+:HL["/clientes/continental/v1/_next/static/chunks/1_05_85dbm1w0.css","style"]
+:HL["/clientes/continental/v1/_next/static/media/75affa71d1e2f6a7-s.p.17-aodiw50953.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/clientes/continental/v1/_next/static/media/847c6af3f14ca2aa.p.2dv7oiayrgfo5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"34GskYIjIqhb2F-Aqs6_X"}
